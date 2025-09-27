@@ -1,0 +1,267 @@
+[
+  {
+    "id": 5,
+    "title": "N5",
+    "description": "The foundational level for basic Japanese understanding.",
+    "status": true,
+    "lessons": [
+      {
+        "id": 21,
+        "icon": "Book",
+        "route": "vocab",
+        "title": "Vocabulary",
+        "status": true,
+        "level_id": 5,
+        "description": ""
+      },
+      {
+        "id": 22,
+        "icon": "BrainCircuit",
+        "route": "kanji",
+        "title": "Kanji",
+        "status": true,
+        "level_id": 5,
+        "description": ""
+      },
+      {
+        "id": 23,
+        "icon": "List",
+        "route": "grammar",
+        "title": "Grammar",
+        "status": true,
+        "level_id": 5,
+        "description": ""
+      },
+      {
+        "id": 24,
+        "icon": "BookOpen",
+        "route": "reading",
+        "title": "Reading",
+        "status": true,
+        "level_id": 5,
+        "description": ""
+      },
+      {
+        "id": 25,
+        "icon": "Headphones",
+        "route": "listening",
+        "title": "Listening",
+        "status": true,
+        "level_id": 5,
+        "description": ""
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "N4",
+    "description": "Build upon your basics for everyday conversations.",
+    "status": true,
+    "lessons": [
+      {
+        "id": 16,
+        "icon": "Book",
+        "route": "vocab",
+        "title": "Vocabulary",
+        "status": true,
+        "level_id": 4,
+        "description": ""
+      },
+      {
+        "id": 17,
+        "icon": "BrainCircuit",
+        "route": "kanji",
+        "title": "Kanji",
+        "status": true,
+        "level_id": 4,
+        "description": ""
+      },
+      {
+        "id": 20,
+        "icon": "Headphones",
+        "route": "listening",
+        "title": "Listening",
+        "status": true,
+        "level_id": 4,
+        "description": ""
+      },
+      {
+        "id": 19,
+        "icon": "BookOpen",
+        "route": "reading",
+        "title": "Reading",
+        "status": true,
+        "level_id": 4,
+        "description": ""
+      },
+      {
+        "id": 18,
+        "icon": "List",
+        "route": "grammar",
+        "title": "Grammar",
+        "status": true,
+        "level_id": 4,
+        "description": ""
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "N3",
+    "description": "Bridge the gap to intermediate-level Japanese.",
+    "status": true,
+    "lessons": [
+      {
+        "id": 11,
+        "icon": "Book",
+        "route": "vocab",
+        "title": "Vocabulary",
+        "status": true,
+        "level_id": 3,
+        "description": ""
+      },
+      {
+        "id": 12,
+        "icon": "BrainCircuit",
+        "route": "kanji",
+        "title": "Kanji",
+        "status": true,
+        "level_id": 3,
+        "description": ""
+      },
+      {
+        "id": 15,
+        "icon": "Headphones",
+        "route": "listening",
+        "title": "Listening",
+        "status": true,
+        "level_id": 3,
+        "description": ""
+      },
+      {
+        "id": 14,
+        "icon": "BookOpen",
+        "route": "reading",
+        "title": "Reading",
+        "status": true,
+        "level_id": 3,
+        "description": ""
+      },
+      {
+        "id": 13,
+        "icon": "List",
+        "route": "grammar",
+        "title": "Grammar",
+        "status": true,
+        "level_id": 3,
+        "description": ""
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "N2",
+    "description": "Understand Japanese used in a broad range of situations.",
+    "status": true,
+    "lessons": [
+      {
+        "id": 6,
+        "icon": "Book",
+        "route": "vocab",
+        "title": "Vocabulary",
+        "status": true,
+        "level_id": 2,
+        "description": ""
+      },
+      {
+        "id": 7,
+        "icon": "BrainCircuit",
+        "route": "kanji",
+        "title": "Kanji",
+        "status": true,
+        "level_id": 2,
+        "description": ""
+      },
+      {
+        "id": 10,
+        "icon": "Headphones",
+        "route": "listening",
+        "title": "Listening",
+        "status": true,
+        "level_id": 2,
+        "description": ""
+      },
+      {
+        "id": 9,
+        "icon": "BookOpen",
+        "route": "reading",
+        "title": "Reading",
+        "status": true,
+        "level_id": 2,
+        "description": ""
+      },
+      {
+        "id": 8,
+        "icon": "List",
+        "route": "grammar",
+        "title": "Grammar",
+        "status": true,
+        "level_id": 2,
+        "description": ""
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "title": "N1",
+    "description": "Aim for fluency and understand a wide range of topics.",
+    "status": true,
+    "lessons": [
+      {
+        "id": 1,
+        "icon": "Book",
+        "route": "vocab",
+        "title": "Vocabulary",
+        "status": true,
+        "level_id": 1,
+        "description": ""
+      },
+      {
+        "id": 2,
+        "icon": "BrainCircuit",
+        "route": "kanji",
+        "title": "Kanji",
+        "status": true,
+        "level_id": 1,
+        "description": ""
+      },
+      {
+        "id": 3,
+        "icon": "List",
+        "route": "grammar",
+        "title": "Grammar",
+        "status": true,
+        "level_id": 1,
+        "description": ""
+      },
+      {
+        "id": 4,
+        "icon": "BookOpen",
+        "route": "reading",
+        "title": "Reading",
+        "status": true,
+        "level_id": 1,
+        "description": ""
+      },
+      {
+        "id": 5,
+        "icon": "Headphones",
+        "route": "listening",
+        "title": "Listening",
+        "status": true,
+        "level_id": 1,
+        "description": ""
+      }
+    ]
+  }
+]

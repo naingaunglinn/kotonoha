@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "title": "hiragana",
+    "description": "Learn the basic Japanese phonetic script.",
+    "status": true
+  },
+  {
+    "id": 2,
+    "title": "katakana",
+    "description": "Master the script for foreign & emphasis.",
+    "status": true
+  }
+]

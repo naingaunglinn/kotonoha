@@ -1,0 +1,442 @@
+[
+  {
+    "level_id": "N5",
+    "title": "です",
+    "title_mm": "ဖြစ်သည်/ပါ",
+    "explanation_mm": "နာမ်တစ်ခုနောက်တွင်ထားပြီး ဝါကျအား ယဉ်ကျေးသောပုံစံဖြင့် အဆုံးသတ်ပေးသည်။ 'ဖြစ်သည်' ဟု အဓိပ္ပာယ်ရသည်။",
+    "explanation_en": "Placed after a noun to end a sentence politely. It translates to 'is,' 'am,' or 'are.'",
+    "examples": [
+      {
+        "japanese": "わたしはがくせいです。",
+        "english": "I am a student.",
+        "myanmar": "ကျွန်တော်က ကျောင်းသားတစ်ယောက်ပါ။",
+        "status": true
+      },
+      {
+        "japanese": "これはほんです。",
+        "english": "This is a book.",
+        "myanmar": "ဒါက စာအုပ်တစ်အုပ်ပါ။",
+        "status": true
+      }
+    ],
+    "status": true
+  },
+  {
+    "level_id": "N5",
+    "title": "は",
+    "title_mm": "ကတော့/က",
+    "explanation_mm": "ဝါကျ၏ ခေါင်းစဉ် (Topic) ကို ဖော်ပြသည်။ ရှေ့တွင်ရှိသော နာမ်သည် ဝါကျ၏ အဓိကအကြောင်းအရာဖြစ်ကြောင်းကို ပြသည်။ 'wa' ဟု အသံထွက်သည်။",
+    "explanation_en": "Marks the topic of the sentence. It indicates that the noun preceding it is what the sentence is about. It is pronounced 'wa'.",
+    "examples": [
+      {
+        "japanese": "やまださんはせんせいです。",
+        "english": "Mr. Yamada is a teacher.",
+        "myanmar": "ကိုယာမာဒါက ဆရာတစ်ယောက် ဖြစ်ပါတယ်။",
+        "status": true
+      },
+      {
+        "japanese": "きょうはてんきがいいです。",
+        "english": "The weather is good today.",
+        "myanmar": "ဒီနေ့ ရာသီဥတုက ကောင်းပါတယ်။",
+        "status": true
+      }
+    ],
+    "status": true
+  },
+  {
+    "level_id": "N5",
+    "title": "じゃありません",
+    "title_mm": "မဟုတ်ပါဘူး",
+    "explanation_mm": "'です' ၏ အငြင်းစကားပုံစံဖြစ်သည်။ ဝါကျအား 'မဟုတ်ပါဘူး' ဟု အဓိပ္ပာယ်ရစေသည်။ ပို၍ ယဉ်ကျေးသောပုံစံမှာ 'ではありません' ဖြစ်သည်။",
+    "explanation_en": "The negative form of 'です'. It means 'is not,' 'am not,' or 'are not.' A more formal version is 'ではありません'.",
+    "examples": [
+      {
+        "japanese": "かれはエンジニアじゃありません。",
+        "english": "He is not an engineer.",
+        "myanmar": "သူက အင်ဂျင်နီယာတစ်ယောက် မဟုတ်ပါဘူး။",
+        "status": true
+      },
+      {
+        "japanese": "これはわたしのかさじゃありません。",
+        "english": "This is not my umbrella.",
+        "myanmar": "ဒါက ကျွန်တော့်ထီး မဟုတ်ပါဘူး။",
+        "status": true
+      }
+    ],
+    "status": true
+  },
+  {
+    "level_id": "N5",
+    "title": "か",
+    "title_mm": "လား",
+    "explanation_mm": "ဝါကျအဆုံးတွင်ထည့်ပြီး ဟုတ်/မဟုတ် မေးခွန်းများ ပြုလုပ်ရန် အသုံးပြုသည်။ စကားလုံးနေရာ ပြောင်းလဲရန်မလိုပေ။",
+    "explanation_en": "Added to the end of a sentence to form a yes/no question. The word order of the sentence does not change.",
+    "examples": [
+      {
+        "japanese": "あれはあなたのくるまですか。",
+        "english": "Is that your car over there?",
+        "myanmar": "ဟိုဟာက သင့်ကားလား။",
+        "status": true
+      },
+      {
+        "japanese": "さとうさんはにほんじんですか。",
+        "english": "Is Ms. Sato Japanese?",
+        "myanmar": "မစ္စဆာတိုက ဂျပန်လူမျိုးလား။",
+        "status": true
+      }
+    ],
+    "status": true
+  },
+  {
+    "level_id": "N5",
+    "title": "の",
+    "title_mm": "ရဲ့",
+    "explanation_mm": "နာမ်နှစ်ခုကို ဆက်ပေးသည်။ ပိုင်ဆိုင်မှုကို ပြရန် (ဥပမာ 'ကျွန်တော့်စာအုပ်') သို့မဟုတ် ပထမနာမ်က ဒုတိယနာမ်ကို အထူးပြုရန် (ဥပမာ 'ဂျပန်ဘာသာ ဆရာ') အသုံးပြုသည်။",
+    "explanation_en": "Connects two nouns. It is used to show possession (e.g., 'my book') or to modify one noun with another (e.g., 'a teacher of Japanese').",
+    "examples": [
+      {
+        "japanese": "これはにほんごのほんです。",
+        "english": "This is a Japanese language book.",
+        "myanmar": "ဒါက ဂျပန်စာအုပ်တစ်အုပ်ပါ။",
+        "status": true
+      },
+      {
+        "japanese": "わたしのなまえはマイクです。",
+        "english": "My name is Mike.",
+        "myanmar": "ကျွန်တော့်နာမည်က မိုက်ခ် ပါ။",
+        "status": true
+      }
+    ],
+    "status": true
+  },
+  {
+    "level_id": "N5",
+    "title": "も",
+    "title_mm": "လည်း",
+    "explanation_mm": "'လည်း' ဟု အဓိပ္ပာယ်ရသည်။ ရှေ့ဝါကျတွင် ဖော်ပြထားသော အကြောင်းအရာနှင့် တူညီကြောင်းကို ပြသရန် 'は' နေရာတွင် အစားထိုး အသုံးပြုသည်။",
+    "explanation_en": "Means 'also' or 'too'. It replaces the particle 'は' when stating that something is the same as a previously mentioned topic.",
+    "examples": [
+      {
+        "japanese": "たなかさんはかいしゃいんです。わたしもかいしゃいんです。",
+        "english": "Mr. Tanaka is an office worker. I am also an office worker.",
+        "myanmar": "ကိုတာနာကာက ကုမ္ပဏီဝန်ထမ်းပါ။ ကျွန်တော်လည်း ကုမ္ပဏီဝန်ထမ်းပါ။",
+        "status": true
+      },
+      {
+        "japanese": "これはペンです。それもペンです。",
+        "english": "This is a pen. That is also a pen.",
+        "myanmar": "ဒါက ဘောပင်ပါ။ အဲ့ဒါလည်း ဘောပင်ပါ။",
+        "status": true
+      }
+    ],
+    "status": true
+  },
+  {
+    "level_id": "N5",
+    "title": "に (Time)",
+    "title_mm": "に (အချိန်)",
+    "explanation_mm": "အချိန်ကို တိတိကျကျ ဖော်ပြလိုသည့်အခါ အချိန်နာမ်၏ နောက်တွင် အသုံးပြုသည်။ (ဥပမာ - ၇ နာရီမှာ၊ တနင်္လာနေ့မှာ)",
+    "explanation_en": "Used after a time noun to indicate a specific point in time when an action occurs (e.g., at 7 o'clock, on Monday).",
+    "examples": [
+      {
+        "japanese": "わたしはろくじにおきます。",
+        "english": "I wake up at 6 o'clock.",
+        "myanmar": "ကျွန်တော် ၆ နာရီမှာ အိပ်ရာထပါတယ်။",
+        "status": true
+      },
+      {
+        "japanese": "にちようびにスーパーへいきます。",
+        "english": "I will go to the supermarket on Sunday.",
+        "myanmar": "တနင်္ဂနွေနေ့မှာ စူပါမားကတ်ကို သွားပါမယ်။",
+        "status": true
+      }
+    ],
+    "status": true
+  },
+  {
+    "level_id": "N5",
+    "title": "へ",
+    "title_mm": "သို့",
+    "explanation_mm": "သွားခြင်း၊ လာခြင်း၊ ပြန်ခြင်း စသည့် ရွေ့လျားမှုကို ဖော်ပြသော ကြိယာများနှင့်အတူ သွားမည့် ဦးတည်ရာ၊ နေရာကို ဖော်ပြရန် အသုံးပြုသည်။ 'e' ဟု အသံထွက်သည်။",
+    "explanation_en": "Indicates the direction of movement. Used with motion verbs like 'to go,' 'to come,' and 'to return.' It is pronounced 'e'.",
+    "examples": [
+      {
+        "japanese": "あした、きょうとへいきます。",
+        "english": "Tomorrow, I will go to Kyoto.",
+        "myanmar": "မနက်ဖြန် ကျိုတိုသို့ သွားပါမယ်။",
+        "status": true
+      },
+      {
+        "japanese": "わたしはくにへかえります。",
+        "english": "I will return to my country.",
+        "myanmar": "ကျွန်တော် ကိုယ့်နိုင်ငံကို ပြန်ပါမယ်။",
+        "status": true
+      }
+    ],
+    "status": true
+  },
+  {
+    "level_id": "N5",
+    "title": "で (Location of Action)",
+    "title_mm": "で (နေရာပြ)",
+    "explanation_mm": "လုပ်ဆောင်ချက်တစ်ခု ဖြစ်ပျက်သည့် နေရာကို ဖော်ပြရန် နာမ်၏နောက်တွင် အသုံးပြုသည်။ 'မှာ' ဟု အဓိပ္ပာယ်ရသည်။",
+    "explanation_en": "Indicates the location where an action takes place. It follows the noun for the place and can be translated as 'at,' 'in,' or 'on'.",
+    "examples": [
+      {
+        "japanese": "わたしはえきでしんぶんをかいます。",
+        "english": "I buy a newspaper at the station.",
+        "myanmar": "ကျွန်တော် ဘူတာမှာ သတင်းစာ ဝယ်ပါတယ်။",
+        "status": true
+      },
+      {
+        "japanese": "レストランでばんごはんをたべます。",
+        "english": "I eat dinner at a restaurant.",
+        "myanmar": "စားသောက်ဆိုင်မှာ ညစာ စားပါတယ်။",
+        "status": true
+      }
+    ],
+    "status": true
+  },
+  {
+    "level_id": "N5",
+    "title": "を",
+    "title_mm": "ကို",
+    "explanation_mm": "ကြိယာ၏ တိုက်ရိုက်ကံပုဒ် (direct object) ကို ဖော်ပြသည်။ လုပ်ဆောင်ချက်တစ်ခု၏ သက်ရောက်မှုကို ခံရသော နာမ်၏နောက်တွင် ထားသည်။ 'o' ဟု အသံထွက်သည်။",
+    "explanation_en": "Marks the direct object of a verb. It follows the noun that is being acted upon. It is pronounced 'o'.",
+    "examples": [
+      {
+        "japanese": "わたしはジュースをのみます。",
+        "english": "I drink juice.",
+        "myanmar": "ကျွန်တော်က ဖျော်ရည်ကို သောက်ပါတယ်။",
+        "status": true
+      },
+      {
+        "japanese": "かのじょはパンをたべます。",
+        "english": "She eats bread.",
+        "myanmar": "သူမက ပေါင်မုန့်ကို စားပါတယ်။",
+        "status": true
+      }
+    ],
+    "status": true
+  },
+  {
+    "level_id": "N5",
+    "title": "と (Listing Nouns)",
+    "title_mm": "と (နှင့်)",
+    "explanation_mm": "နာမ်များကို 'နှင့်' ဟု အဓိပ္ပာယ်ရသော စကားလုံးဖြင့် ဆက်ပေးသည်။ စာရင်းတစ်ခုရှိ အရာအားလုံးကို ပြည့်စုံစွာ ဖော်ပြလိုသည့်အခါ အသုံးပြုသည်။",
+    "explanation_en": "Used to connect nouns with the meaning 'and'. It is used when you are listing all the items completely.",
+    "examples": [
+      {
+        "japanese": "わたしはペンとノートをかいました。",
+        "english": "I bought a pen and a notebook.",
+        "myanmar": "ကျွန်တော်က ဘောပင်နဲ့ မှတ်စုစာအုပ် ဝယ်ခဲ့တယ်။",
+        "status": true
+      },
+      {
+        "japanese": "きょうととおおさかへいきました。",
+        "english": "I went to Kyoto and Osaka.",
+        "myanmar": "ကျိုတိုနဲ့ โอซาก้าကို သွားခဲ့တယ်။",
+        "status": true
+      }
+    ],
+    "status": true
+  },
+  {
+    "level_id": "N5",
+    "title": "に (Location of Existence)",
+    "title_mm": "に (တည်ရှိရာနေရာ)",
+    "explanation_mm": "သက်ရှိ/သက်မဲ့အရာတစ်ခု တည်ရှိနေသော နေရာကို ဖော်ပြရန် အသုံးပြုသည်။ 'あります' (သက်မဲ့) နှင့် 'います' (သက်ရှိ) တို့နှင့် တွဲသုံးသည်။",
+    "explanation_en": "Indicates the location where something or someone exists. Used with the verbs 'あります' (for inanimate objects) and 'います' (for animate beings).",
+    "examples": [
+      {
+        "japanese": "へやにつくえがあります。",
+        "english": "There is a desk in the room.",
+        "myanmar": "အခန်းထဲမှာ စားပွဲတစ်လုံး ရှိပါတယ်။",
+        "status": true
+      },
+      {
+        "japanese": "にわにねこがいます。",
+        "english": "There is a cat in the garden.",
+        "myanmar": "ဥယျာဉ်ထဲမှာ ကြောင်တစ်ကောင် ရှိပါတယ်။",
+        "status": true
+      }
+    ],
+    "status": true
+  },
+  {
+    "level_id": "N5",
+    "title": "が",
+    "title_mm": "က",
+    "explanation_mm": "ဝါကျ၏ ကတ္တား (subject) ကို ဖော်ပြသည်။ အထူးသဖြင့် မေးခွန်းစကားလုံးတစ်ခု၏ အဖြေ သို့မဟုတ် အကြောင်းအရာအသစ်တစ်ခုကို စတင်မိတ်ဆက်သည့်အခါ အသုံးပြုသည်။ 'あります' နှင့် 'います' တို့နှင့် တွဲသုံးလေ့ရှိသည်။",
+    "explanation_en": "Marks the subject of a sentence. It is often used to introduce new information or answer a question word. It is commonly used with 'あります' and 'います'.",
+    "examples": [
+      {
+        "japanese": "だれがきましたか。… やまださんがきました。",
+        "english": "Who came? ... Mr. Yamada came.",
+        "myanmar": "ဘယ်သူလာခဲ့လဲ။ ... ကိုယာမာဒါ လာခဲ့ပါတယ်။",
+        "status": true
+      },
+      {
+        "japanese": "あそこにねこがいます。",
+        "english": "There is a cat over there.",
+        "myanmar": "ဟိုနားမှာ ကြောင်တစ်ကောင် ရှိပါတယ်။",
+        "status": true
+      }
+    ],
+    "status": true
+  },
+  {
+    "level_id": "N5",
+    "title": "Verb -ます",
+    "title_mm": "ကြိယာ -ます (ပစ္စုပ္ပန်/အနာဂတ်)",
+    "explanation_mm": "ကြိယာ၏ ယဉ်ကျေးသော ပစ္စုပ္ပန်/အနာဂတ်ကာလ အတည်ပြုပုံစံ ဖြစ်သည်။ လုပ်လေ့ရှိသော အပြုအမူ သို့မဟုတ် အနာဂတ်တွင် လုပ်မည့်အရာကို ဖော်ပြသည်။",
+    "explanation_en": "The polite, present/future affirmative form of a verb. It describes a habitual action or something that will happen in the future.",
+    "examples": [
+      {
+        "japanese": "まいにち、がっこうへいきます。",
+        "english": "I go to school every day.",
+        "myanmar": "နေ့တိုင်း ကျောင်းသွားပါတယ်။",
+        "status": true
+      },
+      {
+        "japanese": "あした、ほんをよみます。",
+        "english": "I will read a book tomorrow.",
+        "myanmar": "မနက်ဖြန် စာအုပ်ဖတ်ပါမယ်။",
+        "status": true
+      }
+    ],
+    "status": true
+  },
+  {
+    "level_id": "N5",
+    "title": "Verb -ません",
+    "title_mm": "ကြိယာ -ません (အငြင်း)",
+    "explanation_mm": "ကြိယာ၏ ယဉ်ကျေးသော ပစ္စုပ္ပန်/အနာဂတ်ကာလ အငြင်းပုံစံ ဖြစ်သည်။ '-ます' ၏ အငြင်းစကားဖြစ်သည်။",
+    "explanation_en": "The polite, present/future negative form of a verb. It is the negative counterpart of '-ます'.",
+    "examples": [
+      {
+        "japanese": "わたしはさけをのみません。",
+        "english": "I do not drink alcohol.",
+        "myanmar": "ကျွန်တော် အရက်မသောက်ပါဘူး။",
+        "status": true
+      },
+      {
+        "japanese": "こんばん、テレビをみません。",
+        "english": "I will not watch TV tonight.",
+        "myanmar": "ဒီည တီဗီမကြည့်ပါဘူး။",
+        "status": true
+      }
+    ],
+    "status": true
+  },
+  {
+    "level_id": "N5",
+    "title": "Verb -ました",
+    "title_mm": "ကြိယာ -ました (အတိတ်)",
+    "explanation_mm": "ကြိယာ၏ ယဉ်ကျေးသော အတိတ်ကာလ အတည်ပြုပုံစံ ဖြစ်သည်။ အတိတ်တွင် ဖြစ်ပျက်ခဲ့သော အပြုအမူကို ဖော်ပြသည်။",
+    "explanation_en": "The polite, past affirmative form of a verb. It describes an action that was completed in the past.",
+    "examples": [
+      {
+        "japanese": "きのう、えいがをみました。",
+        "english": "I watched a movie yesterday.",
+        "myanmar": "မနေ့က ရုပ်ရှင်ကြည့်ခဲ့ပါတယ်။",
+        "status": true
+      },
+      {
+        "japanese": "けさ、コーヒーをのみました。",
+        "english": "I drank coffee this morning.",
+        "myanmar": "ဒီမနက် ကော်ဖီသောက်ခဲ့ပါတယ်။",
+        "status": true
+      }
+    ],
+    "status": true
+  },
+  {
+    "level_id": "N5",
+    "title": "Verb -ませんでした",
+    "title_mm": "ကြိယာ -ませんでした (အတိတ် အငြင်း)",
+    "explanation_mm": "ကြိယာ၏ ယဉ်ကျေးသော အတိတ်ကာလ အငြင်းပုံစံ ဖြစ်သည်။ '-ました' ၏ အငြင်းစကားဖြစ်သည်။",
+    "explanation_en": "The polite, past negative form of a verb. It is the negative counterpart of '-ました'.",
+    "examples": [
+      {
+        "japanese": "きのう、べんきょうしませんでした。",
+        "english": "I did not study yesterday.",
+        "myanmar": "မနေ့က စာမလုပ်ခဲ့ပါဘူး။",
+        "status": true
+      },
+      {
+        "japanese": "かれはパーティーにきませんでした。",
+        "english": "He did not come to the party.",
+        "myanmar": "သူ ပါတီကို မလာခဲ့ပါဘူး။",
+        "status": true
+      }
+    ],
+    "status": true
+  },
+  {
+    "level_id": "N5",
+    "title": "Noun から Noun まで",
+    "title_mm": "Noun မှ Noun အထိ",
+    "explanation_mm": "အချိန် သို့မဟုတ် နေရာ၏ အစနှင့် အဆုံးကို ဖော်ပြသည်။ 'から' က 'မှ/ကနေ'၊ 'まで' က 'အထိ' ဟု အဓိပ္ပာယ်ရသည်။",
+    "explanation_en": "Indicates a range, showing the start and end point of time or location. 'から' means 'from' and 'まで' means 'until' or 'to'.",
+    "examples": [
+      {
+        "japanese": "ぎんこうは９じから３じまでです。",
+        "english": "The bank is open from 9 AM to 3 PM.",
+        "myanmar": "ဘဏ်က ၉ နာရီကနေ ၃ နာရီအထိ ဖွင့်ပါတယ်။",
+        "status": true
+      },
+      {
+        "japanese": "うちからかいしゃまでバスでいきます。",
+        "english": "I go from home to the company by bus.",
+        "myanmar": "အိမ်ကနေ ကုမ္ပဏီအထိ ဘတ်စ်ကားနဲ့ သွားပါတယ်။",
+        "status": true
+      }
+    ],
+    "status": true
+  },
+  {
+    "level_id": "N5",
+    "title": "い-Adjective + です",
+    "title_mm": "い-Adjective + ဖြစ်သည်",
+    "explanation_mm": "'い' ဖြင့် အဆုံးသတ်သော နာမဝိသေသနများ (い-adjectives) ကို 'です' နှင့် တွဲသုံး၍ ဝါကျဖွဲ့သည်။ ဥပမာ - おおきい (ကြီးသော)၊ あたらしい (သစ်သော)။",
+    "explanation_en": "Used to form a polite sentence with an i-adjective (adjectives ending in 'い'). Examples: おおきい (big), あたらしい (new).",
+    "examples": [
+      {
+        "japanese": "このほんはおもしろいです。",
+        "english": "This book is interesting.",
+        "myanmar": "ဒီစာအုပ်က စိတ်ဝင်စားစရာကောင်းတယ်။",
+        "status": true
+      },
+      {
+        "japanese": "きょうはあついです。",
+        "english": "It is hot today.",
+        "myanmar": "ဒီနေ့ ပူတယ်။",
+        "status": true
+      }
+    ],
+    "status": true
+  },
+  {
+    "level_id": "N5",
+    "title": "な-Adjective + です",
+    "title_mm": "な-Adjective + ဖြစ်သည်",
+    "explanation_mm": "'な' ဖြင့် အဆုံးသတ်သော နာမဝိသေသနများ (な-adjectives) ကို 'です' နှင့် တွဲသုံးသည့်အခါ 'な' ကို ဖြုတ်ရသည်။ ဥပမာ - しずか(な) (တိတ်ဆိတ်သော)၊ げんき(な) (ကျန်းမာသော)။",
+    "explanation_en": "Used to form a polite sentence with a na-adjective. When used directly with 'です', the 'な' is dropped. Examples: しずか(な) (quiet), げんき(な) (healthy).",
+    "examples": [
+      {
+        "japanese": "あのまちはしずかです。",
+        "english": "That town is quiet.",
+        "myanmar": "ဟိုမြို့က တိတ်ဆိတ်တယ်။",
+        "status": true
+      },
+      {
+        "japanese": "わたしのいもうとはげんきです。",
+        "english": "My younger sister is healthy/well.",
+        "myanmar": "ကျွန်မရဲ့ညီမလေးက ကျန်းမာပါတယ်။",
+        "status": true
+      }
+    ],
+    "status": true
+  }
+]
