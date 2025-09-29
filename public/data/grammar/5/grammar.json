@@ -438,5 +438,885 @@
       }
     ],
     "status": true
+  },
+  {
+    "level_id": "N5",
+    "title": "い-Adjective Negative (くないです)",
+    "title_mm": "い-Adjective အငြင်း (くないです)",
+    "explanation_mm": "い-adjective ကို အငြင်းဝါကျအဖြစ်ပြောင်းရန်၊ နောက်ဆုံး 'い' ကို 'くないです' ဖြင့် အစားထိုးပါ။ ဥပမာ- 'あつい' (ပူသော) -> 'あつくないです' (မပူပါ)။",
+    "explanation_en": "To make an i-adjective negative, replace the final 'い' with 'くないです'. For example, 'あつい' (hot) becomes 'あつくないです' (is not hot).",
+    "examples": [
+      {
+        "japanese": "このラーメンはおいしくないです。",
+        "english": "This ramen is not delicious.",
+        "myanmar": "ဒီရာမန်ခေါက်ဆွဲက မစားကောင်းဘူး။",
+        "status": true
+      },
+      {
+        "japanese": "きょうはさむくないです。",
+        "english": "It is not cold today.",
+        "myanmar": "ဒီနေ့ မအေးဘူး။",
+        "status": true
+      }
+    ],
+    "status": true
+  },
+  {
+    "level_id": "N5",
+    "title": "な-Adjective Negative (じゃありません)",
+    "title_mm": "な-Adjective အငြင်း (じゃありません)",
+    "explanation_mm": "な-adjective ကို အငြင်းဝါကျအဖြစ်ပြောင်းရန်၊ 'です' ကို 'じゃありません' ဖြင့် အစားထိုးပါ။ ဥပမာ- 'しずかです' (တိတ်ဆိတ်သည်) -> 'しずかじゃありません' (မတိတ်ဆိတ်ပါ)။",
+    "explanation_en": "To make a na-adjective negative, replace 'です' with 'じゃありません'. For example, 'しずかです' (is quiet) becomes 'しずかじゃありません' (is not quiet).",
+    "examples": [
+      {
+        "japanese": "かれはゆうめいじゃありません。",
+        "english": "He is not famous.",
+        "myanmar": "သူက မကျော်ကြားဘူး။",
+        "status": true
+      },
+      {
+        "japanese": "このへんはあんぜんじゃありません。",
+        "english": "This area is not safe.",
+        "myanmar": "ဒီပတ်ဝန်းကျင်က မလုံခြုံဘူး။",
+        "status": true
+      }
+    ],
+    "status": true
+  },
+  {
+    "level_id": "N5",
+    "title": "い-Adjective Past (かったです)",
+    "title_mm": "い-Adjective အတိတ် (かったです)",
+    "explanation_mm": "い-adjective ကို အတိတ်ကာလအဖြစ်ပြောင်းရန်၊ နောက်ဆုံး 'い' ကို 'かったです' ဖြင့် အစားထိုးပါ။ ဥပမာ- 'たのしい' (ပျော်သော) -> 'たのしかったです' (ပျော်ခဲ့သည်)။",
+    "explanation_en": "To change an i-adjective to its past tense, replace the final 'い' with 'かったです'. For example, 'たのしい' (fun) becomes 'たのしかったです' (was fun).",
+    "examples": [
+      {
+        "japanese": "きのうのパーティーはたのしかったです。",
+        "english": "Yesterday's party was fun.",
+        "myanmar": "မနေ့က ပါတီက ပျော်စရာကောင်းခဲ့တယ်။",
+        "status": true
+      },
+      {
+        "japanese": "しけんはむずかしかったです。",
+        "english": "The exam was difficult.",
+        "myanmar": "စာမေးပွဲက ခက်ခဲခဲ့တယ်။",
+        "status": true
+      }
+    ],
+    "status": true
+  },
+  {
+    "level_id": "N5",
+    "title": "な-Adjective Past (でした)",
+    "title_mm": "な-Adjective အတိတ် (でした)",
+    "explanation_mm": "な-adjective ကို အတိတ်ကာလအဖြစ်ပြောင်းရန်၊ 'です' ကို 'でした' ဖြင့် အစားထိုးပါ။ ဥပမာ- 'げんきです' (ကျန်းမာသည်) -> 'げんきでした' (ကျန်းမာခဲ့သည်)။",
+    "explanation_en": "To change a na-adjective to its past tense, replace 'です' with 'でした'. For example, 'げんきです' (is healthy) becomes 'げんきでした' (was healthy).",
+    "examples": [
+      {
+        "japanese": "きのうはひまでした。",
+        "english": "I was free yesterday.",
+        "myanmar": "မနေ့က အားလပ်ခဲ့တယ်။",
+        "status": true
+      },
+      {
+        "japanese": "こどものとき、からだがよわいでした。",
+        "english": "When I was a child, my body was weak.",
+        "myanmar": "ကလေးဘဝတုန်းက ကျန်းမာရေးမကောင်းခဲ့ဘူး။",
+        "status": true
+      }
+    ],
+    "status": true
+  },
+  {
+    "level_id": "N5",
+    "title": "Verb-stem + ませんか",
+    "title_mm": "Verb-stem + ませんか (ဖိတ်ခေါ်ခြင်း)",
+    "explanation_mm": "တစ်စုံတစ်ယောက်ကို တစ်ခုခုအတူတူလုပ်ရန် ယဉ်ကျေးစွာ ဖိတ်ခေါ်သည့်အခါ အသုံးပြုသည်။ ကြိယာ၏ 'ます' ကို 'ませんか' ဖြင့် အစားထိုးပါ။ '...မပြုလုပ်ဘူးလား။' ဟု အဓိပ္ပာယ်ရသည်။",
+    "explanation_en": "A polite way to invite someone to do something with you. Replace 'ます' from the verb with 'ませんか'. It translates to 'Won't you...?' or 'How about...?'",
+    "examples": [
+      {
+        "japanese": "いっしょにえいがをみませんか。",
+        "english": "Won't you watch a movie with me?",
+        "myanmar": "ကျွန်တော်နဲ့အတူ ရုပ်ရှင်မကြည့်ဘူးလား။",
+        "status": true
+      },
+      {
+        "japanese": "コーヒーをのみませんか。",
+        "english": "How about drinking some coffee?",
+        "myanmar": "ကော်ဖီ မသောက်ဘူးလား။",
+        "status": true
+      }
+    ],
+    "status": true
+  },
+  {
+    "level_id": "N5",
+    "title": "Verb-stem + ましょう",
+    "title_mm": "Verb-stem + ましょう (အကြံပြုခြင်း)",
+    "explanation_mm": "တစ်ခုခုအတူတူလုပ်ရန် အကြံပြုသည့်အခါ အသုံးပြုသည်။ ကြိယာ၏ 'ます' ကို 'ましょう' ဖြင့် အစားထိုးပါ။ '...လုပ်ကြစို့။' ဟု အဓိပ္ပာယ်ရသည်။",
+    "explanation_en": "Used to make a suggestion to do something together. Replace 'ます' from the verb with 'ましょう'. It translates to 'Let's...'",
+    "examples": [
+      {
+        "japanese": "ちょっとやすみましょう。",
+        "english": "Let's take a short break.",
+        "myanmar": "ခဏလောက် နားကြစို့။",
+        "status": true
+      },
+      {
+        "japanese": "ひるごはんをたべましょう。",
+        "english": "Let's eat lunch.",
+        "myanmar": "နေ့လည်စာ စားကြစို့။",
+        "status": true
+      }
+    ],
+    "status": true
+  },
+  {
+    "level_id": "N5",
+    "title": "Verb-stem + たいです",
+    "title_mm": "Verb-stem + たいです (ဆန္ဒ)",
+    "explanation_mm": "မိမိ၏ဆန္ဒကို ဖော်ပြရန် အသုံးပြုသည်။ ကြိယာ၏ 'ます' ကို 'たいです' ဖြင့် အစားထိုးပါ။ '...ချင်တယ်' ဟု အဓိပ္ပာယ်ရသည်။",
+    "explanation_en": "Used to express one's own desire to do something. Replace 'ます' from the verb with 'たいです'. It means 'I want to...'",
+    "examples": [
+      {
+        "japanese": "わたしはにほんへいきたいです。",
+        "english": "I want to go to Japan.",
+        "myanmar": "ကျွန်တော် ဂျပန်ကို သွားချင်တယ်။",
+        "status": true
+      },
+      {
+        "japanese": "あたらしいカメラをかいたいです。",
+        "english": "I want to buy a new camera.",
+        "myanmar": "ကင်မရာအသစ်တစ်လုံး ဝယ်ချင်တယ်။",
+        "status": true
+      }
+    ],
+    "status": true
+  },
+  {
+    "level_id": "N5",
+    "title": "Adjective + Noun",
+    "title_mm": "နာမဝိသေသန + နာမ်",
+    "explanation_mm": "နာမ်တစ်ခုကို အထူးပြုရန် နာမဝိသေသနကို နာမ်၏ရှေ့တွင်ထားပါ။ い-adjective ဆိုလျှင် 'い' နှင့်တွဲသုံးပြီး၊ な-adjective ဆိုလျှင် 'な' နှင့်တွဲသုံးပါ။",
+    "explanation_en": "To modify a noun, place the adjective before it. For i-adjectives, keep the 'い'. For na-adjectives, add 'な' between the adjective and the noun.",
+    "examples": [
+      {
+        "japanese": "ふじさんはたかいやまです。",
+        "english": "Mt. Fuji is a high mountain.",
+        "myanmar": "ဖူဂျီတောင်က မြင့်တဲ့တောင်တစ်လုံး ဖြစ်ပါတယ်။",
+        "status": true
+      },
+      {
+        "japanese": "ならはゆうめいなまちです。",
+        "english": "Nara is a famous town.",
+        "myanmar": "နာရာက ကျော်ကြားတဲ့မြို့တစ်မြို့ ဖြစ်ပါတယ်။",
+        "status": true
+      }
+    ],
+    "status": true
+  },
+  {
+    "level_id": "N5",
+    "title": "Frequency Adverbs",
+    "title_mm": "အကြိမ်အရေအတွက်ပြ ကြိယာဝိသေသနများ",
+    "explanation_mm": "လုပ်ဆောင်ချက်တစ်ခု မည်မျှမကြာခဏ ဖြစ်ပွားသည်ကို ဖော်ပြသည်။ ဥပမာ: いつも (အမြဲတမ်း), ときどき (တစ်ခါတစ်ရံ), あまり (သိပ်မ...), ぜんぜん (လုံးဝမ...). 'あまり' နှင့် 'ぜんぜん' ကို အငြင်းဝါကျနှင့် တွဲသုံးသည်။",
+    "explanation_en": "These adverbs describe how often an action occurs. Examples: いつも (always), ときどき (sometimes), あまり (not often), ぜんぜん (not at all). 'あまり' and 'ぜんぜん' are used with negative verbs.",
+    "examples": [
+      {
+        "japanese": "わたしはときどきえいがをみます。",
+        "english": "I sometimes watch movies.",
+        "myanmar": "ကျွန်တော် တစ်ခါတစ်ရံ ရုပ်ရှင်ကြည့်တယ်။",
+        "status": true
+      },
+      {
+        "japanese": "わたしはあまりコーヒーをのみません。",
+        "english": "I don't drink coffee very often.",
+        "myanmar": "ကျွန်တော် ကော်ဖီ သိပ်မသောက်ဘူး။",
+        "status": true
+      }
+    ],
+    "status": true
+  },
+  {
+    "level_id": "N5",
+    "title": "Counter Suffixes",
+    "title_mm": "အရာဝတ္ထု ရေတွက်ပုံ",
+    "explanation_mm": "ဂျပန်ဘာသာတွင် အရာဝတ္ထုများကို ရေတွက်ရာ၌ အမျိုးအစားအလိုက် ရေတွက်သည့် နောက်ဆက်တွဲ စကားလုံးများ (counters) ရှိသည်။ ဥပမာ- ～つ (ယေဘုယျ), ～人 (လူ), ～台 (စက်ပစ္စည်း)။",
+    "explanation_en": "In Japanese, you use specific counter suffixes depending on the type of object being counted. Examples: ～つ (general items), ～人 (people), ～台 (machines/vehicles).",
+    "examples": [
+      {
+        "japanese": "りんごをみっつください。",
+        "english": "Please give me three apples.",
+        "myanmar": "ပန်းသီးသုံးလုံး ပေးပါ။",
+        "status": true
+      },
+      {
+        "japanese": "きょうしつにがくせいがふたりいます。",
+        "english": "There are two students in the classroom.",
+        "myanmar": "စာသင်ခန်းထဲမှာ ကျောင်းသားနှစ်ယောက် ရှိပါတယ်။",
+        "status": true
+      }
+    ],
+    "status": true
+  },
+  {
+    "level_id": "N5",
+    "title": "あげます",
+    "title_mm": "あげます (ပေးသည်)",
+    "explanation_mm": "'ပေးသည်' ဟု အဓိပ္ပာယ်ရသည်။ ပေးသူက အခြားသူတစ်ယောက်ကို ပစ္စည်းတစ်ခုခုပေးသည့်အခါ သုံးသည်။ လက်ခံသူကို 'に' particle ဖြင့် ဖော်ပြသည်။",
+    "explanation_en": "Means 'to give'. Used when the speaker or someone else gives something to another person (out-group). The receiver is marked with the particle 'に'.",
+    "examples": [
+      {
+        "japanese": "わたしはともだちにプレゼントをあげます。",
+        "english": "I will give a present to my friend.",
+        "myanmar": "ကျွန်တော်က သူငယ်ချင်းကို လက်ဆောင် ပေးပါမယ်။",
+        "status": true
+      },
+      {
+        "japanese": "やまださんはきむらさんにはなをあげました。",
+        "english": "Mr. Yamada gave flowers to Ms. Kimura.",
+        "myanmar": "ကိုယာမာဒါက မခီမူရာကို ပန်းတွေ ပေးခဲ့တယ်။",
+        "status": true
+      }
+    ],
+    "status": true
+  },
+  {
+    "level_id": "N5",
+    "title": "もらいます",
+    "title_mm": "もらいます (လက်ခံရရှိသည်)",
+    "explanation_mm": "'လက်ခံရရှိသည်' ဟု အဓိပ္ပာယ်ရသည်။ ပစ္စည်းတစ်ခုခုကို အခြားသူထံမှ လက်ခံရရှိသည့်အခါ သုံးသည်။ ပေးသူကို 'に' သို့မဟုတ် 'から' particle ဖြင့် ဖော်ပြသည်။",
+    "explanation_en": "Means 'to receive'. Used when someone receives something from another person. The giver is marked with the particle 'に' or 'から'.",
+    "examples": [
+      {
+        "japanese": "わたしはははにＴシャツをもらいました。",
+        "english": "I received a T-shirt from my mother.",
+        "myanmar": "ကျွန်တော် အမေ့ဆီက တီရှပ်တစ်ထည် လက်ဆောင်ရခဲ့တယ်။",
+        "status": true
+      },
+      {
+        "japanese": "さとうさんはミラーさんからほんをもらいました。",
+        "english": "Ms. Sato received a book from Mr. Miller.",
+        "myanmar": "မစ္စဆာတိုက မစ္စတာမီလာဆီက စာအုပ်တစ်အုပ် လက်ခံရရှိခဲ့တယ်။",
+        "status": true
+      }
+    ],
+    "status": true
+  },
+  {
+    "level_id": "N5",
+    "title": "くれます",
+    "title_mm": "くれます (ကျွန်တော့်ကို ပေးသည်)",
+    "explanation_mm": "အခြားသူတစ်ယောက်က 'ကျွန်တော်' သို့မဟုတ် 'ကျွန်တော့်မိသားစုဝင်' ကို ပစ္စည်းတစ်ခုခုပေးသည့်အခါ သုံးသည်။ 'あげます' နှင့်မတူဘဲ လက်ခံသူမှာ မိမိဘက်တော်သားဖြစ်ကြောင်း ပြသည်။",
+    "explanation_en": "Means 'to give'. Used when someone gives something to the speaker or a member of the speaker's in-group (e.g., family).",
+    "examples": [
+      {
+        "japanese": "ともだちがわたしにおみやげをくれました。",
+        "english": "My friend gave me a souvenir.",
+        "myanmar": "သူငယ်ချင်းက ကျွန်တော့်ကို အမှတ်တရလက်ဆောင် ပေးခဲ့တယ်။",
+        "status": true
+      },
+      {
+        "japanese": "たなかさんはおとうとにおもちゃをくれました。",
+        "english": "Mr. Tanaka gave my younger brother a toy.",
+        "myanmar": "ကိုတာနာကာက ကျွန်တော့်ညီလေးကို အရုပ်တစ်ရုပ် ပေးခဲ့တယ်။",
+        "status": true
+      }
+    ],
+    "status": true
+  },
+  {
+    "level_id": "N5",
+    "title": "Verb て-form",
+    "title_mm": "ကြိယာ て-form",
+    "explanation_mm": "ကြိယာ၏ အရေးကြီးသော ပုံစံပြောင်းတစ်ခုဖြစ်သည်။ ဝါကျများဆက်ရန်၊ တောင်းဆိုမှုများပြုလုပ်ရန်နှင့် အခြားသော သဒ္ဒါပုံစံများစွာတွင် အသုံးပြုသည်။ ကြိယာအုပ်စုပေါ်မူတည်၍ ပြောင်းလဲပုံကွဲပြားသည်။",
+    "explanation_en": "A crucial verb conjugation. The te-form is used to connect sentences, make requests, and is a component of many other grammar patterns. Conjugation rules depend on the verb group.",
+    "examples": [
+      {
+        "japanese": "あさおきて、ごはんをたべて、がっこうへいきます。",
+        "english": "In the morning I wake up, eat a meal, and go to school.",
+        "myanmar": "မနက် အိပ်ရာထ၊ ထမင်းစားပြီး ကျောင်းသွားပါတယ်။",
+        "status": true
+      },
+      {
+        "japanese": "スーパーへいって、かいものをします。",
+        "english": "I will go to the supermarket and do some shopping.",
+        "myanmar": "စူပါမားကတ်ကို သွားပြီး ဈေးဝယ်ပါမယ်။",
+        "status": true
+      }
+    ],
+    "status": true
+  },
+  {
+    "level_id": "N5",
+    "title": "Verb て-form + ください",
+    "title_mm": "Verb て-form + ください (တောင်းဆိုခြင်း)",
+    "explanation_mm": "တစ်စုံတစ်ယောက်ကို ယဉ်ကျေးစွာ တောင်းဆိုရန် သို့မဟုတ် ညွှန်ကြားရန် အသုံးပြုသည်။ 'ကျေးဇူးပြု၍ ...ပေးပါ' ဟု အဓိပ္ပာယ်ရသည်။",
+    "explanation_en": "Used to make a polite request or give instructions. It means 'Please do...'",
+    "examples": [
+      {
+        "japanese": "ここになまえをかいてください。",
+        "english": "Please write your name here.",
+        "myanmar": "ဒီနေရာမှာ နာမည်ရေးပေးပါ။",
+        "status": true
+      },
+      {
+        "japanese": "ちょっとまってください。",
+        "english": "Please wait a moment.",
+        "myanmar": "ခဏလောက် စောင့်ပေးပါ။",
+        "status": true
+      }
+    ],
+    "status": true
+  },
+  {
+    "level_id": "N5",
+    "title": "Verb て-form + います",
+    "title_mm": "Verb て-form + います (ပြုလုပ်နေဆဲ)",
+    "explanation_mm": "လက်ရှိအချိန်တွင် ဖြစ်ပျက်နေသော သို့မဟုတ် ဆက်လက်ဖြစ်ပေါ်နေသော အပြုအမူကို ဖော်ပြသည်။ '...လုပ်နေသည်' ဟု အဓိပ္ပာယ်ရသည်။",
+    "explanation_en": "Indicates an action that is currently in progress or a continuous state. It is the equivalent of the '-ing' form in English.",
+    "examples": [
+      {
+        "japanese": "ミラーさんはいま、でんわをしています。",
+        "english": "Mr. Miller is talking on the phone right now.",
+        "myanmar": "မစ္စတာမီလာက အခု ဖုန်းပြောနေပါတယ်။",
+        "status": true
+      },
+      {
+        "japanese": "そとであめがふっています。",
+        "english": "It is raining outside.",
+        "myanmar": "အပြင်မှာ မိုးရွာနေပါတယ်။",
+        "status": true
+      }
+    ],
+    "status": true
+  },
+  {
+    "level_id": "N5",
+    "title": "Verb て-form + もいいです",
+    "title_mm": "Verb て-form + もいいです (ခွင့်ပြုချက်)",
+    "explanation_mm": "ခွင့်ပြုချက်ပေးသည့်အခါ အသုံးပြုသည်။ '...ပြုလုပ်လို့ရတယ်' ဟု အဓိပ္ပာယ်ရသည်။ မေးခွန်းပုံစံ '～てもいいですか' မှာ ခွင့်တောင်းရာတွင် အသုံးများသည်။",
+    "explanation_en": "Used to give permission. It means 'You may do...' or 'It is okay to do...'. The question form, '～てもいいですか', is used to ask for permission.",
+    "examples": [
+      {
+        "japanese": "ここでしゃしんをとってもいいです。",
+        "english": "You may take pictures here.",
+        "myanmar": "ဒီနေရာမှာ ဓာတ်ပုံရိုက်လို့ ရပါတယ်။",
+        "status": true
+      },
+      {
+        "japanese": "このへやにはいってもいいです。",
+        "english": "You may enter this room.",
+        "myanmar": "ဒီအခန်းထဲကို ဝင်လို့ရပါတယ်။",
+        "status": true
+      }
+    ],
+    "status": true
+  },
+  {
+    "level_id": "N5",
+    "title": "Verb て-form + はいけません",
+    "title_mm": "Verb て-form + はいけません (တားမြစ်ခြင်း)",
+    "explanation_mm": "တားမြစ်ချက်ကို ပြင်းထန်စွာ ဖော်ပြသည်။ '...မပြုလုပ်ရ' ဟု အဓိပ္ပာယ်ရသည်။",
+    "explanation_en": "Used to express a strong prohibition. It means 'You must not do...' or 'You are not allowed to do...'",
+    "examples": [
+      {
+        "japanese": "ここでタバコをすってはいけません。",
+        "english": "You must not smoke here.",
+        "myanmar": "ဒီနေရာမှာ ဆေးလိပ်သောက်ခွင့်မရှိ။",
+        "status": true
+      },
+      {
+        "japanese": "としょかんでたべてはいけません。",
+        "english": "You must not eat in the library.",
+        "myanmar": "စာကြည့်တိုက်ထဲမှာ စားသောက်ခွင့်မရှိ။",
+        "status": true
+      }
+    ],
+    "status": true
+  },
+  {
+    "level_id": "N5",
+    "title": "Verb て-form + から",
+    "title_mm": "Verb て-form + から (ပြီးနောက်)",
+    "explanation_mm": "လုပ်ဆောင်ချက်တစ်ခု ပြီးဆုံးပြီးနောက် နောက်တစ်ခုကို လုပ်ဆောင်ကြောင်း ဖော်ပြသည်။ '...လုပ်ပြီးနောက်မှာ' ဟု အဓိပ္ပာယ်ရသည်။",
+    "explanation_en": "Indicates that the second action happens after the first action is completed. It means 'after doing...'",
+    "examples": [
+      {
+        "japanese": "しゅくだいがおわってから、テレビをみます。",
+        "english": "After I finish my homework, I will watch TV.",
+        "myanmar": "အိမ်စာလုပ်ပြီးသွားမှ တီဗီကြည့်မယ်။",
+        "status": true
+      },
+      {
+        "japanese": "シャワーをあびてから、ねます。",
+        "english": "I go to sleep after taking a shower.",
+        "myanmar": "ရေချိုးပြီးမှ အိပ်ပါတယ်။",
+        "status": true
+      }
+    ],
+    "status": true
+  },
+  {
+    "level_id": "N5",
+    "title": "Transportation + で",
+    "title_mm": "သယ်ယူပို့ဆောင်ရေး + で (ဖြင့်)",
+    "explanation_mm": "ခရီးသွားရန် အသုံးပြုသည့် သယ်ယူပို့ဆောင်ရေး နည်းလမ်းကို ဖော်ပြသည်။ '(ယာဉ်) ဖြင့်' ဟု အဓိပ္ပာယ်ရသည်။",
+    "explanation_en": "Indicates the mode of transportation used for travel. It means 'by' or 'via' a vehicle.",
+    "examples": [
+      {
+        "japanese": "わたしはでんしゃでかいしゃへいきます。",
+        "english": "I go to the company by train.",
+        "myanmar": "ကျွန်တော်က ရထားနဲ့ ကုမ္ပဏီကို သွားပါတယ်။",
+        "status": true
+      },
+      {
+        "japanese": "ひこうきでアメリカへいきました。",
+        "english": "I went to America by airplane.",
+        "myanmar": "လေယာဉ်နဲ့ အမေရိကကို သွားခဲ့တယ်။",
+        "status": true
+      }
+    ],
+    "status": true
+  },
+  {
+    "level_id": "N5",
+    "title": "Dictionary Form (辞書形)",
+    "title_mm": "Dictionary Form (辞書形)",
+    "explanation_mm": "ကြိယာ၏ ရိုးရိုးပုံစံ (plain form) ဖြစ်ပြီး အဘိဓာန်တွင် ရှာဖွေရာ၌ အသုံးပြုသော ပုံစံဖြစ်သည်။ ယဉ်ကျေးသော '-ます' form မဟုတ်ဘဲ သာမန်ပြောဆိုရာတွင် သုံးသည်။",
+    "explanation_en": "The plain, non-past, affirmative form of a verb. This is the form found in dictionaries and is used in casual speech and various grammar patterns.",
+    "examples": [
+      {
+        "japanese": "わたしのしゅみはほんをよむことです。",
+        "english": "My hobby is reading books.",
+        "myanmar": "ကျွန်တော့်ရဲ့ဝါသနာက စာအုပ်ဖတ်ခြင်း ဖြစ်ပါတယ်။",
+        "status": true
+      },
+      {
+        "japanese": "ねるまえに、はをみがきます。",
+        "english": "Before going to sleep, I brush my teeth.",
+        "myanmar": "မအိပ်ခင်မှာ သွားတိုက်ပါတယ်။",
+        "status": true
+      }
+    ],
+    "status": true
+  },
+  {
+    "level_id": "N5",
+    "title": "Dictionary Form + ことができます",
+    "title_mm": "Dictionary Form + ことができます (สามารถ)",
+    "explanation_mm": "စွမ်းရည် သို့မဟုတ် ဖြစ်နိုင်ခြေကို ဖော်ပြသည်။ '...လုပ်နိုင်သည်' ဟု အဓိပ္ပာယ်ရသည်။",
+    "explanation_en": "Expresses ability or possibility. It means 'can do...' or 'is able to do...'",
+    "examples": [
+      {
+        "japanese": "わたしはギターをひくことができます。",
+        "english": "I can play the guitar.",
+        "myanmar": "ကျွန်တော် ဂစ်တာတီးနိုင်ပါတယ်။",
+        "status": true
+      },
+      {
+        "japanese": "ここでチケットをかうことができます。",
+        "english": "You can buy tickets here.",
+        "myanmar": "ဒီနေရာမှာ လက်မှတ်ဝယ်လို့ရနိုင်ပါတယ်။",
+        "status": true
+      }
+    ],
+    "status": true
+  },
+  {
+    "level_id": "N5",
+    "title": "Nai Form (ない形)",
+    "title_mm": "Nai Form (ない形)",
+    "explanation_mm": "ကြိယာ၏ ရိုးရိုး အငြင်းပုံစံ (plain negative) ဖြစ်သည်။ ယဉ်ကျေးသော '-ません' ၏ သာမန်ပြောဆိုမှုပုံစံ ဖြစ်သည်။",
+    "explanation_en": "The plain, non-past, negative form of a verb. It is the casual equivalent of the polite '-ません' form.",
+    "examples": [
+      {
+        "japanese": "わたしはにくをたべない。",
+        "english": "I don't eat meat. (casual)",
+        "myanmar": "ငါ အသားမစားဘူး။ (သာမန်)",
+        "status": true
+      },
+      {
+        "japanese": "あしたはがっこうへいかない。",
+        "english": "I will not go to school tomorrow. (casual)",
+        "myanmar": "မနက်ဖြန် ကျောင်းမသွားဘူး။ (သာမန်)",
+        "status": true
+      }
+    ],
+    "status": true
+  },
+  {
+    "level_id": "N5",
+    "title": "Nai Form + でください",
+    "title_mm": "Nai Form + でください (တားမြစ်ခြင်း)",
+    "explanation_mm": "တစ်စုံတစ်ယောက်ကို တစ်ခုခုမလုပ်ရန် ယဉ်ကျေးစွာ တောင်းဆိုရာတွင် အသုံးပြုသည်။ 'ကျေးဇူးပြု၍ ...မလုပ်ပါနဲ့' ဟု အဓိပ္ပာယ်ရသည်။",
+    "explanation_en": "Used to politely ask someone not to do something. It means 'Please don't do...'",
+    "examples": [
+      {
+        "japanese": "しんぱいしないでください。",
+        "english": "Please don't worry.",
+        "myanmar": "ကျေးဇူးပြုပြီး စိတ်မပူပါနဲ့။",
+        "status": true
+      },
+      {
+        "japanese": "ここでしゃしんをとらないでください。",
+        "english": "Please don't take pictures here.",
+        "myanmar": "ကျေးဇူးပြုပြီး ဒီနေရာမှာ ဓာတ်ပုံမရိုက်ပါနဲ့။",
+        "status": true
+      }
+    ],
+    "status": true
+  },
+  {
+    "level_id": "N5",
+    "title": "Nai Form + なければなりません",
+    "title_mm": "Nai Form + なければなりません (ต้อง)",
+    "explanation_mm": "မဖြစ်မနေလုပ်ရမည့် တာဝန် သို့မဟုတ် လိုအပ်ချက်ကို ဖော်ပြသည်။ '...လုပ်ရမည်' ဟု အဓိပ္ပာယ်ရသည်။ Nai Form ၏ 'い' ကို ဖြုတ်ပြီး 'ければなりません' ပေါင်းထည့်ရသည်။",
+    "explanation_en": "Expresses obligation or necessity. It means 'must do...' or 'have to do...'. Remove the final 'い' from the Nai-form and add 'ければなりません'.",
+    "examples": [
+      {
+        "japanese": "くすりをのまなければなりません。",
+        "english": "I have to take the medicine.",
+        "myanmar": "ဆေးသောက်ရပါမယ်။",
+        "status": true
+      },
+      {
+        "japanese": "はやくおきなければなりません。",
+        "english": "I have to wake up early.",
+        "myanmar": "စောစောထရပါမယ်။",
+        "status": true
+      }
+    ],
+    "status": true
+  },
+  {
+    "level_id": "N5",
+    "title": "Ta Form (た形)",
+    "title_mm": "Ta Form (た形)",
+    "explanation_mm": "ကြိယာ၏ ရိုးရိုး အတိတ်ကာလပုံစံ (plain past) ဖြစ်သည်။ ယဉ်ကျေးသော '-ました' ၏ သာမန်ပြောဆိုမှုပုံစံ ဖြစ်သည်။",
+    "explanation_en": "The plain, past, affirmative form of a verb. It is the casual equivalent of the polite '-ました' form.",
+    "examples": [
+      {
+        "japanese": "きのうみたえいがはおもしろかった。",
+        "english": "The movie I saw yesterday was interesting.",
+        "myanmar": "မနေ့က ကြည့်ခဲ့တဲ့ ရုပ်ရှင်က စိတ်ဝင်စားဖို့ကောင်းတယ်။",
+        "status": true
+      },
+      {
+        "japanese": "これはともだちにもらったプレゼントだ。",
+        "english": "This is a present I received from a friend. (casual)",
+        "myanmar": "ဒါက သူငယ်ချင်းဆီက ရခဲ့တဲ့ လက်ဆောင်။ (သာမန်)",
+        "status": true
+      }
+    ],
+    "status": true
+  },
+  {
+    "level_id": "N5",
+    "title": "Ta Form + ことがあります",
+    "title_mm": "Ta Form + ことがあります (เคย)",
+    "explanation_mm": "အတိတ်က အတွေ့အကြုံတစ်ခုကို ပြောပြရာတွင် အသုံးပြုသည်။ '...လုပ်ဖူးသည်' ဟု အဓိပ္ပာယ်ရသည်။",
+    "explanation_en": "Used to talk about a past experience. It means 'have done...' or 'have the experience of...'",
+    "examples": [
+      {
+        "japanese": "わたしはすしをたべたことがあります。",
+        "english": "I have eaten sushi before.",
+        "myanmar": "ကျွန်တော် ဆူရှီ စားဖူးပါတယ်။",
+        "status": true
+      },
+      {
+        "japanese": "ふじさんにのぼったことがありますか。",
+        "english": "Have you ever climbed Mt. Fuji?",
+        "myanmar": "ဖူဂျီတောင်ကို တက်ဖူးပါသလား။",
+        "status": true
+      }
+    ],
+    "status": true
+  },
+  {
+    "level_id": "N5",
+    "title": "Ta Form + り... Ta Form + りします",
+    "title_mm": "Ta Form + り... Ta Form + りします (...လုပ်လိုက် ...လုပ်လိုက်)",
+    "explanation_mm": "လုပ်ဆောင်ချက်များစွာထဲမှ အချို့ကို ဥပမာအနေဖြင့် စီစဉ်ထားခြင်းမရှိဘဲ စာရင်းပြုစုဖော်ပြသည်။",
+    "explanation_en": "Used to list several actions as examples from a wider range of activities, without a specific sequence.",
+    "examples": [
+      {
+        "japanese": "にちようびは、ほんをよんだり、えいがをみたりします。",
+        "english": "On Sundays, I do things like reading books and watching movies.",
+        "myanmar": "တနင်္ဂနွေနေ့တွေမှာ စာအုပ်ဖတ်လိုက်၊ ရုပ်ရှင်ကြည့်လိုက် လုပ်ပါတယ်။",
+        "status": true
+      },
+      {
+        "japanese": "きのう、デパートでシャツをかったり、ごはんをたべたりしました。",
+        "english": "Yesterday at the department store, I did things like buying a shirt and eating a meal.",
+        "myanmar": "မနေ့က ကုန်တိုက်မှာ ရှပ်အင်္ကျီဝယ်လိုက်၊ ထမင်းစားလိုက် လုပ်ခဲ့ပါတယ်။",
+        "status": true
+      }
+    ],
+    "status": true
+  },
+  {
+    "level_id": "N5",
+    "title": "Plain Form + と思います",
+    "title_mm": "Plain Form + と思います (ထင်သည်)",
+    "explanation_mm": "မိမိ၏ ထင်မြင်ယူဆချက်ကို ဖော်ပြရာတွင် အသုံးပြုသည်။ '...လို့ ထင်တယ်' ဟု အဓိပ္ပာယ်ရသည်။",
+    "explanation_en": "Used to state one's own opinion or conjecture. It means 'I think that...'",
+    "examples": [
+      {
+        "japanese": "あしたはあめがふるとおもいます。",
+        "english": "I think it will rain tomorrow.",
+        "myanmar": "မနက်ဖြန် မိုးရွာမယ်လို့ ထင်ပါတယ်။",
+        "status": true
+      },
+      {
+        "japanese": "ミラーさんはこのニュースをしっているとおもいます。",
+        "english": "I think Mr. Miller knows this news.",
+        "myanmar": "မစ္စတာမီလာက ဒီသတင်းကို သိတယ်လို့ ထင်ပါတယ်။",
+        "status": true
+      }
+    ],
+    "status": true
+  },
+  {
+    "level_id": "N5",
+    "title": "Plain Form + と言いました",
+    "title_mm": "Plain Form + と言いました (...လို့ ပြောခဲ့တယ်)",
+    "explanation_mm": "အခြားသူပြောခဲ့သော စကားကို ပြန်လည်ပြောပြရာတွင် အသုံးပြုသည်။ (Reported Speech)",
+    "explanation_en": "Used to report what someone else has said. (Reported Speech)",
+    "examples": [
+      {
+        "japanese": "たなかさんは「あしたやすみます」といいました。",
+        "english": "Mr. Tanaka said, \"I will take a day off tomorrow.\"",
+        "myanmar": "ကိုတာနာကာက 'မနက်ဖြန် ခွင့်ယူမယ်' လို့ ပြောခဲ့ပါတယ်။",
+        "status": true
+      },
+      {
+        "japanese": "かのじょはパーティーにいかないといいました。",
+        "english": "She said she will not go to the party.",
+        "myanmar": "သူမက ပါတီကို မသွားဘူးလို့ ပြောခဲ့ပါတယ်။",
+        "status": true
+      }
+    ],
+    "status": true
+  },
+  {
+    "level_id": "N5",
+    "title": "A は B より [Adjective] です",
+    "title_mm": "A က B ထက် [Adjective] ဖြစ်သည်",
+    "explanation_mm": "အရာနှစ်ခုကို နှိုင်းယှဉ်ရာတွင် အသုံးပြုသည်။ 'B ထက် A က ပို၍ ... ဖြစ်သည်' ဟု အဓိပ္ပာယ်ရသည်။",
+    "explanation_en": "Used to compare two items, stating that one has a quality to a greater degree than the other. It means 'A is more [adjective] than B'.",
+    "examples": [
+      {
+        "japanese": "ひこうきはでんしゃよりはやいです。",
+        "english": "Airplanes are faster than trains.",
+        "myanmar": "လေယာဉ်က ရထားထက် ပိုမြန်ပါတယ်။",
+        "status": true
+      },
+      {
+        "japanese": "このかばんはあのかばんよりたかいです。",
+        "english": "This bag is more expensive than that bag.",
+        "myanmar": "ဒီအိတ်က ဟိုအိတ်ထက် ဈေးပိုကြီးပါတယ်။",
+        "status": true
+      }
+    ],
+    "status": true
+  },
+  {
+    "level_id": "N5",
+    "title": "AとBとどちらが [Adjective] ですか",
+    "title_mm": "A နှင့် B တွင် ဘယ်ဟာက ပို၍ ... လဲ",
+    "explanation_mm": "အရာနှစ်ခုထဲမှ တစ်ခုကို ရွေးချယ်ရန် မေးခွန်းမေးသည့်အခါ သုံးသည်။ 'A နှင့် B တွင် ဘယ်ဟာက ပို၍ ... ဖြစ်ပါသလဲ' ဟု အဓိပ္ပာယ်ရသည်။",
+    "explanation_en": "Used to ask for a comparison between two items. It means 'Between A and B, which is more [adjective]?'",
+    "examples": [
+      {
+        "japanese": "いぬとねことどちらがすきですか。",
+        "english": "Which do you like more, dogs or cats?",
+        "myanmar": "ခွေးနဲ့ကြောင်မှာ ဘယ်ဟာကို ပိုကြိုက်လဲ။",
+        "status": true
+      },
+      {
+        "japanese": "にほんごとかんこくごとどちらがむずかしいですか。",
+        "english": "Which is more difficult, Japanese or Korean?",
+        "myanmar": "ဂျပန်ဘာသာနဲ့ ကိုရီးယားဘာသာမှာ ဘယ်ဟာက ပိုခက်လဲ။",
+        "status": true
+      }
+    ],
+    "status": true
+  },
+  {
+    "level_id": "N5",
+    "title": "A のほうが B より [Adjective] です",
+    "title_mm": "A က B ထက် ပို၍ [Adjective] ဖြစ်သည်",
+    "explanation_mm": "'どちらが～ですか' မေးခွန်း၏ အဖြေတွင် အသုံးပြုသည်။ 'B ထက် A က ပို၍ ... ဖြစ်သည်' ဟု အဓိပ္ပာယ်ရသည်။",
+    "explanation_en": "Used to answer a 'どちらが～ですか' question, making a definitive comparison. It means 'A is more [adjective] than B'.",
+    "examples": [
+      {
+        "japanese": "ねこよりいぬのほうがすきです。",
+        "english": "I like dogs more than cats.",
+        "myanmar": "ကြောင်ထက် ခွေးကို ပိုကြိုက်ပါတယ်။",
+        "status": true
+      },
+      {
+        "japanese": "バスよりでんしゃのほうがはやいです。",
+        "english": "The train is faster than the bus.",
+        "myanmar": "ဘတ်စ်ကားထက် ရထားက ပိုမြန်ပါတယ်။",
+        "status": true
+      }
+    ],
+    "status": true
+  },
+  {
+    "level_id": "N5",
+    "title": "[Group] の中で A がいちばん [Adjective] です",
+    "title_mm": "[အုပ်စု] ထဲတွင် A က အ...ဆုံး ဖြစ်သည်",
+    "explanation_mm": "အရာသုံးခု သို့မဟုတ် ထို့ထက်ပိုသော အရာများထဲတွင် အသာလွန်ဆုံးကို ဖော်ပြသည်။ '...အထဲမှာ ...က အ...ဆုံး ဖြစ်တယ်' ဟု အဓိပ္ပာယ်ရသည်။",
+    "explanation_en": "Used to express the superlative, indicating something has a quality to the highest degree within a group of three or more.",
+    "examples": [
+      {
+        "japanese": "スポーツのなかでサッカーがいちばんおもしろいです。",
+        "english": "Among sports, soccer is the most interesting.",
+        "myanmar": "အားကစားတွေထဲမှာ ဘောလုံးက အစိတ်ဝင်စားဖို့အကောင်းဆုံး ဖြစ်ပါတယ်။",
+        "status": true
+      },
+      {
+        "japanese": "せかいでどこがいちばんきれいですか。",
+        "english": "In the world, which place is the most beautiful?",
+        "myanmar": "ကမ္ဘာပေါ်မှာ ဘယ်နေရာက အလှဆုံးလဲ။",
+        "status": true
+      }
+    ],
+    "status": true
+  },
+  {
+    "level_id": "N5",
+    "title": "Sentence 1 から, Sentence 2",
+    "title_mm": "ဝါကျ ၁ ကြောင့်၊ ဝါကျ ၂",
+    "explanation_mm": "အကြောင်းပြချက်ကို ဖော်ပြသည်။ ပထမဝါကျသည် ဒုတိယဝါကျ၏ အကြောင်းရင်း ဖြစ်သည်။ '...ကြောင့်' ဟု အဓိပ္ပာယ်ရသည်။",
+    "explanation_en": "Indicates the reason or cause for the statement in the second sentence. Sentence 1 is the reason for Sentence 2.",
+    "examples": [
+      {
+        "japanese": "じかんがありませんから、タクシーでいきましょう。",
+        "english": "Because there is no time, let's go by taxi.",
+        "myanmar": "အချိန်မရှိတာကြောင့် တက္ကစီနဲ့ သွားကြစို့။",
+        "status": true
+      },
+      {
+        "japanese": "あしたテストがありますから、こんばんべんきょうします。",
+        "english": "Because there's a test tomorrow, I will study tonight.",
+        "myanmar": "မနက်ဖြန် စာမေးပွဲရှိတာကြောင့် ဒီည စာလုပ်ပါမယ်။",
+        "status": true
+      }
+    ],
+    "status": true
+  },
+  {
+    "level_id": "N5",
+    "title": "Verb-stem/Noun に 行きます",
+    "title_mm": "Verb-stem/Noun + သွားသည်",
+    "explanation_mm": "နေရာတစ်ခုသို့ သွားရခြင်း၏ ရည်ရွယ်ချက်ကို ဖော်ပြသည်။ ကြိယာ၏ 'ます' ကိုဖြုတ်ပြီး 'に' နှင့်ဆက်ပါ သို့မဟုတ် လုပ်ဆောင်ချက်နာမ်နှင့် 'に' ကိုဆက်ပါ။",
+    "explanation_en": "Expresses the purpose for going somewhere. Drop 'ます' from a verb and add 'に', or use a noun describing an action with 'に'.",
+    "examples": [
+      {
+        "japanese": "デパートへくつをかいにいきます。",
+        "english": "I am going to the department store to buy shoes.",
+        "myanmar": "ကုန်တိုက်ကို ဖိနပ်သွားဝယ်ပါမယ်။",
+        "status": true
+      },
+      {
+        "japanese": "にほんへにほんごのべんきょうにきました。",
+        "english": "I came to Japan to study Japanese.",
+        "myanmar": "ဂျပန်ကို ဂျပန်စာလေ့လာဖို့ လာခဲ့တာပါ။",
+        "status": true
+      }
+    ],
+    "status": true
+  },
+  {
+    "level_id": "N5",
+    "title": "Adjective to Adverb (く/に)",
+    "title_mm": "နာမဝိသေသနကို ကြိယာဝိသေသနအဖြစ် ပြောင်းလဲခြင်း (く/に)",
+    "explanation_mm": "ကြိယာကို အထူးပြုရန် နာမဝိသေသနကို ကြိယာဝိသေသနအဖြစ် ပြောင်းသုံးသည်။ い-adj ၏ 'い' ကို 'く' ပြောင်းပြီး၊ な-adj ၏နောက်တွင် 'に' ထည့်ပါ။",
+    "explanation_en": "Adjectives can be changed into adverbs to modify verbs. For i-adjectives, change the final 'い' to 'く'. For na-adjectives, add 'に' after it.",
+    "examples": [
+      {
+        "japanese": "もっとはやくはなしてください。",
+        "english": "Please speak more quickly.",
+        "myanmar": "ကျေးဇူးပြုပြီး ပိုမြန်မြန်ပြောပေးပါ။",
+        "status": true
+      },
+      {
+        "japanese": "へやをきれいにそうじしました。",
+        "english": "I cleaned the room cleanly.",
+        "myanmar": "အခန်းကို သန့်ရှင်းအောင် သန့်ရှင်းရေးလုပ်ခဲ့တယ်။",
+        "status": true
+      }
+    ],
+    "status": true
+  },
+  {
+    "level_id": "N5",
+    "title": "～になります",
+    "title_mm": "...ဖြစ်လာသည်",
+    "explanation_mm": "အခြေအနေတစ်ခုမှ အခြားတစ်ခုသို့ ပြောင်းလဲသွားခြင်းကို ဖော်ပြသည်။ နာမ်နှင့် な-adjective များ၏နောက်တွင် 'になります'၊ い-adjective များ၏နောက်တွင် 'くなります' ကိုသုံးသည်။",
+    "explanation_en": "Indicates a change of state, meaning 'to become' or 'to get'. Use 'になります' after nouns and na-adjectives, and 'くなります' after i-adjectives.",
+    "examples": [
+      {
+        "japanese": "らいねん、２０さいになります。",
+        "english": "I will become 20 years old next year.",
+        "myanmar": "နောက်နှစ်မှာ အသက် ၂၀ ဖြစ်လာပါမယ်။",
+        "status": true
+      },
+      {
+        "japanese": "さむくなりましたね。",
+        "english": "It has become cold, hasn't it?",
+        "myanmar": "အေးလာပြီနော်။",
+        "status": true
+      }
+    ],
+    "status": true
+  },
+  {
+    "level_id": "N5",
+    "title": "Plain Form + Noun",
+    "title_mm": "Plain Form + နာမ် (အထူးပြုဝါကျ)",
+    "explanation_mm": "နာမ်တစ်ခုကို အကျယ်တဝင့်ဖော်ပြရန် ဝါကျတစ်ခုလုံး (plain form) ကို အသုံးပြုသည်။ '...သော နာမ်' ဟု အဓိပ္ပာယ်ရသည်။",
+    "explanation_en": "A verb clause in its plain form can directly modify a noun that follows it. This creates a relative clause.",
+    "examples": [
+      {
+        "japanese": "あそこでほんをよんでいるひとはミラーさんです。",
+        "english": "The person who is reading a book over there is Mr. Miller.",
+        "myanmar": "ဟိုနားမှာ စာအုပ်ဖတ်နေတဲ့သူက မစ္စတာမီလာ ဖြစ်ပါတယ်။",
+        "status": true
+      },
+      {
+        "japanese": "これはわたしがきのうかったカメラです。",
+        "english": "This is the camera that I bought yesterday.",
+        "myanmar": "ဒါက ကျွန်တော်မနေ့က ဝယ်ခဲ့တဲ့ ကင်မရာ ဖြစ်ပါတယ်။",
+        "status": true
+      }
+    ],
+    "status": true
+  },
+  {
+    "level_id": "N5",
+    "title": "まだ ～ていません",
+    "title_mm": "まだ ...မသေးဘူး",
+    "explanation_mm": "လုပ်ဆောင်ချက်တစ်ခု မပြီးမြောက်သေးကြောင်း သို့မဟုတ် မစတင်ရသေးကြောင်း ဖော်ပြသည်။ '...မလုပ်ရသေးဘူး' ဟု အဓိပ္ပာယ်ရသည်။",
+    "explanation_en": "Indicates that an expected action has not yet happened. It means 'have not yet done...'",
+    "examples": [
+      {
+        "japanese": "もうひるごはんをたべましたか。…いいえ、まだたべていません。",
+        "english": "Have you eaten lunch already? ...No, I haven't eaten yet.",
+        "myanmar": "နေ့လည်စာ စားပြီးပြီလား။ ...ဟင့်အင်း၊ မစားရသေးပါဘူး။",
+        "status": true
+      },
+      {
+        "japanese": "バスはまだきていません。",
+        "english": "The bus has not come yet.",
+        "myanmar": "ဘတ်စ်ကားက မလာသေးပါဘူး။",
+        "status": true
+      }
+    ],
+    "status": true
   }
 ]

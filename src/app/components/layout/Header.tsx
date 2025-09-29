@@ -7,7 +7,7 @@ const AppHeader = () => (
       <div className="flex items-center justify-between h-20">
         <div className="flex items-center">
           <Link href={"/"} className="text-3xl font-bold text-[#3E3636] tracking-tight">
-            <span className="text-[#D72323]">葉</span> Konotoha
+            <span className="text-[#D72323]">葉</span> Kotonoha
           </Link>
         </div>
         <div className="flex items-center">
