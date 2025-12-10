@@ -10,6 +10,8 @@ interface VocabularyCardProps {
 const VocabularyCard = ({item}: VocabularyCardProps) => {
   // State to manage the visibility of the romaji spelling
   const [showRomaji, setShowRomaji] = useState(false);
+  const [showEnglish, setShowEnglish] = useState(false);
+  const [showMyanmar, setShowMyanmar] = useState(false);
 
   return (
     <div className="bg-white/80 p-6 rounded-2xl border border-black/5 flex items-center justify-between">
@@ -39,11 +41,36 @@ const VocabularyCard = ({item}: VocabularyCardProps) => {
         <div className="mt-3 space-y-2 flex-auto border-l-2 border-[#D72323]/50 pl-3">
           <div>
             <span className="block text-xs font-bold text-[#3E3636]/50">English</span>
-            <p className="text-md text-[#3E3636]/90">{item.meaning}</p>
+            {showEnglish ? (
+              <p className="text-md text-[#3E3636]/90">{item.meaning}</p>
+            ) : (
+              <p className="text-xs text-gray-400 font-bold tracking-wider italic">English hidden</p>
+            )}
+            {/* Toggle Button */}
+            <button
+              onClick={() => setShowEnglish(!showEnglish)}
+              className="text-gray-400 hover:text-[#3E3636] transition-colors"
+              title={showEnglish ? "Hide Romaji" : "Show Romaji"}
+            >
+              {showEnglish ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+            </button>
           </div>
           <div>
             <span className="block text-xs font-bold text-[#3E3636]/50">Myanmar</span>
-            <p className="text-md text-[#3E3636]/90">{item.meaning_mm}</p>
+            {showMyanmar ? (
+
+              <p className="text-md text-[#3E3636]/90">{item.meaning_mm}</p>
+            ) : (
+              <p className="text-xs text-gray-400 font-bold tracking-wider italic">Myanmar hidden</p>
+            )}
+            {/* Toggle Button */}
+            <button
+              onClick={() => setShowMyanmar(!showMyanmar)}
+              className="text-gray-400 hover:text-[#3E3636] transition-colors"
+              title={showMyanmar ? "Hide Romaji" : "Show Romaji"}
+            >
+              {showMyanmar ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+            </button>
           </div>
         </div>
       </div>
