@@ -4,7 +4,7 @@ import KanjiCard from "@/app/components/lesson/KanjiCard";
 import GrammarPointCard from "@/app/components/lesson/GrammarPointCard";
 // import ReadingPassage from "@/app/components/lesson/ReadingPassage";
 // import ListeningExercise from "@/app/components/lesson/ListeningExercise";
-import {ChevronLeft} from "lucide-react";
+import {ChevronLeft, Shuffle} from "lucide-react";
 import {GrammarProps, KanjiProps, VocabularyProps} from "@/types";
 import {createClient} from "@/utils/supabase/client";
 import {useParams} from "next/navigation";
@@ -61,6 +61,21 @@ const LessonContentPage = () => {
     if (lesson === 'kanji') getKanjiData(id, lesson);
     if (lesson === 'grammar') getGrammarData(id, lesson);
   }, [supabase, lesson, id]);
+
+  const handleRandomizeVocab = () => {
+    if (!vocab || vocab.length === 0) return;
+
+    // Create a copy to avoid mutating state directly
+    const shuffled = [...vocab];
+
+    // Fisher-Yates Shuffle Algorithm
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+
+    setVocabData(shuffled);
+  };
 
   let content;
   let header;
@@ -119,6 +134,17 @@ const LessonContentPage = () => {
         <Link href={`/level/${id}`} className="absolute left-0 top-1/2 -translate-y-1/2 p-3 rounded-full hover:bg-[#3E3636]/10 transition-colors duration-300"><ChevronLeft className="h-6 w-6 text-[#3E3636]" /></Link>
         <h2 className="text-4xl md:text-5xl font-extrabold tracking-tighter">{header?.title}</h2>
         <p className="mt-4 text-lg text-[#3E3636]/80">{header?.description}</p>
+        {lesson === 'vocab' && (
+          <div className="mt-6 flex justify-center">
+            <button
+              onClick={handleRandomizeVocab}
+              className="flex items-center gap-2 px-6 py-2 bg-[#3E3636] text-white rounded-full hover:bg-[#3E3636]/80 transition-all active:scale-95 shadow-md"
+            >
+              <Shuffle className="w-4 h-4" />
+              <span>Shuffle</span>
+            </button>
+          </div>
+        )}
       </div>
       {content ? (
         <div className={`grid ${gridLayout}`}>
