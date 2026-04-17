@@ -1,0 +1,266 @@
+[
+  {
+    "level_id": "N5",
+    "title": "じこしょうかい",
+    "title_en": "Self-Introduction",
+    "title_mm": "ကိုယ်ရေးမိတ်ဆက်",
+    "passage": "わたしのなまえはリンです。ミャンマーからきました。いま、にほんのとうきょうにすんでいます。だいがくでにほんごをべんきょうしています。にほんごはむずかしいですが、とてもおもしろいです。しゅみはえいがをみることです。にほんのえいががすきです。よろしくおねがいします。",
+    "translation_en": "My name is Lin. I came from Myanmar. I am currently living in Tokyo, Japan. I am studying Japanese at university. Japanese is difficult, but very interesting. My hobby is watching movies. I like Japanese movies. Nice to meet you.",
+    "translation_mm": "ကျွန်တော့်နာမည် လင်းပါ။ မြန်မာနိုင်ငံကနေ လာခဲ့ပါတယ်။ အခု ဂျပန်နိုင်ငံ တိုကျိုမှာ နေထိုင်ပါတယ်။ တက္ကသိုလ်မှာ ဂျပန်စာ လေ့လာနေပါတယ်။ ဂျပန်စာက ခက်ပေမယ့် အရမ်းစိတ်ဝင်စားဖို့ ကောင်းပါတယ်။ ဝါသနာက ရုပ်ရှင်ကြည့်ခြင်း ဖြစ်ပါတယ်။ ဂျပန်ရုပ်ရှင်ကို ကြိုက်ပါတယ်။ တွေ့ရတာဝမ်းသာပါတယ်။",
+    "questions": [
+      {
+        "question": "リンさんはどこからきましたか。",
+        "question_en": "Where did Lin come from?",
+        "question_mm": "လင်းက ဘယ်နိုင်ငံကနေ လာခဲ့ပါသလဲ။",
+        "options": ["にほん", "ミャンマー", "ちゅうごく", "タイ"],
+        "answer": "ミャンマー"
+      },
+      {
+        "question": "リンさんのしゅみはなんですか。",
+        "question_en": "What is Lin's hobby?",
+        "question_mm": "လင်းရဲ့ ဝါသနာက ဘာလဲ။",
+        "options": ["おんがくをきくこと", "えいがをみること", "ほんをよむこと", "りょうりをつくること"],
+        "answer": "えいがをみること"
+      },
+      {
+        "question": "にほんごはどうですか。",
+        "question_en": "How is Japanese?",
+        "question_mm": "ဂျပန်စာက ဘယ်လိုလဲ။",
+        "options": ["やさしくて、つまらないです", "むずかしくて、つまらないです", "むずかしいですが、おもしろいです", "やさしくて、おもしろいです"],
+        "answer": "むずかしいですが、おもしろいです"
+      }
+    ],
+    "status": true
+  },
+  {
+    "level_id": "N5",
+    "title": "わたしのいちにち",
+    "title_en": "My Daily Routine",
+    "title_mm": "ကျွန်တော့်ရဲ့ တစ်နေ့တာ",
+    "passage": "わたしはまいあさ６じにおきます。シャワーをあびてから、あさごはんをたべます。あさごはんはいつもパンとコーヒーです。７じはんにうちをでます。えきまであるいて１０ぷんです。でんしゃでかいしゃへいきます。かいしゃは９じから５じまでです。かいしゃのあとで、ときどきともだちとレストランでばんごはんをたべます。１１じごろねます。",
+    "translation_en": "I wake up at 6 o'clock every morning. After taking a shower, I eat breakfast. Breakfast is always bread and coffee. I leave home at 7:30. It's a 10-minute walk to the station. I go to the company by train. Work is from 9 to 5. After work, I sometimes eat dinner at a restaurant with friends. I go to sleep around 11.",
+    "translation_mm": "ကျွန်တော် မနက်တိုင်း ၆ နာရီမှာ အိပ်ရာထပါတယ်။ ရေချိုးပြီးတာနဲ့ မနက်စာ စားပါတယ်။ မနက်စာက အမြဲတမ်း ပေါင်မုန့်နဲ့ ကော်ဖီပါ။ ၇ နာရီခွဲမှာ အိမ်ကနေ ထွက်ပါတယ်။ ဘူတာအထိ လမ်းလျှောက်ရင် ၁၀ မိနစ် ကြာပါတယ်။ ရထားနဲ့ ကုမ္ပဏီကို သွားပါတယ်။ ကုမ္ပဏီက ၉ နာရီကနေ ၅ နာရီအထိ ဖြစ်ပါတယ်။ ကုမ္ပဏီပြီးတဲ့နောက် တစ်ခါတစ်ရံ သူငယ်ချင်းတွေနဲ့ စားသောက်ဆိုင်မှာ ညစာ စားပါတယ်။ ၁၁ နာရီလောက်မှာ အိပ်ပါတယ်။",
+    "questions": [
+      {
+        "question": "まいあさなんじにおきますか。",
+        "question_en": "What time does the person wake up every morning?",
+        "question_mm": "မနက်တိုင်း ဘယ်နှနာရီမှာ အိပ်ရာထပါသလဲ။",
+        "options": ["５じ", "６じ", "７じ", "８じ"],
+        "answer": "６じ"
+      },
+      {
+        "question": "かいしゃへなにでいきますか。",
+        "question_en": "How does the person go to work?",
+        "question_mm": "ကုမ္ပဏီကို ဘာနဲ့ သွားပါသလဲ။",
+        "options": ["バスで", "でんしゃで", "くるまで", "あるいて"],
+        "answer": "でんしゃで"
+      },
+      {
+        "question": "あさごはんはなにをたべますか。",
+        "question_en": "What does the person eat for breakfast?",
+        "question_mm": "မနက်စာ ဘာ စားပါသလဲ။",
+        "options": ["ごはんとみそしる", "パンとコーヒー", "たまごとジュース", "おにぎりとおちゃ"],
+        "answer": "パンとコーヒー"
+      }
+    ],
+    "status": true
+  },
+  {
+    "level_id": "N5",
+    "title": "わたしのかぞく",
+    "title_en": "My Family",
+    "title_mm": "ကျွန်တော့်ရဲ့ မိသားစု",
+    "passage": "わたしのかぞくは５にんです。ちちとははとあにとわたしといもうとです。ちちは５０さいで、かいしゃいんです。ははは４８さいで、びょういんではたらいています。あには２５さいで、もうけっこんしています。いもうとは１８さいで、こうこうせいです。わたしたちはみんなヤンゴンにすんでいます。",
+    "translation_en": "My family has 5 people. Father, mother, older brother, me, and younger sister. My father is 50 years old and is a company employee. My mother is 48 years old and works at a hospital. My older brother is 25 and is already married. My younger sister is 18 and is a high school student. We all live in Yangon.",
+    "translation_mm": "ကျွန်တော့်မိသားစုမှာ ၅ ယောက်ရှိပါတယ်။ အဖေ၊ အမေ၊ အစ်ကို၊ ကျွန်တော်၊ ညီမ ဖြစ်ပါတယ်။ အဖေက အသက် ၅၀ နှစ်ဖြစ်ပြီး ကုမ္ပဏီဝန်ထမ်း ဖြစ်ပါတယ်။ အမေက အသက် ၄၈ နှစ်ဖြစ်ပြီး ဆေးရုံမှာ အလုပ်လုပ်ပါတယ်။ အစ်ကိုက အသက် ၂၅ နှစ်ဖြစ်ပြီး လက်ထပ်ပြီးပါပြီ။ ညီမက အသက် ၁၈ နှစ်ဖြစ်ပြီး အထက်တန်းကျောင်းသူ ဖြစ်ပါတယ်။ ကျွန်တော်တို့အားလုံး ရန်ကုန်မှာ နေထိုင်ပါတယ်။",
+    "questions": [
+      {
+        "question": "かぞくはなんにんですか。",
+        "question_en": "How many people are in the family?",
+        "question_mm": "မိသားစုမှာ ဘယ်နှစ်ယောက် ရှိပါသလဲ။",
+        "options": ["３にん", "４にん", "５にん", "６にん"],
+        "answer": "５にん"
+      },
+      {
+        "question": "おかあさんはどこではたらいていますか。",
+        "question_en": "Where does the mother work?",
+        "question_mm": "အမေက ဘယ်မှာ အလုပ်လုပ်ပါသလဲ။",
+        "options": ["がっこう", "かいしゃ", "びょういん", "レストラン"],
+        "answer": "びょういん"
+      },
+      {
+        "question": "いもうとさんはなんさいですか。",
+        "question_en": "How old is the younger sister?",
+        "question_mm": "ညီမက အသက် ဘယ်လောက်ရှိပြီလဲ။",
+        "options": ["１５さい", "１６さい", "１７さい", "１８さい"],
+        "answer": "１８さい"
+      }
+    ],
+    "status": true
+  },
+  {
+    "level_id": "N5",
+    "title": "レストランで",
+    "title_en": "At a Restaurant",
+    "title_mm": "စားသောက်ဆိုင်မှာ",
+    "passage": "きのう、ともだちのゆきさんとにほんのレストランへいきました。わたしはてんぷらをちゅうもんしました。ゆきさんはおすしをちゅうもんしました。てんぷらはとてもおいしかったです。ゆきさんのおすしもおいしかったです。レストランはあまりたかくなかったです。ふたりで３０００えんでした。また、いきたいです。",
+    "translation_en": "Yesterday, I went to a Japanese restaurant with my friend Yuki. I ordered tempura. Yuki ordered sushi. The tempura was very delicious. Yuki's sushi was also delicious. The restaurant was not very expensive. It was 3000 yen for the two of us. I want to go again.",
+    "translation_mm": "မနေ့က သူငယ်ချင်းယူကီနဲ့ ဂျပန်စားသောက်ဆိုင်ကို သွားခဲ့ပါတယ်။ ကျွန်တော်က တင်ပူရာ မှာခဲ့ပါတယ်။ ယူကီက ဆူရှီ မှာခဲ့ပါတယ်။ တင်ပူရာက အရမ်းအရသာ ရှိပါတယ်။ ယူကီရဲ့ ဆူရှီလည်း အရသာရှိပါတယ်။ စားသောက်ဆိုင်က သိပ်ဈေးမကြီးပါဘူး။ နှစ်ယောက်အတွက် ၃၀၀၀ ယန်း ဖြစ်ပါတယ်။ နောက်တစ်ခါ ထပ်သွားချင်ပါတယ်။",
+    "questions": [
+      {
+        "question": "だれとレストランへいきましたか。",
+        "question_en": "Who did the person go to the restaurant with?",
+        "question_mm": "ဘယ်သူနဲ့ စားသောက်ဆိုင်ကို သွားခဲ့ပါသလဲ။",
+        "options": ["かぞく", "せんせい", "ともだちのゆきさん", "ひとりで"],
+        "answer": "ともだちのゆきさん"
+      },
+      {
+        "question": "なにをたべましたか。",
+        "question_en": "What did the person eat?",
+        "question_mm": "ဘာစားခဲ့ပါသလဲ။",
+        "options": ["おすし", "ラーメン", "てんぷら", "カレー"],
+        "answer": "てんぷら"
+      },
+      {
+        "question": "レストランはたかかったですか。",
+        "question_en": "Was the restaurant expensive?",
+        "question_mm": "စားသောက်ဆိုင်က ဈေးကြီးပါသလား။",
+        "options": ["はい、とてもたかかったです", "いいえ、あまりたかくなかったです", "はい、すこしたかかったです", "いいえ、やすかったです"],
+        "answer": "いいえ、あまりたかくなかったです"
+      }
+    ],
+    "status": true
+  },
+  {
+    "level_id": "N5",
+    "title": "えきで",
+    "title_en": "At the Station",
+    "title_mm": "ဘူတာမှာ",
+    "passage": "やまださんはまいにちでんしゃでかいしゃへいきます。うちからえきまであるいて１５ふんです。えきでちゅうおうせんにのります。かいしゃまで４０ぷんぐらいかかります。でんしゃのなかで、よくほんをよみます。きょうはでんしゃがおくれました。１０ぷんまちました。かいしゃにすこしおくれました。",
+    "translation_en": "Mr. Yamada goes to work by train every day. It's a 15-minute walk from home to the station. He rides the Chuo Line at the station. It takes about 40 minutes to work. He often reads books on the train. Today the train was late. He waited 10 minutes. He was a little late to work.",
+    "translation_mm": "ကိုယာမာဒါ နေ့တိုင်း ရထားနဲ့ ကုမ္ပဏီကို သွားပါတယ်။ အိမ်ကနေ ဘူတာအထိ လမ်းလျှောက်ရင် ၁၅ မိနစ်ကြာပါတယ်။ ဘူတာမှာ ချုးအိုလိုင်းကို စီးပါတယ်။ ကုမ္ပဏီအထိ ၄၀ မိနစ်လောက် ကြာပါတယ်။ ရထားပေါ်မှာ စာအုပ်ဖတ်တတ်ပါတယ်။ ဒီနေ့ ရထားက နောက်ကျခဲ့ပါတယ်။ ၁၀ မိနစ်စောင့်ရပါတယ်။ ကုမ္ပဏီကို နည်းနည်း နောက်ကျခဲ့ပါတယ်။",
+    "questions": [
+      {
+        "question": "やまださんはでんしゃのなかでなにをしますか。",
+        "question_en": "What does Mr. Yamada do on the train?",
+        "question_mm": "ကိုယာမာဒါ ရထားပေါ်မှာ ဘာလုပ်ပါသလဲ။",
+        "options": ["ねます", "ほんをよみます", "おんがくをききます", "べんきょうします"],
+        "answer": "ほんをよみます"
+      },
+      {
+        "question": "かいしゃまでどのぐらいかかりますか。",
+        "question_en": "How long does it take to work?",
+        "question_mm": "ကုမ္ပဏီအထိ ဘယ်လောက် ကြာပါသလဲ။",
+        "options": ["１０ぷんぐらい", "２０ぷんぐらい", "３０ぷんぐらい", "４０ぷんぐらい"],
+        "answer": "４０ぷんぐらい"
+      },
+      {
+        "question": "きょうはどうしておくれましたか。",
+        "question_en": "Why was the person late today?",
+        "question_mm": "ဒီနေ့ ဘာကြောင့် နောက်ကျခဲ့ပါသလဲ။",
+        "options": ["おきるのがおそかったから", "でんしゃがおくれたから", "あめがふったから", "みちがこんでいたから"],
+        "answer": "でんしゃがおくれたから"
+      }
+    ],
+    "status": true
+  },
+  {
+    "level_id": "N5",
+    "title": "ともだちからのてがみ",
+    "title_en": "A Letter from a Friend",
+    "title_mm": "သူငယ်ချင်းထံမှ စာ",
+    "passage": "リンさんへ\n\nおげんきですか。わたしはげんきです。せんしゅう、きょうとへいきました。きょうとはとてもきれいなまちです。おてらやじんじゃをたくさんみました。きんかくじがいちばんきれいでした。にほんのりょうりもたくさんたべました。おすしがいちばんおいしかったです。らいげつ、ヤンゴンへかえります。いっしょにごはんをたべませんか。\n\nたなか",
+    "translation_en": "Dear Lin,\n\nHow are you? I am fine. Last week, I went to Kyoto. Kyoto is a very beautiful city. I saw many temples and shrines. Kinkakuji was the most beautiful. I also ate a lot of Japanese food. Sushi was the most delicious. I will return to Yangon next month. Would you like to eat together?\n\nTanaka",
+    "translation_mm": "လင်းရေ\n\nကျန်းမာပါသလား။ ကျွန်တော်က ကျန်းမာပါတယ်။ ပြီးခဲ့တဲ့အပတ်က ကျိုတိုကို သွားခဲ့ပါတယ်။ ကျိုတိုက အရမ်းလှတဲ့ မြို့ ဖြစ်ပါတယ်။ ဘုရားကျောင်းတွေနဲ့ နတ်ကွန်းတွေ အများကြီး ကြည့်ခဲ့ပါတယ်။ ကင်ကာကုဂျိက အလှဆုံး ဖြစ်ပါတယ်။ ဂျပန်အစားအစာတွေလည်း အများကြီး စားခဲ့ပါတယ်။ ဆူရှီက အအရသာရှိဆုံး ဖြစ်ပါတယ်။ လာမယ့်လ ရန်ကုန်ကို ပြန်ပါမယ်။ အတူ ထမင်းစားမလား။\n\nတာနာကာ",
+    "questions": [
+      {
+        "question": "たなかさんはせんしゅうどこへいきましたか。",
+        "question_en": "Where did Tanaka go last week?",
+        "question_mm": "တာနာကာ ပြီးခဲ့တဲ့အပတ်က ဘယ်ကို သွားခဲ့ပါသလဲ။",
+        "options": ["とうきょう", "おおさか", "きょうと", "ヤンゴン"],
+        "answer": "きょうと"
+      },
+      {
+        "question": "なにがいちばんきれいでしたか。",
+        "question_en": "What was the most beautiful?",
+        "question_mm": "ဘာက အလှဆုံး ဖြစ်ပါသလဲ။",
+        "options": ["ふじさん", "きんかくじ", "とうきょうタワー", "おおさかじょう"],
+        "answer": "きんかくじ"
+      },
+      {
+        "question": "たなかさんはいつヤンゴンへかえりますか。",
+        "question_en": "When will Tanaka return to Yangon?",
+        "question_mm": "တာနာကာ ဘယ်တော့ ရန်ကုန်ကို ပြန်မလဲ။",
+        "options": ["せんしゅう", "こんしゅう", "らいしゅう", "らいげつ"],
+        "answer": "らいげつ"
+      }
+    ],
+    "status": true
+  },
+  {
+    "level_id": "N5",
+    "title": "にほんのきせつ",
+    "title_en": "Seasons in Japan",
+    "title_mm": "ဂျပန်ရဲ့ ရာသီများ",
+    "passage": "にほんにはきせつが４つあります。はる、なつ、あき、ふゆです。はるは３がつから５がつまでです。さくらがきれいです。なつは６がつから８がつまでです。とてもあついです。うみへいくひとがおおいです。あきは９がつから１１がつまでです。やまのきがあかやきいろになります。とてもきれいです。ふゆは１２がつから２がつまでです。とてもさむいです。ゆきがふるところもあります。",
+    "translation_en": "Japan has 4 seasons. Spring, summer, autumn, and winter. Spring is from March to May. The cherry blossoms are beautiful. Summer is from June to August. It is very hot. Many people go to the sea. Autumn is from September to November. Mountain trees turn red and yellow. It is very beautiful. Winter is from December to February. It is very cold. There are also places where it snows.",
+    "translation_mm": "ဂျပန်မှာ ရာသီ ၄ ခု ရှိပါတယ်။ နွေ၊ မိုး၊ ဆောင်း၊ ဆောင်းတွင်း ဖြစ်ပါတယ်။ နွေရာသီက မတ်လကနေ မေလအထိ ဖြစ်ပါတယ်။ ချယ်ရီပန်းတွေ လှပါတယ်။ မိုးရာသီက ဇွန်လကနေ သြဂုတ်လအထိ ဖြစ်ပါတယ်။ အရမ်းပူပါတယ်။ ပင်လယ်ကို သွားတဲ့သူ များပါတယ်။ ဆောင်းရာသီက စက်တင်ဘာလကနေ နိုဝင်ဘာလအထိ ဖြစ်ပါတယ်။ တောင်ပေါ်က သစ်ပင်တွေ အနီနဲ့ အဝါ ဖြစ်လာပါတယ်။ အရမ်းလှပါတယ်။ ဆောင်းတွင်းက ဒီဇင်ဘာလကနေ ဖေဖော်ဝါရီလအထိ ဖြစ်ပါတယ်။ အရမ်းအေးပါတယ်။ နှင်းကျတဲ့ နေရာတွေလည်း ရှိပါတယ်။",
+    "questions": [
+      {
+        "question": "にほんにきせつがいくつありますか。",
+        "question_en": "How many seasons does Japan have?",
+        "question_mm": "ဂျပန်မှာ ရာသီ ဘယ်နှစ်ခု ရှိပါသလဲ။",
+        "options": ["２つ", "３つ", "４つ", "５つ"],
+        "answer": "４つ"
+      },
+      {
+        "question": "なつはどうですか。",
+        "question_en": "What is summer like?",
+        "question_mm": "မိုးရာသီက ဘယ်လိုလဲ။",
+        "options": ["さむいです", "すずしいです", "あたたかいです", "あついです"],
+        "answer": "あついです"
+      },
+      {
+        "question": "さくらはいつきれいですか。",
+        "question_en": "When are the cherry blossoms beautiful?",
+        "question_mm": "ချယ်ရီပန်းက ဘယ်အချိန်မှာ လှပါသလဲ။",
+        "options": ["はるに", "なつに", "あきに", "ふゆに"],
+        "answer": "はるに"
+      }
+    ],
+    "status": true
+  },
+  {
+    "level_id": "N5",
+    "title": "しゅうまつのよてい",
+    "title_en": "Weekend Plans",
+    "title_mm": "အပတ်ကုန်ရဲ့ အစီအစဉ်",
+    "passage": "こんどのどようびにともだちのアウンさんといっしょにこうえんへいきます。あさ１０じにえきであいます。こうえんでおべんとうをたべます。そのあとで、えいがをみにいきます。にほんのあたらしいえいがをみたいです。えいがのあとで、カフェでコーヒーをのみます。にちようびはうちでにほんごのべんきょうをします。らいしゅうテストがありますから。",
+    "translation_en": "This Saturday, I will go to the park with my friend Aung. We will meet at the station at 10 AM. We will eat bento in the park. After that, we will go to watch a movie. I want to see a new Japanese movie. After the movie, we will drink coffee at a café. On Sunday, I will study Japanese at home because there is a test next week.",
+    "translation_mm": "ဒီစနေနေ့မှာ သူငယ်ချင်းအောင်နဲ့ အတူ ပန်းခြံကို သွားပါမယ်။ မနက် ၁၀ နာရီမှာ ဘူတာမှာ တွေ့ပါမယ်။ ပန်းခြံမှာ ထမင်းစားပါမယ်။ ပြီးတဲ့နောက်မှာ ရုပ်ရှင်ကြည့်ဖို့ သွားပါမယ်။ ဂျပန်ရုပ်ရှင်အသစ် ကြည့်ချင်ပါတယ်။ ရုပ်ရှင်ကြည့်ပြီးတဲ့နောက် ကဖေးဆိုင်မှာ ကော်ဖီ သောက်ပါမယ်။ တနင်္ဂနွေနေ့မှာ အိမ်မှာ ဂျပန်စာ လုပ်ပါမယ်။ နောက်အပတ် စာမေးပွဲ ရှိလို့ပါ။",
+    "questions": [
+      {
+        "question": "どようびになにをしますか。",
+        "question_en": "What will the person do on Saturday?",
+        "question_mm": "စနေနေ့မှာ ဘာလုပ်မလဲ။",
+        "options": ["べんきょうします", "こうえんへいきます", "かいものをします", "うちにいます"],
+        "answer": "こうえんへいきます"
+      },
+      {
+        "question": "にちようびにどうしてべんきょうしますか。",
+        "question_en": "Why will the person study on Sunday?",
+        "question_mm": "တနင်္ဂနွေနေ့မှာ ဘာကြောင့် စာလုပ်မလဲ။",
+        "options": ["しゅくだいがあるから", "テストがあるから", "じゅぎょうがあるから", "ともだちとべんきょうするから"],
+        "answer": "テストがあるから"
+      },
+      {
+        "question": "どこであいますか。",
+        "question_en": "Where will they meet?",
+        "question_mm": "ဘယ်မှာ တွေ့ပါမလဲ။",
+        "options": ["こうえんで", "えきで", "カフェで", "がっこうで"],
+        "answer": "えきで"
+      }
+    ],
+    "status": true
+  }
+]

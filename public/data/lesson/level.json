@@ -12,7 +12,7 @@
         "title": "Vocabulary",
         "status": true,
         "level_id": 5,
-        "description": ""
+        "description": "Master 800+ essential words for daily life conversations."
       },
       {
         "id": 22,
@@ -21,7 +21,7 @@
         "title": "Kanji",
         "status": true,
         "level_id": 5,
-        "description": ""
+        "description": "Learn 100+ fundamental kanji characters with readings and meanings."
       },
       {
         "id": 23,
@@ -30,7 +30,7 @@
         "title": "Grammar",
         "status": true,
         "level_id": 5,
-        "description": ""
+        "description": "Understand 65 basic sentence structures and particles."
       },
       {
         "id": 24,
@@ -39,7 +39,7 @@
         "title": "Reading",
         "status": true,
         "level_id": 5,
-        "description": ""
+        "description": "Practice comprehension with 8 beginner-friendly passages."
       },
       {
         "id": 25,
@@ -48,7 +48,7 @@
         "title": "Listening",
         "status": true,
         "level_id": 5,
-        "description": ""
+        "description": "Train your ear with 6 real-life conversation exercises."
       }
     ]
   },

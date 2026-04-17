@@ -106,3 +106,42 @@ export interface GrammarExampleProps {
   myanmar: string | null;
   status: boolean | null;
 }
+
+export interface ReadingQuestionProps {
+  question: string;
+  question_en: string;
+  question_mm: string;
+  options: string[];
+  answer: string;
+}
+
+export interface ReadingProps {
+  level_id: string;
+  title: string;
+  title_en: string;
+  title_mm: string;
+  passage: string;
+  translation_en: string;
+  translation_mm: string;
+  questions: ReadingQuestionProps[];
+  status: boolean;
+}
+
+export interface ListeningQuestionProps {
+  question: string;
+  question_mm: string;
+  options: string[];
+  answer: string;
+}
+
+export interface ListeningProps {
+  level_id: string;
+  title: string;
+  title_en: string;
+  title_mm: string;
+  transcript: string;
+  translation_en: string;
+  translation_mm: string;
+  questions: ListeningQuestionProps[];
+  status: boolean;
+}

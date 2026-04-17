@@ -1,0 +1,176 @@
+[
+  {
+    "level_id": "N5",
+    "title": "あいさつ",
+    "title_en": "Greetings",
+    "title_mm": "နှုတ်ခွန်းဆက်ခြင်း",
+    "transcript": "A: おはようございます。\nB: おはようございます。おげんきですか。\nA: はい、げんきです。ありがとうございます。Bさんは？\nB: わたしもげんきです。きょうはいいてんきですね。\nA: そうですね。きょうはあたたかいです。\nB: じゃ、また。\nA: さようなら。",
+    "translation_en": "A: Good morning.\nB: Good morning. How are you?\nA: Yes, I'm fine. Thank you. And you?\nB: I'm fine too. The weather is nice today, isn't it?\nA: That's right. It's warm today.\nB: Well, see you.\nA: Goodbye.",
+    "translation_mm": "A: မင်္ဂလာပါ။\nB: မင်္ဂလာပါ။ ကျန်းမာပါသလား။\nA: ဟုတ်ကဲ့ ကျန်းမာပါတယ်။ ကျေးဇူးတင်ပါတယ်။ Bကော။\nB: ကျွန်တော်လည်း ကျန်းမာပါတယ်။ ဒီနေ့ ရာသီဥတု ကောင်းတယ်နော်။\nA: ဟုတ်ပါတယ်။ ဒီနေ့ နွေးပါတယ်။\nB: ဒါဆို ထပ်တွေ့မယ်နော်။\nA: ဂါဒ္ဘိုင်း။",
+    "questions": [
+      {
+        "question": "きょうのてんきはどうですか。",
+        "question_mm": "ဒီနေ့ ရာသီဥတု ဘယ်လိုလဲ။",
+        "options": ["さむいです", "あついです", "あたたかいです", "すずしいです"],
+        "answer": "あたたかいです"
+      },
+      {
+        "question": "Bさんはげんきですか。",
+        "question_mm": "Bက ကျန်းမာပါသလား။",
+        "options": ["はい、げんきです", "いいえ、げんきじゃないです", "わかりません", "すこしつかれています"],
+        "answer": "はい、げんきです"
+      }
+    ],
+    "status": true
+  },
+  {
+    "level_id": "N5",
+    "title": "じこしょうかい",
+    "title_en": "Self-Introduction",
+    "title_mm": "ကိုယ်ရေးမိတ်ဆက်",
+    "transcript": "はじめまして。わたしはアウンです。ミャンマーじんです。２２さいです。だいがくのがくせいです。せんもんはコンピューターです。にほんごをべんきょうしています。にほんのアニメがすきです。どうぞよろしくおねがいします。",
+    "translation_en": "Nice to meet you. I am Aung. I am from Myanmar. I am 22 years old. I am a university student. My major is computer science. I am studying Japanese. I like Japanese anime. Please treat me well.",
+    "translation_mm": "တွေ့ရတာဝမ်းသာပါတယ်။ ကျွန်တော် အောင်ပါ။ မြန်မာလူမျိုးပါ။ အသက် ၂၂ နှစ်ပါ။ တက္ကသိုလ်ကျောင်းသားပါ။ အထူးပြု ဘာသာက ကွန်ပျူတာပါ။ ဂျပန်စာ လေ့လာနေပါတယ်။ ဂျပန်အန်နီမေးကို ကြိုက်ပါတယ်။ ခင်ခင်မင်မင် ဆက်ဆံပေးပါ။",
+    "questions": [
+      {
+        "question": "アウンさんはなにじんですか。",
+        "question_mm": "အောင်က ဘာလူမျိုးလဲ။",
+        "options": ["にほんじん", "タイじん", "ミャンマーじん", "ちゅうごくじん"],
+        "answer": "ミャンマーじん"
+      },
+      {
+        "question": "アウンさんのせんもんはなんですか。",
+        "question_mm": "အောင်ရဲ့ အထူးပြုဘာသာက ဘာလဲ။",
+        "options": ["にほんご", "けいざい", "コンピューター", "かがく"],
+        "answer": "コンピューター"
+      },
+      {
+        "question": "にほんのなにがすきですか。",
+        "question_mm": "ဂျပန်ရဲ့ ဘာကို ကြိုက်ပါသလဲ။",
+        "options": ["えいが", "おんがく", "りょうり", "アニメ"],
+        "answer": "アニメ"
+      }
+    ],
+    "status": true
+  },
+  {
+    "level_id": "N5",
+    "title": "かいもの",
+    "title_en": "Shopping",
+    "title_mm": "ဈေးဝယ်ခြင်း",
+    "transcript": "てんいん: いらっしゃいませ。\nきゃく: すみません、このシャツはいくらですか。\nてんいん: ３０００えんです。\nきゃく: もうすこしやすいのはありますか。\nてんいん: はい、こちらは２０００えんです。\nきゃく: いいですね。じゃ、このあかいのをください。\nてんいん: はい、２０００えんです。ありがとうございます。",
+    "translation_en": "Staff: Welcome.\nCustomer: Excuse me, how much is this shirt?\nStaff: It's 3000 yen.\nCustomer: Do you have something a little cheaper?\nStaff: Yes, this one is 2000 yen.\nCustomer: That's nice. Then, please give me this red one.\nStaff: Sure, that's 2000 yen. Thank you.",
+    "translation_mm": "ဝန်ထမ်း: ကြိုဆိုပါတယ်။\nဧည့်သည်: တစ်ဆိတ်လောက်၊ ဒီရှပ်အင်္ကျီ ဘယ်လောက်ပါလဲ။\nဝန်ထမ်း: ၃၀၀၀ ယန်းပါ။\nဧည့်သည်: နည်းနည်း ဈေးပိုပေါတာ ရှိပါသလား။\nဝန်ထမ်း: ဟုတ်ကဲ့ ဒါဆိုရင် ၂၀၀၀ ယန်းပါ။\nဧည့်သည်: ကောင်းတယ်။ ဒါဆို ဒီအနီရောင်တစ်ထည် ပေးပါ။\nဝန်ထမ်း: ဟုတ်ကဲ့ ၂၀၀၀ ယန်းပါ။ ကျေးဇူးတင်ပါတယ်။",
+    "questions": [
+      {
+        "question": "さいしょのシャツはいくらですか。",
+        "question_mm": "ပထမ ရှပ်အင်္ကျီက ဘယ်လောက်လဲ။",
+        "options": ["１０００えん", "２０００えん", "３０００えん", "４０００えん"],
+        "answer": "３０００えん"
+      },
+      {
+        "question": "きゃくさんはどのシャツをかいましたか。",
+        "question_mm": "ဧည့်သည်က ဘယ်ရှပ်အင်္ကျီကို ဝယ်ခဲ့ပါသလဲ။",
+        "options": ["あおいの", "しろいの", "あかいの", "くろいの"],
+        "answer": "あかいの"
+      },
+      {
+        "question": "きゃくさんはいくらはらいましたか。",
+        "question_mm": "ဧည့်သည်က ဘယ်လောက် ပေးခဲ့ပါသလဲ။",
+        "options": ["１０００えん", "２０００えん", "３０００えん", "５０００えん"],
+        "answer": "２０００えん"
+      }
+    ],
+    "status": true
+  },
+  {
+    "level_id": "N5",
+    "title": "でんわ",
+    "title_en": "Phone Conversation",
+    "title_mm": "ဖုန်းဆက်ခြင်း",
+    "transcript": "A: もしもし、たなかさんですか。\nB: はい、たなかです。\nA: あ、リンです。あしたのパーティーのことですが。\nB: はい、なんですか。\nA: なんじからですか。\nB: ごご６じからです。\nA: どこですか。\nB: えきのまえのレストラン「さくら」です。\nA: わかりました。ありがとうございます。じゃ、あした。\nB: はい、またあした。",
+    "translation_en": "A: Hello, is this Mr. Tanaka?\nB: Yes, this is Tanaka.\nA: Oh, this is Lin. It's about tomorrow's party.\nB: Yes, what is it?\nA: What time does it start?\nB: From 6 PM.\nA: Where is it?\nB: It's at the restaurant 'Sakura' in front of the station.\nA: I understand. Thank you. See you tomorrow.\nB: Yes, see you tomorrow.",
+    "translation_mm": "A: ဟယ်လို၊ ကိုတာနာကာလား။\nB: ဟုတ်ကဲ့ တာနာကာပါ။\nA: အ၊ လင်းပါ။ မနက်ဖြန် ပါတီအကြောင်းပါ။\nB: ဟုတ်ကဲ့ ဘာလဲ။\nA: ဘယ်နှနာရီကတည်းကလဲ။\nB: ညနေ ၆ နာရီကနေပါ။\nA: ဘယ်မှာလဲ။\nB: ဘူတာရှေ့က စားသောက်ဆိုင် \"ဆာကူရာ\" မှာပါ။\nA: နားလည်ပါပြီ။ ကျေးဇူးပါ။ ဒါဆို မနက်ဖြန် တွေ့မယ်နော်။\nB: ဟုတ်ကဲ့ မနက်ဖြန် တွေ့မယ်။",
+    "questions": [
+      {
+        "question": "パーティーはなんじからですか。",
+        "question_mm": "ပါတီ ဘယ်နှနာရီကနေ စပါသလဲ။",
+        "options": ["ごご５じ", "ごご６じ", "ごご７じ", "ごご８じ"],
+        "answer": "ごご６じ"
+      },
+      {
+        "question": "レストランのなまえはなんですか。",
+        "question_mm": "စားသောက်ဆိုင် နာမည်က ဘာလဲ။",
+        "options": ["ふじ", "さくら", "はな", "つき"],
+        "answer": "さくら"
+      },
+      {
+        "question": "レストランはどこにありますか。",
+        "question_mm": "စားသောက်ဆိုင် ဘယ်မှာ ရှိပါသလဲ။",
+        "options": ["えきのなかに", "えきのまえに", "えきのうしろに", "えきのとなりに"],
+        "answer": "えきのまえに"
+      }
+    ],
+    "status": true
+  },
+  {
+    "level_id": "N5",
+    "title": "みちをきく",
+    "title_en": "Asking for Directions",
+    "title_mm": "လမ်းမေးခြင်း",
+    "transcript": "A: すみません、ゆうびんきょくはどこですか。\nB: ゆうびんきょくですか。このみちをまっすぐいってください。\nA: はい。\nB: つぎのしんごうをみぎにまがってください。ゆうびんきょくはひだりがわにあります。\nA: しんごうをみぎですね。\nB: はい、そうです。ここからあるいて５ふんぐらいです。\nA: わかりました。どうもありがとうございます。\nB: いいえ。",
+    "translation_en": "A: Excuse me, where is the post office?\nB: The post office? Please go straight on this road.\nA: Yes.\nB: Please turn right at the next traffic light. The post office is on the left side.\nA: Right at the traffic light, right?\nB: Yes, that's correct. It's about a 5-minute walk from here.\nA: I understand. Thank you very much.\nB: You're welcome.",
+    "translation_mm": "A: တစ်ဆိတ်လောက်ပါ၊ စာတိုက် ဘယ်မှာရှိပါသလဲ။\nB: စာတိုက်လား။ ဒီလမ်းကို တည့်တည့် သွားပါ။\nA: ဟုတ်ကဲ့။\nB: နောက် မီးပွိုင့်မှာ ညာဘက်ကို ကွေ့ပါ။ စာတိုက်က ဘယ်ဘက်ခြမ်းမှာ ရှိပါတယ်။\nA: မီးပွိုင့်မှာ ညာကို ကွေ့ရမှာလား။\nB: ဟုတ်ကဲ့ မှန်ပါတယ်။ ဒီကနေ လမ်းလျှောက်ရင် ၅ မိနစ်လောက် ကြာပါတယ်။\nA: နားလည်ပါပြီ။ ကျေးဇူးအများကြီး တင်ပါတယ်။\nB: ရပါတယ်။",
+    "questions": [
+      {
+        "question": "Aさんはどこへいきたいですか。",
+        "question_mm": "Aက ဘယ်ကို သွားချင်ပါသလဲ။",
+        "options": ["びょういん", "えき", "ゆうびんきょく", "ぎんこう"],
+        "answer": "ゆうびんきょく"
+      },
+      {
+        "question": "しんごうをどちらにまがりますか。",
+        "question_mm": "မီးပွိုင့်မှာ ဘယ်ဘက်ကို ကွေ့ရပါမလဲ။",
+        "options": ["ひだり", "みぎ", "まっすぐ", "うしろ"],
+        "answer": "みぎ"
+      },
+      {
+        "question": "ゆうびんきょくまでどのぐらいかかりますか。",
+        "question_mm": "စာတိုက်အထိ ဘယ်လောက် ကြာပါသလဲ။",
+        "options": ["３ぷんぐらい", "５ふんぐらい", "１０ぷんぐらい", "１５ふんぐらい"],
+        "answer": "５ふんぐらい"
+      }
+    ],
+    "status": true
+  },
+  {
+    "level_id": "N5",
+    "title": "レストランでちゅうもん",
+    "title_en": "Ordering at a Restaurant",
+    "title_mm": "စားသောက်ဆိုင်မှာ အမှာစာ",
+    "transcript": "てんいん: いらっしゃいませ。なんめいさまですか。\nきゃく: ふたりです。\nてんいん: こちらへどうぞ。メニューです。\nきゃく: ありがとうございます。すみません、このやきにくていしょくはなんですか。\nてんいん: やきにくとごはんとみそしるとサラダのセットです。\nきゃく: じゃ、やきにくていしょくをひとつと、てんぷらうどんをひとつおねがいします。\nてんいん: おのみものはいかがですか。\nきゃく: おちゃをふたつください。\nてんいん: かしこまりました。しょうしょうおまちください。",
+    "translation_en": "Staff: Welcome. How many guests?\nCustomer: Two.\nStaff: This way please. Here's the menu.\nCustomer: Thank you. Excuse me, what is this yakiniku set meal?\nStaff: It's a set of grilled meat, rice, miso soup, and salad.\nCustomer: Then, one yakiniku set meal and one tempura udon please.\nStaff: Would you like something to drink?\nCustomer: Two teas please.\nStaff: Certainly. Please wait a moment.",
+    "translation_mm": "ဝန်ထမ်း: ကြိုဆိုပါတယ်။ ဘယ်နှစ်ယောက်ပါလဲ။\nဧည့်သည်: နှစ်ယောက်ပါ။\nဝန်ထမ်း: ဒီဘက်ကို ကြွပါ။ မီနူးပါ။\nဧည့်သည်: ကျေးဇူးပါ။ တစ်ဆိတ်လောက်ပါ ဒီ ယကီးနိကုအစုံက ဘာပါလဲ။\nဝန်ထမ်း: ကင်အသားနဲ့ ထမင်း၊ မီဆိုဟင်းရည်၊ သုပ် အစုံပါ။\nဧည့်သည်: ဒါဆို ယကီးနိကုအစုံ တစ်ခုနဲ့ တင်ပူရာဥဒုံး တစ်ခု ပေးပါ။\nဝန်ထမ်း: အချိုရည် သောက်ပါမလား။\nဧည့်သည်: လက်ဖက်ရည် နှစ်ခွက်ပေးပါ။\nဝန်ထမ်း: ဟုတ်ကဲ့ ခဏ စောင့်ပေးပါ။",
+    "questions": [
+      {
+        "question": "なんにんですか。",
+        "question_mm": "ဘယ်နှစ်ယောက်ပါလဲ။",
+        "options": ["ひとり", "ふたり", "さんにん", "よにん"],
+        "answer": "ふたり"
+      },
+      {
+        "question": "のみものはなにをちゅうもんしましたか。",
+        "question_mm": "အချိုရည်ဘာ မှာခဲ့ပါသလဲ။",
+        "options": ["コーヒー", "ジュース", "おちゃ", "ビール"],
+        "answer": "おちゃ"
+      },
+      {
+        "question": "やきにくていしょくになにがはいっていますか。",
+        "question_mm": "ယကီးနိကုအစုံမှာ ဘာတွေ ပါပါသလဲ။",
+        "options": ["やきにくとパン", "やきにくとごはんとみそしるとサラダ", "やきにくとうどん", "やきにくとてんぷら"],
+        "answer": "やきにくとごはんとみそしるとサラダ"
+      }
+    ],
+    "status": true
+  }
+]

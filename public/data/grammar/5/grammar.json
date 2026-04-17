@@ -1318,5 +1318,115 @@
       }
     ],
     "status": true
+  },
+  {
+    "level_id": "N5",
+    "title": "～でしょう",
+    "title_mm": "～ဖြစ်လိမ့်မည် (ခန့်မှန်းခြင်း)",
+    "explanation_mm": "ခန့်မှန်းချက် သို့မဟုတ် ဖြစ်နိုင်ချေကို ယဉ်ကျေးစွာ ဖော်ပြသည်။ '...ဖြစ်လိမ့်မယ်' ဟု အဓိပ္ပာယ်ရသည်။ ရာသီဥတုခန့်မှန်းချက်နှင့် မေးခွန်းမေးရာတွင် အသုံးများသည်။",
+    "explanation_en": "Used to express a guess, conjecture, or probability. It is often used in weather forecasts and polite questions to confirm something. It means 'probably' or 'I think...'",
+    "examples": [
+      {
+        "japanese": "あしたはあめでしょう。",
+        "english": "It will probably rain tomorrow.",
+        "myanmar": "မနက်ဖြန် မိုးရွာလိမ့်မယ်။",
+        "status": true
+      },
+      {
+        "japanese": "このしけんはむずかしいでしょう。",
+        "english": "This exam is probably difficult.",
+        "myanmar": "ဒီစာမေးပွဲက ခက်ခဲလိမ့်မယ်။",
+        "status": true
+      }
+    ],
+    "status": true
+  },
+  {
+    "level_id": "N5",
+    "title": "Noun がほしいです",
+    "title_mm": "Noun လိုချင်သည်",
+    "explanation_mm": "အရာတစ်ခုခုကို လိုချင်ကြောင်း ဖော်ပြသည်။ 'たいです' သည် ကြိယာ (လုပ်ဆောင်ချက်) နှင့် သုံးသော်လည်း 'ほしいです' သည် နာမ် (အရာဝတ္ထု) နှင့် သုံးသည်။ လိုချင်သော အရာကို 'が' ဖြင့် ဖော်ပြသည်။",
+    "explanation_en": "Used to express a desire to have something (a noun). While 'たいです' is for wanting to do an action, 'ほしいです' is for wanting a thing. The desired item is marked with 'が'.",
+    "examples": [
+      {
+        "japanese": "わたしはあたらしいくるまがほしいです。",
+        "english": "I want a new car.",
+        "myanmar": "ကျွန်တော် ကားအသစ်တစ်စီး လိုချင်တယ်။",
+        "status": true
+      },
+      {
+        "japanese": "いまおみずがほしいです。",
+        "english": "I want water right now.",
+        "myanmar": "အခု ရေ လိုချင်ပါတယ်။",
+        "status": true
+      }
+    ],
+    "status": true
+  },
+  {
+    "level_id": "N5",
+    "title": "Verb Dictionary Form + のがすきです",
+    "title_mm": "Verb Dictionary Form + ရတာ ကြိုက်သည်",
+    "explanation_mm": "လုပ်ဆောင်ချက်တစ်ခုကို ကြိုက်ကြောင်း ဖော်ပြသည်။ ကြိယာ၏ Dictionary Form နောက်တွင် 'のが' ထည့်ပြီး 'すきです' ဖြင့် ဆက်ပါ။ '...ရတာ ကြိုက်တယ်' ဟု အဓိပ္ပာယ်ရသည်။",
+    "explanation_en": "Used to express that you like doing something. Add 'のが' after the dictionary form of a verb, followed by 'すきです'. It means 'I like doing...'",
+    "examples": [
+      {
+        "japanese": "わたしはえいがをみるのがすきです。",
+        "english": "I like watching movies.",
+        "myanmar": "ကျွန်တော် ရုပ်ရှင်ကြည့်ရတာ ကြိုက်ပါတယ်။",
+        "status": true
+      },
+      {
+        "japanese": "おんがくをきくのがすきです。",
+        "english": "I like listening to music.",
+        "myanmar": "ဂီတနားထောင်ရတာ ကြိုက်ပါတယ်။",
+        "status": true
+      }
+    ],
+    "status": true
+  },
+  {
+    "level_id": "N5",
+    "title": "Verb Dictionary Form + のがじょうずです / へたです",
+    "title_mm": "Verb Dictionary Form + ရတာ ကျွမ်းကျင်/ညံ့",
+    "explanation_mm": "တစ်ခုခုကို လုပ်ရာတွင် ကျွမ်းကျင်/ညံ့ကြောင်း ဖော်ပြသည်။ 'じょうずです' က 'ကျွမ်းကျင်သည်'၊ 'へたです' က 'ညံ့သည်' ဟု အဓိပ္ပာယ်ရသည်။",
+    "explanation_en": "Used to express that someone is good or bad at doing something. 'じょうずです' means 'is good at', and 'へたです' means 'is bad at'.",
+    "examples": [
+      {
+        "japanese": "たなかさんはりょうりをつくるのがじょうずです。",
+        "english": "Mr. Tanaka is good at cooking.",
+        "myanmar": "ကိုတာနာကာက ချက်ပြုတ်ရတာ ကျွမ်းကျင်ပါတယ်။",
+        "status": true
+      },
+      {
+        "japanese": "わたしはうたうのがへたです。",
+        "english": "I am bad at singing.",
+        "myanmar": "ကျွန်တော် သီချင်းဆိုရတာ ညံ့ပါတယ်။",
+        "status": true
+      }
+    ],
+    "status": true
+  },
+  {
+    "level_id": "N5",
+    "title": "～し、～し",
+    "title_mm": "～ပြီး၊ ～ပြီး (အကြောင်းပြချက်များ)",
+    "explanation_mm": "အကြောင်းပြချက် တစ်ခုထက်ပို၍ စာရင်းပြုစုဖော်ပြရာတွင် အသုံးပြုသည်။ Plain Form ၏နောက်တွင် 'し' ထည့်ပါ။ 'から' နှင့်မတူဘဲ အကြောင်းပြချက်များစွာကို ဖော်ပြနိုင်သည်။",
+    "explanation_en": "Used to list multiple reasons or qualities. Add 'し' after the plain form of a verb, adjective, or noun+だ. Unlike 'から', it can list several reasons in a non-exhaustive way.",
+    "examples": [
+      {
+        "japanese": "このレストランはやすいし、おいしいし、すきです。",
+        "english": "I like this restaurant because it's cheap and delicious.",
+        "myanmar": "ဒီစားသောက်ဆိုင်က ဈေးလည်းပေါတယ်၊ စားလည်းကောင်းတယ်၊ ကြိုက်ပါတယ်။",
+        "status": true
+      },
+      {
+        "japanese": "あたまもいたいし、ねつもあるし、きょうはやすみます。",
+        "english": "My head hurts and I have a fever, so I'll take the day off today.",
+        "myanmar": "ခေါင်းလည်းကိုက်တယ်၊ အဖျားလည်းတက်တယ်၊ ဒီနေ့ နားပါမယ်။",
+        "status": true
+      }
+    ],
+    "status": true
   }
 ]
