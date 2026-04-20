@@ -6,6 +6,19 @@ interface KanjiCardProps {
   item: KanjiProps;
 }
 
+// --- SPEECH UTILITY ---
+const speak = (text: string, lang = 'ja-JP') => {
+  if (typeof window === 'undefined' || !window.speechSynthesis) {
+    console.warn('Speech synthesis not supported in this browser.');
+    return;
+  }
+  window.speechSynthesis.cancel();
+  const utterance = new SpeechSynthesisUtterance(text);
+  utterance.lang = lang;
+  utterance.rate = 0.85;
+  window.speechSynthesis.speak(utterance);
+};
+
 const KanjiCard = ({item}:KanjiCardProps) => {
 
   return (
@@ -16,7 +29,7 @@ const KanjiCard = ({item}:KanjiCardProps) => {
         <div className="text-right">
           <div className="text-xs text-[#3E3636]/60">{item.strokes} strokes</div>
           <button
-            onClick={(e) => { console.log(e) }}
+            onClick={() => speak(item.word_kana || item.word || '')}
             className="p-2 mt-1 rounded-full bg-[#F5EDED] hover:bg-[#D72323] text-[#3E3636] hover:text-white transition-all duration-300">
             <Volume2 className="h-5 w-5" />
           </button>

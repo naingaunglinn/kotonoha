@@ -1,0 +1,7202 @@
+[
+  {
+    "level_id": "5",
+    "word": "わたし",
+    "word_rmj": "watashi",
+    "spelling": "watashi",
+    "meaning": "I",
+    "meaning_mm": "ကျွန်တော်, ကျွန်မ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "あなた",
+    "word_rmj": "anata",
+    "spelling": "anata",
+    "meaning": "you",
+    "meaning_mm": "သင်, မင်း",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "これ",
+    "word_rmj": "kore",
+    "spelling": "kore",
+    "meaning": "this",
+    "meaning_mm": "ဒါ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "それ",
+    "word_rmj": "sore",
+    "spelling": "sore",
+    "meaning": "that",
+    "meaning_mm": "အဲဒါ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "あれ",
+    "word_rmj": "are",
+    "spelling": "are",
+    "meaning": "that (over there)",
+    "meaning_mm": "ဟိုဟာ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ひと (人)",
+    "word_rmj": "hito",
+    "spelling": "hito",
+    "meaning": "person",
+    "meaning_mm": "လူ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "がくせい (学生)",
+    "word_rmj": "gakusei",
+    "spelling": "gakusei",
+    "meaning": "student",
+    "meaning_mm": "ကျောင်းသား/သူ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "せんせい (先生)",
+    "word_rmj": "sensei",
+    "spelling": "sensei",
+    "meaning": "teacher",
+    "meaning_mm": "ဆရာ/မ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "がっこう (学校)",
+    "word_rmj": "gakkou",
+    "spelling": "gakkou",
+    "meaning": "school",
+    "meaning_mm": "ကျောင်း",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "にほん (日本)",
+    "word_rmj": "nihon",
+    "spelling": "nihon",
+    "meaning": "Japan",
+    "meaning_mm": "ဂျပန်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ほん (本)",
+    "word_rmj": "hon",
+    "spelling": "hon",
+    "meaning": "book",
+    "meaning_mm": "စာအုပ်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "つくえ (机)",
+    "word_rmj": "tsukue",
+    "spelling": "tsukue",
+    "meaning": "desk",
+    "meaning_mm": "စားပွဲ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "くるま (車)",
+    "word_rmj": "kuruma",
+    "spelling": "kuruma",
+    "meaning": "car",
+    "meaning_mm": "ကား",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "えき (駅)",
+    "word_rmj": "eki",
+    "spelling": "eki",
+    "meaning": "station",
+    "meaning_mm": "ဘူတာရုံ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "たべる (食べる)",
+    "word_rmj": "taberu",
+    "spelling": "taberu",
+    "meaning": "to eat",
+    "meaning_mm": "စားသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "のむ (飲む)",
+    "word_rmj": "nomu",
+    "spelling": "nomu",
+    "meaning": "to drink",
+    "meaning_mm": "သောက်သည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "みる (見る)",
+    "word_rmj": "miru",
+    "spelling": "miru",
+    "meaning": "to see, to watch",
+    "meaning_mm": "ကြည့်သည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "いく (行く)",
+    "word_rmj": "iku",
+    "spelling": "iku",
+    "meaning": "to go",
+    "meaning_mm": "သွားသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "くる (来る)",
+    "word_rmj": "kuru",
+    "spelling": "kuru",
+    "meaning": "to come",
+    "meaning_mm": "လာသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "する",
+    "word_rmj": "suru",
+    "spelling": "suru",
+    "meaning": "to do",
+    "meaning_mm": "လုပ်သည်, ပြုလုပ်သည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "べんきょうする (勉強する)",
+    "word_rmj": "benkyousuru",
+    "spelling": "benkyousuru",
+    "meaning": "to study",
+    "meaning_mm": "စာကျက်သည်, လေ့လာသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "かう (買う)",
+    "word_rmj": "kau",
+    "spelling": "kau",
+    "meaning": "to buy",
+    "meaning_mm": "ဝယ်သည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "よむ (読む)",
+    "word_rmj": "yomu",
+    "spelling": "yomu",
+    "meaning": "to read",
+    "meaning_mm": "ဖတ်သည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "かく (書く)",
+    "word_rmj": "kaku",
+    "spelling": "kaku",
+    "meaning": "to write",
+    "meaning_mm": "ရေးသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "おおきい (大きい)",
+    "word_rmj": "ookii",
+    "spelling": "ookii",
+    "meaning": "big",
+    "meaning_mm": "ကြီးသော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ちいさい (小さい)",
+    "word_rmj": "chiisai",
+    "spelling": "chiisai",
+    "meaning": "small",
+    "meaning_mm": "သေးသော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "たかい (高い)",
+    "word_rmj": "takai",
+    "spelling": "takai",
+    "meaning": "tall, expensive",
+    "meaning_mm": "မြင့်သော, စျေးကြီးသော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "やすい (安い)",
+    "word_rmj": "yasui",
+    "spelling": "yasui",
+    "meaning": "cheap",
+    "meaning_mm": "စျေးပေါသော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "あたらしい (新しい)",
+    "word_rmj": "atarashii",
+    "spelling": "atarashii",
+    "meaning": "new",
+    "meaning_mm": "သစ်သော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ふるい (古い)",
+    "word_rmj": "furui",
+    "spelling": "furui",
+    "meaning": "old (not for people)",
+    "meaning_mm": "ဟောင်းသော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "おいしい",
+    "word_rmj": "oishii",
+    "spelling": "oishii",
+    "meaning": "delicious, tasty",
+    "meaning_mm": "အရသာရှိသော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "きれい (な)",
+    "word_rmj": "kirei (na)",
+    "spelling": "kirei (na)",
+    "meaning": "beautiful, clean",
+    "meaning_mm": "လှပသော, သန့်ရှင်းသော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "げんき (元気) (な)",
+    "word_rmj": "genki (na)",
+    "spelling": "genki (na)",
+    "meaning": "healthy, energetic",
+    "meaning_mm": "ကျန်းမာသော, တက်ကြွသော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "きょう (今日)",
+    "word_rmj": "kyou",
+    "spelling": "kyou",
+    "meaning": "today",
+    "meaning_mm": "ဒီနေ့",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "あした (明日)",
+    "word_rmj": "ashita",
+    "spelling": "ashita",
+    "meaning": "tomorrow",
+    "meaning_mm": "မနက်ဖြန်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "きのう (昨日)",
+    "word_rmj": "kinou",
+    "spelling": "kinou",
+    "meaning": "yesterday",
+    "meaning_mm": "မနေ့က",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "いま (今)",
+    "word_rmj": "ima",
+    "spelling": "ima",
+    "meaning": "now",
+    "meaning_mm": "အခု",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "とても",
+    "word_rmj": "totemo",
+    "spelling": "totemo",
+    "meaning": "very",
+    "meaning_mm": "အလွန်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "たくさん",
+    "word_rmj": "takusan",
+    "spelling": "takusan",
+    "meaning": "a lot, many",
+    "meaning_mm": "အများကြီး",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "いっしょに (一緒に)",
+    "word_rmj": "isshoni",
+    "spelling": "isshoni",
+    "meaning": "together",
+    "meaning_mm": "အတူတူ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "かぞく (家族)",
+    "word_rmj": "kazoku",
+    "spelling": "kazoku",
+    "meaning": "family",
+    "meaning_mm": "မိသားစု",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ともだち (友達)",
+    "word_rmj": "tomodachi",
+    "spelling": "tomodachi",
+    "meaning": "friend",
+    "meaning_mm": "သူငယ်ချင်း",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ぎんこう (銀行)",
+    "word_rmj": "ginkou",
+    "spelling": "ginkou",
+    "meaning": "bank",
+    "meaning_mm": "ဘဏ်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "としょかん (図書館)",
+    "word_rmj": "toshokan",
+    "spelling": "toshokan",
+    "meaning": "library",
+    "meaning_mm": "စာကြည့်တိုက်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ゆうびんきょく (郵便局)",
+    "word_rmj": "yuubinkyoku",
+    "spelling": "yuubinkyoku",
+    "meaning": "post office",
+    "meaning_mm": "စာတိုက်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "みせ (店)",
+    "word_rmj": "mise",
+    "spelling": "mise",
+    "meaning": "shop, store",
+    "meaning_mm": "ဆိုင်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "いえ (家)",
+    "word_rmj": "ie",
+    "spelling": "ie",
+    "meaning": "house, home",
+    "meaning_mm": "အိမ်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "へや (部屋)",
+    "word_rmj": "heya",
+    "spelling": "heya",
+    "meaning": "room",
+    "meaning_mm": "အခန်း",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "でんわ (電話)",
+    "word_rmj": "denwa",
+    "spelling": "denwa",
+    "meaning": "telephone",
+    "meaning_mm": "ဖုန်း",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "かばん (鞄)",
+    "word_rmj": "kaban",
+    "spelling": "kaban",
+    "meaning": "bag",
+    "meaning_mm": "အိတ်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "くつ (靴)",
+    "word_rmj": "kutsu",
+    "spelling": "kutsu",
+    "meaning": "shoes",
+    "meaning_mm": "ဖိနပ်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "えいが (映画)",
+    "word_rmj": "eiga",
+    "spelling": "eiga",
+    "meaning": "movie",
+    "meaning_mm": "ရုပ်ရှင်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "おんがく (音楽)",
+    "word_rmj": "ongaku",
+    "spelling": "ongaku",
+    "meaning": "music",
+    "meaning_mm": "ဂီတ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "てんき (天気)",
+    "word_rmj": "tenki",
+    "spelling": "tenki",
+    "meaning": "weather",
+    "meaning_mm": "ရာသီဥတု",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "あさ (朝)",
+    "word_rmj": "asa",
+    "spelling": "asa",
+    "meaning": "morning",
+    "meaning_mm": "မနက်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ひる (昼)",
+    "word_rmj": "hiru",
+    "spelling": "hiru",
+    "meaning": "noon, daytime",
+    "meaning_mm": "နေ့လယ်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "よる (夜)",
+    "word_rmj": "yoru",
+    "spelling": "yoru",
+    "meaning": "night",
+    "meaning_mm": "ည",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "げつようび (月曜日)",
+    "word_rmj": "getsuyoubi",
+    "spelling": "getsuyoubi",
+    "meaning": "Monday",
+    "meaning_mm": "တနင်္လာနေ့",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "かようび (火曜日)",
+    "word_rmj": "kayoubi",
+    "spelling": "kayoubi",
+    "meaning": "Tuesday",
+    "meaning_mm": "အင်္ဂါနေ့",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "すいようび (水曜日)",
+    "word_rmj": "suiyoubi",
+    "spelling": "suiyoubi",
+    "meaning": "Wednesday",
+    "meaning_mm": "ဗုဒ္ဓဟူးနေ့",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "もくようび (木曜日)",
+    "word_rmj": "mokuyoubi",
+    "spelling": "mokuyoubi",
+    "meaning": "Thursday",
+    "meaning_mm": "ကြာသပတေးနေ့",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "きんようび (金曜日)",
+    "word_rmj": "kinyoubi",
+    "spelling": "kinyoubi",
+    "meaning": "Friday",
+    "meaning_mm": "သောကြာနေ့",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "どようび (土曜日)",
+    "word_rmj": "doyoubi",
+    "spelling": "doyoubi",
+    "meaning": "Saturday",
+    "meaning_mm": "စနေနေ့",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "にちようび (日曜日)",
+    "word_rmj": "nichiyoubi",
+    "spelling": "nichiyoubi",
+    "meaning": "Sunday",
+    "meaning_mm": "တနင်္ဂနွေနေ့",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "わかる (分かる)",
+    "word_rmj": "wakaru",
+    "spelling": "wakaru",
+    "meaning": "to understand",
+    "meaning_mm": "နားလည်သည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ある",
+    "word_rmj": "aru",
+    "spelling": "aru",
+    "meaning": "to be, exist (inanimate)",
+    "meaning_mm": "ရှိသည် (သက်မဲ့)",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "いる",
+    "word_rmj": "iru",
+    "spelling": "iru",
+    "meaning": "to be, exist (animate)",
+    "meaning_mm": "ရှိသည် (သက်ရှိ)",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "はなす (話す)",
+    "word_rmj": "hanasu",
+    "spelling": "hanasu",
+    "meaning": "to speak, to talk",
+    "meaning_mm": "စကားပြောသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "まつ (待つ)",
+    "word_rmj": "matsu",
+    "spelling": "matsu",
+    "meaning": "to wait",
+    "meaning_mm": "စောင့်သည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "やすむ (休む)",
+    "word_rmj": "yasumu",
+    "spelling": "yasumu",
+    "meaning": "to rest, to take a day off",
+    "meaning_mm": "အနားယူသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "おきる (起きる)",
+    "word_rmj": "okiru",
+    "spelling": "okiru",
+    "meaning": "to get up",
+    "meaning_mm": "အိပ်ရာထသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ねる (寝る)",
+    "word_rmj": "neru",
+    "spelling": "neru",
+    "meaning": "to sleep",
+    "meaning_mm": "အိပ်သည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "あつい (暑い)",
+    "word_rmj": "atsui",
+    "spelling": "atsui",
+    "meaning": "hot (weather)",
+    "meaning_mm": "ပူသော (ရာသီဥတု)",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "さむい (寒い)",
+    "word_rmj": "samui",
+    "spelling": "samui",
+    "meaning": "cold (weather)",
+    "meaning_mm": "အေးသော (ရာသီဥတု)",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "いそがしい (忙しい)",
+    "word_rmj": "isogashii",
+    "spelling": "isogashii",
+    "meaning": "busy",
+    "meaning_mm": "အလုပ်များသော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ひま (暇) (な)",
+    "word_rmj": "hima (na)",
+    "spelling": "hima (na)",
+    "meaning": "free (not busy)",
+    "meaning_mm": "အားသော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "すき (好き) (な)",
+    "word_rmj": "suki (na)",
+    "spelling": "suki (na)",
+    "meaning": "likeable",
+    "meaning_mm": "ကြိုက်သော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "きらい (嫌い) (な)",
+    "word_rmj": "kirai (na)",
+    "spelling": "kirai (na)",
+    "meaning": "dislikeable",
+    "meaning_mm": "မကြိုက်သော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "じょうず (上手) (な)",
+    "word_rmj": "jouzu (na)",
+    "spelling": "jouzu (na)",
+    "meaning": "skillful, good at",
+    "meaning_mm": "ကျွမ်းကျင်သော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "へた (下手) (な)",
+    "word_rmj": "heta (na)",
+    "spelling": "heta (na)",
+    "meaning": "unskillful, bad at",
+    "meaning_mm": "ညံ့သော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "なん (何)",
+    "word_rmj": "nan",
+    "spelling": "nan",
+    "meaning": "what",
+    "meaning_mm": "ဘာ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "だれ (誰)",
+    "word_rmj": "dare",
+    "spelling": "dare",
+    "meaning": "who",
+    "meaning_mm": "ဘယ်သူ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "どこ",
+    "word_rmj": "doko",
+    "spelling": "doko",
+    "meaning": "where",
+    "meaning_mm": "ဘယ်မှာ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "いつ",
+    "word_rmj": "itsu",
+    "spelling": "itsu",
+    "meaning": "when",
+    "meaning_mm": "ဘယ်တော့",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "どうして",
+    "word_rmj": "doushite",
+    "spelling": "doushite",
+    "meaning": "why",
+    "meaning_mm": "ဘာကြောင့်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "どちら",
+    "word_rmj": "dochira",
+    "spelling": "dochira",
+    "meaning": "which (of two)",
+    "meaning_mm": "ဘယ်ဟာ (နှစ်ခုထဲမှ)",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "うえ (上)",
+    "word_rmj": "ue",
+    "spelling": "ue",
+    "meaning": "on, above, up",
+    "meaning_mm": "အပေါ်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "した (下)",
+    "word_rmj": "shita",
+    "spelling": "shita",
+    "meaning": "under, below, down",
+    "meaning_mm": "အောက်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "まえ (前)",
+    "word_rmj": "mae",
+    "spelling": "mae",
+    "meaning": "in front of, before",
+    "meaning_mm": "အရှေ့",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "うしろ (後ろ)",
+    "word_rmj": "ushiro",
+    "spelling": "ushiro",
+    "meaning": "behind, back",
+    "meaning_mm": "အနောက်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "みぎ (右)",
+    "word_rmj": "migi",
+    "spelling": "migi",
+    "meaning": "right",
+    "meaning_mm": "ညာဘက်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ひだり (左)",
+    "word_rmj": "hidari",
+    "spelling": "hidari",
+    "meaning": "left",
+    "meaning_mm": "ဘယ်ဘက်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "なか (中)",
+    "word_rmj": "naka",
+    "spelling": "naka",
+    "meaning": "inside",
+    "meaning_mm": "အထဲ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "そと (外)",
+    "word_rmj": "soto",
+    "spelling": "soto",
+    "meaning": "outside",
+    "meaning_mm": "အပြင်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "となり (隣)",
+    "word_rmj": "tonari",
+    "spelling": "tonari",
+    "meaning": "next to, neighbor",
+    "meaning_mm": "ဘေးမှာ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ちかく (近く)",
+    "word_rmj": "chikaku",
+    "spelling": "chikaku",
+    "meaning": "near, nearby",
+    "meaning_mm": "အနီးအနား",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "いち (一)",
+    "word_rmj": "ichi",
+    "spelling": "ichi",
+    "meaning": "one",
+    "meaning_mm": "တစ်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "に (二)",
+    "word_rmj": "ni",
+    "spelling": "ni",
+    "meaning": "two",
+    "meaning_mm": "နှစ်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "さん (三)",
+    "word_rmj": "san",
+    "spelling": "san",
+    "meaning": "three",
+    "meaning_mm": "သုံး",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "よん / し (四)",
+    "word_rmj": "yon / shi",
+    "spelling": "yon / shi",
+    "meaning": "four",
+    "meaning_mm": "လေး",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ご (五)",
+    "word_rmj": "go",
+    "spelling": "go",
+    "meaning": "five",
+    "meaning_mm": "ငါး",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ろく (六)",
+    "word_rmj": "roku",
+    "spelling": "roku",
+    "meaning": "six",
+    "meaning_mm": "ခြောက်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "なな / しち (七)",
+    "word_rmj": "nana / shichi",
+    "spelling": "nana / shichi",
+    "meaning": "seven",
+    "meaning_mm": "ခုနစ်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "はち (八)",
+    "word_rmj": "hachi",
+    "spelling": "hachi",
+    "meaning": "eight",
+    "meaning_mm": "ရှစ်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "きゅう / く (九)",
+    "word_rmj": "kyuu / ku",
+    "spelling": "kyuu / ku",
+    "meaning": "nine",
+    "meaning_mm": "ကိုး",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "じゅう (十)",
+    "word_rmj": "juu",
+    "spelling": "juu",
+    "meaning": "ten",
+    "meaning_mm": "ဆယ်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ひゃく (百)",
+    "word_rmj": "hyaku",
+    "spelling": "hyaku",
+    "meaning": "hundred",
+    "meaning_mm": "ရာ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "せん (千)",
+    "word_rmj": "sen",
+    "spelling": "sen",
+    "meaning": "thousand",
+    "meaning_mm": "ထောင်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "あかい (赤い)",
+    "word_rmj": "akai",
+    "spelling": "akai",
+    "meaning": "red",
+    "meaning_mm": "နီသော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "あおい (青い)",
+    "word_rmj": "aoi",
+    "spelling": "aoi",
+    "meaning": "blue",
+    "meaning_mm": "ပြာသော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "しろい (白い)",
+    "word_rmj": "shiroi",
+    "spelling": "shiroi",
+    "meaning": "white",
+    "meaning_mm": "ဖြူသော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "くろい (黒い)",
+    "word_rmj": "kuroi",
+    "spelling": "kuroi",
+    "meaning": "black",
+    "meaning_mm": "မည်းသော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "あう (会う)",
+    "word_rmj": "au",
+    "spelling": "au",
+    "meaning": "to meet",
+    "meaning_mm": "တွေ့ဆုံသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "あそぶ (遊ぶ)",
+    "word_rmj": "asobu",
+    "spelling": "asobu",
+    "meaning": "to play",
+    "meaning_mm": "ကစားသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "あるく (歩く)",
+    "word_rmj": "aruku",
+    "spelling": "aruku",
+    "meaning": "to walk",
+    "meaning_mm": "လမ်းလျှောက်သည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "いう (言う)",
+    "word_rmj": "iu",
+    "spelling": "iu",
+    "meaning": "to say",
+    "meaning_mm": "ပြောသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "およぐ (泳ぐ)",
+    "word_rmj": "oyogu",
+    "spelling": "oyogu",
+    "meaning": "to swim",
+    "meaning_mm": "ရေကူးသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "おわる (終わる)",
+    "word_rmj": "owaru",
+    "spelling": "owaru",
+    "meaning": "to end, to finish",
+    "meaning_mm": "ပြီးဆုံးသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "かえる (帰る)",
+    "word_rmj": "kaeru",
+    "spelling": "kaeru",
+    "meaning": "to return, to go home",
+    "meaning_mm": "ပြန်သည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "きく (聞く)",
+    "word_rmj": "kiku",
+    "spelling": "kiku",
+    "meaning": "to listen, to ask",
+    "meaning_mm": "နားထောင်သည်, မေးသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "はしる (走る)",
+    "word_rmj": "hashiru",
+    "spelling": "hashiru",
+    "meaning": "to run",
+    "meaning_mm": "ပြေးသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "はいる (入る)",
+    "word_rmj": "hairu",
+    "spelling": "hairu",
+    "meaning": "to enter",
+    "meaning_mm": "ဝင်သည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "でる (出る)",
+    "word_rmj": "deru",
+    "spelling": "deru",
+    "meaning": "to leave, to exit",
+    "meaning_mm": "ထွက်သည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "はじまる (始まる)",
+    "word_rmj": "hajimaru",
+    "spelling": "hajimaru",
+    "meaning": "to begin, to start",
+    "meaning_mm": "စတင်သည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "もつ (持つ)",
+    "word_rmj": "motsu",
+    "spelling": "motsu",
+    "meaning": "to hold, to have",
+    "meaning_mm": "ကိုင်သည်, ပိုင်ဆိုင်သည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "よぶ (呼ぶ)",
+    "word_rmj": "yobu",
+    "spelling": "yobu",
+    "meaning": "to call",
+    "meaning_mm": "ခေါ်သည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "おしえる (教える)",
+    "word_rmj": "oshieru",
+    "spelling": "oshieru",
+    "meaning": "to teach, to tell",
+    "meaning_mm": "သင်ပေးသည်, ပြောပြသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ならう (習う)",
+    "word_rmj": "narau",
+    "spelling": "narau",
+    "meaning": "to learn",
+    "meaning_mm": "သင်ယူသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "かける (電話を)",
+    "word_rmj": "kakeru (denwa o)",
+    "spelling": "kakeru (denwa o)",
+    "meaning": "to make (a phone call)",
+    "meaning_mm": "(ဖုန်း)ဆက်သည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "もらう",
+    "word_rmj": "morau",
+    "spelling": "morau",
+    "meaning": "to receive",
+    "meaning_mm": "လက်ခံရရှိသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "あげる",
+    "word_rmj": "ageru",
+    "spelling": "ageru",
+    "meaning": "to give",
+    "meaning_mm": "ပေးသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "しぬ (死ぬ)",
+    "word_rmj": "shinu",
+    "spelling": "shinu",
+    "meaning": "to die",
+    "meaning_mm": "သေသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "きる (切る)",
+    "word_rmj": "kiru",
+    "spelling": "kiru",
+    "meaning": "to cut",
+    "meaning_mm": "လှီးသည်, ဖြတ်သည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "たつ (立つ)",
+    "word_rmj": "tatsu",
+    "spelling": "tatsu",
+    "meaning": "to stand",
+    "meaning_mm": "မတ်တပ်ရပ်သည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "すわる (座る)",
+    "word_rmj": "suwaru",
+    "spelling": "suwaru",
+    "meaning": "to sit",
+    "meaning_mm": "ထိုင်သည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "つかう (使う)",
+    "word_rmj": "tsukau",
+    "spelling": "tsukau",
+    "meaning": "to use",
+    "meaning_mm": "အသုံးပြုသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "しる (知る)",
+    "word_rmj": "shiru",
+    "spelling": "shiru",
+    "meaning": "to know",
+    "meaning_mm": "သိသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "すむ (住む)",
+    "word_rmj": "sumu",
+    "spelling": "sumu",
+    "meaning": "to live, to reside",
+    "meaning_mm": "နေထိုင်သည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "たばこ",
+    "word_rmj": "tabako",
+    "spelling": "tabako",
+    "meaning": "tobacco, cigarette",
+    "meaning_mm": "ဆေးလိပ်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ごはん (ご飯)",
+    "word_rmj": "gohan",
+    "spelling": "gohan",
+    "meaning": "rice, meal",
+    "meaning_mm": "ထမင်း, အစားအစာ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "パン",
+    "word_rmj": "pan",
+    "spelling": "pan",
+    "meaning": "bread",
+    "meaning_mm": "ပေါင်မုန့်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "みず (水)",
+    "word_rmj": "mizu",
+    "spelling": "mizu",
+    "meaning": "water",
+    "meaning_mm": "ရေ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "おちゃ (お茶)",
+    "word_rmj": "ocha",
+    "spelling": "ocha",
+    "meaning": "tea",
+    "meaning_mm": "လက်ဖက်ရည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "さけ (酒)",
+    "word_rmj": "sake",
+    "spelling": "sake",
+    "meaning": "alcohol, sake",
+    "meaning_mm": "အရက်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "にく (肉)",
+    "word_rmj": "niku",
+    "spelling": "niku",
+    "meaning": "meat",
+    "meaning_mm": "အသား",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "さかな (魚)",
+    "word_rmj": "sakana",
+    "spelling": "sakana",
+    "meaning": "fish",
+    "meaning_mm": "ငါး",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "やさい (野菜)",
+    "word_rmj": "yasai",
+    "spelling": "yasai",
+    "meaning": "vegetable",
+    "meaning_mm": "ဟင်းသီးဟင်းရွက်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "くだもの (果物)",
+    "word_rmj": "kudamono",
+    "spelling": "kudamono",
+    "meaning": "fruit",
+    "meaning_mm": "သစ်သီး",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "しゃしん (写真)",
+    "word_rmj": "shashin",
+    "spelling": "shashin",
+    "meaning": "photograph",
+    "meaning_mm": "ဓာတ်ပုံ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "てがみ (手紙)",
+    "word_rmj": "tegami",
+    "spelling": "tegami",
+    "meaning": "letter",
+    "meaning_mm": "စာ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "おかね (お金)",
+    "word_rmj": "okane",
+    "spelling": "okane",
+    "meaning": "money",
+    "meaning_mm": "ပိုက်ဆံ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "じしょ (辞書)",
+    "word_rmj": "jisho",
+    "spelling": "jisho",
+    "meaning": "dictionary",
+    "meaning_mm": "အဘိဓာန်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ざっし (雑誌)",
+    "word_rmj": "zasshi",
+    "spelling": "zasshi",
+    "meaning": "magazine",
+    "meaning_mm": "မဂ္ဂဇင်း",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "しんぶん (新聞)",
+    "word_rmj": "shinbun",
+    "spelling": "shinbun",
+    "meaning": "newspaper",
+    "meaning_mm": "သတင်းစာ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "えんぴつ (鉛筆)",
+    "word_rmj": "enpitsu",
+    "spelling": "enpitsu",
+    "meaning": "pencil",
+    "meaning_mm": "ခဲတံ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ボールペン",
+    "word_rmj": "boorupen",
+    "spelling": "boorupen",
+    "meaning": "ballpoint pen",
+    "meaning_mm": "ဘောပင်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ゆっくり",
+    "word_rmj": "yukkuri",
+    "spelling": "yukkuri",
+    "meaning": "slowly",
+    "meaning_mm": "ဖြည်းဖြည်း",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "いつも",
+    "word_rmj": "itsumo",
+    "spelling": "itsumo",
+    "meaning": "always",
+    "meaning_mm": "အမြဲတမ်း",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "よく",
+    "word_rmj": "yoku",
+    "spelling": "yoku",
+    "meaning": "often, well",
+    "meaning_mm": "မကြာခဏ, ကောင်းကောင်း",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ときどき (時々)",
+    "word_rmj": "tokidoki",
+    "spelling": "tokidoki",
+    "meaning": "sometimes",
+    "meaning_mm": "တစ်ခါတစ်ရံ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "あたま (頭)",
+    "word_rmj": "atama",
+    "spelling": "atama",
+    "meaning": "head",
+    "meaning_mm": "ခေါင်း",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "かみ (髪)",
+    "word_rmj": "kami",
+    "spelling": "kami",
+    "meaning": "hair",
+    "meaning_mm": "ဆံပင်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "かお (顔)",
+    "word_rmj": "kao",
+    "spelling": "kao",
+    "meaning": "face",
+    "meaning_mm": "မျက်နှာ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "め (目)",
+    "word_rmj": "me",
+    "spelling": "me",
+    "meaning": "eye",
+    "meaning_mm": "မျက်လုံး",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "みみ (耳)",
+    "word_rmj": "mimi",
+    "spelling": "mimi",
+    "meaning": "ear",
+    "meaning_mm": "နား",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "はな (鼻)",
+    "word_rmj": "hana",
+    "spelling": "hana",
+    "meaning": "nose",
+    "meaning_mm": "နှာခေါင်း",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "くち (口)",
+    "word_rmj": "kuchi",
+    "spelling": "kuchi",
+    "meaning": "mouth",
+    "meaning_mm": "ပါးစပ်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "て (手)",
+    "word_rmj": "te",
+    "spelling": "te",
+    "meaning": "hand",
+    "meaning_mm": "လက်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "あし (足)",
+    "word_rmj": "ashi",
+    "spelling": "ashi",
+    "meaning": "foot, leg",
+    "meaning_mm": "ခြေထောက်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "からだ (体)",
+    "word_rmj": "karada",
+    "spelling": "karada",
+    "meaning": "body",
+    "meaning_mm": "ခန္ဓာကိုယ်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ふく (服)",
+    "word_rmj": "fuku",
+    "spelling": "fuku",
+    "meaning": "clothes",
+    "meaning_mm": "အဝတ်အစား",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "シャツ",
+    "word_rmj": "shatsu",
+    "spelling": "shatsu",
+    "meaning": "shirt",
+    "meaning_mm": "ရှပ်အင်္ကျီ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ズボン",
+    "word_rmj": "zubon",
+    "spelling": "zubon",
+    "meaning": "trousers, pants",
+    "meaning_mm": "ဘောင်းဘီ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ぼうし (帽子)",
+    "word_rmj": "boushi",
+    "spelling": "boushi",
+    "meaning": "hat, cap",
+    "meaning_mm": "ဦးထုပ်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "てんき (天気)",
+    "word_rmj": "tenki",
+    "spelling": "tenki",
+    "meaning": "weather",
+    "meaning_mm": "ရာသီဥတု",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "あめ (雨)",
+    "word_rmj": "ame",
+    "spelling": "ame",
+    "meaning": "rain",
+    "meaning_mm": "မိုး",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ゆき (雪)",
+    "word_rmj": "yuki",
+    "spelling": "yuki",
+    "meaning": "snow",
+    "meaning_mm": "နှင်း",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "はれ (晴れ)",
+    "word_rmj": "hare",
+    "spelling": "hare",
+    "meaning": "clear weather, sunny",
+    "meaning_mm": "သာယာသောရာသီဥတု",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "くもり (曇り)",
+    "word_rmj": "kumori",
+    "spelling": "kumori",
+    "meaning": "cloudy weather",
+    "meaning_mm": "တိမ်ထူသောရာသီဥတု",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "かぜ (風)",
+    "word_rmj": "kaze",
+    "spelling": "kaze",
+    "meaning": "wind",
+    "meaning_mm": "လေ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "やま (山)",
+    "word_rmj": "yama",
+    "spelling": "yama",
+    "meaning": "mountain",
+    "meaning_mm": "တောင်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "かわ (川)",
+    "word_rmj": "kawa",
+    "spelling": "kawa",
+    "meaning": "river",
+    "meaning_mm": "မြစ်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "うみ (海)",
+    "word_rmj": "umi",
+    "spelling": "umi",
+    "meaning": "sea, ocean",
+    "meaning_mm": "ပင်လယ်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "はな (花)",
+    "word_rmj": "hana",
+    "spelling": "hana",
+    "meaning": "flower",
+    "meaning_mm": "ပန်း",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "き (木)",
+    "word_rmj": "ki",
+    "spelling": "ki",
+    "meaning": "tree, wood",
+    "meaning_mm": "သစ်ပင်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "いぬ (犬)",
+    "word_rmj": "inu",
+    "spelling": "inu",
+    "meaning": "dog",
+    "meaning_mm": "ခွေး",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ねこ (猫)",
+    "word_rmj": "neko",
+    "spelling": "neko",
+    "meaning": "cat",
+    "meaning_mm": "ကြောင်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "とり (鳥)",
+    "word_rmj": "tori",
+    "spelling": "tori",
+    "meaning": "bird",
+    "meaning_mm": "ငှက်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "あまい (甘い)",
+    "word_rmj": "amai",
+    "spelling": "amai",
+    "meaning": "sweet",
+    "meaning_mm": "ချိုသော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "からい (辛い)",
+    "word_rmj": "karai",
+    "spelling": "karai",
+    "meaning": "spicy",
+    "meaning_mm": "စပ်သော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "しょっぱい",
+    "word_rmj": "shoppai",
+    "spelling": "shoppai",
+    "meaning": "salty",
+    "meaning_mm": "ငံသော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "にがい (苦い)",
+    "word_rmj": "nigai",
+    "spelling": "nigai",
+    "meaning": "bitter",
+    "meaning_mm": "ခါးသော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "すっぱい (酸っぱい)",
+    "word_rmj": "suppai",
+    "spelling": "suppai",
+    "meaning": "sour",
+    "meaning_mm": "ချဉ်သော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "おもい (重い)",
+    "word_rmj": "omoi",
+    "spelling": "omoi",
+    "meaning": "heavy",
+    "meaning_mm": "လေးသော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "かるい (軽い)",
+    "word_rmj": "karui",
+    "spelling": "karui",
+    "meaning": "light (weight)",
+    "meaning_mm": "ပေါ့သော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ひろい (広い)",
+    "word_rmj": "hiroi",
+    "spelling": "hiroi",
+    "meaning": "wide, spacious",
+    "meaning_mm": "ကျယ်သော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "せまい (狭い)",
+    "word_rmj": "semai",
+    "spelling": "semai",
+    "meaning": "narrow",
+    "meaning_mm": "ကျဉ်းသော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ちかい (近い)",
+    "word_rmj": "chikai",
+    "spelling": "chikai",
+    "meaning": "near, close",
+    "meaning_mm": "နီးသော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "とおい (遠い)",
+    "word_rmj": "tooi",
+    "spelling": "tooi",
+    "meaning": "far, distant",
+    "meaning_mm": "ဝေးသော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "はやい (速い)",
+    "word_rmj": "hayai",
+    "spelling": "hayai",
+    "meaning": "fast, early",
+    "meaning_mm": "မြန်သော, စောသော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "あける (開ける)",
+    "word_rmj": "akeru",
+    "spelling": "akeru",
+    "meaning": "to open",
+    "meaning_mm": "ဖွင့်သည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "しめる (閉める)",
+    "word_rmj": "shimeru",
+    "spelling": "shimeru",
+    "meaning": "to close",
+    "meaning_mm": "ပိတ်သည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "つく (電気が)",
+    "word_rmj": "tsuku (denki ga)",
+    "spelling": "tsuku (denki ga)",
+    "meaning": "(light) turns on",
+    "meaning_mm": "(မီး)လင်းသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "けす (消す)",
+    "word_rmj": "kesu",
+    "spelling": "kesu",
+    "meaning": "to turn off, to erase",
+    "meaning_mm": "ပိတ်သည်, ဖျက်သည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "いそぐ (急ぐ)",
+    "word_rmj": "isogu",
+    "spelling": "isogu",
+    "meaning": "to hurry",
+    "meaning_mm": "အလျင်လိုသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "てつだう (手伝う)",
+    "word_rmj": "tetsudau",
+    "spelling": "tetsudau",
+    "meaning": "to help",
+    "meaning_mm": "ကူညီသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "とる (取る)",
+    "word_rmj": "toru",
+    "spelling": "toru",
+    "meaning": "to take",
+    "meaning_mm": "ယူသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "みせる (見せる)",
+    "word_rmj": "miseru",
+    "spelling": "miseru",
+    "meaning": "to show",
+    "meaning_mm": "ပြသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "のる (乗る)",
+    "word_rmj": "noru",
+    "spelling": "noru",
+    "meaning": "to get on, to ride",
+    "meaning_mm": "(ယာဉ်)စီးသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "おりる (降りる)",
+    "word_rmj": "oriru",
+    "spelling": "oriru",
+    "meaning": "to get off",
+    "meaning_mm": "(ယာဉ်ပေါ်မှ)ဆင်းသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "あびる (シャワーを)",
+    "word_rmj": "abiru (shawaa o)",
+    "spelling": "abiru (shawaa o)",
+    "meaning": "to take (a shower)",
+    "meaning_mm": "(ရေ)ချိုးသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "わすれる (忘れる)",
+    "word_rmj": "wasureru",
+    "spelling": "wasureru",
+    "meaning": "to forget",
+    "meaning_mm": "မေ့သည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "わかい (若い)",
+    "word_rmj": "wakai",
+    "spelling": "wakai",
+    "meaning": "young",
+    "meaning_mm": "ငယ်သော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ながい (長い)",
+    "word_rmj": "nagai",
+    "spelling": "nagai",
+    "meaning": "long",
+    "meaning_mm": "ရှည်သော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "みじかい (短い)",
+    "word_rmj": "mijikai",
+    "spelling": "mijikai",
+    "meaning": "short",
+    "meaning_mm": "တိုသော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "あかるい (明るい)",
+    "word_rmj": "akarui",
+    "spelling": "akarui",
+    "meaning": "bright",
+    "meaning_mm": "လင်းသော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "くらい (暗い)",
+    "word_rmj": "kurai",
+    "spelling": "kurai",
+    "meaning": "dark",
+    "meaning_mm": "မှောင်သော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "げんかん (玄関)",
+    "word_rmj": "genkan",
+    "spelling": "genkan",
+    "meaning": "entrance hall",
+    "meaning_mm": "အိမ်ဝင်ပေါက်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "トイレ",
+    "word_rmj": "toire",
+    "spelling": "toire",
+    "meaning": "toilet, restroom",
+    "meaning_mm": "အိမ်သာ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "おふろ (お風呂)",
+    "word_rmj": "ofuro",
+    "spelling": "ofuro",
+    "meaning": "bath",
+    "meaning_mm": "ရေချိုးခန်း",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "まど (窓)",
+    "word_rmj": "mado",
+    "spelling": "mado",
+    "meaning": "window",
+    "meaning_mm": "ပြတင်းပေါက်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ドア",
+    "word_rmj": "doa",
+    "spelling": "doa",
+    "meaning": "door",
+    "meaning_mm": "တံခါး",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "いす (椅子)",
+    "word_rmj": "isu",
+    "spelling": "isu",
+    "meaning": "chair",
+    "meaning_mm": "ကုလားထိုင်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "テレビ",
+    "word_rmj": "terebi",
+    "spelling": "terebi",
+    "meaning": "television",
+    "meaning_mm": "တီဗီ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ラジオ",
+    "word_rmj": "rajio",
+    "spelling": "rajio",
+    "meaning": "radio",
+    "meaning_mm": "ရေဒီယို",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "パソコン",
+    "word_rmj": "pasokon",
+    "spelling": "pasokon",
+    "meaning": "personal computer",
+    "meaning_mm": "ကွန်ပျူတာ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "カメラ",
+    "word_rmj": "kamera",
+    "spelling": "kamera",
+    "meaning": "camera",
+    "meaning_mm": "ကင်မရာ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "たてもの (建物)",
+    "word_rmj": "tatemono",
+    "spelling": "tatemono",
+    "meaning": "building",
+    "meaning_mm": "အဆောက်အဦ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "みち (道)",
+    "word_rmj": "michi",
+    "spelling": "michi",
+    "meaning": "road, street",
+    "meaning_mm": "လမ်း",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "はし (橋)",
+    "word_rmj": "hashi",
+    "spelling": "hashi",
+    "meaning": "bridge",
+    "meaning_mm": "တံတား",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "にわ (庭)",
+    "word_rmj": "niwa",
+    "spelling": "niwa",
+    "meaning": "garden",
+    "meaning_mm": "ဥယျာဉ်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "しゅくだい (宿題)",
+    "word_rmj": "shukudai",
+    "spelling": "shukudai",
+    "meaning": "homework",
+    "meaning_mm": "အိမ်စာ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "しごと (仕事)",
+    "word_rmj": "shigoto",
+    "spelling": "shigoto",
+    "meaning": "work, job",
+    "meaning_mm": "အလုပ်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "くすり (薬)",
+    "word_rmj": "kusuri",
+    "spelling": "kusuri",
+    "meaning": "medicine",
+    "meaning_mm": "ဆေး",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "たんじょうび (誕生日)",
+    "word_rmj": "tanjoubi",
+    "spelling": "tanjoubi",
+    "meaning": "birthday",
+    "meaning_mm": "မွေးနေ့",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "パーティー",
+    "word_rmj": "paathii",
+    "spelling": "paathii",
+    "meaning": "party",
+    "meaning_mm": "ပါတီပွဲ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "はい",
+    "word_rmj": "hai",
+    "spelling": "hai",
+    "meaning": "yes",
+    "meaning_mm": "ဟုတ်ကဲ့",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "いいえ",
+    "word_rmj": "iie",
+    "spelling": "iie",
+    "meaning": "no",
+    "meaning_mm": "မဟုတ်ဘူး, ဟင့်အင်း",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ことば (言葉)",
+    "word_rmj": "kotoba",
+    "spelling": "kotoba",
+    "meaning": "word, language",
+    "meaning_mm": "စကားလုံး, ဘာသာစကား",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "じ (字)",
+    "word_rmj": "ji",
+    "spelling": "ji",
+    "meaning": "letter, character",
+    "meaning_mm": "စာလုံး",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "せんしゅう (先週)",
+    "word_rmj": "senshuu",
+    "spelling": "senshuu",
+    "meaning": "last week",
+    "meaning_mm": "ပြီးခဲ့တဲ့အပတ်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "こんしゅう (今週)",
+    "word_rmj": "konshuu",
+    "spelling": "konshuu",
+    "meaning": "this week",
+    "meaning_mm": "ဒီအပတ်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "らいしゅう (来週)",
+    "word_rmj": "raishuu",
+    "spelling": "raishuu",
+    "meaning": "next week",
+    "meaning_mm": "လာမယ့်အပတ်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "せんげつ (先月)",
+    "word_rmj": "sengetsu",
+    "spelling": "sengetsu",
+    "meaning": "last month",
+    "meaning_mm": "ပြီးခဲ့တဲ့လ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "こんげつ (今月)",
+    "word_rmj": "kongetsu",
+    "spelling": "kongetsu",
+    "meaning": "this month",
+    "meaning_mm": "ဒီလ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "らいげつ (来月)",
+    "word_rmj": "raigetsu",
+    "spelling": "raigetsu",
+    "meaning": "next month",
+    "meaning_mm": "လာမယ့်လ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "きょねん (去年)",
+    "word_rmj": "kyonen",
+    "spelling": "kyonen",
+    "meaning": "last year",
+    "meaning_mm": "မနှစ်က",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ことし (今年)",
+    "word_rmj": "kotoshi",
+    "spelling": "kotoshi",
+    "meaning": "this year",
+    "meaning_mm": "ဒီနှစ်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "らいねん (来年)",
+    "word_rmj": "rainen",
+    "spelling": "rainen",
+    "meaning": "next year",
+    "meaning_mm": "လာမယ့်နှစ်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "じかん (時間)",
+    "word_rmj": "jikan",
+    "spelling": "jikan",
+    "meaning": "time, hour",
+    "meaning_mm": "အချိန်, နာရီ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ふん (分)",
+    "word_rmj": "fun",
+    "spelling": "fun",
+    "meaning": "minute",
+    "meaning_mm": "မိနစ်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ごぜん (午前)",
+    "word_rmj": "gozen",
+    "spelling": "gozen",
+    "meaning": "A.M., morning",
+    "meaning_mm": "မနက်ပိုင်း",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ごご (午後)",
+    "word_rmj": "gogo",
+    "spelling": "gogo",
+    "meaning": "P.M., afternoon",
+    "meaning_mm": "နေ့လည်ပိုင်း",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "けさ (今朝)",
+    "word_rmj": "kesa",
+    "spelling": "kesa",
+    "meaning": "this morning",
+    "meaning_mm": "ဒီမနက်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "こんばん (今晩)",
+    "word_rmj": "konban",
+    "spelling": "konban",
+    "meaning": "this evening, tonight",
+    "meaning_mm": "ဒီည",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "やすみ (休み)",
+    "word_rmj": "yasumi",
+    "spelling": "yasumi",
+    "meaning": "rest, holiday, day off",
+    "meaning_mm": "အနား, ပိတ်ရက်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ぎゅうにゅう (牛乳)",
+    "word_rmj": "gyuunyuu",
+    "spelling": "gyuunyuu",
+    "meaning": "milk",
+    "meaning_mm": "နွားနို့",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "たまご (卵)",
+    "word_rmj": "tamago",
+    "spelling": "tamago",
+    "meaning": "egg",
+    "meaning_mm": "ဥ, ကြက်ဥ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "きって (切手)",
+    "word_rmj": "kitte",
+    "spelling": "kitte",
+    "meaning": "postage stamp",
+    "meaning_mm": "တံဆိပ်ခေါင်း",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ふうとう (封筒)",
+    "word_rmj": "fuutou",
+    "spelling": "fuutou",
+    "meaning": "envelope",
+    "meaning_mm": "စာအိတ်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "きっぷ (切符)",
+    "word_rmj": "kippu",
+    "spelling": "kippu",
+    "meaning": "ticket",
+    "meaning_mm": "လက်မှတ်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "おとうさん (お父さん)",
+    "word_rmj": "otousan",
+    "spelling": "otousan",
+    "meaning": "(someone's) father",
+    "meaning_mm": "(သူတစ်ပါး၏)အဖေ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "おかあさん (お母さん)",
+    "word_rmj": "okaasan",
+    "spelling": "okaasan",
+    "meaning": "(someone's) mother",
+    "meaning_mm": "(သူတစ်ပါး၏)အမေ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "おにいさん (お兄さん)",
+    "word_rmj": "oniisan",
+    "spelling": "oniisan",
+    "meaning": "(someone's) older brother",
+    "meaning_mm": "(သူတစ်ပါး၏)အစ်ကို",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "おねえさん (お姉さん)",
+    "word_rmj": "oneesan",
+    "spelling": "oneesan",
+    "meaning": "(someone's) older sister",
+    "meaning_mm": "(သူတစ်ပါး၏)အစ်မ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "おとうとさん (弟さん)",
+    "word_rmj": "otoutosan",
+    "spelling": "otoutosan",
+    "meaning": "(someone's) younger brother",
+    "meaning_mm": "(သူတစ်ပါး၏)မောင်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "いもうとさん (妹さん)",
+    "word_rmj": "imoutosan",
+    "spelling": "imoutosan",
+    "meaning": "(someone's) younger sister",
+    "meaning_mm": "(သူတစ်ပါး၏)ညီမ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "りょうしん (両親)",
+    "word_rmj": "ryoushin",
+    "spelling": "ryoushin",
+    "meaning": "parents",
+    "meaning_mm": "မိဘနှစ်ပါး",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "きょうだい (兄弟)",
+    "word_rmj": "kyoudai",
+    "spelling": "kyoudai",
+    "meaning": "siblings, brothers",
+    "meaning_mm": "မောင်နှမ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "だいがく (大学)",
+    "word_rmj": "daigaku",
+    "spelling": "daigaku",
+    "meaning": "university",
+    "meaning_mm": "တက္ကသိုလ်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "こうこう (高校)",
+    "word_rmj": "koukou",
+    "spelling": "koukou",
+    "meaning": "high school",
+    "meaning_mm": "အထက်တန်းကျောင်း",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ちゅうがっこう (中学校)",
+    "word_rmj": "chuugakkou",
+    "spelling": "chuugakkou",
+    "meaning": "junior high school",
+    "meaning_mm": "အလယ်တန်းကျောင်း",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "しょうがっこう (小学校)",
+    "word_rmj": "shougakkou",
+    "spelling": "shougakkou",
+    "meaning": "elementary school",
+    "meaning_mm": "မူလတန်းကျောင်း",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ようちえん (幼稚園)",
+    "word_rmj": "youchien",
+    "spelling": "youchien",
+    "meaning": "kindergarten",
+    "meaning_mm": "သူငယ်တန်းကျောင်း",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "こたえ (答え)",
+    "word_rmj": "kotae",
+    "spelling": "kotae",
+    "meaning": "answer",
+    "meaning_mm": "အဖြေ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "しつもん (質問)",
+    "word_rmj": "shitsumon",
+    "spelling": "shitsumon",
+    "meaning": "question",
+    "meaning_mm": "မေးခွန်း",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "もんだい (問題)",
+    "word_rmj": "mondai",
+    "spelling": "mondai",
+    "meaning": "problem, question",
+    "meaning_mm": "ပြဿနာ, ပုစ္ဆာ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "テスト",
+    "word_rmj": "tesuto",
+    "spelling": "tesuto",
+    "meaning": "test",
+    "meaning_mm": "စာမေးပွဲ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "クラス",
+    "word_rmj": "kurasu",
+    "spelling": "kurasu",
+    "meaning": "class",
+    "meaning_mm": "အတန်း",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ページ",
+    "word_rmj": "peeji",
+    "spelling": "peeji",
+    "meaning": "page",
+    "meaning_mm": "စာမျက်နှာ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "エレベーター",
+    "word_rmj": "erebeetaa",
+    "spelling": "erebeetaa",
+    "meaning": "elevator",
+    "meaning_mm": "ဓာတ်လှေကား",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "エスカレーター",
+    "word_rmj": "esukareetaa",
+    "spelling": "esukareetaa",
+    "meaning": "escalator",
+    "meaning_mm": "စက်လှေကား",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ホテル",
+    "word_rmj": "hoteru",
+    "spelling": "hoteru",
+    "meaning": "hotel",
+    "meaning_mm": "ဟိုတယ်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "レストラン",
+    "word_rmj": "resutoran",
+    "spelling": "resutoran",
+    "meaning": "restaurant",
+    "meaning_mm": "စားသောက်ဆိုင်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "コーヒー",
+    "word_rmj": "koohii",
+    "spelling": "koohii",
+    "meaning": "coffee",
+    "meaning_mm": "ကော်ဖီ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ジュース",
+    "word_rmj": "juusu",
+    "spelling": "juusu",
+    "meaning": "juice",
+    "meaning_mm": "ဖျော်ရည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "カレー",
+    "word_rmj": "karee",
+    "spelling": "karee",
+    "meaning": "curry",
+    "meaning_mm": "ဟင်း",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "コート",
+    "word_rmj": "kooto",
+    "spelling": "kooto",
+    "meaning": "coat",
+    "meaning_mm": "ကုတ်အင်္ကျီ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "セーター",
+    "word_rmj": "seetaa",
+    "spelling": "seetaa",
+    "meaning": "sweater",
+    "meaning_mm": "ဆွယ်တာ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ネクタイ",
+    "word_rmj": "nekutai",
+    "spelling": "nekutai",
+    "meaning": "necktie",
+    "meaning_mm": "လည်စည်း",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ギター",
+    "word_rmj": "gitaa",
+    "spelling": "gitaa",
+    "meaning": "guitar",
+    "meaning_mm": "ဂီတာ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ピアノ",
+    "word_rmj": "piano",
+    "spelling": "piano",
+    "meaning": "piano",
+    "meaning_mm": "စန္ဒရား",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "スポーツ",
+    "word_rmj": "supootsu",
+    "spelling": "supootsu",
+    "meaning": "sports",
+    "meaning_mm": "အားကစား",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "プール",
+    "word_rmj": "puuru",
+    "spelling": "puuru",
+    "meaning": "pool",
+    "meaning_mm": "ရေကူးကန်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ニュース",
+    "word_rmj": "nyuusu",
+    "spelling": "nyuusu",
+    "meaning": "news",
+    "meaning_mm": "သတင်း",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "タクシー",
+    "word_rmj": "takushii",
+    "spelling": "takushii",
+    "meaning": "taxi",
+    "meaning_mm": "တက္ကစီ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "バス",
+    "word_rmj": "basu",
+    "spelling": "basu",
+    "meaning": "bus",
+    "meaning_mm": "ဘတ်စ်ကား",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "マッチ",
+    "word_rmj": "matchi",
+    "spelling": "matchi",
+    "meaning": "match",
+    "meaning_mm": "မီးခြစ်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "コップ",
+    "word_rmj": "koppu",
+    "spelling": "koppu",
+    "meaning": "cup, glass",
+    "meaning_mm": "ဖန်ခွက်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ガラス",
+    "word_rmj": "garasu",
+    "spelling": "garasu",
+    "meaning": "glass (material)",
+    "meaning_mm": "ဖန်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ボタン",
+    "word_rmj": "botan",
+    "spelling": "botan",
+    "meaning": "button",
+    "meaning_mm": "ခလုတ်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ポケット",
+    "word_rmj": "poketto",
+    "spelling": "poketto",
+    "meaning": "pocket",
+    "meaning_mm": "အိတ်ကပ်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ゼロ",
+    "word_rmj": "zero",
+    "spelling": "zero",
+    "meaning": "zero",
+    "meaning_mm": "သုည",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "だんだん",
+    "word_rmj": "dandan",
+    "spelling": "dandan",
+    "meaning": "gradually",
+    "meaning_mm": "တဖြည်းဖြည်း",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "もうすぐ",
+    "word_rmj": "mousugu",
+    "spelling": "mousugu",
+    "meaning": "soon",
+    "meaning_mm": "မကြာခင်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "あとで (後で)",
+    "word_rmj": "atode",
+    "spelling": "atode",
+    "meaning": "later",
+    "meaning_mm": "နောက်မှ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ちょっと",
+    "word_rmj": "chotto",
+    "spelling": "chotto",
+    "meaning": "a little",
+    "meaning_mm": "ခဏ, နည်းနည်း",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "もっと",
+    "word_rmj": "motto",
+    "spelling": "motto",
+    "meaning": "more",
+    "meaning_mm": "ပိုပြီး",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "どう",
+    "word_rmj": "dou",
+    "spelling": "dou",
+    "meaning": "how",
+    "meaning_mm": "ဘယ်လို",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "また",
+    "word_rmj": "mata",
+    "spelling": "mata",
+    "meaning": "again",
+    "meaning_mm": "နောက်တစ်ခါ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "おなじ (同じ)",
+    "word_rmj": "onaji",
+    "spelling": "onaji",
+    "meaning": "same",
+    "meaning_mm": "တူတူပဲ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "りっぱ (な)",
+    "word_rmj": "rippa (na)",
+    "spelling": "rippa (na)",
+    "meaning": "splendid, fine",
+    "meaning_mm": "ခမ်းနားသော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "いろいろ (な)",
+    "word_rmj": "iroiro (na)",
+    "spelling": "iroiro (na)",
+    "meaning": "various",
+    "meaning_mm": "အမျိုးမျိုး",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "だいじょうぶ (な)",
+    "word_rmj": "daijoubu (na)",
+    "spelling": "daijoubu (na)",
+    "meaning": "OK, all right",
+    "meaning_mm": "အဆင်ပြေသော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "じょうぶ (な)",
+    "word_rmj": "joubu (na)",
+    "spelling": "joubu (na)",
+    "meaning": "strong, sturdy",
+    "meaning_mm": "ခိုင်ခံ့သော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "たいせつ (な)",
+    "word_rmj": "taisetsu (na)",
+    "spelling": "taisetsu (na)",
+    "meaning": "important, precious",
+    "meaning_mm": "အရေးကြီးသော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "べんり (な)",
+    "word_rmj": "benri (na)",
+    "spelling": "benri (na)",
+    "meaning": "convenient",
+    "meaning_mm": "အဆင်ပြေသော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ふべん (な)",
+    "word_rmj": "fuben (na)",
+    "spelling": "fuben (na)",
+    "meaning": "inconvenient",
+    "meaning_mm": "အဆင်မပြေသော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "しんせつ (な)",
+    "word_rmj": "shinsetsu (na)",
+    "spelling": "shinsetsu (na)",
+    "meaning": "kind",
+    "meaning_mm": "ကြင်နာသော, သဘောကောင်းသော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ゆうめい (な)",
+    "word_rmj": "yuumei (na)",
+    "spelling": "yuumei (na)",
+    "meaning": "famous",
+    "meaning_mm": "ကျော်ကြားသော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "くに (国)",
+    "word_rmj": "kuni",
+    "spelling": "kuni",
+    "meaning": "country",
+    "meaning_mm": "နိုင်ငံ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "アメリカ",
+    "word_rmj": "amerika",
+    "spelling": "amerika",
+    "meaning": "America",
+    "meaning_mm": "အမေရိက",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "イギリス",
+    "word_rmj": "igirisu",
+    "spelling": "igirisu",
+    "meaning": "United Kingdom",
+    "meaning_mm": "အင်္ဂလန်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ちゅうごく (中国)",
+    "word_rmj": "chuugoku",
+    "spelling": "chuugoku",
+    "meaning": "China",
+    "meaning_mm": "တရုတ်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ドイツ",
+    "word_rmj": "doitsu",
+    "spelling": "doitsu",
+    "meaning": "Germany",
+    "meaning_mm": "ဂျာမနီ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "タイ",
+    "word_rmj": "tai",
+    "spelling": "tai",
+    "meaning": "Thailand",
+    "meaning_mm": "ထိုင်း",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ひがし (東)",
+    "word_rmj": "higashi",
+    "spelling": "higashi",
+    "meaning": "east",
+    "meaning_mm": "အရှေ့",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "にし (西)",
+    "word_rmj": "nishi",
+    "spelling": "nishi",
+    "meaning": "west",
+    "meaning_mm": "အနောက်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "みなみ (南)",
+    "word_rmj": "minami",
+    "spelling": "minami",
+    "meaning": "south",
+    "meaning_mm": "တောင်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "きた (北)",
+    "word_rmj": "kita",
+    "spelling": "kita",
+    "meaning": "north",
+    "meaning_mm": "မြောက်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ちず (地図)",
+    "word_rmj": "chizu",
+    "spelling": "chizu",
+    "meaning": "map",
+    "meaning_mm": "မြေပုံ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "しお (塩)",
+    "word_rmj": "shio",
+    "spelling": "shio",
+    "meaning": "salt",
+    "meaning_mm": "ဆား",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "さとう (砂糖)",
+    "word_rmj": "satou",
+    "spelling": "satou",
+    "meaning": "sugar",
+    "meaning_mm": "သကြား",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "しょうゆ",
+    "word_rmj": "shouyu",
+    "spelling": "shouyu",
+    "meaning": "soy sauce",
+    "meaning_mm": "ပဲငံပြာရည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ちゃわん",
+    "word_rmj": "chawan",
+    "spelling": "chawan",
+    "meaning": "rice bowl",
+    "meaning_mm": "ထမင်းပန်းကန်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "はし",
+    "word_rmj": "hashi",
+    "spelling": "hashi",
+    "meaning": "chopsticks",
+    "meaning_mm": "တူ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "スプーン",
+    "word_rmj": "supuun",
+    "spelling": "supuun",
+    "meaning": "spoon",
+    "meaning_mm": "ဇွန်း",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "フォーク",
+    "word_rmj": "fooku",
+    "spelling": "fooku",
+    "meaning": "fork",
+    "meaning_mm": "ခက်ရင်း",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ナイフ",
+    "word_rmj": "naifu",
+    "spelling": "naifu",
+    "meaning": "knife",
+    "meaning_mm": "ဓား",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "おさら (お皿)",
+    "word_rmj": "osara",
+    "spelling": "osara",
+    "meaning": "plate, dish",
+    "meaning_mm": "ပန်းကန်ပြား",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "こえ (声)",
+    "word_rmj": "koe",
+    "spelling": "koe",
+    "meaning": "voice",
+    "meaning_mm": "အသံ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "かぜ (風邪)",
+    "word_rmj": "kaze",
+    "spelling": "kaze",
+    "meaning": "a cold",
+    "meaning_mm": "အအေးမိခြင်း",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "びょうき (病気)",
+    "word_rmj": "byouki",
+    "spelling": "byouki",
+    "meaning": "illness, sickness",
+    "meaning_mm": "ရောဂါ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "あぶない (危ない)",
+    "word_rmj": "abunai",
+    "spelling": "abunai",
+    "meaning": "dangerous",
+    "meaning_mm": "အန္တရာယ်ရှိသော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "いたい (痛い)",
+    "word_rmj": "itai",
+    "spelling": "itai",
+    "meaning": "painful",
+    "meaning_mm": "နာကျင်သော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "だめ (な)",
+    "word_rmj": "dame (na)",
+    "spelling": "dame (na)",
+    "meaning": "no good, not permitted",
+    "meaning_mm": "မကောင်းသော, မဖြစ်နိုင်သော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ねむい (眠い)",
+    "word_rmj": "nemui",
+    "spelling": "nemui",
+    "meaning": "sleepy",
+    "meaning_mm": "အိပ်ငိုက်သော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "つまらない",
+    "word_rmj": "tsumaranai",
+    "spelling": "tsumaranai",
+    "meaning": "boring, uninteresting",
+    "meaning_mm": "ပျင်းစရာကောင်းသော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "おぼえる (覚える)",
+    "word_rmj": "oboeru",
+    "spelling": "oboeru",
+    "meaning": "to remember, to memorize",
+    "meaning_mm": "မှတ်မိသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "こまる (困る)",
+    "word_rmj": "komaru",
+    "spelling": "komaru",
+    "meaning": "to be in trouble",
+    "meaning_mm": "အခက်တွေ့သည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "なくす (無くす)",
+    "word_rmj": "nakusu",
+    "spelling": "nakusu",
+    "meaning": "to lose something",
+    "meaning_mm": "ပျောက်ဆုံးသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "はらう (払う)",
+    "word_rmj": "harau",
+    "spelling": "harau",
+    "meaning": "to pay",
+    "meaning_mm": "ငွေရှင်းသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "かえす (返す)",
+    "word_rmj": "kaesu",
+    "spelling": "kaesu",
+    "meaning": "to return (an object)",
+    "meaning_mm": "(ပစ္စည်း)ပြန်ပေးသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "でかける (出かける)",
+    "word_rmj": "dekakeru",
+    "spelling": "dekakeru",
+    "meaning": "to go out",
+    "meaning_mm": "အပြင်ထွက်သည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ぬぐ (脱ぐ)",
+    "word_rmj": "nugu",
+    "spelling": "nugu",
+    "meaning": "to take off (clothes)",
+    "meaning_mm": "(အဝတ်)ချွတ်သည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "もっていく (持って行く)",
+    "word_rmj": "motteiku",
+    "spelling": "motteiku",
+    "meaning": "to take (something)",
+    "meaning_mm": "(တစ်ခုခု)ယူသွားသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "もってくる (持って来る)",
+    "word_rmj": "mottekuru",
+    "spelling": "mottekuru",
+    "meaning": "to bring (something)",
+    "meaning_mm": "(တစ်ခုခု)ယူလာသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "しんぱいする (心配する)",
+    "word_rmj": "shinpaisuru",
+    "spelling": "shinpaisuru",
+    "meaning": "to worry",
+    "meaning_mm": "စိုးရိမ်သည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ざんぎょうする (残業する)",
+    "word_rmj": "zangyousuru",
+    "spelling": "zangyousuru",
+    "meaning": "to work overtime",
+    "meaning_mm": "အချိန်ပိုဆင်းသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "りょこうする (旅行する)",
+    "word_rmj": "ryokousuru",
+    "spelling": "ryokousuru",
+    "meaning": "to travel",
+    "meaning_mm": "ခရီးသွားသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "きる (着る)",
+    "word_rmj": "kiru",
+    "spelling": "kiru",
+    "meaning": "to wear (on upper body)",
+    "meaning_mm": "(အပေါ်ပိုင်း)ဝတ်သည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "はく",
+    "word_rmj": "haku",
+    "spelling": "haku",
+    "meaning": "to wear (on lower body)",
+    "meaning_mm": "(အောက်ပိုင်း)ဝတ်သည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "うまれる (生まれる)",
+    "word_rmj": "umareru",
+    "spelling": "umareru",
+    "meaning": "to be born",
+    "meaning_mm": "မွေးဖွားသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "しごとをする (仕事をする)",
+    "word_rmj": "shigotowosuru",
+    "spelling": "shigotowosuru",
+    "meaning": "to work",
+    "meaning_mm": "အလုပ်လုပ်သည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "さんぽする (散歩する)",
+    "word_rmj": "sanposuru",
+    "spelling": "sanposuru",
+    "meaning": "to take a walk",
+    "meaning_mm": "လမ်းလျှောက်ထွက်သည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "せんたくする (洗濯する)",
+    "word_rmj": "sentakusuru",
+    "spelling": "sentakusuru",
+    "meaning": "to do laundry",
+    "meaning_mm": "အဝတ်လျှော်သည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "そうじする (掃除する)",
+    "word_rmj": "soujisuru",
+    "spelling": "soujisuru",
+    "meaning": "to clean",
+    "meaning_mm": "သန့်ရှင်းရေးလုပ်သည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "りょうりする (料理する)",
+    "word_rmj": "ryourisuru",
+    "spelling": "ryourisuru",
+    "meaning": "to cook",
+    "meaning_mm": "ချက်ပြုတ်သည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "うんてんする (運転する)",
+    "word_rmj": "untensuru",
+    "spelling": "untensuru",
+    "meaning": "to drive",
+    "meaning_mm": "ကားမောင်းသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "でんわする (電話する)",
+    "word_rmj": "denwasuru",
+    "spelling": "denwasuru",
+    "meaning": "to make a phone call",
+    "meaning_mm": "ဖုန်းဆက်သည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "けっこんする (結婚する)",
+    "word_rmj": "kekkonsuru",
+    "spelling": "kekkonsuru",
+    "meaning": "to marry",
+    "meaning_mm": "လက်ထပ်သည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "かいものする (買い物する)",
+    "word_rmj": "kaimonosuru",
+    "spelling": "kaimonosuru",
+    "meaning": "to shop",
+    "meaning_mm": "ဈေးဝယ်သည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ひく (弾く)",
+    "word_rmj": "hiku",
+    "spelling": "hiku",
+    "meaning": "to play (a string instrument)",
+    "meaning_mm": "(ကြိုးတပ်တူရိယာ)တီးသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "うたう (歌う)",
+    "word_rmj": "utau",
+    "spelling": "utau",
+    "meaning": "to sing",
+    "meaning_mm": "သီချင်းဆိုသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "おす (押す)",
+    "word_rmj": "osu",
+    "spelling": "osu",
+    "meaning": "to push, to press",
+    "meaning_mm": "တွန်းသည်, နှိပ်သည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ひく (引く)",
+    "word_rmj": "hiku",
+    "spelling": "hiku",
+    "meaning": "to pull",
+    "meaning_mm": "ဆွဲသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "わたる (渡る)",
+    "word_rmj": "wataru",
+    "spelling": "wataru",
+    "meaning": "to cross",
+    "meaning_mm": "ဖြတ်ကူးသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "まがる (曲がる)",
+    "word_rmj": "magaru",
+    "spelling": "magaru",
+    "meaning": "to turn",
+    "meaning_mm": "ကွေ့သည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "さわる (触る)",
+    "word_rmj": "sawaru",
+    "spelling": "sawaru",
+    "meaning": "to touch",
+    "meaning_mm": "ထိသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "だす (出す)",
+    "word_rmj": "dasu",
+    "spelling": "dasu",
+    "meaning": "to take out, to submit",
+    "meaning_mm": "ထုတ်သည်, တင်ပြသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "とまる (泊まる)",
+    "word_rmj": "tomaru",
+    "spelling": "tomaru",
+    "meaning": "to stay (e.g. at a hotel)",
+    "meaning_mm": "(ဟိုတယ်မှာ)တည်းသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ならぶ (並ぶ)",
+    "word_rmj": "narabu",
+    "spelling": "narabu",
+    "meaning": "to line up",
+    "meaning_mm": "တန်းစီသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "のぼる (登る)",
+    "word_rmj": "noboru",
+    "spelling": "noboru",
+    "meaning": "to climb",
+    "meaning_mm": "တက်သည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "はし (箸)",
+    "word_rmj": "hashi",
+    "spelling": "hashi",
+    "meaning": "chopsticks",
+    "meaning_mm": "တူ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "きょうしつ (教室)",
+    "word_rmj": "kyoushitsu",
+    "spelling": "kyoushitsu",
+    "meaning": "classroom",
+    "meaning_mm": "စာသင်ခန်း",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "しょくどう (食堂)",
+    "word_rmj": "shokudou",
+    "spelling": "shokudou",
+    "meaning": "dining hall, canteen",
+    "meaning_mm": "ထမင်းစားခန်း",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "じむしょ (事務所)",
+    "word_rmj": "jimusho",
+    "spelling": "jimusho",
+    "meaning": "office",
+    "meaning_mm": "ရုံးခန်း",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "かいぎしつ (会議室)",
+    "word_rmj": "kaigishitsu",
+    "spelling": "kaigishitsu",
+    "meaning": "conference room",
+    "meaning_mm": "အစည်းအဝေးခန်း",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "うけつけ (受付)",
+    "word_rmj": "uketsuke",
+    "spelling": "uketsuke",
+    "meaning": "reception desk",
+    "meaning_mm": "ဧည့်ကြိုကောင်တာ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ロビー",
+    "word_rmj": "robii",
+    "spelling": "robii",
+    "meaning": "lobby",
+    "meaning_mm": "ဧည့်ခန်း",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "かいだん (階段)",
+    "word_rmj": "kaidan",
+    "spelling": "kaidan",
+    "meaning": "stairs",
+    "meaning_mm": "လှေကား",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "くに (お国)",
+    "word_rmj": "okuni",
+    "spelling": "okuni",
+    "meaning": "country (polite)",
+    "meaning_mm": "(သင့်)နိုင်ငံ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "かいしゃ (会社)",
+    "word_rmj": "kaisha",
+    "spelling": "kaisha",
+    "meaning": "company",
+    "meaning_mm": "ကုမ္ပဏီ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "うち",
+    "word_rmj": "uchi",
+    "spelling": "uchi",
+    "meaning": "home, my place",
+    "meaning_mm": "အိမ်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "なんがい (何階)",
+    "word_rmj": "nangai",
+    "spelling": "nangai",
+    "meaning": "what floor",
+    "meaning_mm": "ဘယ်နှစ်လွှာ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "いくら",
+    "word_rmj": "ikura",
+    "spelling": "ikura",
+    "meaning": "how much",
+    "meaning_mm": "ဘယ်လောက်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "え (絵)",
+    "word_rmj": "e",
+    "spelling": "e",
+    "meaning": "picture, drawing",
+    "meaning_mm": "ပန်းချီ, ရုပ်ပုံ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "はがき (葉書)",
+    "word_rmj": "hagaki",
+    "spelling": "hagaki",
+    "meaning": "postcard",
+    "meaning_mm": "โปစ့်ကဒ်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "きる (着る)",
+    "word_rmj": "kiru",
+    "spelling": "kiru",
+    "meaning": "to wear (shirt, etc.)",
+    "meaning_mm": "ဝတ်သည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "かぶる",
+    "word_rmj": "kaburu",
+    "spelling": "kaburu",
+    "meaning": "to wear (a hat)",
+    "meaning_mm": "ဆောင်းသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "いれる (入れる)",
+    "word_rmj": "ireru",
+    "spelling": "ireru",
+    "meaning": "to put in",
+    "meaning_mm": "ထည့်သည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "おなかがすく",
+    "word_rmj": "onakagasuku",
+    "spelling": "onakagasuku",
+    "meaning": "to get hungry",
+    "meaning_mm": "ဗိုက်ဆာသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "のどがかわく",
+    "word_rmj": "nodogakawaku",
+    "spelling": "nodogakawaku",
+    "meaning": "to get thirsty",
+    "meaning_mm": "ရေငတ်သည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "つかれる (疲れる)",
+    "word_rmj": "tsukareru",
+    "spelling": "tsukareru",
+    "meaning": "to get tired",
+    "meaning_mm": "ပင်ပန်းသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "やめる (辞める)",
+    "word_rmj": "yameru",
+    "spelling": "yameru",
+    "meaning": "to quit",
+    "meaning_mm": "အလုပ်ထွက်သည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ちがう (違う)",
+    "word_rmj": "chigau",
+    "spelling": "chigau",
+    "meaning": "to be different, wrong",
+    "meaning_mm": "ကွဲပြားသည်, မှားသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "はじめまして",
+    "word_rmj": "hajimemashite",
+    "spelling": "hajimemashite",
+    "meaning": "Nice to meet you (for the first time)",
+    "meaning_mm": "တွေ့ရတာဝမ်းသာပါတယ်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "どうぞよろしく",
+    "word_rmj": "douzoyoroshiku",
+    "spelling": "douzoyoroshiku",
+    "meaning": "Pleased to meet you",
+    "meaning_mm": "ခင်ခင်မင်မင်ဆက်ဆံပေးပါ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "すみません",
+    "word_rmj": "sumimasen",
+    "spelling": "sumimasen",
+    "meaning": "Excuse me, I'm sorry",
+    "meaning_mm": "တစ်ဆိတ်လောက်, တောင်းပန်ပါတယ်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ごめんなさい",
+    "word_rmj": "gomenasai",
+    "spelling": "gomenasai",
+    "meaning": "I'm sorry",
+    "meaning_mm": "တောင်းပန်ပါတယ်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "いらっしゃいませ",
+    "word_rmj": "irasshaimase",
+    "spelling": "irasshaimase",
+    "meaning": "Welcome (to a store)",
+    "meaning_mm": "ကြိုဆိုပါတယ် (ဆိုင်တွင်)",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "いってきます",
+    "word_rmj": "ittekimasu",
+    "spelling": "ittekimasu",
+    "meaning": "I'm going (and coming back)",
+    "meaning_mm": "သွားလိုက်ဦးမယ်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "いってらっしゃい",
+    "word_rmj": "itterasshai",
+    "spelling": "itterasshai",
+    "meaning": "Please go and come back",
+    "meaning_mm": "ကောင်းကောင်းသွားပါ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ただいま",
+    "word_rmj": "tadaima",
+    "spelling": "tadaima",
+    "meaning": "I'm home",
+    "meaning_mm": "ပြန်ရောက်ပါပြီ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "おかえりなさい",
+    "word_rmj": "okaerinasai",
+    "spelling": "okaerinasai",
+    "meaning": "Welcome home",
+    "meaning_mm": "ပြန်လာတာကိုကြိုဆိုပါတယ်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "いただきます",
+    "word_rmj": "itadakimasu",
+    "spelling": "itadakimasu",
+    "meaning": "Thank you for the meal (before eating)",
+    "meaning_mm": "စားပါတော့မယ်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ごちそうさまでした",
+    "word_rmj": "gochisousamadeshita",
+    "spelling": "gochisousamadeshita",
+    "meaning": "Thank you for the meal (after eating)",
+    "meaning_mm": "စားလို့ကောင်းပါတယ်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "エアコン",
+    "word_rmj": "eakon",
+    "spelling": "eakon",
+    "meaning": "air conditioner",
+    "meaning_mm": "แอร์",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "パスポート",
+    "word_rmj": "pasupooto",
+    "spelling": "pasupooto",
+    "meaning": "passport",
+    "meaning_mm": "နိုင်ငံကူးလက်မှတ်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "なまえ (名前)",
+    "word_rmj": "namae",
+    "spelling": "namae",
+    "meaning": "name",
+    "meaning_mm": "နာမည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "じゅうしょ (住所)",
+    "word_rmj": "juusho",
+    "spelling": "juusho",
+    "meaning": "address",
+    "meaning_mm": "လိပ်စာ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "かぎ",
+    "word_rmj": "kagi",
+    "spelling": "kagi",
+    "meaning": "key",
+    "meaning_mm": "သော့",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "かど (角)",
+    "word_rmj": "kado",
+    "spelling": "kado",
+    "meaning": "corner",
+    "meaning_mm": "ထောင့်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "こうさてん (交差点)",
+    "word_rmj": "kousaten",
+    "spelling": "kousaten",
+    "meaning": "intersection",
+    "meaning_mm": "လမ်းဆုံ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "しんごう (信号)",
+    "word_rmj": "shingou",
+    "spelling": "shingou",
+    "meaning": "traffic light",
+    "meaning_mm": "မီးပွိုင့်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ひとつ (一つ)",
+    "word_rmj": "hitotsu",
+    "spelling": "hitotsu",
+    "meaning": "one thing",
+    "meaning_mm": "တစ်ခု",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ふたつ (二つ)",
+    "word_rmj": "futatsu",
+    "spelling": "futatsu",
+    "meaning": "two things",
+    "meaning_mm": "နှစ်ခု",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "みっつ (三つ)",
+    "word_rmj": "mittsu",
+    "spelling": "mittsu",
+    "meaning": "three things",
+    "meaning_mm": "သုံးခု",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "よっつ (四つ)",
+    "word_rmj": "yottsu",
+    "spelling": "yottsu",
+    "meaning": "four things",
+    "meaning_mm": "လေးခု",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "いつつ (五つ)",
+    "word_rmj": "itsutsu",
+    "spelling": "itsutsu",
+    "meaning": "five things",
+    "meaning_mm": "ငါးခု",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "むっつ (六つ)",
+    "word_rmj": "muttsu",
+    "spelling": "muttsu",
+    "meaning": "six things",
+    "meaning_mm": "ခြောက်ခု",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ななつ (七つ)",
+    "word_rmj": "nanatsu",
+    "spelling": "nanatsu",
+    "meaning": "seven things",
+    "meaning_mm": "ခုနစ်ခု",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "やっつ (八つ)",
+    "word_rmj": "yattsu",
+    "spelling": "yattsu",
+    "meaning": "eight things",
+    "meaning_mm": "ရှစ်ခု",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ここのつ (九つ)",
+    "word_rmj": "kokonotsu",
+    "spelling": "kokonotsu",
+    "meaning": "nine things",
+    "meaning_mm": "ကိုးခု",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "とお (十)",
+    "word_rmj": "too",
+    "spelling": "too",
+    "meaning": "ten things",
+    "meaning_mm": "ဆယ်ခု",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "いくつ",
+    "word_rmj": "ikutsu",
+    "spelling": "ikutsu",
+    "meaning": "how many things",
+    "meaning_mm": "ဘယ်နှခု",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ぜんぶ (全部)",
+    "word_rmj": "zenbu",
+    "spelling": "zenbu",
+    "meaning": "all, everything",
+    "meaning_mm": "အားလုံး",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "たぶん (多分)",
+    "word_rmj": "tabun",
+    "spelling": "tabun",
+    "meaning": "probably, maybe",
+    "meaning_mm": "ဖြစ်နိုင်တယ်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "きっと",
+    "word_rmj": "kitto",
+    "spelling": "kitto",
+    "meaning": "surely, certainly",
+    "meaning_mm": "သေချာပေါက်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "もしもし",
+    "word_rmj": "mosimosi",
+    "spelling": "mosimosi",
+    "meaning": "hello (on the phone)",
+    "meaning_mm": "ဟယ်လို (ဖုန်းပြောလျှင်)",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "つよい (強い)",
+    "word_rmj": "tsuyoi",
+    "spelling": "tsuyoi",
+    "meaning": "strong",
+    "meaning_mm": "အားကြီးသော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "よわい (弱い)",
+    "word_rmj": "yowai",
+    "spelling": "yowai",
+    "meaning": "weak",
+    "meaning_mm": "အားနည်းသော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "うれしい",
+    "word_rmj": "ureshii",
+    "spelling": "ureshii",
+    "meaning": "happy, glad",
+    "meaning_mm": "ဝမ်းသာသော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "かなしい (悲しい)",
+    "word_rmj": "kanashii",
+    "spelling": "kanashii",
+    "meaning": "sad",
+    "meaning_mm": "ဝမ်းနည်းသော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "さびしい (寂しい)",
+    "word_rmj": "sabishii",
+    "spelling": "sabishii",
+    "meaning": "lonely",
+    "meaning_mm": "အထီးကျန်သော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "きたない (汚い)",
+    "word_rmj": "kitanai",
+    "spelling": "kitanai",
+    "meaning": "dirty",
+    "meaning_mm": "ညစ်ပတ်သော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "うるさい",
+    "word_rmj": "urusai",
+    "spelling": "urusai",
+    "meaning": "noisy, annoying",
+    "meaning_mm": "ဆူညံသော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "かたい (硬い)",
+    "word_rmj": "katai",
+    "spelling": "katai",
+    "meaning": "hard, solid",
+    "meaning_mm": "မာကျောသော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "やわらかい (柔らかい)",
+    "word_rmj": "yawarakai",
+    "spelling": "yawarakai",
+    "meaning": "soft",
+    "meaning_mm": "ပျော့ပျောင်းသော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ふとい (太い)",
+    "word_rmj": "futoi",
+    "spelling": "futoi",
+    "meaning": "fat, thick",
+    "meaning_mm": "ထူသော, ဝသော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ほそい (細い)",
+    "word_rmj": "hosoi",
+    "spelling": "hosoi",
+    "meaning": "thin, slender",
+    "meaning_mm": "သွယ်သော, ပါးသော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "おもう (思う)",
+    "word_rmj": "omou",
+    "spelling": "omou",
+    "meaning": "to think",
+    "meaning_mm": "ထင်သည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "つくる (作る)",
+    "word_rmj": "tsukuru",
+    "spelling": "tsukuru",
+    "meaning": "to make, to produce",
+    "meaning_mm": "ပြုလုပ်သည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "うりば (売り場)",
+    "word_rmj": "uriba",
+    "spelling": "uriba",
+    "meaning": "department, sales floor",
+    "meaning_mm": "အရောင်းကောင်တာ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ちか (地下)",
+    "word_rmj": "chika",
+    "spelling": "chika",
+    "meaning": "basement, underground",
+    "meaning_mm": "မြေအောက်ထပ်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "おなじ (同じ)",
+    "word_rmj": "onaji",
+    "spelling": "onaji",
+    "meaning": "the same",
+    "meaning_mm": "တူညီသော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "きょだい (兄弟)",
+    "word_rmj": "kyoudai",
+    "spelling": "kyoudai",
+    "meaning": "siblings",
+    "meaning_mm": "မောင်နှမ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "あに (兄)",
+    "word_rmj": "ani",
+    "spelling": "ani",
+    "meaning": "(my) older brother",
+    "meaning_mm": "အစ်ကို",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "あね (姉)",
+    "word_rmj": "ane",
+    "spelling": "ane",
+    "meaning": "(my) older sister",
+    "meaning_mm": "အစ်မ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "おとうと (弟)",
+    "word_rmj": "otouto",
+    "spelling": "otouto",
+    "meaning": "(my) younger brother",
+    "meaning_mm": "မောင်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "いもうと (妹)",
+    "word_rmj": "imouto",
+    "spelling": "imouto",
+    "meaning": "(my) younger sister",
+    "meaning_mm": "ညီမ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "がいこく (外国)",
+    "word_rmj": "gaikoku",
+    "spelling": "gaikoku",
+    "meaning": "foreign country",
+    "meaning_mm": "နိုင်ငံခြား",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "りゅうがくせい (留学生)",
+    "word_rmj": "ryuugakusei",
+    "spelling": "ryuugakusei",
+    "meaning": "international student",
+    "meaning_mm": "နိုင်ငံခြားကျောင်းသား",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "~たち",
+    "word_rmj": "tachi",
+    "spelling": "tachi",
+    "meaning": "plural suffix for people",
+    "meaning_mm": "~တို့ (လူ)",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "そば",
+    "word_rmj": "soba",
+    "spelling": "soba",
+    "meaning": "near, beside",
+    "meaning_mm": "အနား",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "えはがき (絵葉書)",
+    "word_rmj": "ehagaki",
+    "spelling": "ehagaki",
+    "meaning": "picture postcard",
+    "meaning_mm": "ရုပ်ပုံပါโปစ့်ကဒ်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "けしゴム (消しゴム)",
+    "word_rmj": "keshigomu",
+    "spelling": "keshigomu",
+    "meaning": "eraser",
+    "meaning_mm": "ခဲဖျက်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "かみ (紙)",
+    "word_rmj": "kami",
+    "spelling": "kami",
+    "meaning": "paper",
+    "meaning_mm": "စက္ကူ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "さいふ (財布)",
+    "word_rmj": "saifu",
+    "spelling": "saifu",
+    "meaning": "wallet, purse",
+    "meaning_mm": "ပိုက်ဆံအိတ်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ワイン",
+    "word_rmj": "wain",
+    "spelling": "wain",
+    "meaning": "wine",
+    "meaning_mm": "ဝိုင်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ビール",
+    "word_rmj": "biiru",
+    "spelling": "biiru",
+    "meaning": "beer",
+    "meaning_mm": "ဘီယာ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ビデオ",
+    "word_rmj": "bideo",
+    "spelling": "bideo",
+    "meaning": "video",
+    "meaning_mm": "ဗီဒီယို",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "CD",
+    "word_rmj": "shiidii",
+    "spelling": "shiidii",
+    "meaning": "CD",
+    "meaning_mm": "စီဒီ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "レポート",
+    "word_rmj": "repooto",
+    "spelling": "repooto",
+    "meaning": "report",
+    "meaning_mm": "အစီရင်ခံစာ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "いみ (意味)",
+    "word_rmj": "imi",
+    "spelling": "imi",
+    "meaning": "meaning",
+    "meaning_mm": "အဓိပ္ပာယ်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "りょうり (料理)",
+    "word_rmj": "ryouri",
+    "spelling": "ryouri",
+    "meaning": "cooking, dish",
+    "meaning_mm": "ဟင်းလျာ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "サッカー",
+    "word_rmj": "sakkaa",
+    "spelling": "sakkaa",
+    "meaning": "soccer, football",
+    "meaning_mm": "ဘောလုံး",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "テニス",
+    "word_rmj": "tenisu",
+    "spelling": "tenisu",
+    "meaning": "tennis",
+    "meaning_mm": "တင်းနစ်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "おはなみ (お花見)",
+    "word_rmj": "ohanami",
+    "spelling": "ohanami",
+    "meaning": "cherry blossom viewing",
+    "meaning_mm": "ပန်းကြည့်ပွဲ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "さくら (桜)",
+    "word_rmj": "sakura",
+    "spelling": "sakura",
+    "meaning": "cherry blossom",
+    "meaning_mm": "ချယ်ရီပန်း",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "のりかえる (乗り換える)",
+    "word_rmj": "norikaeru",
+    "spelling": "norikaeru",
+    "meaning": "to transfer (vehicles)",
+    "meaning_mm": "(ယာဉ်)ပြောင်းစီးသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "さす (傘を)",
+    "word_rmj": "sasu (kasa o)",
+    "spelling": "sasu (kasa o)",
+    "meaning": "to hold up (an umbrella)",
+    "meaning_mm": "(ထီး)ဆောင်းသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "わたす (渡す)",
+    "word_rmj": "watasu",
+    "spelling": "watasu",
+    "meaning": "to hand over",
+    "meaning_mm": "လွှဲပြောင်းပေးသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "まわる (回る)",
+    "word_rmj": "mawaru",
+    "spelling": "mawaru",
+    "meaning": "to turn, to rotate",
+    "meaning_mm": "လှည့်သည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "うごく (動く)",
+    "word_rmj": "ugoku",
+    "spelling": "ugoku",
+    "meaning": "to move",
+    "meaning_mm": "လှုပ်ရှားသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "やくにたつ (役に立つ)",
+    "word_rmj": "yakunitatsu",
+    "spelling": "yakunitatsu",
+    "meaning": "to be useful",
+    "meaning_mm": "အသုံးဝင်သည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "あじ (味)",
+    "word_rmj": "aji",
+    "spelling": "aji",
+    "meaning": "taste",
+    "meaning_mm": "အရသာ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "におい",
+    "word_rmj": "nioi",
+    "spelling": "nioi",
+    "meaning": "smell, fragrance",
+    "meaning_mm": "အနံ့",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "かたち (形)",
+    "word_rmj": "katachi",
+    "spelling": "katachi",
+    "meaning": "shape, form",
+    "meaning_mm": "ပုံသဏ္ဌာန်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "りゆう (理由)",
+    "word_rmj": "riyuu",
+    "spelling": "riyuu",
+    "meaning": "reason",
+    "meaning_mm": "အကြောင်းပြချက်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "じゅんび (準備)",
+    "word_rmj": "junbi",
+    "spelling": "junbi",
+    "meaning": "preparation",
+    "meaning_mm": "ပြင်ဆင်မှု",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "よやく (予約)",
+    "word_rmj": "yoyaku",
+    "spelling": "yoyaku",
+    "meaning": "reservation, booking",
+    "meaning_mm": "ကြိုတင်မှာကြားခြင်း",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "じぶん (自分)",
+    "word_rmj": "jibun",
+    "spelling": "jibun",
+    "meaning": "oneself",
+    "meaning_mm": "မိမိကိုယ်ကို",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "しょうらい (将来)",
+    "word_rmj": "shourai",
+    "spelling": "shourai",
+    "meaning": "future",
+    "meaning_mm": "အနာဂတ်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "おまつり (お祭り)",
+    "word_rmj": "omatsuri",
+    "spelling": "omatsuri",
+    "meaning": "festival",
+    "meaning_mm": "ပွဲတော်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "おかし (お菓子)",
+    "word_rmj": "okashi",
+    "spelling": "okashi",
+    "meaning": "sweets, snacks",
+    "meaning_mm": "မုန့်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "おもちゃ",
+    "word_rmj": "omocha",
+    "spelling": "omocha",
+    "meaning": "toy",
+    "meaning_mm": "အရုပ်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "にんぎょう (人形)",
+    "word_rmj": "ningyou",
+    "spelling": "ningyou",
+    "meaning": "doll",
+    "meaning_mm": "အရုပ်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ハンカチ",
+    "word_rmj": "hankachi",
+    "spelling": "hankachi",
+    "meaning": "handkerchief",
+    "meaning_mm": "လက်ကိုင်ပဝါ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "くつした (靴下)",
+    "word_rmj": "kutsushita",
+    "spelling": "kutsushita",
+    "meaning": "socks",
+    "meaning_mm": "ခြေအိတ်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "てぶくろ (手袋)",
+    "word_rmj": "tebukuro",
+    "spelling": "tebukuro",
+    "meaning": "gloves",
+    "meaning_mm": "လက်အိတ်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ゆびわ (指輪)",
+    "word_rmj": "yubiwa",
+    "spelling": "yubiwa",
+    "meaning": "ring",
+    "meaning_mm": "လက်စွပ်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "でんき (電気)",
+    "word_rmj": "denki",
+    "spelling": "denki",
+    "meaning": "electricity, light",
+    "meaning_mm": "လျှပ်စစ်မီး",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "だれか (誰か)",
+    "word_rmj": "dareka",
+    "spelling": "dareka",
+    "meaning": "someone",
+    "meaning_mm": "တစ်စုံတစ်ယောက်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "なにか (何か)",
+    "word_rmj": "nanika",
+    "spelling": "nanika",
+    "meaning": "something",
+    "meaning_mm": "တစ်ခုခု",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ぜんぜん (+ neg)",
+    "word_rmj": "zenzen",
+    "spelling": "zenzen",
+    "meaning": "not at all",
+    "meaning_mm": "လုံးဝမ...",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "はっきり",
+    "word_rmj": "hakkiri",
+    "spelling": "hakkiri",
+    "meaning": "clearly",
+    "meaning_mm": "ရှင်းရှင်းလင်းလင်း",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "まず",
+    "word_rmj": "mazu",
+    "spelling": "mazu",
+    "meaning": "first of all",
+    "meaning_mm": "ပထမဦးစွာ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "これから",
+    "word_rmj": "korekara",
+    "spelling": "korekara",
+    "meaning": "from now on, after this",
+    "meaning_mm": "이제부터",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ちょうど",
+    "word_rmj": "choudo",
+    "spelling": "choudo",
+    "meaning": "just, exactly",
+    "meaning_mm": "အတိအကျ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "どちらも",
+    "word_rmj": "dochiramo",
+    "spelling": "dochiramo",
+    "meaning": "both",
+    "meaning_mm": "နှစ်ခုလုံး",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "みんな",
+    "word_rmj": "minna",
+    "spelling": "minna",
+    "meaning": "everyone",
+    "meaning_mm": "အားလုံး",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "~ぐらい",
+    "word_rmj": "gurai",
+    "spelling": "gurai",
+    "meaning": "about, approximately",
+    "meaning_mm": "~လောက်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "~ずつ",
+    "word_rmj": "zutsu",
+    "spelling": "zutsu",
+    "meaning": "each",
+    "meaning_mm": "စီ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "いかがですか",
+    "word_rmj": "ikagadesuka",
+    "spelling": "ikagadesuka",
+    "meaning": "How about...?; Would you like...?",
+    "meaning_mm": "ဘယ်လိုလဲ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "おてあらい (お手洗い)",
+    "word_rmj": "otearai",
+    "spelling": "otearai",
+    "meaning": "restroom",
+    "meaning_mm": "အိမ်သာ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "げんきでね (元気でね)",
+    "word_rmj": "genkidene",
+    "spelling": "genkidene",
+    "meaning": "Take care of yourself",
+    "meaning_mm": "ကျန်းမာအောင်နေပါ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "さあ",
+    "word_rmj": "saa",
+    "spelling": "saa",
+    "meaning": "well... (used when hesitating)",
+    "meaning_mm": "ကဲ...",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "もういっぱい (もう一杯)",
+    "word_rmj": "mouippai",
+    "spelling": "mouippai",
+    "meaning": "one more cup/glass",
+    "meaning_mm": "နောက်တစ်ခွက်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "からだにきをつけて (体に気をつけて)",
+    "word_rmj": "karadanikiwotsukete",
+    "spelling": "karadanikiwotsukete",
+    "meaning": "Please take care of yourself",
+    "meaning_mm": "ကျန်းမာရေးဂရုစိုက်ပါ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "いしゃ (医者)",
+    "word_rmj": "isha",
+    "spelling": "isha",
+    "meaning": "doctor",
+    "meaning_mm": "ဆရာဝန်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "かんごふ (看護婦)",
+    "word_rmj": "kangofu",
+    "spelling": "kangofu",
+    "meaning": "nurse",
+    "meaning_mm": "သူနာပြု",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "けいかん (警官)",
+    "word_rmj": "keikan",
+    "spelling": "keikan",
+    "meaning": "police officer",
+    "meaning_mm": "ရဲ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "えきいん (駅員)",
+    "word_rmj": "ekiin",
+    "spelling": "ekiin",
+    "meaning": "station attendant",
+    "meaning_mm": "ဘူတာရုံဝန်ထမ်း",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "うんてんしゅ (運転手)",
+    "word_rmj": "untenshu",
+    "spelling": "untenshu",
+    "meaning": "driver",
+    "meaning_mm": "ယာဉ်မောင်း",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "かぜ (風邪)",
+    "word_rmj": "kaze",
+    "spelling": "kaze",
+    "meaning": "a cold, flu",
+    "meaning_mm": "အအေးမိခြင်း",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ねつ (熱)",
+    "word_rmj": "netsu",
+    "spelling": "netsu",
+    "meaning": "fever",
+    "meaning_mm": "အဖျား",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "くすりをのむ (薬を飲む)",
+    "word_rmj": "kusuri o nomu",
+    "spelling": "kusuri o nomu",
+    "meaning": "to take medicine",
+    "meaning_mm": "ဆေးသောက်သည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "むずかしい (難しい)",
+    "word_rmj": "muzukashii",
+    "spelling": "muzukashii",
+    "meaning": "difficult",
+    "meaning_mm": "ခက်ခဲသော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "やさしい (易しい)",
+    "word_rmj": "yasashii",
+    "spelling": "yasashii",
+    "meaning": "easy",
+    "meaning_mm": "လွယ်ကူသော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "おもしろい (面白い)",
+    "word_rmj": "omoshiroi",
+    "spelling": "omoshiroi",
+    "meaning": "interesting, funny",
+    "meaning_mm": "စိတ်ဝင်စားစရာကောင်းသော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "まずい",
+    "word_rmj": "mazui",
+    "spelling": "mazui",
+    "meaning": "bad tasting",
+    "meaning_mm": "အရသာမရှိသော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "あたたかい (暖かい)",
+    "word_rmj": "atatakai",
+    "spelling": "atatakai",
+    "meaning": "warm",
+    "meaning_mm": "နွေးသော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "すずしい (涼しい)",
+    "word_rmj": "suzushii",
+    "spelling": "suzushii",
+    "meaning": "cool (weather)",
+    "meaning_mm": "အေးမြသော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "おそい (遅い)",
+    "word_rmj": "osoi",
+    "spelling": "osoi",
+    "meaning": "slow, late",
+    "meaning_mm": "နှေးသော, နောက်ကျသော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ふる (降る)",
+    "word_rmj": "furu",
+    "spelling": "furu",
+    "meaning": "to fall (rain, snow)",
+    "meaning_mm": "ရွာသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "やむ (止む)",
+    "word_rmj": "yamu",
+    "spelling": "yamu",
+    "meaning": "to stop (rain, wind)",
+    "meaning_mm": "တိတ်သည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "おくれる (遅れる)",
+    "word_rmj": "okureru",
+    "spelling": "okureru",
+    "meaning": "to be late",
+    "meaning_mm": "နောက်ကျသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "なおす (直す)",
+    "word_rmj": "naosu",
+    "spelling": "naosu",
+    "meaning": "to fix, to repair",
+    "meaning_mm": "ပြင်ဆင်သည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "みがく (磨く)",
+    "word_rmj": "migaku",
+    "spelling": "migaku",
+    "meaning": "to brush (teeth), to polish",
+    "meaning_mm": "တိုက်သည်, ပွတ်သည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "なく (泣く)",
+    "word_rmj": "naku",
+    "spelling": "naku",
+    "meaning": "to cry",
+    "meaning_mm": "ငိုသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "わらう (笑う)",
+    "word_rmj": "warau",
+    "spelling": "warau",
+    "meaning": "to laugh, to smile",
+    "meaning_mm": "ရယ်သည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "おこる (怒る)",
+    "word_rmj": "okoru",
+    "spelling": "okoru",
+    "meaning": "to get angry",
+    "meaning_mm": "စိတ်ဆိုးသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "しゅみ (趣味)",
+    "word_rmj": "shumi",
+    "spelling": "shumi",
+    "meaning": "hobby",
+    "meaning_mm": "ဝါသနာ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "にもつ (荷物)",
+    "word_rmj": "nimotsu",
+    "spelling": "nimotsu",
+    "meaning": "luggage, baggage",
+    "meaning_mm": "ဝန်စည်စလယ်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "れんしゅう (練習)",
+    "word_rmj": "renshuu",
+    "spelling": "renshuu",
+    "meaning": "practice",
+    "meaning_mm": "လေ့ကျင့်ခြင်း",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ふくしゅう (復習)",
+    "word_rmj": "fukushuu",
+    "spelling": "fukushuu",
+    "meaning": "review",
+    "meaning_mm": "ပြန်လည်လေ့ကျင့်ခြင်း",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "よしゅう (予習)",
+    "word_rmj": "yoshuu",
+    "spelling": "yoshuu",
+    "meaning": "preparation for a lesson",
+    "meaning_mm": "ကြိုတင်လေ့လာခြင်း",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "さくぶん (作文)",
+    "word_rmj": "sakubun",
+    "spelling": "sakubun",
+    "meaning": "composition, essay",
+    "meaning_mm": "စာစီစာကုံး",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "まっすぐ",
+    "word_rmj": "massugu",
+    "spelling": "massugu",
+    "meaning": "straight ahead",
+    "meaning_mm": "တည့်တည့်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "こちら",
+    "word_rmj": "kochira",
+    "spelling": "kochira",
+    "meaning": "this way, this direction (polite)",
+    "meaning_mm": "ဒီဘက်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "そちら",
+    "word_rmj": "sochira",
+    "spelling": "sochira",
+    "meaning": "that way, that direction (polite)",
+    "meaning_mm": "အဲဒီဘက်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "あちら",
+    "word_rmj": "achira",
+    "spelling": "achira",
+    "meaning": "that way over there (polite)",
+    "meaning_mm": "ဟိုဘက်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "どなた",
+    "word_rmj": "donata",
+    "spelling": "donata",
+    "meaning": "who (polite)",
+    "meaning_mm": "ဘယ်သူလဲခင်ဗျာ/ရှင်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "どのぐらい",
+    "word_rmj": "donogurai",
+    "spelling": "donogurai",
+    "meaning": "how much, how long",
+    "meaning_mm": "ဘယ်လောက်လောက်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ノート",
+    "word_rmj": "nooto",
+    "spelling": "nooto",
+    "meaning": "notebook",
+    "meaning_mm": "မှတ်စုစာအုပ်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "テーブル",
+    "word_rmj": "teeburu",
+    "spelling": "teeburu",
+    "meaning": "table",
+    "meaning_mm": "စားပွဲ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ベッド",
+    "word_rmj": "beddo",
+    "spelling": "beddo",
+    "meaning": "bed",
+    "meaning_mm": "ကုတင်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "メートル",
+    "word_rmj": "meetoru",
+    "spelling": "meetoru",
+    "meaning": "meter",
+    "meaning_mm": "မီတာ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "キロ",
+    "word_rmj": "kiro",
+    "spelling": "kiro",
+    "meaning": "kilo (kilogram, kilometer)",
+    "meaning_mm": "ကီလို",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "こうえん (公園)",
+    "word_rmj": "kouen",
+    "spelling": "kouen",
+    "meaning": "park",
+    "meaning_mm": "ပန်းခြံ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "こうちゃ (紅茶)",
+    "word_rmj": "koucha",
+    "spelling": "koucha",
+    "meaning": "black tea",
+    "meaning_mm": "လက်ဖက်ရည် (အနက်ရောင်)",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ぶたにく (豚肉)",
+    "word_rmj": "butaniku",
+    "spelling": "butaniku",
+    "meaning": "pork",
+    "meaning_mm": "ဝက်သား",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "とりにく (鶏肉)",
+    "word_rmj": "toriniku",
+    "spelling": "toriniku",
+    "meaning": "chicken meat",
+    "meaning_mm": "ကြက်သား",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ぎゅうにく (牛肉)",
+    "word_rmj": "gyuuniku",
+    "spelling": "gyuuniku",
+    "meaning": "beef",
+    "meaning_mm": "အမဲသား",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ただしい (正しい)",
+    "word_rmj": "tadashii",
+    "spelling": "tadashii",
+    "meaning": "correct",
+    "meaning_mm": "မှန်ကန်သော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ひつよう (な) (必要)",
+    "word_rmj": "hitsuyou (na)",
+    "spelling": "hitsuyou (na)",
+    "meaning": "necessary",
+    "meaning_mm": "လိုအပ်သော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ひどい",
+    "word_rmj": "hidoi",
+    "spelling": "hidoi",
+    "meaning": "terrible, awful",
+    "meaning_mm": "ဆိုးရွားသော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ふかい (深い)",
+    "word_rmj": "fukai",
+    "spelling": "fukai",
+    "meaning": "deep",
+    "meaning_mm": "နက်သော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "あさい (浅い)",
+    "word_rmj": "asai",
+    "spelling": "asai",
+    "meaning": "shallow",
+    "meaning_mm": "တိမ်သော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "さがす (探す)",
+    "word_rmj": "sagasu",
+    "spelling": "sagasu",
+    "meaning": "to look for",
+    "meaning_mm": "ရှာဖွေသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "しかられる (叱られる)",
+    "word_rmj": "shikarareru",
+    "spelling": "shikarareru",
+    "meaning": "to be scolded",
+    "meaning_mm": "အဆူခံရသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "すう (吸う)",
+    "word_rmj": "suu",
+    "spelling": "suu",
+    "meaning": "to smoke, to inhale",
+    "meaning_mm": "ရှူသည်, (ဆေးလိပ်)သောက်သည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "すてる (捨てる)",
+    "word_rmj": "suteru",
+    "spelling": "suteru",
+    "meaning": "to throw away",
+    "meaning_mm": "လွှင့်ပစ်သည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "すべる (滑る)",
+    "word_rmj": "suberu",
+    "spelling": "suberu",
+    "meaning": "to slip",
+    "meaning_mm": "ချော်သည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "たてる (建てる)",
+    "word_rmj": "tateru",
+    "spelling": "tateru",
+    "meaning": "to build",
+    "meaning_mm": "ဆောက်လုပ်သည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "たす (足す)",
+    "word_rmj": "tasu",
+    "spelling": "tasu",
+    "meaning": "to add (numbers)",
+    "meaning_mm": "ပေါင်းသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "たずねる (訪ねる)",
+    "word_rmj": "tazuneru",
+    "spelling": "tazuneru",
+    "meaning": "to visit",
+    "meaning_mm": "အလည်သွားသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "こわす (壊す)",
+    "word_rmj": "kowasu",
+    "spelling": "kowasu",
+    "meaning": "to break something",
+    "meaning_mm": "ဖျက်ဆီးသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "こわれる (壊れる)",
+    "word_rmj": "kowareru",
+    "spelling": "kowareru",
+    "meaning": "to be broken",
+    "meaning_mm": "ပျက်စီးသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "アパート",
+    "word_rmj": "apaato",
+    "spelling": "apaato",
+    "meaning": "apartment",
+    "meaning_mm": "တိုက်ခန်း",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "スイッチ",
+    "word_rmj": "suitchi",
+    "spelling": "suitchi",
+    "meaning": "switch",
+    "meaning_mm": "ခလုတ်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "スカート",
+    "word_rmj": "sukaato",
+    "spelling": "sukaato",
+    "meaning": "skirt",
+    "meaning_mm": "စကတ်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ストーブ",
+    "word_rmj": "sutoobu",
+    "spelling": "sutoobu",
+    "meaning": "heater",
+    "meaning_mm": "အပူပေးစက်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "スピーチ",
+    "word_rmj": "supiichi",
+    "spelling": "supiichi",
+    "meaning": "speech",
+    "meaning_mm": "မိန့်ခွန်း",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "いけ (池)",
+    "word_rmj": "ike",
+    "spelling": "ike",
+    "meaning": "pond",
+    "meaning_mm": "ကန်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "いし (石)",
+    "word_rmj": "ishi",
+    "spelling": "ishi",
+    "meaning": "stone",
+    "meaning_mm": "ကျောက်တုံး",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "いと (糸)",
+    "word_rmj": "ito",
+    "spelling": "ito",
+    "meaning": "thread",
+    "meaning_mm": "ချည်မျှင်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "かがみ (鏡)",
+    "word_rmj": "kagami",
+    "spelling": "kagami",
+    "meaning": "mirror",
+    "meaning_mm": "မှန်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "かびん (花瓶)",
+    "word_rmj": "kabin",
+    "spelling": "kabin",
+    "meaning": "vase",
+    "meaning_mm": "ပန်းအိုး",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "こめ (米)",
+    "word_rmj": "kome",
+    "spelling": "kome",
+    "meaning": "uncooked rice",
+    "meaning_mm": "ဆန်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "しけん (試験)",
+    "word_rmj": "shiken",
+    "spelling": "shiken",
+    "meaning": "exam",
+    "meaning_mm": "စာမေးပွဲ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "じこ (事故)",
+    "word_rmj": "jiko",
+    "spelling": "jiko",
+    "meaning": "accident",
+    "meaning_mm": "မတော်တဆမှု",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "じしん (地震)",
+    "word_rmj": "jishin",
+    "spelling": "jishin",
+    "meaning": "earthquake",
+    "meaning_mm": "ငလျင်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ガス",
+    "word_rmj": "gasu",
+    "spelling": "gasu",
+    "meaning": "gas",
+    "meaning_mm": "ဓာတ်ငွေ့",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "うん",
+    "word_rmj": "un",
+    "spelling": "un",
+    "meaning": "yes (casual)",
+    "meaning_mm": "အင်း",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ううん",
+    "word_rmj": "uun",
+    "spelling": "uun",
+    "meaning": "no (casual)",
+    "meaning_mm": "ဟင့်အင်း",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "よこ (横)",
+    "word_rmj": "yoko",
+    "spelling": "yoko",
+    "meaning": "side, horizontal",
+    "meaning_mm": "ဘေး",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "りょうがわ (両側)",
+    "word_rmj": "ryougawa",
+    "spelling": "ryougawa",
+    "meaning": "both sides",
+    "meaning_mm": "နှစ်ဖက်စလုံး",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "さ来週 (さらいしゅう)",
+    "word_rmj": "saraishuu",
+    "spelling": "saraishuu",
+    "meaning": "the week after next",
+    "meaning_mm": "နောင်နှစ်ပတ်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "いけん (意見)",
+    "word_rmj": "iken",
+    "spelling": "iken",
+    "meaning": "opinion",
+    "meaning_mm": "အမြင်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "かじ (火事)",
+    "word_rmj": "kaji",
+    "spelling": "kaji",
+    "meaning": "fire",
+    "meaning_mm": "မီးလောင်မှု",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "こうつう (交通)",
+    "word_rmj": "koutsuu",
+    "spelling": "koutsuu",
+    "meaning": "traffic, transportation",
+    "meaning_mm": "ယာဉ်ကြော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ごみ",
+    "word_rmj": "gomi",
+    "spelling": "gomi",
+    "meaning": "trash, rubbish",
+    "meaning_mm": "အမှိုက်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "しょうせつ (小説)",
+    "word_rmj": "shousetsu",
+    "spelling": "shousetsu",
+    "meaning": "novel",
+    "meaning_mm": "ဝတ္ထု",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "しょうたい (招待)",
+    "word_rmj": "shoutai",
+    "spelling": "shoutai",
+    "meaning": "invitation",
+    "meaning_mm": "ဖိတ်ကြားချက်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "きめる (決める)",
+    "word_rmj": "kimeru",
+    "spelling": "kimeru",
+    "meaning": "to decide",
+    "meaning_mm": "ဆုံးဖြတ်သည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "きまる (決まる)",
+    "word_rmj": "kimaru",
+    "spelling": "kimaru",
+    "meaning": "to be decided",
+    "meaning_mm": "ဆုံးဖြတ်ပြီးဖြစ်သည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "くらべる (比べる)",
+    "word_rmj": "kuraberu",
+    "spelling": "kuraberu",
+    "meaning": "to compare",
+    "meaning_mm": "နှိုင်းယှဉ်သည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "くれる",
+    "word_rmj": "kureru",
+    "spelling": "kureru",
+    "meaning": "to give (to me)",
+    "meaning_mm": "ပေးသည် (ကျွန်တော့်ကို)",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "しらべる (調べる)",
+    "word_rmj": "shiraberu",
+    "spelling": "shiraberu",
+    "meaning": "to investigate, to look up",
+    "meaning_mm": "စုံစမ်းသည်, ရှာဖွေသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "すすむ (進む)",
+    "word_rmj": "susumu",
+    "spelling": "susumu",
+    "meaning": "to advance, to proceed",
+    "meaning_mm": "ရှေ့ဆက်သည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "そだてる (育てる)",
+    "word_rmj": "sodateru",
+    "spelling": "sodateru",
+    "meaning": "to raise, to bring up",
+    "meaning_mm": "ပြုစုပျိုးထောင်သည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "たおれる (倒れる)",
+    "word_rmj": "taoreru",
+    "spelling": "taoreru",
+    "meaning": "to fall down, to collapse",
+    "meaning_mm": "လဲကျသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "たしかめる (確かめる)",
+    "word_rmj": "tashikameru",
+    "spelling": "tashikameru",
+    "meaning": "to confirm, to make sure",
+    "meaning_mm": "အတည်ပြုသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "たすける (助ける)",
+    "word_rmj": "tasukeru",
+    "spelling": "tasukeru",
+    "meaning": "to help, to save",
+    "meaning_mm": "ကူညီသည်, ကယ်တင်သည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "うすい (薄い)",
+    "word_rmj": "usui",
+    "spelling": "usui",
+    "meaning": "thin, weak (taste)",
+    "meaning_mm": "ပါးသော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "こい (濃い)",
+    "word_rmj": "koi",
+    "spelling": "koi",
+    "meaning": "thick, strong (taste)",
+    "meaning_mm": "ပြင်းသော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "こまかい (細かい)",
+    "word_rmj": "komakai",
+    "spelling": "komakai",
+    "meaning": "small, fine",
+    "meaning_mm": "သေးငယ်သော, အသေးစိတ်သော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "しょうじき (な) (正直)",
+    "word_rmj": "shoujiki (na)",
+    "spelling": "shoujiki (na)",
+    "meaning": "honest",
+    "meaning_mm": "ရိုးသားသော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "たとえば (例えば)",
+    "word_rmj": "tatoeba",
+    "spelling": "tatoeba",
+    "meaning": "for example",
+    "meaning_mm": "ဥပမာ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "それで",
+    "word_rmj": "sorede",
+    "spelling": "sorede",
+    "meaning": "because of that, so",
+    "meaning_mm": "အဲဒါကြောင့်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "それとも",
+    "word_rmj": "soretomo",
+    "spelling": "soretomo",
+    "meaning": "or, or else",
+    "meaning_mm": "ဒါမှမဟုတ်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ぜったいに (絶対に)",
+    "word_rmj": "zettaini",
+    "spelling": "zettaini",
+    "meaning": "absolutely, never (with neg.)",
+    "meaning_mm": "လုံးဝ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "サラダ",
+    "word_rmj": "sarada",
+    "spelling": "sarada",
+    "meaning": "salad",
+    "meaning_mm": "သုပ်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "チーズ",
+    "word_rmj": "chiizu",
+    "spelling": "chiizu",
+    "meaning": "cheese",
+    "meaning_mm": "ဒိန်ခဲ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "バター",
+    "word_rmj": "bataa",
+    "spelling": "bataa",
+    "meaning": "butter",
+    "meaning_mm": "ထောပတ်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ジャム",
+    "word_rmj": "jamu",
+    "spelling": "jamu",
+    "meaning": "jam",
+    "meaning_mm": "ယို",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "サンドイッチ",
+    "word_rmj": "sandoitchi",
+    "spelling": "sandoitchi",
+    "meaning": "sandwich",
+    "meaning_mm": "ပေါင်မုန့်ညှပ်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "おれい (お礼)",
+    "word_rmj": "orei",
+    "spelling": "orei",
+    "meaning": "gratitude, thanks",
+    "meaning_mm": "ကျေးဇူးတင်စကား",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "げんいん (原因)",
+    "word_rmj": "genin",
+    "spelling": "genin",
+    "meaning": "cause, origin",
+    "meaning_mm": "အကြောင်းရင်း",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "けんか (喧嘩)",
+    "word_rmj": "kenka",
+    "spelling": "kenka",
+    "meaning": "quarrel, fight",
+    "meaning_mm": "ရန်ဖြစ်ခြင်း",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "はんぶん (半分)",
+    "word_rmj": "hanbun",
+    "spelling": "hanbun",
+    "meaning": "half",
+    "meaning_mm": "တစ်ဝက်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ほとんど",
+    "word_rmj": "hotondo",
+    "spelling": "hotondo",
+    "meaning": "almost, mostly",
+    "meaning_mm": "အများစု",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "だいたい (大体)",
+    "word_rmj": "daitai",
+    "spelling": "daitai",
+    "meaning": "mostly, roughly",
+    "meaning_mm": "အကြမ်းဖျင်း",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "すいえい (水泳)",
+    "word_rmj": "suiei",
+    "spelling": "suiei",
+    "meaning": "swimming",
+    "meaning_mm": "ရေကူးခြင်း",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "やきゅう (野球)",
+    "word_rmj": "yakyuu",
+    "spelling": "yakyuu",
+    "meaning": "baseball",
+    "meaning_mm": "ဘေ့စ်ဘော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "どうぶつ (動物)",
+    "word_rmj": "doubutsu",
+    "spelling": "doubutsu",
+    "meaning": "animal",
+    "meaning_mm": "တိရစ္ဆာန်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ちゅうしゃじょう (駐車場)",
+    "word_rmj": "chuushajou",
+    "spelling": "chuushajou",
+    "meaning": "parking lot",
+    "meaning_mm": "ကားပါကင်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "おと (音)",
+    "word_rmj": "oto",
+    "spelling": "oto",
+    "meaning": "sound, noise",
+    "meaning_mm": "အသံ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "いなか (田舎)",
+    "word_rmj": "inaka",
+    "spelling": "inaka",
+    "meaning": "countryside",
+    "meaning_mm": "ကျေးလက်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "がいこくじん (外国人)",
+    "word_rmj": "gaikokujin",
+    "spelling": "gaikokujin",
+    "meaning": "foreigner",
+    "meaning_mm": "နိုင်ငံခြားသား",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "かしゅ (歌手)",
+    "word_rmj": "kashu",
+    "spelling": "kashu",
+    "meaning": "singer",
+    "meaning_mm": "အဆိုတော်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "くうこう (空港)",
+    "word_rmj": "kuukou",
+    "spelling": "kuukou",
+    "meaning": "airport",
+    "meaning_mm": "လေဆိပ်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "けしき (景色)",
+    "word_rmj": "keshiki",
+    "spelling": "keshiki",
+    "meaning": "scenery",
+    "meaning_mm": "ရှုခင်း",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "きもち (気持ち)",
+    "word_rmj": "kimochi",
+    "spelling": "kimochi",
+    "meaning": "feeling, mood",
+    "meaning_mm": "ခံစားချက်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "きもの (着物)",
+    "word_rmj": "kimono",
+    "spelling": "kimono",
+    "meaning": "kimono",
+    "meaning_mm": "ကီမိုနို",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "きゃく (客)",
+    "word_rmj": "kyaku",
+    "spelling": "kyaku",
+    "meaning": "guest, customer",
+    "meaning_mm": "ဧည့်သည်, ဖောက်သည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "つづける (続ける)",
+    "word_rmj": "tsuzukeru",
+    "spelling": "tsuzukeru",
+    "meaning": "to continue (something)",
+    "meaning_mm": "ဆက်လုပ်သည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "とどける (届ける)",
+    "word_rmj": "todokeru",
+    "spelling": "todokeru",
+    "meaning": "to deliver",
+    "meaning_mm": "ပို့ဆောင်သည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "とめる (止める)",
+    "word_rmj": "tomeru",
+    "spelling": "tomeru",
+    "meaning": "to stop (something)",
+    "meaning_mm": "ရပ်တန့်သည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "とりかえる (取り替える)",
+    "word_rmj": "torikaeru",
+    "spelling": "torikaeru",
+    "meaning": "to exchange, to replace",
+    "meaning_mm": "လဲလှယ်သည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "なおる (治る)",
+    "word_rmj": "naoru",
+    "spelling": "naoru",
+    "meaning": "to be cured, to be fixed",
+    "meaning_mm": "ပျောက်ကင်းသည်, ပြင်ပြီးဖြစ်သည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "なくなる (無くなる)",
+    "word_rmj": "nakunaru",
+    "spelling": "nakunaru",
+    "meaning": "to be lost, to disappear",
+    "meaning_mm": "ကုန်သွားသည်, ပျောက်သွားသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "なげる (投げる)",
+    "word_rmj": "nageru",
+    "spelling": "nageru",
+    "meaning": "to throw",
+    "meaning_mm": "ပစ်သည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "はじめる (始める)",
+    "word_rmj": "hajimeru",
+    "spelling": "hajimeru",
+    "meaning": "to begin, to start (something)",
+    "meaning_mm": "စတင်သည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "じゆう (な) (自由)",
+    "word_rmj": "jiyuu (na)",
+    "spelling": "jiyuu (na)",
+    "meaning": "free",
+    "meaning_mm": "လွတ်လပ်သော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "まじめ (な) (真面目)",
+    "word_rmj": "majime (na)",
+    "spelling": "majime (na)",
+    "meaning": "serious, diligent",
+    "meaning_mm": "အလေးအနက်ထားသော, ကြိုးစားသော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "へん (な) (変)",
+    "word_rmj": "hen (na)",
+    "spelling": "hen (na)",
+    "meaning": "strange, weird",
+    "meaning_mm": "ထူးဆန်းသော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "あんしん (な) (安心)",
+    "word_rmj": "anshin (na)",
+    "spelling": "anshin (na)",
+    "meaning": "relieved, reassured",
+    "meaning_mm": "စိတ်ချသော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "なるほど",
+    "word_rmj": "naruhodo",
+    "spelling": "naruhodo",
+    "meaning": "I see, indeed",
+    "meaning_mm": "သြော်, ဟုတ်လား",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "やっぱり",
+    "word_rmj": "yappari",
+    "spelling": "yappari",
+    "meaning": "as expected, after all",
+    "meaning_mm": "ထင်တဲ့အတိုင်းပဲ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "なるべく",
+    "word_rmj": "narubeku",
+    "spelling": "narubeku",
+    "meaning": "as much as possible",
+    "meaning_mm": "တတ်နိုင်သလောက်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ちっとも (+ neg)",
+    "word_rmj": "chittomo",
+    "spelling": "chittomo",
+    "meaning": "not at all",
+    "meaning_mm": "နည်းနည်းလေးမှမ...",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ガソリン",
+    "word_rmj": "gasorin",
+    "spelling": "gasorin",
+    "meaning": "gasoline",
+    "meaning_mm": "ဓာတ်ဆီ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ガソリンスタンド",
+    "word_rmj": "gasorinsutando",
+    "spelling": "gasorinsutando",
+    "meaning": "gas station",
+    "meaning_mm": "ဓာတ်ဆီဆိုင်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "コンサート",
+    "word_rmj": "konsaato",
+    "spelling": "konsaato",
+    "meaning": "concert",
+    "meaning_mm": "ဂီတဖျော်ဖြေပွဲ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "デパート",
+    "word_rmj": "depaato",
+    "spelling": "depaato",
+    "meaning": "department store",
+    "meaning_mm": "ကုန်တိုက်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "どうぶつえん (動物園)",
+    "word_rmj": "doubutsuen",
+    "spelling": "doubutsuen",
+    "meaning": "zoo",
+    "meaning_mm": "တိရစ္ဆာန်ရုံ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "びじゅつかん (美術館)",
+    "word_rmj": "bijutsukan",
+    "spelling": "bijutsukan",
+    "meaning": "art museum",
+    "meaning_mm": "အနုပညာပြတိုက်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "おてら (お寺)",
+    "word_rmj": "otera",
+    "spelling": "otera",
+    "meaning": "temple",
+    "meaning_mm": "ဘုရားကျောင်း",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "じんじゃ (神社)",
+    "word_rmj": "jinja",
+    "spelling": "jinja",
+    "meaning": "shrine",
+    "meaning_mm": "ဂျပန်နတ်ကွန်း",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "きょうかい (教会)",
+    "word_rmj": "kyoukai",
+    "spelling": "kyoukai",
+    "meaning": "church",
+    "meaning_mm": "ခရစ်ယာန်ဘုရားကျောင်း",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "かわく (乾く)",
+    "word_rmj": "kawaku",
+    "spelling": "kawaku",
+    "meaning": "to get dry",
+    "meaning_mm": "ခြောက်သွေ့သည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ひろう (拾う)",
+    "word_rmj": "hirou",
+    "spelling": "hirou",
+    "meaning": "to pick up",
+    "meaning_mm": "ကောက်သည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ふむ (踏む)",
+    "word_rmj": "fumu",
+    "spelling": "fumu",
+    "meaning": "to step on",
+    "meaning_mm": "နင်းသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "うそ",
+    "word_rmj": "uso",
+    "spelling": "uso",
+    "meaning": "a lie",
+    "meaning_mm": "လိမ်ညာခြင်း",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ねだん (値段)",
+    "word_rmj": "nedan",
+    "spelling": "nedan",
+    "meaning": "price",
+    "meaning_mm": "ဈေးနှုန်း",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "きかい (機械)",
+    "word_rmj": "kikai",
+    "spelling": "kikai",
+    "meaning": "machine",
+    "meaning_mm": "စက်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "どうぐ (道具)",
+    "word_rmj": "dougu",
+    "spelling": "dougu",
+    "meaning": "tool, instrument",
+    "meaning_mm": "ကိရိယာ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ひこうき (飛行機)",
+    "word_rmj": "hikouki",
+    "spelling": "hikouki",
+    "meaning": "airplane",
+    "meaning_mm": "လေယာဉ်ပျံ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "びょういん (病院)",
+    "word_rmj": "byouin",
+    "spelling": "byouin",
+    "meaning": "hospital",
+    "meaning_mm": "ဆေးရုံ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ぶんぽう (文法)",
+    "word_rmj": "bunpou",
+    "spelling": "bunpou",
+    "meaning": "grammar",
+    "meaning_mm": "သဒ္ဒါ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "へんじ (返事)",
+    "word_rmj": "henji",
+    "spelling": "henji",
+    "meaning": "reply, answer",
+    "meaning_mm": "အကြောင်းပြန်ခြင်း",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ひきだし (引き出し)",
+    "word_rmj": "hikidashi",
+    "spelling": "hikidashi",
+    "meaning": "drawer",
+    "meaning_mm": "အံဆွဲ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ひげ",
+    "word_rmj": "hige",
+    "spelling": "hige",
+    "meaning": "beard, mustache",
+    "meaning_mm": "မုတ်ဆိတ်မွှေး",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ほめる (褒める)",
+    "word_rmj": "homeru",
+    "spelling": "homeru",
+    "meaning": "to praise",
+    "meaning_mm": "ချီးမွမ်းသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "まける (負ける)",
+    "word_rmj": "makeru",
+    "spelling": "makeru",
+    "meaning": "to lose",
+    "meaning_mm": "ရှုံးသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "まちがえる (間違える)",
+    "word_rmj": "machigaeru",
+    "spelling": "machigaeru",
+    "meaning": "to make a mistake",
+    "meaning_mm": "မှားသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "みつかる (見つかる)",
+    "word_rmj": "mitsukaru",
+    "spelling": "mitsukaru",
+    "meaning": "to be found",
+    "meaning_mm": "ရှာတွေ့သည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "みつける (見つける)",
+    "word_rmj": "mitsukeru",
+    "spelling": "mitsukeru",
+    "meaning": "to find",
+    "meaning_mm": "ရှာဖွေတွေ့ရှိသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "むかえる (迎える)",
+    "word_rmj": "mukaeru",
+    "spelling": "mukaeru",
+    "meaning": "to welcome, to meet",
+    "meaning_mm": "ကြိုဆိုသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "やく (焼く)",
+    "word_rmj": "yaku",
+    "spelling": "yaku",
+    "meaning": "to bake, to grill",
+    "meaning_mm": "ဖုတ်သည်, ကင်သည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "やる",
+    "word_rmj": "yaru",
+    "spelling": "yaru",
+    "meaning": "to do (casual)",
+    "meaning_mm": "လုပ်သည် (သာမန်)",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "まるい (丸い)",
+    "word_rmj": "marui",
+    "spelling": "marui",
+    "meaning": "round",
+    "meaning_mm": "လုံးဝိုင်းသော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "むり (な) (無理)",
+    "word_rmj": "muri (na)",
+    "spelling": "muri (na)",
+    "meaning": "impossible",
+    "meaning_mm": "မဖြစ်နိုင်သော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "さいしょ (最初)",
+    "word_rmj": "saisho",
+    "spelling": "saisho",
+    "meaning": "first, beginning",
+    "meaning_mm": "အစပိုင်း",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "さいご (最後)",
+    "word_rmj": "saigo",
+    "spelling": "saigo",
+    "meaning": "last, end",
+    "meaning_mm": "နောက်ဆုံး",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "さっき",
+    "word_rmj": "sakki",
+    "spelling": "sakki",
+    "meaning": "a little while ago",
+    "meaning_mm": "ခဏက",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ちゃんと",
+    "word_rmj": "chanto",
+    "spelling": "chanto",
+    "meaning": "properly, reliably",
+    "meaning_mm": "သေသေချာချာ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "どんどん",
+    "word_rmj": "dondon",
+    "spelling": "dondon",
+    "meaning": "rapidly, steadily",
+    "meaning_mm": "တရစပ်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "サンドイッチ",
+    "word_rmj": "sandoitchi",
+    "spelling": "sandoitchi",
+    "meaning": "sandwich",
+    "meaning_mm": "ပေါင်မုန့်ညှပ်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "チョコレート",
+    "word_rmj": "chokoreeto",
+    "spelling": "chokoreeto",
+    "meaning": "chocolate",
+    "meaning_mm": "ချောကလက်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ポスト",
+    "word_rmj": "posuto",
+    "spelling": "posuto",
+    "meaning": "postbox, mailbox",
+    "meaning_mm": "စာတိုက်ပုံး",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "アイスクリーム",
+    "word_rmj": "aisukuriimu",
+    "spelling": "aisukuriimu",
+    "meaning": "ice cream",
+    "meaning_mm": "ရေခဲမုန့်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "カレンダー",
+    "word_rmj": "karendaa",
+    "spelling": "karendaa",
+    "meaning": "calendar",
+    "meaning_mm": "ပြက္ခทิน",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "チケット",
+    "word_rmj": "chiketto",
+    "spelling": "chiketto",
+    "meaning": "ticket",
+    "meaning_mm": "လက်မှတ်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ワープロ",
+    "word_rmj": "waapuro",
+    "spelling": "waapuro",
+    "meaning": "word processor",
+    "meaning_mm": "လက်နှိပ်စက်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "プレゼント",
+    "word_rmj": "purezento",
+    "spelling": "purezento",
+    "meaning": "present, gift",
+    "meaning_mm": "လက်ဆောင်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "たいふう (台風)",
+    "word_rmj": "taifuu",
+    "spelling": "taifuu",
+    "meaning": "typhoon",
+    "meaning_mm": "တိုင်ဖွန်းမုန်တိုင်း",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ほうそう (放送)",
+    "word_rmj": "housou",
+    "spelling": "housou",
+    "meaning": "broadcast",
+    "meaning_mm": "ထုတ်လွှင့်ခြင်း",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "こうじょう (工場)",
+    "word_rmj": "koujou",
+    "spelling": "koujou",
+    "meaning": "factory",
+    "meaning_mm": "စက်ရုံ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ちり (地理)",
+    "word_rmj": "chiri",
+    "spelling": "chiri",
+    "meaning": "geography",
+    "meaning_mm": "ပထဝီဝင်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "れきし (歴史)",
+    "word_rmj": "rekishi",
+    "spelling": "rekishi",
+    "meaning": "history",
+    "meaning_mm": "သမိုင်း",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "けいざい (経済)",
+    "word_rmj": "keizai",
+    "spelling": "keizai",
+    "meaning": "economy",
+    "meaning_mm": "စီးပွားရေး",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "しんぱい (な) (心配)",
+    "word_rmj": "shinpai (na)",
+    "spelling": "shinpai (na)",
+    "meaning": "worried, anxious",
+    "meaning_mm": "စိုးရိမ်သော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "じゅうぶん (な) (十分)",
+    "word_rmj": "juubun (na)",
+    "spelling": "juubun (na)",
+    "meaning": "enough, sufficient",
+    "meaning_mm": "လုံလောက်သော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "あんぜん (な) (安全)",
+    "word_rmj": "anzen (na)",
+    "spelling": "anzen (na)",
+    "meaning": "safe",
+    "meaning_mm": "ဘေးကင်းသော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "きけん (な) (危険)",
+    "word_rmj": "kiken (na)",
+    "spelling": "kiken (na)",
+    "meaning": "dangerous",
+    "meaning_mm": "အန္တရာယ်ရှိသော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ていねい (な) (丁寧)",
+    "word_rmj": "teinei (na)",
+    "spelling": "teinei (na)",
+    "meaning": "polite",
+    "meaning_mm": "ယဉ်ကျေးသော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ふえる (増える)",
+    "word_rmj": "fueru",
+    "spelling": "fueru",
+    "meaning": "to increase",
+    "meaning_mm": "တိုးပွားသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "へる (減る)",
+    "word_rmj": "heru",
+    "spelling": "heru",
+    "meaning": "to decrease",
+    "meaning_mm": "လျော့နည်းသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ひっこす (引っ越す)",
+    "word_rmj": "hikkosu",
+    "spelling": "hikkosu",
+    "meaning": "to move house",
+    "meaning_mm": "အိမ်ပြောင်းသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "よごす (汚す)",
+    "word_rmj": "yogosu",
+    "spelling": "yogosu",
+    "meaning": "to make dirty",
+    "meaning_mm": "ညစ်ပတ်အောင်လုပ်သည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "わかす (沸かす)",
+    "word_rmj": "wakasu",
+    "spelling": "wakasu",
+    "meaning": "to boil (water)",
+    "meaning_mm": "ရေနွေးတည်သည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "やぶる (破る)",
+    "word_rmj": "yaburu",
+    "spelling": "yaburu",
+    "meaning": "to tear",
+    "meaning_mm": "ဆုတ်ဖြဲသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "われる (割れる)",
+    "word_rmj": "wareru",
+    "spelling": "wareru",
+    "meaning": "to break (intransitive)",
+    "meaning_mm": "ကွဲသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ゆ (湯)",
+    "word_rmj": "yu",
+    "spelling": "yu",
+    "meaning": "hot water",
+    "meaning_mm": "ရေနွေး",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ようふく (洋服)",
+    "word_rmj": "youfuku",
+    "spelling": "youfuku",
+    "meaning": "Western-style clothes",
+    "meaning_mm": "အနောက်တိုင်းဝတ်စုံ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ゆめ (夢)",
+    "word_rmj": "yume",
+    "spelling": "yume",
+    "meaning": "dream",
+    "meaning_mm": "အိမ်မက်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "よてい (予定)",
+    "word_rmj": "yotei",
+    "spelling": "yotei",
+    "meaning": "plan, schedule",
+    "meaning_mm": "အစီအစဉ်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "りょかん (旅館)",
+    "word_rmj": "ryokan",
+    "spelling": "ryokan",
+    "meaning": "Japanese-style inn",
+    "meaning_mm": "ဂျပန်တည်းခိုခန်း",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "れんらく (連絡)",
+    "word_rmj": "renraku",
+    "spelling": "renraku",
+    "meaning": "contact, communication",
+    "meaning_mm": "ဆက်သွယ်ခြင်း",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ろうか (廊下)",
+    "word_rmj": "rouka",
+    "spelling": "rouka",
+    "meaning": "corridor, hallway",
+    "meaning_mm": "စင်္ကြံလမ်း",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "うで (腕)",
+    "word_rmj": "ude",
+    "spelling": "ude",
+    "meaning": "arm",
+    "meaning_mm": "လက်မောင်း",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "うら (裏)",
+    "word_rmj": "ura",
+    "spelling": "ura",
+    "meaning": "the back, reverse side",
+    "meaning_mm": "ကျောဘက်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "おもて (表)",
+    "word_rmj": "omote",
+    "spelling": "omote",
+    "meaning": "the front, surface",
+    "meaning_mm": "အရှေ့ဘက်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "おつり",
+    "word_rmj": "otsuri",
+    "spelling": "otsuri",
+    "meaning": "change (from a purchase)",
+    "meaning_mm": "ပြန်အမ်းငွေ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "おんど (温度)",
+    "word_rmj": "ondo",
+    "spelling": "ondo",
+    "meaning": "temperature",
+    "meaning_mm": "အပူချိန်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "かいがん (海岸)",
+    "word_rmj": "kaigan",
+    "spelling": "kaigan",
+    "meaning": "coast, seashore",
+    "meaning_mm": "ကမ်းခြေ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "かがく (科学)",
+    "word_rmj": "kagaku",
+    "spelling": "kagaku",
+    "meaning": "science",
+    "meaning_mm": "သိပ္ပံ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "がくぶ (学部)",
+    "word_rmj": "gakubu",
+    "spelling": "gakubu",
+    "meaning": "university faculty/department",
+    "meaning_mm": "တက္ကသိုလ်ဌာန",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "かちょう (課長)",
+    "word_rmj": "kachou",
+    "spelling": "kachou",
+    "meaning": "section manager",
+    "meaning_mm": "ဌာနခွဲမှူး",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "きそく (規則)",
+    "word_rmj": "kisoku",
+    "spelling": "kisoku",
+    "meaning": "rule, regulation",
+    "meaning_mm": "စည်းကမ်း",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "きぬ (絹)",
+    "word_rmj": "kinu",
+    "spelling": "kinu",
+    "meaning": "silk",
+    "meaning_mm": "ပိုးထည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "きびしい (厳しい)",
+    "word_rmj": "kibishii",
+    "spelling": "kibishii",
+    "meaning": "strict",
+    "meaning_mm": "တင်းကြပ်သော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "きぶん (気分)",
+    "word_rmj": "kibun",
+    "spelling": "kibun",
+    "meaning": "feeling, mood",
+    "meaning_mm": "စိတ်ခံစားမှု",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "すばらしい (素晴らしい)",
+    "word_rmj": "subarashii",
+    "spelling": "subarashii",
+    "meaning": "wonderful, splendid",
+    "meaning_mm": "အံ့ဩဖွယ်ကောင်းသော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ふしぎ (な) (不思議)",
+    "word_rmj": "fushigi (na)",
+    "spelling": "fushigi (na)",
+    "meaning": "mysterious, strange",
+    "meaning_mm": "ထူးဆန်းအံ့ဩဖွယ်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "たいへん (な) (大変)",
+    "word_rmj": "taihen (na)",
+    "spelling": "taihen (na)",
+    "meaning": "awful, terrible, very",
+    "meaning_mm": "ဆိုးရွားသော, အလွန်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "とくべつ (な) (特別)",
+    "word_rmj": "tokubetsu (na)",
+    "spelling": "tokubetsu (na)",
+    "meaning": "special",
+    "meaning_mm": "အထူး",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "そろそろ",
+    "word_rmj": "sorosoro",
+    "spelling": "sorosoro",
+    "meaning": "it is about time to...",
+    "meaning_mm": "အချိန်ကျပြီ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ずいぶん",
+    "word_rmj": "zuibun",
+    "spelling": "zuibun",
+    "meaning": "very, considerably",
+    "meaning_mm": "တော်တော်လေး",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "たしか (確か)",
+    "word_rmj": "tashika",
+    "spelling": "tashika",
+    "meaning": "if I remember correctly; certain",
+    "meaning_mm": "သေချာတယ်ထင်တယ်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "だいぶ (大分)",
+    "word_rmj": "daibu",
+    "spelling": "daibu",
+    "meaning": "considerably, greatly",
+    "meaning_mm": "တော်တော်လေး",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ちから (力)",
+    "word_rmj": "chikara",
+    "spelling": "chikara",
+    "meaning": "power, strength",
+    "meaning_mm": "အားအင်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "フィルム",
+    "word_rmj": "firumu",
+    "spelling": "firumu",
+    "meaning": "film",
+    "meaning_mm": "ဖလင်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "グラム",
+    "word_rmj": "guramu",
+    "spelling": "guramu",
+    "meaning": "gram",
+    "meaning_mm": "ဂရမ်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "やかん (薬缶)",
+    "word_rmj": "yakan",
+    "spelling": "yakan",
+    "meaning": "kettle",
+    "meaning_mm": "ရေနွေးကရား",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "きかい (機会)",
+    "word_rmj": "kikai",
+    "spelling": "kikai",
+    "meaning": "chance, opportunity",
+    "meaning_mm": "အခွင့်အရေး",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "けいけん (経験)",
+    "word_rmj": "keiken",
+    "spelling": "keiken",
+    "meaning": "experience",
+    "meaning_mm": "အတွေ့အကြုံ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "しゅうかん (習慣)",
+    "word_rmj": "shuukan",
+    "spelling": "shuukan",
+    "meaning": "habit, custom",
+    "meaning_mm": "အလေ့အထ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ちこく (遅刻)",
+    "word_rmj": "chikoku",
+    "spelling": "chikoku",
+    "meaning": "lateness, tardiness",
+    "meaning_mm": "နောက်ကျခြင်း",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "けが (怪我)",
+    "word_rmj": "kega",
+    "spelling": "kega",
+    "meaning": "injury",
+    "meaning_mm": "ဒဏ်ရာ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "じゅぎょう (授業)",
+    "word_rmj": "jugyou",
+    "spelling": "jugyou",
+    "meaning": "class, lesson",
+    "meaning_mm": "သင်တန်း",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "けんぶつ (見物)",
+    "word_rmj": "kenbutsu",
+    "spelling": "kenbutsu",
+    "meaning": "sightseeing",
+    "meaning_mm": "လည်ပတ်ကြည့်ရှုခြင်း",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "せいじ (政治)",
+    "word_rmj": "seiji",
+    "spelling": "seiji",
+    "meaning": "politics",
+    "meaning_mm": "နိုင်ငံရေး",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "せんそう (戦争)",
+    "word_rmj": "sensou",
+    "spelling": "sensou",
+    "meaning": "war",
+    "meaning_mm": "စစ်ပွဲ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "せわ (世話)",
+    "word_rmj": "sewa",
+    "spelling": "sewa",
+    "meaning": "care, looking after",
+    "meaning_mm": "စောင့်ရှောက်ခြင်း",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "しょうがつ (正月)",
+    "word_rmj": "shougatsu",
+    "spelling": "shougatsu",
+    "meaning": "New Year's",
+    "meaning_mm": "နှစ်သစ်ကူး",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "てんいん (店員)",
+    "word_rmj": "tenin",
+    "spelling": "tenin",
+    "meaning": "shop assistant",
+    "meaning_mm": "ဆိုင်ဝန်ထမ်း",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "はつおん (発音)",
+    "word_rmj": "hatsuon",
+    "spelling": "hatsuon",
+    "meaning": "pronunciation",
+    "meaning_mm": "အသံထွက်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ゆしゅつ (輸出)",
+    "word_rmj": "yushutsu",
+    "spelling": "yushutsu",
+    "meaning": "export",
+    "meaning_mm": "ပို့ကုန်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ゆにゅう (輸入)",
+    "word_rmj": "yunyuu",
+    "spelling": "yunyuu",
+    "meaning": "import",
+    "meaning_mm": "သွင်းကုန်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "あく (開く)",
+    "word_rmj": "aku",
+    "spelling": "aku",
+    "meaning": "to open (intransitive)",
+    "meaning_mm": "ပွင့်သည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "しまる (閉まる)",
+    "word_rmj": "shimaru",
+    "spelling": "shimaru",
+    "meaning": "to close (intransitive)",
+    "meaning_mm": "ပိတ်သည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "おちる (落ちる)",
+    "word_rmj": "ochiru",
+    "spelling": "ochiru",
+    "meaning": "to fall, to drop",
+    "meaning_mm": "ပြုတ်ကျသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "おとす (落とす)",
+    "word_rmj": "otosu",
+    "spelling": "otosu",
+    "meaning": "to drop (something)",
+    "meaning_mm": "ทำตก",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "きえる (消える)",
+    "word_rmj": "kieru",
+    "spelling": "kieru",
+    "meaning": "to disappear, to go out",
+    "meaning_mm": "ပျောက်ကွယ်သွားသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "さわぐ (騒ぐ)",
+    "word_rmj": "sawagu",
+    "spelling": "sawagu",
+    "meaning": "to make noise",
+    "meaning_mm": "ဆူညံသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "なくなる (亡くなる)",
+    "word_rmj": "nakunaru",
+    "spelling": "nakunaru",
+    "meaning": "to pass away",
+    "meaning_mm": "ကွယ်လွန်သည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ならべる (並べる)",
+    "word_rmj": "naraberu",
+    "spelling": "naraberu",
+    "meaning": "to line up, to set up",
+    "meaning_mm": "စီတန်းသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "にげる (逃げる)",
+    "word_rmj": "nigeru",
+    "spelling": "nigeru",
+    "meaning": "to escape",
+    "meaning_mm": "ထွက်ပြေးသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ぬすむ (盗む)",
+    "word_rmj": "nusumu",
+    "spelling": "nusumu",
+    "meaning": "to steal",
+    "meaning_mm": "ခိုးသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "はこぶ (運ぶ)",
+    "word_rmj": "hakobu",
+    "spelling": "hakobu",
+    "meaning": "to carry",
+    "meaning_mm": "သယ်ဆောင်သည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "ふとる (太る)",
+    "word_rmj": "futoru",
+    "spelling": "futoru",
+    "meaning": "to get fat",
+    "meaning_mm": "ဝသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "やせる",
+    "word_rmj": "yaseru",
+    "spelling": "yaseru",
+    "meaning": "to lose weight",
+    "meaning_mm": "ပိန်သည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "くれる (暮れる)",
+    "word_rmj": "kureru",
+    "spelling": "kureru",
+    "meaning": "to get dark",
+    "meaning_mm": "မှောင်လာသည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "いや (な) (嫌)",
+    "word_rmj": "iya (na)",
+    "spelling": "iya (na)",
+    "meaning": "unpleasant, disagreeable",
+    "meaning_mm": "မနှစ်မြို့ဖွယ်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "だいじ (な) (大事)",
+    "word_rmj": "daiji (na)",
+    "spelling": "daiji (na)",
+    "meaning": "important",
+    "meaning_mm": "အရေးကြီးသော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "さかん (な) (盛ん)",
+    "word_rmj": "sakan (na)",
+    "spelling": "sakan (na)",
+    "meaning": "popular, prosperous",
+    "meaning_mm": "ထင်ပေါ်ကျော်ကြားသော",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "しかたがない (仕方がない)",
+    "word_rmj": "shikataganai",
+    "spelling": "shikataganai",
+    "meaning": "it can't be helped",
+    "meaning_mm": "မတတ်နိုင်ဘူး",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "もちろん",
+    "word_rmj": "mochiron",
+    "spelling": "mochiron",
+    "meaning": "of course",
+    "meaning_mm": "ဟုတ်သည်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "やっと",
+    "word_rmj": "yatto",
+    "spelling": "yatto",
+    "meaning": "at last, finally",
+    "meaning_mm": "နောက်ဆုံးတော့",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "やはり / やっぱり",
+    "word_rmj": "yahari / yappari",
+    "spelling": "yahari / yappari",
+    "meaning": "as expected, after all",
+    "meaning_mm": "ထင်တဲ့အတိုင်းပဲ",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "~はい (杯)",
+    "word_rmj": "hai",
+    "spelling": "hai",
+    "meaning": "counter for cups/glasses",
+    "meaning_mm": "~ခွက်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "~ひき (匹)",
+    "word_rmj": "hiki",
+    "spelling": "hiki",
+    "meaning": "counter for small animals",
+    "meaning_mm": "~ကောင်",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "~ほん (本)",
+    "word_rmj": "hon",
+    "spelling": "hon",
+    "meaning": "counter for long, cylindrical things",
+    "meaning_mm": "~ချောင်း",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "スキー",
+    "word_rmj": "sukii",
+    "spelling": "sukii",
+    "meaning": "skiing",
+    "meaning_mm": "နှင်းလျှောစီးခြင်း",
+    "status": true
+  },
+  {
+    "level_id": "5",
+    "word": "タイプ",
+    "word_rmj": "taipu",
+    "spelling": "taipu",
+    "meaning": "typewriter, type",
+    "meaning_mm": "လက်နှိပ်စက်, အမျိုးအစား",
+    "status": true
+  }
+]

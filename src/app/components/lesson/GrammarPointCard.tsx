@@ -6,28 +6,35 @@ interface GrammarPointCardProps {
   item: GrammarProps;
 }
 
-const GrammarPointCard = ({item} :GrammarPointCardProps) => {
-  console.log(item);
+// --- SPEECH UTILITY ---
+const speak = (text: string, lang = 'ja-JP') => {
+  if (typeof window === 'undefined' || !window.speechSynthesis) {
+    console.warn('Speech synthesis not supported in this browser.');
+    return;
+  }
+  window.speechSynthesis.cancel();
+  const utterance = new SpeechSynthesisUtterance(text);
+  utterance.lang = lang;
+  utterance.rate = 0.85;
+  window.speechSynthesis.speak(utterance);
+};
 
-  // --- SPEECH UTILITY ---
-  // const speak = (text: string, lang = 'ja-JP') => {
-  //   if (typeof window === 'undefined' || !window.speechSynthesis) {
-  //     console.warn('Speech synthesis not supported in this browser.');
-  //     return;
-  //   }
-  //   window.speechSynthesis.cancel(); // Cancel any previous speech
-  //   const utterance = new SpeechSynthesisUtterance(text);
-  //   utterance.lang = lang;
-  //   utterance.rate = 0.9;
-  //   window.speechSynthesis.speak(utterance);
-  // };
+const GrammarPointCard = ({item} :GrammarPointCardProps) => {
 
   return (
     <div className="col-span-3 bg-white/80 p-6 rounded-2xl border border-black/5">
       {/* Title Section */}
-      <div>
-        <h3 className="text-2xl font-bold text-[#3E3636]">{item.title}</h3>
-        <p className="text-md text-[#3E3636]/70">{item.title_mm}</p>
+      <div className="flex items-center justify-between">
+        <div>
+          <h3 className="text-2xl font-bold text-[#3E3636]">{item.title}</h3>
+          <p className="text-md text-[#3E3636]/70">{item.title_mm}</p>
+        </div>
+        <button
+          onClick={() => speak(item.title || '')}
+          className="p-3 rounded-full bg-[#F5EDED] hover:bg-[#D72323] text-[#3E3636] hover:text-white transition-all duration-300 flex-shrink-0"
+        >
+          <Volume2 className="h-5 w-5" />
+        </button>
       </div>
 
       {/* Explanations Section */}
@@ -49,7 +56,7 @@ const GrammarPointCard = ({item} :GrammarPointCardProps) => {
           <div key={index} className="bg-[#F5EDED]/80 p-4 rounded-lg">
             <div className="flex items-center">
               <p className="font-bold text-lg text-[#3E3636] flex-grow">{ex.japanese}</p>
-              <button onClick={() => console.log()} className="p-2 rounded-full hover:bg-[#D72323]/20 transition-colors">
+              <button onClick={() => speak(ex.japanese || '')} className="p-2 rounded-full hover:bg-[#D72323]/20 transition-colors">
                 <Volume2 className="h-5 w-5 text-[#3E3636]" />
               </button>
             </div>
