@@ -216,21 +216,6 @@ const VocabularyQuiz = ({ vocab, pageVocab, completedWords, onClose }: Vocabular
   const wrongResults = results.filter((r) => !r.isCorrect);
   const scorePercent = results.length > 0 ? Math.round((correctCount / results.length) * 100) : 0;
 
-  // Helper: get question display text
-  const getQuestionDisplay = (q: QuizQuestion) => {
-    switch (config.mode) {
-      case 'jp-en':
-      case 'jp-mm':
-        return q.word.word || '';
-      case 'en-jp':
-        return q.word.meaning || '';
-      case 'audio-jp':
-        return '🔊';
-      default:
-        return q.word.word || '';
-    }
-  };
-
   // Prevent body scrolling when quiz is open
   useEffect(() => {
     document.body.style.overflow = 'hidden';

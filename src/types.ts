@@ -60,6 +60,15 @@ export interface LessonContentPageProps {
   lesson: LessonProps;
 }
 
+// Valid part-of-speech categories for N5 vocabulary
+export type PartOfSpeech =
+  | 'Noun'
+  | 'Verb'
+  | 'Adjective'
+  | 'Adverb'
+  | 'Particle'
+  | 'Expression';
+
 export interface VocabularyProps {
   id: number;
   level_id: string | null;
@@ -71,6 +80,20 @@ export interface VocabularyProps {
   meaning: string | null;
   meaning_mm: string | null;
   status: boolean | null;
+  // Enhanced fields (Day 1 populated; optional for backwards-compat with other pages)
+  part_of_speech?: PartOfSpeech | null;
+  example_jp?: string | null;
+  example_en?: string | null;
+  example_mm?: string | null;
+  tag?: 'Common' | 'Core' | null;
+  formality?: 'Formal' | 'Casual' | 'Neutral' | null;
+}
+
+export interface KanjiExampleProps {
+  japanese: string | null;
+  reading: string | null;
+  meaning_en: string | null;
+  meaning_mm: string | null;
 }
 
 export interface KanjiProps {
@@ -88,6 +111,17 @@ export interface KanjiProps {
   "image": string | null;
   "strokes": string | null;
   "status": boolean | null;
+  // Enhanced fields
+  "mnemonic"?: string | null;
+  "radical"?: string | null;
+  "stroke_hint"?: string | null;
+  "examples"?: KanjiExampleProps[] | null;
+}
+
+export interface GrammarConjugationRow {
+  form: string;
+  japanese: string;
+  example?: string | null;
 }
 
 export interface GrammarProps {
@@ -96,8 +130,13 @@ export interface GrammarProps {
   title_mm: string | null;
   explanation_mm: string | null;
   explanation_en: string | null;
-  examples: GrammarExampleProps[]
+  examples: GrammarExampleProps[];
   status: boolean | null;
+  // Enhanced fields
+  conjugation_table?: GrammarConjugationRow[] | null;
+  common_mistake_en?: string | null;
+  common_mistake_mm?: string | null;
+  exam_tip?: string | null;
 }
 
 export interface GrammarExampleProps {
@@ -105,6 +144,13 @@ export interface GrammarExampleProps {
   english: string | null;
   myanmar: string | null;
   status: boolean | null;
+}
+
+export interface ReadingKeyVocabProps {
+  word: string;
+  reading: string;
+  meaning_en: string;
+  meaning_mm: string;
 }
 
 export interface ReadingQuestionProps {
@@ -125,6 +171,13 @@ export interface ReadingProps {
   translation_mm: string;
   questions: ReadingQuestionProps[];
   status: boolean;
+  // Enhanced fields
+  difficulty?: 'Easy' | 'Medium' | 'Hard' | null;
+  key_vocab?: ReadingKeyVocabProps[] | null;
+}
+
+export interface ListeningSentenceProps {
+  text: string;
 }
 
 export interface ListeningQuestionProps {
@@ -144,4 +197,6 @@ export interface ListeningProps {
   translation_mm: string;
   questions: ListeningQuestionProps[];
   status: boolean;
+  // Enhanced fields
+  sentences?: ListeningSentenceProps[] | null;
 }

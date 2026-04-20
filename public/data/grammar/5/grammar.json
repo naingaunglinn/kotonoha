@@ -19,7 +19,32 @@
         "status": true
       }
     ],
-    "status": true
+    "status": true,
+    "conjugation_table": [
+      {
+        "form": "Affirmative",
+        "japanese": "〜です",
+        "example": "わたしはがくせいです。"
+      },
+      {
+        "form": "Negative",
+        "japanese": "〜ではありません",
+        "example": "これはほんではありません。"
+      },
+      {
+        "form": "Past",
+        "japanese": "〜でした",
+        "example": "きのうはやすみでした。"
+      },
+      {
+        "form": "Past Negative",
+        "japanese": "〜ではありませんでした",
+        "example": "きのうはやすみではありませんでした。"
+      }
+    ],
+    "common_mistake_en": "Don't say 'です' twice. 'わたしはがくせいです' is correct, not 'わたしはがくせいですです'.",
+    "common_mistake_mm": "'です' ကို နှစ်ကြိမ် မထည့်ပါနှင့်။",
+    "exam_tip": "JLPT N5 tests です in all four forms. Remember that the polite negative is ではありません (not じゃないです in formal contexts)."
   },
   {
     "level_id": "N5",
@@ -41,7 +66,27 @@
         "status": true
       }
     ],
-    "status": true
+    "status": true,
+    "conjugation_table": [
+      {
+        "form": "Topic (person)",
+        "japanese": "〔Noun〕は",
+        "example": "やまださんはせんせいです。"
+      },
+      {
+        "form": "Topic (thing)",
+        "japanese": "〔Noun〕は",
+        "example": "これはほんです。"
+      },
+      {
+        "form": "Contrast",
+        "japanese": "〔A〕は…〔B〕は",
+        "example": "すしはすきですが、さしみはきらいです。"
+      }
+    ],
+    "common_mistake_en": "は marks the topic, not always the grammatical subject. Don't confuse は (topic) with が (subject).",
+    "common_mistake_mm": "は သည် topic (ပြောနေသောအကြောင်းအရာ) ကိုညွှန်သည်။ subject ကိုမဟုတ်ဘဲ topic ကိုသတ်မှတ်သည်ဟု မှတ်သားပါ။",
+    "exam_tip": "は is written with hiragana は but pronounced 'wa'. Multiple choice questions love this distinction."
   },
   {
     "level_id": "N5",
@@ -63,7 +108,27 @@
         "status": true
       }
     ],
-    "status": true
+    "status": true,
+    "conjugation_table": [
+      {
+        "form": "Casual Negative",
+        "japanese": "〔Noun〕じゃない",
+        "example": "これはほんじゃない。"
+      },
+      {
+        "form": "Polite Negative",
+        "japanese": "〔Noun〕じゃありません",
+        "example": "これはほんじゃありません。"
+      },
+      {
+        "form": "Formal Negative",
+        "japanese": "〔Noun〕ではありません",
+        "example": "これはほんではありません。"
+      }
+    ],
+    "common_mistake_en": "じゃありません and ではありません are both acceptable, but ではありません is slightly more formal. Don't use both at the same time.",
+    "common_mistake_mm": "じゃありません နှင့် ではありません နှစ်ခုလုံး မှန်ကန်သော်လည်း ではありません သည် ပိုပြီး တရားဝင်ကြောင်း သတိပြုပါ။",
+    "exam_tip": "On JLPT N5, both forms are tested. じゃありません is more conversational; ではありません is standard formal."
   },
   {
     "level_id": "N5",
@@ -85,7 +150,22 @@
         "status": true
       }
     ],
-    "status": true
+    "status": true,
+    "conjugation_table": [
+      {
+        "form": "Yes/No Question",
+        "japanese": "〔Sentence〕か？",
+        "example": "これはほんですか。"
+      },
+      {
+        "form": "Wh-Question",
+        "japanese": "〔Wh-word〕〔Verb〕か？",
+        "example": "なんじですか。"
+      }
+    ],
+    "common_mistake_en": "In Japanese, question intonation alone can form questions, but using か is required in formal writing and tests.",
+    "common_mistake_mm": "Japanese တွင် question mark (？) မသုံးဘဲ か ဖြင့် မေးခွန်း ဖွဲ့သည်ကို သတိပြုပါ (တရားဝင်ရေးသားရာတွင်)။",
+    "exam_tip": "JLPT N5 grammar section will test か in polite yes/no questions. Never add か after だ — it becomes か alone after な-adjectives/nouns in plain form."
   },
   {
     "level_id": "N5",
@@ -107,7 +187,27 @@
         "status": true
       }
     ],
-    "status": true
+    "status": true,
+    "conjugation_table": [
+      {
+        "form": "Possession",
+        "japanese": "〔A〕の〔B〕",
+        "example": "わたしのほん"
+      },
+      {
+        "form": "Description",
+        "japanese": "〔Adj〕の〔Noun〕",
+        "example": "あかいのをください。"
+      },
+      {
+        "form": "Nominalization",
+        "japanese": "〔Verb〕の",
+        "example": "およぐのがすきです。"
+      }
+    ],
+    "common_mistake_en": "の used for possession links two nouns: 'A's B'. Don't confuse the possessive の with the nominalizer の.",
+    "common_mistake_mm": "の သည် ပိုင်ဆိုင်မှု (AのB = AのB) နှင့် nominalization (verb ကို noun ပြောင်း) နှစ်မျိုးလုံးအတွက် သုံးသည်ကို သတိပြုပါ။",
+    "exam_tip": "の appears in many N5 vocabulary items and grammar. Focus on the possessive の first — it's tested most frequently."
   },
   {
     "level_id": "N5",
@@ -129,7 +229,22 @@
         "status": true
       }
     ],
-    "status": true
+    "status": true,
+    "conjugation_table": [
+      {
+        "form": "Also / Too",
+        "japanese": "〔Noun〕も",
+        "example": "わたしもがくせいです。"
+      },
+      {
+        "form": "Neither",
+        "japanese": "〔Noun〕もありません",
+        "example": "ねこもいぬもいません。"
+      }
+    ],
+    "common_mistake_en": "も replaces は or が — don't stack them. Say 'わたしもがくせいです', NOT 'わたしはもがくせいです'.",
+    "common_mistake_mm": "も သည် は သို့မဟုတ် が ကို အစားထိုးသည်။ 'わたしはもがくせいです' မဟုတ်ဘဲ 'わたしもがくせいです' ဟု ဆိုပါ။",
+    "exam_tip": "Common N5 sentence completion: choose between は and も. も implies the same applies to this subject as to one already mentioned."
   },
   {
     "level_id": "N5",
@@ -151,7 +266,27 @@
         "status": true
       }
     ],
-    "status": true
+    "status": true,
+    "conjugation_table": [
+      {
+        "form": "Specific time",
+        "japanese": "〔Time〕に",
+        "example": "しちじにおきます。"
+      },
+      {
+        "form": "Day of week",
+        "japanese": "〔Day〕に",
+        "example": "にちようびにいきます。"
+      },
+      {
+        "form": "Month/Year",
+        "japanese": "〔Month〕に",
+        "example": "がつに うまれました。"
+      }
+    ],
+    "common_mistake_en": "Don't use に with relative time words like 今日 (today), 毎日 (every day), 今 (now). に is for specific clock times and dates only.",
+    "common_mistake_mm": "今日、毎日、今 ကဲ့သို့ relative time words နှင့် に ကို မသုံးပါနှင့်။ に သည် တိကျသောအချိန်နှင့် ရက်စွဲများအတွက်သာ သုံးသည်။",
+    "exam_tip": "A very common N5 trap: 毎朝 (every morning) does NOT take に. If you can say 'at/on' in English, に probably works; if you say 'every', skip に."
   },
   {
     "level_id": "N5",
@@ -173,7 +308,22 @@
         "status": true
       }
     ],
-    "status": true
+    "status": true,
+    "conjugation_table": [
+      {
+        "form": "Direction",
+        "japanese": "〔Place〕へ",
+        "example": "がっこうへいきます。"
+      },
+      {
+        "form": "Direction (ni also OK)",
+        "japanese": "〔Place〕に／へ",
+        "example": "とうきょうにいきます。"
+      }
+    ],
+    "common_mistake_en": "へ and に are often interchangeable for direction, but に is more versatile. へ is only for direction, while に can also indicate destination/purpose.",
+    "common_mistake_mm": "へ နှင့် に နှစ်ခုလုံး ဦးတည်ရာကို ညွှန်ပြနိုင်သော်လည်း に သည် ပိုများသောနေရာ၌ အသုံးဝင်သည်။",
+    "exam_tip": "へ is written with hiragana へ but read as 'e'. It only marks direction of movement — tested in fill-in-the-blank with motion verbs like いく、くる、かえる."
   },
   {
     "level_id": "N5",
@@ -195,7 +345,22 @@
         "status": true
       }
     ],
-    "status": true
+    "status": true,
+    "conjugation_table": [
+      {
+        "form": "Location of action",
+        "japanese": "〔Place〕で",
+        "example": "としょかんでべんきょうします。"
+      },
+      {
+        "form": "Means / Tool",
+        "japanese": "〔Means〕で",
+        "example": "でんしゃでいきます。"
+      }
+    ],
+    "common_mistake_en": "で (action location) vs に (existence location): 'としょかんでべんきょうします' (study AT library) vs 'としょかんにいます' (am IN the library).",
+    "common_mistake_mm": "で (action ပြုလုပ်သောနေရာ) နှင့် に (တည်ရှိသောနေရာ) ကို ရောပြောမနေပါနှင့်။ action verb → で ； existence verb (います/あります) → に",
+    "exam_tip": "で vs に is a classic JLPT N5 grammar question. The key rule: verbs of existence (います/あります) take に; action verbs take で."
   },
   {
     "level_id": "N5",
@@ -217,7 +382,27 @@
         "status": true
       }
     ],
-    "status": true
+    "status": true,
+    "conjugation_table": [
+      {
+        "form": "Direct object",
+        "japanese": "〔Noun〕を〔Verb〕",
+        "example": "ほんをよみます。"
+      },
+      {
+        "form": "Point of departure",
+        "japanese": "〔Place〕をでます",
+        "example": "うちをでます。"
+      },
+      {
+        "form": "Route/path",
+        "japanese": "〔Place〕をとおります",
+        "example": "こうえんをさんぽします。"
+      }
+    ],
+    "common_mistake_en": "を is the direct object marker. Students sometimes omit it or replace it with は. 'ほんをよむ' (read a book) NOT 'ほんはよむ' (unless contrasting).",
+    "common_mistake_mm": "を သည် direct object marker ဖြစ်သည်။ 'ほんをよみます' မှ を ကို ချန်လှပ် မနေပါနှင့်။",
+    "exam_tip": "を is written with hiragana を but pronounced 'o'. JLPT N5 tests を in object position. Don't confuse with お (honorific prefix)."
   },
   {
     "level_id": "N5",
@@ -239,7 +424,22 @@
         "status": true
       }
     ],
-    "status": true
+    "status": true,
+    "conjugation_table": [
+      {
+        "form": "Exhaustive list",
+        "japanese": "〔A〕と〔B〕",
+        "example": "ペンとえんぴつとノートを かいました。"
+      },
+      {
+        "form": "With (accompaniment)",
+        "japanese": "〔Person〕と",
+        "example": "ともだちとえいがをみます。"
+      }
+    ],
+    "common_mistake_en": "と for listing is exhaustive (lists everything). Use や for non-exhaustive lists. と also means 'with' (accompaniment).",
+    "common_mistake_mm": "と (listing) သည် ၎င်းမှ item အားလုံးပါဝင်ကြောင်း ဆိုသည်။ 'etc.' ကဲ့သို့ မပြည့်စုံသောစာရင်းအတွက် や ကိုသုံးပါ။",
+    "exam_tip": "と vs や is a common N5 question. と = A and B (only those two), や = A and B (among others)."
   },
   {
     "level_id": "N5",
@@ -261,7 +461,22 @@
         "status": true
       }
     ],
-    "status": true
+    "status": true,
+    "conjugation_table": [
+      {
+        "form": "Location (animate)",
+        "japanese": "〔Place〕にいます",
+        "example": "へやにねこがいます。"
+      },
+      {
+        "form": "Location (inanimate)",
+        "japanese": "〔Place〕にあります",
+        "example": "つくえのうえにほんがあります。"
+      }
+    ],
+    "common_mistake_en": "Use います for living things (people, animals) and あります for non-living things (objects, plants). Both take に for location.",
+    "common_mistake_mm": "います သည် ကောင်ကောင်ကောင်မျိုး (လူ၊ တိရိစ္ဆာန်) အတွက်ဖြစ်ပြီး あります သည် အသက်မဲ့ objects (အိမ်ဆောင်ပစ္စည်း၊ အပင်) အတွက်ဖြစ်သည်။",
+    "exam_tip": "います vs あります is tested heavily on JLPT N5. Memorize: living creatures → います; non-living → あります."
   },
   {
     "level_id": "N5",
@@ -283,7 +498,27 @@
         "status": true
       }
     ],
-    "status": true
+    "status": true,
+    "conjugation_table": [
+      {
+        "form": "Subject (new info)",
+        "japanese": "〔Noun〕が",
+        "example": "あそこにほんやがあります。"
+      },
+      {
+        "form": "Subject (ability/desire)",
+        "japanese": "〔Noun〕がすきです",
+        "example": "にほんごがすきです。"
+      },
+      {
+        "form": "But (conjunction)",
+        "japanese": "〜が、〜",
+        "example": "たかいですが、おいしいです。"
+      }
+    ],
+    "common_mistake_en": "は introduces old/known topics; が introduces new information or marks the grammatical subject for ability/desire verbs like すき、きらい、じょうず.",
+    "common_mistake_mm": "は = topic (known info), が = subject (new info or ability/desire verbs). すきです、わかります ကဲ့သို့ verbs နှင့် が ကိုသုံးသည်။",
+    "exam_tip": "が is used with potential, desire, and ability expressions: わかります、できます、すきです. These are N5 exam favorites."
   },
   {
     "level_id": "N5",
@@ -305,7 +540,32 @@
         "status": true
       }
     ],
-    "status": true
+    "status": true,
+    "conjugation_table": [
+      {
+        "form": "Present / Future",
+        "japanese": "Verb-stem + ます",
+        "example": "まいにちべんきょうします。"
+      },
+      {
+        "form": "Group 1 (U-verb)",
+        "japanese": "〔く→き〕ます",
+        "example": "かきます（かく）"
+      },
+      {
+        "form": "Group 2 (RU-verb)",
+        "japanese": "〔る→〕ます",
+        "example": "たべます（たべる）"
+      },
+      {
+        "form": "Irregular",
+        "japanese": "します／きます",
+        "example": "べんきょうします"
+      }
+    ],
+    "common_mistake_en": "Don't confuse ます form (polite present) with て form. ます is used to state actions politely, not to connect clauses.",
+    "common_mistake_mm": "ます form (礼儀正しい present/future) ကို て form နှင့် မရောပါနှင့်။ ます သည် clause ချိတ်ဆက်ရာတွင် မသုံးပါ။",
+    "exam_tip": "JLPT N5 requires knowing how to conjugate all three verb groups into ます form. Group 1 (u-drop, add i+ます) is trickiest — practice かく→かき+ます."
   },
   {
     "level_id": "N5",
@@ -327,7 +587,22 @@
         "status": true
       }
     ],
-    "status": true
+    "status": true,
+    "conjugation_table": [
+      {
+        "form": "Negative present",
+        "japanese": "Verb-stem + ません",
+        "example": "さかなをたべません。"
+      },
+      {
+        "form": "Negative request",
+        "japanese": "〜ないでください",
+        "example": "ここでたばこをすわないでください。"
+      }
+    ],
+    "common_mistake_en": "ません is the polite negative. Don't confuse it with ないです (plain negative + polite ending). Both are correct but ません is more standard.",
+    "common_mistake_mm": "ません သည် polite negative ဖြစ်သည်။ ないです (plain negative + polite) နှင့် နှစ်ခုလုံး မှန်ကန်သော်လည်း ません သည် ပိုများသောနေရာ၌ standard ဖြစ်သည်။",
+    "exam_tip": "On N5 tests, the polite negative form of a verb is tested in sentence completion. Memorize verb stem + ません for all three groups."
   },
   {
     "level_id": "N5",
@@ -349,7 +624,17 @@
         "status": true
       }
     ],
-    "status": true
+    "status": true,
+    "conjugation_table": [
+      {
+        "form": "Past affirmative",
+        "japanese": "Verb-stem + ました",
+        "example": "きのうえいがをみました。"
+      }
+    ],
+    "common_mistake_en": "ました is the polite past tense. Don't confuse with て form + います (ongoing action). 食べました = finished eating; 食べています = currently eating.",
+    "common_mistake_mm": "ました = ပြီးဆုံးသော action (past)။ 食べました (စားပြီး) နှင့် 食べています (စားနေဆဲ) ကို ရောမနေပါနှင့်။",
+    "exam_tip": "Time words like きのう (yesterday), さっき (a while ago) signal past tense → use ました. This is commonly tested in N5 reading comprehension."
   },
   {
     "level_id": "N5",
@@ -371,7 +656,17 @@
         "status": true
       }
     ],
-    "status": true
+    "status": true,
+    "conjugation_table": [
+      {
+        "form": "Past negative",
+        "japanese": "Verb-stem + ませんでした",
+        "example": "きのうべんきょうしませんでした。"
+      }
+    ],
+    "common_mistake_en": "ませんでした is past negative. Don't shorten it to just ませんだった — that's not standard polite Japanese.",
+    "common_mistake_mm": "ませんでした သည် past negative ဖြစ်သည်။ 'ませんだった' ဟု မဆိုပါနှင့် — ၎င်းသည် standard မဟုတ်ပါ။",
+    "exam_tip": "Four-form verb conjugation (ます/ません/ました/ませんでした) appears as a set in N5 grammar. Learn all four together."
   },
   {
     "level_id": "N5",
@@ -393,7 +688,27 @@
         "status": true
       }
     ],
-    "status": true
+    "status": true,
+    "conjugation_table": [
+      {
+        "form": "Time range",
+        "japanese": "〔Time〕から〔Time〕まで",
+        "example": "くじからごじまでしごとをします。"
+      },
+      {
+        "form": "Place range",
+        "japanese": "〔Place〕から〔Place〕まで",
+        "example": "えきからがっこうまであるきます。"
+      },
+      {
+        "form": "から only",
+        "japanese": "〔Time/Place〕から",
+        "example": "あしたからやすみます。"
+      }
+    ],
+    "common_mistake_en": "から and まで can be used independently. から = from/since; まで = until/up to. They don't have to appear together.",
+    "common_mistake_mm": "から (から: starting point) နှင့် まで (ending point) ကို တစ်ခုတည်းလည်း သုံးနိုင်သည်၊ အတွဲလည်း သုံးနိုင်သည်။",
+    "exam_tip": "N5 sentence-ordering questions often test から〜まで with time or place. Remember: から (from) always comes before まで (to)."
   },
   {
     "level_id": "N5",
@@ -415,7 +730,32 @@
         "status": true
       }
     ],
-    "status": true
+    "status": true,
+    "conjugation_table": [
+      {
+        "form": "Present affirm.",
+        "japanese": "〔い-Adj〕です",
+        "example": "このりんごはおいしいです。"
+      },
+      {
+        "form": "Present neg.",
+        "japanese": "〔い-Adj〕くないです",
+        "example": "このりんごはおいしくないです。"
+      },
+      {
+        "form": "Past affirm.",
+        "japanese": "〔い-Adj〕かったです",
+        "example": "きのうはさむかったです。"
+      },
+      {
+        "form": "Past neg.",
+        "japanese": "〔い-Adj〕くなかったです",
+        "example": "きのうはさむくなかったです。"
+      }
+    ],
+    "common_mistake_en": "NEVER add な between an い-adjective and a noun (いい + な + ひと = WRONG). い-adjectives directly modify nouns.",
+    "common_mistake_mm": "い-adjective ကို noun ရှေ့တွင် တိုက်ရိုက်ထားနိုင် သည်။ 'おいしいなりょうり' မဟုတ်ဘဲ 'おいしいりょうり' ဟု ဆိုပါ — な မထည့်ပါနှင့်။",
+    "exam_tip": "The exception: いい (good) → past: よかったです (NOT いいかったです). This irregular い-adjective is always tested on N5."
   },
   {
     "level_id": "N5",
@@ -437,7 +777,32 @@
         "status": true
       }
     ],
-    "status": true
+    "status": true,
+    "conjugation_table": [
+      {
+        "form": "Present affirm.",
+        "japanese": "〔な-Adj〕です",
+        "example": "このまちはにぎやかです。"
+      },
+      {
+        "form": "Before noun",
+        "japanese": "〔な-Adj〕な〔Noun〕",
+        "example": "しずかなへや"
+      },
+      {
+        "form": "Present neg.",
+        "japanese": "〔な-Adj〕じゃありません",
+        "example": "かれはしんせつじゃありません。"
+      },
+      {
+        "form": "Past affirm.",
+        "japanese": "〔な-Adj〕でした",
+        "example": "こどものころはげんきでした。"
+      }
+    ],
+    "common_mistake_en": "な-adjectives need な when modifying a noun (しずかなへや), but NOT when they come at the end of a sentence (このへやはしずかです).",
+    "common_mistake_mm": "な-adjective + noun: な をထည့်ပါ (しずかなへや)။ Sentence-final (predicate): な မထည့်ပါ (このへやはしずかです)。",
+    "exam_tip": "Common N5 trap: students add な in predicate position. 'このへやはしずかなです' is WRONG. Remove な before です."
   },
   {
     "level_id": "N5",
@@ -459,7 +824,22 @@
         "status": true
       }
     ],
-    "status": true
+    "status": true,
+    "conjugation_table": [
+      {
+        "form": "Negative present",
+        "japanese": "〔い-Adj stem〕くないです",
+        "example": "このスープはあつくないです。"
+      },
+      {
+        "form": "Negative past",
+        "japanese": "〔い-Adj stem〕くなかったです",
+        "example": "きのうはさむくなかったです。"
+      }
+    ],
+    "common_mistake_en": "Drop the final い and add くない. Exception: いい → よくない (NOT いくない). Always check if the adjective is irregular.",
+    "common_mistake_mm": "い を取り除いて くない を付けます。 いい の場合は よくない になります — いくない ではありません。",
+    "exam_tip": "くない form is tested in N5 fill-in-the-blank. Don't forget the いい→よくない irregularity — it's a favorite trap question."
   },
   {
     "level_id": "N5",
@@ -481,7 +861,27 @@
         "status": true
       }
     ],
-    "status": true
+    "status": true,
+    "conjugation_table": [
+      {
+        "form": "Casual negative",
+        "japanese": "〔な-Adj〕じゃない",
+        "example": "しずかじゃない。"
+      },
+      {
+        "form": "Polite negative",
+        "japanese": "〔な-Adj〕じゃありません",
+        "example": "しずかじゃありません。"
+      },
+      {
+        "form": "Formal negative",
+        "japanese": "〔な-Adj〕ではありません",
+        "example": "しずかではありません。"
+      }
+    ],
+    "common_mistake_en": "な-adjective negative follows the same pattern as noun negative. Don't add くない (that's for い-adjectives only).",
+    "common_mistake_mm": "な-adjective negative は noun negative と同じパターンです。 くない は い-adjective だけです — な-adjective に使わないでください。",
+    "exam_tip": "N5 will test switching between な-adjective and い-adjective negatives. Remember the rule: い → くない; な → じゃない."
   },
   {
     "level_id": "N5",
@@ -503,7 +903,22 @@
         "status": true
       }
     ],
-    "status": true
+    "status": true,
+    "conjugation_table": [
+      {
+        "form": "Past affirm.",
+        "japanese": "〔い-Adj stem〕かったです",
+        "example": "きのうはたのしかったです。"
+      },
+      {
+        "form": "Past neg.",
+        "japanese": "〔い-Adj stem〕くなかったです",
+        "example": "えいがはながくなかったです。"
+      }
+    ],
+    "common_mistake_en": "いい → よかったです (NOT いかったです). This is the only truly irregular い-adjective you need to know for N5.",
+    "common_mistake_mm": "いい (good) の past form は よかったです です。 いかったです ではありません。 これを必ず覚えてください。",
+    "exam_tip": "よかったです is a standalone high-frequency expression (= 'That's great! / I'm glad'). It will appear in N5 reading and grammar questions."
   },
   {
     "level_id": "N5",
@@ -525,7 +940,22 @@
         "status": true
       }
     ],
-    "status": true
+    "status": true,
+    "conjugation_table": [
+      {
+        "form": "Past affirm.",
+        "japanese": "〔な-Adj〕でした",
+        "example": "こどもはげんきでした。"
+      },
+      {
+        "form": "Past neg.",
+        "japanese": "〔な-Adj〕じゃありませんでした",
+        "example": "へやはしずかじゃありませんでした。"
+      }
+    ],
+    "common_mistake_en": "な-adjective past is just でした (same as noun past). Don't add かった — that's only for い-adjectives.",
+    "common_mistake_mm": "な-adjective past は でした ですが い-adjective past は かったです です。 ２つを混ぜないでください。",
+    "exam_tip": "Four-box conjugation tables (present/past × affirm/neg) for both adjective types are a staple of N5 grammar study and test preparation."
   },
   {
     "level_id": "N5",
@@ -547,7 +977,17 @@
         "status": true
       }
     ],
-    "status": true
+    "status": true,
+    "conjugation_table": [
+      {
+        "form": "Invitation",
+        "japanese": "Verb-stem + ませんか",
+        "example": "いっしょにたべませんか。"
+      }
+    ],
+    "common_mistake_en": "ませんか (invitation) vs ましょうか (offer/suggestion on speaker's part). ませんか invites the listener; ましょうか asks if you should do something.",
+    "common_mistake_mm": "ませんか = 招待 (invitation)। ましょうか = 提案 (shall we/should I?)。 ２つは似ているが意味が少し違います。",
+    "exam_tip": "ませんか is the polite invitation form tested in N5 dialogue scenarios. Answering it correctly (はい、ぜひ / すみません、ちょっと…) is also tested."
   },
   {
     "level_id": "N5",
@@ -569,7 +1009,22 @@
         "status": true
       }
     ],
-    "status": true
+    "status": true,
+    "conjugation_table": [
+      {
+        "form": "Suggestion (let's)",
+        "japanese": "Verb-stem + ましょう",
+        "example": "はやくいきましょう。"
+      },
+      {
+        "form": "Offer (shall I?)",
+        "japanese": "Verb-stem + ましょうか",
+        "example": "まどをあけましょうか。"
+      }
+    ],
+    "common_mistake_en": "ましょう = let's do (speaker includes self). ませんか = won't you do (asking listener). Both are invitations but from different angles.",
+    "common_mistake_mm": "ましょう = 'さあ、〜しよう' (speaker も含む)。 ませんか = 'あなたも一緒にしませんか' (listener に聞く)。",
+    "exam_tip": "ましょうか is often mistranslated. It can mean 'Shall I …?' (offer) or 'Shall we …?' (suggestion). Context determines which — test makers love this."
   },
   {
     "level_id": "N5",
@@ -591,7 +1046,27 @@
         "status": true
       }
     ],
-    "status": true
+    "status": true,
+    "conjugation_table": [
+      {
+        "form": "Want to (affirm.)",
+        "japanese": "Verb-stem + たいです",
+        "example": "にほんにいきたいです。"
+      },
+      {
+        "form": "Want to (negative)",
+        "japanese": "Verb-stem + たくないです",
+        "example": "べんきょうしたくないです。"
+      },
+      {
+        "form": "Want to (past)",
+        "japanese": "Verb-stem + たかったです",
+        "example": "もっとはやくきたかったです。"
+      }
+    ],
+    "common_mistake_en": "たいです expresses the speaker's own desire. Don't use it for third-person desires (use たがっています instead).",
+    "common_mistake_mm": "たいです は 自分の願望 (first person) だけです。 他人の願望には たがっています を使います。",
+    "exam_tip": "N5 tests たいです in sentence completion. Remember: it conjugates like an い-adjective (たい → たくない → たかった)."
   },
   {
     "level_id": "N5",
@@ -613,7 +1088,22 @@
         "status": true
       }
     ],
-    "status": true
+    "status": true,
+    "conjugation_table": [
+      {
+        "form": "い-Adj + Noun",
+        "japanese": "〔い-Adj〕＋〔Noun〕",
+        "example": "おおきいいえ（big house）"
+      },
+      {
+        "form": "な-Adj + Noun",
+        "japanese": "〔な-Adj〕な＋〔Noun〕",
+        "example": "きれいなはな（pretty flower）"
+      }
+    ],
+    "common_mistake_en": "い-adjectives directly precede nouns (no connector). な-adjectives need な before the noun. Mixing these up is the most common N5 adjective error.",
+    "common_mistake_mm": "い-adjective は直接 noun の前に置きます (connector 不要)。 な-adjective は な が必要です。",
+    "exam_tip": "On N5, you must identify whether an adjective is い or な type to choose the right prenominal form. Memorize a short な-adjective list: きれい、しずか、にぎやか、べんり、すき、きらい."
   },
   {
     "level_id": "N5",
@@ -635,7 +1125,37 @@
         "status": true
       }
     ],
-    "status": true
+    "status": true,
+    "conjugation_table": [
+      {
+        "form": "Always",
+        "japanese": "いつも",
+        "example": "いつもごはんをたべます。"
+      },
+      {
+        "form": "Often",
+        "japanese": "よく",
+        "example": "よくえいがをみます。"
+      },
+      {
+        "form": "Sometimes",
+        "japanese": "ときどき",
+        "example": "ときどきかぜをひきます。"
+      },
+      {
+        "form": "Rarely",
+        "japanese": "あまり〜ない",
+        "example": "あまりおさけをのみません。"
+      },
+      {
+        "form": "Never",
+        "japanese": "ぜんぜん〜ない",
+        "example": "ぜんぜんわかりません。"
+      }
+    ],
+    "common_mistake_en": "あまり and ぜんぜん MUST be paired with a negative verb. 'あまりたべます' is wrong; it should be 'あまりたべません'.",
+    "common_mistake_mm": "あまり と ぜんぜん は必ず negative verb と一緒に使います。 'あまりたべます' は間違いです — 'あまりたべません' が正しいです。",
+    "exam_tip": "あまり + negative is a guaranteed N5 grammar question. The correct pair: あまり〜ません / あまり〜ないです."
   },
   {
     "level_id": "N5",
@@ -657,7 +1177,37 @@
         "status": true
       }
     ],
-    "status": true
+    "status": true,
+    "conjugation_table": [
+      {
+        "form": "Flat objects (枚)",
+        "japanese": "〔Number〕まい",
+        "example": "かみをさんまいください。"
+      },
+      {
+        "form": "Long objects (本)",
+        "japanese": "〔Number〕ほん",
+        "example": "えんぴつをにほんください。"
+      },
+      {
+        "form": "Small objects (個)",
+        "japanese": "〔Number〕こ",
+        "example": "りんごをよっこください。"
+      },
+      {
+        "form": "People (人)",
+        "japanese": "〔Number〕にん",
+        "example": "さんにんいます。（ひとり、ふたり irregular）"
+      },
+      {
+        "form": "Times (回)",
+        "japanese": "〔Number〕かい",
+        "example": "いっかいみました。"
+      }
+    ],
+    "common_mistake_en": "Counter words change pronunciation based on the number. 一本 (いっぽん), 六本 (ろっぽん), 一枚 (いちまい). Memorize the irregular combos.",
+    "common_mistake_mm": "Counter words は number によって読み方が変わります。 一本 (いっぽん)、 六本 (ろっぽん) など の irregular combination を覚えてください。",
+    "exam_tip": "People counters ひとり and ふたり (irregular) are tested on N5. Everything else uses にん — さんにん、よにん、etc."
   },
   {
     "level_id": "N5",
@@ -679,7 +1229,17 @@
         "status": true
       }
     ],
-    "status": true
+    "status": true,
+    "conjugation_table": [
+      {
+        "form": "I give to someone",
+        "japanese": "わたしは〔Person〕に〔Thing〕をあげます",
+        "example": "ともだちにほんをあげます。"
+      }
+    ],
+    "common_mistake_en": "あげます = giver is the speaker or an in-group person. Do NOT use あげます when the receiver is the speaker (use もらいます).",
+    "common_mistake_mm": "あげます は speaker 또は 자신의 그룹の人が 주는 경우에 씁니다。 받는 사람이 speaker 면 もらいます 를 써야 합니다。",
+    "exam_tip": "Giving/receiving verbs (あげます/もらいます/くれます) form a tricky set. On N5, identify who is giving to whom from the sentence context."
   },
   {
     "level_id": "N5",
@@ -701,7 +1261,17 @@
         "status": true
       }
     ],
-    "status": true
+    "status": true,
+    "conjugation_table": [
+      {
+        "form": "I receive from someone",
+        "japanese": "わたしは〔Person〕に〔Thing〕をもらいます",
+        "example": "せんせいにほんをもらいました。"
+      }
+    ],
+    "common_mistake_en": "もらいます = receiver is the speaker or an in-group person. The に marks the giver (from whom you receive), not the destination.",
+    "common_mistake_mm": "もらいます の に は 'from (giver)' を示します。 に = location じゃなくて 'から誰' の意味です。",
+    "exam_tip": "もらいます uses に for the giver (わたしはAさんにもらいました). Some students confuse this に with the location に."
   },
   {
     "level_id": "N5",
@@ -723,7 +1293,17 @@
         "status": true
       }
     ],
-    "status": true
+    "status": true,
+    "conjugation_table": [
+      {
+        "form": "Someone gives to me",
+        "japanese": "〔Person〕がわたしに〔Thing〕をくれます",
+        "example": "ははがプレゼントをくれました。"
+      }
+    ],
+    "common_mistake_en": "くれます = someone gives TO the speaker (or in-group). The giver is the subject. Contrast: あげます (giver is speaker), くれます (giver is someone else toward speaker).",
+    "common_mistake_mm": "くれます は 他の人が speaker (自分) に くれる 場合です。 あげます (speaker が 与える) と くれます (他の人が speaker に 与える) を区別してください。",
+    "exam_tip": "The three-way distinction あげます/もらいます/くれます is an N5 exam classic. Draw a diagram: who is the giver and who is the receiver?"
   },
   {
     "level_id": "N5",
@@ -745,7 +1325,47 @@
         "status": true
       }
     ],
-    "status": true
+    "status": true,
+    "conjugation_table": [
+      {
+        "form": "Group 1: く→いて",
+        "japanese": "かく→かいて",
+        "example": "てがみをかいて"
+      },
+      {
+        "form": "Group 1: ぐ→いで",
+        "japanese": "およぐ→およいで",
+        "example": "うみでおよいで"
+      },
+      {
+        "form": "Group 1: む/ぬ/ぶ→んで",
+        "japanese": "のむ→のんで",
+        "example": "みずをのんで"
+      },
+      {
+        "form": "Group 1: う/つ/る→って",
+        "japanese": "かう→かって",
+        "example": "おみやげをかって"
+      },
+      {
+        "form": "Group 1: す→して",
+        "japanese": "はなす→はなして",
+        "example": "にほんごではなして"
+      },
+      {
+        "form": "Group 2: る→て",
+        "japanese": "たべる→たべて",
+        "example": "はやくたべて"
+      },
+      {
+        "form": "Irregular",
+        "japanese": "する→して、くる→きて",
+        "example": "べんきょうして"
+      }
+    ],
+    "common_mistake_en": "いく is irregular: いく→いって (not いいて). This is the most common te-form mistake among N5 learners.",
+    "common_mistake_mm": "いく (行く) の て-form は いって です — いいて ではありません。 これは N5 で最もよく間違える te-form の例外です。",
+    "exam_tip": "て-form conjugation is tested extensively in N5. Master Group 1 sound changes — they follow music: く→いて、ぐ→いで、む/ぬ/ぶ→んで、う/つ/る→って、す→して."
   },
   {
     "level_id": "N5",
@@ -767,7 +1387,22 @@
         "status": true
       }
     ],
-    "status": true
+    "status": true,
+    "conjugation_table": [
+      {
+        "form": "Polite request",
+        "japanese": "〔て-form〕＋ください",
+        "example": "すわってください。"
+      },
+      {
+        "form": "Negative request",
+        "japanese": "〔ない-form〕＋でください",
+        "example": "ここでたばこをすわないでください。"
+      }
+    ],
+    "common_mistake_en": "てください is a polite request, not a command. The negative is ないでください (don't do), NOT てくださいません.",
+    "common_mistake_mm": "てください は 丁寧な request です。 negative request は ないでください です — てくださいません ではありません。",
+    "exam_tip": "てください and ないでください appear together in N5 listening and reading. Notice the difference: てください (please do) vs ないでください (please don't)."
   },
   {
     "level_id": "N5",
@@ -789,7 +1424,27 @@
         "status": true
       }
     ],
-    "status": true
+    "status": true,
+    "conjugation_table": [
+      {
+        "form": "Action in progress",
+        "japanese": "〔て-form〕＋います",
+        "example": "いまごはんをたべています。"
+      },
+      {
+        "form": "Resultant state",
+        "japanese": "〔て-form〕＋います",
+        "example": "まどがあいています。（window is open = result）"
+      },
+      {
+        "form": "Habitual action",
+        "japanese": "〔て-form〕＋います",
+        "example": "まいにちじょギングしています。"
+      }
+    ],
+    "common_mistake_en": "〜ています has THREE uses: action in progress, resultant state, and habitual action. Don't assume it only means 'currently doing'.",
+    "common_mistake_mm": "〜ています は 3つ の意味があります: action 進行中、 resultant state、 habitual action です。 '今〜している' だけではありません。",
+    "exam_tip": "The resultant state use (まどがあいています = the window is open) confuses many N5 students. It's tested in N5 reading and grammar sections."
   },
   {
     "level_id": "N5",
@@ -811,7 +1466,22 @@
         "status": true
       }
     ],
-    "status": true
+    "status": true,
+    "conjugation_table": [
+      {
+        "form": "Permission",
+        "japanese": "〔て-form〕＋もいいです",
+        "example": "ここにすわってもいいですか。"
+      },
+      {
+        "form": "Giving permission",
+        "japanese": "〔て-form〕＋もいいですよ",
+        "example": "たべてもいいですよ。"
+      }
+    ],
+    "common_mistake_en": "〜てもいいですか asks for permission; 〜てもいいです/ですよ grants it. Students confuse this with もらっていいですか (may I receive/have…?).",
+    "common_mistake_mm": "〜てもいいですか は permission を求める表現です。 〜てもいいです は permission を与える表現です。",
+    "exam_tip": "Permission questions appear in N5 listening dialogues. Practice the question (〜てもいいですか) and correct positive response (はい、どうぞ / ええ、いいですよ)."
   },
   {
     "level_id": "N5",
@@ -833,7 +1503,22 @@
         "status": true
       }
     ],
-    "status": true
+    "status": true,
+    "conjugation_table": [
+      {
+        "form": "Prohibition",
+        "japanese": "〔て-form〕＋はいけません",
+        "example": "ここでたべてはいけません。"
+      },
+      {
+        "form": "Casual prohibition",
+        "japanese": "〔て-form〕＋はいけない",
+        "example": "ここでたばこをすってはいけない。"
+      }
+    ],
+    "common_mistake_en": "〜てはいけません = prohibition (must not). Don't confuse with 〜なければなりません (must do) — opposite meanings!",
+    "common_mistake_mm": "〜てはいけません = 禁止 (must not do)。 〜なければなりません = 義務 (must do) です。 対義語なので混乱しないように。",
+    "exam_tip": "N5 tests prohibition vs. obligation. てはいけません (must NOT) vs なければなりません (MUST). A classic question type."
   },
   {
     "level_id": "N5",
@@ -855,7 +1540,17 @@
         "status": true
       }
     ],
-    "status": true
+    "status": true,
+    "conjugation_table": [
+      {
+        "form": "Sequence (after doing)",
+        "japanese": "〔て-form〕＋から、〔main clause〕",
+        "example": "てをあらってから、たべます。"
+      }
+    ],
+    "common_mistake_en": "てから = action A, then B. Don't confuse with sentence + から (because/since). Context shows which meaning is intended.",
+    "common_mistake_mm": "てから = 'A してから B する' (sequence)。 sentence+から = 'because' の意味もあります。 文脈で判断してください。",
+    "exam_tip": "てから (sequential) vs から (because) appears in N5 sentence meaning questions. てから always has a て-form verb before から."
   },
   {
     "level_id": "N5",
@@ -877,7 +1572,22 @@
         "status": true
       }
     ],
-    "status": true
+    "status": true,
+    "conjugation_table": [
+      {
+        "form": "By vehicle",
+        "japanese": "〔Vehicle〕で",
+        "example": "でんしゃでいきます。"
+      },
+      {
+        "form": "On foot",
+        "japanese": "あるいて",
+        "example": "あるいてがっこうへいきます。（NOT あしで）"
+      }
+    ],
+    "common_mistake_en": "'Walking' is あるいて, NOT あしで. Legs/feet are not a vehicle, so で is not used. This is a common beginner mistake.",
+    "common_mistake_mm": "'歩いて行く' は あるいていきます です — あしで いきます ではありません。 足 (feet) は vehicle ではないので で を使いません。",
+    "exam_tip": "N5 transportation question: choose between でんしゃで、バスで、あるいて. The あるいて (on foot) exception is always tested."
   },
   {
     "level_id": "N5",
@@ -899,7 +1609,27 @@
         "status": true
       }
     ],
-    "status": true
+    "status": true,
+    "conjugation_table": [
+      {
+        "form": "Group 1 (U-verb)",
+        "japanese": "〔i-stem〕u",
+        "example": "かく、よむ、かえる"
+      },
+      {
+        "form": "Group 2 (RU-verb)",
+        "japanese": "〔stem〕る",
+        "example": "たべる、みる、おきる"
+      },
+      {
+        "form": "Irregular",
+        "japanese": "する、くる",
+        "example": "べんきょうする、くる"
+      }
+    ],
+    "common_mistake_en": "Group 2 verbs ending in 〜る can be confused with Group 1 verbs also ending in 〜る (かえる=return, Group 1; かえる=change, Group 2). Memorization is key.",
+    "common_mistake_mm": "〜る で終わる動詞 が Group 1 か Group 2 か 区別しにくいです。 例えば かえる (帰る, G1) と かえる (変える, G2) です。 メモするしかありません。",
+    "exam_tip": "Dictionary form is the base for many N5 grammar structures (〜ことができます、〜ことがあります、〜と思います). Master it early."
   },
   {
     "level_id": "N5",
@@ -921,7 +1651,22 @@
         "status": true
       }
     ],
-    "status": true
+    "status": true,
+    "conjugation_table": [
+      {
+        "form": "Can do",
+        "japanese": "〔Dict Form〕＋ことができます",
+        "example": "にほんごをはなすことができます。"
+      },
+      {
+        "form": "Cannot do",
+        "japanese": "〔Dict Form〕＋ことができません",
+        "example": "ピアノをひくことができません。"
+      }
+    ],
+    "common_mistake_en": "ことができます vs. potential form (〜られます/〜える): both mean 'can', but ことができます is more formal and wordy. Both are correct.",
+    "common_mistake_mm": "ことができます と potential form (〜られます) は同じ意味ですが ことができます は より formal です。",
+    "exam_tip": "N5 tests both ことができます and potential form. Choose ことができます when dictionary form + こと is in the question stem."
   },
   {
     "level_id": "N5",
@@ -943,7 +1688,32 @@
         "status": true
       }
     ],
-    "status": true
+    "status": true,
+    "conjugation_table": [
+      {
+        "form": "Group 1",
+        "japanese": "〔a-stem〕ない",
+        "example": "かく→かかない、よむ→よまない"
+      },
+      {
+        "form": "Group 2",
+        "japanese": "〔stem〕ない",
+        "example": "たべる→たべない、みる→みない"
+      },
+      {
+        "form": "Irregular",
+        "japanese": "する→しない、くる→こない",
+        "example": "べんきょうしない"
+      },
+      {
+        "form": "Special: う→わない",
+        "japanese": "かう→かわない",
+        "example": "かわない（NOT かあない）"
+      }
+    ],
+    "common_mistake_en": "U-verbs ending in う: the ない form uses わない, not あない. 'かう→かわない' NOT 'かあない'. This is the #1 ない-form mistake.",
+    "common_mistake_mm": "う で終わる G1 verb の ない形 は わない です — あない ではありません。 かう→かわない が正しいです。",
+    "exam_tip": "ない form is the base for many N5 structures (〜ないでください、〜なければなりません). Mastering the conjugation rules is essential for N5 passage."
   },
   {
     "level_id": "N5",
@@ -965,7 +1735,17 @@
         "status": true
       }
     ],
-    "status": true
+    "status": true,
+    "conjugation_table": [
+      {
+        "form": "Negative request",
+        "japanese": "〔ない-form〕＋でください",
+        "example": "おそくならないでください。"
+      }
+    ],
+    "common_mistake_en": "ないでください = please don't. Don't confuse with ないといけません (must not fail to do = must do) — very different meaning!",
+    "common_mistake_mm": "ないでください = 'しないでください' (don't do it, please)。 ないといけません = 'しなければなりません' (must do) と混同しないように。",
+    "exam_tip": "てください (positive request) vs ないでください (negative request) — these two appear together in N5 instruction/notice reading passages."
   },
   {
     "level_id": "N5",
@@ -987,7 +1767,22 @@
         "status": true
       }
     ],
-    "status": true
+    "status": true,
+    "conjugation_table": [
+      {
+        "form": "Must do",
+        "japanese": "〔ない-form〕＋なければなりません",
+        "example": "はやくかえらなければなりません。"
+      },
+      {
+        "form": "Casual must",
+        "japanese": "〔ない-form〕＋なきゃ",
+        "example": "はやくかえらなきゃ。"
+      }
+    ],
+    "common_mistake_en": "Double negative logic: ない (not) + なければ (if not) + なりません (won't do) = 'must do'. Students often translate it wrong — it means obligation, not prohibition.",
+    "common_mistake_mm": "なければなりません は double negative で '〜しなければいけない' (must do) を表します。 '〜してはいけない' (must not) ではありません。",
+    "exam_tip": "なければなりません (must) vs てはいけません (must not) is a classic N5 confusion. なければ = 'if not ~', paired with なりません makes it 'must ~'."
   },
   {
     "level_id": "N5",
@@ -1009,7 +1804,42 @@
         "status": true
       }
     ],
-    "status": true
+    "status": true,
+    "conjugation_table": [
+      {
+        "form": "Group 1: く→いた",
+        "japanese": "かく→かいた",
+        "example": "てがみをかいた"
+      },
+      {
+        "form": "Group 1: む/ぬ/ぶ→んだ",
+        "japanese": "のむ→のんだ",
+        "example": "みずをのんだ"
+      },
+      {
+        "form": "Group 1: う/つ/る→った",
+        "japanese": "かう→かった",
+        "example": "ほんをかった"
+      },
+      {
+        "form": "Group 1: す→した",
+        "japanese": "はなす→はなした",
+        "example": "せんせいとはなした"
+      },
+      {
+        "form": "Group 2: る→た",
+        "japanese": "たべる→たべた",
+        "example": "りんごをたべた"
+      },
+      {
+        "form": "Irregular",
+        "japanese": "する→した、くる→きた",
+        "example": "べんきょうした"
+      }
+    ],
+    "common_mistake_en": "た form follows the same consonant patterns as て form (replace て→た, で→だ). If you know て form, you know た form.",
+    "common_mistake_mm": "た form と て form は同じ子音変換パターンです (て→た、で→だ)。 て form を覚えたら た form も自動的にわかります。",
+    "exam_tip": "た form is tested in N5 in three grammar structures: ことがあります, り〜りします, and verb clause + Noun. Learn the forms alongside these patterns."
   },
   {
     "level_id": "N5",
@@ -1031,7 +1861,22 @@
         "status": true
       }
     ],
-    "status": true
+    "status": true,
+    "conjugation_table": [
+      {
+        "form": "Experience (have done)",
+        "japanese": "〔た form〕＋ことがあります",
+        "example": "にほんにいったことがあります。"
+      },
+      {
+        "form": "Never done",
+        "japanese": "〔た form〕＋ことがありません",
+        "example": "すしをたべたことがありません。"
+      }
+    ],
+    "common_mistake_en": "たことがあります expresses past experience (have/haven't done something). Don't use ます form here — it must be た form.",
+    "common_mistake_mm": "たことがあります は 経験 を表します。 'ます form + ことがあります' ではなく 'た form' です。",
+    "exam_tip": "N5 reading passages often include experience sentences. Look for たことがあります as a signal that the speaker is describing a past experience, not a habitual action."
   },
   {
     "level_id": "N5",
@@ -1053,7 +1898,17 @@
         "status": true
       }
     ],
-    "status": true
+    "status": true,
+    "conjugation_table": [
+      {
+        "form": "Non-exhaustive listing",
+        "japanese": "〔た form〕り、〔た form〕りします",
+        "example": "おんがくをきいたり、ほんをよんだりします。"
+      }
+    ],
+    "common_mistake_en": "〜たり〜たりします lists examples of actions (not exhaustive). End the pattern with します — never leave the last item as bare たり.",
+    "common_mistake_mm": "〜たり〜たりします は action のリスト (non-exhaustive) です。 最後は必ず します で終わります — bare たり で終わらないでください。",
+    "exam_tip": "たりたりします appears in N5 sentence-ordering questions. Remember: both verbs must be in た form, and します ends the pattern."
   },
   {
     "level_id": "N5",
@@ -1075,7 +1930,22 @@
         "status": true
       }
     ],
-    "status": true
+    "status": true,
+    "conjugation_table": [
+      {
+        "form": "Think that (present)",
+        "japanese": "〔Plain Form〕＋と思います",
+        "example": "あしたあめだと思います。"
+      },
+      {
+        "form": "Think that (negative)",
+        "japanese": "〔Plain Neg〕＋と思います",
+        "example": "かれはこないと思います。"
+      }
+    ],
+    "common_mistake_en": "Use PLAIN (casual) form before と思います, not polite ます form. 'たべますと思います' is WRONG; 'たべると思います' is correct.",
+    "common_mistake_mm": "と思います の前は plain form です — ます form ではありません。 'たべますと思います' は間違いで 'たべると思います' が正しいです。",
+    "exam_tip": "Plain form before と思います is a common N5 fill-in-the-blank trap. Always convert to plain (dictionary/ない/た) form before と."
   },
   {
     "level_id": "N5",
@@ -1097,7 +1967,22 @@
         "status": true
       }
     ],
-    "status": true
+    "status": true,
+    "conjugation_table": [
+      {
+        "form": "Reported speech",
+        "japanese": "〔Plain Form〕＋と言いました",
+        "example": "やまださんはあしたくると言いました。"
+      },
+      {
+        "form": "Quoted question",
+        "japanese": "〔Plain question〕＋と聞きました",
+        "example": "きょうしつはどこかと聞きました。"
+      }
+    ],
+    "common_mistake_en": "Reported speech uses plain form + と言いました. The tense of the original statement is preserved in the plain form verb.",
+    "common_mistake_mm": "Reported speech (間接話法) は plain form + と言いました です。 original の時制は plain form 動詞でそのまま表します。",
+    "exam_tip": "N5 listening comprehension often has reported speech ('He said that…'). Identify the plain form + と言いました/と聞きました pattern."
   },
   {
     "level_id": "N5",
@@ -1119,7 +2004,17 @@
         "status": true
       }
     ],
-    "status": true
+    "status": true,
+    "conjugation_table": [
+      {
+        "form": "Comparison",
+        "japanese": "A は B より〔Adj〕です",
+        "example": "ふゆはなつよりさむいです。"
+      }
+    ],
+    "common_mistake_en": "The item you're saying is MORE [adjective] goes BEFORE より. 'AはBより〜' means A is more ~ than B.",
+    "common_mistake_mm": "'AはBより〜' で A の方が B より 多い/大きい etc. です。 A (より多い方) が は の後、B が より の前です。",
+    "exam_tip": "Comparison sentences are tested in N5 reading and grammar. The word order A は B より is fixed — don't switch A and B."
   },
   {
     "level_id": "N5",
@@ -1141,7 +2036,22 @@
         "status": true
       }
     ],
-    "status": true
+    "status": true,
+    "conjugation_table": [
+      {
+        "form": "Which is more...?",
+        "japanese": "AとBとどちらが〔Adj〕ですか",
+        "example": "すしとラーメンとどちらがすきですか。"
+      },
+      {
+        "form": "Answer",
+        "japanese": "A/B のほうが〜です",
+        "example": "すしのほうがすきです。"
+      }
+    ],
+    "common_mistake_en": "Answer with 〜のほうが, not just the noun alone. 'すし' is incomplete; 'すしのほうがすきです' is the proper form.",
+    "common_mistake_mm": "どちら question の答えは 〜のほうが〜です です。 名詞だけ答えるのは文法的に不完全です。",
+    "exam_tip": "N5 tests both the question form (AとBとどちらが) and the correct answer pattern (〜のほうが). Both appear in listening and grammar sections."
   },
   {
     "level_id": "N5",
@@ -1163,7 +2073,17 @@
         "status": true
       }
     ],
-    "status": true
+    "status": true,
+    "conjugation_table": [
+      {
+        "form": "A is more ~ than B",
+        "japanese": "A のほうが B より〔Adj〕です",
+        "example": "コーヒーのほうがおちゃよりすきです。"
+      }
+    ],
+    "common_mistake_en": "This is the answer form to どちらが questions. のほうが comes right after A; より comes right after B.",
+    "common_mistake_mm": "のほうが は A の後、 より は B の後につきます。 順序を間違えないようにしてください。",
+    "exam_tip": "のほうが and より are both tested in N5. If you see のほうが in an answer choice, the subject before it is the 'winner' of the comparison."
   },
   {
     "level_id": "N5",
@@ -1185,7 +2105,17 @@
         "status": true
       }
     ],
-    "status": true
+    "status": true,
+    "conjugation_table": [
+      {
+        "form": "Superlative",
+        "japanese": "〔Group〕の中でAがいちばん〔Adj〕です",
+        "example": "くだもののなかでりんごがいちばんすきです。"
+      }
+    ],
+    "common_mistake_en": "の中で sets the scope (among all…). が marks the superlative item. Don't use は instead of が before いちばん — が is required here.",
+    "common_mistake_mm": "の中で は 範囲 (among all) を示します。 いちばん の前は が が必要です — は ではありません。",
+    "exam_tip": "Superlative questions ask 'what is the best/most ~ among these?' Listen for の中で + いちばん in N5 listening questions."
   },
   {
     "level_id": "N5",
@@ -1207,7 +2137,17 @@
         "status": true
       }
     ],
-    "status": true
+    "status": true,
+    "conjugation_table": [
+      {
+        "form": "Because / So",
+        "japanese": "〔S1〕から、〔S2〕",
+        "example": "あめがふっているから、うちにいます。"
+      }
+    ],
+    "common_mistake_en": "から (because) connects two sentences causally. The cause comes in S1 (before から); the result in S2 (after から). Don't reverse them.",
+    "common_mistake_mm": "S1 (原因) から S2 (結果) です。 原因が先、結果が後です — 逆にしないでください。",
+    "exam_tip": "から (because) vs のに (even though/despite) is an advanced distinction, but から alone is tested in N5. Identify the cause-result relationship."
   },
   {
     "level_id": "N5",
@@ -1229,7 +2169,22 @@
         "status": true
       }
     ],
-    "status": true
+    "status": true,
+    "conjugation_table": [
+      {
+        "form": "Go to do (verb stem)",
+        "japanese": "Verb-stem + に行きます",
+        "example": "えいがをみにいきます。"
+      },
+      {
+        "form": "Go to do (noun)",
+        "japanese": "〔Verbal Noun〕に行きます",
+        "example": "かいものにいきます。"
+      }
+    ],
+    "common_mistake_en": "Purpose of movement: use verb STEM (not dictionary form) before に行きます. 'たべるにいきます' is WRONG; 'たべにいきます' is correct.",
+    "common_mistake_mm": "に行きます の前は verb stem (masu-stem) です — dictionary form ではありません。 'たべるにいきます' は間違いです。",
+    "exam_tip": "N5 tests purpose of movement with に行きます/きます/かえります. Always use verb stem (not ます, not dictionary form) before this に."
   },
   {
     "level_id": "N5",
@@ -1251,7 +2206,22 @@
         "status": true
       }
     ],
-    "status": true
+    "status": true,
+    "conjugation_table": [
+      {
+        "form": "い-Adj → adverb",
+        "japanese": "〔い-Adj stem〕＋く",
+        "example": "はやい→はやく（run fast）"
+      },
+      {
+        "form": "な-Adj → adverb",
+        "japanese": "〔な-Adj〕＋に",
+        "example": "しずか→しずかに（quietly）"
+      }
+    ],
+    "common_mistake_en": "い-adjectives become adverbs with く; な-adjectives with に. Mixing them (e.g., しずかく) is a common error.",
+    "common_mistake_mm": "い-adjective + く = adverb (はやく)。 な-adjective + に = adverb (しずかに)。 これを混同しないでください。",
+    "exam_tip": "Adverb formation is tested in N5 sentence completion. Given an adjective, you must choose the correct adverbial form to modify a verb."
   },
   {
     "level_id": "N5",
@@ -1273,7 +2243,22 @@
         "status": true
       }
     ],
-    "status": true
+    "status": true,
+    "conjugation_table": [
+      {
+        "form": "Become (noun/na-adj)",
+        "japanese": "〔Noun/な-Adj〕に＋なります",
+        "example": "いしゃになりたいです。"
+      },
+      {
+        "form": "Become (i-adj)",
+        "japanese": "〔い-Adj stem〕く＋なります",
+        "example": "さむくなりました。"
+      }
+    ],
+    "common_mistake_en": "For い-adjectives: change to adverb form first (く), then add なります. 'さむいになります' is WRONG; 'さむくなります' is correct.",
+    "common_mistake_mm": "い-adjective + になります の場合 い → く に変えてから なります をつけます。 'さむいになります' は間違いです。",
+    "exam_tip": "になります is tested in N5 transformation sentences. Remember: noun/な-adj + に + なります; い-adj + く + なります."
   },
   {
     "level_id": "N5",
@@ -1295,7 +2280,22 @@
         "status": true
       }
     ],
-    "status": true
+    "status": true,
+    "conjugation_table": [
+      {
+        "form": "Noun modified by clause",
+        "japanese": "〔Plain Form〕＋〔Noun〕",
+        "example": "きのうかったほん（the book I bought yesterday）"
+      },
+      {
+        "form": "Negative modification",
+        "japanese": "〔ない form〕＋〔Noun〕",
+        "example": "たべないひと（a person who doesn't eat）"
+      }
+    ],
+    "common_mistake_en": "In Japanese, relative clauses come BEFORE the noun. 'I bought yesterday book' = きのうかったほん. The entire clause modifies the noun.",
+    "common_mistake_mm": "Japanese の relative clause は noun の前に来ます。 English と順序が逆です — Japanese は 先に修飾節、後に名詞です。",
+    "exam_tip": "Noun modification with plain form clauses is an important N5 reading skill. Identify the head noun at the end of the noun phrase."
   },
   {
     "level_id": "N5",
@@ -1317,7 +2317,17 @@
         "status": true
       }
     ],
-    "status": true
+    "status": true,
+    "conjugation_table": [
+      {
+        "form": "Not yet done",
+        "japanese": "まだ〔て-form〕＋いません",
+        "example": "まだしゅくだいをしていません。"
+      }
+    ],
+    "common_mistake_en": "まだ〜ていません = 'not yet'. Don't confuse with もう〜ました (already done). They are direct opposites.",
+    "common_mistake_mm": "まだ〜ていません = 'まだ〜していない' (not yet done)。 もう〜ました (already done) と対義語です — 混同しないように。",
+    "exam_tip": "まだ〜ていません and もう〜ました are paired in N5 grammar. Listen for まだ/もう as keywords in listening questions about completed/incomplete actions."
   },
   {
     "level_id": "N5",
@@ -1339,7 +2349,22 @@
         "status": true
       }
     ],
-    "status": true
+    "status": true,
+    "conjugation_table": [
+      {
+        "form": "Probability (polite)",
+        "japanese": "〔Plain Form〕＋でしょう",
+        "example": "あしたはあめでしょう。"
+      },
+      {
+        "form": "Confirmation (rising)",
+        "japanese": "〔Sentence〕＋でしょう↗",
+        "example": "これはたかいでしょう？"
+      }
+    ],
+    "common_mistake_en": "でしょう can express probability ('probably') or seek confirmation (rising intonation). Context and intonation distinguish the two uses.",
+    "common_mistake_mm": "でしょう は 推量 ('probably') と 確認 (rising intonation) の2つ の意味があります。 文脈と抑揚で判断してください。",
+    "exam_tip": "Weather forecasts use でしょう frequently — 'あしたは晴れでしょう'. N5 listening often features weather forecast-style sentences."
   },
   {
     "level_id": "N5",
@@ -1361,7 +2386,22 @@
         "status": true
       }
     ],
-    "status": true
+    "status": true,
+    "conjugation_table": [
+      {
+        "form": "Want (noun)",
+        "japanese": "〔Noun〕がほしいです",
+        "example": "あたらしいパソコンがほしいです。"
+      },
+      {
+        "form": "Negative want",
+        "japanese": "〔Noun〕がほしくないです",
+        "example": "おかねはほしくないです。"
+      }
+    ],
+    "common_mistake_en": "ほしいです is for NOUNS (want a thing). For verbs (want to do), use 〜たいです. 'りんごをたべたいです' NOT 'りんごがほしいです' if you want to eat it.",
+    "common_mistake_mm": "ほしいです は noun (物) に使います。 verb (動作をしたい) には たいです を使います。",
+    "exam_tip": "ほしいです vs たいです is tested in N5 grammar choice questions. ほしい describes wanting an object; たい describes wanting to perform an action."
   },
   {
     "level_id": "N5",
@@ -1383,7 +2423,22 @@
         "status": true
       }
     ],
-    "status": true
+    "status": true,
+    "conjugation_table": [
+      {
+        "form": "Like doing",
+        "japanese": "〔Dict Form〕＋のがすきです",
+        "example": "えをかくのがすきです。"
+      },
+      {
+        "form": "Dislike doing",
+        "japanese": "〔Dict Form〕＋のがきらいです",
+        "example": "はしるのがきらいです。"
+      }
+    ],
+    "common_mistake_en": "の nominalizes the verb. 'えをかく' (draw pictures) becomes 'えをかくの' (drawing pictures) as a noun. Then が marks it as the subject.",
+    "common_mistake_mm": "のが の の は verb を noun に変えます (nominalization)。 えをかくの = 'drawing pictures' という noun になります。",
+    "exam_tip": "のがすきです vs のがじょうずです both use の nominalization. N5 tests whether you can correctly nominalize a verb phrase with の."
   },
   {
     "level_id": "N5",
@@ -1405,7 +2460,22 @@
         "status": true
       }
     ],
-    "status": true
+    "status": true,
+    "conjugation_table": [
+      {
+        "form": "Good at doing",
+        "japanese": "〔Dict Form〕＋のがじょうずです",
+        "example": "りょうりをつくるのがじょうずです。"
+      },
+      {
+        "form": "Bad at doing",
+        "japanese": "〔Dict Form〕＋のがへたです",
+        "example": "うたうのがへたです。"
+      }
+    ],
+    "common_mistake_en": "じょうず and へた use が (not は) when the subject is the nominalized verb phrase. This が is the subject marker, not contrast.",
+    "common_mistake_mm": "のがじょうずです の が は subject marker です — contrast の は ではありません。 この が の用法に注意してください。",
+    "exam_tip": "Politeness note: saying 'じょうずですね' about someone's skill is a compliment. Saying じょうずです about your own skill sounds boastful — native speakers use へたです modestly."
   },
   {
     "level_id": "N5",
@@ -1427,6 +2497,16 @@
         "status": true
       }
     ],
-    "status": true
+    "status": true,
+    "conjugation_table": [
+      {
+        "form": "Listing reasons",
+        "japanese": "〔Plain Form〕し、〔Plain Form〕し、〔conclusion〕",
+        "example": "やすいし、おいしいし、このみせがすきです。"
+      }
+    ],
+    "common_mistake_en": "し lists multiple reasons or qualities (among others). It implies there are additional reasons not listed. Don't confuse with て (sequence) or が (but).",
+    "common_mistake_mm": "し は 理由や特徴 のリスト (non-exhaustive) を示します。 他にも理由がある含意があります。 て (sequence) や が (but) と混同しないように。",
+    "exam_tip": "し〜し appears in N5 reading passages that give multiple reasons. Each clause uses plain form before し, including な-adjective + だし and noun + だし."
   }
 ]

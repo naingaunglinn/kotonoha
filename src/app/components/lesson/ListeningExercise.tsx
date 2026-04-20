@@ -1,6 +1,6 @@
 "use client";
 import { ListeningProps } from "@/types";
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import {
   Headphones,
   Play,
@@ -12,67 +12,119 @@ import {
   ChevronDown,
   ChevronUp,
   RotateCcw,
+  Mic,
 } from "lucide-react";
 
+// Speed options: label + rate + button label
+const SPEED_OPTIONS = [
+  { label: 'Slow',   rate: 0.6 },
+  { label: 'Normal', rate: 0.8 },
+  { label: 'Fast',   rate: 1.0 },
+  { label: '1.2×',   rate: 1.2 },
+];
+
+// Split raw transcript into clean sentence segments
+const splitTranscript = (transcript: string): string[] => {
+  return transcript
+    .split('\n')
+    .map(line => line.replace(/^[A-Za-z]:\s*/, '').trim())
+    .filter(line => line.length > 0);
+};
+
+// Speak a single string using Web Speech API
+const speakText = (
+  text: string,
+  rate: number,
+  onStart: () => void,
+  onEnd: () => void,
+): void => {
+  if (typeof window === 'undefined' || !window.speechSynthesis) return;
+  window.speechSynthesis.cancel();
+  const utterance = new SpeechSynthesisUtterance(text);
+  utterance.lang = 'ja-JP';
+  utterance.rate = rate;
+  utterance.pitch = 1.0;
+  const voices = window.speechSynthesis.getVoices();
+  const japaneseVoice = voices.find(v => v.lang === 'ja-JP' || v.lang.startsWith('ja'));
+  if (japaneseVoice) utterance.voice = japaneseVoice;
+  utterance.onstart = onStart;
+  utterance.onend = onEnd;
+  utterance.onerror = onEnd;
+  window.speechSynthesis.speak(utterance);
+};
+
 const ListeningExercise = ({ data }: { data: ListeningProps }) => {
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [isPlaying, setIsPlaying]           = useState(false);
   const [showTranscript, setShowTranscript] = useState(false);
   const [showTranslationEn, setShowTranslationEn] = useState(false);
   const [showTranslationMm, setShowTranslationMm] = useState(false);
   const [selectedAnswers, setSelectedAnswers] = useState<Record<number, string>>({});
-  const [showResults, setShowResults] = useState(false);
-  const [expanded, setExpanded] = useState(false);
-  const [speed, setSpeed] = useState(0.8);
+  const [showResults, setShowResults]       = useState(false);
+  const [expanded, setExpanded]             = useState(false);
+  const [speed, setSpeed]                   = useState(0.8);
 
-  const speak = useCallback(() => {
-    if (typeof window === "undefined" || !window.speechSynthesis) return;
+  // Listen-first mode: hide transcript & translations until all questions answered
+  const [listenFirstMode, setListenFirstMode] = useState(false);
+  const listenFirstLocked = listenFirstMode && !showResults;
 
-    window.speechSynthesis.cancel();
+  // Shadowing mode: per-sentence highlight + 0.6× playback
+  const [shadowingMode, setShadowingMode]   = useState(false);
+  const [activeSentence, setActiveSentence] = useState<number | null>(null);
+  const shadowingSpeed = 0.6;
 
+  // Build sentence list: prefer data.sentences[], fallback to splitting transcript
+  const sentences: string[] = data.sentences && data.sentences.length > 0
+    ? data.sentences.map(s => s.text)
+    : splitTranscript(data.transcript);
+
+  const playFull = useCallback(() => {
     const cleanText = data.transcript
-      .replace(/[A-Za-z]:\s*/g, "")
-      .replace(/\n/g, "。");
-
-    const utterance = new SpeechSynthesisUtterance(cleanText);
-    utterance.lang = "ja-JP";
-    utterance.rate = speed;
-    utterance.pitch = 1.0;
-
-    // Try to find a Japanese voice
-    const voices = window.speechSynthesis.getVoices();
-    const japaneseVoice = voices.find(
-      (v) => v.lang === "ja-JP" || v.lang.startsWith("ja")
+      .replace(/[A-Za-z]:\s*/g, '')
+      .replace(/\n/g, '。');
+    speakText(
+      cleanText,
+      shadowingMode ? shadowingSpeed : speed,
+      () => setIsPlaying(true),
+      () => { setIsPlaying(false); setActiveSentence(null); },
     );
-    if (japaneseVoice) {
-      utterance.voice = japaneseVoice;
-    }
-
-    utterance.onstart = () => setIsPlaying(true);
-    utterance.onend = () => setIsPlaying(false);
-    utterance.onerror = () => setIsPlaying(false);
-
-    window.speechSynthesis.speak(utterance);
-  }, [data.transcript, speed]);
+  }, [data.transcript, speed, shadowingMode]);
 
   const stopSpeaking = useCallback(() => {
-    if (typeof window !== "undefined" && window.speechSynthesis) {
+    if (typeof window !== 'undefined' && window.speechSynthesis) {
       window.speechSynthesis.cancel();
       setIsPlaying(false);
+      setActiveSentence(null);
     }
   }, []);
 
+  // Play a single sentence (per-sentence replay + shadowing highlight)
+  const playSentence = useCallback((text: string, index: number) => {
+    setActiveSentence(index);
+    speakText(
+      text,
+      shadowingMode ? shadowingSpeed : speed,
+      () => setIsPlaying(true),
+      () => { setIsPlaying(false); setActiveSentence(null); },
+    );
+  }, [speed, shadowingMode]);
+
+  // Cancel speech when component unmounts or collapses
+  useEffect(() => {
+    if (!expanded) stopSpeaking();
+    return () => stopSpeaking();
+  }, [expanded, stopSpeaking]);
+
   const handleAnswer = (qIndex: number, option: string) => {
     if (showResults) return;
-    setSelectedAnswers((prev) => ({ ...prev, [qIndex]: option }));
+    setSelectedAnswers(prev => ({ ...prev, [qIndex]: option }));
   };
 
-  const handleCheck = () => {
-    setShowResults(true);
-  };
+  const handleCheck = () => setShowResults(true);
 
   const handleReset = () => {
     setSelectedAnswers({});
     setShowResults(false);
+    stopSpeaking();
   };
 
   const correctCount = data.questions.filter(
@@ -87,7 +139,7 @@ const ListeningExercise = ({ data }: { data: ListeningProps }) => {
         onClick={() => setExpanded(!expanded)}
       >
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-violet-400 to-purple-500 flex items-center justify-center">
+          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-violet-400 to-purple-500 flex items-center justify-center flex-shrink-0">
             <Headphones className="h-5 w-5 text-white" />
           </div>
           <div>
@@ -95,93 +147,171 @@ const ListeningExercise = ({ data }: { data: ListeningProps }) => {
             <p className="text-sm text-[#3E3636]/60">{data.title_en} · {data.title_mm}</p>
           </div>
         </div>
-        {expanded ? (
-          <ChevronUp className="h-5 w-5 text-[#3E3636]/40" />
-        ) : (
-          <ChevronDown className="h-5 w-5 text-[#3E3636]/40" />
-        )}
+        {expanded
+          ? <ChevronUp className="h-5 w-5 text-[#3E3636]/40 flex-shrink-0" />
+          : <ChevronDown className="h-5 w-5 text-[#3E3636]/40 flex-shrink-0" />
+        }
       </div>
 
       {expanded && (
         <div className="px-5 pb-5 space-y-4">
+          {/* Mode Toggles */}
+          <div className="flex flex-wrap gap-2">
+            <button
+              onClick={() => setListenFirstMode(prev => !prev)}
+              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
+                listenFirstMode
+                  ? 'bg-violet-500 text-white'
+                  : 'bg-violet-50 text-violet-600 hover:bg-violet-100'
+              }`}
+              title="Hide transcript and translations until you submit answers"
+            >
+              <Headphones className="h-3.5 w-3.5" />
+              Listen-First
+            </button>
+            <button
+              onClick={() => setShadowingMode(prev => !prev)}
+              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
+                shadowingMode
+                  ? 'bg-[#D72323] text-white'
+                  : 'bg-red-50 text-[#D72323] hover:bg-red-100'
+              }`}
+              title="Shadowing mode: plays slowly with each sentence highlighted"
+            >
+              <Mic className="h-3.5 w-3.5" />
+              Shadowing {shadowingMode && '(0.6×)'}
+            </button>
+          </div>
+
           {/* Audio Controls */}
           <div className="bg-gradient-to-br from-violet-50 to-purple-50 rounded-xl p-5 space-y-4">
+            {/* Play / Pause */}
             <div className="flex items-center justify-center gap-4">
               <button
-                onClick={isPlaying ? stopSpeaking : speak}
+                onClick={isPlaying ? stopSpeaking : playFull}
                 className="w-14 h-14 rounded-full bg-gradient-to-r from-violet-500 to-purple-600 flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105 active:scale-95"
               >
-                {isPlaying ? (
-                  <Pause className="h-6 w-6 text-white" />
-                ) : (
-                  <Play className="h-6 w-6 text-white ml-0.5" />
-                )}
+                {isPlaying
+                  ? <Pause className="h-6 w-6 text-white" />
+                  : <Play className="h-6 w-6 text-white ml-0.5" />
+                }
               </button>
             </div>
 
             {/* Speed Controls */}
-            <div className="flex items-center justify-center gap-2">
+            <div className="flex items-center justify-center gap-2 flex-wrap">
               <span className="text-xs text-[#3E3636]/50 font-medium">Speed:</span>
-              {[0.5, 0.8, 1.0].map((s) => (
+              {SPEED_OPTIONS.map(opt => (
                 <button
-                  key={s}
-                  onClick={() => setSpeed(s)}
+                  key={opt.rate}
+                  onClick={() => { setSpeed(opt.rate); if (shadowingMode) setShadowingMode(false); }}
                   className={`px-3 py-1 rounded-lg text-xs font-medium transition-all duration-200 ${
-                    speed === s
-                      ? "bg-violet-500 text-white shadow-sm"
-                      : "bg-white text-[#3E3636]/60 hover:bg-violet-100"
+                    speed === opt.rate && !shadowingMode
+                      ? 'bg-violet-500 text-white shadow-sm'
+                      : 'bg-white text-[#3E3636]/60 hover:bg-violet-100'
                   }`}
                 >
-                  {s === 0.5 ? "Slow" : s === 0.8 ? "Normal" : "Fast"}
+                  {opt.label}
                 </button>
               ))}
             </div>
 
-            <p className="text-center text-xs text-[#3E3636]/40">
-              🎧 Listen carefully, then answer the questions below
-            </p>
+            {shadowingMode && (
+              <p className="text-center text-xs font-bold text-[#D72323]">
+                🎤 Shadowing mode active — playing at 0.6×, tap each sentence to repeat it
+              </p>
+            )}
+            {!shadowingMode && (
+              <p className="text-center text-xs text-[#3E3636]/40">
+                🎧 Listen carefully, then answer the questions below
+              </p>
+            )}
           </div>
 
-          {/* Toggle Buttons */}
+          {/* Per-sentence replay / shadowing panel */}
+          {sentences.length > 0 && (
+            <div className="space-y-1.5">
+              <p className="text-[11px] font-bold text-[#3E3636]/40 uppercase tracking-wider">
+                {shadowingMode ? 'Tap to shadow each line' : 'Replay a sentence'}
+              </p>
+              <div className="space-y-1">
+                {sentences.map((sent, i) => (
+                  <button
+                    key={i}
+                    onClick={() => playSentence(sent, i)}
+                    className={`w-full text-left flex items-start gap-2 px-3 py-2 rounded-lg text-sm transition-all duration-200 ${
+                      activeSentence === i
+                        ? shadowingMode
+                          ? 'bg-[#D72323]/10 border border-[#D72323]/30 text-[#D72323] font-bold'
+                          : 'bg-violet-100 border border-violet-300 text-violet-800 font-bold'
+                        : 'bg-[#F5EDED]/60 hover:bg-violet-50 text-[#3E3636]'
+                    }`}
+                  >
+                    <Play className="h-3.5 w-3.5 mt-0.5 flex-shrink-0 opacity-50" />
+                    <span className="leading-snug">{sent}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Toggle Buttons — locked in listen-first mode */}
           <div className="flex gap-2 flex-wrap">
             <button
-              onClick={() => setShowTranscript(!showTranscript)}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium bg-violet-50 text-violet-600 hover:bg-violet-100 transition-colors"
+              onClick={() => !listenFirstLocked && setShowTranscript(!showTranscript)}
+              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium transition-colors ${
+                listenFirstLocked
+                  ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                  : 'bg-violet-50 text-violet-600 hover:bg-violet-100'
+              }`}
+              title={listenFirstLocked ? 'Submit answers first to reveal transcript' : ''}
             >
               {showTranscript ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
-              Transcript
+              Transcript {listenFirstLocked && '🔒'}
             </button>
             <button
-              onClick={() => setShowTranslationEn(!showTranslationEn)}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium bg-blue-50 text-blue-600 hover:bg-blue-100 transition-colors"
+              onClick={() => !listenFirstLocked && setShowTranslationEn(!showTranslationEn)}
+              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium transition-colors ${
+                listenFirstLocked
+                  ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                  : 'bg-blue-50 text-blue-600 hover:bg-blue-100'
+              }`}
             >
               {showTranslationEn ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
-              English
+              English {listenFirstLocked && '🔒'}
             </button>
             <button
-              onClick={() => setShowTranslationMm(!showTranslationMm)}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium bg-amber-50 text-amber-600 hover:bg-amber-100 transition-colors"
+              onClick={() => !listenFirstLocked && setShowTranslationMm(!showTranslationMm)}
+              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium transition-colors ${
+                listenFirstLocked
+                  ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                  : 'bg-amber-50 text-amber-600 hover:bg-amber-100'
+              }`}
             >
               {showTranslationMm ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
-              မြန်မာဘာသာ
+              မြန်မာဘာသာ {listenFirstLocked && '🔒'}
             </button>
           </div>
 
-          {showTranscript && (
+          {listenFirstLocked && (
+            <p className="text-xs text-[#3E3636]/50 italic">
+              Answer all questions below to unlock transcript and translations.
+            </p>
+          )}
+
+          {showTranscript && !listenFirstLocked && (
             <div className="bg-violet-50/60 rounded-xl p-4 border border-violet-100">
               <p className="text-sm text-violet-800 leading-relaxed whitespace-pre-line font-medium">
                 {data.transcript}
               </p>
             </div>
           )}
-
-          {showTranslationEn && (
+          {showTranslationEn && !listenFirstLocked && (
             <div className="bg-blue-50/60 rounded-xl p-4 border border-blue-100">
               <p className="text-sm text-blue-800 leading-relaxed whitespace-pre-line">{data.translation_en}</p>
             </div>
           )}
-
-          {showTranslationMm && (
+          {showTranslationMm && !listenFirstLocked && (
             <div className="bg-amber-50/60 rounded-xl p-4 border border-amber-100">
               <p className="text-sm text-amber-800 leading-relaxed whitespace-pre-line">{data.translation_mm}</p>
             </div>
@@ -195,9 +325,7 @@ const ListeningExercise = ({ data }: { data: ListeningProps }) => {
 
             {data.questions.map((q, qIndex) => (
               <div key={qIndex} className="bg-[#F5EDED]/40 rounded-xl p-4 space-y-3">
-                <p className="font-semibold text-[#3E3636]">
-                  {qIndex + 1}. {q.question}
-                </p>
+                <p className="font-semibold text-[#3E3636]">{qIndex + 1}. {q.question}</p>
                 <p className="text-sm text-[#3E3636]/50">{q.question_mm}</p>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
@@ -235,7 +363,7 @@ const ListeningExercise = ({ data }: { data: ListeningProps }) => {
             ))}
 
             {/* Submit / Reset */}
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-3 flex-wrap">
               {!showResults ? (
                 <button
                   onClick={handleCheck}

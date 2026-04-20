@@ -6,7 +6,7 @@ import ReadingPassage from "@/app/components/lesson/ReadingPassage";
 import ListeningExercise from "@/app/components/lesson/ListeningExercise";
 import VocabularyQuiz from "@/app/components/lesson/VocabularyQuiz";
 import { ChevronLeft, Shuffle, Home, ChevronRight, Eye, EyeOff, Calendar, RotateCcw, CheckCircle2, BrainCircuit } from "lucide-react";
-import { GrammarProps, KanjiProps, VocabularyProps, ReadingProps, ListeningProps } from "@/types";
+import { GrammarProps, KanjiProps, VocabularyProps, ReadingProps, ListeningProps, PartOfSpeech } from "@/types";
 import { useParams } from "next/navigation";
 import { useEffect, useState, useMemo, useCallback } from "react";
 import Link from "next/link";
@@ -28,6 +28,16 @@ const LESSON_LABELS: Record<string, string> = {
 };
 
 const WORDS_PER_PAGE = 80;
+
+const POS_FILTERS: Array<{ label: string; value: PartOfSpeech | 'All' }> = [
+  { label: 'All',        value: 'All' },
+  { label: '名詞 Noun',   value: 'Noun' },
+  { label: '動詞 Verb',   value: 'Verb' },
+  { label: '形容詞 Adj',  value: 'Adjective' },
+  { label: '副詞 Adv',   value: 'Adverb' },
+  { label: '助詞 Part',  value: 'Particle' },
+  { label: '表現 Expr',  value: 'Expression' },
+];
 const COMPLETED_STORAGE_KEY = (levelId: string) => `kotonoha_vocab_completed_n${levelId}`;
 
 // --- Helper: load/save completed set from localStorage ---
@@ -180,6 +190,9 @@ const LessonContentPage = () => {
   // Quiz state
   const [showQuiz, setShowQuiz] = useState(false);
 
+  // POS filter (session-only, not persisted)
+  const [posFilter, setPosFilter] = useState<PartOfSpeech | 'All'>('All');
+
   // Load completed words from localStorage on mount
   useEffect(() => {
     if (lesson === 'vocab') {
@@ -242,7 +255,15 @@ const LessonContentPage = () => {
   // Track shuffled version of current page
   const [shuffledPageVocab, setShuffledPageVocab] = useState<VocabularyProps[]>([]);
 
-  const displayVocab = isShuffled ? shuffledPageVocab : paginatedVocab;
+  const baseDisplayVocab = isShuffled ? shuffledPageVocab : paginatedVocab;
+
+  // Apply POS filter on top of pagination/shuffle
+  const displayVocab = useMemo(() => {
+    if (posFilter === 'All') return baseDisplayVocab;
+    return baseDisplayVocab.filter(
+      item => item.part_of_speech === posFilter
+    );
+  }, [baseDisplayVocab, posFilter]);
 
   // Completion counts
   const completedOnPage = useMemo(() => {
@@ -462,6 +483,30 @@ const LessonContentPage = () => {
               totalPages={totalPages}
               onPageChange={handlePageChange}
             />
+
+            {/* POS Filter Buttons */}
+            <div className="flex flex-wrap justify-center gap-2">
+              {POS_FILTERS.map(({ label, value }) => (
+                <button
+                  key={value}
+                  onClick={() => setPosFilter(value)}
+                  className={`px-3 py-1.5 rounded-full text-xs font-bold transition-all active:scale-95 ${
+                    posFilter === value
+                      ? 'bg-[#D72323] text-white shadow-md shadow-[#D72323]/30'
+                      : 'bg-white text-[#3E3636] border border-[#3E3636]/15 hover:border-[#D72323]/40'
+                  }`}
+                >
+                  {label}
+                </button>
+              ))}
+            </div>
+
+            {/* Active filter indicator */}
+            {posFilter !== 'All' && (
+              <p className="text-xs text-center text-[#3E3636]/50">
+                Showing <span className="font-bold text-[#D72323]">{displayVocab.length}</span> {posFilter}s on this page
+              </p>
+            )}
 
             {/* Action buttons */}
             <div className="flex flex-wrap justify-center gap-3">

@@ -7,6 +7,15 @@
     "passage": "わたしのなまえはリンです。ミャンマーからきました。いま、にほんのとうきょうにすんでいます。だいがくでにほんごをべんきょうしています。にほんごはむずかしいですが、とてもおもしろいです。しゅみはえいがをみることです。にほんのえいががすきです。よろしくおねがいします。",
     "translation_en": "My name is Lin. I came from Myanmar. I am currently living in Tokyo, Japan. I am studying Japanese at university. Japanese is difficult, but very interesting. My hobby is watching movies. I like Japanese movies. Nice to meet you.",
     "translation_mm": "ကျွန်တော့်နာမည် လင်းပါ။ မြန်မာနိုင်ငံကနေ လာခဲ့ပါတယ်။ အခု ဂျပန်နိုင်ငံ တိုကျိုမှာ နေထိုင်ပါတယ်။ တက္ကသိုလ်မှာ ဂျပန်စာ လေ့လာနေပါတယ်။ ဂျပန်စာက ခက်ပေမယ့် အရမ်းစိတ်ဝင်စားဖို့ ကောင်းပါတယ်။ ဝါသနာက ရုပ်ရှင်ကြည့်ခြင်း ဖြစ်ပါတယ်။ ဂျပန်ရုပ်ရှင်ကို ကြိုက်ပါတယ်။ တွေ့ရတာဝမ်းသာပါတယ်။",
+    "difficulty": "Easy",
+    "key_vocab": [
+      { "word": "なまえ", "reading": "なまえ", "meaning_en": "name", "meaning_mm": "နာမည်" },
+      { "word": "すんでいます", "reading": "すんでいます", "meaning_en": "living / residing", "meaning_mm": "နေထိုင်သည်" },
+      { "word": "べんきょうしています", "reading": "べんきょうしています", "meaning_en": "studying", "meaning_mm": "လေ့လာနေသည်" },
+      { "word": "むずかしい", "reading": "むずかしい", "meaning_en": "difficult", "meaning_mm": "ခက်ခဲသော" },
+      { "word": "しゅみ", "reading": "しゅみ", "meaning_en": "hobby", "meaning_mm": "ဝါသနာ" },
+      { "word": "よろしくおねがいします", "reading": "よろしくおねがいします", "meaning_en": "Nice to meet you / Please treat me well", "meaning_mm": "ကျေးဇူးပြု၍ ကောင်းကောင်းဆက်ဆံပေးပါ" }
+    ],
     "questions": [
       {
         "question": "リンさんはどこからきましたか。",
@@ -40,6 +49,15 @@
     "passage": "わたしはまいあさ６じにおきます。シャワーをあびてから、あさごはんをたべます。あさごはんはいつもパンとコーヒーです。７じはんにうちをでます。えきまであるいて１０ぷんです。でんしゃでかいしゃへいきます。かいしゃは９じから５じまでです。かいしゃのあとで、ときどきともだちとレストランでばんごはんをたべます。１１じごろねます。",
     "translation_en": "I wake up at 6 o'clock every morning. After taking a shower, I eat breakfast. Breakfast is always bread and coffee. I leave home at 7:30. It's a 10-minute walk to the station. I go to the company by train. Work is from 9 to 5. After work, I sometimes eat dinner at a restaurant with friends. I go to sleep around 11.",
     "translation_mm": "ကျွန်တော် မနက်တိုင်း ၆ နာရီမှာ အိပ်ရာထပါတယ်။ ရေချိုးပြီးတာနဲ့ မနက်စာ စားပါတယ်။ မနက်စာက အမြဲတမ်း ပေါင်မုန့်နဲ့ ကော်ဖီပါ။ ၇ နာရီခွဲမှာ အိမ်ကနေ ထွက်ပါတယ်။ ဘူတာအထိ လမ်းလျှောက်ရင် ၁၀ မိနစ် ကြာပါတယ်။ ရထားနဲ့ ကုမ္ပဏီကို သွားပါတယ်။ ကုမ္ပဏီက ၉ နာရီကနေ ၅ နာရီအထိ ဖြစ်ပါတယ်။ ကုမ္ပဏီပြီးတဲ့နောက် တစ်ခါတစ်ရံ သူငယ်ချင်းတွေနဲ့ စားသောက်ဆိုင်မှာ ညစာ စားပါတယ်။ ၁၁ နာရီလောက်မှာ အိပ်ပါတယ်။",
+    "difficulty": "Easy",
+    "key_vocab": [
+      { "word": "まいあさ", "reading": "まいあさ", "meaning_en": "every morning", "meaning_mm": "မနက်တိုင်း" },
+      { "word": "シャワーをあびる", "reading": "シャワーをあびる", "meaning_en": "to take a shower", "meaning_mm": "ရေချိုးသည်" },
+      { "word": "うちをでます", "reading": "うちをでます", "meaning_en": "leave home", "meaning_mm": "အိမ်မှ ထွက်သည်" },
+      { "word": "ときどき", "reading": "ときどき", "meaning_en": "sometimes", "meaning_mm": "တစ်ခါတစ်ရံ" },
+      { "word": "ばんごはん", "reading": "ばんごはん", "meaning_en": "dinner", "meaning_mm": "ညစာ" },
+      { "word": "ごろ", "reading": "ごろ", "meaning_en": "around / about (time)", "meaning_mm": "လောက် (အချိန်)" }
+    ],
     "questions": [
       {
         "question": "まいあさなんじにおきますか。",
@@ -73,6 +91,15 @@
     "passage": "わたしのかぞくは５にんです。ちちとははとあにとわたしといもうとです。ちちは５０さいで、かいしゃいんです。ははは４８さいで、びょういんではたらいています。あには２５さいで、もうけっこんしています。いもうとは１８さいで、こうこうせいです。わたしたちはみんなヤンゴンにすんでいます。",
     "translation_en": "My family has 5 people. Father, mother, older brother, me, and younger sister. My father is 50 years old and is a company employee. My mother is 48 years old and works at a hospital. My older brother is 25 and is already married. My younger sister is 18 and is a high school student. We all live in Yangon.",
     "translation_mm": "ကျွန်တော့်မိသားစုမှာ ၅ ယောက်ရှိပါတယ်။ အဖေ၊ အမေ၊ အစ်ကို၊ ကျွန်တော်၊ ညီမ ဖြစ်ပါတယ်။ အဖေက အသက် ၅၀ နှစ်ဖြစ်ပြီး ကုမ္ပဏီဝန်ထမ်း ဖြစ်ပါတယ်။ အမေက အသက် ၄၈ နှစ်ဖြစ်ပြီး ဆေးရုံမှာ အလုပ်လုပ်ပါတယ်။ အစ်ကိုက အသက် ၂၅ နှစ်ဖြစ်ပြီး လက်ထပ်ပြီးပါပြီ။ ညီမက အသက် ၁၈ နှစ်ဖြစ်ပြီး အထက်တန်းကျောင်းသူ ဖြစ်ပါတယ်။ ကျွန်တော်တို့အားလုံး ရန်ကုန်မှာ နေထိုင်ပါတယ်။",
+    "difficulty": "Easy",
+    "key_vocab": [
+      { "word": "かぞく", "reading": "かぞく", "meaning_en": "family", "meaning_mm": "မိသားစု" },
+      { "word": "かいしゃいん", "reading": "かいしゃいん", "meaning_en": "company employee", "meaning_mm": "ကုမ္ပဏီဝန်ထမ်း" },
+      { "word": "はたらいています", "reading": "はたらいています", "meaning_en": "working (currently)", "meaning_mm": "အလုပ်လုပ်နေသည်" },
+      { "word": "もう", "reading": "もう", "meaning_en": "already", "meaning_mm": "ပြီးပြီ / ရပြီ" },
+      { "word": "けっこんしています", "reading": "けっこんしています", "meaning_en": "is married", "meaning_mm": "လက်ထပ်ပြီးသော" },
+      { "word": "こうこうせい", "reading": "こうこうせい", "meaning_en": "high school student", "meaning_mm": "အထက်တန်းကျောင်းသား/သူ" }
+    ],
     "questions": [
       {
         "question": "かぞくはなんにんですか。",
@@ -106,6 +133,15 @@
     "passage": "きのう、ともだちのゆきさんとにほんのレストランへいきました。わたしはてんぷらをちゅうもんしました。ゆきさんはおすしをちゅうもんしました。てんぷらはとてもおいしかったです。ゆきさんのおすしもおいしかったです。レストランはあまりたかくなかったです。ふたりで３０００えんでした。また、いきたいです。",
     "translation_en": "Yesterday, I went to a Japanese restaurant with my friend Yuki. I ordered tempura. Yuki ordered sushi. The tempura was very delicious. Yuki's sushi was also delicious. The restaurant was not very expensive. It was 3000 yen for the two of us. I want to go again.",
     "translation_mm": "မနေ့က သူငယ်ချင်းယူကီနဲ့ ဂျပန်စားသောက်ဆိုင်ကို သွားခဲ့ပါတယ်။ ကျွန်တော်က တင်ပူရာ မှာခဲ့ပါတယ်။ ယူကီက ဆူရှီ မှာခဲ့ပါတယ်။ တင်ပူရာက အရမ်းအရသာ ရှိပါတယ်။ ယူကီရဲ့ ဆူရှီလည်း အရသာရှိပါတယ်။ စားသောက်ဆိုင်က သိပ်ဈေးမကြီးပါဘူး။ နှစ်ယောက်အတွက် ၃၀၀၀ ယန်း ဖြစ်ပါတယ်။ နောက်တစ်ခါ ထပ်သွားချင်ပါတယ်။",
+    "difficulty": "Medium",
+    "key_vocab": [
+      { "word": "きのう", "reading": "きのう", "meaning_en": "yesterday", "meaning_mm": "မနေ့က" },
+      { "word": "ちゅうもんしました", "reading": "ちゅうもんしました", "meaning_en": "ordered", "meaning_mm": "မှာခဲ့သည်" },
+      { "word": "おいしかったです", "reading": "おいしかったです", "meaning_en": "was delicious", "meaning_mm": "အရသာရှိခဲ့သည်" },
+      { "word": "あまり～なかった", "reading": "あまり～なかった", "meaning_en": "not very ~", "meaning_mm": "သိပ်မ~ ဘူး" },
+      { "word": "たかい", "reading": "たかい", "meaning_en": "expensive / tall", "meaning_mm": "ဈေးကြီးသော / မြင့်သော" },
+      { "word": "また", "reading": "また", "meaning_en": "again", "meaning_mm": "နောက်တစ်ခါ / ထပ်မံ" }
+    ],
     "questions": [
       {
         "question": "だれとレストランへいきましたか。",
@@ -139,6 +175,15 @@
     "passage": "やまださんはまいにちでんしゃでかいしゃへいきます。うちからえきまであるいて１５ふんです。えきでちゅうおうせんにのります。かいしゃまで４０ぷんぐらいかかります。でんしゃのなかで、よくほんをよみます。きょうはでんしゃがおくれました。１０ぷんまちました。かいしゃにすこしおくれました。",
     "translation_en": "Mr. Yamada goes to work by train every day. It's a 15-minute walk from home to the station. He rides the Chuo Line at the station. It takes about 40 minutes to work. He often reads books on the train. Today the train was late. He waited 10 minutes. He was a little late to work.",
     "translation_mm": "ကိုယာမာဒါ နေ့တိုင်း ရထားနဲ့ ကုမ္ပဏီကို သွားပါတယ်။ အိမ်ကနေ ဘူတာအထိ လမ်းလျှောက်ရင် ၁၅ မိနစ်ကြာပါတယ်။ ဘူတာမှာ ချုးအိုလိုင်းကို စီးပါတယ်။ ကုမ္ပဏီအထိ ၄၀ မိနစ်လောက် ကြာပါတယ်။ ရထားပေါ်မှာ စာအုပ်ဖတ်တတ်ပါတယ်။ ဒီနေ့ ရထားက နောက်ကျခဲ့ပါတယ်။ ၁၀ မိနစ်စောင့်ရပါတယ်။ ကုမ္ပဏီကို နည်းနည်း နောက်ကျခဲ့ပါတယ်။",
+    "difficulty": "Medium",
+    "key_vocab": [
+      { "word": "まいにち", "reading": "まいにち", "meaning_en": "every day", "meaning_mm": "နေ့တိုင်း" },
+      { "word": "～せん", "reading": "ちゅうおうせん", "meaning_en": "train line (Chuo Line)", "meaning_mm": "ရထားလိုင်း (ချုးအိုလိုင်း)" },
+      { "word": "のります", "reading": "のります", "meaning_en": "to ride / board", "meaning_mm": "စီးသည် / တက်သည်" },
+      { "word": "かかります", "reading": "かかります", "meaning_en": "it takes (time)", "meaning_mm": "ကြာသည် (အချိန်)" },
+      { "word": "おくれました", "reading": "おくれました", "meaning_en": "was late / delayed", "meaning_mm": "နောက်ကျခဲ့သည်" },
+      { "word": "まちました", "reading": "まちました", "meaning_en": "waited", "meaning_mm": "စောင့်ခဲ့သည်" }
+    ],
     "questions": [
       {
         "question": "やまださんはでんしゃのなかでなにをしますか。",
@@ -172,6 +217,15 @@
     "passage": "リンさんへ\n\nおげんきですか。わたしはげんきです。せんしゅう、きょうとへいきました。きょうとはとてもきれいなまちです。おてらやじんじゃをたくさんみました。きんかくじがいちばんきれいでした。にほんのりょうりもたくさんたべました。おすしがいちばんおいしかったです。らいげつ、ヤンゴンへかえります。いっしょにごはんをたべませんか。\n\nたなか",
     "translation_en": "Dear Lin,\n\nHow are you? I am fine. Last week, I went to Kyoto. Kyoto is a very beautiful city. I saw many temples and shrines. Kinkakuji was the most beautiful. I also ate a lot of Japanese food. Sushi was the most delicious. I will return to Yangon next month. Would you like to eat together?\n\nTanaka",
     "translation_mm": "လင်းရေ\n\nကျန်းမာပါသလား။ ကျွန်တော်က ကျန်းမာပါတယ်။ ပြီးခဲ့တဲ့အပတ်က ကျိုတိုကို သွားခဲ့ပါတယ်။ ကျိုတိုက အရမ်းလှတဲ့ မြို့ ဖြစ်ပါတယ်။ ဘုရားကျောင်းတွေနဲ့ နတ်ကွန်းတွေ အများကြီး ကြည့်ခဲ့ပါတယ်။ ကင်ကာကုဂျိက အလှဆုံး ဖြစ်ပါတယ်။ ဂျပန်အစားအစာတွေလည်း အများကြီး စားခဲ့ပါတယ်။ ဆူရှီက အအရသာရှိဆုံး ဖြစ်ပါတယ်။ လာမယ့်လ ရန်ကုန်ကို ပြန်ပါမယ်။ အတူ ထမင်းစားမလား။\n\nတာနာကာ",
+    "difficulty": "Medium",
+    "key_vocab": [
+      { "word": "おげんきですか", "reading": "おげんきですか", "meaning_en": "How are you? / Are you well?", "meaning_mm": "ကျန်းမာပါသလား" },
+      { "word": "せんしゅう", "reading": "せんしゅう", "meaning_en": "last week", "meaning_mm": "ပြီးခဲ့တဲ့အပတ်" },
+      { "word": "おてら", "reading": "おてら", "meaning_en": "Buddhist temple", "meaning_mm": "ဗုဒ္ဓဘုရားကျောင်း" },
+      { "word": "いちばん", "reading": "いちばん", "meaning_en": "the most / number one", "meaning_mm": "အဆုံးစွန် / အ~ဆုံး" },
+      { "word": "らいげつ", "reading": "らいげつ", "meaning_en": "next month", "meaning_mm": "လာမည့်လ" },
+      { "word": "いっしょに", "reading": "いっしょに", "meaning_en": "together", "meaning_mm": "အတူ / ဖော်ဖော်ရှင်ရှင်" }
+    ],
     "questions": [
       {
         "question": "たなかさんはせんしゅうどこへいきましたか。",
@@ -205,6 +259,15 @@
     "passage": "にほんにはきせつが４つあります。はる、なつ、あき、ふゆです。はるは３がつから５がつまでです。さくらがきれいです。なつは６がつから８がつまでです。とてもあついです。うみへいくひとがおおいです。あきは９がつから１１がつまでです。やまのきがあかやきいろになります。とてもきれいです。ふゆは１２がつから２がつまでです。とてもさむいです。ゆきがふるところもあります。",
     "translation_en": "Japan has 4 seasons. Spring, summer, autumn, and winter. Spring is from March to May. The cherry blossoms are beautiful. Summer is from June to August. It is very hot. Many people go to the sea. Autumn is from September to November. Mountain trees turn red and yellow. It is very beautiful. Winter is from December to February. It is very cold. There are also places where it snows.",
     "translation_mm": "ဂျပန်မှာ ရာသီ ၄ ခု ရှိပါတယ်။ နွေ၊ မိုး၊ ဆောင်း၊ ဆောင်းတွင်း ဖြစ်ပါတယ်။ နွေရာသီက မတ်လကနေ မေလအထိ ဖြစ်ပါတယ်။ ချယ်ရီပန်းတွေ လှပါတယ်။ မိုးရာသီက ဇွန်လကနေ သြဂုတ်လအထိ ဖြစ်ပါတယ်။ အရမ်းပူပါတယ်။ ပင်လယ်ကို သွားတဲ့သူ များပါတယ်။ ဆောင်းရာသီက စက်တင်ဘာလကနေ နိုဝင်ဘာလအထိ ဖြစ်ပါတယ်။ တောင်ပေါ်က သစ်ပင်တွေ အနီနဲ့ အဝါ ဖြစ်လာပါတယ်။ အရမ်းလှပါတယ်။ ဆောင်းတွင်းက ဒီဇင်ဘာလကနေ ဖေဖော်ဝါရီလအထိ ဖြစ်ပါတယ်။ အရမ်းအေးပါတယ်။ နှင်းကျတဲ့ နေရာတွေလည်း ရှိပါတယ်။",
+    "difficulty": "Hard",
+    "key_vocab": [
+      { "word": "きせつ", "reading": "きせつ", "meaning_en": "season", "meaning_mm": "ရာသီ" },
+      { "word": "さくら", "reading": "さくら", "meaning_en": "cherry blossom", "meaning_mm": "ချယ်ရီပန်း" },
+      { "word": "うみ", "reading": "うみ", "meaning_en": "sea / ocean", "meaning_mm": "ပင်လယ်" },
+      { "word": "～になります", "reading": "になります", "meaning_en": "to become ~", "meaning_mm": "~ ဖြစ်လာသည်" },
+      { "word": "ゆきがふる", "reading": "ゆきがふる", "meaning_en": "snow falls", "meaning_mm": "နှင်းကျသည်" },
+      { "word": "ところ", "reading": "ところ", "meaning_en": "place", "meaning_mm": "နေရာ / နေရာဒေသ" }
+    ],
     "questions": [
       {
         "question": "にほんにきせつがいくつありますか。",
@@ -238,6 +301,15 @@
     "passage": "こんどのどようびにともだちのアウンさんといっしょにこうえんへいきます。あさ１０じにえきであいます。こうえんでおべんとうをたべます。そのあとで、えいがをみにいきます。にほんのあたらしいえいがをみたいです。えいがのあとで、カフェでコーヒーをのみます。にちようびはうちでにほんごのべんきょうをします。らいしゅうテストがありますから。",
     "translation_en": "This Saturday, I will go to the park with my friend Aung. We will meet at the station at 10 AM. We will eat bento in the park. After that, we will go to watch a movie. I want to see a new Japanese movie. After the movie, we will drink coffee at a café. On Sunday, I will study Japanese at home because there is a test next week.",
     "translation_mm": "ဒီစနေနေ့မှာ သူငယ်ချင်းအောင်နဲ့ အတူ ပန်းခြံကို သွားပါမယ်။ မနက် ၁၀ နာရီမှာ ဘူတာမှာ တွေ့ပါမယ်။ ပန်းခြံမှာ ထမင်းစားပါမယ်။ ပြီးတဲ့နောက်မှာ ရုပ်ရှင်ကြည့်ဖို့ သွားပါမယ်။ ဂျပန်ရုပ်ရှင်အသစ် ကြည့်ချင်ပါတယ်။ ရုပ်ရှင်ကြည့်ပြီးတဲ့နောက် ကဖေးဆိုင်မှာ ကော်ဖီ သောက်ပါမယ်။ တနင်္ဂနွေနေ့မှာ အိမ်မှာ ဂျပန်စာ လုပ်ပါမယ်။ နောက်အပတ် စာမေးပွဲ ရှိလို့ပါ။",
+    "difficulty": "Hard",
+    "key_vocab": [
+      { "word": "こんど", "reading": "こんど", "meaning_en": "this time / next time (near future)", "meaning_mm": "ဒီတစ်ခါ / မကြာမီ" },
+      { "word": "おべんとう", "reading": "おべんとう", "meaning_en": "bento (packed lunch)", "meaning_mm": "ထုပ်ထားသော ထမင်းဗူး" },
+      { "word": "そのあとで", "reading": "そのあとで", "meaning_en": "after that", "meaning_mm": "ပြီးတဲ့နောက်မှာ" },
+      { "word": "みにいきます", "reading": "みにいきます", "meaning_en": "go to see / watch", "meaning_mm": "ကြည့်ဖို့ သွားသည်" },
+      { "word": "あたらしい", "reading": "あたらしい", "meaning_en": "new", "meaning_mm": "အသစ်" },
+      { "word": "～から", "reading": "から", "meaning_en": "because ~ (reason marker)", "meaning_mm": "~ ကြောင့် (အကြောင်းပြချက်)" }
+    ],
     "questions": [
       {
         "question": "どようびになにをしますか。",

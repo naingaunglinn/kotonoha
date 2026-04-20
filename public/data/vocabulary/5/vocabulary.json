@@ -6,7 +6,13 @@
     "spelling": "watashi",
     "meaning": "I",
     "meaning_mm": "ကျွန်တော်, ကျွန်မ",
-    "status": true
+    "status": true,
+    "part_of_speech": "Noun",
+    "example_jp": "わたしはがくせいです。",
+    "example_en": "I am a student.",
+    "example_mm": "ကျွန်တော်က ကျောင်းသားပါ။",
+    "tag": "Core",
+    "formality": "Neutral"
   },
   {
     "level_id": "5",
@@ -15,7 +21,13 @@
     "spelling": "anata",
     "meaning": "you",
     "meaning_mm": "သင်, မင်း",
-    "status": true
+    "status": true,
+    "part_of_speech": "Noun",
+    "example_jp": "あなたのなまえはなんですか。",
+    "example_en": "What is your name?",
+    "example_mm": "သင့်နာမည် ဘာလဲ။",
+    "tag": "Core",
+    "formality": "Neutral"
   },
   {
     "level_id": "5",
@@ -24,7 +36,13 @@
     "spelling": "kore",
     "meaning": "this",
     "meaning_mm": "ဒါ",
-    "status": true
+    "status": true,
+    "part_of_speech": "Noun",
+    "example_jp": "これはわたしのほんです。",
+    "example_en": "This is my book.",
+    "example_mm": "ဒါက ကျွန်တော်ရဲ့ စာအုပ်ပါ။",
+    "tag": "Core",
+    "formality": "Neutral"
   },
   {
     "level_id": "5",
@@ -33,7 +51,13 @@
     "spelling": "sore",
     "meaning": "that",
     "meaning_mm": "အဲဒါ",
-    "status": true
+    "status": true,
+    "part_of_speech": "Noun",
+    "example_jp": "それはなんですか。",
+    "example_en": "What is that?",
+    "example_mm": "အဲဒါ ဘာလဲ။",
+    "tag": "Core",
+    "formality": "Neutral"
   },
   {
     "level_id": "5",
@@ -42,7 +66,13 @@
     "spelling": "are",
     "meaning": "that (over there)",
     "meaning_mm": "ဟိုဟာ",
-    "status": true
+    "status": true,
+    "part_of_speech": "Noun",
+    "example_jp": "あれはふじさんです。",
+    "example_en": "That over there is Mt. Fuji.",
+    "example_mm": "ဟိုဟာက ဖူဂျိ တောင်ပါ။",
+    "tag": "Core",
+    "formality": "Neutral"
   },
   {
     "level_id": "5",
@@ -51,7 +81,13 @@
     "spelling": "hito",
     "meaning": "person",
     "meaning_mm": "လူ",
-    "status": true
+    "status": true,
+    "part_of_speech": "Noun",
+    "example_jp": "あのひとはだれですか。",
+    "example_en": "Who is that person?",
+    "example_mm": "အဲဒီ လူက ဘယ်သူလဲ။",
+    "tag": "Core",
+    "formality": "Neutral"
   },
   {
     "level_id": "5",
@@ -60,7 +96,13 @@
     "spelling": "gakusei",
     "meaning": "student",
     "meaning_mm": "ကျောင်းသား/သူ",
-    "status": true
+    "status": true,
+    "part_of_speech": "Noun",
+    "example_jp": "わたしはだいがくのがくせいです。",
+    "example_en": "I am a university student.",
+    "example_mm": "ကျွန်တော်က တက္ကသိုလ် ကျောင်းသားပါ။",
+    "tag": "Core",
+    "formality": "Neutral"
   },
   {
     "level_id": "5",
@@ -69,7 +111,13 @@
     "spelling": "sensei",
     "meaning": "teacher",
     "meaning_mm": "ဆရာ/မ",
-    "status": true
+    "status": true,
+    "part_of_speech": "Noun",
+    "example_jp": "せんせいはとてもやさしいです。",
+    "example_en": "The teacher is very kind.",
+    "example_mm": "ဆရာ/မ အရမ်း ကြင်နာပါတယ်။",
+    "tag": "Core",
+    "formality": "Neutral"
   },
   {
     "level_id": "5",
@@ -78,7 +126,13 @@
     "spelling": "gakkou",
     "meaning": "school",
     "meaning_mm": "ကျောင်း",
-    "status": true
+    "status": true,
+    "part_of_speech": "Noun",
+    "example_jp": "わたしのがっこうはおおきいです。",
+    "example_en": "My school is big.",
+    "example_mm": "ကျွန်တော်ရဲ့ ကျောင်းက ကြီးပါတယ်။",
+    "tag": "Core",
+    "formality": "Neutral"
   },
   {
     "level_id": "5",
@@ -87,7 +141,13 @@
     "spelling": "nihon",
     "meaning": "Japan",
     "meaning_mm": "ဂျပန်",
-    "status": true
+    "status": true,
+    "part_of_speech": "Noun",
+    "example_jp": "にほんにいきたいです。",
+    "example_en": "I want to go to Japan.",
+    "example_mm": "ဂျပန်ကို သွားချင်ပါတယ်။",
+    "tag": "Core",
+    "formality": "Neutral"
   },
   {
     "level_id": "5",
@@ -96,7 +156,13 @@
     "spelling": "hon",
     "meaning": "book",
     "meaning_mm": "စာအုပ်",
-    "status": true
+    "status": true,
+    "part_of_speech": "Noun",
+    "example_jp": "このほんはおもしろいです。",
+    "example_en": "This book is interesting.",
+    "example_mm": "ဒီ စာအုပ်က စိတ်ဝင်စားဖို့ ကောင်းပါတယ်။",
+    "tag": "Core",
+    "formality": "Neutral"
   },
   {
     "level_id": "5",
@@ -105,7 +171,13 @@
     "spelling": "tsukue",
     "meaning": "desk",
     "meaning_mm": "စားပွဲ",
-    "status": true
+    "status": true,
+    "part_of_speech": "Noun",
+    "example_jp": "つくえのうえにほんがあります。",
+    "example_en": "There is a book on the desk.",
+    "example_mm": "စားပွဲပေါ်မှာ စာအုပ် ရှိပါတယ်။",
+    "tag": "Common",
+    "formality": "Neutral"
   },
   {
     "level_id": "5",
@@ -114,7 +186,13 @@
     "spelling": "kuruma",
     "meaning": "car",
     "meaning_mm": "ကား",
-    "status": true
+    "status": true,
+    "part_of_speech": "Noun",
+    "example_jp": "ちちのくるまはあかいです。",
+    "example_en": "My father's car is red.",
+    "example_mm": "ဖေဖေ့ကားက အနီရောင်ပါ။",
+    "tag": "Common",
+    "formality": "Neutral"
   },
   {
     "level_id": "5",
@@ -123,7 +201,13 @@
     "spelling": "eki",
     "meaning": "station",
     "meaning_mm": "ဘူတာရုံ",
-    "status": true
+    "status": true,
+    "part_of_speech": "Noun",
+    "example_jp": "えきのちかくにスーパーがあります。",
+    "example_en": "There is a supermarket near the station.",
+    "example_mm": "ဘူတာရုံနား ဆူပါမားကတ် ရှိပါတယ်။",
+    "tag": "Core",
+    "formality": "Neutral"
   },
   {
     "level_id": "5",
@@ -132,7 +216,13 @@
     "spelling": "taberu",
     "meaning": "to eat",
     "meaning_mm": "စားသည်",
-    "status": true
+    "status": true,
+    "part_of_speech": "Verb",
+    "example_jp": "まいにちごはんをたべます。",
+    "example_en": "I eat rice every day.",
+    "example_mm": "နေ့တိုင်း ထမင်းစားပါတယ်။",
+    "tag": "Core",
+    "formality": "Neutral"
   },
   {
     "level_id": "5",
@@ -141,7 +231,13 @@
     "spelling": "nomu",
     "meaning": "to drink",
     "meaning_mm": "သောက်သည်",
-    "status": true
+    "status": true,
+    "part_of_speech": "Verb",
+    "example_jp": "まいにちみずをたくさんのみます。",
+    "example_en": "I drink a lot of water every day.",
+    "example_mm": "နေ့တိုင်း ရေ အများကြီး သောက်ပါတယ်။",
+    "tag": "Core",
+    "formality": "Neutral"
   },
   {
     "level_id": "5",
@@ -150,7 +246,13 @@
     "spelling": "miru",
     "meaning": "to see, to watch",
     "meaning_mm": "ကြည့်သည်",
-    "status": true
+    "status": true,
+    "part_of_speech": "Verb",
+    "example_jp": "まいばんテレビをみます。",
+    "example_en": "I watch TV every night.",
+    "example_mm": "ညတိုင်း တီဗီ ကြည့်ပါတယ်။",
+    "tag": "Core",
+    "formality": "Neutral"
   },
   {
     "level_id": "5",
@@ -159,7 +261,13 @@
     "spelling": "iku",
     "meaning": "to go",
     "meaning_mm": "သွားသည်",
-    "status": true
+    "status": true,
+    "part_of_speech": "Verb",
+    "example_jp": "あしたとうきょうへいきます。",
+    "example_en": "I will go to Tokyo tomorrow.",
+    "example_mm": "မနက်ဖြန် တိုကျိုကို သွားမှာပါ။",
+    "tag": "Core",
+    "formality": "Neutral"
   },
   {
     "level_id": "5",
@@ -168,7 +276,13 @@
     "spelling": "kuru",
     "meaning": "to come",
     "meaning_mm": "လာသည်",
-    "status": true
+    "status": true,
+    "part_of_speech": "Verb",
+    "example_jp": "ともだちがうちにきます。",
+    "example_en": "My friend is coming to my house.",
+    "example_mm": "သူငယ်ချင်းက အိမ်ကို လာပါမယ်။",
+    "tag": "Core",
+    "formality": "Neutral"
   },
   {
     "level_id": "5",
@@ -177,7 +291,13 @@
     "spelling": "suru",
     "meaning": "to do",
     "meaning_mm": "လုပ်သည်, ပြုလုပ်သည်",
-    "status": true
+    "status": true,
+    "part_of_speech": "Verb",
+    "example_jp": "しゅくだいをします。",
+    "example_en": "I will do my homework.",
+    "example_mm": "အိမ်စာ လုပ်မှာပါ။",
+    "tag": "Core",
+    "formality": "Neutral"
   },
   {
     "level_id": "5",
@@ -186,7 +306,13 @@
     "spelling": "benkyousuru",
     "meaning": "to study",
     "meaning_mm": "စာကျက်သည်, လေ့လာသည်",
-    "status": true
+    "status": true,
+    "part_of_speech": "Verb",
+    "example_jp": "まいにちにほんごをべんきょうします。",
+    "example_en": "I study Japanese every day.",
+    "example_mm": "နေ့တိုင်း ဂျပန်စာ လေ့လာပါတယ်။",
+    "tag": "Core",
+    "formality": "Neutral"
   },
   {
     "level_id": "5",
@@ -195,7 +321,13 @@
     "spelling": "kau",
     "meaning": "to buy",
     "meaning_mm": "ဝယ်သည်",
-    "status": true
+    "status": true,
+    "part_of_speech": "Verb",
+    "example_jp": "スーパーでやさいをかいます。",
+    "example_en": "I buy vegetables at the supermarket.",
+    "example_mm": "ဆူပါမားကတ်မှာ ဟင်းသီးဟင်းရွက် ဝယ်ပါတယ်။",
+    "tag": "Core",
+    "formality": "Neutral"
   },
   {
     "level_id": "5",
@@ -204,7 +336,13 @@
     "spelling": "yomu",
     "meaning": "to read",
     "meaning_mm": "ဖတ်သည်",
-    "status": true
+    "status": true,
+    "part_of_speech": "Verb",
+    "example_jp": "まいにちほんをよみます。",
+    "example_en": "I read books every day.",
+    "example_mm": "နေ့တိုင်း စာအုပ် ဖတ်ပါတယ်။",
+    "tag": "Core",
+    "formality": "Neutral"
   },
   {
     "level_id": "5",
@@ -213,7 +351,13 @@
     "spelling": "kaku",
     "meaning": "to write",
     "meaning_mm": "ရေးသည်",
-    "status": true
+    "status": true,
+    "part_of_speech": "Verb",
+    "example_jp": "ともだちにてがみをかきます。",
+    "example_en": "I write a letter to my friend.",
+    "example_mm": "သူငယ်ချင်းကို စာ ရေးပါတယ်။",
+    "tag": "Core",
+    "formality": "Neutral"
   },
   {
     "level_id": "5",
@@ -222,7 +366,13 @@
     "spelling": "ookii",
     "meaning": "big",
     "meaning_mm": "ကြီးသော",
-    "status": true
+    "status": true,
+    "part_of_speech": "Adjective",
+    "example_jp": "このかばんはおおきいです。",
+    "example_en": "This bag is big.",
+    "example_mm": "ဒီ အိတ်က ကြီးပါတယ်။",
+    "tag": "Core",
+    "formality": "Neutral"
   },
   {
     "level_id": "5",
@@ -231,7 +381,13 @@
     "spelling": "chiisai",
     "meaning": "small",
     "meaning_mm": "သေးသော",
-    "status": true
+    "status": true,
+    "part_of_speech": "Adjective",
+    "example_jp": "あのこはちいさいです。",
+    "example_en": "That child is small.",
+    "example_mm": "အဲဒီ ကလေးက သေးပါတယ်။",
+    "tag": "Core",
+    "formality": "Neutral"
   },
   {
     "level_id": "5",
@@ -240,7 +396,13 @@
     "spelling": "takai",
     "meaning": "tall, expensive",
     "meaning_mm": "မြင့်သော, စျေးကြီးသော",
-    "status": true
+    "status": true,
+    "part_of_speech": "Adjective",
+    "example_jp": "このレストランはたかいです。",
+    "example_en": "This restaurant is expensive.",
+    "example_mm": "ဒီ စားသောက်ဆိုင်က စျေးကြီးပါတယ်။",
+    "tag": "Core",
+    "formality": "Neutral"
   },
   {
     "level_id": "5",
@@ -249,7 +411,13 @@
     "spelling": "yasui",
     "meaning": "cheap",
     "meaning_mm": "စျေးပေါသော",
-    "status": true
+    "status": true,
+    "part_of_speech": "Adjective",
+    "example_jp": "このみせのものはやすいです。",
+    "example_en": "The things at this shop are cheap.",
+    "example_mm": "ဒီ ဆိုင်ရဲ့ ပစ္စည်းတွေက စျေးပေါပါတယ်။",
+    "tag": "Core",
+    "formality": "Neutral"
   },
   {
     "level_id": "5",
@@ -258,7 +426,13 @@
     "spelling": "atarashii",
     "meaning": "new",
     "meaning_mm": "သစ်သော",
-    "status": true
+    "status": true,
+    "part_of_speech": "Adjective",
+    "example_jp": "あたらしいくるまがほしいです。",
+    "example_en": "I want a new car.",
+    "example_mm": "ကားသစ် တစ်စီး လိုချင်ပါတယ်။",
+    "tag": "Core",
+    "formality": "Neutral"
   },
   {
     "level_id": "5",
@@ -267,7 +441,13 @@
     "spelling": "furui",
     "meaning": "old (not for people)",
     "meaning_mm": "ဟောင်းသော",
-    "status": true
+    "status": true,
+    "part_of_speech": "Adjective",
+    "example_jp": "このいえはふるいです。",
+    "example_en": "This house is old.",
+    "example_mm": "ဒီ အိမ်က ဟောင်းပါတယ်။",
+    "tag": "Common",
+    "formality": "Neutral"
   },
   {
     "level_id": "5",
@@ -276,7 +456,13 @@
     "spelling": "oishii",
     "meaning": "delicious, tasty",
     "meaning_mm": "အရသာရှိသော",
-    "status": true
+    "status": true,
+    "part_of_speech": "Adjective",
+    "example_jp": "このりょうりはおいしいです。",
+    "example_en": "This dish is delicious.",
+    "example_mm": "ဒီ ဟင်းလျာက အရသာ ရှိပါတယ်။",
+    "tag": "Core",
+    "formality": "Neutral"
   },
   {
     "level_id": "5",
@@ -285,7 +471,13 @@
     "spelling": "kirei (na)",
     "meaning": "beautiful, clean",
     "meaning_mm": "လှပသော, သန့်ရှင်းသော",
-    "status": true
+    "status": true,
+    "part_of_speech": "Adjective",
+    "example_jp": "このはなはきれいですね。",
+    "example_en": "These flowers are beautiful, aren't they?",
+    "example_mm": "ဒီ ပန်းတွေ လှပါတယ်နော်။",
+    "tag": "Core",
+    "formality": "Neutral"
   },
   {
     "level_id": "5",
@@ -294,7 +486,13 @@
     "spelling": "genki (na)",
     "meaning": "healthy, energetic",
     "meaning_mm": "ကျန်းမာသော, တက်ကြွသော",
-    "status": true
+    "status": true,
+    "part_of_speech": "Adjective",
+    "example_jp": "まいにちげんきにがっこうへいきます。",
+    "example_en": "I go to school energetically every day.",
+    "example_mm": "နေ့တိုင်း တက်ကြွစွာ ကျောင်း သွားပါတယ်။",
+    "tag": "Core",
+    "formality": "Neutral"
   },
   {
     "level_id": "5",
@@ -303,7 +501,13 @@
     "spelling": "kyou",
     "meaning": "today",
     "meaning_mm": "ဒီနေ့",
-    "status": true
+    "status": true,
+    "part_of_speech": "Noun",
+    "example_jp": "きょうはてんきがいいです。",
+    "example_en": "The weather is nice today.",
+    "example_mm": "ဒီနေ့ ရာသီဥတု ကောင်းပါတယ်။",
+    "tag": "Core",
+    "formality": "Neutral"
   },
   {
     "level_id": "5",
@@ -312,7 +516,13 @@
     "spelling": "ashita",
     "meaning": "tomorrow",
     "meaning_mm": "မနက်ဖြန်",
-    "status": true
+    "status": true,
+    "part_of_speech": "Noun",
+    "example_jp": "あしたいっしょにいきませんか。",
+    "example_en": "Would you like to go together tomorrow?",
+    "example_mm": "မနက်ဖြန် အတူတူ သွားကြမလား။",
+    "tag": "Core",
+    "formality": "Neutral"
   },
   {
     "level_id": "5",
@@ -321,7 +531,13 @@
     "spelling": "kinou",
     "meaning": "yesterday",
     "meaning_mm": "မနေ့က",
-    "status": true
+    "status": true,
+    "part_of_speech": "Noun",
+    "example_jp": "きのうえいがをみました。",
+    "example_en": "I watched a movie yesterday.",
+    "example_mm": "မနေ့က ရုပ်ရှင် ကြည့်ခဲ့ပါတယ်။",
+    "tag": "Core",
+    "formality": "Neutral"
   },
   {
     "level_id": "5",
@@ -330,7 +546,13 @@
     "spelling": "ima",
     "meaning": "now",
     "meaning_mm": "အခု",
-    "status": true
+    "status": true,
+    "part_of_speech": "Adverb",
+    "example_jp": "いまなにをしていますか。",
+    "example_en": "What are you doing now?",
+    "example_mm": "အခု ဘာ လုပ်နေလဲ။",
+    "tag": "Core",
+    "formality": "Neutral"
   },
   {
     "level_id": "5",
@@ -339,7 +561,13 @@
     "spelling": "totemo",
     "meaning": "very",
     "meaning_mm": "အလွန်",
-    "status": true
+    "status": true,
+    "part_of_speech": "Adverb",
+    "example_jp": "きょうはとてもあついです。",
+    "example_en": "It is very hot today.",
+    "example_mm": "ဒီနေ့ အရမ်း ပူပါတယ်။",
+    "tag": "Core",
+    "formality": "Neutral"
   },
   {
     "level_id": "5",
@@ -348,7 +576,13 @@
     "spelling": "takusan",
     "meaning": "a lot, many",
     "meaning_mm": "အများကြီး",
-    "status": true
+    "status": true,
+    "part_of_speech": "Adverb",
+    "example_jp": "ともだちがたくさんいます。",
+    "example_en": "I have many friends.",
+    "example_mm": "သူငယ်ချင်း အများကြီး ရှိပါတယ်။",
+    "tag": "Core",
+    "formality": "Neutral"
   },
   {
     "level_id": "5",
@@ -357,7 +591,13 @@
     "spelling": "isshoni",
     "meaning": "together",
     "meaning_mm": "အတူတူ",
-    "status": true
+    "status": true,
+    "part_of_speech": "Adverb",
+    "example_jp": "いっしょにごはんをたべませんか。",
+    "example_en": "Would you like to eat together?",
+    "example_mm": "အတူတူ ထမင်းစားကြမလား။",
+    "tag": "Core",
+    "formality": "Neutral"
   },
   {
     "level_id": "5",
@@ -366,7 +606,13 @@
     "spelling": "kazoku",
     "meaning": "family",
     "meaning_mm": "မိသားစု",
-    "status": true
+    "status": true,
+    "part_of_speech": "Noun",
+    "example_jp": "わたしのかぞくはよにんです。",
+    "example_en": "My family has four members.",
+    "example_mm": "ကျွန်တော့်မိသားစုက လေးယောက်ပါ။",
+    "tag": "Core",
+    "formality": "Neutral"
   },
   {
     "level_id": "5",
@@ -375,7 +621,13 @@
     "spelling": "tomodachi",
     "meaning": "friend",
     "meaning_mm": "သူငယ်ချင်း",
-    "status": true
+    "status": true,
+    "part_of_speech": "Noun",
+    "example_jp": "ともだちとえいがをみました。",
+    "example_en": "I watched a movie with my friend.",
+    "example_mm": "သူငယ်ချင်းနဲ့ ရုပ်ရှင် ကြည့်ခဲ့ပါတယ်။",
+    "tag": "Core",
+    "formality": "Neutral"
   },
   {
     "level_id": "5",
@@ -384,7 +636,13 @@
     "spelling": "ginkou",
     "meaning": "bank",
     "meaning_mm": "ဘဏ်",
-    "status": true
+    "status": true,
+    "part_of_speech": "Noun",
+    "example_jp": "ぎんこうはどこですか。",
+    "example_en": "Where is the bank?",
+    "example_mm": "ဘဏ်က ဘယ်မှာ ရှိလဲ။",
+    "tag": "Core",
+    "formality": "Neutral"
   },
   {
     "level_id": "5",
@@ -393,7 +651,13 @@
     "spelling": "toshokan",
     "meaning": "library",
     "meaning_mm": "စာကြည့်တိုက်",
-    "status": true
+    "status": true,
+    "part_of_speech": "Noun",
+    "example_jp": "としょかんでほんをよみます。",
+    "example_en": "I read books at the library.",
+    "example_mm": "စာကြည့်တိုက်မှာ စာအုပ် ဖတ်ပါတယ်။",
+    "tag": "Common",
+    "formality": "Neutral"
   },
   {
     "level_id": "5",
@@ -402,7 +666,13 @@
     "spelling": "yuubinkyoku",
     "meaning": "post office",
     "meaning_mm": "စာတိုက်",
-    "status": true
+    "status": true,
+    "part_of_speech": "Noun",
+    "example_jp": "ゆうびんきょくでてがみをおくります。",
+    "example_en": "I send letters at the post office.",
+    "example_mm": "စာတိုက်မှာ စာ ပို့ပါတယ်။",
+    "tag": "Common",
+    "formality": "Neutral"
   },
   {
     "level_id": "5",
@@ -411,7 +681,13 @@
     "spelling": "mise",
     "meaning": "shop, store",
     "meaning_mm": "ဆိုင်",
-    "status": true
+    "status": true,
+    "part_of_speech": "Noun",
+    "example_jp": "このみせはやすくておいしいです。",
+    "example_en": "This shop is cheap and delicious.",
+    "example_mm": "ဒီ ဆိုင်က စျေးပေါပြီး အရသာ ရှိပါတယ်။",
+    "tag": "Core",
+    "formality": "Neutral"
   },
   {
     "level_id": "5",
@@ -420,7 +696,13 @@
     "spelling": "ie",
     "meaning": "house, home",
     "meaning_mm": "အိမ်",
-    "status": true
+    "status": true,
+    "part_of_speech": "Noun",
+    "example_jp": "わたしのいえはえきのちかくにあります。",
+    "example_en": "My house is near the station.",
+    "example_mm": "ကျွန်တော့်အိမ်က ဘူတာရုံနား ရှိပါတယ်။",
+    "tag": "Core",
+    "formality": "Neutral"
   },
   {
     "level_id": "5",
@@ -429,7 +711,13 @@
     "spelling": "heya",
     "meaning": "room",
     "meaning_mm": "အခန်း",
-    "status": true
+    "status": true,
+    "part_of_speech": "Noun",
+    "example_jp": "わたしのへやはひろいです。",
+    "example_en": "My room is spacious.",
+    "example_mm": "ကျွန်တော့်အခန်းက ကျယ်ဝန်းပါတယ်။",
+    "tag": "Core",
+    "formality": "Neutral"
   },
   {
     "level_id": "5",
@@ -438,7 +726,13 @@
     "spelling": "denwa",
     "meaning": "telephone",
     "meaning_mm": "ဖုန်း",
-    "status": true
+    "status": true,
+    "part_of_speech": "Noun",
+    "example_jp": "でんわばんごうをおしえてください。",
+    "example_en": "Please tell me your phone number.",
+    "example_mm": "ဖုန်းနံပါတ် ပြောပြပေးပါ။",
+    "tag": "Core",
+    "formality": "Neutral"
   },
   {
     "level_id": "5",
@@ -447,7 +741,13 @@
     "spelling": "kaban",
     "meaning": "bag",
     "meaning_mm": "အိတ်",
-    "status": true
+    "status": true,
+    "part_of_speech": "Noun",
+    "example_jp": "このかばんはかわいいです。",
+    "example_en": "This bag is cute.",
+    "example_mm": "ဒီ အိတ်က ချစ်စဖွယ် ကောင်းပါတယ်။",
+    "tag": "Common",
+    "formality": "Neutral"
   },
   {
     "level_id": "5",
@@ -456,7 +756,13 @@
     "spelling": "kutsu",
     "meaning": "shoes",
     "meaning_mm": "ဖိနပ်",
-    "status": true
+    "status": true,
+    "part_of_speech": "Noun",
+    "example_jp": "あたらしいくつをかいました。",
+    "example_en": "I bought new shoes.",
+    "example_mm": "ဖိနပ်သစ် ဝယ်ခဲ့ပါတယ်။",
+    "tag": "Common",
+    "formality": "Neutral"
   },
   {
     "level_id": "5",
@@ -465,7 +771,13 @@
     "spelling": "eiga",
     "meaning": "movie",
     "meaning_mm": "ရုပ်ရှင်",
-    "status": true
+    "status": true,
+    "part_of_speech": "Noun",
+    "example_jp": "きのうともだちとえいがをみました。",
+    "example_en": "I watched a movie with a friend yesterday.",
+    "example_mm": "မနေ့က သူငယ်ချင်းနဲ့ ရုပ်ရှင် ကြည့်ခဲ့ပါတယ်။",
+    "tag": "Common",
+    "formality": "Neutral"
   },
   {
     "level_id": "5",
@@ -474,7 +786,13 @@
     "spelling": "ongaku",
     "meaning": "music",
     "meaning_mm": "ဂီတ",
-    "status": true
+    "status": true,
+    "part_of_speech": "Noun",
+    "example_jp": "わたしはおんがくがすきです。",
+    "example_en": "I like music.",
+    "example_mm": "ကျွန်တော် ဂီတ ကြိုက်ပါတယ်။",
+    "tag": "Common",
+    "formality": "Neutral"
   },
   {
     "level_id": "5",
@@ -483,7 +801,13 @@
     "spelling": "tenki",
     "meaning": "weather",
     "meaning_mm": "ရာသီဥတု",
-    "status": true
+    "status": true,
+    "part_of_speech": "Noun",
+    "example_jp": "きょうのてんきはどうですか。",
+    "example_en": "How is today's weather?",
+    "example_mm": "ဒီနေ့ ရာသီဥတု ဘယ်လိုလဲ။",
+    "tag": "Core",
+    "formality": "Neutral"
   },
   {
     "level_id": "5",
@@ -492,7 +816,13 @@
     "spelling": "asa",
     "meaning": "morning",
     "meaning_mm": "မနက်",
-    "status": true
+    "status": true,
+    "part_of_speech": "Noun",
+    "example_jp": "まいあさろくじにおきます。",
+    "example_en": "I wake up at 6 every morning.",
+    "example_mm": "နေ့တိုင်း မနက် ၆ နာရီ ထပါတယ်။",
+    "tag": "Core",
+    "formality": "Neutral"
   },
   {
     "level_id": "5",
@@ -501,7 +831,13 @@
     "spelling": "hiru",
     "meaning": "noon, daytime",
     "meaning_mm": "နေ့လယ်",
-    "status": true
+    "status": true,
+    "part_of_speech": "Noun",
+    "example_jp": "ひるにかいしゃでひるごはんをたべます。",
+    "example_en": "I eat lunch at the office at noon.",
+    "example_mm": "နေ့လယ် ရုံးမှာ နေ့လည်ထမင်းစားပါတယ်။",
+    "tag": "Core",
+    "formality": "Neutral"
   },
   {
     "level_id": "5",
@@ -510,7 +846,13 @@
     "spelling": "yoru",
     "meaning": "night",
     "meaning_mm": "ည",
-    "status": true
+    "status": true,
+    "part_of_speech": "Noun",
+    "example_jp": "よるはほんをよみます。",
+    "example_en": "I read books at night.",
+    "example_mm": "ညမှာ စာဖတ်ပါတယ်။",
+    "tag": "Core",
+    "formality": "Neutral"
   },
   {
     "level_id": "5",
@@ -519,7 +861,13 @@
     "spelling": "getsuyoubi",
     "meaning": "Monday",
     "meaning_mm": "တနင်္လာနေ့",
-    "status": true
+    "status": true,
+    "part_of_speech": "Noun",
+    "example_jp": "げつようびにしごとがあります。",
+    "example_en": "I have work on Monday.",
+    "example_mm": "တနင်္လာနေ့ အလုပ် ရှိပါတယ်။",
+    "tag": "Core",
+    "formality": "Neutral"
   },
   {
     "level_id": "5",
@@ -528,7 +876,13 @@
     "spelling": "kayoubi",
     "meaning": "Tuesday",
     "meaning_mm": "အင်္ဂါနေ့",
-    "status": true
+    "status": true,
+    "part_of_speech": "Noun",
+    "example_jp": "かようびにじゅぎょうがあります。",
+    "example_en": "I have class on Tuesday.",
+    "example_mm": "အင်္ဂါနေ့ အတန်း ရှိပါတယ်။",
+    "tag": "Core",
+    "formality": "Neutral"
   },
   {
     "level_id": "5",
@@ -537,7 +891,13 @@
     "spelling": "suiyoubi",
     "meaning": "Wednesday",
     "meaning_mm": "ဗုဒ္ဓဟူးနေ့",
-    "status": true
+    "status": true,
+    "part_of_speech": "Noun",
+    "example_jp": "すいようびはいそがしいです。",
+    "example_en": "Wednesday is busy.",
+    "example_mm": "ဗုဒ္ဓဟူးနေ့ အလုပ်များပါတယ်။",
+    "tag": "Core",
+    "formality": "Neutral"
   },
   {
     "level_id": "5",
@@ -546,7 +906,13 @@
     "spelling": "mokuyoubi",
     "meaning": "Thursday",
     "meaning_mm": "ကြာသပတေးနေ့",
-    "status": true
+    "status": true,
+    "part_of_speech": "Noun",
+    "example_jp": "もくようびにともだちにあいます。",
+    "example_en": "I will meet a friend on Thursday.",
+    "example_mm": "ကြာသပတေးနေ့ သူငယ်ချင်းနဲ့ ဆုံမှာပါ။",
+    "tag": "Core",
+    "formality": "Neutral"
   },
   {
     "level_id": "5",
@@ -555,7 +921,13 @@
     "spelling": "kinyoubi",
     "meaning": "Friday",
     "meaning_mm": "သောကြာနေ့",
-    "status": true
+    "status": true,
+    "part_of_speech": "Noun",
+    "example_jp": "きんようびのよるはたのしいです。",
+    "example_en": "Friday night is fun.",
+    "example_mm": "သောကြာညနဲ့ ပျော်ရွှင်ပါတယ်။",
+    "tag": "Core",
+    "formality": "Neutral"
   },
   {
     "level_id": "5",
@@ -564,7 +936,13 @@
     "spelling": "doyoubi",
     "meaning": "Saturday",
     "meaning_mm": "စနေနေ့",
-    "status": true
+    "status": true,
+    "part_of_speech": "Noun",
+    "example_jp": "どようびはかいものにいきます。",
+    "example_en": "I go shopping on Saturday.",
+    "example_mm": "စနေနေ့ ဈေးဝယ် သွားပါတယ်။",
+    "tag": "Core",
+    "formality": "Neutral"
   },
   {
     "level_id": "5",
@@ -573,7 +951,13 @@
     "spelling": "nichiyoubi",
     "meaning": "Sunday",
     "meaning_mm": "တနင်္ဂနွေနေ့",
-    "status": true
+    "status": true,
+    "part_of_speech": "Noun",
+    "example_jp": "にちようびはうちでやすみます。",
+    "example_en": "I rest at home on Sunday.",
+    "example_mm": "တနင်္ဂနွေနေ့ အိမ်မှာ အနားယူပါတယ်။",
+    "tag": "Core",
+    "formality": "Neutral"
   },
   {
     "level_id": "5",
@@ -582,7 +966,13 @@
     "spelling": "wakaru",
     "meaning": "to understand",
     "meaning_mm": "နားလည်သည်",
-    "status": true
+    "status": true,
+    "part_of_speech": "Verb",
+    "example_jp": "にほんごがすこしわかります。",
+    "example_en": "I understand Japanese a little.",
+    "example_mm": "ဂျပန်စာ နည်းနည်း နားလည်ပါတယ်။",
+    "tag": "Core",
+    "formality": "Neutral"
   },
   {
     "level_id": "5",
@@ -591,7 +981,13 @@
     "spelling": "aru",
     "meaning": "to be, exist (inanimate)",
     "meaning_mm": "ရှိသည် (သက်မဲ့)",
-    "status": true
+    "status": true,
+    "part_of_speech": "Verb",
+    "example_jp": "つくえのうえにほんがあります。",
+    "example_en": "There is a book on the desk.",
+    "example_mm": "စားပွဲပေါ်မှာ စာအုပ် ရှိပါတယ်။",
+    "tag": "Core",
+    "formality": "Neutral"
   },
   {
     "level_id": "5",
@@ -600,7 +996,13 @@
     "spelling": "iru",
     "meaning": "to be, exist (animate)",
     "meaning_mm": "ရှိသည် (သက်ရှိ)",
-    "status": true
+    "status": true,
+    "part_of_speech": "Verb",
+    "example_jp": "へやにねこがいます。",
+    "example_en": "There is a cat in the room.",
+    "example_mm": "အခန်းထဲမှာ ကြောင် ရှိပါတယ်။",
+    "tag": "Core",
+    "formality": "Neutral"
   },
   {
     "level_id": "5",
@@ -609,7 +1011,13 @@
     "spelling": "hanasu",
     "meaning": "to speak, to talk",
     "meaning_mm": "စကားပြောသည်",
-    "status": true
+    "status": true,
+    "part_of_speech": "Verb",
+    "example_jp": "にほんごではなします。",
+    "example_en": "I speak in Japanese.",
+    "example_mm": "ဂျပန်ဘာသာနဲ့ ပြောဆိုပါတယ်။",
+    "tag": "Core",
+    "formality": "Neutral"
   },
   {
     "level_id": "5",
@@ -618,7 +1026,13 @@
     "spelling": "matsu",
     "meaning": "to wait",
     "meaning_mm": "စောင့်သည်",
-    "status": true
+    "status": true,
+    "part_of_speech": "Verb",
+    "example_jp": "えきでともだちをまちます。",
+    "example_en": "I wait for my friend at the station.",
+    "example_mm": "ဘူတာမှာ သူငယ်ချင်းကို စောင့်ပါတယ်။",
+    "tag": "Core",
+    "formality": "Neutral"
   },
   {
     "level_id": "5",
@@ -627,7 +1041,13 @@
     "spelling": "yasumu",
     "meaning": "to rest, to take a day off",
     "meaning_mm": "အနားယူသည်",
-    "status": true
+    "status": true,
+    "part_of_speech": "Verb",
+    "example_jp": "きょうはかいしゃをやすみます。",
+    "example_en": "I will take a day off from work today.",
+    "example_mm": "ဒီနေ့ ရုံး ခွင့်ယူပါမယ်။",
+    "tag": "Core",
+    "formality": "Neutral"
   },
   {
     "level_id": "5",
@@ -636,7 +1056,13 @@
     "spelling": "okiru",
     "meaning": "to get up",
     "meaning_mm": "အိပ်ရာထသည်",
-    "status": true
+    "status": true,
+    "part_of_speech": "Verb",
+    "example_jp": "まいあさしちじにおきます。",
+    "example_en": "I wake up at 7 every morning.",
+    "example_mm": "နေ့တိုင်း မနက် ၇ နာရီ ထပါတယ်။",
+    "tag": "Core",
+    "formality": "Neutral"
   },
   {
     "level_id": "5",
@@ -645,7 +1071,13 @@
     "spelling": "neru",
     "meaning": "to sleep",
     "meaning_mm": "အိပ်သည်",
-    "status": true
+    "status": true,
+    "part_of_speech": "Verb",
+    "example_jp": "まいばんじゅういちじごろねます。",
+    "example_en": "I go to sleep around 11 every night.",
+    "example_mm": "ညတိုင်း ၁၁ နာရီခန့် အိပ်ပါတယ်။",
+    "tag": "Core",
+    "formality": "Neutral"
   },
   {
     "level_id": "5",
@@ -654,7 +1086,13 @@
     "spelling": "atsui",
     "meaning": "hot (weather)",
     "meaning_mm": "ပူသော (ရာသီဥတု)",
-    "status": true
+    "status": true,
+    "part_of_speech": "Adjective",
+    "example_jp": "なつはとてもあついです。",
+    "example_en": "Summer is very hot.",
+    "example_mm": "နွေရာသီ အရမ်း ပူပါတယ်။",
+    "tag": "Core",
+    "formality": "Neutral"
   },
   {
     "level_id": "5",
@@ -663,7 +1101,13 @@
     "spelling": "samui",
     "meaning": "cold (weather)",
     "meaning_mm": "အေးသော (ရာသီဥတု)",
-    "status": true
+    "status": true,
+    "part_of_speech": "Adjective",
+    "example_jp": "ふゆはとてもさむいです。",
+    "example_en": "Winter is very cold.",
+    "example_mm": "ဆောင်းရာသီ အရမ်း အေးပါတယ်။",
+    "tag": "Core",
+    "formality": "Neutral"
   },
   {
     "level_id": "5",
@@ -672,7 +1116,13 @@
     "spelling": "isogashii",
     "meaning": "busy",
     "meaning_mm": "အလုပ်များသော",
-    "status": true
+    "status": true,
+    "part_of_speech": "Adjective",
+    "example_jp": "まいにちとてもいそがしいです。",
+    "example_en": "I am very busy every day.",
+    "example_mm": "နေ့တိုင်း အရမ်း အလုပ်များပါတယ်။",
+    "tag": "Core",
+    "formality": "Neutral"
   },
   {
     "level_id": "5",
@@ -681,7 +1131,13 @@
     "spelling": "hima (na)",
     "meaning": "free (not busy)",
     "meaning_mm": "အားသော",
-    "status": true
+    "status": true,
+    "part_of_speech": "Adjective",
+    "example_jp": "きょうはひまです。",
+    "example_en": "I am free today.",
+    "example_mm": "ဒီနေ့ အားပါတယ်။",
+    "tag": "Core",
+    "formality": "Neutral"
   },
   {
     "level_id": "5",
@@ -690,7 +1146,13 @@
     "spelling": "suki (na)",
     "meaning": "likeable",
     "meaning_mm": "ကြိုက်သော",
-    "status": true
+    "status": true,
+    "part_of_speech": "Adjective",
+    "example_jp": "わたしはすしがすきです。",
+    "example_en": "I like sushi.",
+    "example_mm": "ကျွန်တော် ဆူရှိ ကြိုက်ပါတယ်။",
+    "tag": "Core",
+    "formality": "Neutral"
   },
   {
     "level_id": "5",
@@ -699,7 +1161,13 @@
     "spelling": "kirai (na)",
     "meaning": "dislikeable",
     "meaning_mm": "မကြိုက်သော",
-    "status": true
+    "status": true,
+    "part_of_speech": "Adjective",
+    "example_jp": "からいたべものがきらいです。",
+    "example_en": "I dislike spicy food.",
+    "example_mm": "အစပ်ရှိတဲ့ အစားအစာ မကြိုက်ပါဘူး။",
+    "tag": "Core",
+    "formality": "Neutral"
   },
   {
     "level_id": "5",
@@ -708,7 +1176,13 @@
     "spelling": "jouzu (na)",
     "meaning": "skillful, good at",
     "meaning_mm": "ကျွမ်းကျင်သော",
-    "status": true
+    "status": true,
+    "part_of_speech": "Adjective",
+    "example_jp": "かれはえいごがじょうずです。",
+    "example_en": "He is good at English.",
+    "example_mm": "သူ အင်္ဂလိပ်စာ ကျွမ်းကျင်ပါတယ်။",
+    "tag": "Core",
+    "formality": "Neutral"
   },
   {
     "level_id": "5",
@@ -717,7 +1191,13 @@
     "spelling": "heta (na)",
     "meaning": "unskillful, bad at",
     "meaning_mm": "ညံ့သော",
-    "status": true
+    "status": true,
+    "part_of_speech": "Adjective",
+    "example_jp": "わたしはうたがへたです。",
+    "example_en": "I am bad at singing.",
+    "example_mm": "ကျွန်တော် သီချင်းဆို ညံ့ပါတယ်။",
+    "tag": "Core",
+    "formality": "Neutral"
   },
   {
     "level_id": "5",

@@ -13,7 +13,24 @@
     "audio": "",
     "image": "",
     "strokes": "1",
-    "status": true
+    "status": true,
+    "mnemonic": "A single horizontal stroke — imagine the horizon line, the very first mark of counting.",
+    "radical": "Radical: 一 (one) — the simplest radical, a lone brushstroke.",
+    "stroke_hint": "One left-to-right horizontal stroke.",
+    "examples": [
+      {
+        "japanese": "一日",
+        "reading": "いちにち",
+        "meaning_en": "one day / all day",
+        "meaning_mm": "တစ်ရက်တာ"
+      },
+      {
+        "japanese": "一人",
+        "reading": "ひとり",
+        "meaning_en": "one person / alone",
+        "meaning_mm": "တစ်ယောက်တည်း"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -29,7 +46,24 @@
     "audio": "",
     "image": "",
     "strokes": "2",
-    "status": true
+    "status": true,
+    "mnemonic": "Two horizontal lines stacked — like two tally marks counting up to 2.",
+    "radical": "Radical: 二 (two) — two parallel horizontal lines.",
+    "stroke_hint": "Top horizontal stroke first, then the longer bottom stroke.",
+    "examples": [
+      {
+        "japanese": "二月",
+        "reading": "にがつ",
+        "meaning_en": "February",
+        "meaning_mm": "ဖေဖော်ဝါရီလ"
+      },
+      {
+        "japanese": "二人",
+        "reading": "ふたり",
+        "meaning_en": "two people",
+        "meaning_mm": "နှစ်ယောက်"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -45,7 +79,24 @@
     "audio": "",
     "image": "",
     "strokes": "3",
-    "status": true
+    "status": true,
+    "mnemonic": "Three horizontal lines — like three tally marks or stripes on a uniform.",
+    "radical": "Radical: 三 (three) — three stacked horizontal lines.",
+    "stroke_hint": "Top, middle, then bottom horizontal strokes, each slightly longer.",
+    "examples": [
+      {
+        "japanese": "三月",
+        "reading": "さんがつ",
+        "meaning_en": "March",
+        "meaning_mm": "မတ်လ"
+      },
+      {
+        "japanese": "三人",
+        "reading": "さんにん",
+        "meaning_en": "three people",
+        "meaning_mm": "သုံးယောက်"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -61,7 +112,24 @@
     "audio": "",
     "image": "",
     "strokes": "5",
-    "status": true
+    "status": true,
+    "mnemonic": "A box with two legs at the bottom — like a table resting on four legs.",
+    "radical": "Radical: 囗 (enclosure) + legs — a box enclosing an interior divided by two strokes.",
+    "stroke_hint": "Outer box first (left, top, right), then inner cross, then close bottom, finally two leg strokes.",
+    "examples": [
+      {
+        "japanese": "四月",
+        "reading": "しがつ",
+        "meaning_en": "April",
+        "meaning_mm": "ဧပြီလ"
+      },
+      {
+        "japanese": "四人",
+        "reading": "よにん",
+        "meaning_en": "four people",
+        "meaning_mm": "လေးယောက်"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -77,7 +145,24 @@
     "audio": "",
     "image": "",
     "strokes": "4",
-    "status": true
+    "status": true,
+    "mnemonic": "A cross shape with a hook and a top bar — think of a crooked Roman numeral V with a lid.",
+    "radical": "Radical: 二 (two) + 乙 (second) — multiple elements suggesting 'the fifth step.'",
+    "stroke_hint": "Top horizontal, then the down-left diagonal, then horizontal, then vertical with hook.",
+    "examples": [
+      {
+        "japanese": "五月",
+        "reading": "ごがつ",
+        "meaning_en": "May",
+        "meaning_mm": "မေလ"
+      },
+      {
+        "japanese": "五人",
+        "reading": "ごにん",
+        "meaning_en": "five people",
+        "meaning_mm": "ငါးယောက်"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -93,7 +178,24 @@
     "audio": "",
     "image": "",
     "strokes": "4",
-    "status": true
+    "status": true,
+    "mnemonic": "A small roof with two diverging legs — like a little house with two feet walking away.",
+    "radical": "Radical: 亠 (lid/roof) + 儿 (legs) — a cover on top of two feet.",
+    "stroke_hint": "Dot, top horizontal, then left leg stroke, then right leg stroke.",
+    "examples": [
+      {
+        "japanese": "六月",
+        "reading": "ろくがつ",
+        "meaning_en": "June",
+        "meaning_mm": "ဇွန်လ"
+      },
+      {
+        "japanese": "六時",
+        "reading": "ろくじ",
+        "meaning_en": "six o'clock",
+        "meaning_mm": "၆ နာရီ"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -109,7 +211,24 @@
     "audio": "",
     "image": "",
     "strokes": "2",
-    "status": true
+    "status": true,
+    "mnemonic": "A horizontal stroke with a curve going down-left — looks like the number 7 written in Japanese style.",
+    "radical": "Radical: 一 (one) + 乙 (second/twist) — a straight line with a twist.",
+    "stroke_hint": "Horizontal stroke first, then a curving stroke going down and to the left.",
+    "examples": [
+      {
+        "japanese": "七月",
+        "reading": "しちがつ",
+        "meaning_en": "July",
+        "meaning_mm": "ဇူလိုင်လ"
+      },
+      {
+        "japanese": "七時",
+        "reading": "しちじ",
+        "meaning_en": "seven o'clock",
+        "meaning_mm": "၇ နာရီ"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -125,7 +244,24 @@
     "audio": "",
     "image": "",
     "strokes": "2",
-    "status": true
+    "status": true,
+    "mnemonic": "Two diverging strokes opening outward — like two arms spread wide saying 'this much!'",
+    "radical": "Radical: 八 (eight) — two diverging strokes, the base radical itself.",
+    "stroke_hint": "Left diagonal stroke going down-left, then right diagonal stroke going down-right.",
+    "examples": [
+      {
+        "japanese": "八月",
+        "reading": "はちがつ",
+        "meaning_en": "August",
+        "meaning_mm": "သြဂုတ်လ"
+      },
+      {
+        "japanese": "八時",
+        "reading": "はちじ",
+        "meaning_en": "eight o'clock",
+        "meaning_mm": "၈ နာရီ"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -141,7 +277,24 @@
     "audio": "",
     "image": "",
     "strokes": "2",
-    "status": true
+    "status": true,
+    "mnemonic": "A horizontal stroke and a curved hook — like the number 9, a hook reaching back on itself.",
+    "radical": "Radical: 乙 (second/bent) — a bent line suggesting going back around.",
+    "stroke_hint": "Horizontal stroke first, then a long curving stroke that turns and hooks upward.",
+    "examples": [
+      {
+        "japanese": "九月",
+        "reading": "くがつ",
+        "meaning_en": "September",
+        "meaning_mm": "စက်တင်ဘာလ"
+      },
+      {
+        "japanese": "九時",
+        "reading": "くじ",
+        "meaning_en": "nine o'clock",
+        "meaning_mm": "၉ နာရီ"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -157,7 +310,24 @@
     "audio": "",
     "image": "",
     "strokes": "2",
-    "status": true
+    "status": true,
+    "mnemonic": "A perfect cross — horizontal meets vertical at the center, simple and complete.",
+    "radical": "Radical: 十 (ten) — the cross shape itself is the radical.",
+    "stroke_hint": "Horizontal stroke first, then vertical stroke crossing through its center.",
+    "examples": [
+      {
+        "japanese": "十月",
+        "reading": "じゅうがつ",
+        "meaning_en": "October",
+        "meaning_mm": "အောက်တိုဘာလ"
+      },
+      {
+        "japanese": "十人",
+        "reading": "じゅうにん",
+        "meaning_en": "ten people",
+        "meaning_mm": "ဆယ်ယောက်"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -173,7 +343,24 @@
     "audio": "",
     "image": "",
     "strokes": "6",
-    "status": true
+    "status": true,
+    "mnemonic": "The number one (一) on top of white (白) — imagine a perfect white score of 100.",
+    "radical": "Radical: 白 (white) + 一 (one) — one above white: a pristine hundred.",
+    "stroke_hint": "Top horizontal stroke (一), then the short vertical, then enclosing box strokes for 白.",
+    "examples": [
+      {
+        "japanese": "百円",
+        "reading": "ひゃくえん",
+        "meaning_en": "100 yen",
+        "meaning_mm": "ဂျပန်ငွေ ၁၀၀ ယင်း"
+      },
+      {
+        "japanese": "三百",
+        "reading": "さんびゃく",
+        "meaning_en": "three hundred",
+        "meaning_mm": "သုံးရာ"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -189,7 +376,24 @@
     "audio": "",
     "image": "",
     "strokes": "3",
-    "status": true
+    "status": true,
+    "mnemonic": "A person (人) walking under a horizontal line — someone striding forward into the thousands.",
+    "radical": "Radical: 十 (ten) + ノ (diagonal stroke) — ten with a sweeping stroke, suggesting great multitude.",
+    "stroke_hint": "Diagonal stroke first (top-left to bottom-right), then the cross (horizontal then vertical).",
+    "examples": [
+      {
+        "japanese": "千円",
+        "reading": "せんえん",
+        "meaning_en": "1000 yen",
+        "meaning_mm": "ဂျပန်ငွေ ၁၀၀၀ ယင်း"
+      },
+      {
+        "japanese": "三千",
+        "reading": "さんぜん",
+        "meaning_en": "three thousand",
+        "meaning_mm": "သုံးထောင်"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -205,7 +409,24 @@
     "audio": "",
     "image": "",
     "strokes": "3",
-    "status": true
+    "status": true,
+    "mnemonic": "Wide sweeping strokes suggesting vastness — like a horizon stretching ten thousand miles.",
+    "radical": "Radical: 艸 (grass variant) — originally depicted a scorpion, now used for 'ten thousand.'",
+    "stroke_hint": "First stroke horizontal, then a short vertical, then curving long stroke to the right and down.",
+    "examples": [
+      {
+        "japanese": "一万円",
+        "reading": "いちまんえん",
+        "meaning_en": "10,000 yen",
+        "meaning_mm": "ဂျပန်ငွေ တစ်သောင်း ယင်း"
+      },
+      {
+        "japanese": "万年筆",
+        "reading": "まんねんひつ",
+        "meaning_en": "fountain pen",
+        "meaning_mm": "ဖောင်တိန်းပင်"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -221,7 +442,24 @@
     "audio": "",
     "image": "",
     "strokes": "4",
-    "status": true
+    "status": true,
+    "mnemonic": "A box with a horizontal divider and legs — like a coin (circle) caught in a rectangular frame.",
+    "radical": "Radical: 囗 (enclosure) + 人 (person) variant — something enclosed, like a coin in a wallet.",
+    "stroke_hint": "Outer enclosure (left vertical, top horizontal, right vertical), then inner stroke, then bottom close.",
+    "examples": [
+      {
+        "japanese": "百円",
+        "reading": "ひゃくえん",
+        "meaning_en": "100 yen",
+        "meaning_mm": "ဂျပန်ငွေ ၁၀၀ ယင်း"
+      },
+      {
+        "japanese": "円い",
+        "reading": "まるい",
+        "meaning_en": "round, circular",
+        "meaning_mm": "ဝိုင်းသော"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -237,7 +475,24 @@
     "audio": "",
     "image": "",
     "strokes": "2",
-    "status": true
+    "status": true,
+    "mnemonic": "Two legs walking — a stick figure seen from the side, mid-stride.",
+    "radical": "Radical: 人 (person) — the most fundamental human radical.",
+    "stroke_hint": "Left diagonal stroke going down-left, then right diagonal stroke going down-right from near the top.",
+    "examples": [
+      {
+        "japanese": "日本人",
+        "reading": "にほんじん",
+        "meaning_en": "Japanese person",
+        "meaning_mm": "ဂျပန်လူမျိုး"
+      },
+      {
+        "japanese": "外国人",
+        "reading": "がいこくじん",
+        "meaning_en": "foreigner",
+        "meaning_mm": "နိုင်ငံခြားသား"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -253,7 +508,24 @@
     "audio": "",
     "image": "",
     "strokes": "4",
-    "status": true
+    "status": true,
+    "mnemonic": "A rectangle with a horizontal line through the middle — like a window with a sunbeam divider.",
+    "radical": "Radical: 日 (sun/day) — the sun radical, one of the most common in Japanese.",
+    "stroke_hint": "Outer box (left, top, right), then middle horizontal stroke, then close the bottom.",
+    "examples": [
+      {
+        "japanese": "今日",
+        "reading": "きょう",
+        "meaning_en": "today",
+        "meaning_mm": "ဒီနေ့"
+      },
+      {
+        "japanese": "日曜日",
+        "reading": "にちようび",
+        "meaning_en": "Sunday",
+        "meaning_mm": "တနင်္ဂနွေနေ့"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -269,7 +541,24 @@
     "audio": "",
     "image": "",
     "strokes": "4",
-    "status": true
+    "status": true,
+    "mnemonic": "A crescent moon in a frame — like catching a new moon inside a rectangular border.",
+    "radical": "Radical: 月 (moon/month) — the moon radical, also means 'month.'",
+    "stroke_hint": "Left vertical, top curving to right, then two horizontal strokes inside, then short right vertical.",
+    "examples": [
+      {
+        "japanese": "今月",
+        "reading": "こんげつ",
+        "meaning_en": "this month",
+        "meaning_mm": "ဒီလ"
+      },
+      {
+        "japanese": "月曜日",
+        "reading": "げつようび",
+        "meaning_en": "Monday",
+        "meaning_mm": "တနင်္လာနေ့"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -285,7 +574,24 @@
     "audio": "",
     "image": "",
     "strokes": "4",
-    "status": true
+    "status": true,
+    "mnemonic": "A person with arms spread at the bottom and a flame rising above — like someone standing near a bonfire.",
+    "radical": "Radical: 火 (fire) — the fire radical.",
+    "stroke_hint": "Left diagonal, then right diagonal (the top), then left leg, then right leg at the bottom.",
+    "examples": [
+      {
+        "japanese": "火曜日",
+        "reading": "かようび",
+        "meaning_en": "Tuesday",
+        "meaning_mm": "အင်္ဂါနေ့"
+      },
+      {
+        "japanese": "火山",
+        "reading": "かざん",
+        "meaning_en": "volcano",
+        "meaning_mm": "မီးတောင်"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -301,7 +607,24 @@
     "audio": "",
     "image": "",
     "strokes": "4",
-    "status": true
+    "status": true,
+    "mnemonic": "A central stroke with water flowing on both sides — like a river with currents diverging from the center.",
+    "radical": "Radical: 水 (water) — the water radical.",
+    "stroke_hint": "Center vertical with a dot, then left diagonal strokes flowing outward, then right strokes.",
+    "examples": [
+      {
+        "japanese": "水曜日",
+        "reading": "すいようび",
+        "meaning_en": "Wednesday",
+        "meaning_mm": "ဗုဒ္ဓဟူးနေ့"
+      },
+      {
+        "japanese": "水泳",
+        "reading": "すいえい",
+        "meaning_en": "swimming",
+        "meaning_mm": "ရေကူးခြင်း"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -317,7 +640,24 @@
     "audio": "",
     "image": "",
     "strokes": "4",
-    "status": true
+    "status": true,
+    "mnemonic": "A tree trunk with branches spreading up and roots at the bottom — like a simple tree diagram.",
+    "radical": "Radical: 木 (tree/wood) — the wood/tree radical.",
+    "stroke_hint": "Horizontal stroke, then vertical through its center, then left diagonal root, then right diagonal root.",
+    "examples": [
+      {
+        "japanese": "木曜日",
+        "reading": "もくようび",
+        "meaning_en": "Thursday",
+        "meaning_mm": "ကြာသပတေးနေ့"
+      },
+      {
+        "japanese": "木村",
+        "reading": "きむら",
+        "meaning_en": "Kimura (surname)",
+        "meaning_mm": "ကိမုရ (မျိုးနွယ်နာမည်)"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -333,7 +673,24 @@
     "audio": "",
     "image": "",
     "strokes": "8",
-    "status": true
+    "status": true,
+    "mnemonic": "A roof covering two rows of treasures, with small dots — like a safe full of gold coins.",
+    "radical": "Radical: 金 (gold/metal) — the metal radical, used in words about money and metals.",
+    "stroke_hint": "Roof strokes, then main vertical, then two horizontal strokes inside, then two small dot strokes.",
+    "examples": [
+      {
+        "japanese": "金曜日",
+        "reading": "きんようび",
+        "meaning_en": "Friday",
+        "meaning_mm": "သောကြာနေ့"
+      },
+      {
+        "japanese": "お金",
+        "reading": "おかね",
+        "meaning_en": "money",
+        "meaning_mm": "ငွေ"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -349,7 +706,24 @@
     "audio": "",
     "image": "",
     "strokes": "3",
-    "status": true
+    "status": true,
+    "mnemonic": "A cross planted in the ground on a base line — like a marker staked into the earth.",
+    "radical": "Radical: 土 (earth/soil) — the earth radical, found in many place-related kanji.",
+    "stroke_hint": "Top short horizontal stroke, then the center vertical downward, then the longer bottom horizontal.",
+    "examples": [
+      {
+        "japanese": "土曜日",
+        "reading": "どようび",
+        "meaning_en": "Saturday",
+        "meaning_mm": "စနေနေ့"
+      },
+      {
+        "japanese": "土地",
+        "reading": "とち",
+        "meaning_en": "land, plot of land",
+        "meaning_mm": "မြေ"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -365,7 +739,24 @@
     "audio": "",
     "image": "",
     "strokes": "18",
-    "status": true
+    "status": true,
+    "mnemonic": "The sun (日) with a bird's wing (羽) — like the sun flying through each day of the week.",
+    "radical": "Radical: 日 (sun) — the sun radical on the left side.",
+    "stroke_hint": "Write 日 on left, then 隹 in center, then 羽 (wing) strokes on right.",
+    "examples": [
+      {
+        "japanese": "月曜日",
+        "reading": "げつようび",
+        "meaning_en": "Monday",
+        "meaning_mm": "တနင်္လာနေ့"
+      },
+      {
+        "japanese": "何曜日",
+        "reading": "なんようび",
+        "meaning_en": "what day of the week",
+        "meaning_mm": "ဘယ်နေ့လဲ"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -381,7 +772,24 @@
     "audio": "",
     "image": "",
     "strokes": "3",
-    "status": true
+    "status": true,
+    "mnemonic": "An arrow pointing up above a base line — like marking 'above' on a diagram.",
+    "radical": "Radical: 上 (up/above) — itself a directional radical.",
+    "stroke_hint": "Short vertical above a horizontal base, then a longer horizontal below.",
+    "examples": [
+      {
+        "japanese": "上手",
+        "reading": "じょうず",
+        "meaning_en": "skillful",
+        "meaning_mm": "ကျွမ်းကျင်သော"
+      },
+      {
+        "japanese": "上",
+        "reading": "うえ",
+        "meaning_en": "above, on top",
+        "meaning_mm": "အပေါ်"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -397,7 +805,24 @@
     "audio": "",
     "image": "",
     "strokes": "3",
-    "status": true
+    "status": true,
+    "mnemonic": "A line above with a downward point — like an arrow pointing downward below a shelf.",
+    "radical": "Radical: 下 (down/below) — itself a directional radical.",
+    "stroke_hint": "Horizontal stroke first, then short vertical from the middle, then a small dot below.",
+    "examples": [
+      {
+        "japanese": "下手",
+        "reading": "へた",
+        "meaning_en": "unskillful",
+        "meaning_mm": "ညံ့သော"
+      },
+      {
+        "japanese": "下",
+        "reading": "した",
+        "meaning_en": "below, under",
+        "meaning_mm": "အောက်"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -413,7 +838,24 @@
     "audio": "",
     "image": "",
     "strokes": "4",
-    "status": true
+    "status": true,
+    "mnemonic": "A rectangle with a line straight through the center — like an arrow hitting the bullseye.",
+    "radical": "Radical: 囗 (enclosure) + 中 — a line piercing through a box, hitting the center.",
+    "stroke_hint": "Vertical stroke first piercing the box, then the outer box (left, top, right, bottom).",
+    "examples": [
+      {
+        "japanese": "中学校",
+        "reading": "ちゅうがっこう",
+        "meaning_en": "middle school",
+        "meaning_mm": "အလယ်တန်းကျောင်း"
+      },
+      {
+        "japanese": "中国",
+        "reading": "ちゅうごく",
+        "meaning_en": "China",
+        "meaning_mm": "တရုတ်နိုင်ငံ"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -429,7 +871,24 @@
     "audio": "",
     "image": "",
     "strokes": "5",
-    "status": true
+    "status": true,
+    "mnemonic": "Four strokes balanced over a cross (十) — imagine cutting the number ten exactly in half.",
+    "radical": "Radical: 十 (ten) — a cross with a dividing stroke, showing division.",
+    "stroke_hint": "Top left dot, top right dot, then horizontal stroke, then vertical cross stroke.",
+    "examples": [
+      {
+        "japanese": "半分",
+        "reading": "はんぶん",
+        "meaning_en": "half",
+        "meaning_mm": "တစ်ဝက်"
+      },
+      {
+        "japanese": "一時半",
+        "reading": "いちじはん",
+        "meaning_en": "1:30",
+        "meaning_mm": "၁ နာရီ ထက်ဝက်"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -445,7 +904,24 @@
     "audio": "",
     "image": "",
     "strokes": "6",
-    "status": true
+    "status": true,
+    "mnemonic": "A grain stalk bending with the seasons — the yearly harvest represented by a bending stalk.",
+    "radical": "Radical: 禾 (grain) variant — growth through a full year cycle.",
+    "stroke_hint": "Top strokes form a cross/T shape, then three downward strokes suggesting a stalk bending.",
+    "examples": [
+      {
+        "japanese": "今年",
+        "reading": "ことし",
+        "meaning_en": "this year",
+        "meaning_mm": "ဒီနှစ်"
+      },
+      {
+        "japanese": "来年",
+        "reading": "らいねん",
+        "meaning_en": "next year",
+        "meaning_mm": "နှစ်က"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -461,7 +937,24 @@
     "audio": "",
     "image": "",
     "strokes": "10",
-    "status": true
+    "status": true,
+    "mnemonic": "The sun (日) passing by a Buddhist temple (寺) — the temple bells mark the passing hours.",
+    "radical": "Radical: 日 (sun) + 寺 (temple) — sun at the temple tower, marking time.",
+    "stroke_hint": "Write 日 on left, then 土 on top right, then 寸 on bottom right.",
+    "examples": [
+      {
+        "japanese": "何時",
+        "reading": "なんじ",
+        "meaning_en": "what time",
+        "meaning_mm": "ဘယ်နှစ်နာရီ"
+      },
+      {
+        "japanese": "時間",
+        "reading": "じかん",
+        "meaning_en": "time, hours",
+        "meaning_mm": "အချိန်"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -477,7 +970,24 @@
     "audio": "",
     "image": "",
     "strokes": "4",
-    "status": true
+    "status": true,
+    "mnemonic": "A sword (刀) dividing something — like a knife splitting time into minutes and parts.",
+    "radical": "Radical: 刀 (sword/knife) + 八 (eight/divide) — a blade separating things.",
+    "stroke_hint": "Top left diagonal, top right diagonal (八), then left diagonal of blade, then right hook stroke.",
+    "examples": [
+      {
+        "japanese": "三十分",
+        "reading": "さんじゅっぷん",
+        "meaning_en": "thirty minutes",
+        "meaning_mm": "မိနစ် ၃၀"
+      },
+      {
+        "japanese": "自分",
+        "reading": "じぶん",
+        "meaning_en": "oneself",
+        "meaning_mm": "မိမိကိုယ်တိုင်"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -493,7 +1003,24 @@
     "audio": "",
     "image": "",
     "strokes": "7",
-    "status": true
+    "status": true,
+    "mnemonic": "A person (亻) carrying a burden and asking — 'what is this heavy thing I'm carrying?'",
+    "radical": "Radical: 亻 (person) — a person on the left side.",
+    "stroke_hint": "Person radical on left (two strokes), then the right side 可 (can/permitted).",
+    "examples": [
+      {
+        "japanese": "何時",
+        "reading": "なんじ",
+        "meaning_en": "what time",
+        "meaning_mm": "ဘယ်နှစ်နာရီ"
+      },
+      {
+        "japanese": "何曜日",
+        "reading": "なんようび",
+        "meaning_en": "what day of the week",
+        "meaning_mm": "ဘယ်နေ့"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -509,7 +1036,24 @@
     "audio": "",
     "image": "",
     "strokes": "7",
-    "status": true
+    "status": true,
+    "mnemonic": "A grain stalk (禾) next to a private mark (ム) — the farmer claiming 'this crop is mine, private property.'",
+    "radical": "Radical: 禾 (grain/rice plant) — on the left, a rice stalk symbolizing personal ownership.",
+    "stroke_hint": "Write 禾 on left, then ム (two curved strokes) on the right.",
+    "examples": [
+      {
+        "japanese": "私立",
+        "reading": "しりつ",
+        "meaning_en": "private (school etc.)",
+        "meaning_mm": "ပုဂ္ဂလိကပိုင်"
+      },
+      {
+        "japanese": "私",
+        "reading": "わたし",
+        "meaning_en": "I, me",
+        "meaning_mm": "ကျွန်တော်/ကျွန်မ"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -525,7 +1069,24 @@
     "audio": "",
     "image": "",
     "strokes": "4",
-    "status": true
+    "status": true,
+    "mnemonic": "Like two crossed sticks with a downward stroke — imagine a father crossing his tools at the end of a work day.",
+    "radical": "Radical: 父 (father) — the father radical itself, found in paternal relationship words.",
+    "stroke_hint": "Two diagonal crossing strokes at top, then left downward stroke, then right downward stroke.",
+    "examples": [
+      {
+        "japanese": "父の日",
+        "reading": "ちちのひ",
+        "meaning_en": "Father's Day",
+        "meaning_mm": "ဖေဖေ့နေ့"
+      },
+      {
+        "japanese": "お父さん",
+        "reading": "おとうさん",
+        "meaning_en": "father (polite)",
+        "meaning_mm": "ဖေဖေ (ယဉ်ကျေးသောပုံစံ)"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -541,7 +1102,24 @@
     "audio": "",
     "image": "",
     "strokes": "5",
-    "status": true
+    "status": true,
+    "mnemonic": "A woman figure with two dots of milk — like a nursing mother's silhouette.",
+    "radical": "Radical: 女 (woman) variant — the woman radical modified to show nurturing.",
+    "stroke_hint": "Central vertical, left horizontal, right horizontal, then two inner dot strokes, then bottom.",
+    "examples": [
+      {
+        "japanese": "母の日",
+        "reading": "ははのひ",
+        "meaning_en": "Mother's Day",
+        "meaning_mm": "မေမေ့နေ့"
+      },
+      {
+        "japanese": "お母さん",
+        "reading": "おかあさん",
+        "meaning_en": "mother (polite)",
+        "meaning_mm": "မေမေ (ယဉ်ကျေးသောပုံစံ)"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -557,7 +1135,24 @@
     "audio": "",
     "image": "",
     "strokes": "3",
-    "status": true
+    "status": true,
+    "mnemonic": "A swaddled baby with one arm reaching up — an infant seeking attention.",
+    "radical": "Radical: 子 (child) — the child radical, found in many words about children and learning.",
+    "stroke_hint": "Curved stroke on top forming head and arm, then horizontal stroke, then short bottom stroke.",
+    "examples": [
+      {
+        "japanese": "子供",
+        "reading": "こども",
+        "meaning_en": "child",
+        "meaning_mm": "ကလေး"
+      },
+      {
+        "japanese": "女子",
+        "reading": "じょし",
+        "meaning_en": "girl, female",
+        "meaning_mm": "မိန်းကလေး"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -573,7 +1168,24 @@
     "audio": "",
     "image": "",
     "strokes": "7",
-    "status": true
+    "status": true,
+    "mnemonic": "A rice field (田) with strength (力) below — a man uses his strength to work the fields.",
+    "radical": "Radical: 田 (rice field) + 力 (strength) — combining agriculture and physical power.",
+    "stroke_hint": "Write 田 (grid square) on top, then 力 (strength, two strokes) below.",
+    "examples": [
+      {
+        "japanese": "男の人",
+        "reading": "おとこのひと",
+        "meaning_en": "man, male person",
+        "meaning_mm": "ယောက်ျားလူ"
+      },
+      {
+        "japanese": "男子",
+        "reading": "だんし",
+        "meaning_en": "boy, male",
+        "meaning_mm": "ကောင်လေး"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -589,7 +1201,24 @@
     "audio": "",
     "image": "",
     "strokes": "3",
-    "status": true
+    "status": true,
+    "mnemonic": "Like a woman seated with legs crossed and arms extended gracefully to each side.",
+    "radical": "Radical: 女 (woman) — one of the most common radicals, found in many character-related words.",
+    "stroke_hint": "Left diagonal stroke, then crossing horizontal stroke, then right diagonal stroke downward.",
+    "examples": [
+      {
+        "japanese": "女の人",
+        "reading": "おんなのひと",
+        "meaning_en": "woman, female person",
+        "meaning_mm": "မိန်းမလူ"
+      },
+      {
+        "japanese": "女子",
+        "reading": "じょし",
+        "meaning_en": "girl, female",
+        "meaning_mm": "မိန်းကလေး"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -605,7 +1234,24 @@
     "audio": "",
     "image": "",
     "strokes": "3",
-    "status": true
+    "status": true,
+    "mnemonic": "Three peaks with the center tallest — exactly what a mountain range looks like on the horizon.",
+    "radical": "Radical: 山 (mountain) — the mountain radical, one of the most visually recognizable.",
+    "stroke_hint": "Left shorter vertical, then taller center vertical, then right shorter vertical, all on a base.",
+    "examples": [
+      {
+        "japanese": "山田",
+        "reading": "やまだ",
+        "meaning_en": "Yamada (surname)",
+        "meaning_mm": "ယာမာဒါ (မျိုးနွယ်နာမည်)"
+      },
+      {
+        "japanese": "富士山",
+        "reading": "ふじさん",
+        "meaning_en": "Mt. Fuji",
+        "meaning_mm": "ဖူဂျိ တောင်"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -621,7 +1267,24 @@
     "audio": "",
     "image": "",
     "strokes": "3",
-    "status": true
+    "status": true,
+    "mnemonic": "Three vertical lines flowing side by side — like three streams forming a river.",
+    "radical": "Radical: 川 (river) — the river radical, flowing downward.",
+    "stroke_hint": "Left short vertical, then middle taller vertical, then right vertical curving slightly.",
+    "examples": [
+      {
+        "japanese": "川",
+        "reading": "かわ",
+        "meaning_en": "river",
+        "meaning_mm": "မြစ်"
+      },
+      {
+        "japanese": "小川",
+        "reading": "おがわ",
+        "meaning_en": "stream, small river",
+        "meaning_mm": "ချောင်း"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -637,7 +1300,24 @@
     "audio": "",
     "image": "",
     "strokes": "5",
-    "status": true
+    "status": true,
+    "mnemonic": "A grid divided into four sections — a bird's-eye view of Japanese rice paddies.",
+    "radical": "Radical: 田 (rice field) — the field radical, found in agriculture-related kanji.",
+    "stroke_hint": "Outer box first (left, top, right, bottom), then vertical divider, then horizontal divider.",
+    "examples": [
+      {
+        "japanese": "田んぼ",
+        "reading": "たんぼ",
+        "meaning_en": "rice paddy",
+        "meaning_mm": "စပါးကွင်း"
+      },
+      {
+        "japanese": "山田",
+        "reading": "やまだ",
+        "meaning_en": "Yamada (surname)",
+        "meaning_mm": "ယာမာဒါ (မျိုးနွယ်နာမည်)"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -653,7 +1333,24 @@
     "audio": "",
     "image": "",
     "strokes": "5",
-    "status": true
+    "status": true,
+    "mnemonic": "A seedling pushing up through the soil — a small sprout representing the birth of life.",
+    "radical": "Radical: 生 (life/birth) — the life radical, appearing in words about living and birth.",
+    "stroke_hint": "Short left stroke on top, then horizontal, then longer horizontal, then vertical going down.",
+    "examples": [
+      {
+        "japanese": "先生",
+        "reading": "せんせい",
+        "meaning_en": "teacher",
+        "meaning_mm": "ဆရာ/မ"
+      },
+      {
+        "japanese": "学生",
+        "reading": "がくせい",
+        "meaning_en": "student",
+        "meaning_mm": "ကျောင်းသား/သူ"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -669,7 +1366,24 @@
     "audio": "",
     "image": "",
     "strokes": "6",
-    "status": true
+    "status": true,
+    "mnemonic": "Someone walking ahead with legs (儿) — the front runner going before everyone else.",
+    "radical": "Radical: 儿 (legs/person at bottom) — legs moving forward, suggesting precedence.",
+    "stroke_hint": "Top portion (土-like shape), then two leg strokes at the bottom.",
+    "examples": [
+      {
+        "japanese": "先生",
+        "reading": "せんせい",
+        "meaning_en": "teacher",
+        "meaning_mm": "ဆရာ/မ"
+      },
+      {
+        "japanese": "先週",
+        "reading": "せんしゅう",
+        "meaning_en": "last week",
+        "meaning_mm": "အပတ်ကတည်းက"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -685,7 +1399,24 @@
     "audio": "",
     "image": "",
     "strokes": "8",
-    "status": true
+    "status": true,
+    "mnemonic": "A child (子) reaching up under a roof toward a shape representing learning — knowledge descending to a student.",
+    "radical": "Radical: 子 (child) — at the bottom, a child striving to learn.",
+    "stroke_hint": "Top strokes form crossed hands reaching (爻), then 冖 cover, then 子 at bottom.",
+    "examples": [
+      {
+        "japanese": "学校",
+        "reading": "がっこう",
+        "meaning_en": "school",
+        "meaning_mm": "ကျောင်း"
+      },
+      {
+        "japanese": "学生",
+        "reading": "がくせい",
+        "meaning_en": "student",
+        "meaning_mm": "ကျောင်းသား/သူ"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -701,7 +1432,24 @@
     "audio": "",
     "image": "",
     "strokes": "10",
-    "status": true
+    "status": true,
+    "mnemonic": "A tree (木) with a crossing pattern — like a tree branching in structured directions, symbolizing organized learning.",
+    "radical": "Radical: 木 (tree/wood) — on the left, wood representing a structured building.",
+    "stroke_hint": "Write 木 on left, then 交 (cross/mix) on right.",
+    "examples": [
+      {
+        "japanese": "学校",
+        "reading": "がっこう",
+        "meaning_en": "school",
+        "meaning_mm": "ကျောင်း"
+      },
+      {
+        "japanese": "高校",
+        "reading": "こうこう",
+        "meaning_en": "high school",
+        "meaning_mm": "အထက်တန်းကျောင်း"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -717,7 +1465,24 @@
     "audio": "",
     "image": "",
     "strokes": "4",
-    "status": true
+    "status": true,
+    "mnemonic": "Like a right hand reaching forward — two friends reaching their right hands toward each other.",
+    "radical": "Radical: 又 (right hand/again) — the hand radical showing friendship through a handshake.",
+    "stroke_hint": "Top left horizontal, then short stroke, then the bent right-hand shape (又).",
+    "examples": [
+      {
+        "japanese": "友達",
+        "reading": "ともだち",
+        "meaning_en": "friend",
+        "meaning_mm": "သူငယ်ချင်း"
+      },
+      {
+        "japanese": "親友",
+        "reading": "しんゆう",
+        "meaning_en": "close friend",
+        "meaning_mm": "ရင်းနှီးသော သူငယ်ချင်း"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -733,7 +1498,24 @@
     "audio": "",
     "image": "",
     "strokes": "5",
-    "status": true
+    "status": true,
+    "mnemonic": "A tree (木) with a mark at the base highlighting the root — the 'origin' or 'main' part of something.",
+    "radical": "Radical: 木 (tree) — the tree with an extra stroke marking the root/base.",
+    "stroke_hint": "Write 木, then add a short horizontal stroke at the root (below the main horizontal).",
+    "examples": [
+      {
+        "japanese": "日本",
+        "reading": "にほん",
+        "meaning_en": "Japan",
+        "meaning_mm": "ဂျပန်နိုင်ငံ"
+      },
+      {
+        "japanese": "本",
+        "reading": "ほん",
+        "meaning_en": "book",
+        "meaning_mm": "စာအုပ်"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -749,7 +1531,24 @@
     "audio": "",
     "image": "",
     "strokes": "6",
-    "status": true
+    "status": true,
+    "mnemonic": "A shape like 'mother' (母) with an added stroke — like a mother who attends to things 'every' day without fail.",
+    "radical": "Radical: 母 (mother) variant — maternal consistency suggesting daily repetition.",
+    "stroke_hint": "Top cap stroke, then left and right cross strokes, then central vertical with inner strokes.",
+    "examples": [
+      {
+        "japanese": "毎日",
+        "reading": "まいにち",
+        "meaning_en": "every day",
+        "meaning_mm": "နေ့တိုင်း"
+      },
+      {
+        "japanese": "毎朝",
+        "reading": "まいあさ",
+        "meaning_en": "every morning",
+        "meaning_mm": "မနက်တိုင်း"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -765,7 +1564,24 @@
     "audio": "",
     "image": "",
     "strokes": "14",
-    "status": true
+    "status": true,
+    "mnemonic": "Speech (言) combined with 'I/myself' (吾) — 'my speech' means language and words.",
+    "radical": "Radical: 言 (speech/say) — on the left, words coming from a mouth.",
+    "stroke_hint": "Write 言 on left, then 吾 (五 over 口) on right.",
+    "examples": [
+      {
+        "japanese": "日本語",
+        "reading": "にほんご",
+        "meaning_en": "Japanese language",
+        "meaning_mm": "ဂျပန်ဘာသာ"
+      },
+      {
+        "japanese": "英語",
+        "reading": "えいご",
+        "meaning_en": "English language",
+        "meaning_mm": "အင်္ဂလိပ်ဘာသာ"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -781,7 +1597,24 @@
     "audio": "",
     "image": "",
     "strokes": "4",
-    "status": true
+    "status": true,
+    "mnemonic": "Like a person with crossed legs and flowing brushwork — the artistic shape of writing letters.",
+    "radical": "Radical: 文 (writing/sentence) — itself a radical representing letters and patterns.",
+    "stroke_hint": "Top dot, then the crossing diagonal strokes, creating an X-like pattern with a base.",
+    "examples": [
+      {
+        "japanese": "文章",
+        "reading": "ぶんしょう",
+        "meaning_en": "sentence, text",
+        "meaning_mm": "ဝါကျ"
+      },
+      {
+        "japanese": "作文",
+        "reading": "さくぶん",
+        "meaning_en": "composition, essay",
+        "meaning_mm": "စာရေးနည်း"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -797,7 +1630,24 @@
     "audio": "",
     "image": "",
     "strokes": "6",
-    "status": true
+    "status": true,
+    "mnemonic": "A crossroad with footsteps — like feet walking down a road at an intersection.",
+    "radical": "Radical: 行 (go/conduct) — the go radical, found in movement-related words.",
+    "stroke_hint": "Left side: two short vertical strokes; then right side: three strokes forming a similar shape.",
+    "examples": [
+      {
+        "japanese": "旅行",
+        "reading": "りょこう",
+        "meaning_en": "travel",
+        "meaning_mm": "ခရီးသွား"
+      },
+      {
+        "japanese": "銀行",
+        "reading": "ぎんこう",
+        "meaning_en": "bank",
+        "meaning_mm": "ဘဏ်"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -813,7 +1663,24 @@
     "audio": "",
     "image": "",
     "strokes": "7",
-    "status": true
+    "status": true,
+    "mnemonic": "A tree (木) with extra strokes suggesting arms reaching — someone coming toward you from behind a tree.",
+    "radical": "Radical: 木 (tree) — a tree with additional coming-motion strokes.",
+    "stroke_hint": "Top horizontal, then diagonal strokes (like wings), then center vertical, then lower diagonals.",
+    "examples": [
+      {
+        "japanese": "来週",
+        "reading": "らいしゅう",
+        "meaning_en": "next week",
+        "meaning_mm": "နောက်အပတ်"
+      },
+      {
+        "japanese": "来年",
+        "reading": "らいねん",
+        "meaning_en": "next year",
+        "meaning_mm": "နှစ်က"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -829,7 +1696,24 @@
     "audio": "",
     "image": "",
     "strokes": "7",
-    "status": true
+    "status": true,
+    "mnemonic": "An eye (目) on two legs — like an eye with legs walking around seeing everything.",
+    "radical": "Radical: 見 (see/look) — the see radical, with an eye on top of legs.",
+    "stroke_hint": "Write 目 (eye box with horizontal strokes) on top, then two leg strokes (儿) at bottom.",
+    "examples": [
+      {
+        "japanese": "見る",
+        "reading": "みる",
+        "meaning_en": "to see, to watch",
+        "meaning_mm": "ကြည့်သည်"
+      },
+      {
+        "japanese": "意見",
+        "reading": "いけん",
+        "meaning_en": "opinion",
+        "meaning_mm": "အမြင်"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -845,7 +1729,24 @@
     "audio": "",
     "image": "",
     "strokes": "9",
-    "status": true
+    "status": true,
+    "mnemonic": "A pyramid/roof above a round pot — like steam rising from a covered cooking pot full of food.",
+    "radical": "Radical: 食 (eat/food) — the eat radical, found in all food-related kanji.",
+    "stroke_hint": "Top inverted-V shape, then right angle strokes, then a rounded bottom portion.",
+    "examples": [
+      {
+        "japanese": "食べる",
+        "reading": "たべる",
+        "meaning_en": "to eat",
+        "meaning_mm": "စားသည်"
+      },
+      {
+        "japanese": "食堂",
+        "reading": "しょくどう",
+        "meaning_en": "cafeteria, dining hall",
+        "meaning_mm": "မုန့်ဆိုင်"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -861,7 +1762,24 @@
     "audio": "",
     "image": "",
     "strokes": "12",
-    "status": true
+    "status": true,
+    "mnemonic": "Food (食) on the left, and a figure opening its mouth wide on the right — tilting the head back to drink.",
+    "radical": "Radical: 食 (eat) — on the left, the eating/food radical.",
+    "stroke_hint": "Write 食 on left, then 欠 (yawning person) on right — mouth open wide.",
+    "examples": [
+      {
+        "japanese": "飲む",
+        "reading": "のむ",
+        "meaning_en": "to drink",
+        "meaning_mm": "သောက်သည်"
+      },
+      {
+        "japanese": "飲み物",
+        "reading": "のみもの",
+        "meaning_en": "drink, beverage",
+        "meaning_mm": "အချိုရည်"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -877,7 +1795,24 @@
     "audio": "",
     "image": "",
     "strokes": "12",
-    "status": true
+    "status": true,
+    "mnemonic": "A net (罒) catching shellfish (貝) — in ancient Japan, shells were used as currency, so catching them meant buying.",
+    "radical": "Radical: 貝 (shellfish/money) — shells historically used as currency.",
+    "stroke_hint": "Top horizontal strokes forming a net shape (罒), then the shellfish shape (貝) below.",
+    "examples": [
+      {
+        "japanese": "買う",
+        "reading": "かう",
+        "meaning_en": "to buy",
+        "meaning_mm": "ဝယ်သည်"
+      },
+      {
+        "japanese": "買い物",
+        "reading": "かいもの",
+        "meaning_en": "shopping",
+        "meaning_mm": "ဈေးဝယ်ခြင်း"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -893,7 +1828,24 @@
     "audio": "",
     "image": "",
     "strokes": "10",
-    "status": true
+    "status": true,
+    "mnemonic": "A tall pagoda tower with a window — like a Japanese temple reaching high into the sky.",
+    "radical": "Radical: 高 (high/tall) — itself a radical for height-related words.",
+    "stroke_hint": "Top dotted roof strokes, then rectangular window shape, then mouth shape, then wide base.",
+    "examples": [
+      {
+        "japanese": "高い",
+        "reading": "たかい",
+        "meaning_en": "tall, expensive",
+        "meaning_mm": "မြင့်သော၊ စျေးကြီးသော"
+      },
+      {
+        "japanese": "高校",
+        "reading": "こうこう",
+        "meaning_en": "high school",
+        "meaning_mm": "အထက်တန်းကျောင်း"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -909,7 +1861,24 @@
     "audio": "",
     "image": "",
     "strokes": "6",
-    "status": true
+    "status": true,
+    "mnemonic": "A woman (女) safe under a roof (宀) — a woman sheltered at home brings peace and safety.",
+    "radical": "Radical: 宀 (roof) + 女 (woman) — shelter over woman meaning safe and cheap.",
+    "stroke_hint": "Roof strokes first (宀), then the woman (女) strokes below.",
+    "examples": [
+      {
+        "japanese": "安い",
+        "reading": "やすい",
+        "meaning_en": "cheap",
+        "meaning_mm": "စျေးပေါသော"
+      },
+      {
+        "japanese": "安全",
+        "reading": "あんぜん",
+        "meaning_en": "safety, safe",
+        "meaning_mm": "လုံခြုံရေး"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -925,7 +1894,24 @@
     "audio": "",
     "image": "",
     "strokes": "3",
-    "status": true
+    "status": true,
+    "mnemonic": "A person with arms spread wide — like a person saying 'this BIG!' with outstretched arms.",
+    "radical": "Radical: 大 (big/large) — the large radical, one of the most common.",
+    "stroke_hint": "Horizontal stroke through center, then left diagonal going down-left, then right diagonal down-right.",
+    "examples": [
+      {
+        "japanese": "大学",
+        "reading": "だいがく",
+        "meaning_en": "university",
+        "meaning_mm": "တက္ကသိုလ်"
+      },
+      {
+        "japanese": "大きい",
+        "reading": "おおきい",
+        "meaning_en": "big",
+        "meaning_mm": "ကြီးသော"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -941,7 +1927,24 @@
     "audio": "",
     "image": "",
     "strokes": "3",
-    "status": true
+    "status": true,
+    "mnemonic": "A central vertical with two tiny dots on either side — one big line flanked by two tiny specks.",
+    "radical": "Radical: 小 (small) — the small radical, representing diminutive size.",
+    "stroke_hint": "Center vertical stroke first, then left downward dot/stroke, then right downward dot/stroke.",
+    "examples": [
+      {
+        "japanese": "小学校",
+        "reading": "しょうがっこう",
+        "meaning_en": "elementary school",
+        "meaning_mm": "မူလတန်းကျောင်း"
+      },
+      {
+        "japanese": "小さい",
+        "reading": "ちいさい",
+        "meaning_en": "small",
+        "meaning_mm": "သေးသော"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -957,7 +1960,24 @@
     "audio": "",
     "image": "",
     "strokes": "13",
-    "status": true
+    "status": true,
+    "mnemonic": "A person standing (立) next to a tree (木) with an ax (斤) — freshly chopped wood is brand new.",
+    "radical": "Radical: 斤 (ax) + 木 (tree) + 立 (stand) — cutting a new tree with an ax.",
+    "stroke_hint": "Left side: 立 then 木 stacked; right side: 斤 (ax shape).",
+    "examples": [
+      {
+        "japanese": "新しい",
+        "reading": "あたらしい",
+        "meaning_en": "new",
+        "meaning_mm": "သစ်သော"
+      },
+      {
+        "japanese": "新幹線",
+        "reading": "しんかんせん",
+        "meaning_en": "bullet train",
+        "meaning_mm": "မြင်းစိုင်းရထား"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -973,7 +1993,24 @@
     "audio": "",
     "image": "",
     "strokes": "5",
-    "status": true
+    "status": true,
+    "mnemonic": "A hand stroke above a mouth (口) — your right hand raised to answer a question using your mouth.",
+    "radical": "Radical: 口 (mouth) + 又 (right hand) — using the right hand alongside speech.",
+    "stroke_hint": "Top-left stroke of hand first, then the horizontal, then the mouth box (口) below.",
+    "examples": [
+      {
+        "japanese": "右",
+        "reading": "みぎ",
+        "meaning_en": "right direction",
+        "meaning_mm": "ညာဘက်"
+      },
+      {
+        "japanese": "右手",
+        "reading": "みぎて",
+        "meaning_en": "right hand",
+        "meaning_mm": "ညာဘက်လက်"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -989,7 +2026,24 @@
     "audio": "",
     "image": "",
     "strokes": "5",
-    "status": true
+    "status": true,
+    "mnemonic": "A left-hand stroke above the work (工) — the left hand doing skilled craft work.",
+    "radical": "Radical: 工 (work/craft) — work done with the left hand.",
+    "stroke_hint": "Top-left stroke first, then horizontal stroke over 工 (top horizontal, vertical, bottom horizontal).",
+    "examples": [
+      {
+        "japanese": "左",
+        "reading": "ひだり",
+        "meaning_en": "left direction",
+        "meaning_mm": "ဘယ်ဘက်"
+      },
+      {
+        "japanese": "左手",
+        "reading": "ひだりて",
+        "meaning_en": "left hand",
+        "meaning_mm": "ဘယ်ဘက်လက်"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -1005,7 +2059,24 @@
     "audio": "",
     "image": "",
     "strokes": "5",
-    "status": true
+    "status": true,
+    "mnemonic": "Two people standing back-to-back — in the cold north, two people turn their backs to the freezing wind.",
+    "radical": "Radical: 匕 (spoon/person variant) — two figures facing away from each other.",
+    "stroke_hint": "Left vertical stroke, then short horizontal, then right side: diagonal down and short horizontal.",
+    "examples": [
+      {
+        "japanese": "北",
+        "reading": "きた",
+        "meaning_en": "north",
+        "meaning_mm": "မြောက်"
+      },
+      {
+        "japanese": "北海道",
+        "reading": "ほっかいどう",
+        "meaning_en": "Hokkaido",
+        "meaning_mm": "ဟော့ကိုင်ဒိုး"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -1021,7 +2092,24 @@
     "audio": "",
     "image": "",
     "strokes": "9",
-    "status": true
+    "status": true,
+    "mnemonic": "Like a tent structure with a hanging cord — the south is warm, things hang loosely in the heat.",
+    "radical": "Radical: 十 (ten) + 冂 (frame) + interior strokes — a structured enclosure with hanging elements.",
+    "stroke_hint": "Top cross shape, then frame shape, then inner horizontal and vertical strokes.",
+    "examples": [
+      {
+        "japanese": "南",
+        "reading": "みなみ",
+        "meaning_en": "south",
+        "meaning_mm": "တောင်"
+      },
+      {
+        "japanese": "南口",
+        "reading": "みなみぐち",
+        "meaning_en": "south exit",
+        "meaning_mm": "တောင်ဘက် ထွက်ပေါက်"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -1037,7 +2125,24 @@
     "audio": "",
     "image": "",
     "strokes": "8",
-    "status": true
+    "status": true,
+    "mnemonic": "The sun (日) rising up behind a tree (木) — the sun appears in the east behind the treetops.",
+    "radical": "Radical: 木 (tree) + 日 (sun) — sun and tree combined to point east.",
+    "stroke_hint": "Top horizontal, then 日 (sun box) in the middle of a vertical, then lower diagonal strokes like roots.",
+    "examples": [
+      {
+        "japanese": "東",
+        "reading": "ひがし",
+        "meaning_en": "east",
+        "meaning_mm": "အရှေ့"
+      },
+      {
+        "japanese": "東京",
+        "reading": "とうきょう",
+        "meaning_en": "Tokyo",
+        "meaning_mm": "တိုကျို"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -1053,7 +2158,24 @@
     "audio": "",
     "image": "",
     "strokes": "6",
-    "status": true
+    "status": true,
+    "mnemonic": "Like a bird perching in a nest — birds return to their nests in the west as the evening sun sets.",
+    "radical": "Radical: 覀 (west variant) — a bird settling into a nest, westernward.",
+    "stroke_hint": "Top horizontal, then left and right vertical strokes forming a nest shape, then inner cross.",
+    "examples": [
+      {
+        "japanese": "西",
+        "reading": "にし",
+        "meaning_en": "west",
+        "meaning_mm": "အနောက်"
+      },
+      {
+        "japanese": "関西",
+        "reading": "かんさい",
+        "meaning_en": "Kansai region",
+        "meaning_mm": "ကန်ဆိုင် ဒေသ"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -1069,7 +2191,24 @@
     "audio": "",
     "image": "",
     "strokes": "3",
-    "status": true
+    "status": true,
+    "mnemonic": "A simple open square — like a mouth seen head-on, just a box for speaking.",
+    "radical": "Radical: 口 (mouth) — the mouth radical, extremely common in Japanese kanji.",
+    "stroke_hint": "Left vertical down, then top horizontal right, then right vertical down, then close with bottom stroke.",
+    "examples": [
+      {
+        "japanese": "出口",
+        "reading": "でぐち",
+        "meaning_en": "exit",
+        "meaning_mm": "ထွက်ပေါက်"
+      },
+      {
+        "japanese": "入口",
+        "reading": "いりぐち",
+        "meaning_en": "entrance",
+        "meaning_mm": "ဝင်ပေါက်"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -1085,7 +2224,24 @@
     "audio": "",
     "image": "",
     "strokes": "5",
-    "status": true
+    "status": true,
+    "mnemonic": "A rectangle with two horizontal lines inside — an eye drawn frontally with pupils visible.",
+    "radical": "Radical: 目 (eye) — the eye radical, found in vision-related kanji.",
+    "stroke_hint": "Outer box first, then two horizontal interior lines.",
+    "examples": [
+      {
+        "japanese": "目",
+        "reading": "め",
+        "meaning_en": "eye",
+        "meaning_mm": "မျက်လုံး"
+      },
+      {
+        "japanese": "注目",
+        "reading": "ちゅうもく",
+        "meaning_en": "attention, notice",
+        "meaning_mm": "အာရုံစိုက်ခြင်း"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -1101,7 +2257,24 @@
     "audio": "",
     "image": "",
     "strokes": "6",
-    "status": true
+    "status": true,
+    "mnemonic": "Like a stylized ear — a box shape with small horizontal ledges resembling an ear canal.",
+    "radical": "Radical: 耳 (ear) — the ear radical, found in hearing-related kanji.",
+    "stroke_hint": "Left vertical, top horizontal, right vertical, then two interior horizontal strokes, then bottom horizontal extending.",
+    "examples": [
+      {
+        "japanese": "耳",
+        "reading": "みみ",
+        "meaning_en": "ear",
+        "meaning_mm": "နား"
+      },
+      {
+        "japanese": "耳鼻科",
+        "reading": "じびか",
+        "meaning_en": "ENT clinic",
+        "meaning_mm": "နား၊ နှာ ကျောင်းဆေးခန်း"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -1117,7 +2290,24 @@
     "audio": "",
     "image": "",
     "strokes": "4",
-    "status": true
+    "status": true,
+    "mnemonic": "Three horizontal lines (fingers) crossed by a vertical with a hook (palm and wrist) — a stylized hand.",
+    "radical": "Radical: 手 (hand) — the hand radical, found in action-related kanji.",
+    "stroke_hint": "Three horizontal strokes (top to bottom), then a vertical with a slight hook at the bottom.",
+    "examples": [
+      {
+        "japanese": "手",
+        "reading": "て",
+        "meaning_en": "hand",
+        "meaning_mm": "လက်"
+      },
+      {
+        "japanese": "上手",
+        "reading": "じょうず",
+        "meaning_en": "skillful",
+        "meaning_mm": "ကျွမ်းကျင်သော"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -1133,7 +2323,24 @@
     "audio": "",
     "image": "",
     "strokes": "7",
-    "status": true
+    "status": true,
+    "mnemonic": "A mouth-like shape above foot toes — like a foot with the ankle joint (口) over the toes.",
+    "radical": "Radical: 足 (foot/leg) — the foot radical.",
+    "stroke_hint": "Write 口 on top, then the lower leg strokes making two diverging lines from a central drop.",
+    "examples": [
+      {
+        "japanese": "足",
+        "reading": "あし",
+        "meaning_en": "foot, leg",
+        "meaning_mm": "ခြေ"
+      },
+      {
+        "japanese": "足りる",
+        "reading": "たりる",
+        "meaning_en": "to be sufficient",
+        "meaning_mm": "လုံလောက်သည်"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -1149,7 +2356,24 @@
     "audio": "",
     "image": "",
     "strokes": "2",
-    "status": true
+    "status": true,
+    "mnemonic": "An upside-down V — like someone ducking through a small doorway, both legs visible.",
+    "radical": "Radical: 入 (enter) — the enter radical.",
+    "stroke_hint": "Left short stroke going down-right, then right longer stroke going down-left, crossing at top.",
+    "examples": [
+      {
+        "japanese": "入る",
+        "reading": "はいる",
+        "meaning_en": "to enter",
+        "meaning_mm": "ဝင်သည်"
+      },
+      {
+        "japanese": "入口",
+        "reading": "いりぐち",
+        "meaning_en": "entrance",
+        "meaning_mm": "ဝင်ပေါက်"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -1165,7 +2389,24 @@
     "audio": "",
     "image": "",
     "strokes": "5",
-    "status": true
+    "status": true,
+    "mnemonic": "Two mountains (山) rising from a base — like bursting up and out of something.",
+    "radical": "Radical: 山 (mountain) variant — two mountain peaks rising upward and outward.",
+    "stroke_hint": "Short center vertical, then taller outer vertical, cross horizontal, then second mountain shape below.",
+    "examples": [
+      {
+        "japanese": "出る",
+        "reading": "でる",
+        "meaning_en": "to exit, to go out",
+        "meaning_mm": "ထွက်သည်"
+      },
+      {
+        "japanese": "出口",
+        "reading": "でぐち",
+        "meaning_en": "exit",
+        "meaning_mm": "ထွက်ပေါက်"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -1181,7 +2422,24 @@
     "audio": "",
     "image": "",
     "strokes": "5",
-    "status": true
+    "status": true,
+    "mnemonic": "A person standing tall on a ground line — like a stick figure with arms slightly out, upright.",
+    "radical": "Radical: 立 (stand) — the standing radical.",
+    "stroke_hint": "Top dot, then horizontal stroke, then two diagonal legs from center, then base horizontal.",
+    "examples": [
+      {
+        "japanese": "立つ",
+        "reading": "たつ",
+        "meaning_en": "to stand",
+        "meaning_mm": "ရပ်သည်"
+      },
+      {
+        "japanese": "国立",
+        "reading": "こくりつ",
+        "meaning_en": "national (institution)",
+        "meaning_mm": "အမျိုးသား (အဖွဲ့အစည်း)"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -1197,7 +2455,24 @@
     "audio": "",
     "image": "",
     "strokes": "6",
-    "status": true
+    "status": true,
+    "mnemonic": "A person (亻) leaning against a tree (木) — taking a well-deserved rest in the shade.",
+    "radical": "Radical: 亻 (person) + 木 (tree) — a person resting at a tree.",
+    "stroke_hint": "Person radical on left (two strokes), then tree (木) on right.",
+    "examples": [
+      {
+        "japanese": "休む",
+        "reading": "やすむ",
+        "meaning_en": "to rest",
+        "meaning_mm": "အနားယူသည်"
+      },
+      {
+        "japanese": "休日",
+        "reading": "きゅうじつ",
+        "meaning_en": "holiday, day off",
+        "meaning_mm": "ရုံးပိတ်ရက်"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -1213,7 +2488,24 @@
     "audio": "",
     "image": "",
     "strokes": "14",
-    "status": true
+    "status": true,
+    "mnemonic": "Speech/words (言) combined with a selling figure (売) — 'selling your thoughts' through reading words.",
+    "radical": "Radical: 言 (speech) — on the left, the speaking/words radical.",
+    "stroke_hint": "Write 言 on left, then 売 (to sell) on right.",
+    "examples": [
+      {
+        "japanese": "読む",
+        "reading": "よむ",
+        "meaning_en": "to read",
+        "meaning_mm": "ဖတ်သည်"
+      },
+      {
+        "japanese": "読書",
+        "reading": "どくしょ",
+        "meaning_en": "reading (books)",
+        "meaning_mm": "စာဖတ်ခြင်း"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -1229,7 +2521,24 @@
     "audio": "",
     "image": "",
     "strokes": "10",
-    "status": true
+    "status": true,
+    "mnemonic": "A brush at the top writing on a surface below — like a calligraphy brush creating characters on parchment.",
+    "radical": "Radical: 聿 (brush/writing instrument) — a brush in motion.",
+    "stroke_hint": "Top brush shape (聿 — three strokes), then 者 shape below representing the written surface.",
+    "examples": [
+      {
+        "japanese": "書く",
+        "reading": "かく",
+        "meaning_en": "to write",
+        "meaning_mm": "ရေးသည်"
+      },
+      {
+        "japanese": "教科書",
+        "reading": "きょうかしょ",
+        "meaning_en": "textbook",
+        "meaning_mm": "သင်ခန်းစာ စာအုပ်"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -1245,7 +2554,24 @@
     "audio": "",
     "image": "",
     "strokes": "14",
-    "status": true
+    "status": true,
+    "mnemonic": "An ear (耳) pressed against a gate (門) — eavesdropping at the entrance, straining to hear.",
+    "radical": "Radical: 門 (gate) + 耳 (ear) — ear inside a gate, listening through it.",
+    "stroke_hint": "Write 門 outer frame, then 耳 inside the gate frame.",
+    "examples": [
+      {
+        "japanese": "聞く",
+        "reading": "きく",
+        "meaning_en": "to hear, to listen",
+        "meaning_mm": "ကြားသည်၊ နားထောင်သည်"
+      },
+      {
+        "japanese": "新聞",
+        "reading": "しんぶん",
+        "meaning_en": "newspaper",
+        "meaning_mm": "သတင်းစာ"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -1261,7 +2587,24 @@
     "audio": "",
     "image": "",
     "strokes": "13",
-    "status": true
+    "status": true,
+    "mnemonic": "Words (言) combined with a tongue (舌) — speaking uses both your words and your tongue.",
+    "radical": "Radical: 言 (speech) — on the left, the speech radical.",
+    "stroke_hint": "Write 言 on left, then 舌 (tongue — 千 over 口) on right.",
+    "examples": [
+      {
+        "japanese": "話す",
+        "reading": "はなす",
+        "meaning_en": "to speak, to talk",
+        "meaning_mm": "ပြောဆိုသည်"
+      },
+      {
+        "japanese": "電話",
+        "reading": "でんわ",
+        "meaning_en": "telephone",
+        "meaning_mm": "ဖုန်း"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -1277,7 +2620,24 @@
     "audio": "",
     "image": "",
     "strokes": "7",
-    "status": true
+    "status": true,
+    "mnemonic": "Like a mouth with multiple lines of speech flowing outward — words streaming from an open mouth.",
+    "radical": "Radical: 言 (speech/say) — the speech radical, one of the most common.",
+    "stroke_hint": "Top horizontal dot, then horizontal, then mouth box (口) below with two horizontal interior lines.",
+    "examples": [
+      {
+        "japanese": "言う",
+        "reading": "いう",
+        "meaning_en": "to say",
+        "meaning_mm": "ပြောသည်"
+      },
+      {
+        "japanese": "言葉",
+        "reading": "ことば",
+        "meaning_en": "word, language",
+        "meaning_mm": "ဘာသာစကား"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -1293,7 +2653,24 @@
     "audio": "",
     "image": "",
     "strokes": "6",
-    "status": true
+    "status": true,
+    "mnemonic": "Evening (夕) above a mouth (口) — calling someone's name in the dark when you can't see their face.",
+    "radical": "Radical: 夕 (evening) + 口 (mouth) — calling a name in the evening.",
+    "stroke_hint": "Evening stroke (夕 — two diagonal strokes with a dot), then mouth box (口) below.",
+    "examples": [
+      {
+        "japanese": "名前",
+        "reading": "なまえ",
+        "meaning_en": "name",
+        "meaning_mm": "နာမည်"
+      },
+      {
+        "japanese": "名刺",
+        "reading": "めいし",
+        "meaning_en": "business card",
+        "meaning_mm": "ဆက်သွယ်ရေးကဒ်"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -1309,7 +2686,24 @@
     "audio": "",
     "image": "",
     "strokes": "9",
-    "status": true
+    "status": true,
+    "mnemonic": "A boat stopped before a sword — like standing at the front, ready with a weapon.",
+    "radical": "Radical: 刀 (sword) + 月 (moon/boat) — a sword in front stopping movement.",
+    "stroke_hint": "Top part (羊 variant), then 月 on lower left, then 刀 on lower right.",
+    "examples": [
+      {
+        "japanese": "前",
+        "reading": "まえ",
+        "meaning_en": "in front of, before",
+        "meaning_mm": "အရှေ့"
+      },
+      {
+        "japanese": "名前",
+        "reading": "なまえ",
+        "meaning_en": "name",
+        "meaning_mm": "နာမည်"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -1325,7 +2719,24 @@
     "audio": "",
     "image": "",
     "strokes": "9",
-    "status": true
+    "status": true,
+    "mnemonic": "A person (彳) walking with tiny steps and falling behind — someone lagging to the rear.",
+    "radical": "Radical: 彳 (step/walk) — the walking radical on the left.",
+    "stroke_hint": "彳 on left (three strokes), then 幺 (small/tiny), then 夂 (going slowly) on right.",
+    "examples": [
+      {
+        "japanese": "後で",
+        "reading": "あとで",
+        "meaning_en": "later, after",
+        "meaning_mm": "နောက်မှ"
+      },
+      {
+        "japanese": "午後",
+        "reading": "ごご",
+        "meaning_en": "afternoon, PM",
+        "meaning_mm": "နေ့လည်ပိုင်း"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -1341,7 +2752,24 @@
     "audio": "",
     "image": "",
     "strokes": "12",
-    "status": true
+    "status": true,
+    "mnemonic": "Sunlight (日) streaming through the crack of a gate (門) — the gap or interval between two panels.",
+    "radical": "Radical: 門 (gate) + 日 (sun) — sun in the gap of a gate.",
+    "stroke_hint": "Write 門 outer frame first, then 日 (sun box) inside.",
+    "examples": [
+      {
+        "japanese": "時間",
+        "reading": "じかん",
+        "meaning_en": "time, hours",
+        "meaning_mm": "အချိန်"
+      },
+      {
+        "japanese": "間",
+        "reading": "あいだ",
+        "meaning_en": "between, interval",
+        "meaning_mm": "ကြားနား"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -1357,7 +2785,24 @@
     "audio": "",
     "image": "",
     "strokes": "5",
-    "status": true
+    "status": true,
+    "mnemonic": "Evening (夕) with a divination mark (卜) — going outside at evening to read the stars.",
+    "radical": "Radical: 夕 (evening) + 卜 (divination) — stepping outside under the evening sky.",
+    "stroke_hint": "Evening strokes (夕) on left, then divination strokes (卜 — vertical and short horizontal) on right.",
+    "examples": [
+      {
+        "japanese": "外国",
+        "reading": "がいこく",
+        "meaning_en": "foreign country",
+        "meaning_mm": "နိုင်ငံခြား"
+      },
+      {
+        "japanese": "外",
+        "reading": "そと",
+        "meaning_en": "outside",
+        "meaning_mm": "အပြင်"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -1373,7 +2818,24 @@
     "audio": "",
     "image": "",
     "strokes": "8",
-    "status": true
+    "status": true,
+    "mnemonic": "A precious jewel (玉) enclosed within borders (囗) — a treasured gem protected by a nation's walls.",
+    "radical": "Radical: 囗 (enclosure) + 玉 (jewel) — a jewel enclosed, symbolizing a protected nation.",
+    "stroke_hint": "Outer box (囗) first, then 玉 (king 王 with a dot) inside, then close bottom of box.",
+    "examples": [
+      {
+        "japanese": "外国",
+        "reading": "がいこく",
+        "meaning_en": "foreign country",
+        "meaning_mm": "နိုင်ငံခြား"
+      },
+      {
+        "japanese": "国語",
+        "reading": "こくご",
+        "meaning_en": "Japanese language (school subject)",
+        "meaning_mm": "ဂျပန်ဘာသာ (ကျောင်းဘာသာ)"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -1389,7 +2851,24 @@
     "audio": "",
     "image": "",
     "strokes": "4",
-    "status": true
+    "status": true,
+    "mnemonic": "A big (大) person with a line above their head — the sky above all people, the great heavens.",
+    "radical": "Radical: 大 (big) + 一 (one line) — the greatest thing of all: the sky.",
+    "stroke_hint": "Top horizontal stroke first, then the big (大) shape: horizontal through middle and two diagonal legs.",
+    "examples": [
+      {
+        "japanese": "天気",
+        "reading": "てんき",
+        "meaning_en": "weather",
+        "meaning_mm": "ရာသီဥတု"
+      },
+      {
+        "japanese": "天国",
+        "reading": "てんごく",
+        "meaning_en": "heaven, paradise",
+        "meaning_mm": "極楽净土"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -1405,7 +2884,24 @@
     "audio": "",
     "image": "",
     "strokes": "6",
-    "status": true
+    "status": true,
+    "mnemonic": "Steam lines (气) with rice/energy (米 variant) — rice cooking, steam rising: the essence of energy and spirit.",
+    "radical": "Radical: 气 (air/steam) — the air/breath radical surrounding inner energy.",
+    "stroke_hint": "Top left stroke, then middle horizontal, then curved right stroke for 气, then 米 strokes inside.",
+    "examples": [
+      {
+        "japanese": "天気",
+        "reading": "てんき",
+        "meaning_en": "weather",
+        "meaning_mm": "ရာသီဥတု"
+      },
+      {
+        "japanese": "元気",
+        "reading": "げんき",
+        "meaning_en": "energetic, healthy",
+        "meaning_mm": "ကျန်းမာ တက်ကြွသော"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -1421,7 +2917,24 @@
     "audio": "",
     "image": "",
     "strokes": "8",
-    "status": true
+    "status": true,
+    "mnemonic": "A horizontal roof with four drops hanging below — like rain clouds with drops falling from a canopy.",
+    "radical": "Radical: 雨 (rain) — the rain radical, found in all weather-related kanji.",
+    "stroke_hint": "Top horizontal stroke, then vertical, then horizontal to form roof, then four dot strokes inside.",
+    "examples": [
+      {
+        "japanese": "雨",
+        "reading": "あめ",
+        "meaning_en": "rain",
+        "meaning_mm": "မိုး"
+      },
+      {
+        "japanese": "雨天",
+        "reading": "うてん",
+        "meaning_en": "rainy weather",
+        "meaning_mm": "မိုးရွာသောရာသီဥတု"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -1437,7 +2950,24 @@
     "audio": "",
     "image": "",
     "strokes": "13",
-    "status": true
+    "status": true,
+    "mnemonic": "Rain (雨) with lightning (申) below — a lightning bolt striking in the rain, the source of electricity.",
+    "radical": "Radical: 雨 (rain) — rain on top, from which lightning originates.",
+    "stroke_hint": "Write 雨 on top, then 申 (rice paddy with a vertical — lightning bolt) below.",
+    "examples": [
+      {
+        "japanese": "電話",
+        "reading": "でんわ",
+        "meaning_en": "telephone",
+        "meaning_mm": "ဖုန်း"
+      },
+      {
+        "japanese": "電車",
+        "reading": "でんしゃ",
+        "meaning_en": "electric train",
+        "meaning_mm": "မီးရထား"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -1453,7 +2983,24 @@
     "audio": "",
     "image": "",
     "strokes": "7",
-    "status": true
+    "status": true,
+    "mnemonic": "A wheel viewed from above — the central axle and crossbars of a cart wheel.",
+    "radical": "Radical: 車 (vehicle/wheel) — the vehicle radical.",
+    "stroke_hint": "Top horizontal, then vertical down through center, then middle horizontal, then bottom horizontal.",
+    "examples": [
+      {
+        "japanese": "電車",
+        "reading": "でんしゃ",
+        "meaning_en": "electric train",
+        "meaning_mm": "မီးရထား"
+      },
+      {
+        "japanese": "車",
+        "reading": "くるま",
+        "meaning_en": "car",
+        "meaning_mm": "ကား"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -1469,7 +3016,24 @@
     "audio": "",
     "image": "",
     "strokes": "12",
-    "status": true
+    "status": true,
+    "mnemonic": "A head/neck (首) with a movement radical (辶) — going forward with your head up, following a path.",
+    "radical": "Radical: 辶 (movement/road) + 首 (neck/head) — head moving along a road.",
+    "stroke_hint": "首 (neck) strokes first, then 辶 (movement radical) wrapping around the bottom.",
+    "examples": [
+      {
+        "japanese": "道",
+        "reading": "みち",
+        "meaning_en": "road, path",
+        "meaning_mm": "လမ်း"
+      },
+      {
+        "japanese": "北海道",
+        "reading": "ほっかいどう",
+        "meaning_en": "Hokkaido",
+        "meaning_mm": "ဟော့ကိုင်ဒိုး"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -1485,7 +3049,24 @@
     "audio": "",
     "image": "",
     "strokes": "8",
-    "status": true
+    "status": true,
+    "mnemonic": "A roof (广) over divination marks (占) — like predicting the best spot under cover to set up a market stall.",
+    "radical": "Radical: 广 (roof/canopy) + 占 (occupy/divine) — occupying a spot under a roof for business.",
+    "stroke_hint": "Roof (广) stroke first, then 占 (卜 + 口) inside.",
+    "examples": [
+      {
+        "japanese": "お店",
+        "reading": "おみせ",
+        "meaning_en": "shop, store",
+        "meaning_mm": "ဆိုင်"
+      },
+      {
+        "japanese": "本屋",
+        "reading": "ほんや",
+        "meaning_en": "bookstore",
+        "meaning_mm": "စာအုပ်ဆိုင်"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -1501,7 +3082,24 @@
     "audio": "",
     "image": "",
     "strokes": "7",
-    "status": true
+    "status": true,
+    "mnemonic": "Grass (艹) above a changing figure (化) — a bud transforming and blooming into a flower.",
+    "radical": "Radical: 艹 (grass/plant) — plants on top, signifying flora.",
+    "stroke_hint": "Two grass strokes on top (艹), then 化 (changing person) below on right.",
+    "examples": [
+      {
+        "japanese": "花",
+        "reading": "はな",
+        "meaning_en": "flower",
+        "meaning_mm": "ပန်း"
+      },
+      {
+        "japanese": "花見",
+        "reading": "はなみ",
+        "meaning_en": "cherry blossom viewing",
+        "meaning_mm": "ချယ်ရီပန်း ကြည့်ခြင်း"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -1517,7 +3115,24 @@
     "audio": "",
     "image": "",
     "strokes": "5",
-    "status": true
+    "status": true,
+    "mnemonic": "A sun (日) with an extra bright stroke on top — sunlight so intense it bleaches everything pure white.",
+    "radical": "Radical: 白 (white) — the white radical.",
+    "stroke_hint": "Top short vertical/dot stroke, then the sun box shape (日 — outer box with inner horizontal).",
+    "examples": [
+      {
+        "japanese": "白い",
+        "reading": "しろい",
+        "meaning_en": "white",
+        "meaning_mm": "အဖြူရောင်"
+      },
+      {
+        "japanese": "白紙",
+        "reading": "はくし",
+        "meaning_en": "blank paper",
+        "meaning_mm": "ကာဂဇ်မဖြူ"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -1533,7 +3148,24 @@
     "audio": "",
     "image": "",
     "strokes": "8",
-    "status": true
+    "status": true,
+    "mnemonic": "Like a person with very long flowing hair — the village elder with the longest hair is the leader.",
+    "radical": "Radical: 長 (long) — the long radical.",
+    "stroke_hint": "Top strokes form the hair flowing outward, then a central vertical with crossing strokes.",
+    "examples": [
+      {
+        "japanese": "長い",
+        "reading": "ながい",
+        "meaning_en": "long",
+        "meaning_mm": "ရှည်သော"
+      },
+      {
+        "japanese": "校長",
+        "reading": "こうちょう",
+        "meaning_en": "school principal",
+        "meaning_mm": "ကျောင်းအုပ်ကြီး"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -1549,7 +3181,24 @@
     "audio": "",
     "image": "",
     "strokes": "5",
-    "status": true
+    "status": true,
+    "mnemonic": "Ten (十) generations of mouths (口) passing down the story — so many mouths have told this tale, it's ancient.",
+    "radical": "Radical: 十 (ten) + 口 (mouth) — ten mouths = ten generations = old.",
+    "stroke_hint": "Cross (十) on top, then mouth box (口) below.",
+    "examples": [
+      {
+        "japanese": "古い",
+        "reading": "ふるい",
+        "meaning_en": "old (things)",
+        "meaning_mm": "ဟောင်းသော"
+      },
+      {
+        "japanese": "古代",
+        "reading": "こだい",
+        "meaning_en": "ancient times",
+        "meaning_mm": "ရှေးခေတ်"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -1565,7 +3214,24 @@
     "audio": "",
     "image": "",
     "strokes": "6",
-    "status": true
+    "status": true,
+    "mnemonic": "Two evening moons (夕夕) stacked — so many nights have passed, it means 'many.'",
+    "radical": "Radical: 夕 (evening) doubled — two evening marks suggesting abundance.",
+    "stroke_hint": "Upper 夕 (two strokes with dot), then lower 夕 slightly offset.",
+    "examples": [
+      {
+        "japanese": "多い",
+        "reading": "おおい",
+        "meaning_en": "many, much",
+        "meaning_mm": "များသော"
+      },
+      {
+        "japanese": "多分",
+        "reading": "たぶん",
+        "meaning_en": "probably",
+        "meaning_mm": "ဖြစ်နိုင်သည်"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -1581,7 +3247,24 @@
     "audio": "",
     "image": "",
     "strokes": "4",
-    "status": true
+    "status": true,
+    "mnemonic": "Small (小) with an extra break stroke — even smaller than small, just a tiny little bit.",
+    "radical": "Radical: 小 (small) + extra diagonal — diminished further, just a few.",
+    "stroke_hint": "Short left stroke, then diagonal stroke, then right-falling stroke from top.",
+    "examples": [
+      {
+        "japanese": "少し",
+        "reading": "すこし",
+        "meaning_en": "a little, a bit",
+        "meaning_mm": "နည်းနည်း"
+      },
+      {
+        "japanese": "少ない",
+        "reading": "すくない",
+        "meaning_en": "few, scarce",
+        "meaning_mm": "နည်းသော"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -1597,7 +3280,24 @@
     "audio": "",
     "image": "",
     "strokes": "6",
-    "status": true
+    "status": true,
+    "mnemonic": "A roof with people gathering underneath — people coming together under a shelter to meet.",
+    "radical": "Radical: 亼 (gather) + 人 (person) — multiple people assembling.",
+    "stroke_hint": "Top inverted-V (roof shape), then two horizontal strokes, then 人 (two diagonal strokes) below.",
+    "examples": [
+      {
+        "japanese": "会う",
+        "reading": "あう",
+        "meaning_en": "to meet",
+        "meaning_mm": "ဆုံသည်"
+      },
+      {
+        "japanese": "会社",
+        "reading": "かいしゃ",
+        "meaning_en": "company",
+        "meaning_mm": "ကုမ္ပဏီ"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -1613,7 +3313,24 @@
     "audio": "",
     "image": "",
     "strokes": "7",
-    "status": true
+    "status": true,
+    "mnemonic": "A sacred altar (示) on earthen ground (土) — a place of worship or gathering built on soil, like a company or shrine.",
+    "radical": "Radical: 示 (show/altar) — the altar radical on the left.",
+    "stroke_hint": "示 (altar: top horizontal, vertical, then three short strokes) on left, then 土 on right.",
+    "examples": [
+      {
+        "japanese": "会社",
+        "reading": "かいしゃ",
+        "meaning_en": "company",
+        "meaning_mm": "ကုမ္ပဏီ"
+      },
+      {
+        "japanese": "神社",
+        "reading": "じんじゃ",
+        "meaning_en": "Shinto shrine",
+        "meaning_mm": "ရှင်တိုဘုရားကျောင်း"
+      }
+    ]
   },
   {
     "level_id": "N5",
@@ -1629,6 +3346,23 @@
     "audio": "",
     "image": "",
     "strokes": "8",
-    "status": true
+    "status": true,
+    "mnemonic": "A hole (穴) that work (工) has made — like drilling through something until it's hollow: empty sky.",
+    "radical": "Radical: 穴 (hole/cave) + 工 (work) — work carving out a hollow space.",
+    "stroke_hint": "Roof strokes (宀), then 八 inside (穴 shape), then 工 (three strokes) below.",
+    "examples": [
+      {
+        "japanese": "空",
+        "reading": "そら",
+        "meaning_en": "sky",
+        "meaning_mm": "မိုးကောင်းကင်"
+      },
+      {
+        "japanese": "空港",
+        "reading": "くうこう",
+        "meaning_en": "airport",
+        "meaning_mm": "လေဆိပ်"
+      }
+    ]
   }
 ]

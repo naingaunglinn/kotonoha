@@ -7,6 +7,15 @@
     "transcript": "A: おはようございます。\nB: おはようございます。おげんきですか。\nA: はい、げんきです。ありがとうございます。Bさんは？\nB: わたしもげんきです。きょうはいいてんきですね。\nA: そうですね。きょうはあたたかいです。\nB: じゃ、また。\nA: さようなら。",
     "translation_en": "A: Good morning.\nB: Good morning. How are you?\nA: Yes, I'm fine. Thank you. And you?\nB: I'm fine too. The weather is nice today, isn't it?\nA: That's right. It's warm today.\nB: Well, see you.\nA: Goodbye.",
     "translation_mm": "A: မင်္ဂလာပါ။\nB: မင်္ဂလာပါ။ ကျန်းမာပါသလား။\nA: ဟုတ်ကဲ့ ကျန်းမာပါတယ်။ ကျေးဇူးတင်ပါတယ်။ Bကော။\nB: ကျွန်တော်လည်း ကျန်းမာပါတယ်။ ဒီနေ့ ရာသီဥတု ကောင်းတယ်နော်။\nA: ဟုတ်ပါတယ်။ ဒီနေ့ နွေးပါတယ်။\nB: ဒါဆို ထပ်တွေ့မယ်နော်။\nA: ဂါဒ္ဘိုင်း။",
+    "sentences": [
+      { "text": "おはようございます。" },
+      { "text": "おはようございます。おげんきですか。" },
+      { "text": "はい、げんきです。ありがとうございます。Bさんは？" },
+      { "text": "わたしもげんきです。きょうはいいてんきですね。" },
+      { "text": "そうですね。きょうはあたたかいです。" },
+      { "text": "じゃ、また。" },
+      { "text": "さようなら。" }
+    ],
     "questions": [
       {
         "question": "きょうのてんきはどうですか。",
@@ -31,6 +40,17 @@
     "transcript": "はじめまして。わたしはアウンです。ミャンマーじんです。２２さいです。だいがくのがくせいです。せんもんはコンピューターです。にほんごをべんきょうしています。にほんのアニメがすきです。どうぞよろしくおねがいします。",
     "translation_en": "Nice to meet you. I am Aung. I am from Myanmar. I am 22 years old. I am a university student. My major is computer science. I am studying Japanese. I like Japanese anime. Please treat me well.",
     "translation_mm": "တွေ့ရတာဝမ်းသာပါတယ်။ ကျွန်တော် အောင်ပါ။ မြန်မာလူမျိုးပါ။ အသက် ၂၂ နှစ်ပါ။ တက္ကသိုလ်ကျောင်းသားပါ။ အထူးပြု ဘာသာက ကွန်ပျူတာပါ။ ဂျပန်စာ လေ့လာနေပါတယ်။ ဂျပန်အန်နီမေးကို ကြိုက်ပါတယ်။ ခင်ခင်မင်မင် ဆက်ဆံပေးပါ။",
+    "sentences": [
+      { "text": "はじめまして。" },
+      { "text": "わたしはアウンです。" },
+      { "text": "ミャンマーじんです。" },
+      { "text": "２２さいです。" },
+      { "text": "だいがくのがくせいです。" },
+      { "text": "せんもんはコンピューターです。" },
+      { "text": "にほんごをべんきょうしています。" },
+      { "text": "にほんのアニメがすきです。" },
+      { "text": "どうぞよろしくおねがいします。" }
+    ],
     "questions": [
       {
         "question": "アウンさんはなにじんですか。",
@@ -61,6 +81,15 @@
     "transcript": "てんいん: いらっしゃいませ。\nきゃく: すみません、このシャツはいくらですか。\nてんいん: ３０００えんです。\nきゃく: もうすこしやすいのはありますか。\nてんいん: はい、こちらは２０００えんです。\nきゃく: いいですね。じゃ、このあかいのをください。\nてんいん: はい、２０００えんです。ありがとうございます。",
     "translation_en": "Staff: Welcome.\nCustomer: Excuse me, how much is this shirt?\nStaff: It's 3000 yen.\nCustomer: Do you have something a little cheaper?\nStaff: Yes, this one is 2000 yen.\nCustomer: That's nice. Then, please give me this red one.\nStaff: Sure, that's 2000 yen. Thank you.",
     "translation_mm": "ဝန်ထမ်း: ကြိုဆိုပါတယ်။\nဧည့်သည်: တစ်ဆိတ်လောက်၊ ဒီရှပ်အင်္ကျီ ဘယ်လောက်ပါလဲ။\nဝန်ထမ်း: ၃၀၀၀ ယန်းပါ။\nဧည့်သည်: နည်းနည်း ဈေးပိုပေါတာ ရှိပါသလား။\nဝန်ထမ်း: ဟုတ်ကဲ့ ဒါဆိုရင် ၂၀၀၀ ယန်းပါ။\nဧည့်သည်: ကောင်းတယ်။ ဒါဆို ဒီအနီရောင်တစ်ထည် ပေးပါ။\nဝန်ထမ်း: ဟုတ်ကဲ့ ၂၀၀၀ ယန်းပါ။ ကျေးဇူးတင်ပါတယ်။",
+    "sentences": [
+      { "text": "いらっしゃいませ。" },
+      { "text": "すみません、このシャツはいくらですか。" },
+      { "text": "３０００えんです。" },
+      { "text": "もうすこしやすいのはありますか。" },
+      { "text": "はい、こちらは２０００えんです。" },
+      { "text": "いいですね。じゃ、このあかいのをください。" },
+      { "text": "はい、２０００えんです。ありがとうございます。" }
+    ],
     "questions": [
       {
         "question": "さいしょのシャツはいくらですか。",
@@ -91,6 +120,18 @@
     "transcript": "A: もしもし、たなかさんですか。\nB: はい、たなかです。\nA: あ、リンです。あしたのパーティーのことですが。\nB: はい、なんですか。\nA: なんじからですか。\nB: ごご６じからです。\nA: どこですか。\nB: えきのまえのレストラン「さくら」です。\nA: わかりました。ありがとうございます。じゃ、あした。\nB: はい、またあした。",
     "translation_en": "A: Hello, is this Mr. Tanaka?\nB: Yes, this is Tanaka.\nA: Oh, this is Lin. It's about tomorrow's party.\nB: Yes, what is it?\nA: What time does it start?\nB: From 6 PM.\nA: Where is it?\nB: It's at the restaurant 'Sakura' in front of the station.\nA: I understand. Thank you. See you tomorrow.\nB: Yes, see you tomorrow.",
     "translation_mm": "A: ဟယ်လို၊ ကိုတာနာကာလား။\nB: ဟုတ်ကဲ့ တာနာကာပါ။\nA: အ၊ လင်းပါ။ မနက်ဖြန် ပါတီအကြောင်းပါ။\nB: ဟုတ်ကဲ့ ဘာလဲ။\nA: ဘယ်နှနာရီကတည်းကလဲ။\nB: ညနေ ၆ နာရီကနေပါ။\nA: ဘယ်မှာလဲ။\nB: ဘူတာရှေ့က စားသောက်ဆိုင် \"ဆာကူရာ\" မှာပါ။\nA: နားလည်ပါပြီ။ ကျေးဇူးပါ။ ဒါဆို မနက်ဖြန် တွေ့မယ်နော်။\nB: ဟုတ်ကဲ့ မနက်ဖြန် တွေ့မယ်။",
+    "sentences": [
+      { "text": "もしもし、たなかさんですか。" },
+      { "text": "はい、たなかです。" },
+      { "text": "あ、リンです。あしたのパーティーのことですが。" },
+      { "text": "はい、なんですか。" },
+      { "text": "なんじからですか。" },
+      { "text": "ごご６じからです。" },
+      { "text": "どこですか。" },
+      { "text": "えきのまえのレストラン「さくら」です。" },
+      { "text": "わかりました。ありがとうございます。じゃ、あした。" },
+      { "text": "はい、またあした。" }
+    ],
     "questions": [
       {
         "question": "パーティーはなんじからですか。",
@@ -121,6 +162,16 @@
     "transcript": "A: すみません、ゆうびんきょくはどこですか。\nB: ゆうびんきょくですか。このみちをまっすぐいってください。\nA: はい。\nB: つぎのしんごうをみぎにまがってください。ゆうびんきょくはひだりがわにあります。\nA: しんごうをみぎですね。\nB: はい、そうです。ここからあるいて５ふんぐらいです。\nA: わかりました。どうもありがとうございます。\nB: いいえ。",
     "translation_en": "A: Excuse me, where is the post office?\nB: The post office? Please go straight on this road.\nA: Yes.\nB: Please turn right at the next traffic light. The post office is on the left side.\nA: Right at the traffic light, right?\nB: Yes, that's correct. It's about a 5-minute walk from here.\nA: I understand. Thank you very much.\nB: You're welcome.",
     "translation_mm": "A: တစ်ဆိတ်လောက်ပါ၊ စာတိုက် ဘယ်မှာရှိပါသလဲ။\nB: စာတိုက်လား။ ဒီလမ်းကို တည့်တည့် သွားပါ။\nA: ဟုတ်ကဲ့။\nB: နောက် မီးပွိုင့်မှာ ညာဘက်ကို ကွေ့ပါ။ စာတိုက်က ဘယ်ဘက်ခြမ်းမှာ ရှိပါတယ်။\nA: မီးပွိုင့်မှာ ညာကို ကွေ့ရမှာလား။\nB: ဟုတ်ကဲ့ မှန်ပါတယ်။ ဒီကနေ လမ်းလျှောက်ရင် ၅ မိနစ်လောက် ကြာပါတယ်။\nA: နားလည်ပါပြီ။ ကျေးဇူးအများကြီး တင်ပါတယ်။\nB: ရပါတယ်။",
+    "sentences": [
+      { "text": "すみません、ゆうびんきょくはどこですか。" },
+      { "text": "ゆうびんきょくですか。このみちをまっすぐいってください。" },
+      { "text": "はい。" },
+      { "text": "つぎのしんごうをみぎにまがってください。ゆうびんきょくはひだりがわにあります。" },
+      { "text": "しんごうをみぎですね。" },
+      { "text": "はい、そうです。ここからあるいて５ふんぐらいです。" },
+      { "text": "わかりました。どうもありがとうございます。" },
+      { "text": "いいえ。" }
+    ],
     "questions": [
       {
         "question": "Aさんはどこへいきたいですか。",
@@ -151,6 +202,17 @@
     "transcript": "てんいん: いらっしゃいませ。なんめいさまですか。\nきゃく: ふたりです。\nてんいん: こちらへどうぞ。メニューです。\nきゃく: ありがとうございます。すみません、このやきにくていしょくはなんですか。\nてんいん: やきにくとごはんとみそしるとサラダのセットです。\nきゃく: じゃ、やきにくていしょくをひとつと、てんぷらうどんをひとつおねがいします。\nてんいん: おのみものはいかがですか。\nきゃく: おちゃをふたつください。\nてんいん: かしこまりました。しょうしょうおまちください。",
     "translation_en": "Staff: Welcome. How many guests?\nCustomer: Two.\nStaff: This way please. Here's the menu.\nCustomer: Thank you. Excuse me, what is this yakiniku set meal?\nStaff: It's a set of grilled meat, rice, miso soup, and salad.\nCustomer: Then, one yakiniku set meal and one tempura udon please.\nStaff: Would you like something to drink?\nCustomer: Two teas please.\nStaff: Certainly. Please wait a moment.",
     "translation_mm": "ဝန်ထမ်း: ကြိုဆိုပါတယ်။ ဘယ်နှစ်ယောက်ပါလဲ။\nဧည့်သည်: နှစ်ယောက်ပါ။\nဝန်ထမ်း: ဒီဘက်ကို ကြွပါ။ မီနူးပါ။\nဧည့်သည်: ကျေးဇူးပါ။ တစ်ဆိတ်လောက်ပါ ဒီ ယကီးနိကုအစုံက ဘာပါလဲ။\nဝန်ထမ်း: ကင်အသားနဲ့ ထမင်း၊ မီဆိုဟင်းရည်၊ သုပ် အစုံပါ။\nဧည့်သည်: ဒါဆို ယကီးနိကုအစုံ တစ်ခုနဲ့ တင်ပူရာဥဒုံး တစ်ခု ပေးပါ။\nဝန်ထမ်း: အချိုရည် သောက်ပါမလား။\nဧည့်သည်: လက်ဖက်ရည် နှစ်ခွက်ပေးပါ။\nဝန်ထမ်း: ဟုတ်ကဲ့ ခဏ စောင့်ပေးပါ။",
+    "sentences": [
+      { "text": "いらっしゃいませ。なんめいさまですか。" },
+      { "text": "ふたりです。" },
+      { "text": "こちらへどうぞ。メニューです。" },
+      { "text": "ありがとうございます。すみません、このやきにくていしょくはなんですか。" },
+      { "text": "やきにくとごはんとみそしるとサラダのセットです。" },
+      { "text": "じゃ、やきにくていしょくをひとつと、てんぷらうどんをひとつおねがいします。" },
+      { "text": "おのみものはいかがですか。" },
+      { "text": "おちゃをふたつください。" },
+      { "text": "かしこまりました。しょうしょうおまちください。" }
+    ],
     "questions": [
       {
         "question": "なんにんですか。",
