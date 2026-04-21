@@ -108,6 +108,23 @@ const generateQuestions = (
   });
 };
 
+// --- Find word by string helper ---
+const findVocabByString = (str: string, vocab: VocabularyProps[], mode: QuizMode): VocabularyProps | undefined => {
+  return vocab.find(v => {
+    switch (mode) {
+      case 'jp-en':
+      case 'audio-jp':
+        return v.meaning === str;
+      case 'en-jp':
+        return v.word === str;
+      case 'jp-mm':
+        return v.meaning_mm === str;
+      default:
+        return false;
+    }
+  });
+};
+
 const VocabularyQuiz = ({ vocab, pageVocab, completedWords, onClose }: VocabularyQuizProps) => {
   // Quiz phases: 'setup' | 'playing' | 'review'
   const [phase, setPhase] = useState<'setup' | 'playing' | 'review'>('setup');
@@ -434,20 +451,57 @@ const VocabularyQuiz = ({ vocab, pageVocab, completedWords, onClose }: Vocabular
 
             {/* Feedback + Next */}
             {selectedAnswer && (
-              <div className="mt-6 flex items-center justify-between">
-                <div className={`text-sm font-bold ${selectedAnswer === currentQuestion.correctAnswer ? 'text-emerald-600' : 'text-red-500'
-                  }`}>
-                  {selectedAnswer === currentQuestion.correctAnswer
-                    ? '✓ Correct!'
-                    : `✗ The answer was: ${currentQuestion.correctAnswer}`}
+              <div className="mt-6 bg-white rounded-2xl p-5 border border-black/5 shadow-sm">
+                <div className="flex flex-col gap-4">
+                  <div className="flex items-center justify-between">
+                    <div className={`text-sm font-bold flex items-center gap-2 ${selectedAnswer === currentQuestion.correctAnswer ? 'text-emerald-600' : 'text-red-500'
+                      }`}>
+                      {selectedAnswer === currentQuestion.correctAnswer ? <CheckCircle2 className="w-5 h-5" /> : <XCircle className="w-5 h-5" />}
+                      {selectedAnswer === currentQuestion.correctAnswer
+                        ? 'Correct!'
+                        : `The answer was: ${currentQuestion.correctAnswer}`}
+                    </div>
+                    <button
+                      onClick={handleNext}
+                      className="flex items-center gap-2 px-5 py-2.5 bg-[#3E3636] text-white rounded-xl font-bold hover:bg-[#3E3636]/80 transition-all active:scale-95 shadow-md shadow-black/10"
+                    >
+                      {currentIndex + 1 >= questions.length ? 'Results' : 'Next'}
+                      <ChevronRight className="w-4 h-4" />
+                    </button>
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-3">
+                    <div className="p-3 bg-blue-50/50 rounded-xl border border-blue-100">
+                      <p className="text-[10px] text-blue-400 font-bold uppercase mb-1 tracking-wider">English</p>
+                      <p className="text-sm font-extrabold text-blue-800 leading-tight">{currentQuestion.word.meaning}</p>
+                    </div>
+                    <div className="p-3 bg-emerald-50/50 rounded-xl border border-emerald-100">
+                      <p className="text-[10px] text-emerald-400 font-bold uppercase mb-1 tracking-wider">Myanmar</p>
+                      <p className="text-sm font-extrabold text-emerald-800 leading-tight">{currentQuestion.word.meaning_mm}</p>
+                    </div>
+                  </div>
+
+                  {selectedAnswer !== currentQuestion.correctAnswer && (() => {
+                    const wrongWord = findVocabByString(selectedAnswer, vocab, config.mode);
+                    if (!wrongWord) return null;
+                    return (
+                      <div className="p-3 bg-red-50/30 rounded-xl border border-red-100 flex items-center justify-between gap-3">
+                        <div className="min-w-0">
+                          <p className="text-[10px] text-red-400 font-bold uppercase mb-1 tracking-wider">Your choice: {selectedAnswer}</p>
+                          <p className="text-xs text-red-800 font-bold truncate">
+                            {wrongWord.meaning} • {wrongWord.meaning_mm}
+                          </p>
+                        </div>
+                        <button
+                          onClick={() => speak(wrongWord.word || '')}
+                          className="p-2 rounded-full bg-red-100/50 text-red-600 hover:bg-red-100 transition-colors"
+                        >
+                          <Volume2 className="w-4 h-4" />
+                        </button>
+                      </div>
+                    );
+                  })()}
                 </div>
-                <button
-                  onClick={handleNext}
-                  className="flex items-center gap-2 px-6 py-3 bg-[#3E3636] text-white rounded-xl font-bold hover:bg-[#3E3636]/80 transition-all active:scale-95"
-                >
-                  {currentIndex + 1 >= questions.length ? 'See Results' : 'Next'}
-                  <ChevronRight className="w-4 h-4" />
-                </button>
               </div>
             )}
           </div>
@@ -481,28 +535,51 @@ const VocabularyQuiz = ({ vocab, pageVocab, completedWords, onClose }: Vocabular
             {/* Wrong Answers Review */}
             {wrongResults.length > 0 && (
               <div>
-                <h3 className="text-sm font-bold text-[#3E3636]/60 uppercase tracking-wider mb-3">
+                <h3 className="text-sm font-bold text-[#3E3636]/60 uppercase tracking-wider mb-3 font-outfit">
                   Review incorrect ({wrongResults.length})
                 </h3>
-                <div className="space-y-2">
-                  {wrongResults.map((r, idx) => (
-                    <div key={idx} className="bg-white rounded-xl p-4 border border-red-100 flex items-center justify-between gap-4">
-                      <div className="flex-1 min-w-0">
-                        <p className="font-bold text-[#3E3636] truncate">{r.question.word.word}</p>
-                        <p className="text-xs text-[#3E3636]/50">{r.question.word.spelling}</p>
+                <div className="space-y-4">
+                  {wrongResults.map((r, idx) => {
+                    const wrongWord = findVocabByString(r.selectedAnswer, vocab, config.mode);
+                    return (
+                      <div key={idx} className="bg-white rounded-2xl p-5 border border-red-100 flex items-center justify-between gap-4 shadow-sm hover:shadow-md transition-shadow">
+                        <div className="flex-1 min-w-0">
+                          <p className="text-2xl font-bold text-[#3E3636] mb-1">{r.question.word.word}</p>
+                          <p className="text-[11px] text-[#3E3636]/40 font-bold uppercase tracking-widest mb-3">{r.question.word.spelling}</p>
+                          <div className="flex flex-wrap gap-2">
+                            <span className="text-[11px] px-2.5 py-1.5 bg-blue-50 text-blue-600 rounded-xl font-extrabold border border-blue-100 shadow-sm">
+                              {r.question.word.meaning}
+                            </span>
+                            <span className="text-[11px] px-2.5 py-1.5 bg-emerald-50 text-emerald-600 rounded-xl font-extrabold border border-emerald-100 shadow-sm">
+                              {r.question.word.meaning_mm}
+                            </span>
+                          </div>
+                        </div>
+
+                        <div className="flex flex-col items-end gap-3 flex-shrink-0">
+                          <div className="text-right">
+                            <p className="text-[10px] text-red-400 font-bold uppercase tracking-tighter leading-none mb-1">You picked</p>
+                            <p className="text-sm text-red-500 font-bold line-through">{r.selectedAnswer}</p>
+                            {wrongWord && (
+                              <p className="text-[10px] text-red-400 italic">({wrongWord.meaning})</p>
+                            )}
+                          </div>
+                          
+                          <div className="text-right pt-2 border-t border-black/5 w-full">
+                            <p className="text-[10px] text-emerald-500 font-bold uppercase tracking-tighter leading-none mb-1">Correct</p>
+                            <p className="text-md font-black text-emerald-600">{r.question.correctAnswer}</p>
+                          </div>
+                        </div>
+
+                        <button
+                          onClick={() => speak(r.question.word.word || '')}
+                          className="p-3 rounded-full bg-[#F5EDED] hover:bg-[#D72323]/10 text-gray-400 hover:text-[#D72323] transition-all flex-shrink-0"
+                        >
+                          <Volume2 className="w-5 h-5" />
+                        </button>
                       </div>
-                      <div className="text-right flex-shrink-0">
-                        <p className="text-xs text-red-400 line-through">{r.selectedAnswer}</p>
-                        <p className="text-sm font-bold text-emerald-600">{r.question.correctAnswer}</p>
-                      </div>
-                      <button
-                        onClick={() => speak(r.question.word.word || '')}
-                        className="p-2 rounded-full hover:bg-[#F5EDED] transition-colors flex-shrink-0"
-                      >
-                        <Volume2 className="w-4 h-4 text-[#3E3636]/50" />
-                      </button>
-                    </div>
-                  ))}
+                    );
+                  })}
                 </div>
               </div>
             )}

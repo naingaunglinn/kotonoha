@@ -280,7 +280,41 @@ const LessonContentPage = () => {
         );
         if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
         const data = await response.json();
-        setVocabData(data);
+        
+        // Normalize generated properties to ensure pagination and filters match perfectly
+        const normalizedData = data.map((item: any) => {
+          let pos = item.part_of_speech;
+          if (pos) {
+            const p = pos.toLowerCase();
+            if (p.includes('noun') || p.includes('counter')) pos = 'Noun';
+            else if (p.includes('verb')) pos = 'Verb';
+            else if (p.includes('adj')) pos = 'Adjective';
+            else if (p.includes('adv')) pos = 'Adverb';
+            else if (p.includes('particle')) pos = 'Particle';
+            else if (p.includes('expression') || p.includes('phrase') || p.includes('conjunction') || p.includes('suffix') || p.includes('pronoun')) pos = 'Expression';
+            else pos = 'Noun';
+          }
+
+          let form = item.formality;
+          if (form) {
+            const f = form.toLowerCase();
+            if (f.includes('formal')) form = 'Formal';
+            else if (f.includes('casual')) form = 'Casual';
+            else form = 'Neutral';
+          }
+
+          let tag = item.tag;
+          if (Array.isArray(tag)) {
+            tag = tag.length > 0 ? tag[0] : null;
+          }
+          if (tag && typeof tag === 'string') {
+            tag = tag.charAt(0).toUpperCase() + tag.slice(1);
+          }
+
+          return { ...item, part_of_speech: pos, formality: form, tag };
+        });
+
+        setVocabData(normalizedData);
       } catch (error) {
         console.error("Failed to fetch vocabulary data:", error);
       }
