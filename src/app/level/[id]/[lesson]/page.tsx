@@ -29,16 +29,16 @@ const LESSON_LABELS: Record<string, string> = {
 
 const WORDS_PER_PAGE = 80;
 const GRAMMAR_PER_PAGE = 6;
-const KANJI_PER_PAGE = 10;
+const KANJI_PER_PAGE = 12;
 
 const POS_FILTERS: Array<{ label: string; value: PartOfSpeech | 'All' }> = [
-  { label: 'All',        value: 'All' },
-  { label: '名詞 Noun',   value: 'Noun' },
-  { label: '動詞 Verb',   value: 'Verb' },
-  { label: '形容詞 Adj',  value: 'Adjective' },
-  { label: '副詞 Adv',   value: 'Adverb' },
-  { label: '助詞 Part',  value: 'Particle' },
-  { label: '表現 Expr',  value: 'Expression' },
+  { label: 'All', value: 'All' },
+  { label: '名詞 Noun', value: 'Noun' },
+  { label: '動詞 Verb', value: 'Verb' },
+  { label: '形容詞 Adj', value: 'Adjective' },
+  { label: '副詞 Adv', value: 'Adverb' },
+  { label: '助詞 Part', value: 'Particle' },
+  { label: '表現 Expr', value: 'Expression' },
 ];
 const COMPLETED_STORAGE_KEY = (levelId: string) => `kotonoha_vocab_completed_n${levelId}`;
 
@@ -313,7 +313,7 @@ const LessonContentPage = () => {
         );
         if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
         const data = await response.json();
-        
+
         // Normalize generated properties to ensure pagination and filters match perfectly
         const normalizedData = data.map((item: any) => {
           let pos = item.part_of_speech;
@@ -563,11 +563,10 @@ const LessonContentPage = () => {
                 <button
                   key={value}
                   onClick={() => setPosFilter(value)}
-                  className={`px-3 py-1.5 rounded-full text-xs font-bold transition-all active:scale-95 ${
-                    posFilter === value
-                      ? 'bg-[#D72323] text-white shadow-md shadow-[#D72323]/30'
-                      : 'bg-white text-[#3E3636] border border-[#3E3636]/15 hover:border-[#D72323]/40'
-                  }`}
+                  className={`px-3 py-1.5 rounded-full text-xs font-bold transition-all active:scale-95 ${posFilter === value
+                    ? 'bg-[#D72323] text-white shadow-md shadow-[#D72323]/30'
+                    : 'bg-white text-[#3E3636] border border-[#3E3636]/15 hover:border-[#D72323]/40'
+                    }`}
                 >
                   {label}
                 </button>
@@ -658,7 +657,7 @@ const LessonContentPage = () => {
                 Points {grammarStart}–{grammarEnd} of {grammar.length}
               </div>
             </div>
-            
+
             <PaginationControls
               currentPage={currentPage}
               totalPages={totalPages}
@@ -679,7 +678,7 @@ const LessonContentPage = () => {
                 Characters {kanjiStart}–{kanjiEnd} of {kanji.length}
               </div>
             </div>
-            
+
             <PaginationControls
               currentPage={currentPage}
               totalPages={totalPages}
