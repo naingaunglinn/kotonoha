@@ -8,7 +8,7 @@ type QuizMode = 'jp-en' | 'en-jp' | 'jp-mm' | 'audio-jp';
 interface QuizConfig {
   mode: QuizMode;
   questionCount: number;
-  sourceFilter: 'all' | 'page' | 'incomplete';
+  sourceFilter: 'all' | 'page' | 'incomplete' | 'completed';
 }
 
 interface QuizQuestion {
@@ -153,17 +153,25 @@ const VocabularyQuiz = ({ vocab, pageVocab, completedWords, onClose }: Vocabular
     [vocab, completedWords]
   );
 
+  // Completed words
+  const completedVocab = useMemo(
+    () => vocab.filter((w) => completedWords.has(w.word || '')),
+    [vocab, completedWords]
+  );
+
   const getSourceWords = useCallback(() => {
     switch (config.sourceFilter) {
       case 'page':
         return pageVocab;
       case 'incomplete':
         return incompleteVocab;
+      case 'completed':
+        return completedVocab;
       case 'all':
       default:
         return vocab;
     }
-  }, [config.sourceFilter, pageVocab, incompleteVocab, vocab]);
+  }, [config.sourceFilter, pageVocab, incompleteVocab, completedVocab, vocab]);
 
   const availableCount = getSourceWords().length;
 
@@ -288,6 +296,7 @@ const VocabularyQuiz = ({ vocab, pageVocab, completedWords, onClose }: Vocabular
                 {[
                   { key: 'page' as const, label: `This Page (${pageVocab.length})` },
                   { key: 'incomplete' as const, label: `Not Studied (${incompleteVocab.length})` },
+                  { key: 'completed' as const, label: `Studied (${completedVocab.length})` },
                   { key: 'all' as const, label: `All Words (${vocab.length})` },
                 ].map(({ key, label }) => (
                   <button
