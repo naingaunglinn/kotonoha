@@ -28,6 +28,8 @@ const LESSON_LABELS: Record<string, string> = {
 };
 
 const WORDS_PER_PAGE = 80;
+const GRAMMAR_PER_PAGE = 6;
+const KANJI_PER_PAGE = 10;
 
 const POS_FILTERS: Array<{ label: string; value: PartOfSpeech | 'All' }> = [
   { label: 'All',        value: 'All' },
@@ -197,10 +199,18 @@ const LessonContentPage = () => {
   useEffect(() => {
     if (lesson === 'vocab') {
       setCompletedWords(loadCompletedSet(id));
+    }
 
-      const savedPage = localStorage.getItem(`kotonoha_vocab_page_${id}`);
-      if (savedPage) {
-        const parsed = parseInt(savedPage, 10);
+    const savedPage = localStorage.getItem(`kotonoha_${lesson}_page_${id}`);
+    if (savedPage) {
+      const parsed = parseInt(savedPage, 10);
+      if (!isNaN(parsed) && parsed >= 1) {
+        setCurrentPage(parsed);
+      }
+    } else if (lesson === 'vocab') {
+      const oldSavedPage = localStorage.getItem(`kotonoha_vocab_page_${id}`);
+      if (oldSavedPage) {
+        const parsed = parseInt(oldSavedPage, 10);
         if (!isNaN(parsed) && parsed >= 1) {
           setCurrentPage(parsed);
         }
@@ -234,16 +244,25 @@ const LessonContentPage = () => {
   const handlePageChange = useCallback((page: number) => {
     setCurrentPage(page);
     setIsShuffled(false); // Reset shuffle when changing page
-    localStorage.setItem(`kotonoha_vocab_page_${id}`, String(page));
+    localStorage.setItem(`kotonoha_${lesson}_page_${id}`, String(page));
     // Scroll to top
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, [id]);
+  }, [id, lesson]);
 
   // Pagination calculations
   const totalPages = useMemo(() => {
-    if (!vocab || vocab.length === 0) return 1;
-    return Math.ceil(vocab.length / WORDS_PER_PAGE);
-  }, [vocab]);
+    if (lesson === 'vocab') {
+      if (!vocab || vocab.length === 0) return 1;
+      return Math.ceil(vocab.length / WORDS_PER_PAGE);
+    } else if (lesson === 'grammar') {
+      if (!grammar || grammar.length === 0) return 1;
+      return Math.ceil(grammar.length / GRAMMAR_PER_PAGE);
+    } else if (lesson === 'kanji') {
+      if (!kanji || kanji.length === 0) return 1;
+      return Math.ceil(kanji.length / KANJI_PER_PAGE);
+    }
+    return 1;
+  }, [vocab, grammar, kanji, lesson]);
 
   const paginatedVocab = useMemo(() => {
     if (!vocab || vocab.length === 0) return [];
@@ -251,6 +270,20 @@ const LessonContentPage = () => {
     const endIndex = startIndex + WORDS_PER_PAGE;
     return vocab.slice(startIndex, endIndex);
   }, [vocab, currentPage]);
+
+  const paginatedGrammar = useMemo(() => {
+    if (!grammar || grammar.length === 0) return [];
+    const startIndex = (currentPage - 1) * GRAMMAR_PER_PAGE;
+    const endIndex = startIndex + GRAMMAR_PER_PAGE;
+    return grammar.slice(startIndex, endIndex);
+  }, [grammar, currentPage]);
+
+  const paginatedKanji = useMemo(() => {
+    if (!kanji || kanji.length === 0) return [];
+    const startIndex = (currentPage - 1) * KANJI_PER_PAGE;
+    const endIndex = startIndex + KANJI_PER_PAGE;
+    return kanji.slice(startIndex, endIndex);
+  }, [kanji, currentPage]);
 
   // Track shuffled version of current page
   const [shuffledPageVocab, setShuffledPageVocab] = useState<VocabularyProps[]>([]);
@@ -393,9 +426,15 @@ const LessonContentPage = () => {
     setIsShuffled(true);
   };
 
-  // Compute the global word range for current page
+  // Compute the global range for current page
   const pageStartWord = (currentPage - 1) * WORDS_PER_PAGE + 1;
   const pageEndWord = Math.min(currentPage * WORDS_PER_PAGE, vocab?.length || 0);
+
+  const grammarStart = (currentPage - 1) * GRAMMAR_PER_PAGE + 1;
+  const grammarEnd = Math.min(currentPage * GRAMMAR_PER_PAGE, grammar?.length || 0);
+
+  const kanjiStart = (currentPage - 1) * KANJI_PER_PAGE + 1;
+  const kanjiEnd = Math.min(currentPage * KANJI_PER_PAGE, kanji?.length || 0);
 
   let content;
   let header;
@@ -426,8 +465,8 @@ const LessonContentPage = () => {
       'title': 'Kanji',
       'description': `Learn ${kanji?.length} fundamental kanji characters with readings and meanings.`
     }
-    if (kanji) {
-      content = kanji?.map(item => <KanjiCard key={item.word} item={item} />);
+    if (kanji && kanji.length > 0) {
+      content = paginatedKanji.map(item => <KanjiCard key={item.word} item={item} />);
     }
   }
   if (lesson == 'grammar') {
@@ -435,8 +474,8 @@ const LessonContentPage = () => {
       'title': 'Grammar',
       'description': `Understand ${grammar?.length} basic sentence structures and particles.`
     }
-    if (grammar) {
-      content = grammar?.map((item, index) => <GrammarPointCard key={index} item={item} />);
+    if (grammar && grammar.length > 0) {
+      content = paginatedGrammar.map((item, index) => <GrammarPointCard key={index} item={item} />);
     }
   }
   if (lesson == 'reading') {
@@ -606,6 +645,48 @@ const LessonContentPage = () => {
             </div>
           </div>
         )}
+
+        {/* Grammar-specific controls */}
+        {lesson === 'grammar' && grammar && grammar.length > 0 && (
+          <div className="mt-6 space-y-4">
+            <div className="flex items-center justify-center gap-3">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#3E3636] text-white rounded-full text-sm font-bold shadow-md">
+                <Calendar className="w-4 h-4" />
+                <span>Page {currentPage} of {totalPages}</span>
+              </div>
+              <div className="text-sm text-[#3E3636]/60 font-medium">
+                Points {grammarStart}–{grammarEnd} of {grammar.length}
+              </div>
+            </div>
+            
+            <PaginationControls
+              currentPage={currentPage}
+              totalPages={totalPages}
+              onPageChange={handlePageChange}
+            />
+          </div>
+        )}
+
+        {/* Kanji-specific controls */}
+        {lesson === 'kanji' && kanji && kanji.length > 0 && (
+          <div className="mt-6 space-y-4">
+            <div className="flex items-center justify-center gap-3">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#3E3636] text-white rounded-full text-sm font-bold shadow-md">
+                <Calendar className="w-4 h-4" />
+                <span>Page {currentPage} of {totalPages}</span>
+              </div>
+              <div className="text-sm text-[#3E3636]/60 font-medium">
+                Characters {kanjiStart}–{kanjiEnd} of {kanji.length}
+              </div>
+            </div>
+            
+            <PaginationControls
+              currentPage={currentPage}
+              totalPages={totalPages}
+              onPageChange={handlePageChange}
+            />
+          </div>
+        )}
       </div>
       {content ? (
         <>
@@ -619,6 +700,34 @@ const LessonContentPage = () => {
               {/* Bottom word range */}
               <div className="text-center text-sm text-[#3E3636]/60 font-medium">
                 Words {pageStartWord}–{pageEndWord} of {vocab.length}
+              </div>
+              <PaginationControls
+                currentPage={currentPage}
+                totalPages={totalPages}
+                onPageChange={handlePageChange}
+              />
+            </div>
+          )}
+
+          {/* Bottom Pagination for grammar */}
+          {lesson === 'grammar' && grammar && grammar.length > 0 && (
+            <div className="mt-12 space-y-4">
+              <div className="text-center text-sm text-[#3E3636]/60 font-medium">
+                Points {grammarStart}–{grammarEnd} of {grammar.length}
+              </div>
+              <PaginationControls
+                currentPage={currentPage}
+                totalPages={totalPages}
+                onPageChange={handlePageChange}
+              />
+            </div>
+          )}
+
+          {/* Bottom Pagination for kanji */}
+          {lesson === 'kanji' && kanji && kanji.length > 0 && (
+            <div className="mt-12 space-y-4">
+              <div className="text-center text-sm text-[#3E3636]/60 font-medium">
+                Characters {kanjiStart}–{kanjiEnd} of {kanji.length}
               </div>
               <PaginationControls
                 currentPage={currentPage}

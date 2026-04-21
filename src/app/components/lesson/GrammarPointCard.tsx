@@ -22,7 +22,7 @@ const GrammarPointCard = ({ item }: GrammarPointCardProps) => {
   const [showConjugation, setShowConjugation] = useState(false);
 
   return (
-    <div className="col-span-3 bg-white/80 p-6 rounded-2xl border border-black/5">
+    <div className="col-span-2 bg-white/80 p-6 rounded-2xl border border-black/5">
       {/* Title Section */}
       <div className="flex items-center justify-between">
         <div>
