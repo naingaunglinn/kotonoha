@@ -1,11 +1,14 @@
 'use client';
 import { KanjiProps } from "@/types";
-import { Volume2, Lightbulb, Layers, PenLine, ChevronDown, ChevronUp } from "lucide-react";
+import { Volume2, Lightbulb, Layers, PenLine, ChevronDown, ChevronUp, Check } from "lucide-react";
 import { useState } from "react";
 
 interface KanjiCardProps {
   key: string | null;
   item: KanjiProps;
+  label?: number;
+  isCompleted?: boolean;
+  onToggleComplete?: (kanji: string) => void;
 }
 
 // --- SPEECH UTILITY ---
@@ -18,19 +21,52 @@ const speak = (text: string, lang = 'ja-JP') => {
   window.speechSynthesis.speak(utterance);
 };
 
-const KanjiCard = ({ item }: KanjiCardProps) => {
+const KanjiCard = ({ item, label, isCompleted = false, onToggleComplete }: KanjiCardProps) => {
   const [showMnemonic, setShowMnemonic] = useState(false);
 
   return (
-    <div className="bg-white/80 p-5 rounded-2xl border border-black/5 flex flex-col justify-between gap-3">
+    <div className={`p-5 rounded-2xl border-2 flex flex-col justify-between gap-3 relative transition-all duration-300 ${
+      isCompleted
+        ? 'bg-emerald-50/80 border-emerald-400/50'
+        : 'bg-white/80 border-black/5'
+    }`}>
+      {label !== undefined && (
+        <span className={`absolute -top-2.5 -left-2.5 w-8 h-8 rounded-full text-white text-xs font-bold flex items-center justify-center shadow-md transition-colors ${
+          isCompleted ? 'bg-emerald-500' : 'bg-[#3E3636]'
+        }`}>
+          {isCompleted ? <Check className="w-4 h-4" /> : label}
+        </span>
+      )}
+
+      {onToggleComplete && (
+        <button
+          onClick={() => onToggleComplete(item.word || '')}
+          className={`absolute top-2.5 right-2.5 w-11 h-11 sm:w-9 sm:h-9 rounded-xl border-2 flex items-center justify-center transition-all duration-200 z-10 ${
+            isCompleted
+              ? 'bg-emerald-500 border-emerald-500 text-white scale-105 shadow-md'
+              : 'bg-white border-[#3E3636]/25 text-[#3E3636]/35 hover:border-emerald-400 hover:text-emerald-500 hover:bg-emerald-50'
+          }`}
+          aria-pressed={isCompleted}
+          title={isCompleted ? "Mark as not studied" : "Mark as studied"}
+        >
+          <Check className="w-5 h-5 sm:w-4 sm:h-4" />
+        </button>
+      )}
+
       {/* Header: kanji + stroke count + audio */}
-      <div className="flex justify-between items-start">
-        <h3 className="text-7xl font-bold text-[#3E3636] leading-none">{item.word}</h3>
+      <div className="flex justify-between items-start pr-14 sm:pr-12">
+        <h3 className={`text-6xl sm:text-7xl font-bold leading-none transition-colors ${
+          isCompleted ? 'text-emerald-700' : 'text-[#3E3636]'
+        }`}>{item.word}</h3>
         <div className="text-right flex flex-col items-end gap-1">
           <div className="text-xs text-[#3E3636]/60 font-medium">{item.strokes} strokes</div>
           <button
             onClick={() => speak(item.word_kana || item.word || '')}
-            className="p-2 rounded-full bg-[#F5EDED] hover:bg-[#D72323] text-[#3E3636] hover:text-white transition-all duration-300"
+            className={`p-2 rounded-full hover:bg-[#D72323] hover:text-white transition-all duration-300 ${
+              isCompleted
+                ? 'bg-emerald-100 text-emerald-700'
+                : 'bg-[#F5EDED] text-[#3E3636]'
+            }`}
             title="Pronounce"
           >
             <Volume2 className="h-5 w-5" />

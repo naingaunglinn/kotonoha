@@ -6,6 +6,8 @@ interface ProgressBarProps {
   totalOnPage: number;
   completedTotal: number;
   totalWords: number;
+  label?: string;
+  doneMessage?: string;
 }
 
 export default function ProgressBar({
@@ -13,6 +15,8 @@ export default function ProgressBar({
   totalOnPage,
   completedTotal,
   totalWords,
+  label = "Today's Progress",
+  doneMessage = '🎉 All done for today! Great job!',
 }: ProgressBarProps) {
   const pagePercent = totalOnPage > 0 ? (completedOnPage / totalOnPage) * 100 : 0;
   const totalPercent = totalWords > 0 ? (completedTotal / totalWords) * 100 : 0;
@@ -22,7 +26,7 @@ export default function ProgressBar({
       <div className="flex items-center justify-between mb-2">
         <div className="flex items-center gap-2">
           <CheckCircle2 className="w-4 h-4 text-emerald-500" />
-          <span className="text-sm font-bold text-[#3E3636]">Today&apos;s Progress</span>
+          <span className="text-sm font-bold text-[#3E3636]">{label}</span>
         </div>
         <span className="text-sm font-bold text-emerald-600">
           {completedOnPage}/{totalOnPage}
@@ -41,7 +45,7 @@ export default function ProgressBar({
       </div>
       {pagePercent === 100 && (
         <p className="text-xs text-emerald-600 font-bold mt-1.5 text-center animate-pulse">
-          🎉 All done for today! Great job!
+          {doneMessage}
         </p>
       )}
 

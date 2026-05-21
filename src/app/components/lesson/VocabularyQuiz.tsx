@@ -7,6 +7,7 @@ import QuizGame from './quiz/QuizGame';
 import QuizResults from './quiz/QuizResults';
 import type { QuizConfig, QuizQuestion, QuizResult } from './quiz/types';
 import { generateQuestions } from './quiz/utils';
+import { useQuizKeyboard } from './quiz/useQuizKeyboard';
 
 interface VocabularyQuizProps {
   vocab: VocabularyProps[];
@@ -106,6 +107,14 @@ const VocabularyQuiz = ({ vocab, pageVocab, completedWords, onClose }: Vocabular
     document.body.style.overflow = 'hidden';
     return () => { document.body.style.overflow = ''; };
   }, []);
+
+  useQuizKeyboard({
+    active: phase === 'playing',
+    options: questions[currentIndex]?.options,
+    hasAnswered: selectedAnswer !== null,
+    onSelect: handleSelectAnswer,
+    onNext: handleNext,
+  });
 
   return (
     <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">

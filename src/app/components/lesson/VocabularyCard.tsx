@@ -83,19 +83,20 @@ const VocabularyCard = ({
       {onToggleComplete && (
         <button
           onClick={() => onToggleComplete(item.word || '')}
-          className={`absolute top-3 right-3 w-7 h-7 rounded-md border-2 flex items-center justify-center transition-all duration-200 ${
+          className={`absolute top-2.5 right-2.5 w-11 h-11 sm:w-9 sm:h-9 rounded-xl border-2 flex items-center justify-center transition-all duration-200 ${
             isCompleted
-              ? 'bg-emerald-500 border-emerald-500 text-white scale-110'
-              : 'border-[#3E3636]/20 text-transparent hover:border-emerald-400 hover:text-emerald-400'
+              ? 'bg-emerald-500 border-emerald-500 text-white scale-105 shadow-md'
+              : 'bg-white border-[#3E3636]/25 text-[#3E3636]/35 hover:border-emerald-400 hover:text-emerald-500 hover:bg-emerald-50'
           }`}
-          title={isCompleted ? "Mark as incomplete" : "Mark as complete"}
+          aria-pressed={isCompleted}
+          title={isCompleted ? 'Mark as not studied' : 'Mark as studied'}
         >
-          <Check className="w-4 h-4" />
+          <Check className="w-5 h-5 sm:w-4 sm:h-4" />
         </button>
       )}
 
       {/* Top row: badges + audio */}
-      <div className="flex items-center justify-between mb-2 pr-8">
+      <div className="flex items-center justify-between mb-2 pr-12 sm:pr-10">
         <div className="flex flex-wrap gap-1.5">
           {item.part_of_speech && (
             <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${POS_COLORS[item.part_of_speech]}`}>

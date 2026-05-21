@@ -5,15 +5,45 @@ import GrammarPointCard from "@/app/components/lesson/GrammarPointCard";
 import ReadingPassage from "@/app/components/lesson/ReadingPassage";
 import ListeningExercise from "@/app/components/lesson/ListeningExercise";
 import VocabularyQuiz from "@/app/components/lesson/VocabularyQuiz";
+import KanjiQuiz from "@/app/components/lesson/KanjiQuiz";
+import GrammarQuiz from "@/app/components/lesson/GrammarQuiz";
+import LevelSwitcher from "@/app/components/lesson/LevelSwitcher";
 import PaginationControls from "@/app/components/lesson/PaginationControls";
 import ProgressBar from "@/app/components/lesson/ProgressBar";
-import { ChevronLeft, Shuffle, Home, ChevronRight, Eye, EyeOff, Calendar, RotateCcw, BrainCircuit } from "lucide-react";
+import ConfirmDialog from "@/app/components/ConfirmDialog";
+import { ChevronLeft, Shuffle, Home, ChevronRight, Eye, EyeOff, Calendar, RotateCcw, BrainCircuit, Flame } from "lucide-react";
 import { VocabularyProps, PartOfSpeech } from "@/types";
 import { useParams } from "next/navigation";
 import { useEffect, useState, useMemo, useCallback } from "react";
 import Link from "next/link";
-import { loadCompletedSet, saveCompletedSet } from "./lessonStorage";
+import { loadCompletedSet, saveCompletedSet, LessonCategory } from "./lessonStorage";
 import { useLessonData } from "./useLessonData";
+import { loadStreak, getEffectiveStreak, recordStudyActivity } from "./streakStorage";
+
+const VISIBILITY_KEY = 'kotonoha_vocab_visibility';
+type VocabVisibility = { romaji: boolean; english: boolean; myanmar: boolean };
+const DEFAULT_VISIBILITY: VocabVisibility = { romaji: true, english: true, myanmar: true };
+
+const loadVisibility = (): VocabVisibility => {
+  try {
+    const raw = localStorage.getItem(VISIBILITY_KEY);
+    if (!raw) return DEFAULT_VISIBILITY;
+    const parsed = JSON.parse(raw);
+    return {
+      romaji: typeof parsed.romaji === 'boolean' ? parsed.romaji : true,
+      english: typeof parsed.english === 'boolean' ? parsed.english : true,
+      myanmar: typeof parsed.myanmar === 'boolean' ? parsed.myanmar : true,
+    };
+  } catch { return DEFAULT_VISIBILITY; }
+};
+
+const saveVisibility = (v: VocabVisibility) => {
+  localStorage.setItem(VISIBILITY_KEY, JSON.stringify(v));
+};
+
+const TRACKED_CATEGORIES: ReadonlyArray<LessonCategory> = ['vocab', 'kanji', 'grammar', 'reading', 'listening'];
+const isTrackedCategory = (lesson: string): lesson is LessonCategory =>
+  (TRACKED_CATEGORIES as ReadonlyArray<string>).includes(lesson);
 
 const LEVEL_LABELS: Record<string, string> = {
   "5": "N5",
@@ -32,8 +62,10 @@ const LESSON_LABELS: Record<string, string> = {
 };
 
 const WORDS_PER_PAGE = 80;
-const GRAMMAR_PER_PAGE = 6;
-const KANJI_PER_PAGE = 12;
+const GRAMMAR_PER_PAGE = 10;
+const KANJI_PER_PAGE = 20;
+const READING_PER_PAGE = 2;
+const LISTENING_PER_PAGE = 3;
 
 const POS_FILTERS: Array<{ label: string; value: PartOfSpeech | 'All' }> = [
   { label: 'All', value: 'All' },
@@ -50,27 +82,35 @@ const LessonContentPage = () => {
   const { id, lesson } = params!;
   const { vocab, kanji, grammar, reading, listening } = useLessonData(lesson, id);
 
-  // Global show/hide state for vocabulary
-  const [globalShowRomaji, setGlobalShowRomaji] = useState(false);
-  const [globalShowEnglish, setGlobalShowEnglish] = useState(false);
-  const [globalShowMyanmar, setGlobalShowMyanmar] = useState(false);
+  // Global show/hide state for vocabulary (default ON; persisted once user touches them)
+  const [globalShowRomaji, setGlobalShowRomaji] = useState(DEFAULT_VISIBILITY.romaji);
+  const [globalShowEnglish, setGlobalShowEnglish] = useState(DEFAULT_VISIBILITY.english);
+  const [globalShowMyanmar, setGlobalShowMyanmar] = useState(DEFAULT_VISIBILITY.myanmar);
 
   // Pagination state
   const [currentPage, setCurrentPage] = useState(1);
   const [isShuffled, setIsShuffled] = useState(false);
 
-  // Completion tracking state
-  const [completedWords, setCompletedWords] = useState<Set<string>>(new Set());
+  // Completion tracking state (active category's set; reloads on lesson change)
+  const [completedItems, setCompletedItems] = useState<Set<string>>(new Set());
 
   // Quiz state
   const [showQuiz, setShowQuiz] = useState(false);
+
+  // Reset-progress confirmation dialog
+  const [showResetConfirm, setShowResetConfirm] = useState(false);
+
+  // Streak (across calendar days; global across categories)
+  const [streakCount, setStreakCount] = useState(0);
 
   // POS filter (session-only, not persisted)
   const [posFilter, setPosFilter] = useState<PartOfSpeech | 'All'>('All');
 
   useEffect(() => {
-    if (lesson === 'vocab') {
-      setCompletedWords(loadCompletedSet(id));
+    if (isTrackedCategory(lesson)) {
+      setCompletedItems(loadCompletedSet(lesson, id));
+    } else {
+      setCompletedItems(new Set());
     }
 
     const savedPage = localStorage.getItem(`kotonoha_${lesson}_page_${id}`);
@@ -79,36 +119,63 @@ const LessonContentPage = () => {
       if (!isNaN(parsed) && parsed >= 1) {
         setCurrentPage(parsed);
       }
-    } else if (lesson === 'vocab') {
-      const oldSavedPage = localStorage.getItem(`kotonoha_vocab_page_${id}`);
-      if (oldSavedPage) {
-        const parsed = parseInt(oldSavedPage, 10);
-        if (!isNaN(parsed) && parsed >= 1) {
-          setCurrentPage(parsed);
-        }
-      }
     }
+
+    // Hydrate vocab visibility from localStorage (preserves user toggles across visits;
+    // falls back to DEFAULT_VISIBILITY for first-time users so cards aren't all "hidden").
+    const v = loadVisibility();
+    setGlobalShowRomaji(v.romaji);
+    setGlobalShowEnglish(v.english);
+    setGlobalShowMyanmar(v.myanmar);
+
+    // Streak: show 0 if the user has missed more than a day.
+    setStreakCount(getEffectiveStreak(loadStreak()));
   }, [lesson, id]);
 
-  const handleToggleComplete = useCallback((word: string) => {
-    setCompletedWords(prev => {
+  // Persist any visibility-toggle change so first-visit defaults are replaced
+  // by the user's chosen state on subsequent visits.
+  const updateVisibility = useCallback((patch: Partial<VocabVisibility>) => {
+    const next: VocabVisibility = {
+      romaji: patch.romaji ?? globalShowRomaji,
+      english: patch.english ?? globalShowEnglish,
+      myanmar: patch.myanmar ?? globalShowMyanmar,
+    };
+    if (patch.romaji !== undefined) setGlobalShowRomaji(patch.romaji);
+    if (patch.english !== undefined) setGlobalShowEnglish(patch.english);
+    if (patch.myanmar !== undefined) setGlobalShowMyanmar(patch.myanmar);
+    saveVisibility(next);
+  }, [globalShowRomaji, globalShowEnglish, globalShowMyanmar]);
+
+  const handleToggleComplete = useCallback((itemKey: string) => {
+    if (!isTrackedCategory(lesson)) return;
+    setCompletedItems(prev => {
       const next = new Set(prev);
-      if (next.has(word)) {
-        next.delete(word);
+      const wasComplete = next.has(itemKey);
+      if (wasComplete) {
+        next.delete(itemKey);
       } else {
-        next.add(word);
+        next.add(itemKey);
+        // Only credit the streak when newly completing — un-toggling shouldn't bump it.
+        const updated = recordStudyActivity();
+        setStreakCount(getEffectiveStreak(updated));
       }
-      saveCompletedSet(id, next);
+      saveCompletedSet(lesson, id, next);
       return next;
     });
-  }, [id]);
+  }, [id, lesson]);
 
   const handleResetCompletions = useCallback(() => {
-    if (window.confirm('Reset all completed words? This will clear your progress.')) {
-      setCompletedWords(new Set());
-      saveCompletedSet(id, new Set());
+    if (!isTrackedCategory(lesson)) return;
+    setShowResetConfirm(true);
+  }, [lesson]);
+
+  const confirmReset = useCallback(() => {
+    if (isTrackedCategory(lesson)) {
+      setCompletedItems(new Set());
+      saveCompletedSet(lesson, id, new Set());
     }
-  }, [id]);
+    setShowResetConfirm(false);
+  }, [id, lesson]);
 
   const handlePageChange = useCallback((page: number) => {
     setCurrentPage(page);
@@ -127,9 +194,15 @@ const LessonContentPage = () => {
     } else if (lesson === 'kanji') {
       if (!kanji || kanji.length === 0) return 1;
       return Math.ceil(kanji.length / KANJI_PER_PAGE);
+    } else if (lesson === 'reading') {
+      if (!reading || reading.length === 0) return 1;
+      return Math.ceil(reading.length / READING_PER_PAGE);
+    } else if (lesson === 'listening') {
+      if (!listening || listening.length === 0) return 1;
+      return Math.ceil(listening.length / LISTENING_PER_PAGE);
     }
     return 1;
-  }, [vocab, grammar, kanji, lesson]);
+  }, [vocab, grammar, kanji, reading, listening, lesson]);
 
   const paginatedVocab = useMemo(() => {
     if (!vocab || vocab.length === 0) return [];
@@ -149,6 +222,18 @@ const LessonContentPage = () => {
     return kanji.slice(startIndex, startIndex + KANJI_PER_PAGE);
   }, [kanji, currentPage]);
 
+  const paginatedReading = useMemo(() => {
+    if (!reading || reading.length === 0) return [];
+    const startIndex = (currentPage - 1) * READING_PER_PAGE;
+    return reading.slice(startIndex, startIndex + READING_PER_PAGE);
+  }, [reading, currentPage]);
+
+  const paginatedListening = useMemo(() => {
+    if (!listening || listening.length === 0) return [];
+    const startIndex = (currentPage - 1) * LISTENING_PER_PAGE;
+    return listening.slice(startIndex, startIndex + LISTENING_PER_PAGE);
+  }, [listening, currentPage]);
+
   const [shuffledPageVocab, setShuffledPageVocab] = useState<VocabularyProps[]>([]);
   const baseDisplayVocab = isShuffled ? shuffledPageVocab : paginatedVocab;
 
@@ -158,10 +243,26 @@ const LessonContentPage = () => {
   }, [baseDisplayVocab, posFilter]);
 
   const completedOnPage = useMemo(() => {
-    return paginatedVocab.filter(item => completedWords.has(item.word || '')).length;
-  }, [paginatedVocab, completedWords]);
+    return paginatedVocab.filter(item => completedItems.has(item.word || '')).length;
+  }, [paginatedVocab, completedItems]);
 
-  const completedTotal = completedWords.size;
+  const kanjiCompletedOnPage = useMemo(() => {
+    return paginatedKanji.filter(item => completedItems.has(item.word || '')).length;
+  }, [paginatedKanji, completedItems]);
+
+  const grammarCompletedOnPage = useMemo(() => {
+    return paginatedGrammar.filter(item => completedItems.has(item.title || '')).length;
+  }, [paginatedGrammar, completedItems]);
+
+  const readingCompletedOnPage = useMemo(() => {
+    return paginatedReading.filter(item => completedItems.has(item.title)).length;
+  }, [paginatedReading, completedItems]);
+
+  const listeningCompletedOnPage = useMemo(() => {
+    return paginatedListening.filter(item => completedItems.has(item.title)).length;
+  }, [paginatedListening, completedItems]);
+
+  const completedTotal = completedItems.size;
 
   const handleRandomizeVocab = () => {
     if (paginatedVocab.length === 0) return;
@@ -183,9 +284,15 @@ const LessonContentPage = () => {
   const kanjiStart = (currentPage - 1) * KANJI_PER_PAGE + 1;
   const kanjiEnd = Math.min(currentPage * KANJI_PER_PAGE, kanji?.length || 0);
 
+  const readingStart = (currentPage - 1) * READING_PER_PAGE + 1;
+  const readingEnd = Math.min(currentPage * READING_PER_PAGE, reading?.length || 0);
+
+  const listeningStart = (currentPage - 1) * LISTENING_PER_PAGE + 1;
+  const listeningEnd = Math.min(currentPage * LISTENING_PER_PAGE, listening?.length || 0);
+
   let content;
   let header;
-  let gridLayout = "grid-cols-1 md:grid-cols-4 gap-6";
+  let gridLayout = "grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6";
 
   if (lesson == 'vocab') {
     if (vocab && vocab.length > 0) {
@@ -194,7 +301,7 @@ const LessonContentPage = () => {
           key={index}
           item={item}
           label={isShuffled ? undefined : (pageStartWord + index)}
-          isCompleted={completedWords.has(item.word || '')}
+          isCompleted={completedItems.has(item.word || '')}
           onToggleComplete={handleToggleComplete}
           globalShowRomaji={globalShowRomaji}
           globalShowEnglish={globalShowEnglish}
@@ -213,7 +320,15 @@ const LessonContentPage = () => {
       'description': `Learn ${kanji?.length} fundamental kanji characters with readings and meanings.`
     }
     if (kanji && kanji.length > 0) {
-      content = paginatedKanji.map(item => <KanjiCard key={item.word} item={item} />);
+      content = paginatedKanji.map((item, index) => (
+        <KanjiCard
+          key={item.word}
+          item={item}
+          label={kanjiStart + index}
+          isCompleted={completedItems.has(item.word || '')}
+          onToggleComplete={handleToggleComplete}
+        />
+      ));
     }
   }
   if (lesson == 'grammar') {
@@ -222,7 +337,15 @@ const LessonContentPage = () => {
       'description': `Understand ${grammar?.length} basic sentence structures and particles.`
     }
     if (grammar && grammar.length > 0) {
-      content = paginatedGrammar.map((item, index) => <GrammarPointCard key={index} item={item} />);
+      content = paginatedGrammar.map((item, index) => (
+        <GrammarPointCard
+          key={index}
+          item={item}
+          label={grammarStart + index}
+          isCompleted={completedItems.has(item.title || '')}
+          onToggleComplete={handleToggleComplete}
+        />
+      ));
     }
   }
   if (lesson == 'reading') {
@@ -232,7 +355,16 @@ const LessonContentPage = () => {
       'description': `Practice comprehension with ${reading?.length} beginner-friendly passages.`
     }
     if (reading && reading.length > 0) {
-      content = reading.map((item, index) => <ReadingPassage key={index} data={item} />);
+      content = paginatedReading.map((item, index) => (
+        <ReadingPassage
+          key={item.title}
+          data={item}
+          label={readingStart + index}
+          isCompleted={completedItems.has(item.title)}
+          defaultExpanded={index === 0}
+          onComplete={handleToggleComplete}
+        />
+      ));
     }
   }
   if (lesson == 'listening') {
@@ -242,7 +374,16 @@ const LessonContentPage = () => {
       'description': `Train your ear with ${listening?.length} real-life conversation exercises.`
     }
     if (listening && listening.length > 0) {
-      content = listening.map((item, index) => <ListeningExercise key={index} data={item} />);
+      content = paginatedListening.map((item, index) => (
+        <ListeningExercise
+          key={item.title}
+          data={item}
+          label={listeningStart + index}
+          isCompleted={completedItems.has(item.title)}
+          defaultExpanded={index === 0}
+          onComplete={handleToggleComplete}
+        />
+      ));
     }
   }
 
@@ -251,7 +392,7 @@ const LessonContentPage = () => {
 
   return (
     <div className="max-w-8xl mx-auto pt-10 pb-24 px-4 sm:px-6 lg:px-8">
-      <nav className="flex items-center gap-1.5 text-sm text-[#3E3636]/50 mb-8">
+      <nav className="flex items-center flex-wrap gap-1.5 text-sm text-[#3E3636]/50 mb-8">
         <Link href="/" className="flex items-center gap-1 hover:text-[#D72323] transition-colors">
           <Home className="h-3.5 w-3.5" />
           <span>Home</span>
@@ -266,20 +407,30 @@ const LessonContentPage = () => {
 
       <div className="relative text-center mb-12 max-w-3xl mx-auto">
         <Link href={`/level/${id}`} className="absolute left-0 top-1/2 -translate-y-1/2 p-3 rounded-full hover:bg-[#3E3636]/10 transition-colors duration-300"><ChevronLeft className="h-6 w-6 text-[#3E3636]" /></Link>
-        <div className="inline-flex items-center gap-2 mb-3">
+        <div className="inline-flex items-center gap-2 mb-3 flex-wrap justify-center">
           <span className="px-3 py-1 rounded-full bg-[#D72323]/10 text-[#D72323] text-xs font-bold tracking-wider">
             {levelLabel}
           </span>
+          {streakCount > 0 && (
+            <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-orange-100 text-orange-700 text-xs font-bold tracking-wider" title={`${streakCount}-day study streak`}>
+              <Flame className="w-3.5 h-3.5" />
+              {streakCount}-day streak
+            </span>
+          )}
         </div>
         <h2 className="text-4xl md:text-5xl font-extrabold tracking-tighter">{header?.title}</h2>
         <p className="mt-3 text-lg text-[#3E3636]/70">{header?.description}</p>
+
+        <div className="mt-5">
+          <LevelSwitcher currentId={id} lesson={lesson} />
+        </div>
 
         {lesson === 'vocab' && vocab && vocab.length > 0 && (
           <div className="mt-6 space-y-4">
             <div className="flex items-center justify-center gap-3">
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#3E3636] text-white rounded-full text-sm font-bold shadow-md">
                 <Calendar className="w-4 h-4" />
-                <span>Day {currentPage} of {totalPages}</span>
+                <span>Set {currentPage} of {totalPages}</span>
               </div>
               <div className="text-sm text-[#3E3636]/60 font-medium">
                 Words {pageStartWord}–{pageEndWord} of {vocab.length}
@@ -291,6 +442,8 @@ const LessonContentPage = () => {
               totalOnPage={paginatedVocab.length}
               completedTotal={completedTotal}
               totalWords={vocab.length}
+              label="Today's Words"
+              doneMessage="🎉 80 words down — fantastic pace!"
             />
 
             <PaginationControls
@@ -348,7 +501,7 @@ const LessonContentPage = () => {
               )}
 
               <button
-                onClick={() => setGlobalShowRomaji(!globalShowRomaji)}
+                onClick={() => updateVisibility({ romaji: !globalShowRomaji })}
                 className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all active:scale-95 shadow-md ${globalShowRomaji
                   ? 'bg-[#D72323] text-white'
                   : 'bg-white text-[#3E3636] border border-[#3E3636]/20'
@@ -358,7 +511,7 @@ const LessonContentPage = () => {
                 <span>Romaji</span>
               </button>
               <button
-                onClick={() => setGlobalShowEnglish(!globalShowEnglish)}
+                onClick={() => updateVisibility({ english: !globalShowEnglish })}
                 className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all active:scale-95 shadow-md ${globalShowEnglish
                   ? 'bg-[#D72323] text-white'
                   : 'bg-white text-[#3E3636] border border-[#3E3636]/20'
@@ -368,7 +521,7 @@ const LessonContentPage = () => {
                 <span>English</span>
               </button>
               <button
-                onClick={() => setGlobalShowMyanmar(!globalShowMyanmar)}
+                onClick={() => updateVisibility({ myanmar: !globalShowMyanmar })}
                 className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all active:scale-95 shadow-md ${globalShowMyanmar
                   ? 'bg-[#D72323] text-white'
                   : 'bg-white text-[#3E3636] border border-[#3E3636]/20'
@@ -386,18 +539,47 @@ const LessonContentPage = () => {
             <div className="flex items-center justify-center gap-3">
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#3E3636] text-white rounded-full text-sm font-bold shadow-md">
                 <Calendar className="w-4 h-4" />
-                <span>Page {currentPage} of {totalPages}</span>
+                <span>Set {currentPage} of {totalPages}</span>
               </div>
               <div className="text-sm text-[#3E3636]/60 font-medium">
                 Points {grammarStart}–{grammarEnd} of {grammar.length}
               </div>
             </div>
 
+            <ProgressBar
+              completedOnPage={grammarCompletedOnPage}
+              totalOnPage={paginatedGrammar.length}
+              completedTotal={completedTotal}
+              totalWords={grammar.length}
+              label="Today's Grammar"
+              doneMessage="🎉 Patterns mastered for today — well done!"
+            />
+
             <PaginationControls
               currentPage={currentPage}
               totalPages={totalPages}
               onPageChange={handlePageChange}
             />
+
+            <div className="flex flex-wrap justify-center gap-3">
+              <button
+                onClick={() => setShowQuiz(true)}
+                className="flex items-center gap-2 px-6 py-2 bg-[#D72323] text-white rounded-full hover:bg-[#b91c1c] transition-all active:scale-95 shadow-md"
+              >
+                <BrainCircuit className="w-4 h-4" />
+                <span>Quiz</span>
+              </button>
+
+              {completedTotal > 0 && (
+                <button
+                  onClick={handleResetCompletions}
+                  className="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium bg-white text-[#3E3636] border border-[#3E3636]/20 hover:border-red-400 hover:text-red-500 transition-all active:scale-95 shadow-md"
+                >
+                  <RotateCcw className="w-4 h-4" />
+                  <span>Reset Progress</span>
+                </button>
+              )}
+            </div>
           </div>
         )}
 
@@ -406,21 +588,195 @@ const LessonContentPage = () => {
             <div className="flex items-center justify-center gap-3">
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#3E3636] text-white rounded-full text-sm font-bold shadow-md">
                 <Calendar className="w-4 h-4" />
-                <span>Page {currentPage} of {totalPages}</span>
+                <span>Set {currentPage} of {totalPages}</span>
               </div>
               <div className="text-sm text-[#3E3636]/60 font-medium">
                 Characters {kanjiStart}–{kanjiEnd} of {kanji.length}
               </div>
             </div>
 
+            <ProgressBar
+              completedOnPage={kanjiCompletedOnPage}
+              totalOnPage={paginatedKanji.length}
+              completedTotal={completedTotal}
+              totalWords={kanji.length}
+              label="Today's Kanji"
+              doneMessage="🎉 All kanji studied — your brushwork is paying off!"
+            />
+
             <PaginationControls
               currentPage={currentPage}
               totalPages={totalPages}
               onPageChange={handlePageChange}
             />
+
+            <div className="flex flex-wrap justify-center gap-3">
+              <button
+                onClick={() => setShowQuiz(true)}
+                className="flex items-center gap-2 px-6 py-2 bg-[#D72323] text-white rounded-full hover:bg-[#b91c1c] transition-all active:scale-95 shadow-md"
+              >
+                <BrainCircuit className="w-4 h-4" />
+                <span>Quiz</span>
+              </button>
+
+              {completedTotal > 0 && (
+                <button
+                  onClick={handleResetCompletions}
+                  className="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium bg-white text-[#3E3636] border border-[#3E3636]/20 hover:border-red-400 hover:text-red-500 transition-all active:scale-95 shadow-md"
+                >
+                  <RotateCcw className="w-4 h-4" />
+                  <span>Reset Progress</span>
+                </button>
+              )}
+            </div>
+          </div>
+        )}
+
+        {lesson === 'reading' && reading && reading.length > 0 && (
+          <div className="mt-6 space-y-4">
+            <div className="flex items-center justify-center gap-3">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#3E3636] text-white rounded-full text-sm font-bold shadow-md">
+                <Calendar className="w-4 h-4" />
+                <span>Set {currentPage} of {totalPages}</span>
+              </div>
+              <div className="text-sm text-[#3E3636]/60 font-medium">
+                Passages {readingStart}–{readingEnd} of {reading.length}
+              </div>
+            </div>
+
+            <ProgressBar
+              completedOnPage={readingCompletedOnPage}
+              totalOnPage={paginatedReading.length}
+              completedTotal={completedTotal}
+              totalWords={reading.length}
+              label="Today's Reading"
+              doneMessage="🎉 Both passages done — well read!"
+            />
+
+            <PaginationControls
+              currentPage={currentPage}
+              totalPages={totalPages}
+              onPageChange={handlePageChange}
+            />
+
+            <p className="text-xs text-[#3E3636]/50 italic">
+              Submit a passage&apos;s comprehension answers to mark it as studied.
+            </p>
+
+            {completedTotal > 0 && (
+              <div className="flex justify-center">
+                <button
+                  onClick={handleResetCompletions}
+                  className="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium bg-white text-[#3E3636] border border-[#3E3636]/20 hover:border-red-400 hover:text-red-500 transition-all active:scale-95 shadow-md"
+                >
+                  <RotateCcw className="w-4 h-4" />
+                  <span>Reset Progress</span>
+                </button>
+              </div>
+            )}
+          </div>
+        )}
+
+        {lesson === 'listening' && listening && listening.length > 0 && (
+          <div className="mt-6 space-y-4">
+            <div className="flex items-center justify-center gap-3">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#3E3636] text-white rounded-full text-sm font-bold shadow-md">
+                <Calendar className="w-4 h-4" />
+                <span>Set {currentPage} of {totalPages}</span>
+              </div>
+              <div className="text-sm text-[#3E3636]/60 font-medium">
+                Exercises {listeningStart}–{listeningEnd} of {listening.length}
+              </div>
+            </div>
+
+            <ProgressBar
+              completedOnPage={listeningCompletedOnPage}
+              totalOnPage={paginatedListening.length}
+              completedTotal={completedTotal}
+              totalWords={listening.length}
+              label="Today's Listening"
+              doneMessage="🎧 All ears! Today's exercises complete."
+            />
+
+            <PaginationControls
+              currentPage={currentPage}
+              totalPages={totalPages}
+              onPageChange={handlePageChange}
+            />
+
+            <p className="text-xs text-[#3E3636]/50 italic">
+              Submit an exercise&apos;s comprehension answers to mark it as studied.
+            </p>
+
+            {completedTotal > 0 && (
+              <div className="flex justify-center">
+                <button
+                  onClick={handleResetCompletions}
+                  className="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium bg-white text-[#3E3636] border border-[#3E3636]/20 hover:border-red-400 hover:text-red-500 transition-all active:scale-95 shadow-md"
+                >
+                  <RotateCcw className="w-4 h-4" />
+                  <span>Reset Progress</span>
+                </button>
+              </div>
+            )}
           </div>
         )}
       </div>
+      {isTrackedCategory(lesson) && content && (() => {
+        let done = 0;
+        let total = 0;
+        if (lesson === 'vocab') { done = completedOnPage; total = paginatedVocab.length; }
+        else if (lesson === 'kanji') { done = kanjiCompletedOnPage; total = paginatedKanji.length; }
+        else if (lesson === 'grammar') { done = grammarCompletedOnPage; total = paginatedGrammar.length; }
+        else if (lesson === 'reading') { done = readingCompletedOnPage; total = paginatedReading.length; }
+        else if (lesson === 'listening') { done = listeningCompletedOnPage; total = paginatedListening.length; }
+        const pct = total > 0 ? (done / total) * 100 : 0;
+        const hasQuiz = lesson === 'vocab' || lesson === 'kanji' || lesson === 'grammar';
+        return (
+          <div className="sticky top-20 z-30 -mx-4 sm:-mx-6 lg:-mx-8 mb-6 bg-[#F5EDED]/85 backdrop-blur-md border-y border-black/5">
+            <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5 flex items-center gap-3">
+              <div className="flex items-center gap-2 min-w-0">
+                <span className="text-xs font-bold text-[#3E3636] truncate">
+                  {lessonLabel}
+                </span>
+                <span className="hidden sm:inline text-xs text-[#3E3636]/50">·</span>
+                <span className="text-xs font-medium text-[#3E3636]/60 whitespace-nowrap">
+                  Set {currentPage}/{totalPages}
+                </span>
+              </div>
+
+              <div className="flex-1 min-w-0 flex items-center gap-2">
+                <div className="flex-1 h-1.5 bg-[#3E3636]/10 rounded-full overflow-hidden">
+                  <div
+                    className="h-full rounded-full transition-all duration-500"
+                    style={{
+                      width: `${pct}%`,
+                      background: pct === 100
+                        ? 'linear-gradient(90deg, #10b981, #059669)'
+                        : 'linear-gradient(90deg, #D72323, #ef4444)',
+                    }}
+                  />
+                </div>
+                <span className="text-[11px] font-bold text-[#3E3636]/70 whitespace-nowrap tabular-nums">
+                  {done}/{total}
+                </span>
+              </div>
+
+              {hasQuiz && (
+                <button
+                  onClick={() => setShowQuiz(true)}
+                  className="flex items-center gap-1.5 px-3 py-1.5 bg-[#D72323] text-white text-xs font-bold rounded-full hover:bg-[#b91c1c] transition-all active:scale-95 shadow-sm flex-shrink-0"
+                  title="Open quiz"
+                >
+                  <BrainCircuit className="w-3.5 h-3.5" />
+                  <span className="hidden sm:inline">Quiz</span>
+                </button>
+              )}
+            </div>
+          </div>
+        );
+      })()}
+
       {content ? (
         <>
           <div className={`grid ${gridLayout}`}>
@@ -465,6 +821,32 @@ const LessonContentPage = () => {
               />
             </div>
           )}
+
+          {lesson === 'reading' && reading && reading.length > 0 && (
+            <div className="mt-12 space-y-4">
+              <div className="text-center text-sm text-[#3E3636]/60 font-medium">
+                Passages {readingStart}–{readingEnd} of {reading.length}
+              </div>
+              <PaginationControls
+                currentPage={currentPage}
+                totalPages={totalPages}
+                onPageChange={handlePageChange}
+              />
+            </div>
+          )}
+
+          {lesson === 'listening' && listening && listening.length > 0 && (
+            <div className="mt-12 space-y-4">
+              <div className="text-center text-sm text-[#3E3636]/60 font-medium">
+                Exercises {listeningStart}–{listeningEnd} of {listening.length}
+              </div>
+              <PaginationControls
+                currentPage={currentPage}
+                totalPages={totalPages}
+                onPageChange={handlePageChange}
+              />
+            </div>
+          )}
         </>
       ) : (
         <div className="md:col-span-2 text-center p-10 bg-white/50 rounded-2xl">
@@ -472,14 +854,43 @@ const LessonContentPage = () => {
         </div>
       )}
 
-      {showQuiz && vocab && vocab.length > 0 && (
+      {showQuiz && lesson === 'vocab' && vocab && vocab.length > 0 && (
         <VocabularyQuiz
           vocab={vocab}
           pageVocab={paginatedVocab}
-          completedWords={completedWords}
+          completedWords={completedItems}
           onClose={() => setShowQuiz(false)}
         />
       )}
+
+      {showQuiz && lesson === 'kanji' && kanji && kanji.length > 0 && (
+        <KanjiQuiz
+          kanji={kanji}
+          pageKanji={paginatedKanji}
+          completedKanji={completedItems}
+          onClose={() => setShowQuiz(false)}
+        />
+      )}
+
+      {showQuiz && lesson === 'grammar' && grammar && grammar.length > 0 && (
+        <GrammarQuiz
+          grammar={grammar}
+          pageGrammar={paginatedGrammar}
+          completedGrammar={completedItems}
+          onClose={() => setShowQuiz(false)}
+        />
+      )}
+
+      <ConfirmDialog
+        open={showResetConfirm}
+        title="Reset progress?"
+        description={`This clears your completed ${LESSON_LABELS[lesson]?.toLowerCase() ?? lesson} for ${LEVEL_LABELS[id] ?? `Level ${id}`}. Your study streak isn't affected.`}
+        confirmLabel="Reset"
+        cancelLabel="Keep"
+        destructive
+        onConfirm={confirmReset}
+        onCancel={() => setShowResetConfirm(false)}
+      />
     </div>
   );
 };

@@ -176,12 +176,20 @@ const ExamTimer = ({ onExpire }: { onExpire: () => void }) => {
 };
 
 // --- Main component ---
-const ReadingPassage = ({ data }: { data: ReadingProps }) => {
+interface ReadingPassageProps {
+  data: ReadingProps;
+  label?: number;
+  isCompleted?: boolean;
+  defaultExpanded?: boolean;
+  onComplete?: (title: string) => void;
+}
+
+const ReadingPassage = ({ data, label, isCompleted = false, defaultExpanded = false, onComplete }: ReadingPassageProps) => {
   const [showTranslationEn, setShowTranslationEn] = useState(false);
   const [showTranslationMm, setShowTranslationMm] = useState(false);
   const [selectedAnswers, setSelectedAnswers] = useState<Record<number, string>>({});
   const [showResults, setShowResults] = useState(false);
-  const [expanded, setExpanded] = useState(false);
+  const [expanded, setExpanded] = useState(defaultExpanded);
   const [reReadMode, setReReadMode] = useState(false);
   const [timerExpired, setTimerExpired] = useState(false);
 
@@ -190,7 +198,10 @@ const ReadingPassage = ({ data }: { data: ReadingProps }) => {
     setSelectedAnswers(prev => ({ ...prev, [qIndex]: option }));
   };
 
-  const handleCheck = () => setShowResults(true);
+  const handleCheck = () => {
+    setShowResults(true);
+    if (!isCompleted) onComplete?.(data.title);
+  };
 
   const handleReset = () => {
     setSelectedAnswers({});
@@ -204,22 +215,45 @@ const ReadingPassage = ({ data }: { data: ReadingProps }) => {
   ).length;
 
   return (
-    <div className="bg-white rounded-2xl border border-[#3E3636]/10 overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
+    <div className={`relative rounded-2xl border-2 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 ${
+      isCompleted
+        ? 'bg-emerald-50/40 border-emerald-400/50'
+        : 'bg-white border-[#3E3636]/10'
+    }`}>
+      {label !== undefined && (
+        <span className={`absolute -top-2.5 -left-2.5 w-8 h-8 rounded-full text-white text-xs font-bold flex items-center justify-center shadow-md z-10 transition-colors ${
+          isCompleted ? 'bg-emerald-500' : 'bg-[#3E3636]'
+        }`}>
+          {isCompleted ? <CheckCircle className="w-4 h-4" /> : label}
+        </span>
+      )}
+
       {/* Header */}
       <div
         className="flex items-center justify-between p-5 cursor-pointer hover:bg-[#F5EDED]/50 transition-colors"
         onClick={() => setExpanded(!expanded)}
       >
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center flex-shrink-0">
+          <div className={`w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 ${
+            isCompleted
+              ? 'bg-gradient-to-br from-emerald-500 to-emerald-600'
+              : 'bg-gradient-to-br from-emerald-400 to-teal-500'
+          }`}>
             <BookOpen className="h-5 w-5 text-white" />
           </div>
           <div>
             <div className="flex items-center gap-2 flex-wrap">
-              <h3 className="text-lg font-bold text-[#3E3636]">{data.title}</h3>
+              <h3 className={`text-lg font-bold transition-colors ${
+                isCompleted ? 'text-emerald-700' : 'text-[#3E3636]'
+              }`}>{data.title}</h3>
               {data.difficulty && (
                 <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full border ${DIFFICULTY_STYLES[data.difficulty]}`}>
                   {data.difficulty}
+                </span>
+              )}
+              {isCompleted && (
+                <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-700 border border-emerald-200">
+                  ✓ Studied
                 </span>
               )}
             </div>

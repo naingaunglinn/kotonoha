@@ -1,11 +1,16 @@
 import type { PartOfSpeech, VocabularyProps } from "@/types";
 
-export const COMPLETED_STORAGE_KEY = (levelId: string) =>
-  `kotonoha_vocab_completed_n${levelId}`;
+export type LessonCategory = 'vocab' | 'kanji' | 'grammar' | 'reading' | 'listening';
 
-export const loadCompletedSet = (levelId: string): Set<string> => {
+export const completedStorageKey = (category: LessonCategory, levelId: string) =>
+  `kotonoha_${category}_completed_n${levelId}`;
+
+export const loadCompletedSet = (
+  category: LessonCategory,
+  levelId: string,
+): Set<string> => {
   try {
-    const raw = localStorage.getItem(COMPLETED_STORAGE_KEY(levelId));
+    const raw = localStorage.getItem(completedStorageKey(category, levelId));
     if (raw) {
       const arr = JSON.parse(raw);
       if (Array.isArray(arr)) return new Set(arr);
@@ -14,8 +19,15 @@ export const loadCompletedSet = (levelId: string): Set<string> => {
   return new Set();
 };
 
-export const saveCompletedSet = (levelId: string, set: Set<string>) => {
-  localStorage.setItem(COMPLETED_STORAGE_KEY(levelId), JSON.stringify([...set]));
+export const saveCompletedSet = (
+  category: LessonCategory,
+  levelId: string,
+  set: Set<string>,
+) => {
+  localStorage.setItem(
+    completedStorageKey(category, levelId),
+    JSON.stringify([...set]),
+  );
 };
 
 type RawVocabularyItem = Omit<VocabularyProps, 'part_of_speech' | 'formality' | 'tag'> & {

@@ -53,14 +53,22 @@ const speakText = (
   window.speechSynthesis.speak(utterance);
 };
 
-const ListeningExercise = ({ data }: { data: ListeningProps }) => {
+interface ListeningExerciseProps {
+  data: ListeningProps;
+  label?: number;
+  isCompleted?: boolean;
+  defaultExpanded?: boolean;
+  onComplete?: (title: string) => void;
+}
+
+const ListeningExercise = ({ data, label, isCompleted = false, defaultExpanded = false, onComplete }: ListeningExerciseProps) => {
   const [isPlaying, setIsPlaying]           = useState(false);
   const [showTranscript, setShowTranscript] = useState(false);
   const [showTranslationEn, setShowTranslationEn] = useState(false);
   const [showTranslationMm, setShowTranslationMm] = useState(false);
   const [selectedAnswers, setSelectedAnswers] = useState<Record<number, string>>({});
   const [showResults, setShowResults]       = useState(false);
-  const [expanded, setExpanded]             = useState(false);
+  const [expanded, setExpanded]             = useState(defaultExpanded);
   const [speed, setSpeed]                   = useState(0.8);
 
   // Listen-first mode: hide transcript & translations until all questions answered
@@ -119,7 +127,10 @@ const ListeningExercise = ({ data }: { data: ListeningProps }) => {
     setSelectedAnswers(prev => ({ ...prev, [qIndex]: option }));
   };
 
-  const handleCheck = () => setShowResults(true);
+  const handleCheck = () => {
+    setShowResults(true);
+    if (!isCompleted) onComplete?.(data.title);
+  };
 
   const handleReset = () => {
     setSelectedAnswers({});
@@ -132,18 +143,43 @@ const ListeningExercise = ({ data }: { data: ListeningProps }) => {
   ).length;
 
   return (
-    <div className="bg-white rounded-2xl border border-[#3E3636]/10 overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
+    <div className={`relative rounded-2xl border-2 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 ${
+      isCompleted
+        ? 'bg-emerald-50/40 border-emerald-400/50'
+        : 'bg-white border-[#3E3636]/10'
+    }`}>
+      {label !== undefined && (
+        <span className={`absolute -top-2.5 -left-2.5 w-8 h-8 rounded-full text-white text-xs font-bold flex items-center justify-center shadow-md z-10 transition-colors ${
+          isCompleted ? 'bg-emerald-500' : 'bg-[#3E3636]'
+        }`}>
+          {isCompleted ? <CheckCircle className="w-4 h-4" /> : label}
+        </span>
+      )}
+
       {/* Header */}
       <div
         className="flex items-center justify-between p-5 cursor-pointer hover:bg-[#F5EDED]/50 transition-colors"
         onClick={() => setExpanded(!expanded)}
       >
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-violet-400 to-purple-500 flex items-center justify-center flex-shrink-0">
+          <div className={`w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 ${
+            isCompleted
+              ? 'bg-gradient-to-br from-emerald-500 to-emerald-600'
+              : 'bg-gradient-to-br from-violet-400 to-purple-500'
+          }`}>
             <Headphones className="h-5 w-5 text-white" />
           </div>
           <div>
-            <h3 className="text-lg font-bold text-[#3E3636]">{data.title}</h3>
+            <div className="flex items-center gap-2 flex-wrap">
+              <h3 className={`text-lg font-bold transition-colors ${
+                isCompleted ? 'text-emerald-700' : 'text-[#3E3636]'
+              }`}>{data.title}</h3>
+              {isCompleted && (
+                <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-700 border border-emerald-200">
+                  ✓ Studied
+                </span>
+              )}
+            </div>
             <p className="text-sm text-[#3E3636]/60">{data.title_en} · {data.title_mm}</p>
           </div>
         </div>

@@ -1,11 +1,14 @@
 'use client';
 import { GrammarProps } from "@/types";
-import { Volume2, AlertTriangle, GraduationCap, Table } from "lucide-react";
+import { Volume2, AlertTriangle, GraduationCap, Table, Check } from "lucide-react";
 import { useState } from "react";
 
 interface GrammarPointCardProps {
   key: number | null;
   item: GrammarProps;
+  label?: number;
+  isCompleted?: boolean;
+  onToggleComplete?: (title: string) => void;
 }
 
 // --- SPEECH UTILITY ---
@@ -18,20 +21,51 @@ const speak = (text: string, lang = 'ja-JP') => {
   window.speechSynthesis.speak(utterance);
 };
 
-const GrammarPointCard = ({ item }: GrammarPointCardProps) => {
+const GrammarPointCard = ({ item, label, isCompleted = false, onToggleComplete }: GrammarPointCardProps) => {
   const [showConjugation, setShowConjugation] = useState(false);
 
   return (
-    <div className="col-span-2 bg-white/80 p-6 rounded-2xl border border-black/5">
+    <div className={`col-span-2 p-6 rounded-2xl border-2 relative transition-all duration-300 ${
+      isCompleted
+        ? 'bg-emerald-50/80 border-emerald-400/50'
+        : 'bg-white/80 border-black/5'
+    }`}>
+      {label !== undefined && (
+        <span className={`absolute -top-2.5 -left-2.5 w-8 h-8 rounded-full text-white text-xs font-bold flex items-center justify-center shadow-md transition-colors ${
+          isCompleted ? 'bg-emerald-500' : 'bg-[#3E3636]'
+        }`}>
+          {isCompleted ? <Check className="w-4 h-4" /> : label}
+        </span>
+      )}
+
+      {onToggleComplete && (
+        <button
+          onClick={() => onToggleComplete(item.title || '')}
+          className={`absolute top-3 right-3 w-11 h-11 sm:w-9 sm:h-9 rounded-xl border-2 flex items-center justify-center transition-all duration-200 z-10 ${
+            isCompleted
+              ? 'bg-emerald-500 border-emerald-500 text-white scale-105 shadow-md'
+              : 'bg-white border-[#3E3636]/25 text-[#3E3636]/35 hover:border-emerald-400 hover:text-emerald-500 hover:bg-emerald-50'
+          }`}
+          aria-pressed={isCompleted}
+          title={isCompleted ? "Mark as not studied" : "Mark as studied"}
+        >
+          <Check className="w-5 h-5 sm:w-4 sm:h-4" />
+        </button>
+      )}
+
       {/* Title Section */}
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between pr-14 sm:pr-12">
         <div>
-          <h3 className="text-2xl font-bold text-[#3E3636]">{item.title}</h3>
+          <h3 className={`text-2xl font-bold transition-colors ${
+            isCompleted ? 'text-emerald-700' : 'text-[#3E3636]'
+          }`}>{item.title}</h3>
           <p className="text-md text-[#3E3636]/70">{item.title_mm}</p>
         </div>
         <button
           onClick={() => speak(item.title || '')}
-          className="p-3 rounded-full bg-[#F5EDED] hover:bg-[#D72323] text-[#3E3636] hover:text-white transition-all duration-300 flex-shrink-0"
+          className={`p-3 rounded-full hover:bg-[#D72323] hover:text-white transition-all duration-300 flex-shrink-0 ${
+            isCompleted ? 'bg-emerald-100 text-emerald-700' : 'bg-[#F5EDED] text-[#3E3636]'
+          }`}
         >
           <Volume2 className="h-5 w-5" />
         </button>

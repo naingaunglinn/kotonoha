@@ -48,12 +48,17 @@ export default function QuizGame({
         <div className="text-sm text-[#3E3636]/60 font-medium">
           Question <span className="font-bold text-[#3E3636]">{currentIndex + 1}</span>/{questions.length}
         </div>
-        {streak > 1 && (
-          <div className="flex items-center gap-1 px-3 py-1 bg-orange-100 text-orange-600 rounded-full text-sm font-bold animate-bounce">
-            <Flame className="w-4 h-4" />
-            {streak} streak!
-          </div>
-        )}
+        <div className="flex items-center gap-2">
+          <span className="hidden md:inline text-[10px] text-[#3E3636]/40 font-medium">
+            Tip: press 1–4 · Enter to advance
+          </span>
+          {streak > 1 && (
+            <div className="flex items-center gap-1 px-3 py-1 bg-orange-100 text-orange-600 rounded-full text-sm font-bold animate-bounce">
+              <Flame className="w-4 h-4" />
+              {streak} streak!
+            </div>
+          )}
+        </div>
       </div>
 
       <div className="w-full h-2 bg-[#3E3636]/10 rounded-full mb-8 overflow-hidden">
@@ -122,7 +127,7 @@ export default function QuizGame({
             >
               <div className="flex items-center gap-3">
                 <span className="w-8 h-8 rounded-lg bg-[#3E3636]/5 flex items-center justify-center text-sm font-bold text-[#3E3636]/40 flex-shrink-0">
-                  {String.fromCharCode(65 + idx)}
+                  {idx + 1}
                 </span>
                 <span>{option}</span>
                 {selectedAnswer && option === currentQuestion.correctAnswer && (
