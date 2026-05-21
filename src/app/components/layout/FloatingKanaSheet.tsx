@@ -1,6 +1,7 @@
 'use client'
 import React, {useState, useEffect} from 'react';
 import {BookA, X, Volume2} from 'lucide-react';
+import { getDataUrl } from '@/utils/dataUrl';
 
 // Character data structure matching the JSON
 interface KanaCharacter {
@@ -23,11 +24,11 @@ export default function FloatingKanaSheet() {
     // Fetch JSON data for kana
     const fetchKana = async () => {
       try {
-        const hRes = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:4000'}/data/character/hiragana.json`);
+        const hRes = await fetch(getDataUrl('/data/character/hiragana.json'));
         const hData = await hRes.json();
         setHiraganaData(hData);
 
-        const kRes = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:4000'}/data/character/katakana.json`);
+        const kRes = await fetch(getDataUrl('/data/character/katakana.json'));
         const kData = await kRes.json();
         setKatakanaData(kData);
       } catch (err) {

@@ -1,6 +1,7 @@
 
 import Link from "next/link";
 import {ChevronLeft} from "lucide-react";
+import { getDataUrl } from "@/utils/dataUrl";
 
 interface Params {
   params: {
@@ -19,7 +20,7 @@ interface ChartRow {
 
 const Kana = async ({ params }: Params) => {
   const { kana } = await params;
-  const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:4000'}/data/character/${kana}.json`, {
+  const response = await fetch(getDataUrl(`/data/character/${kana}.json`), {
     cache: 'no-store'
   });
 

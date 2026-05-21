@@ -108,9 +108,9 @@ const ListeningExercise = ({ data }: { data: ListeningProps }) => {
     );
   }, [speed, shadowingMode]);
 
-  // Cancel speech when component unmounts or collapses
+  // Cancel speech when component unmounts or `expanded` changes
+  // (cleanup runs on dep change and unmount, which covers both cases)
   useEffect(() => {
-    if (!expanded) stopSpeaking();
     return () => stopSpeaking();
   }, [expanded, stopSpeaking]);
 

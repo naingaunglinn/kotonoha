@@ -4,6 +4,7 @@ import {useEffect, useRef, useState, useCallback} from "react";
 import {Eraser, ChevronLeft, Volume2} from 'lucide-react';
 import {useParams} from "next/navigation";
 import Link from "next/link";
+import { getDataUrl } from "@/utils/dataUrl";
 
 const Char = () => {
   const params = useParams<{ kana: string; char: string }>();
@@ -13,7 +14,7 @@ const Char = () => {
   const [isDrawing, setIsDrawing] = useState(false);
 
   const fetchCharacter = useCallback(async (char: string) => {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:4000'}/data/character/${kana}.json`, {
+    const response = await fetch(getDataUrl(`/data/character/${kana}.json`), {
       cache: 'no-store'
     });
     // Throw an error if the network response is not ok (e.g., 404 Not Found)

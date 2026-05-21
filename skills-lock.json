@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "skills": {
+    "language-learning": {
+      "source": "jackjin1997/clawforge",
+      "sourceType": "github",
+      "skillPath": "skills/language-learning/SKILL.md",
+      "computedHash": "dee652953f11fe97588dd9f7b86cdb0a6ef9706f8e248dac1057769b6a660e9b"
+    }
+  }
+}

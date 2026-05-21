@@ -5,6 +5,7 @@ import {LessonProps, LevelProps} from "@/types";
 import Link from "next/link";
 import {useParams} from "next/navigation";
 import {useEffect, useState} from "react";
+import { getDataUrl } from "@/utils/dataUrl";
 
 const STUDY_TIPS: Record<number, { tip: string; steps: string[] }> = {
   5: {
@@ -34,19 +35,18 @@ const Lessons = () => {
   const levelId :number = Number(id);
 
   useEffect(() => {
+    const fetchLevel = async (id: number) => {
+      const response = await fetch(getDataUrl('/data/lesson/level.json'), {
+        cache: 'no-store'
+      });
+
+      const data: LevelProps[] = await response.json();
+      const levelData: LevelProps[] = data.filter(l => l?.id == id);
+      setLevel(levelData[0]);
+    };
+
     fetchLevel(levelId);
-  }, [levelId])
-
-  async function fetchLevel(id:number) {
-  const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:4000'}/data/lesson/level.json`, {
-    cache: 'no-store'
-  });
-
-  const data:LevelProps[] = await response.json();
-
-  const levelData:LevelProps[] = data.filter(l => l?.id == id);
-  setLevel(levelData[0]);
-  }
+  }, [levelId]);
 
   if (!level) {
     return (
