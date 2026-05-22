@@ -9,7 +9,8 @@ import KanjiQuiz from "@/app/components/lesson/KanjiQuiz";
 import GrammarQuiz from "@/app/components/lesson/GrammarQuiz";
 import PaginationControls from "@/app/components/lesson/PaginationControls";
 import ConfirmDialog from "@/app/components/ConfirmDialog";
-import { ChevronLeft, Shuffle, Eye, EyeOff, RotateCcw, BrainCircuit, Flame, ChevronDown } from "lucide-react";
+import FocusMode from "@/app/components/lesson/FocusMode";
+import { ChevronLeft, Shuffle, Eye, EyeOff, RotateCcw, BrainCircuit, Flame, ChevronDown, Focus } from "lucide-react";
 import { VocabularyProps, PartOfSpeech } from "@/types";
 import { useParams } from "next/navigation";
 import { useEffect, useState, useMemo, useCallback, useRef } from "react";
@@ -92,6 +93,7 @@ const LessonContentPage = () => {
   const [isShuffled, setIsShuffled] = useState(false);
   const [completedItems, setCompletedItems] = useState<Set<string>>(new Set());
   const [showQuiz, setShowQuiz] = useState(false);
+  const [showFocus, setShowFocus] = useState(false);
   const [showResetConfirm, setShowResetConfirm] = useState(false);
   const [streakCount, setStreakCount] = useState(0);
   const [posFilter, setPosFilter] = useState<PartOfSpeech | 'All'>('All');
@@ -479,6 +481,18 @@ const LessonContentPage = () => {
               </span>
             )}
 
+            {/* Focus button */}
+            {hasQuiz && (
+              <button
+                onClick={() => setShowFocus(true)}
+                className="flex items-center gap-1 px-2.5 sm:px-3 py-1.5 bg-white border border-[#1F150C]/15 text-[#1F150C] text-xs font-bold rounded-full hover:border-[#412D15]/40 hover:text-[#412D15] transition-all active:scale-95 shadow-sm flex-shrink-0"
+                title="Focus mode — one card at a time"
+              >
+                <Focus className="w-3.5 h-3.5" />
+                <span className="hidden sm:inline">Focus</span>
+              </button>
+            )}
+
             {/* Quiz button */}
             {hasQuiz && (
               <button
@@ -645,6 +659,66 @@ const LessonContentPage = () => {
           pageGrammar={paginatedGrammar}
           completedGrammar={completedItems}
           onClose={() => setShowQuiz(false)}
+        />
+      )}
+
+      {showFocus && lesson === 'vocab' && paginatedVocab.length > 0 && (
+        <FocusMode
+          items={paginatedVocab}
+          itemKey={(v) => v.word || ''}
+          completedItems={completedItems}
+          onToggleComplete={handleToggleComplete}
+          onClose={() => setShowFocus(false)}
+          categoryLabel="Vocabulary"
+          pageLabel={`Set ${currentPage} · ${rangeLabel}`}
+          renderCard={(item, isDone) => (
+            <VocabularyCard
+              item={item}
+              isCompleted={isDone}
+              onToggleComplete={handleToggleComplete}
+              globalShowRomaji={globalShowRomaji}
+              globalShowEnglish={globalShowEnglish}
+              globalShowMyanmar={globalShowMyanmar}
+            />
+          )}
+        />
+      )}
+
+      {showFocus && lesson === 'kanji' && paginatedKanji.length > 0 && (
+        <FocusMode
+          items={paginatedKanji}
+          itemKey={(k) => k.word || ''}
+          completedItems={completedItems}
+          onToggleComplete={handleToggleComplete}
+          onClose={() => setShowFocus(false)}
+          categoryLabel="Kanji"
+          pageLabel={`Set ${currentPage} · ${rangeLabel}`}
+          renderCard={(item, isDone) => (
+            <KanjiCard
+              item={item}
+              isCompleted={isDone}
+              onToggleComplete={handleToggleComplete}
+            />
+          )}
+        />
+      )}
+
+      {showFocus && lesson === 'grammar' && paginatedGrammar.length > 0 && (
+        <FocusMode
+          items={paginatedGrammar}
+          itemKey={(g) => g.title || ''}
+          completedItems={completedItems}
+          onToggleComplete={handleToggleComplete}
+          onClose={() => setShowFocus(false)}
+          categoryLabel="Grammar"
+          pageLabel={`Set ${currentPage} · ${rangeLabel}`}
+          renderCard={(item, isDone) => (
+            <GrammarPointCard
+              item={item}
+              isCompleted={isDone}
+              onToggleComplete={handleToggleComplete}
+            />
+          )}
         />
       )}
 

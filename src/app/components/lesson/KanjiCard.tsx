@@ -4,7 +4,6 @@ import { Volume2, Lightbulb, Layers, PenLine, ChevronDown, ChevronUp, Check } fr
 import { useState } from "react";
 
 interface KanjiCardProps {
-  key: string | null;
   item: KanjiProps;
   label?: number;
   isCompleted?: boolean;

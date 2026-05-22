@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import { VocabularyProps, PartOfSpeech } from "@/types";
 
 interface VocabularyCardProps {
-  key: number | null;
   item: VocabularyProps;
   label?: number;
   isCompleted?: boolean;

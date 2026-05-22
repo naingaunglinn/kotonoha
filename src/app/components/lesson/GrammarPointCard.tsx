@@ -4,7 +4,6 @@ import { Volume2, AlertTriangle, GraduationCap, Table, Check } from "lucide-reac
 import { useState } from "react";
 
 interface GrammarPointCardProps {
-  key: number | null;
   item: GrammarProps;
   label?: number;
   isCompleted?: boolean;
