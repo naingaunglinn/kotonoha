@@ -80,7 +80,7 @@ export default function FloatingKanaSheet() {
       {/* Floating Action Button */}
       <button
         onClick={toggleModal}
-        className="fixed bottom-6 right-6 z-40 p-4 rounded-full shadow-lg bg-[#1F150C] text-white hover:bg-[#412D15] transition-all hover:scale-105 active:scale-95 group"
+        className="fixed bottom-20 sm:bottom-6 right-4 sm:right-6 z-40 p-4 rounded-full shadow-lg bg-[#1F150C] text-white hover:bg-[#412D15] transition-all hover:scale-105 active:scale-95 group"
         title="Kana Reference Sheet (Ctrl+K)"
       >
         <BookA className="w-6 h-6" />
