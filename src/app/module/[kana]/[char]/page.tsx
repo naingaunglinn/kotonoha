@@ -1,12 +1,13 @@
 'use client'
 import {BasicCharProps} from "@/types";
-import {useEffect, useRef, useState, useCallback} from "react";
-import {Eraser, ChevronLeft, Volume2, BookOpen, PenLine, ClipboardCheck} from 'lucide-react';
+import {useEffect, useState, useCallback} from "react";
+import {ChevronLeft, Volume2, BookOpen, PenLine, ClipboardCheck} from 'lucide-react';
 import {useParams} from "next/navigation";
 import Link from "next/link";
 import { getDataUrl } from "@/utils/dataUrl";
 import KanaWriter from "@/app/components/lesson/KanaWriter";
 import KanaQuiz from "@/app/components/lesson/KanaQuiz";
+import KanaTrace from "@/app/components/lesson/KanaTrace";
 
 const speak = (text: string | null | undefined, lang = 'ja-JP') => {
   if (!text || typeof window === 'undefined' || !window.speechSynthesis) return;
@@ -24,88 +25,26 @@ const Char = () => {
   const params = useParams<{ kana: string; char: string }>();
   const { kana, char } = params!;
   const [character, setCharacter] = useState<BasicCharProps>();
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  const [isDrawing, setIsDrawing] = useState(false);
   const [mode, setMode] = useState<'order' | 'practice' | 'quiz'>('order');
 
   const fetchCharacter = useCallback(async (char: string) => {
     const response = await fetch(getDataUrl(`/data/character/${kana}.json`), {
       cache: 'no-store'
     });
-    // Throw an error if the network response is not ok (e.g., 404 Not Found)
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
-    // Parse the JSON data from the response
     const data: { characters: BasicCharProps[] }[] = await response.json();
-    // Flatten the array of groups into a single array of character objects
     const allCharacters = data.flatMap(group => group.characters);
-    // Find the character where the kana or romaji matches the input 'char'
     const foundCharacter = allCharacters.find(
       (c) => c.kana === char || c.romaji === char
     );
-    console.log(foundCharacter);
     setCharacter(foundCharacter);
   }, [kana]);
 
   useEffect(() => {
     fetchCharacter(char);
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const context = canvas.getContext('2d');
-    if (!context) return;
-    context.lineCap = 'round';
-    context.lineJoin = 'round';
-    context.lineWidth = 10;
-    context.strokeStyle = '#1F150C';
   }, [char, fetchCharacter]);
-
-  const startDrawing = ({ nativeEvent }: React.MouseEvent<HTMLCanvasElement> | React.TouchEvent<HTMLCanvasElement>) => {
-    console.log(nativeEvent);
-    const { offsetX, offsetY } = getCoords(nativeEvent as MouseEvent | TouchEvent);
-    const context = canvasRef.current?.getContext('2d');
-    if (!context) return;
-    context.beginPath();
-    context.moveTo(offsetX, offsetY);
-    setIsDrawing(true);
-  };
-
-  const draw = ({ nativeEvent }: React.MouseEvent<HTMLCanvasElement> | React.TouchEvent<HTMLCanvasElement>) => {
-    if (!isDrawing) return;
-    const { offsetX, offsetY } = getCoords(nativeEvent as MouseEvent | TouchEvent);
-    const context = canvasRef.current?.getContext('2d');
-    if (!context) return;
-    context.lineTo(offsetX, offsetY);
-    context.stroke();
-  };
-
-  const stopDrawing = () => {
-    const context = canvasRef.current?.getContext('2d');
-    if (!context) return;
-    context.closePath();
-    setIsDrawing(false);
-  };
-
-  const getCoords = (event: MouseEvent | TouchEvent) => {
-    if ('touches' in event && event.touches && event.touches.length > 0) {
-      const rect = canvasRef.current?.getBoundingClientRect();
-      if (!rect) return { offsetX: 0, offsetY: 0 };
-      return {
-        offsetX: event.touches[0].clientX - rect.left,
-        offsetY: event.touches[0].clientY - rect.top,
-      };
-    }
-    console.log(event);
-    return { offsetX: (event as MouseEvent).offsetX, offsetY: (event as MouseEvent).offsetY };
-  };
-
-  const clearCanvas = () => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const context = canvas.getContext('2d');
-    if (!context) return;
-    context.clearRect(0, 0, canvas.width, canvas.height);
-  };
 
   return (
     <div className="max-w-5xl mx-auto pt-16 pb-24 px-4 sm:px-6 lg:px-8">
@@ -118,9 +57,9 @@ const Char = () => {
         {/* Character Info */}
         <div className="flex flex-col items-center justify-center bg-white/50 rounded-2xl p-6 border border-black/5">
           <h1 className="text-9xl font-bold text-[#1F150C]">{character?.kana}</h1>
-          {/*<Image src={character?.image || 'https://placehold.co/400x400/F5EDED/3E3636?text=Stroke+Order'} fill alt={`Stroke order for ${character?.kana}`} className="mt-6 rounded-lg w-full max-w-xs aspect-square" />*/}
         </div>
-        {/* Stroke-order / Practice */}
+
+        {/* Stroke-order / Practice / Quiz */}
         <div className="flex flex-col">
           {/* Mode tabs */}
           <div className="inline-flex p-1 bg-[#1F150C]/10 rounded-xl mb-4 self-center">
@@ -166,62 +105,26 @@ const Char = () => {
             {mode === 'order' && character?.kana && (
               <KanaWriter char={character.kana} autoplay />
             )}
-
+            {mode === 'practice' && character?.kana && (
+              <KanaTrace char={character.kana} />
+            )}
             {mode === 'quiz' && character?.kana && (
               <KanaQuiz char={character.kana} />
             )}
-
-            {mode === 'practice' && (
-              <>
-                {character?.kana && (
-                  <div
-                    className="absolute inset-0 flex items-center justify-center pointer-events-none select-none"
-                    aria-hidden
-                  >
-                    <span
-                      style={{
-                        color: 'rgba(31,21,12,0.13)',
-                        fontSize: '320px',
-                        lineHeight: 1,
-                        fontFamily: '"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic","Meiryo","Noto Sans JP",sans-serif',
-                      }}
-                    >
-                      {character.kana}
-                    </span>
-                  </div>
-                )}
-                <canvas
-                  ref={canvasRef}
-                  width="400"
-                  height="400"
-                  className="absolute inset-0 touch-none"
-                  style={{ background: 'transparent' }}
-                  onMouseDown={startDrawing}
-                  onMouseMove={draw}
-                  onMouseUp={stopDrawing}
-                  onMouseLeave={stopDrawing}
-                  onTouchStart={startDrawing}
-                  onTouchMove={draw}
-                  onTouchEnd={stopDrawing}
-                />
-              </>
-            )}
           </div>
 
-          {(mode === 'order' || mode === 'quiz') && (
-            <p className="mt-2 text-[10px] text-center text-[#1F150C]/40">
-              Stroke data from{' '}
-              <a
-                href="https://kanjivg.tagaini.net/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline"
-              >
-                KanjiVG
-              </a>{' '}
-              (CC&nbsp;BY-SA&nbsp;3.0).
-            </p>
-          )}
+          <p className="mt-2 text-[10px] text-center text-[#1F150C]/40">
+            Stroke data from{' '}
+            <a
+              href="https://kanjivg.tagaini.net/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline"
+            >
+              KanjiVG
+            </a>{' '}
+            (CC&nbsp;BY-SA&nbsp;3.0).
+          </p>
 
           <div className="flex gap-2 flex-wrap">
             <button
@@ -232,14 +135,6 @@ const Char = () => {
             >
               <Volume2 className="h-8 w-8" />
             </button>
-            {mode === 'practice' && (
-              <button
-                onClick={clearCanvas}
-                className="mt-4 flex-1 flex items-center justify-center gap-2 py-3 bg-[#1F150C] text-white font-bold rounded-xl hover:bg-[#412D15] transition-colors"
-              >
-                <Eraser className="h-5 w-5" /> Clear
-              </button>
-            )}
           </div>
         </div>
       </div>
