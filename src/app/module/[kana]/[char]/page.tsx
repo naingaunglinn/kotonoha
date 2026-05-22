@@ -1,12 +1,13 @@
 'use client'
 import {BasicCharProps} from "@/types";
 import {useEffect, useRef, useState, useCallback} from "react";
-import {Eraser, ChevronLeft, Volume2, Eye, EyeOff} from 'lucide-react';
+import {Eraser, ChevronLeft, Volume2, BookOpen, PenLine} from 'lucide-react';
 import {useParams} from "next/navigation";
 import Link from "next/link";
 import { getDataUrl } from "@/utils/dataUrl";
+import KanaWriter from "@/app/components/lesson/KanaWriter";
 
-const speak = (text: string | undefined, lang = 'ja-JP') => {
+const speak = (text: string | null | undefined, lang = 'ja-JP') => {
   if (!text || typeof window === 'undefined' || !window.speechSynthesis) return;
   window.speechSynthesis.cancel();
   const utterance = new SpeechSynthesisUtterance(text);
@@ -24,7 +25,7 @@ const Char = () => {
   const [character, setCharacter] = useState<BasicCharProps>();
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [isDrawing, setIsDrawing] = useState(false);
-  const [showGuide, setShowGuide] = useState(true);
+  const [mode, setMode] = useState<'order' | 'practice'>('order');
 
   const fetchCharacter = useCallback(async (char: string) => {
     const response = await fetch(getDataUrl(`/data/character/${kana}.json`), {
@@ -118,41 +119,92 @@ const Char = () => {
           <h1 className="text-9xl font-bold text-[#1F150C]">{character?.kana}</h1>
           {/*<Image src={character?.image || 'https://placehold.co/400x400/F5EDED/3E3636?text=Stroke+Order'} fill alt={`Stroke order for ${character?.kana}`} className="mt-6 rounded-lg w-full max-w-xs aspect-square" />*/}
         </div>
-        {/* Practice Canvas */}
+        {/* Stroke-order / Practice */}
         <div className="flex flex-col">
-          <div className="relative w-[400px] h-[400px] max-w-full bg-white rounded-2xl border-2 border-dashed border-[#1F150C]/20 overflow-hidden mx-auto">
-            {showGuide && character?.kana && (
-              <div
-                className="absolute inset-0 flex items-center justify-center pointer-events-none select-none"
-                aria-hidden
-              >
-                <span
-                  style={{
-                    color: 'rgba(31,21,12,0.13)',
-                    fontSize: '320px',
-                    lineHeight: 1,
-                    fontFamily: '"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic","Meiryo","Noto Sans JP",sans-serif',
-                  }}
-                >
-                  {character.kana}
-                </span>
-              </div>
-            )}
-            <canvas
-              ref={canvasRef}
-              width="400"
-              height="400"
-              className="absolute inset-0 touch-none"
-              style={{ background: 'transparent' }}
-              onMouseDown={startDrawing}
-              onMouseMove={draw}
-              onMouseUp={stopDrawing}
-              onMouseLeave={stopDrawing}
-              onTouchStart={startDrawing}
-              onTouchMove={draw}
-              onTouchEnd={stopDrawing}
-            />
+          {/* Mode tabs */}
+          <div className="inline-flex p-1 bg-[#1F150C]/10 rounded-xl mb-4 self-center">
+            <button
+              onClick={() => setMode('order')}
+              className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-bold transition-all ${
+                mode === 'order'
+                  ? 'bg-white text-[#412D15] shadow-sm'
+                  : 'text-[#1F150C]/60 hover:text-[#1F150C]'
+              }`}
+              aria-pressed={mode === 'order'}
+            >
+              <BookOpen className="w-4 h-4" />
+              Stroke order
+            </button>
+            <button
+              onClick={() => setMode('practice')}
+              className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-bold transition-all ${
+                mode === 'practice'
+                  ? 'bg-white text-[#412D15] shadow-sm'
+                  : 'text-[#1F150C]/60 hover:text-[#1F150C]'
+              }`}
+              aria-pressed={mode === 'practice'}
+            >
+              <PenLine className="w-4 h-4" />
+              Practice
+            </button>
           </div>
+
+          <div className="relative w-[400px] h-[400px] max-w-full bg-white rounded-2xl border-2 border-dashed border-[#1F150C]/20 overflow-hidden mx-auto">
+            {mode === 'order' && character?.kana && (
+              <KanaWriter char={character.kana} autoplay />
+            )}
+
+            {mode === 'practice' && (
+              <>
+                {character?.kana && (
+                  <div
+                    className="absolute inset-0 flex items-center justify-center pointer-events-none select-none"
+                    aria-hidden
+                  >
+                    <span
+                      style={{
+                        color: 'rgba(31,21,12,0.13)',
+                        fontSize: '320px',
+                        lineHeight: 1,
+                        fontFamily: '"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic","Meiryo","Noto Sans JP",sans-serif',
+                      }}
+                    >
+                      {character.kana}
+                    </span>
+                  </div>
+                )}
+                <canvas
+                  ref={canvasRef}
+                  width="400"
+                  height="400"
+                  className="absolute inset-0 touch-none"
+                  style={{ background: 'transparent' }}
+                  onMouseDown={startDrawing}
+                  onMouseMove={draw}
+                  onMouseUp={stopDrawing}
+                  onMouseLeave={stopDrawing}
+                  onTouchStart={startDrawing}
+                  onTouchMove={draw}
+                  onTouchEnd={stopDrawing}
+                />
+              </>
+            )}
+          </div>
+
+          {mode === 'order' && (
+            <p className="mt-2 text-[10px] text-center text-[#1F150C]/40">
+              Stroke order from{' '}
+              <a
+                href="https://kanjivg.tagaini.net/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline"
+              >
+                KanjiVG
+              </a>{' '}
+              (CC&nbsp;BY-SA&nbsp;3.0).
+            </p>
+          )}
 
           <div className="flex gap-2 flex-wrap">
             <button
@@ -163,18 +215,14 @@ const Char = () => {
             >
               <Volume2 className="h-8 w-8" />
             </button>
-            <button
-              onClick={() => setShowGuide(v => !v)}
-              className="mt-4 inline-flex items-center gap-1.5 px-4 py-3 rounded-xl bg-white border border-[#1F150C]/20 text-[#1F150C] font-bold hover:border-[#412D15]/40 transition-colors text-sm"
-              aria-pressed={showGuide}
-              title={showGuide ? 'Hide tracing guide' : 'Show tracing guide'}
-            >
-              {showGuide ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
-              {showGuide ? 'Hide guide' : 'Show guide'}
-            </button>
-            <button onClick={clearCanvas} className="mt-4 flex-1 flex items-center justify-center gap-2 py-3 bg-[#1F150C] text-white font-bold rounded-xl hover:bg-[#412D15] transition-colors">
-              <Eraser className="h-5 w-5" /> Clear
-            </button>
+            {mode === 'practice' && (
+              <button
+                onClick={clearCanvas}
+                className="mt-4 flex-1 flex items-center justify-center gap-2 py-3 bg-[#1F150C] text-white font-bold rounded-xl hover:bg-[#412D15] transition-colors"
+              >
+                <Eraser className="h-5 w-5" /> Clear
+              </button>
+            )}
           </div>
         </div>
       </div>
