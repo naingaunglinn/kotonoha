@@ -7,18 +7,18 @@ import ListeningExercise from "@/app/components/lesson/ListeningExercise";
 import VocabularyQuiz from "@/app/components/lesson/VocabularyQuiz";
 import KanjiQuiz from "@/app/components/lesson/KanjiQuiz";
 import GrammarQuiz from "@/app/components/lesson/GrammarQuiz";
-import LevelSwitcher from "@/app/components/lesson/LevelSwitcher";
 import PaginationControls from "@/app/components/lesson/PaginationControls";
-import ProgressBar from "@/app/components/lesson/ProgressBar";
 import ConfirmDialog from "@/app/components/ConfirmDialog";
-import { ChevronLeft, Shuffle, Home, ChevronRight, Eye, EyeOff, Calendar, RotateCcw, BrainCircuit, Flame } from "lucide-react";
+import { ChevronLeft, Shuffle, Eye, EyeOff, RotateCcw, BrainCircuit, Flame, ChevronDown } from "lucide-react";
 import { VocabularyProps, PartOfSpeech } from "@/types";
 import { useParams } from "next/navigation";
-import { useEffect, useState, useMemo, useCallback } from "react";
+import { useEffect, useState, useMemo, useCallback, useRef } from "react";
 import Link from "next/link";
 import { loadCompletedSet, saveCompletedSet, LessonCategory } from "./lessonStorage";
 import { useLessonData } from "./useLessonData";
 import { loadStreak, getEffectiveStreak, recordStudyActivity } from "./streakStorage";
+import { recordVisit } from "@/utils/recentActivity";
+import { recordStudyDay } from "@/utils/studyDays";
 
 const VISIBILITY_KEY = 'kotonoha_vocab_visibility';
 type VocabVisibility = { romaji: boolean; english: boolean; myanmar: boolean };
@@ -53,6 +53,8 @@ const LEVEL_LABELS: Record<string, string> = {
   "1": "N1",
 };
 
+const LEVELS = ['5', '4', '3', '2', '1'];
+
 const LESSON_LABELS: Record<string, string> = {
   "vocab": "Vocabulary",
   "kanji": "Kanji",
@@ -82,29 +84,20 @@ const LessonContentPage = () => {
   const { id, lesson } = params!;
   const { vocab, kanji, grammar, reading, listening } = useLessonData(lesson, id);
 
-  // Global show/hide state for vocabulary (default ON; persisted once user touches them)
   const [globalShowRomaji, setGlobalShowRomaji] = useState(DEFAULT_VISIBILITY.romaji);
   const [globalShowEnglish, setGlobalShowEnglish] = useState(DEFAULT_VISIBILITY.english);
   const [globalShowMyanmar, setGlobalShowMyanmar] = useState(DEFAULT_VISIBILITY.myanmar);
 
-  // Pagination state
   const [currentPage, setCurrentPage] = useState(1);
   const [isShuffled, setIsShuffled] = useState(false);
-
-  // Completion tracking state (active category's set; reloads on lesson change)
   const [completedItems, setCompletedItems] = useState<Set<string>>(new Set());
-
-  // Quiz state
   const [showQuiz, setShowQuiz] = useState(false);
-
-  // Reset-progress confirmation dialog
   const [showResetConfirm, setShowResetConfirm] = useState(false);
-
-  // Streak (across calendar days; global across categories)
   const [streakCount, setStreakCount] = useState(0);
-
-  // POS filter (session-only, not persisted)
   const [posFilter, setPosFilter] = useState<PartOfSpeech | 'All'>('All');
+  const [showLevelMenu, setShowLevelMenu] = useState(false);
+  const [showTools, setShowTools] = useState(false);
+  const levelMenuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (isTrackedCategory(lesson)) {
@@ -114,26 +107,40 @@ const LessonContentPage = () => {
     }
 
     const savedPage = localStorage.getItem(`kotonoha_${lesson}_page_${id}`);
+    let resolvedPage = 1;
     if (savedPage) {
       const parsed = parseInt(savedPage, 10);
       if (!isNaN(parsed) && parsed >= 1) {
+        resolvedPage = parsed;
         setCurrentPage(parsed);
       }
+    } else {
+      setCurrentPage(1);
     }
 
-    // Hydrate vocab visibility from localStorage (preserves user toggles across visits;
-    // falls back to DEFAULT_VISIBILITY for first-time users so cards aren't all "hidden").
     const v = loadVisibility();
     setGlobalShowRomaji(v.romaji);
     setGlobalShowEnglish(v.english);
     setGlobalShowMyanmar(v.myanmar);
 
-    // Streak: show 0 if the user has missed more than a day.
     setStreakCount(getEffectiveStreak(loadStreak()));
+
+    if (isTrackedCategory(lesson)) {
+      recordVisit(lesson, id, resolvedPage);
+    }
   }, [lesson, id]);
 
-  // Persist any visibility-toggle change so first-visit defaults are replaced
-  // by the user's chosen state on subsequent visits.
+  useEffect(() => {
+    if (!showLevelMenu) return;
+    const onClick = (e: MouseEvent) => {
+      if (levelMenuRef.current && !levelMenuRef.current.contains(e.target as Node)) {
+        setShowLevelMenu(false);
+      }
+    };
+    document.addEventListener('mousedown', onClick);
+    return () => document.removeEventListener('mousedown', onClick);
+  }, [showLevelMenu]);
+
   const updateVisibility = useCallback((patch: Partial<VocabVisibility>) => {
     const next: VocabVisibility = {
       romaji: patch.romaji ?? globalShowRomaji,
@@ -155,9 +162,9 @@ const LessonContentPage = () => {
         next.delete(itemKey);
       } else {
         next.add(itemKey);
-        // Only credit the streak when newly completing — un-toggling shouldn't bump it.
         const updated = recordStudyActivity();
         setStreakCount(getEffectiveStreak(updated));
+        recordStudyDay();
       }
       saveCompletedSet(lesson, id, next);
       return next;
@@ -181,6 +188,7 @@ const LessonContentPage = () => {
     setCurrentPage(page);
     setIsShuffled(false);
     localStorage.setItem(`kotonoha_${lesson}_page_${id}`, String(page));
+    if (isTrackedCategory(lesson)) recordVisit(lesson, id, page);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [id, lesson]);
 
@@ -291,69 +299,46 @@ const LessonContentPage = () => {
   const listeningEnd = Math.min(currentPage * LISTENING_PER_PAGE, listening?.length || 0);
 
   let content;
-  let header;
   let gridLayout = "grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6";
 
-  if (lesson == 'vocab') {
-    if (vocab && vocab.length > 0) {
-      content = displayVocab.map((item, index) => (
-        <VocabularyCard
-          key={index}
-          item={item}
-          label={isShuffled ? undefined : (pageStartWord + index)}
-          isCompleted={completedItems.has(item.word || '')}
-          onToggleComplete={handleToggleComplete}
-          globalShowRomaji={globalShowRomaji}
-          globalShowEnglish={globalShowEnglish}
-          globalShowMyanmar={globalShowMyanmar}
-        />
-      ));
-      header = {
-        'title': 'Vocabulary',
-        'description': `Master ${vocab.length} essential words for daily life conversations.`
-      }
-    }
+  if (lesson == 'vocab' && vocab && vocab.length > 0) {
+    content = displayVocab.map((item, index) => (
+      <VocabularyCard
+        key={index}
+        item={item}
+        label={isShuffled ? undefined : (pageStartWord + index)}
+        isCompleted={completedItems.has(item.word || '')}
+        onToggleComplete={handleToggleComplete}
+        globalShowRomaji={globalShowRomaji}
+        globalShowEnglish={globalShowEnglish}
+        globalShowMyanmar={globalShowMyanmar}
+      />
+    ));
   }
-  if (lesson == 'kanji') {
-    header = {
-      'title': 'Kanji',
-      'description': `Learn ${kanji?.length} fundamental kanji characters with readings and meanings.`
-    }
-    if (kanji && kanji.length > 0) {
-      content = paginatedKanji.map((item, index) => (
-        <KanjiCard
-          key={item.word}
-          item={item}
-          label={kanjiStart + index}
-          isCompleted={completedItems.has(item.word || '')}
-          onToggleComplete={handleToggleComplete}
-        />
-      ));
-    }
+  if (lesson == 'kanji' && kanji && kanji.length > 0) {
+    content = paginatedKanji.map((item, index) => (
+      <KanjiCard
+        key={item.word}
+        item={item}
+        label={kanjiStart + index}
+        isCompleted={completedItems.has(item.word || '')}
+        onToggleComplete={handleToggleComplete}
+      />
+    ));
   }
-  if (lesson == 'grammar') {
-    header = {
-      'title': 'Grammar',
-      'description': `Understand ${grammar?.length} basic sentence structures and particles.`
-    }
-    if (grammar && grammar.length > 0) {
-      content = paginatedGrammar.map((item, index) => (
-        <GrammarPointCard
-          key={index}
-          item={item}
-          label={grammarStart + index}
-          isCompleted={completedItems.has(item.title || '')}
-          onToggleComplete={handleToggleComplete}
-        />
-      ));
-    }
+  if (lesson == 'grammar' && grammar && grammar.length > 0) {
+    content = paginatedGrammar.map((item, index) => (
+      <GrammarPointCard
+        key={index}
+        item={item}
+        label={grammarStart + index}
+        isCompleted={completedItems.has(item.title || '')}
+        onToggleComplete={handleToggleComplete}
+      />
+    ));
   }
   if (lesson == 'reading') {
     gridLayout = "grid-cols-1 gap-4";
-    header = {
-      'title': 'Reading',
-      'description': `Practice comprehension with ${reading?.length} beginner-friendly passages.`
-    }
     if (reading && reading.length > 0) {
       content = paginatedReading.map((item, index) => (
         <ReadingPassage
@@ -369,10 +354,6 @@ const LessonContentPage = () => {
   }
   if (lesson == 'listening') {
     gridLayout = "grid-cols-1 gap-4";
-    header = {
-      'title': 'Listening',
-      'description': `Train your ear with ${listening?.length} real-life conversation exercises.`
-    }
     if (listening && listening.length > 0) {
       content = paginatedListening.map((item, index) => (
         <ListeningExercise
@@ -390,469 +371,255 @@ const LessonContentPage = () => {
   const levelLabel = LEVEL_LABELS[id] || `Level ${id}`;
   const lessonLabel = LESSON_LABELS[lesson] || lesson;
 
-  return (
-    <div className="max-w-8xl mx-auto pt-10 pb-24 px-4 sm:px-6 lg:px-8">
-      <nav className="flex items-center flex-wrap gap-1.5 text-sm text-[#1F150C]/50 mb-8">
-        <Link href="/" className="flex items-center gap-1 hover:text-[#412D15] transition-colors">
-          <Home className="h-3.5 w-3.5" />
-          <span>Home</span>
-        </Link>
-        <ChevronRight className="h-3.5 w-3.5" />
-        <Link href={`/level/${id}`} className="hover:text-[#412D15] transition-colors">
-          {levelLabel}
-        </Link>
-        <ChevronRight className="h-3.5 w-3.5" />
-        <span className="text-[#1F150C] font-medium">{lessonLabel}</span>
-      </nav>
+  let doneOnPage = 0;
+  let totalOnPage = 0;
+  let rangeLabel = '';
+  let totalUnits = 0;
+  let unitLabel = '';
+  if (lesson === 'vocab') {
+    doneOnPage = completedOnPage; totalOnPage = paginatedVocab.length;
+    rangeLabel = `${pageStartWord}–${pageEndWord}`; totalUnits = vocab?.length || 0; unitLabel = 'words';
+  } else if (lesson === 'kanji') {
+    doneOnPage = kanjiCompletedOnPage; totalOnPage = paginatedKanji.length;
+    rangeLabel = `${kanjiStart}–${kanjiEnd}`; totalUnits = kanji?.length || 0; unitLabel = 'kanji';
+  } else if (lesson === 'grammar') {
+    doneOnPage = grammarCompletedOnPage; totalOnPage = paginatedGrammar.length;
+    rangeLabel = `${grammarStart}–${grammarEnd}`; totalUnits = grammar?.length || 0; unitLabel = 'points';
+  } else if (lesson === 'reading') {
+    doneOnPage = readingCompletedOnPage; totalOnPage = paginatedReading.length;
+    rangeLabel = `${readingStart}–${readingEnd}`; totalUnits = reading?.length || 0; unitLabel = 'passages';
+  } else if (lesson === 'listening') {
+    doneOnPage = listeningCompletedOnPage; totalOnPage = paginatedListening.length;
+    rangeLabel = `${listeningStart}–${listeningEnd}`; totalUnits = listening?.length || 0; unitLabel = 'exercises';
+  }
+  const pagePct = totalOnPage > 0 ? (doneOnPage / totalOnPage) * 100 : 0;
+  const hasQuiz = lesson === 'vocab' || lesson === 'kanji' || lesson === 'grammar';
+  const hasTools = isTrackedCategory(lesson) && content;
 
-      <div className="relative text-center mb-12 max-w-3xl mx-auto">
-        <Link href={`/level/${id}`} className="absolute left-0 top-1/2 -translate-y-1/2 p-3 rounded-full hover:bg-[#1F150C]/10 transition-colors duration-300"><ChevronLeft className="h-6 w-6 text-[#1F150C]" /></Link>
-        <div className="inline-flex items-center gap-2 mb-3 flex-wrap justify-center">
-          <span className="px-3 py-1 rounded-full bg-[#412D15]/10 text-[#412D15] text-xs font-bold tracking-wider">
-            {levelLabel}
-          </span>
-          {streakCount > 0 && (
-            <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-orange-100 text-orange-700 text-xs font-bold tracking-wider" title={`${streakCount}-day study streak`}>
-              <Flame className="w-3.5 h-3.5" />
-              {streakCount}-day streak
-            </span>
+  return (
+    <div className="max-w-8xl mx-auto pb-24">
+      {/* SLIM TOOLBAR — replaces the old centered hero. Sticks under site header (h-20). */}
+      {isTrackedCategory(lesson) && (
+        <div className="sticky top-20 z-30 bg-[#E1DCC9]/90 backdrop-blur-md border-b border-[#1F150C]/10">
+          <div className="max-w-8xl mx-auto px-3 sm:px-6 lg:px-8 py-2 flex items-center gap-2 sm:gap-3">
+            {/* Back */}
+            <Link
+              href={`/level/${id}`}
+              className="p-1.5 rounded-full hover:bg-[#1F150C]/10 transition-colors flex-shrink-0"
+              title="Back to lessons"
+            >
+              <ChevronLeft className="h-5 w-5 text-[#1F150C]" />
+            </Link>
+
+            {/* Level chip with dropdown */}
+            <div className="relative flex-shrink-0" ref={levelMenuRef}>
+              <button
+                onClick={() => setShowLevelMenu(v => !v)}
+                className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-[#412D15]/10 text-[#412D15] text-[11px] font-bold tracking-wider hover:bg-[#412D15]/15 transition-colors"
+                title="Switch level"
+              >
+                {levelLabel}
+                <ChevronDown className="w-3 h-3" />
+              </button>
+              {showLevelMenu && (
+                <div className="absolute top-full left-0 mt-1 bg-white rounded-xl shadow-lg border border-black/5 p-1 z-40 min-w-[80px]">
+                  {LEVELS.map(lvId => (
+                    <Link
+                      key={lvId}
+                      href={`/level/${lvId}/${lesson}`}
+                      onClick={() => setShowLevelMenu(false)}
+                      className={`block px-3 py-1.5 rounded-lg text-xs font-bold text-center transition-colors ${
+                        lvId === id
+                          ? 'bg-[#412D15] text-white'
+                          : 'text-[#1F150C] hover:bg-[#E1DCC9]'
+                      }`}
+                    >
+                      {LEVEL_LABELS[lvId]}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* Category + set */}
+            <div className="flex items-center gap-1.5 min-w-0">
+              <span className="text-xs font-bold text-[#1F150C] truncate">{lessonLabel}</span>
+              <span className="hidden sm:inline text-xs text-[#1F150C]/40">·</span>
+              <span className="hidden sm:inline text-xs font-medium text-[#1F150C]/60 whitespace-nowrap">
+                Set {currentPage}/{totalPages}
+              </span>
+            </div>
+
+            {/* Progress bar — flex-fills */}
+            <div className="flex-1 min-w-0 flex items-center gap-2">
+              <div className="flex-1 h-1.5 bg-[#1F150C]/10 rounded-full overflow-hidden">
+                <div
+                  className="h-full rounded-full transition-all duration-500"
+                  style={{
+                    width: `${pagePct}%`,
+                    background: pagePct === 100
+                      ? 'linear-gradient(90deg, #10b981, #059669)'
+                      : 'linear-gradient(90deg, #412D15, #ef4444)',
+                  }}
+                />
+              </div>
+              <span className="text-[11px] font-bold text-[#1F150C]/70 whitespace-nowrap tabular-nums">
+                {doneOnPage}/{totalOnPage}
+              </span>
+            </div>
+
+            {/* Streak — desktop only, compact */}
+            {streakCount > 0 && (
+              <span
+                className="hidden sm:inline-flex items-center gap-1 px-2 py-1 rounded-full bg-orange-100 text-orange-700 text-[11px] font-bold flex-shrink-0"
+                title={`${streakCount}-day study streak`}
+              >
+                <Flame className="w-3 h-3" />
+                {streakCount}
+              </span>
+            )}
+
+            {/* Quiz button */}
+            {hasQuiz && (
+              <button
+                onClick={() => setShowQuiz(true)}
+                className="flex items-center gap-1 px-2.5 sm:px-3 py-1.5 bg-[#412D15] text-white text-xs font-bold rounded-full hover:bg-[#000000] transition-all active:scale-95 shadow-sm flex-shrink-0"
+                title="Open quiz"
+              >
+                <BrainCircuit className="w-3.5 h-3.5" />
+                <span className="hidden sm:inline">Quiz</span>
+              </button>
+            )}
+
+            {/* Tools toggle (mobile-first) */}
+            {hasTools && (
+              <button
+                onClick={() => setShowTools(v => !v)}
+                className={`p-1.5 rounded-full transition-colors flex-shrink-0 ${
+                  showTools ? 'bg-[#1F150C] text-white' : 'text-[#1F150C] hover:bg-[#1F150C]/10'
+                }`}
+                title="Toggle study tools"
+                aria-pressed={showTools}
+              >
+                <ChevronDown className={`w-4 h-4 transition-transform ${showTools ? 'rotate-180' : ''}`} />
+              </button>
+            )}
+          </div>
+
+          {/* COLLAPSIBLE TOOLS STRIP */}
+          {showTools && (
+            <div className="border-t border-[#1F150C]/10 px-3 sm:px-6 lg:px-8 py-3 flex flex-wrap items-center gap-2 text-xs">
+              <span className="text-[10px] font-bold text-[#1F150C]/40 uppercase tracking-wider mr-1">
+                {rangeLabel} of {totalUnits} {unitLabel}
+              </span>
+
+              {lesson === 'vocab' && (
+                <>
+                  <button
+                    onClick={handleRandomizeVocab}
+                    className="inline-flex items-center gap-1 px-3 py-1.5 bg-white border border-[#1F150C]/15 rounded-full hover:border-[#412D15]/40 transition-all active:scale-95"
+                  >
+                    <Shuffle className="w-3.5 h-3.5" />
+                    Shuffle
+                  </button>
+                  <button
+                    onClick={() => updateVisibility({ romaji: !globalShowRomaji })}
+                    className={`inline-flex items-center gap-1 px-3 py-1.5 rounded-full transition-all active:scale-95 ${
+                      globalShowRomaji ? 'bg-[#412D15] text-white' : 'bg-white text-[#1F150C] border border-[#1F150C]/15'
+                    }`}
+                  >
+                    {globalShowRomaji ? <Eye className="w-3.5 h-3.5" /> : <EyeOff className="w-3.5 h-3.5" />}
+                    Romaji
+                  </button>
+                  <button
+                    onClick={() => updateVisibility({ english: !globalShowEnglish })}
+                    className={`inline-flex items-center gap-1 px-3 py-1.5 rounded-full transition-all active:scale-95 ${
+                      globalShowEnglish ? 'bg-[#412D15] text-white' : 'bg-white text-[#1F150C] border border-[#1F150C]/15'
+                    }`}
+                  >
+                    {globalShowEnglish ? <Eye className="w-3.5 h-3.5" /> : <EyeOff className="w-3.5 h-3.5" />}
+                    English
+                  </button>
+                  <button
+                    onClick={() => updateVisibility({ myanmar: !globalShowMyanmar })}
+                    className={`inline-flex items-center gap-1 px-3 py-1.5 rounded-full transition-all active:scale-95 ${
+                      globalShowMyanmar ? 'bg-[#412D15] text-white' : 'bg-white text-[#1F150C] border border-[#1F150C]/15'
+                    }`}
+                  >
+                    {globalShowMyanmar ? <Eye className="w-3.5 h-3.5" /> : <EyeOff className="w-3.5 h-3.5" />}
+                    Myanmar
+                  </button>
+
+                  <div className="w-px h-5 bg-[#1F150C]/10 mx-1" />
+                  {POS_FILTERS.map(({ label, value }) => (
+                    <button
+                      key={value}
+                      onClick={() => setPosFilter(value)}
+                      className={`px-2.5 py-1 rounded-full text-[11px] font-bold transition-all active:scale-95 ${
+                        posFilter === value
+                          ? 'bg-[#1F150C] text-white'
+                          : 'bg-white text-[#1F150C] border border-[#1F150C]/15 hover:border-[#412D15]/40'
+                      }`}
+                    >
+                      {label}
+                    </button>
+                  ))}
+                </>
+              )}
+
+              {completedTotal > 0 && (
+                <button
+                  onClick={handleResetCompletions}
+                  className="ml-auto inline-flex items-center gap-1 px-3 py-1.5 bg-white text-[#1F150C] border border-[#1F150C]/20 rounded-full hover:border-red-400 hover:text-red-500 transition-all active:scale-95"
+                >
+                  <RotateCcw className="w-3.5 h-3.5" />
+                  Reset
+                </button>
+              )}
+            </div>
           )}
         </div>
-        <h2 className="text-4xl md:text-5xl font-extrabold tracking-tighter">{header?.title}</h2>
-        <p className="mt-3 text-lg text-[#1F150C]/70">{header?.description}</p>
+      )}
 
-        <div className="mt-5">
-          <LevelSwitcher currentId={id} lesson={lesson} />
-        </div>
-
-        {lesson === 'vocab' && vocab && vocab.length > 0 && (
-          <div className="mt-6 space-y-4">
-            <div className="flex items-center justify-center gap-3">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#1F150C] text-white rounded-full text-sm font-bold shadow-md">
-                <Calendar className="w-4 h-4" />
-                <span>Set {currentPage} of {totalPages}</span>
-              </div>
-              <div className="text-sm text-[#1F150C]/60 font-medium">
-                Words {pageStartWord}–{pageEndWord} of {vocab.length}
-              </div>
-            </div>
-
-            <ProgressBar
-              completedOnPage={completedOnPage}
-              totalOnPage={paginatedVocab.length}
-              completedTotal={completedTotal}
-              totalWords={vocab.length}
-              label="Today's Words"
-              doneMessage="🎉 80 words down — fantastic pace!"
-            />
-
-            <PaginationControls
-              currentPage={currentPage}
-              totalPages={totalPages}
-              onPageChange={handlePageChange}
-            />
-
-            <div className="flex flex-wrap justify-center gap-2">
-              {POS_FILTERS.map(({ label, value }) => (
-                <button
-                  key={value}
-                  onClick={() => setPosFilter(value)}
-                  className={`px-3 py-1.5 rounded-full text-xs font-bold transition-all active:scale-95 ${posFilter === value
-                    ? 'bg-[#412D15] text-white shadow-md shadow-[#412D15]/30'
-                    : 'bg-white text-[#1F150C] border border-[#1F150C]/15 hover:border-[#412D15]/40'
-                    }`}
-                >
-                  {label}
-                </button>
-              ))}
-            </div>
-
-            {posFilter !== 'All' && (
-              <p className="text-xs text-center text-[#1F150C]/50">
-                Showing <span className="font-bold text-[#412D15]">{displayVocab.length}</span> {posFilter}s on this page
-              </p>
-            )}
-
-            <div className="flex flex-wrap justify-center gap-3">
-              <button
-                onClick={handleRandomizeVocab}
-                className="flex items-center gap-2 px-6 py-2 bg-[#1F150C] text-white rounded-full hover:bg-[#1F150C]/80 transition-all active:scale-95 shadow-md"
-              >
-                <Shuffle className="w-4 h-4" />
-                <span>Shuffle</span>
-              </button>
-
-              <button
-                onClick={() => setShowQuiz(true)}
-                className="flex items-center gap-2 px-6 py-2 bg-[#412D15] text-white rounded-full hover:bg-[#000000] transition-all active:scale-95 shadow-md"
-              >
-                <BrainCircuit className="w-4 h-4" />
-                <span>Quiz</span>
-              </button>
-
-              {completedTotal > 0 && (
-                <button
-                  onClick={handleResetCompletions}
-                  className="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium bg-white text-[#1F150C] border border-[#1F150C]/20 hover:border-red-400 hover:text-red-500 transition-all active:scale-95 shadow-md"
-                >
-                  <RotateCcw className="w-4 h-4" />
-                  <span>Reset Progress</span>
-                </button>
-              )}
-
-              <button
-                onClick={() => updateVisibility({ romaji: !globalShowRomaji })}
-                className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all active:scale-95 shadow-md ${globalShowRomaji
-                  ? 'bg-[#412D15] text-white'
-                  : 'bg-white text-[#1F150C] border border-[#1F150C]/20'
-                  }`}
-              >
-                {globalShowRomaji ? <Eye className="w-4 h-4" /> : <EyeOff className="w-4 h-4" />}
-                <span>Romaji</span>
-              </button>
-              <button
-                onClick={() => updateVisibility({ english: !globalShowEnglish })}
-                className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all active:scale-95 shadow-md ${globalShowEnglish
-                  ? 'bg-[#412D15] text-white'
-                  : 'bg-white text-[#1F150C] border border-[#1F150C]/20'
-                  }`}
-              >
-                {globalShowEnglish ? <Eye className="w-4 h-4" /> : <EyeOff className="w-4 h-4" />}
-                <span>English</span>
-              </button>
-              <button
-                onClick={() => updateVisibility({ myanmar: !globalShowMyanmar })}
-                className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all active:scale-95 shadow-md ${globalShowMyanmar
-                  ? 'bg-[#412D15] text-white'
-                  : 'bg-white text-[#1F150C] border border-[#1F150C]/20'
-                  }`}
-              >
-                {globalShowMyanmar ? <Eye className="w-4 h-4" /> : <EyeOff className="w-4 h-4" />}
-                <span>Myanmar</span>
-              </button>
-            </div>
-          </div>
+      {/* Content */}
+      <div className="px-4 sm:px-6 lg:px-8 pt-6">
+        {posFilter !== 'All' && lesson === 'vocab' && (
+          <p className="text-xs text-center text-[#1F150C]/50 mb-4">
+            Showing <span className="font-bold text-[#412D15]">{displayVocab.length}</span> {posFilter}s on this page
+          </p>
         )}
 
-        {lesson === 'grammar' && grammar && grammar.length > 0 && (
-          <div className="mt-6 space-y-4">
-            <div className="flex items-center justify-center gap-3">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#1F150C] text-white rounded-full text-sm font-bold shadow-md">
-                <Calendar className="w-4 h-4" />
-                <span>Set {currentPage} of {totalPages}</span>
-              </div>
-              <div className="text-sm text-[#1F150C]/60 font-medium">
-                Points {grammarStart}–{grammarEnd} of {grammar.length}
-              </div>
-            </div>
-
-            <ProgressBar
-              completedOnPage={grammarCompletedOnPage}
-              totalOnPage={paginatedGrammar.length}
-              completedTotal={completedTotal}
-              totalWords={grammar.length}
-              label="Today's Grammar"
-              doneMessage="🎉 Patterns mastered for today — well done!"
-            />
-
-            <PaginationControls
-              currentPage={currentPage}
-              totalPages={totalPages}
-              onPageChange={handlePageChange}
-            />
-
-            <div className="flex flex-wrap justify-center gap-3">
-              <button
-                onClick={() => setShowQuiz(true)}
-                className="flex items-center gap-2 px-6 py-2 bg-[#412D15] text-white rounded-full hover:bg-[#000000] transition-all active:scale-95 shadow-md"
-              >
-                <BrainCircuit className="w-4 h-4" />
-                <span>Quiz</span>
-              </button>
-
-              {completedTotal > 0 && (
-                <button
-                  onClick={handleResetCompletions}
-                  className="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium bg-white text-[#1F150C] border border-[#1F150C]/20 hover:border-red-400 hover:text-red-500 transition-all active:scale-95 shadow-md"
-                >
-                  <RotateCcw className="w-4 h-4" />
-                  <span>Reset Progress</span>
-                </button>
-              )}
-            </div>
-          </div>
+        {(lesson === 'reading' || lesson === 'listening') && content && (
+          <p className="text-xs text-center text-[#1F150C]/50 italic mb-4">
+            Submit a {lesson === 'reading' ? 'passage' : 'exercise'}&apos;s comprehension answers to mark it as studied.
+          </p>
         )}
 
-        {lesson === 'kanji' && kanji && kanji.length > 0 && (
-          <div className="mt-6 space-y-4">
-            <div className="flex items-center justify-center gap-3">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#1F150C] text-white rounded-full text-sm font-bold shadow-md">
-                <Calendar className="w-4 h-4" />
-                <span>Set {currentPage} of {totalPages}</span>
-              </div>
-              <div className="text-sm text-[#1F150C]/60 font-medium">
-                Characters {kanjiStart}–{kanjiEnd} of {kanji.length}
-              </div>
+        {content ? (
+          <>
+            <div className={`grid ${gridLayout}`}>
+              {content}
             </div>
 
-            <ProgressBar
-              completedOnPage={kanjiCompletedOnPage}
-              totalOnPage={paginatedKanji.length}
-              completedTotal={completedTotal}
-              totalWords={kanji.length}
-              label="Today's Kanji"
-              doneMessage="🎉 All kanji studied — your brushwork is paying off!"
-            />
-
-            <PaginationControls
-              currentPage={currentPage}
-              totalPages={totalPages}
-              onPageChange={handlePageChange}
-            />
-
-            <div className="flex flex-wrap justify-center gap-3">
-              <button
-                onClick={() => setShowQuiz(true)}
-                className="flex items-center gap-2 px-6 py-2 bg-[#412D15] text-white rounded-full hover:bg-[#000000] transition-all active:scale-95 shadow-md"
-              >
-                <BrainCircuit className="w-4 h-4" />
-                <span>Quiz</span>
-              </button>
-
-              {completedTotal > 0 && (
-                <button
-                  onClick={handleResetCompletions}
-                  className="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium bg-white text-[#1F150C] border border-[#1F150C]/20 hover:border-red-400 hover:text-red-500 transition-all active:scale-95 shadow-md"
-                >
-                  <RotateCcw className="w-4 h-4" />
-                  <span>Reset Progress</span>
-                </button>
-              )}
-            </div>
-          </div>
-        )}
-
-        {lesson === 'reading' && reading && reading.length > 0 && (
-          <div className="mt-6 space-y-4">
-            <div className="flex items-center justify-center gap-3">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#1F150C] text-white rounded-full text-sm font-bold shadow-md">
-                <Calendar className="w-4 h-4" />
-                <span>Set {currentPage} of {totalPages}</span>
-              </div>
-              <div className="text-sm text-[#1F150C]/60 font-medium">
-                Passages {readingStart}–{readingEnd} of {reading.length}
-              </div>
-            </div>
-
-            <ProgressBar
-              completedOnPage={readingCompletedOnPage}
-              totalOnPage={paginatedReading.length}
-              completedTotal={completedTotal}
-              totalWords={reading.length}
-              label="Today's Reading"
-              doneMessage="🎉 Both passages done — well read!"
-            />
-
-            <PaginationControls
-              currentPage={currentPage}
-              totalPages={totalPages}
-              onPageChange={handlePageChange}
-            />
-
-            <p className="text-xs text-[#1F150C]/50 italic">
-              Submit a passage&apos;s comprehension answers to mark it as studied.
-            </p>
-
-            {completedTotal > 0 && (
-              <div className="flex justify-center">
-                <button
-                  onClick={handleResetCompletions}
-                  className="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium bg-white text-[#1F150C] border border-[#1F150C]/20 hover:border-red-400 hover:text-red-500 transition-all active:scale-95 shadow-md"
-                >
-                  <RotateCcw className="w-4 h-4" />
-                  <span>Reset Progress</span>
-                </button>
+            {totalPages > 1 && (
+              <div className="mt-12 space-y-3">
+                <div className="text-center text-sm text-[#1F150C]/60 font-medium">
+                  {rangeLabel} of {totalUnits} {unitLabel}
+                </div>
+                <PaginationControls
+                  currentPage={currentPage}
+                  totalPages={totalPages}
+                  onPageChange={handlePageChange}
+                />
               </div>
             )}
-          </div>
-        )}
-
-        {lesson === 'listening' && listening && listening.length > 0 && (
-          <div className="mt-6 space-y-4">
-            <div className="flex items-center justify-center gap-3">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#1F150C] text-white rounded-full text-sm font-bold shadow-md">
-                <Calendar className="w-4 h-4" />
-                <span>Set {currentPage} of {totalPages}</span>
-              </div>
-              <div className="text-sm text-[#1F150C]/60 font-medium">
-                Exercises {listeningStart}–{listeningEnd} of {listening.length}
-              </div>
-            </div>
-
-            <ProgressBar
-              completedOnPage={listeningCompletedOnPage}
-              totalOnPage={paginatedListening.length}
-              completedTotal={completedTotal}
-              totalWords={listening.length}
-              label="Today's Listening"
-              doneMessage="🎧 All ears! Today's exercises complete."
-            />
-
-            <PaginationControls
-              currentPage={currentPage}
-              totalPages={totalPages}
-              onPageChange={handlePageChange}
-            />
-
-            <p className="text-xs text-[#1F150C]/50 italic">
-              Submit an exercise&apos;s comprehension answers to mark it as studied.
-            </p>
-
-            {completedTotal > 0 && (
-              <div className="flex justify-center">
-                <button
-                  onClick={handleResetCompletions}
-                  className="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium bg-white text-[#1F150C] border border-[#1F150C]/20 hover:border-red-400 hover:text-red-500 transition-all active:scale-95 shadow-md"
-                >
-                  <RotateCcw className="w-4 h-4" />
-                  <span>Reset Progress</span>
-                </button>
-              </div>
-            )}
+          </>
+        ) : (
+          <div className="text-center p-10 bg-white/50 rounded-2xl max-w-2xl mx-auto">
+            <p className="text-[#1F150C]/80">Content coming soon!</p>
           </div>
         )}
       </div>
-      {isTrackedCategory(lesson) && content && (() => {
-        let done = 0;
-        let total = 0;
-        if (lesson === 'vocab') { done = completedOnPage; total = paginatedVocab.length; }
-        else if (lesson === 'kanji') { done = kanjiCompletedOnPage; total = paginatedKanji.length; }
-        else if (lesson === 'grammar') { done = grammarCompletedOnPage; total = paginatedGrammar.length; }
-        else if (lesson === 'reading') { done = readingCompletedOnPage; total = paginatedReading.length; }
-        else if (lesson === 'listening') { done = listeningCompletedOnPage; total = paginatedListening.length; }
-        const pct = total > 0 ? (done / total) * 100 : 0;
-        const hasQuiz = lesson === 'vocab' || lesson === 'kanji' || lesson === 'grammar';
-        return (
-          <div className="sticky top-20 z-30 -mx-4 sm:-mx-6 lg:-mx-8 mb-6 bg-[#E1DCC9]/85 backdrop-blur-md border-y border-black/5">
-            <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5 flex items-center gap-3">
-              <div className="flex items-center gap-2 min-w-0">
-                <span className="text-xs font-bold text-[#1F150C] truncate">
-                  {lessonLabel}
-                </span>
-                <span className="hidden sm:inline text-xs text-[#1F150C]/50">·</span>
-                <span className="text-xs font-medium text-[#1F150C]/60 whitespace-nowrap">
-                  Set {currentPage}/{totalPages}
-                </span>
-              </div>
-
-              <div className="flex-1 min-w-0 flex items-center gap-2">
-                <div className="flex-1 h-1.5 bg-[#1F150C]/10 rounded-full overflow-hidden">
-                  <div
-                    className="h-full rounded-full transition-all duration-500"
-                    style={{
-                      width: `${pct}%`,
-                      background: pct === 100
-                        ? 'linear-gradient(90deg, #10b981, #059669)'
-                        : 'linear-gradient(90deg, #412D15, #ef4444)',
-                    }}
-                  />
-                </div>
-                <span className="text-[11px] font-bold text-[#1F150C]/70 whitespace-nowrap tabular-nums">
-                  {done}/{total}
-                </span>
-              </div>
-
-              {hasQuiz && (
-                <button
-                  onClick={() => setShowQuiz(true)}
-                  className="flex items-center gap-1.5 px-3 py-1.5 bg-[#412D15] text-white text-xs font-bold rounded-full hover:bg-[#000000] transition-all active:scale-95 shadow-sm flex-shrink-0"
-                  title="Open quiz"
-                >
-                  <BrainCircuit className="w-3.5 h-3.5" />
-                  <span className="hidden sm:inline">Quiz</span>
-                </button>
-              )}
-            </div>
-          </div>
-        );
-      })()}
-
-      {content ? (
-        <>
-          <div className={`grid ${gridLayout}`}>
-            {content}
-          </div>
-
-          {lesson === 'vocab' && vocab && vocab.length > 0 && (
-            <div className="mt-12 space-y-4">
-              <div className="text-center text-sm text-[#1F150C]/60 font-medium">
-                Words {pageStartWord}–{pageEndWord} of {vocab.length}
-              </div>
-              <PaginationControls
-                currentPage={currentPage}
-                totalPages={totalPages}
-                onPageChange={handlePageChange}
-              />
-            </div>
-          )}
-
-          {lesson === 'grammar' && grammar && grammar.length > 0 && (
-            <div className="mt-12 space-y-4">
-              <div className="text-center text-sm text-[#1F150C]/60 font-medium">
-                Points {grammarStart}–{grammarEnd} of {grammar.length}
-              </div>
-              <PaginationControls
-                currentPage={currentPage}
-                totalPages={totalPages}
-                onPageChange={handlePageChange}
-              />
-            </div>
-          )}
-
-          {lesson === 'kanji' && kanji && kanji.length > 0 && (
-            <div className="mt-12 space-y-4">
-              <div className="text-center text-sm text-[#1F150C]/60 font-medium">
-                Characters {kanjiStart}–{kanjiEnd} of {kanji.length}
-              </div>
-              <PaginationControls
-                currentPage={currentPage}
-                totalPages={totalPages}
-                onPageChange={handlePageChange}
-              />
-            </div>
-          )}
-
-          {lesson === 'reading' && reading && reading.length > 0 && (
-            <div className="mt-12 space-y-4">
-              <div className="text-center text-sm text-[#1F150C]/60 font-medium">
-                Passages {readingStart}–{readingEnd} of {reading.length}
-              </div>
-              <PaginationControls
-                currentPage={currentPage}
-                totalPages={totalPages}
-                onPageChange={handlePageChange}
-              />
-            </div>
-          )}
-
-          {lesson === 'listening' && listening && listening.length > 0 && (
-            <div className="mt-12 space-y-4">
-              <div className="text-center text-sm text-[#1F150C]/60 font-medium">
-                Exercises {listeningStart}–{listeningEnd} of {listening.length}
-              </div>
-              <PaginationControls
-                currentPage={currentPage}
-                totalPages={totalPages}
-                onPageChange={handlePageChange}
-              />
-            </div>
-          )}
-        </>
-      ) : (
-        <div className="md:col-span-2 text-center p-10 bg-white/50 rounded-2xl">
-          <p className="text-[#1F150C]/80">Content coming soon!</p>
-        </div>
-      )}
 
       {showQuiz && lesson === 'vocab' && vocab && vocab.length > 0 && (
         <VocabularyQuiz
