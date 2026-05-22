@@ -1,7 +1,7 @@
 'use client'
 import {BasicCharProps} from "@/types";
 import {useEffect, useRef, useState, useCallback} from "react";
-import {Eraser, ChevronLeft, Volume2} from 'lucide-react';
+import {Eraser, ChevronLeft, Volume2, Eye, EyeOff} from 'lucide-react';
 import {useParams} from "next/navigation";
 import Link from "next/link";
 import { getDataUrl } from "@/utils/dataUrl";
@@ -24,6 +24,7 @@ const Char = () => {
   const [character, setCharacter] = useState<BasicCharProps>();
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [isDrawing, setIsDrawing] = useState(false);
+  const [showGuide, setShowGuide] = useState(true);
 
   const fetchCharacter = useCallback(async (char: string) => {
     const response = await fetch(getDataUrl(`/data/character/${kana}.json`), {
@@ -119,21 +120,41 @@ const Char = () => {
         </div>
         {/* Practice Canvas */}
         <div className="flex flex-col">
-          <canvas
-            ref={canvasRef}
-            width="400"
-            height="400"
-            className="bg-white rounded-2xl border-2 border-dashed border-[#1F150C]/20 touch-none"
-            onMouseDown={startDrawing}
-            onMouseMove={draw}
-            onMouseUp={stopDrawing}
-            onMouseLeave={stopDrawing}
-            onTouchStart={startDrawing}
-            onTouchMove={draw}
-            onTouchEnd={stopDrawing}
-            style={{ maxWidth: '400px', maxHeight: '400px' }}
-          />
-          <div className="flex gap-2">
+          <div className="relative w-[400px] h-[400px] max-w-full bg-white rounded-2xl border-2 border-dashed border-[#1F150C]/20 overflow-hidden mx-auto">
+            {showGuide && character?.kana && (
+              <div
+                className="absolute inset-0 flex items-center justify-center pointer-events-none select-none"
+                aria-hidden
+              >
+                <span
+                  style={{
+                    color: 'rgba(31,21,12,0.13)',
+                    fontSize: '320px',
+                    lineHeight: 1,
+                    fontFamily: '"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic","Meiryo","Noto Sans JP",sans-serif',
+                  }}
+                >
+                  {character.kana}
+                </span>
+              </div>
+            )}
+            <canvas
+              ref={canvasRef}
+              width="400"
+              height="400"
+              className="absolute inset-0 touch-none"
+              style={{ background: 'transparent' }}
+              onMouseDown={startDrawing}
+              onMouseMove={draw}
+              onMouseUp={stopDrawing}
+              onMouseLeave={stopDrawing}
+              onTouchStart={startDrawing}
+              onTouchMove={draw}
+              onTouchEnd={stopDrawing}
+            />
+          </div>
+
+          <div className="flex gap-2 flex-wrap">
             <button
               onClick={() => speak(character?.kana)}
               disabled={!character?.kana}
@@ -142,7 +163,16 @@ const Char = () => {
             >
               <Volume2 className="h-8 w-8" />
             </button>
-            <button onClick={clearCanvas} className="mt-4 w-full flex items-center justify-center gap-2 py-3 bg-[#1F150C] text-white font-bold rounded-xl hover:bg-[#412D15] transition-colors">
+            <button
+              onClick={() => setShowGuide(v => !v)}
+              className="mt-4 inline-flex items-center gap-1.5 px-4 py-3 rounded-xl bg-white border border-[#1F150C]/20 text-[#1F150C] font-bold hover:border-[#412D15]/40 transition-colors text-sm"
+              aria-pressed={showGuide}
+              title={showGuide ? 'Hide tracing guide' : 'Show tracing guide'}
+            >
+              {showGuide ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+              {showGuide ? 'Hide guide' : 'Show guide'}
+            </button>
+            <button onClick={clearCanvas} className="mt-4 flex-1 flex items-center justify-center gap-2 py-3 bg-[#1F150C] text-white font-bold rounded-xl hover:bg-[#412D15] transition-colors">
               <Eraser className="h-5 w-5" /> Clear
             </button>
           </div>
