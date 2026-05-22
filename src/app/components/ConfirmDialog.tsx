@@ -41,7 +41,7 @@ export default function ConfirmDialog({
 
   const confirmCls = destructive
     ? 'bg-red-500 hover:bg-red-600 text-white shadow-red-500/30'
-    : 'bg-[#D72323] hover:bg-[#b91c1c] text-white shadow-[#D72323]/30';
+    : 'bg-[#412D15] hover:bg-[#000000] text-white shadow-[#412D15]/30';
 
   return (
     <div
@@ -49,7 +49,7 @@ export default function ConfirmDialog({
       onClick={onCancel}
     >
       <div
-        className="bg-[#F5EDED] w-full max-w-sm rounded-2xl shadow-2xl overflow-hidden"
+        className="bg-[#E1DCC9] w-full max-w-sm rounded-2xl shadow-2xl overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex items-start justify-between p-5 pb-3">
@@ -60,25 +60,25 @@ export default function ConfirmDialog({
               <AlertTriangle className="w-5 h-5" />
             </div>
             <div className="pt-1">
-              <h3 className="text-base font-bold text-[#3E3636]">{title}</h3>
+              <h3 className="text-base font-bold text-[#1F150C]">{title}</h3>
               {description && (
-                <p className="text-sm text-[#3E3636]/70 mt-1 leading-relaxed">{description}</p>
+                <p className="text-sm text-[#1F150C]/70 mt-1 leading-relaxed">{description}</p>
               )}
             </div>
           </div>
           <button
             onClick={onCancel}
-            className="p-1 rounded-full hover:bg-[#3E3636]/10 transition-colors flex-shrink-0"
+            className="p-1 rounded-full hover:bg-[#1F150C]/10 transition-colors flex-shrink-0"
             aria-label="Close"
           >
-            <X className="w-4 h-4 text-[#3E3636]/60" />
+            <X className="w-4 h-4 text-[#1F150C]/60" />
           </button>
         </div>
 
         <div className="flex gap-2 p-4 pt-3 bg-white/40">
           <button
             onClick={onCancel}
-            className="flex-1 py-2.5 rounded-xl bg-white border border-[#3E3636]/15 text-[#3E3636] font-bold text-sm hover:border-[#3E3636]/40 transition-all active:scale-[0.98]"
+            className="flex-1 py-2.5 rounded-xl bg-white border border-[#1F150C]/15 text-[#1F150C] font-bold text-sm hover:border-[#1F150C]/40 transition-all active:scale-[0.98]"
           >
             {cancelLabel}
           </button>

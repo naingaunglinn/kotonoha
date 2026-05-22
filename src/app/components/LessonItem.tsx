@@ -56,43 +56,43 @@ const LessonItem = ({lesson}: LessonContentPageProps) => {
   return (
     <Link
       href={`${lesson.level_id}/${lesson.route}`}
-      className="bg-white/80 backdrop-blur-sm p-6 rounded-2xl border border-black/5 shadow-sm hover:shadow-xl hover:border-[#D72323]/50 transition-all duration-300 group flex items-center space-x-6 cursor-pointer"
+      className="bg-white/80 backdrop-blur-sm p-6 rounded-2xl border border-black/5 shadow-sm hover:shadow-xl hover:border-[#412D15]/50 transition-all duration-300 group flex items-center space-x-6 cursor-pointer"
     >
-      <div className={`p-4 rounded-lg flex-shrink-0 ${isDone ? 'bg-emerald-50' : 'bg-[#F5EDED]'}`}>
-        <Icon className={`h-6 w-6 ${isDone ? 'text-emerald-600' : 'text-[#3E3636]'}`} />
+      <div className={`p-4 rounded-lg flex-shrink-0 ${isDone ? 'bg-emerald-50' : 'bg-[#E1DCC9]'}`}>
+        <Icon className={`h-6 w-6 ${isDone ? 'text-emerald-600' : 'text-[#1F150C]'}`} />
       </div>
       <div className="flex-grow min-w-0">
         <div className="flex items-center gap-2 flex-wrap">
-          <h4 className="text-lg font-bold text-[#3E3636]">{lesson.title}</h4>
+          <h4 className="text-lg font-bold text-[#1F150C]">{lesson.title}</h4>
           {hasProgress && (
             <span className={`inline-flex items-center gap-1 text-[10px] font-bold px-2 py-0.5 rounded-full ${
               isDone
                 ? 'bg-emerald-100 text-emerald-700'
                 : completed > 0
-                  ? 'bg-[#D72323]/10 text-[#D72323]'
-                  : 'bg-[#3E3636]/5 text-[#3E3636]/60'
+                  ? 'bg-[#412D15]/10 text-[#412D15]'
+                  : 'bg-[#1F150C]/5 text-[#1F150C]/60'
             }`}>
               {isDone && <CheckCircle2 className="w-3 h-3" />}
               {completed}/{total} · {pct}%
             </span>
           )}
         </div>
-        <p className="text-sm text-[#3E3636]/70 mt-0.5">{lesson.description}</p>
+        <p className="text-sm text-[#1F150C]/70 mt-0.5">{lesson.description}</p>
         {hasProgress && completed > 0 && (
-          <div className="mt-2 h-1 w-full bg-[#3E3636]/5 rounded-full overflow-hidden">
+          <div className="mt-2 h-1 w-full bg-[#1F150C]/5 rounded-full overflow-hidden">
             <div
               className="h-full rounded-full transition-all duration-500"
               style={{
                 width: `${pct}%`,
                 background: isDone
                   ? 'linear-gradient(90deg, #10b981, #059669)'
-                  : 'linear-gradient(90deg, #D72323, #ef4444)',
+                  : 'linear-gradient(90deg, #412D15, #ef4444)',
               }}
             />
           </div>
         )}
       </div>
-      <div className="text-[#3E3636]/50 group-hover:text-[#D72323] transition-colors flex-shrink-0">
+      <div className="text-[#1F150C]/50 group-hover:text-[#412D15] transition-colors flex-shrink-0">
         <ChevronRight className="h-6 w-6 transform group-hover:translate-x-1 transition-transform" />
       </div>
     </Link>

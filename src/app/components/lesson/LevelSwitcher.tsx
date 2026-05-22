@@ -17,7 +17,7 @@ interface LevelSwitcherProps {
 export default function LevelSwitcher({ currentId, lesson }: LevelSwitcherProps) {
   return (
     <div className="flex items-center justify-center gap-1.5 flex-wrap">
-      <span className="text-[10px] font-bold text-[#3E3636]/40 uppercase tracking-wider mr-1">Jump to</span>
+      <span className="text-[10px] font-bold text-[#1F150C]/40 uppercase tracking-wider mr-1">Jump to</span>
       {LEVELS.map(({ id, label }) => {
         const isCurrent = id === currentId;
         return (
@@ -26,8 +26,8 @@ export default function LevelSwitcher({ currentId, lesson }: LevelSwitcherProps)
             href={`/level/${id}/${lesson}`}
             className={`px-3 py-1 rounded-full text-xs font-bold transition-all active:scale-95 ${
               isCurrent
-                ? 'bg-[#D72323] text-white shadow-md shadow-[#D72323]/30 cursor-default'
-                : 'bg-white text-[#3E3636] border border-[#3E3636]/15 hover:border-[#D72323]/40'
+                ? 'bg-[#412D15] text-white shadow-md shadow-[#412D15]/30 cursor-default'
+                : 'bg-white text-[#1F150C] border border-[#1F150C]/15 hover:border-[#412D15]/40'
             }`}
           >
             {label}

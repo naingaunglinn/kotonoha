@@ -51,7 +51,7 @@ const Lessons = () => {
   if (!level) {
     return (
       <div className="text-center p-10 bg-white/50 rounded-2xl">
-        <p className="text-[#3E3636]/80">Level not found.</p>
+        <p className="text-[#1F150C]/80">Level not found.</p>
       </div>
     );
   }
@@ -62,17 +62,17 @@ const Lessons = () => {
   return (
     <div className="max-w-4xl mx-auto pt-16 pb-24 px-4 sm:px-6 lg:px-8">
       <div className="relative text-center">
-        <Link href={`/`} className="absolute left-0 top-1/2 -translate-y-1/2 p-3 rounded-full hover:bg-[#3E3636]/10 transition-colors duration-300"><ChevronLeft className="h-6 w-6 text-[#3E3636]" /></Link>
+        <Link href={`/`} className="absolute left-0 top-1/2 -translate-y-1/2 p-3 rounded-full hover:bg-[#1F150C]/10 transition-colors duration-300"><ChevronLeft className="h-6 w-6 text-[#1F150C]" /></Link>
         <div className="inline-flex items-center gap-2 mb-3">
-          <span className="px-3 py-1 rounded-full bg-[#D72323]/10 text-[#D72323] text-xs font-bold tracking-wider">
+          <span className="px-3 py-1 rounded-full bg-[#412D15]/10 text-[#412D15] text-xs font-bold tracking-wider">
             {levelTag}
           </span>
-          <span className="px-3 py-1 rounded-full bg-[#3E3636]/5 text-[#3E3636]/60 text-xs font-medium">
+          <span className="px-3 py-1 rounded-full bg-[#1F150C]/5 text-[#1F150C]/60 text-xs font-medium">
             {level.lessons.length} Lessons
           </span>
         </div>
         <h2 className="text-4xl md:text-5xl font-extrabold tracking-tighter">{level?.title} Lessons</h2>
-        <p className="mt-4 text-lg text-[#3E3636]/80">{level?.description}</p>
+        <p className="mt-4 text-lg text-[#1F150C]/80">{level?.description}</p>
       </div>
 
       {/* Study Tips */}
@@ -83,14 +83,14 @@ const Lessons = () => {
               <Lightbulb className="h-5 w-5 text-white" />
             </div>
             <div>
-              <h3 className="font-bold text-[#3E3636] mb-2 flex items-center gap-2">
+              <h3 className="font-bold text-[#1F150C] mb-2 flex items-center gap-2">
                 <GraduationCap className="h-4 w-4 text-amber-600" />
                 Study Guide
               </h3>
-              <p className="text-sm text-[#3E3636]/70 mb-3">{studyTip.tip}</p>
+              <p className="text-sm text-[#1F150C]/70 mb-3">{studyTip.tip}</p>
               <ol className="space-y-1.5">
                 {studyTip.steps.map((step, i) => (
-                  <li key={i} className="flex items-start gap-2 text-sm text-[#3E3636]/80">
+                  <li key={i} className="flex items-start gap-2 text-sm text-[#1F150C]/80">
                     <span className="w-5 h-5 rounded-full bg-amber-200 text-amber-700 text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">
                       {i + 1}
                     </span>
@@ -108,7 +108,7 @@ const Lessons = () => {
           (level?.lessons?.map((lesson: LessonProps) =>
             <LessonItem key={lesson.id} lesson={lesson} />))
           : (
-            <div className="text-center p-10 bg-white/50 rounded-2xl"><p className="text-[#3E3636]/80">Lessons for {level.title} are being prepared.</p></div>
+            <div className="text-center p-10 bg-white/50 rounded-2xl"><p className="text-[#1F150C]/80">Lessons for {level.title} are being prepared.</p></div>
           )}
       </div>
     </div>

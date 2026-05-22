@@ -26,20 +26,20 @@ export default function ProgressBar({
       <div className="flex items-center justify-between mb-2">
         <div className="flex items-center gap-2">
           <CheckCircle2 className="w-4 h-4 text-emerald-500" />
-          <span className="text-sm font-bold text-[#3E3636]">{label}</span>
+          <span className="text-sm font-bold text-[#1F150C]">{label}</span>
         </div>
         <span className="text-sm font-bold text-emerald-600">
           {completedOnPage}/{totalOnPage}
         </span>
       </div>
-      <div className="w-full h-3 bg-[#F5EDED] rounded-full overflow-hidden">
+      <div className="w-full h-3 bg-[#E1DCC9] rounded-full overflow-hidden">
         <div
           className="h-full rounded-full transition-all duration-500 ease-out"
           style={{
             width: `${pagePercent}%`,
             background: pagePercent === 100
               ? 'linear-gradient(90deg, #10b981, #059669)'
-              : 'linear-gradient(90deg, #D72323, #ef4444)',
+              : 'linear-gradient(90deg, #412D15, #ef4444)',
           }}
         />
       </div>
@@ -50,14 +50,14 @@ export default function ProgressBar({
       )}
 
       <div className="flex items-center justify-between mt-3 mb-1.5">
-        <span className="text-xs text-[#3E3636]/50 font-medium">Overall</span>
-        <span className="text-xs text-[#3E3636]/60 font-bold">
+        <span className="text-xs text-[#1F150C]/50 font-medium">Overall</span>
+        <span className="text-xs text-[#1F150C]/60 font-bold">
           {completedTotal}/{totalWords} ({Math.round(totalPercent)}%)
         </span>
       </div>
-      <div className="w-full h-1.5 bg-[#F5EDED] rounded-full overflow-hidden">
+      <div className="w-full h-1.5 bg-[#E1DCC9] rounded-full overflow-hidden">
         <div
-          className="h-full bg-[#3E3636]/30 rounded-full transition-all duration-500 ease-out"
+          className="h-full bg-[#1F150C]/30 rounded-full transition-all duration-500 ease-out"
           style={{ width: `${totalPercent}%` }}
         />
       </div>

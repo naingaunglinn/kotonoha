@@ -392,23 +392,23 @@ const LessonContentPage = () => {
 
   return (
     <div className="max-w-8xl mx-auto pt-10 pb-24 px-4 sm:px-6 lg:px-8">
-      <nav className="flex items-center flex-wrap gap-1.5 text-sm text-[#3E3636]/50 mb-8">
-        <Link href="/" className="flex items-center gap-1 hover:text-[#D72323] transition-colors">
+      <nav className="flex items-center flex-wrap gap-1.5 text-sm text-[#1F150C]/50 mb-8">
+        <Link href="/" className="flex items-center gap-1 hover:text-[#412D15] transition-colors">
           <Home className="h-3.5 w-3.5" />
           <span>Home</span>
         </Link>
         <ChevronRight className="h-3.5 w-3.5" />
-        <Link href={`/level/${id}`} className="hover:text-[#D72323] transition-colors">
+        <Link href={`/level/${id}`} className="hover:text-[#412D15] transition-colors">
           {levelLabel}
         </Link>
         <ChevronRight className="h-3.5 w-3.5" />
-        <span className="text-[#3E3636] font-medium">{lessonLabel}</span>
+        <span className="text-[#1F150C] font-medium">{lessonLabel}</span>
       </nav>
 
       <div className="relative text-center mb-12 max-w-3xl mx-auto">
-        <Link href={`/level/${id}`} className="absolute left-0 top-1/2 -translate-y-1/2 p-3 rounded-full hover:bg-[#3E3636]/10 transition-colors duration-300"><ChevronLeft className="h-6 w-6 text-[#3E3636]" /></Link>
+        <Link href={`/level/${id}`} className="absolute left-0 top-1/2 -translate-y-1/2 p-3 rounded-full hover:bg-[#1F150C]/10 transition-colors duration-300"><ChevronLeft className="h-6 w-6 text-[#1F150C]" /></Link>
         <div className="inline-flex items-center gap-2 mb-3 flex-wrap justify-center">
-          <span className="px-3 py-1 rounded-full bg-[#D72323]/10 text-[#D72323] text-xs font-bold tracking-wider">
+          <span className="px-3 py-1 rounded-full bg-[#412D15]/10 text-[#412D15] text-xs font-bold tracking-wider">
             {levelLabel}
           </span>
           {streakCount > 0 && (
@@ -419,7 +419,7 @@ const LessonContentPage = () => {
           )}
         </div>
         <h2 className="text-4xl md:text-5xl font-extrabold tracking-tighter">{header?.title}</h2>
-        <p className="mt-3 text-lg text-[#3E3636]/70">{header?.description}</p>
+        <p className="mt-3 text-lg text-[#1F150C]/70">{header?.description}</p>
 
         <div className="mt-5">
           <LevelSwitcher currentId={id} lesson={lesson} />
@@ -428,11 +428,11 @@ const LessonContentPage = () => {
         {lesson === 'vocab' && vocab && vocab.length > 0 && (
           <div className="mt-6 space-y-4">
             <div className="flex items-center justify-center gap-3">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#3E3636] text-white rounded-full text-sm font-bold shadow-md">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#1F150C] text-white rounded-full text-sm font-bold shadow-md">
                 <Calendar className="w-4 h-4" />
                 <span>Set {currentPage} of {totalPages}</span>
               </div>
-              <div className="text-sm text-[#3E3636]/60 font-medium">
+              <div className="text-sm text-[#1F150C]/60 font-medium">
                 Words {pageStartWord}–{pageEndWord} of {vocab.length}
               </div>
             </div>
@@ -458,8 +458,8 @@ const LessonContentPage = () => {
                   key={value}
                   onClick={() => setPosFilter(value)}
                   className={`px-3 py-1.5 rounded-full text-xs font-bold transition-all active:scale-95 ${posFilter === value
-                    ? 'bg-[#D72323] text-white shadow-md shadow-[#D72323]/30'
-                    : 'bg-white text-[#3E3636] border border-[#3E3636]/15 hover:border-[#D72323]/40'
+                    ? 'bg-[#412D15] text-white shadow-md shadow-[#412D15]/30'
+                    : 'bg-white text-[#1F150C] border border-[#1F150C]/15 hover:border-[#412D15]/40'
                     }`}
                 >
                   {label}
@@ -468,15 +468,15 @@ const LessonContentPage = () => {
             </div>
 
             {posFilter !== 'All' && (
-              <p className="text-xs text-center text-[#3E3636]/50">
-                Showing <span className="font-bold text-[#D72323]">{displayVocab.length}</span> {posFilter}s on this page
+              <p className="text-xs text-center text-[#1F150C]/50">
+                Showing <span className="font-bold text-[#412D15]">{displayVocab.length}</span> {posFilter}s on this page
               </p>
             )}
 
             <div className="flex flex-wrap justify-center gap-3">
               <button
                 onClick={handleRandomizeVocab}
-                className="flex items-center gap-2 px-6 py-2 bg-[#3E3636] text-white rounded-full hover:bg-[#3E3636]/80 transition-all active:scale-95 shadow-md"
+                className="flex items-center gap-2 px-6 py-2 bg-[#1F150C] text-white rounded-full hover:bg-[#1F150C]/80 transition-all active:scale-95 shadow-md"
               >
                 <Shuffle className="w-4 h-4" />
                 <span>Shuffle</span>
@@ -484,7 +484,7 @@ const LessonContentPage = () => {
 
               <button
                 onClick={() => setShowQuiz(true)}
-                className="flex items-center gap-2 px-6 py-2 bg-[#D72323] text-white rounded-full hover:bg-[#b91c1c] transition-all active:scale-95 shadow-md"
+                className="flex items-center gap-2 px-6 py-2 bg-[#412D15] text-white rounded-full hover:bg-[#000000] transition-all active:scale-95 shadow-md"
               >
                 <BrainCircuit className="w-4 h-4" />
                 <span>Quiz</span>
@@ -493,7 +493,7 @@ const LessonContentPage = () => {
               {completedTotal > 0 && (
                 <button
                   onClick={handleResetCompletions}
-                  className="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium bg-white text-[#3E3636] border border-[#3E3636]/20 hover:border-red-400 hover:text-red-500 transition-all active:scale-95 shadow-md"
+                  className="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium bg-white text-[#1F150C] border border-[#1F150C]/20 hover:border-red-400 hover:text-red-500 transition-all active:scale-95 shadow-md"
                 >
                   <RotateCcw className="w-4 h-4" />
                   <span>Reset Progress</span>
@@ -503,8 +503,8 @@ const LessonContentPage = () => {
               <button
                 onClick={() => updateVisibility({ romaji: !globalShowRomaji })}
                 className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all active:scale-95 shadow-md ${globalShowRomaji
-                  ? 'bg-[#D72323] text-white'
-                  : 'bg-white text-[#3E3636] border border-[#3E3636]/20'
+                  ? 'bg-[#412D15] text-white'
+                  : 'bg-white text-[#1F150C] border border-[#1F150C]/20'
                   }`}
               >
                 {globalShowRomaji ? <Eye className="w-4 h-4" /> : <EyeOff className="w-4 h-4" />}
@@ -513,8 +513,8 @@ const LessonContentPage = () => {
               <button
                 onClick={() => updateVisibility({ english: !globalShowEnglish })}
                 className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all active:scale-95 shadow-md ${globalShowEnglish
-                  ? 'bg-[#D72323] text-white'
-                  : 'bg-white text-[#3E3636] border border-[#3E3636]/20'
+                  ? 'bg-[#412D15] text-white'
+                  : 'bg-white text-[#1F150C] border border-[#1F150C]/20'
                   }`}
               >
                 {globalShowEnglish ? <Eye className="w-4 h-4" /> : <EyeOff className="w-4 h-4" />}
@@ -523,8 +523,8 @@ const LessonContentPage = () => {
               <button
                 onClick={() => updateVisibility({ myanmar: !globalShowMyanmar })}
                 className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all active:scale-95 shadow-md ${globalShowMyanmar
-                  ? 'bg-[#D72323] text-white'
-                  : 'bg-white text-[#3E3636] border border-[#3E3636]/20'
+                  ? 'bg-[#412D15] text-white'
+                  : 'bg-white text-[#1F150C] border border-[#1F150C]/20'
                   }`}
               >
                 {globalShowMyanmar ? <Eye className="w-4 h-4" /> : <EyeOff className="w-4 h-4" />}
@@ -537,11 +537,11 @@ const LessonContentPage = () => {
         {lesson === 'grammar' && grammar && grammar.length > 0 && (
           <div className="mt-6 space-y-4">
             <div className="flex items-center justify-center gap-3">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#3E3636] text-white rounded-full text-sm font-bold shadow-md">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#1F150C] text-white rounded-full text-sm font-bold shadow-md">
                 <Calendar className="w-4 h-4" />
                 <span>Set {currentPage} of {totalPages}</span>
               </div>
-              <div className="text-sm text-[#3E3636]/60 font-medium">
+              <div className="text-sm text-[#1F150C]/60 font-medium">
                 Points {grammarStart}–{grammarEnd} of {grammar.length}
               </div>
             </div>
@@ -564,7 +564,7 @@ const LessonContentPage = () => {
             <div className="flex flex-wrap justify-center gap-3">
               <button
                 onClick={() => setShowQuiz(true)}
-                className="flex items-center gap-2 px-6 py-2 bg-[#D72323] text-white rounded-full hover:bg-[#b91c1c] transition-all active:scale-95 shadow-md"
+                className="flex items-center gap-2 px-6 py-2 bg-[#412D15] text-white rounded-full hover:bg-[#000000] transition-all active:scale-95 shadow-md"
               >
                 <BrainCircuit className="w-4 h-4" />
                 <span>Quiz</span>
@@ -573,7 +573,7 @@ const LessonContentPage = () => {
               {completedTotal > 0 && (
                 <button
                   onClick={handleResetCompletions}
-                  className="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium bg-white text-[#3E3636] border border-[#3E3636]/20 hover:border-red-400 hover:text-red-500 transition-all active:scale-95 shadow-md"
+                  className="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium bg-white text-[#1F150C] border border-[#1F150C]/20 hover:border-red-400 hover:text-red-500 transition-all active:scale-95 shadow-md"
                 >
                   <RotateCcw className="w-4 h-4" />
                   <span>Reset Progress</span>
@@ -586,11 +586,11 @@ const LessonContentPage = () => {
         {lesson === 'kanji' && kanji && kanji.length > 0 && (
           <div className="mt-6 space-y-4">
             <div className="flex items-center justify-center gap-3">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#3E3636] text-white rounded-full text-sm font-bold shadow-md">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#1F150C] text-white rounded-full text-sm font-bold shadow-md">
                 <Calendar className="w-4 h-4" />
                 <span>Set {currentPage} of {totalPages}</span>
               </div>
-              <div className="text-sm text-[#3E3636]/60 font-medium">
+              <div className="text-sm text-[#1F150C]/60 font-medium">
                 Characters {kanjiStart}–{kanjiEnd} of {kanji.length}
               </div>
             </div>
@@ -613,7 +613,7 @@ const LessonContentPage = () => {
             <div className="flex flex-wrap justify-center gap-3">
               <button
                 onClick={() => setShowQuiz(true)}
-                className="flex items-center gap-2 px-6 py-2 bg-[#D72323] text-white rounded-full hover:bg-[#b91c1c] transition-all active:scale-95 shadow-md"
+                className="flex items-center gap-2 px-6 py-2 bg-[#412D15] text-white rounded-full hover:bg-[#000000] transition-all active:scale-95 shadow-md"
               >
                 <BrainCircuit className="w-4 h-4" />
                 <span>Quiz</span>
@@ -622,7 +622,7 @@ const LessonContentPage = () => {
               {completedTotal > 0 && (
                 <button
                   onClick={handleResetCompletions}
-                  className="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium bg-white text-[#3E3636] border border-[#3E3636]/20 hover:border-red-400 hover:text-red-500 transition-all active:scale-95 shadow-md"
+                  className="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium bg-white text-[#1F150C] border border-[#1F150C]/20 hover:border-red-400 hover:text-red-500 transition-all active:scale-95 shadow-md"
                 >
                   <RotateCcw className="w-4 h-4" />
                   <span>Reset Progress</span>
@@ -635,11 +635,11 @@ const LessonContentPage = () => {
         {lesson === 'reading' && reading && reading.length > 0 && (
           <div className="mt-6 space-y-4">
             <div className="flex items-center justify-center gap-3">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#3E3636] text-white rounded-full text-sm font-bold shadow-md">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#1F150C] text-white rounded-full text-sm font-bold shadow-md">
                 <Calendar className="w-4 h-4" />
                 <span>Set {currentPage} of {totalPages}</span>
               </div>
-              <div className="text-sm text-[#3E3636]/60 font-medium">
+              <div className="text-sm text-[#1F150C]/60 font-medium">
                 Passages {readingStart}–{readingEnd} of {reading.length}
               </div>
             </div>
@@ -659,7 +659,7 @@ const LessonContentPage = () => {
               onPageChange={handlePageChange}
             />
 
-            <p className="text-xs text-[#3E3636]/50 italic">
+            <p className="text-xs text-[#1F150C]/50 italic">
               Submit a passage&apos;s comprehension answers to mark it as studied.
             </p>
 
@@ -667,7 +667,7 @@ const LessonContentPage = () => {
               <div className="flex justify-center">
                 <button
                   onClick={handleResetCompletions}
-                  className="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium bg-white text-[#3E3636] border border-[#3E3636]/20 hover:border-red-400 hover:text-red-500 transition-all active:scale-95 shadow-md"
+                  className="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium bg-white text-[#1F150C] border border-[#1F150C]/20 hover:border-red-400 hover:text-red-500 transition-all active:scale-95 shadow-md"
                 >
                   <RotateCcw className="w-4 h-4" />
                   <span>Reset Progress</span>
@@ -680,11 +680,11 @@ const LessonContentPage = () => {
         {lesson === 'listening' && listening && listening.length > 0 && (
           <div className="mt-6 space-y-4">
             <div className="flex items-center justify-center gap-3">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#3E3636] text-white rounded-full text-sm font-bold shadow-md">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#1F150C] text-white rounded-full text-sm font-bold shadow-md">
                 <Calendar className="w-4 h-4" />
                 <span>Set {currentPage} of {totalPages}</span>
               </div>
-              <div className="text-sm text-[#3E3636]/60 font-medium">
+              <div className="text-sm text-[#1F150C]/60 font-medium">
                 Exercises {listeningStart}–{listeningEnd} of {listening.length}
               </div>
             </div>
@@ -704,7 +704,7 @@ const LessonContentPage = () => {
               onPageChange={handlePageChange}
             />
 
-            <p className="text-xs text-[#3E3636]/50 italic">
+            <p className="text-xs text-[#1F150C]/50 italic">
               Submit an exercise&apos;s comprehension answers to mark it as studied.
             </p>
 
@@ -712,7 +712,7 @@ const LessonContentPage = () => {
               <div className="flex justify-center">
                 <button
                   onClick={handleResetCompletions}
-                  className="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium bg-white text-[#3E3636] border border-[#3E3636]/20 hover:border-red-400 hover:text-red-500 transition-all active:scale-95 shadow-md"
+                  className="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium bg-white text-[#1F150C] border border-[#1F150C]/20 hover:border-red-400 hover:text-red-500 transition-all active:scale-95 shadow-md"
                 >
                   <RotateCcw className="w-4 h-4" />
                   <span>Reset Progress</span>
@@ -733,31 +733,31 @@ const LessonContentPage = () => {
         const pct = total > 0 ? (done / total) * 100 : 0;
         const hasQuiz = lesson === 'vocab' || lesson === 'kanji' || lesson === 'grammar';
         return (
-          <div className="sticky top-20 z-30 -mx-4 sm:-mx-6 lg:-mx-8 mb-6 bg-[#F5EDED]/85 backdrop-blur-md border-y border-black/5">
+          <div className="sticky top-20 z-30 -mx-4 sm:-mx-6 lg:-mx-8 mb-6 bg-[#E1DCC9]/85 backdrop-blur-md border-y border-black/5">
             <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5 flex items-center gap-3">
               <div className="flex items-center gap-2 min-w-0">
-                <span className="text-xs font-bold text-[#3E3636] truncate">
+                <span className="text-xs font-bold text-[#1F150C] truncate">
                   {lessonLabel}
                 </span>
-                <span className="hidden sm:inline text-xs text-[#3E3636]/50">·</span>
-                <span className="text-xs font-medium text-[#3E3636]/60 whitespace-nowrap">
+                <span className="hidden sm:inline text-xs text-[#1F150C]/50">·</span>
+                <span className="text-xs font-medium text-[#1F150C]/60 whitespace-nowrap">
                   Set {currentPage}/{totalPages}
                 </span>
               </div>
 
               <div className="flex-1 min-w-0 flex items-center gap-2">
-                <div className="flex-1 h-1.5 bg-[#3E3636]/10 rounded-full overflow-hidden">
+                <div className="flex-1 h-1.5 bg-[#1F150C]/10 rounded-full overflow-hidden">
                   <div
                     className="h-full rounded-full transition-all duration-500"
                     style={{
                       width: `${pct}%`,
                       background: pct === 100
                         ? 'linear-gradient(90deg, #10b981, #059669)'
-                        : 'linear-gradient(90deg, #D72323, #ef4444)',
+                        : 'linear-gradient(90deg, #412D15, #ef4444)',
                     }}
                   />
                 </div>
-                <span className="text-[11px] font-bold text-[#3E3636]/70 whitespace-nowrap tabular-nums">
+                <span className="text-[11px] font-bold text-[#1F150C]/70 whitespace-nowrap tabular-nums">
                   {done}/{total}
                 </span>
               </div>
@@ -765,7 +765,7 @@ const LessonContentPage = () => {
               {hasQuiz && (
                 <button
                   onClick={() => setShowQuiz(true)}
-                  className="flex items-center gap-1.5 px-3 py-1.5 bg-[#D72323] text-white text-xs font-bold rounded-full hover:bg-[#b91c1c] transition-all active:scale-95 shadow-sm flex-shrink-0"
+                  className="flex items-center gap-1.5 px-3 py-1.5 bg-[#412D15] text-white text-xs font-bold rounded-full hover:bg-[#000000] transition-all active:scale-95 shadow-sm flex-shrink-0"
                   title="Open quiz"
                 >
                   <BrainCircuit className="w-3.5 h-3.5" />
@@ -785,7 +785,7 @@ const LessonContentPage = () => {
 
           {lesson === 'vocab' && vocab && vocab.length > 0 && (
             <div className="mt-12 space-y-4">
-              <div className="text-center text-sm text-[#3E3636]/60 font-medium">
+              <div className="text-center text-sm text-[#1F150C]/60 font-medium">
                 Words {pageStartWord}–{pageEndWord} of {vocab.length}
               </div>
               <PaginationControls
@@ -798,7 +798,7 @@ const LessonContentPage = () => {
 
           {lesson === 'grammar' && grammar && grammar.length > 0 && (
             <div className="mt-12 space-y-4">
-              <div className="text-center text-sm text-[#3E3636]/60 font-medium">
+              <div className="text-center text-sm text-[#1F150C]/60 font-medium">
                 Points {grammarStart}–{grammarEnd} of {grammar.length}
               </div>
               <PaginationControls
@@ -811,7 +811,7 @@ const LessonContentPage = () => {
 
           {lesson === 'kanji' && kanji && kanji.length > 0 && (
             <div className="mt-12 space-y-4">
-              <div className="text-center text-sm text-[#3E3636]/60 font-medium">
+              <div className="text-center text-sm text-[#1F150C]/60 font-medium">
                 Characters {kanjiStart}–{kanjiEnd} of {kanji.length}
               </div>
               <PaginationControls
@@ -824,7 +824,7 @@ const LessonContentPage = () => {
 
           {lesson === 'reading' && reading && reading.length > 0 && (
             <div className="mt-12 space-y-4">
-              <div className="text-center text-sm text-[#3E3636]/60 font-medium">
+              <div className="text-center text-sm text-[#1F150C]/60 font-medium">
                 Passages {readingStart}–{readingEnd} of {reading.length}
               </div>
               <PaginationControls
@@ -837,7 +837,7 @@ const LessonContentPage = () => {
 
           {lesson === 'listening' && listening && listening.length > 0 && (
             <div className="mt-12 space-y-4">
-              <div className="text-center text-sm text-[#3E3636]/60 font-medium">
+              <div className="text-center text-sm text-[#1F150C]/60 font-medium">
                 Exercises {listeningStart}–{listeningEnd} of {listening.length}
               </div>
               <PaginationControls
@@ -850,7 +850,7 @@ const LessonContentPage = () => {
         </>
       ) : (
         <div className="md:col-span-2 text-center p-10 bg-white/50 rounded-2xl">
-          <p className="text-[#3E3636]/80">Content coming soon!</p>
+          <p className="text-[#1F150C]/80">Content coming soon!</p>
         </div>
       )}
 

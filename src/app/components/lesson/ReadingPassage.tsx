@@ -17,7 +17,7 @@ import {
 const DIFFICULTY_STYLES: Record<string, string> = {
   Easy:   'bg-emerald-100 text-emerald-700 border-emerald-200',
   Medium: 'bg-amber-100   text-amber-700   border-amber-200',
-  Hard:   'bg-red-100     text-[#D72323]   border-red-200',
+  Hard:   'bg-red-100     text-[#412D15]   border-red-200',
 };
 
 // --- Highlight key vocab inside passage text ---
@@ -32,7 +32,7 @@ const HighlightedPassage = ({
 
   if (!keyVocab || keyVocab.length === 0) {
     return (
-      <p className="text-[#3E3636] text-lg leading-relaxed whitespace-pre-line font-medium">
+      <p className="text-[#1F150C] text-lg leading-relaxed whitespace-pre-line font-medium">
         {passage}
       </p>
     );
@@ -71,17 +71,17 @@ const HighlightedPassage = ({
       <span key={`vocab-${i}`} className="relative inline-block">
         <button
           onClick={() => setActiveTooltip(activeTooltip === i ? null : i)}
-          className="text-[#D72323] font-bold underline underline-offset-2 decoration-dotted hover:text-[#b91c1c] transition-colors"
+          className="text-[#412D15] font-bold underline underline-offset-2 decoration-dotted hover:text-[#000000] transition-colors"
         >
           {passage.slice(m.start, m.end)}
         </button>
         {activeTooltip === i && (
-          <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 z-10 w-44 bg-[#3E3636] text-white text-xs rounded-lg px-3 py-2 shadow-lg leading-relaxed">
-            <span className="block font-bold text-[#F5EDED]">{m.vocab.reading}</span>
+          <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 z-10 w-44 bg-[#1F150C] text-white text-xs rounded-lg px-3 py-2 shadow-lg leading-relaxed">
+            <span className="block font-bold text-[#E1DCC9]">{m.vocab.reading}</span>
             <span className="block text-white/80">{m.vocab.meaning_en}</span>
             <span className="block text-white/70 text-[10px]">{m.vocab.meaning_mm}</span>
             {/* Arrow */}
-            <span className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-[#3E3636]" />
+            <span className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-[#1F150C]" />
           </span>
         )}
       </span>
@@ -93,7 +93,7 @@ const HighlightedPassage = ({
   }
 
   return (
-    <p className="text-[#3E3636] text-lg leading-relaxed font-medium">
+    <p className="text-[#1F150C] text-lg leading-relaxed font-medium">
       {segments}
     </p>
   );
@@ -144,16 +144,16 @@ const ExamTimer = ({ onExpire }: { onExpire: () => void }) => {
 
   return (
     <div className="flex flex-wrap items-center gap-2">
-      <Timer className="h-4 w-4 text-[#3E3636]/50" />
-      <span className="text-xs font-bold text-[#3E3636]/50">Timer:</span>
+      <Timer className="h-4 w-4 text-[#1F150C]/50" />
+      <span className="text-xs font-bold text-[#1F150C]/50">Timer:</span>
       {TIMER_OPTIONS.map(opt => (
         <button
           key={opt.seconds}
           onClick={() => start(opt.seconds)}
           className={`px-3 py-1 rounded-lg text-xs font-medium transition-all ${
             selected === opt.seconds && running
-              ? 'bg-[#D72323] text-white'
-              : 'bg-[#F5EDED] text-[#3E3636]/70 hover:bg-[#3E3636]/10'
+              ? 'bg-[#412D15] text-white'
+              : 'bg-[#E1DCC9] text-[#1F150C]/70 hover:bg-[#1F150C]/10'
           }`}
         >
           {opt.label}
@@ -162,12 +162,12 @@ const ExamTimer = ({ onExpire }: { onExpire: () => void }) => {
       {selected !== null && (
         <>
           <span className={`font-mono text-sm font-bold tabular-nums ${
-            isLow ? 'text-[#D72323] animate-pulse' : 'text-[#3E3636]'
+            isLow ? 'text-[#412D15] animate-pulse' : 'text-[#1F150C]'
           }`}>
             {String(minutes).padStart(2, '0')}:{String(seconds).padStart(2, '0')}
           </span>
-          <button onClick={reset} className="p-1 rounded hover:bg-[#3E3636]/10 transition-colors">
-            <RotateCcw className="h-3.5 w-3.5 text-[#3E3636]/50" />
+          <button onClick={reset} className="p-1 rounded hover:bg-[#1F150C]/10 transition-colors">
+            <RotateCcw className="h-3.5 w-3.5 text-[#1F150C]/50" />
           </button>
         </>
       )}
@@ -218,11 +218,11 @@ const ReadingPassage = ({ data, label, isCompleted = false, defaultExpanded = fa
     <div className={`relative rounded-2xl border-2 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 ${
       isCompleted
         ? 'bg-emerald-50/40 border-emerald-400/50'
-        : 'bg-white border-[#3E3636]/10'
+        : 'bg-white border-[#1F150C]/10'
     }`}>
       {label !== undefined && (
         <span className={`absolute -top-2.5 -left-2.5 w-8 h-8 rounded-full text-white text-xs font-bold flex items-center justify-center shadow-md z-10 transition-colors ${
-          isCompleted ? 'bg-emerald-500' : 'bg-[#3E3636]'
+          isCompleted ? 'bg-emerald-500' : 'bg-[#1F150C]'
         }`}>
           {isCompleted ? <CheckCircle className="w-4 h-4" /> : label}
         </span>
@@ -230,7 +230,7 @@ const ReadingPassage = ({ data, label, isCompleted = false, defaultExpanded = fa
 
       {/* Header */}
       <div
-        className="flex items-center justify-between p-5 cursor-pointer hover:bg-[#F5EDED]/50 transition-colors"
+        className="flex items-center justify-between p-5 cursor-pointer hover:bg-[#E1DCC9]/50 transition-colors"
         onClick={() => setExpanded(!expanded)}
       >
         <div className="flex items-center gap-3">
@@ -244,7 +244,7 @@ const ReadingPassage = ({ data, label, isCompleted = false, defaultExpanded = fa
           <div>
             <div className="flex items-center gap-2 flex-wrap">
               <h3 className={`text-lg font-bold transition-colors ${
-                isCompleted ? 'text-emerald-700' : 'text-[#3E3636]'
+                isCompleted ? 'text-emerald-700' : 'text-[#1F150C]'
               }`}>{data.title}</h3>
               {data.difficulty && (
                 <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full border ${DIFFICULTY_STYLES[data.difficulty]}`}>
@@ -257,12 +257,12 @@ const ReadingPassage = ({ data, label, isCompleted = false, defaultExpanded = fa
                 </span>
               )}
             </div>
-            <p className="text-sm text-[#3E3636]/60">{data.title_en} · {data.title_mm}</p>
+            <p className="text-sm text-[#1F150C]/60">{data.title_en} · {data.title_mm}</p>
           </div>
         </div>
         {expanded
-          ? <ChevronUp className="h-5 w-5 text-[#3E3636]/40 flex-shrink-0" />
-          : <ChevronDown className="h-5 w-5 text-[#3E3636]/40 flex-shrink-0" />
+          ? <ChevronUp className="h-5 w-5 text-[#1F150C]/40 flex-shrink-0" />
+          : <ChevronDown className="h-5 w-5 text-[#1F150C]/40 flex-shrink-0" />
         }
       </div>
 
@@ -271,20 +271,20 @@ const ReadingPassage = ({ data, label, isCompleted = false, defaultExpanded = fa
           {/* Timer */}
           <ExamTimer onExpire={() => setTimerExpired(true)} />
           {timerExpired && (
-            <div className="text-xs font-bold text-[#D72323] bg-red-50 rounded-lg px-3 py-2 border border-red-200">
+            <div className="text-xs font-bold text-[#412D15] bg-red-50 rounded-lg px-3 py-2 border border-red-200">
               ⏰ Time&apos;s up! Check your answers below.
             </div>
           )}
 
           {/* Vocab hint (key_vocab legend) */}
           {data.key_vocab && data.key_vocab.length > 0 && !reReadMode && (
-            <p className="text-xs text-[#3E3636]/50 italic">
-              💡 Tap underlined <span className="text-[#D72323] font-bold underline decoration-dotted">red words</span> in the passage to see their meaning.
+            <p className="text-xs text-[#1F150C]/50 italic">
+              💡 Tap underlined <span className="text-[#412D15] font-bold underline decoration-dotted">red words</span> in the passage to see their meaning.
             </p>
           )}
 
           {/* Passage */}
-          <div className="bg-gradient-to-br from-[#F5EDED] to-[#F5EDED]/60 rounded-xl p-5">
+          <div className="bg-gradient-to-br from-[#E1DCC9] to-[#E1DCC9]/60 rounded-xl p-5">
             <HighlightedPassage
               passage={data.passage}
               keyVocab={data.key_vocab ?? []}
@@ -322,15 +322,15 @@ const ReadingPassage = ({ data, label, isCompleted = false, defaultExpanded = fa
 
           {/* Key vocab legend */}
           {data.key_vocab && data.key_vocab.length > 0 && (
-            <div className="bg-[#F5EDED]/60 rounded-xl p-4 border border-black/5">
-              <p className="text-[11px] font-bold text-[#3E3636]/40 uppercase mb-2">Key Vocabulary</p>
+            <div className="bg-[#E1DCC9]/60 rounded-xl p-4 border border-black/5">
+              <p className="text-[11px] font-bold text-[#1F150C]/40 uppercase mb-2">Key Vocabulary</p>
               <div className="flex flex-wrap gap-2">
                 {data.key_vocab.map((v, i) => (
                   <div key={i} className="bg-white rounded-lg px-3 py-1.5 border border-black/8 text-xs">
-                    <span className="font-bold text-[#D72323]">{v.word}</span>
-                    <span className="text-[#3E3636]/50 mx-1">·</span>
-                    <span className="text-[#3E3636]/70">{v.reading}</span>
-                    <span className="block text-[#3E3636]/60 text-[10px] mt-0.5">{v.meaning_en}</span>
+                    <span className="font-bold text-[#412D15]">{v.word}</span>
+                    <span className="text-[#1F150C]/50 mx-1">·</span>
+                    <span className="text-[#1F150C]/70">{v.reading}</span>
+                    <span className="block text-[#1F150C]/60 text-[10px] mt-0.5">{v.meaning_en}</span>
                   </div>
                 ))}
               </div>
@@ -341,14 +341,14 @@ const ReadingPassage = ({ data, label, isCompleted = false, defaultExpanded = fa
           {reReadMode && showResults && (
             <div className="bg-blue-50/60 rounded-xl p-5 border border-blue-100 space-y-3">
               <p className="text-xs font-bold text-blue-700 uppercase tracking-wider">Re-read with Answer Annotations</p>
-              <p className="text-[#3E3636] text-base leading-relaxed whitespace-pre-line font-medium">
+              <p className="text-[#1F150C] text-base leading-relaxed whitespace-pre-line font-medium">
                 {data.passage}
               </p>
               <div className="space-y-2 pt-2 border-t border-blue-100">
                 {data.questions.map((q, i) => (
                   <div key={i} className="text-xs space-y-0.5">
                     <p className="font-bold text-blue-800">{i + 1}. {q.question}</p>
-                    <p className={`font-medium ${selectedAnswers[i] === q.answer ? 'text-emerald-600' : 'text-[#D72323]'}`}>
+                    <p className={`font-medium ${selectedAnswers[i] === q.answer ? 'text-emerald-600' : 'text-[#412D15]'}`}>
                       Your answer: {selectedAnswers[i] ?? '—'}
                     </p>
                     {selectedAnswers[i] !== q.answer && (
@@ -362,20 +362,20 @@ const ReadingPassage = ({ data, label, isCompleted = false, defaultExpanded = fa
 
           {/* Questions */}
           <div className="space-y-4 pt-2">
-            <h4 className="text-sm font-bold text-[#3E3636]/60 uppercase tracking-wider">
+            <h4 className="text-sm font-bold text-[#1F150C]/60 uppercase tracking-wider">
               Comprehension Questions
             </h4>
 
             {data.questions.map((q, qIndex) => (
-              <div key={qIndex} className="bg-[#F5EDED]/40 rounded-xl p-4 space-y-3">
-                <p className="font-semibold text-[#3E3636]">{qIndex + 1}. {q.question}</p>
-                <p className="text-sm text-[#3E3636]/50">{q.question_mm}</p>
+              <div key={qIndex} className="bg-[#E1DCC9]/40 rounded-xl p-4 space-y-3">
+                <p className="font-semibold text-[#1F150C]">{qIndex + 1}. {q.question}</p>
+                <p className="text-sm text-[#1F150C]/50">{q.question_mm}</p>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                   {q.options.map((option, oIndex) => {
                     const isSelected = selectedAnswers[qIndex] === option;
                     const isCorrect = option === q.answer;
-                    let optionStyle = "bg-white border-[#3E3636]/10 hover:border-[#D72323]/40 text-[#3E3636]";
+                    let optionStyle = "bg-white border-[#1F150C]/10 hover:border-[#412D15]/40 text-[#1F150C]";
 
                     if (showResults) {
                       if (isCorrect) {
@@ -383,10 +383,10 @@ const ReadingPassage = ({ data, label, isCompleted = false, defaultExpanded = fa
                       } else if (isSelected && !isCorrect) {
                         optionStyle = "bg-red-50 border-red-400 text-red-700";
                       } else {
-                        optionStyle = "bg-white border-[#3E3636]/10 text-[#3E3636]/40";
+                        optionStyle = "bg-white border-[#1F150C]/10 text-[#1F150C]/40";
                       }
                     } else if (isSelected) {
-                      optionStyle = "bg-[#D72323]/10 border-[#D72323] text-[#D72323]";
+                      optionStyle = "bg-[#412D15]/10 border-[#412D15] text-[#412D15]";
                     }
 
                     return (
@@ -411,7 +411,7 @@ const ReadingPassage = ({ data, label, isCompleted = false, defaultExpanded = fa
                 <button
                   onClick={handleCheck}
                   disabled={Object.keys(selectedAnswers).length < data.questions.length}
-                  className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-[#D72323] to-[#B71C1C] text-white font-medium text-sm hover:opacity-90 transition-opacity disabled:opacity-40 disabled:cursor-not-allowed"
+                  className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-[#412D15] to-[#B71C1C] text-white font-medium text-sm hover:opacity-90 transition-opacity disabled:opacity-40 disabled:cursor-not-allowed"
                 >
                   Check Answers
                 </button>
@@ -429,7 +429,7 @@ const ReadingPassage = ({ data, label, isCompleted = false, defaultExpanded = fa
                   </button>
                   <button
                     onClick={handleReset}
-                    className="px-5 py-2.5 rounded-xl bg-[#3E3636]/10 text-[#3E3636] font-medium text-sm hover:bg-[#3E3636]/20 transition-colors"
+                    className="px-5 py-2.5 rounded-xl bg-[#1F150C]/10 text-[#1F150C] font-medium text-sm hover:bg-[#1F150C]/20 transition-colors"
                   >
                     Try Again
                   </button>

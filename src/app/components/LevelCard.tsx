@@ -23,8 +23,8 @@ const LevelCard = ({level}: LevelCardProps) => {
     >
       <div className="flex-grow">
         <div className="flex items-start justify-between mb-6">
-          <div className="p-4 rounded-xl bg-[#F5EDED] w-min">
-            <Award className="h-7 w-7 text-[#3E3636]" />
+          <div className="p-4 rounded-xl bg-[#E1DCC9] w-min">
+            <Award className="h-7 w-7 text-[#1F150C]" />
           </div>
           {completedCount > 0 && (
             <span className="inline-flex items-center gap-1 text-[10px] font-bold px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-700">
@@ -33,10 +33,10 @@ const LevelCard = ({level}: LevelCardProps) => {
             </span>
           )}
         </div>
-        <h3 className="text-2xl font-bold text-[#3E3636]">{level.title}</h3>
-        <p className="mt-2 text-[#3E3636]/70 leading-relaxed">{level.description}</p>
+        <h3 className="text-2xl font-bold text-[#1F150C]">{level.title}</h3>
+        <p className="mt-2 text-[#1F150C]/70 leading-relaxed">{level.description}</p>
       </div>
-      <div className="mt-8 flex items-center justify-end text-[#3E3636] font-bold transition-all duration-300 transform group-hover:text-[#D72323]">
+      <div className="mt-8 flex items-center justify-end text-[#1F150C] font-bold transition-all duration-300 transform group-hover:text-[#412D15]">
         {completedCount > 0 ? 'Continue' : 'View Lessons'}
         <ChevronRight className="h-5 w-5 ml-2 group-hover:translate-x-1.5 transition-transform duration-300" />
       </div>

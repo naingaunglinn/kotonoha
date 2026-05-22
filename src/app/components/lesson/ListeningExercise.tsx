@@ -146,11 +146,11 @@ const ListeningExercise = ({ data, label, isCompleted = false, defaultExpanded =
     <div className={`relative rounded-2xl border-2 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 ${
       isCompleted
         ? 'bg-emerald-50/40 border-emerald-400/50'
-        : 'bg-white border-[#3E3636]/10'
+        : 'bg-white border-[#1F150C]/10'
     }`}>
       {label !== undefined && (
         <span className={`absolute -top-2.5 -left-2.5 w-8 h-8 rounded-full text-white text-xs font-bold flex items-center justify-center shadow-md z-10 transition-colors ${
-          isCompleted ? 'bg-emerald-500' : 'bg-[#3E3636]'
+          isCompleted ? 'bg-emerald-500' : 'bg-[#1F150C]'
         }`}>
           {isCompleted ? <CheckCircle className="w-4 h-4" /> : label}
         </span>
@@ -158,7 +158,7 @@ const ListeningExercise = ({ data, label, isCompleted = false, defaultExpanded =
 
       {/* Header */}
       <div
-        className="flex items-center justify-between p-5 cursor-pointer hover:bg-[#F5EDED]/50 transition-colors"
+        className="flex items-center justify-between p-5 cursor-pointer hover:bg-[#E1DCC9]/50 transition-colors"
         onClick={() => setExpanded(!expanded)}
       >
         <div className="flex items-center gap-3">
@@ -172,7 +172,7 @@ const ListeningExercise = ({ data, label, isCompleted = false, defaultExpanded =
           <div>
             <div className="flex items-center gap-2 flex-wrap">
               <h3 className={`text-lg font-bold transition-colors ${
-                isCompleted ? 'text-emerald-700' : 'text-[#3E3636]'
+                isCompleted ? 'text-emerald-700' : 'text-[#1F150C]'
               }`}>{data.title}</h3>
               {isCompleted && (
                 <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-700 border border-emerald-200">
@@ -180,12 +180,12 @@ const ListeningExercise = ({ data, label, isCompleted = false, defaultExpanded =
                 </span>
               )}
             </div>
-            <p className="text-sm text-[#3E3636]/60">{data.title_en} · {data.title_mm}</p>
+            <p className="text-sm text-[#1F150C]/60">{data.title_en} · {data.title_mm}</p>
           </div>
         </div>
         {expanded
-          ? <ChevronUp className="h-5 w-5 text-[#3E3636]/40 flex-shrink-0" />
-          : <ChevronDown className="h-5 w-5 text-[#3E3636]/40 flex-shrink-0" />
+          ? <ChevronUp className="h-5 w-5 text-[#1F150C]/40 flex-shrink-0" />
+          : <ChevronDown className="h-5 w-5 text-[#1F150C]/40 flex-shrink-0" />
         }
       </div>
 
@@ -209,8 +209,8 @@ const ListeningExercise = ({ data, label, isCompleted = false, defaultExpanded =
               onClick={() => setShadowingMode(prev => !prev)}
               className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
                 shadowingMode
-                  ? 'bg-[#D72323] text-white'
-                  : 'bg-red-50 text-[#D72323] hover:bg-red-100'
+                  ? 'bg-[#412D15] text-white'
+                  : 'bg-red-50 text-[#412D15] hover:bg-red-100'
               }`}
               title="Shadowing mode: plays slowly with each sentence highlighted"
             >
@@ -236,7 +236,7 @@ const ListeningExercise = ({ data, label, isCompleted = false, defaultExpanded =
 
             {/* Speed Controls */}
             <div className="flex items-center justify-center gap-2 flex-wrap">
-              <span className="text-xs text-[#3E3636]/50 font-medium">Speed:</span>
+              <span className="text-xs text-[#1F150C]/50 font-medium">Speed:</span>
               {SPEED_OPTIONS.map(opt => (
                 <button
                   key={opt.rate}
@@ -244,7 +244,7 @@ const ListeningExercise = ({ data, label, isCompleted = false, defaultExpanded =
                   className={`px-3 py-1 rounded-lg text-xs font-medium transition-all duration-200 ${
                     speed === opt.rate && !shadowingMode
                       ? 'bg-violet-500 text-white shadow-sm'
-                      : 'bg-white text-[#3E3636]/60 hover:bg-violet-100'
+                      : 'bg-white text-[#1F150C]/60 hover:bg-violet-100'
                   }`}
                 >
                   {opt.label}
@@ -253,12 +253,12 @@ const ListeningExercise = ({ data, label, isCompleted = false, defaultExpanded =
             </div>
 
             {shadowingMode && (
-              <p className="text-center text-xs font-bold text-[#D72323]">
+              <p className="text-center text-xs font-bold text-[#412D15]">
                 🎤 Shadowing mode active — playing at 0.6×, tap each sentence to repeat it
               </p>
             )}
             {!shadowingMode && (
-              <p className="text-center text-xs text-[#3E3636]/40">
+              <p className="text-center text-xs text-[#1F150C]/40">
                 🎧 Listen carefully, then answer the questions below
               </p>
             )}
@@ -267,7 +267,7 @@ const ListeningExercise = ({ data, label, isCompleted = false, defaultExpanded =
           {/* Per-sentence replay / shadowing panel */}
           {sentences.length > 0 && (
             <div className="space-y-1.5">
-              <p className="text-[11px] font-bold text-[#3E3636]/40 uppercase tracking-wider">
+              <p className="text-[11px] font-bold text-[#1F150C]/40 uppercase tracking-wider">
                 {shadowingMode ? 'Tap to shadow each line' : 'Replay a sentence'}
               </p>
               <div className="space-y-1">
@@ -278,9 +278,9 @@ const ListeningExercise = ({ data, label, isCompleted = false, defaultExpanded =
                     className={`w-full text-left flex items-start gap-2 px-3 py-2 rounded-lg text-sm transition-all duration-200 ${
                       activeSentence === i
                         ? shadowingMode
-                          ? 'bg-[#D72323]/10 border border-[#D72323]/30 text-[#D72323] font-bold'
+                          ? 'bg-[#412D15]/10 border border-[#412D15]/30 text-[#412D15] font-bold'
                           : 'bg-violet-100 border border-violet-300 text-violet-800 font-bold'
-                        : 'bg-[#F5EDED]/60 hover:bg-violet-50 text-[#3E3636]'
+                        : 'bg-[#E1DCC9]/60 hover:bg-violet-50 text-[#1F150C]'
                     }`}
                   >
                     <Play className="h-3.5 w-3.5 mt-0.5 flex-shrink-0 opacity-50" />
@@ -330,7 +330,7 @@ const ListeningExercise = ({ data, label, isCompleted = false, defaultExpanded =
           </div>
 
           {listenFirstLocked && (
-            <p className="text-xs text-[#3E3636]/50 italic">
+            <p className="text-xs text-[#1F150C]/50 italic">
               Answer all questions below to unlock transcript and translations.
             </p>
           )}
@@ -355,20 +355,20 @@ const ListeningExercise = ({ data, label, isCompleted = false, defaultExpanded =
 
           {/* Questions */}
           <div className="space-y-4 pt-2">
-            <h4 className="text-sm font-bold text-[#3E3636]/60 uppercase tracking-wider">
+            <h4 className="text-sm font-bold text-[#1F150C]/60 uppercase tracking-wider">
               Comprehension Questions
             </h4>
 
             {data.questions.map((q, qIndex) => (
-              <div key={qIndex} className="bg-[#F5EDED]/40 rounded-xl p-4 space-y-3">
-                <p className="font-semibold text-[#3E3636]">{qIndex + 1}. {q.question}</p>
-                <p className="text-sm text-[#3E3636]/50">{q.question_mm}</p>
+              <div key={qIndex} className="bg-[#E1DCC9]/40 rounded-xl p-4 space-y-3">
+                <p className="font-semibold text-[#1F150C]">{qIndex + 1}. {q.question}</p>
+                <p className="text-sm text-[#1F150C]/50">{q.question_mm}</p>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                   {q.options.map((option, oIndex) => {
                     const isSelected = selectedAnswers[qIndex] === option;
                     const isCorrect = option === q.answer;
-                    let optionStyle = "bg-white border-[#3E3636]/10 hover:border-violet-400 text-[#3E3636]";
+                    let optionStyle = "bg-white border-[#1F150C]/10 hover:border-violet-400 text-[#1F150C]";
 
                     if (showResults) {
                       if (isCorrect) {
@@ -376,7 +376,7 @@ const ListeningExercise = ({ data, label, isCompleted = false, defaultExpanded =
                       } else if (isSelected && !isCorrect) {
                         optionStyle = "bg-red-50 border-red-400 text-red-700";
                       } else {
-                        optionStyle = "bg-white border-[#3E3636]/10 text-[#3E3636]/40";
+                        optionStyle = "bg-white border-[#1F150C]/10 text-[#1F150C]/40";
                       }
                     } else if (isSelected) {
                       optionStyle = "bg-violet-100 border-violet-500 text-violet-700";
@@ -416,7 +416,7 @@ const ListeningExercise = ({ data, label, isCompleted = false, defaultExpanded =
                   </div>
                   <button
                     onClick={handleReset}
-                    className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#3E3636]/10 text-[#3E3636] font-medium text-sm hover:bg-[#3E3636]/20 transition-colors"
+                    className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#1F150C]/10 text-[#1F150C] font-medium text-sm hover:bg-[#1F150C]/20 transition-colors"
                   >
                     <RotateCcw className="h-4 w-4" />
                     Try Again
