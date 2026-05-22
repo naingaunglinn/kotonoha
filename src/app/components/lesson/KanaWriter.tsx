@@ -1,41 +1,20 @@
 'use client';
 import { useEffect, useRef, useState, useCallback } from 'react';
 import { Play, Pause, RotateCcw } from 'lucide-react';
+import { useKanjiVGStrokes } from './useKanjiVGStrokes';
 
 interface KanaWriterProps {
   char: string;
-  // visible viewBox stays at 109 (KanjiVG's native size)
   size?: number;
   className?: string;
   autoplay?: boolean;
 }
 
-const KANJIVG_BASE = 'https://cdn.jsdelivr.net/gh/KanjiVG/kanjivg@master/kanji';
 const STROKE_MS = 900;
 const PAUSE_BETWEEN_MS = 250;
 
-const cache = new Map<string, string[]>();
-
-const fetchStrokes = async (char: string): Promise<string[]> => {
-  if (cache.has(char)) return cache.get(char)!;
-  const cp = char.codePointAt(0);
-  if (!cp) return [];
-  const hex = cp.toString(16).padStart(5, '0');
-  const url = `${KANJIVG_BASE}/${hex}.svg`;
-  const res = await fetch(url);
-  if (!res.ok) throw new Error(`KanjiVG ${hex} returned ${res.status}`);
-  const text = await res.text();
-  const doc = new DOMParser().parseFromString(text, 'image/svg+xml');
-  const ds = Array.from(doc.querySelectorAll('path'))
-    .map(p => p.getAttribute('d') ?? '')
-    .filter(Boolean);
-  cache.set(char, ds);
-  return ds;
-};
-
 export default function KanaWriter({ char, size = 280, className = '', autoplay = true }: KanaWriterProps) {
-  const [paths, setPaths] = useState<string[]>([]);
-  const [error, setError] = useState<string | null>(null);
+  const { paths, error } = useKanjiVGStrokes(char);
   const [activeIndex, setActiveIndex] = useState(-1); // -1 = idle, 0..n-1 animating, n = done
   const [isPlaying, setIsPlaying] = useState(false);
   const pathRefs = useRef<Array<SVGPathElement | null>>([]);
@@ -93,23 +72,11 @@ export default function KanaWriter({ char, size = 280, className = '', autoplay 
     setActiveIndex(prev => (prev < 0 || prev >= paths.length ? 0 : prev));
   }, [paths.length]);
 
-  // Fetch strokes on mount / when char changes
+  // Reset playback when char changes
   useEffect(() => {
-    let cancelled = false;
-    setPaths([]);
-    setError(null);
     setActiveIndex(-1);
     setIsPlaying(false);
-    fetchStrokes(char)
-      .then(ds => {
-        if (cancelled) return;
-        setPaths(ds);
-      })
-      .catch(err => {
-        if (cancelled) return;
-        setError(err instanceof Error ? err.message : 'Failed to load stroke data');
-      });
-    return () => { cancelled = true; clearTimer(); };
+    return () => { clearTimer(); };
   }, [char]);
 
   // After paths load, reset styles and optionally autoplay

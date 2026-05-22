@@ -1,11 +1,12 @@
 'use client'
 import {BasicCharProps} from "@/types";
 import {useEffect, useRef, useState, useCallback} from "react";
-import {Eraser, ChevronLeft, Volume2, BookOpen, PenLine} from 'lucide-react';
+import {Eraser, ChevronLeft, Volume2, BookOpen, PenLine, ClipboardCheck} from 'lucide-react';
 import {useParams} from "next/navigation";
 import Link from "next/link";
 import { getDataUrl } from "@/utils/dataUrl";
 import KanaWriter from "@/app/components/lesson/KanaWriter";
+import KanaQuiz from "@/app/components/lesson/KanaQuiz";
 
 const speak = (text: string | null | undefined, lang = 'ja-JP') => {
   if (!text || typeof window === 'undefined' || !window.speechSynthesis) return;
@@ -25,7 +26,7 @@ const Char = () => {
   const [character, setCharacter] = useState<BasicCharProps>();
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [isDrawing, setIsDrawing] = useState(false);
-  const [mode, setMode] = useState<'order' | 'practice'>('order');
+  const [mode, setMode] = useState<'order' | 'practice' | 'quiz'>('order');
 
   const fetchCharacter = useCallback(async (char: string) => {
     const response = await fetch(getDataUrl(`/data/character/${kana}.json`), {
@@ -125,7 +126,7 @@ const Char = () => {
           <div className="inline-flex p-1 bg-[#1F150C]/10 rounded-xl mb-4 self-center">
             <button
               onClick={() => setMode('order')}
-              className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-bold transition-all ${
+              className={`inline-flex items-center gap-1.5 px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-bold transition-all ${
                 mode === 'order'
                   ? 'bg-white text-[#412D15] shadow-sm'
                   : 'text-[#1F150C]/60 hover:text-[#1F150C]'
@@ -133,11 +134,11 @@ const Char = () => {
               aria-pressed={mode === 'order'}
             >
               <BookOpen className="w-4 h-4" />
-              Stroke order
+              <span className="hidden sm:inline">Stroke </span>order
             </button>
             <button
               onClick={() => setMode('practice')}
-              className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-bold transition-all ${
+              className={`inline-flex items-center gap-1.5 px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-bold transition-all ${
                 mode === 'practice'
                   ? 'bg-white text-[#412D15] shadow-sm'
                   : 'text-[#1F150C]/60 hover:text-[#1F150C]'
@@ -147,11 +148,27 @@ const Char = () => {
               <PenLine className="w-4 h-4" />
               Practice
             </button>
+            <button
+              onClick={() => setMode('quiz')}
+              className={`inline-flex items-center gap-1.5 px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-bold transition-all ${
+                mode === 'quiz'
+                  ? 'bg-white text-[#412D15] shadow-sm'
+                  : 'text-[#1F150C]/60 hover:text-[#1F150C]'
+              }`}
+              aria-pressed={mode === 'quiz'}
+            >
+              <ClipboardCheck className="w-4 h-4" />
+              Quiz
+            </button>
           </div>
 
           <div className="relative w-[400px] h-[400px] max-w-full bg-white rounded-2xl border-2 border-dashed border-[#1F150C]/20 overflow-hidden mx-auto">
             {mode === 'order' && character?.kana && (
               <KanaWriter char={character.kana} autoplay />
+            )}
+
+            {mode === 'quiz' && character?.kana && (
+              <KanaQuiz char={character.kana} />
             )}
 
             {mode === 'practice' && (
@@ -191,9 +208,9 @@ const Char = () => {
             )}
           </div>
 
-          {mode === 'order' && (
+          {(mode === 'order' || mode === 'quiz') && (
             <p className="mt-2 text-[10px] text-center text-[#1F150C]/40">
-              Stroke order from{' '}
+              Stroke data from{' '}
               <a
                 href="https://kanjivg.tagaini.net/"
                 target="_blank"
