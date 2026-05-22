@@ -6,6 +6,18 @@ import {useParams} from "next/navigation";
 import Link from "next/link";
 import { getDataUrl } from "@/utils/dataUrl";
 
+const speak = (text: string | undefined, lang = 'ja-JP') => {
+  if (!text || typeof window === 'undefined' || !window.speechSynthesis) return;
+  window.speechSynthesis.cancel();
+  const utterance = new SpeechSynthesisUtterance(text);
+  utterance.lang = lang;
+  utterance.rate = 0.8;
+  const voices = window.speechSynthesis.getVoices();
+  const ja = voices.find(v => v.lang === 'ja-JP' || v.lang.startsWith('ja'));
+  if (ja) utterance.voice = ja;
+  window.speechSynthesis.speak(utterance);
+};
+
 const Char = () => {
   const params = useParams<{ kana: string; char: string }>();
   const { kana, char } = params!;
@@ -122,7 +134,14 @@ const Char = () => {
             style={{ maxWidth: '400px', maxHeight: '400px' }}
           />
           <div className="flex gap-2">
-            <button onClick={() => console.log('true')} className="mt-4 p-3 rounded-full bg-white hover:bg-[#412D15] text-[#1F150C] hover:text-white transition-all duration-300 self-start"><Volume2 className="h-8 w-8" /></button>
+            <button
+              onClick={() => speak(character?.kana)}
+              disabled={!character?.kana}
+              title={character?.kana ? `Pronounce ${character.kana}` : ''}
+              className="mt-4 p-3 rounded-full bg-white hover:bg-[#412D15] text-[#1F150C] hover:text-white transition-all duration-300 self-start disabled:opacity-40 disabled:cursor-not-allowed"
+            >
+              <Volume2 className="h-8 w-8" />
+            </button>
             <button onClick={clearCanvas} className="mt-4 w-full flex items-center justify-center gap-2 py-3 bg-[#1F150C] text-white font-bold rounded-xl hover:bg-[#412D15] transition-colors">
               <Eraser className="h-5 w-5" /> Clear
             </button>
