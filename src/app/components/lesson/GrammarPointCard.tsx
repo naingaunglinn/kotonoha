@@ -24,11 +24,26 @@ const GrammarPointCard = ({ item, label, isCompleted = false, onToggleComplete }
   const [showConjugation, setShowConjugation] = useState(false);
 
   return (
-    <div className={`col-span-2 p-6 rounded-2xl border-2 relative transition-all duration-300 ${
+    <div className={`col-span-2 p-6 pl-7 rounded-2xl border-2 relative overflow-hidden transition-all duration-300 ${
       isCompleted
         ? 'bg-emerald-50/80 border-emerald-400/50'
         : 'bg-white/80 border-black/5'
     }`}>
+      {/* Sentence-diagram left ribbon */}
+      <div
+        className={`absolute top-0 left-0 bottom-0 w-1.5 transition-colors ${
+          isCompleted ? 'bg-emerald-500/60' : 'bg-[#412D15]/70'
+        }`}
+        aria-hidden
+      />
+      {/* Faint diagonal hatch behind title — evokes sentence-diagram lines */}
+      <div
+        className="absolute top-0 right-0 w-40 h-24 pointer-events-none opacity-30"
+        style={{
+          backgroundImage: `repeating-linear-gradient(135deg, rgba(65,45,21,0.08) 0 1px, transparent 1px 8px)`,
+        }}
+        aria-hidden
+      />
       {label !== undefined && (
         <span className={`absolute -top-2.5 -left-2.5 w-8 h-8 rounded-full text-white text-xs font-bold flex items-center justify-center shadow-md transition-colors ${
           isCompleted ? 'bg-emerald-500' : 'bg-[#1F150C]'

@@ -24,11 +24,24 @@ const KanjiCard = ({ item, label, isCompleted = false, onToggleComplete }: Kanji
   const [showMnemonic, setShowMnemonic] = useState(false);
 
   return (
-    <div className={`p-5 rounded-2xl border-2 flex flex-col justify-between gap-3 relative transition-all duration-300 ${
+    <div className={`p-5 rounded-2xl border-2 flex flex-col justify-between gap-3 relative overflow-hidden transition-all duration-300 ${
       isCompleted
         ? 'bg-emerald-50/80 border-emerald-400/50'
         : 'bg-white/80 border-black/5'
     }`}>
+      {/* Genkō-yōshi grid — Japanese practice paper texture */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-60"
+        style={{
+          backgroundImage: `
+            linear-gradient(to right, rgba(31,21,12,0.05) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(31,21,12,0.05) 1px, transparent 1px)
+          `,
+          backgroundSize: '24px 24px',
+        }}
+        aria-hidden
+      />
+      <div className="relative flex flex-col justify-between gap-3 h-full">
       {label !== undefined && (
         <span className={`absolute -top-2.5 -left-2.5 w-8 h-8 rounded-full text-white text-xs font-bold flex items-center justify-center shadow-md transition-colors ${
           isCompleted ? 'bg-emerald-500' : 'bg-[#1F150C]'
@@ -174,6 +187,7 @@ const KanjiCard = ({ item, label, isCompleted = false, onToggleComplete }: Kanji
           <p className="text-[11px] text-[#1F150C]/60 leading-relaxed">{item.description}</p>
         </div>
       )}
+      </div>
     </div>
   );
 };

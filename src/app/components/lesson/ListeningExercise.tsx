@@ -148,6 +148,29 @@ const ListeningExercise = ({ data, label, isCompleted = false, defaultExpanded =
         ? 'bg-emerald-50/40 border-emerald-400/50'
         : 'bg-white border-[#1F150C]/10'
     }`}>
+      {/* Waveform strip along the top — visual cue this is audio */}
+      <svg
+        className="absolute top-0 inset-x-0 w-full h-2.5 pointer-events-none"
+        viewBox="0 0 200 10"
+        preserveAspectRatio="none"
+        aria-hidden
+      >
+        {Array.from({ length: 40 }).map((_, i) => {
+          const heights = [3, 5, 2, 7, 4, 6, 3, 8, 5, 2, 4, 7, 3, 5, 6, 2, 8, 4, 3, 5];
+          const h = heights[i % heights.length];
+          return (
+            <rect
+              key={i}
+              x={i * 5 + 1}
+              y={5 - h / 2}
+              width={2.5}
+              height={h}
+              rx={0.6}
+              fill={isCompleted ? 'rgba(16,185,129,0.35)' : 'rgba(65,45,21,0.3)'}
+            />
+          );
+        })}
+      </svg>
       {label !== undefined && (
         <span className={`absolute -top-2.5 -left-2.5 w-8 h-8 rounded-full text-white text-xs font-bold flex items-center justify-center shadow-md z-10 transition-colors ${
           isCompleted ? 'bg-emerald-500' : 'bg-[#1F150C]'

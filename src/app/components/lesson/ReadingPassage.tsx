@@ -220,6 +220,15 @@ const ReadingPassage = ({ data, label, isCompleted = false, defaultExpanded = fa
         ? 'bg-emerald-50/40 border-emerald-400/50'
         : 'bg-white border-[#1F150C]/10'
     }`}>
+      {/* Book-fold corner — top-right page-turn motif */}
+      <svg
+        className="absolute top-0 right-0 w-10 h-10 pointer-events-none"
+        viewBox="0 0 40 40"
+        aria-hidden
+      >
+        <path d="M0,0 L40,0 L40,40 Z" fill="rgba(65,45,21,0.06)" />
+        <path d="M40,0 L40,18 L22,0 Z" fill="rgba(225,220,201,0.95)" stroke="rgba(31,21,12,0.12)" strokeWidth="0.5" />
+      </svg>
       {label !== undefined && (
         <span className={`absolute -top-2.5 -left-2.5 w-8 h-8 rounded-full text-white text-xs font-bold flex items-center justify-center shadow-md z-10 transition-colors ${
           isCompleted ? 'bg-emerald-500' : 'bg-[#1F150C]'
