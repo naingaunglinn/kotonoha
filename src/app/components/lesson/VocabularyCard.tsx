@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import { VocabularyProps, PartOfSpeech } from "@/types";
 
 interface VocabularyCardProps {
-  key: number | null;
   item: VocabularyProps;
   label?: number;
   isCompleted?: boolean;
@@ -73,7 +72,7 @@ const VocabularyCard = ({
       {/* Label Number Badge */}
       {label !== undefined && (
         <span className={`absolute -top-2.5 -left-2.5 w-8 h-8 rounded-full text-white text-xs font-bold flex items-center justify-center shadow-md transition-colors ${
-          isCompleted ? 'bg-emerald-500' : 'bg-[#3E3636]'
+          isCompleted ? 'bg-emerald-500' : 'bg-[#1F150C]'
         }`}>
           {isCompleted ? <Check className="w-4 h-4" /> : label}
         </span>
@@ -83,19 +82,20 @@ const VocabularyCard = ({
       {onToggleComplete && (
         <button
           onClick={() => onToggleComplete(item.word || '')}
-          className={`absolute top-3 right-3 w-7 h-7 rounded-md border-2 flex items-center justify-center transition-all duration-200 ${
+          className={`absolute top-2.5 right-2.5 w-11 h-11 sm:w-9 sm:h-9 rounded-xl border-2 flex items-center justify-center transition-all duration-200 ${
             isCompleted
-              ? 'bg-emerald-500 border-emerald-500 text-white scale-110'
-              : 'border-[#3E3636]/20 text-transparent hover:border-emerald-400 hover:text-emerald-400'
+              ? 'bg-emerald-500 border-emerald-500 text-white scale-105 shadow-md'
+              : 'bg-white border-[#1F150C]/25 text-[#1F150C]/35 hover:border-emerald-400 hover:text-emerald-500 hover:bg-emerald-50'
           }`}
-          title={isCompleted ? "Mark as incomplete" : "Mark as complete"}
+          aria-pressed={isCompleted}
+          title={isCompleted ? 'Mark as not studied' : 'Mark as studied'}
         >
-          <Check className="w-4 h-4" />
+          <Check className="w-5 h-5 sm:w-4 sm:h-4" />
         </button>
       )}
 
       {/* Top row: badges + audio */}
-      <div className="flex items-center justify-between mb-2 pr-8">
+      <div className="flex items-center justify-between mb-2 pr-12 sm:pr-10">
         <div className="flex flex-wrap gap-1.5">
           {item.part_of_speech && (
             <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${POS_COLORS[item.part_of_speech]}`}>
@@ -104,7 +104,7 @@ const VocabularyCard = ({
           )}
           {item.tag && (
             <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${
-              item.tag === 'Core' ? 'bg-[#D72323]/10 text-[#D72323]' : 'bg-[#3E3636]/10 text-[#3E3636]/70'
+              item.tag === 'Core' ? 'bg-[#412D15]/10 text-[#412D15]' : 'bg-[#1F150C]/10 text-[#1F150C]/70'
             }`}>
               {item.tag}
             </span>
@@ -123,13 +123,13 @@ const VocabularyCard = ({
           {/* Romaji */}
           <div className="flex items-center gap-x-2">
             {showRomaji ? (
-              <p className="text-xs text-[#D72323] font-bold tracking-wider">{item.spelling}</p>
+              <p className="text-xs text-[#412D15] font-bold tracking-wider">{item.spelling}</p>
             ) : (
               <p className="text-xs text-gray-400 font-bold tracking-wider italic">Romaji hidden</p>
             )}
             <button
               onClick={toggleLocalRomaji}
-              className="text-gray-400 hover:text-[#3E3636] transition-colors"
+              className="text-gray-400 hover:text-[#1F150C] transition-colors"
               title={showRomaji ? "Hide Romaji" : "Show Romaji"}
             >
               {showRomaji ? <EyeOff className="h-3.5 w-3.5" /> : <Eye className="h-3.5 w-3.5" />}
@@ -138,38 +138,38 @@ const VocabularyCard = ({
 
           {/* Word */}
           <h3 className={`text-3xl font-bold mt-1 transition-colors leading-tight ${
-            isCompleted ? 'text-emerald-700' : 'text-[#3E3636]'
+            isCompleted ? 'text-emerald-700' : 'text-[#1F150C]'
           }`}>{item.word}</h3>
 
           {/* Meanings */}
           <div className={`mt-3 space-y-1.5 border-l-2 pl-3 ${
-            isCompleted ? 'border-emerald-400/50' : 'border-[#D72323]/50'
+            isCompleted ? 'border-emerald-400/50' : 'border-[#412D15]/50'
           }`}>
             <div>
-              <span className="block text-xs font-bold text-[#3E3636]/50">English</span>
+              <span className="block text-xs font-bold text-[#1F150C]/50">English</span>
               {showEnglish ? (
-                <p className="text-sm text-[#3E3636]/90">{item.meaning}</p>
+                <p className="text-sm text-[#1F150C]/90">{item.meaning}</p>
               ) : (
                 <p className="text-xs text-gray-400 font-bold tracking-wider italic">hidden</p>
               )}
               <button
                 onClick={toggleLocalEnglish}
-                className="text-gray-400 hover:text-[#3E3636] transition-colors"
+                className="text-gray-400 hover:text-[#1F150C] transition-colors"
                 title={showEnglish ? "Hide English" : "Show English"}
               >
                 {showEnglish ? <EyeOff className="h-3.5 w-3.5" /> : <Eye className="h-3.5 w-3.5" />}
               </button>
             </div>
             <div>
-              <span className="block text-xs font-bold text-[#3E3636]/50">Myanmar</span>
+              <span className="block text-xs font-bold text-[#1F150C]/50">Myanmar</span>
               {showMyanmar ? (
-                <p className="text-sm text-[#3E3636]/90">{item.meaning_mm}</p>
+                <p className="text-sm text-[#1F150C]/90">{item.meaning_mm}</p>
               ) : (
                 <p className="text-xs text-gray-400 font-bold tracking-wider italic">hidden</p>
               )}
               <button
                 onClick={toggleLocalMyanmar}
-                className="text-gray-400 hover:text-[#3E3636] transition-colors"
+                className="text-gray-400 hover:text-[#1F150C] transition-colors"
                 title={showMyanmar ? "Hide Myanmar" : "Show Myanmar"}
               >
                 {showMyanmar ? <EyeOff className="h-3.5 w-3.5" /> : <Eye className="h-3.5 w-3.5" />}
@@ -181,10 +181,10 @@ const VocabularyCard = ({
         {/* Audio button */}
         <button
           onClick={() => speak(item.word || '')}
-          className={`p-3 rounded-full hover:bg-[#D72323] hover:text-white transition-all duration-300 ml-3 flex-shrink-0 ${
+          className={`p-3 rounded-full hover:bg-[#412D15] hover:text-white transition-all duration-300 ml-3 flex-shrink-0 ${
             isCompleted
               ? 'bg-emerald-100 text-emerald-700'
-              : 'bg-[#F5EDED] text-[#3E3636]'
+              : 'bg-[#E1DCC9] text-[#1F150C]'
           }`}
         >
           <Volume2 className="h-5 w-5" />
@@ -196,34 +196,34 @@ const VocabularyCard = ({
         <div className="mt-3 border-t border-black/5 pt-3">
           <button
             onClick={() => setShowExample(prev => !prev)}
-            className="flex items-center gap-1.5 text-xs font-bold text-[#3E3636]/50 hover:text-[#D72323] transition-colors"
+            className="flex items-center gap-1.5 text-xs font-bold text-[#1F150C]/50 hover:text-[#412D15] transition-colors"
           >
             {showExample ? <EyeOff className="h-3.5 w-3.5" /> : <Eye className="h-3.5 w-3.5" />}
             Example sentence
           </button>
 
           {showExample && (
-            <div className="mt-2 bg-[#F5EDED]/60 rounded-lg p-3 space-y-1.5">
+            <div className="mt-2 bg-[#E1DCC9]/60 rounded-lg p-3 space-y-1.5">
               <div className="flex items-start justify-between gap-2">
-                <p className="text-sm font-bold text-[#3E3636] leading-snug flex-1">
+                <p className="text-sm font-bold text-[#1F150C] leading-snug flex-1">
                   {item.example_jp}
                 </p>
                 <button
                   onClick={() => speak(item.example_jp || '')}
-                  className="p-1.5 rounded-full bg-white hover:bg-[#D72323] text-[#3E3636] hover:text-white transition-all flex-shrink-0"
+                  className="p-1.5 rounded-full bg-white hover:bg-[#412D15] text-[#1F150C] hover:text-white transition-all flex-shrink-0"
                   title="Play example"
                 >
                   <Volume2 className="h-3.5 w-3.5" />
                 </button>
               </div>
               {showEnglish && item.example_en && (
-                <p className="text-xs text-[#3E3636]/70">
-                  <span className="font-bold text-[#3E3636]/40">EN: </span>{item.example_en}
+                <p className="text-xs text-[#1F150C]/70">
+                  <span className="font-bold text-[#1F150C]/40">EN: </span>{item.example_en}
                 </p>
               )}
               {showMyanmar && item.example_mm && (
-                <p className="text-xs text-[#3E3636]/70">
-                  <span className="font-bold text-[#3E3636]/40">MM: </span>{item.example_mm}
+                <p className="text-xs text-[#1F150C]/70">
+                  <span className="font-bold text-[#1F150C]/40">MM: </span>{item.example_mm}
                 </p>
               )}
             </div>

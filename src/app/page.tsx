@@ -191,55 +191,31 @@ export default function HomePage() {
   const [modules, setModules] = useState<BasicModuleProps[] | null>([])
 
   useEffect(() => {
+    const fetchLevels = async () => {
+      try {
+        const response = await fetch('/data/lesson/level.json');
+        if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+        const data = await response.json();
+        setLevels(data);
+      } catch (error) {
+        console.error("Failed to fetch local modules:", error);
+      }
+    };
+
+    const fetchModules = async () => {
+      try {
+        const response = await fetch('/data/character/module.json');
+        if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+        const data = await response.json();
+        setModules(data);
+      } catch (error) {
+        console.error("Failed to fetch local modules:", error);
+      }
+    };
+
     fetchLevels();
     fetchModules();
-  }, [])
-
-  async function fetchLevels() {
-    try {
-      // Fetch the local JSON file. The path is relative to the public directory.
-      const response = await fetch('/data/lesson/level.json');
-
-      // Throw an error if the network response is not ok (e.g., 404 Not Found)
-      if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-      }
-
-      // Parse the JSON data from the response
-      const data = await response.json();
-
-      // Set the data to your state
-      console.log(data);
-      setLevels(data);
-
-    } catch (error) {
-      // Catch and handle any errors during the fetch or parsing
-      console.error("Failed to fetch local modules:", error);
-    }
-  }
-
-  async function fetchModules() {
-    try {
-      // Fetch the local JSON file. The path is relative to the public directory.
-      const response = await fetch('/data/character/module.json');
-
-      // Throw an error if the network response is not ok (e.g., 404 Not Found)
-      if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-      }
-
-      // Parse the JSON data from the response
-      const data = await response.json();
-
-      // Set the data to your state
-      console.log(data);
-      setModules(data);
-
-    } catch (error) {
-      // Catch and handle any errors during the fetch or parsing
-      console.error("Failed to fetch local modules:", error);
-    }
-  }
+  }, []);
 
 
   return (

@@ -1,6 +1,7 @@
 'use client'
 import React, {useState, useEffect} from 'react';
 import {BookA, X, Volume2} from 'lucide-react';
+import { getDataUrl } from '@/utils/dataUrl';
 
 // Character data structure matching the JSON
 interface KanaCharacter {
@@ -23,11 +24,11 @@ export default function FloatingKanaSheet() {
     // Fetch JSON data for kana
     const fetchKana = async () => {
       try {
-        const hRes = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:4000'}/data/character/hiragana.json`);
+        const hRes = await fetch(getDataUrl('/data/character/hiragana.json'));
         const hData = await hRes.json();
         setHiraganaData(hData);
 
-        const kRes = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:4000'}/data/character/katakana.json`);
+        const kRes = await fetch(getDataUrl('/data/character/katakana.json'));
         const kData = await kRes.json();
         setKatakanaData(kData);
       } catch (err) {
@@ -79,11 +80,11 @@ export default function FloatingKanaSheet() {
       {/* Floating Action Button */}
       <button
         onClick={toggleModal}
-        className="fixed bottom-6 right-6 z-40 p-4 rounded-full shadow-lg bg-[#3E3636] text-white hover:bg-[#D72323] transition-all hover:scale-105 active:scale-95 group"
+        className="fixed bottom-20 sm:bottom-6 right-4 sm:right-6 z-40 p-4 rounded-full shadow-lg bg-[#1F150C] text-white hover:bg-[#412D15] transition-all hover:scale-105 active:scale-95 group"
         title="Kana Reference Sheet (Ctrl+K)"
       >
         <BookA className="w-6 h-6" />
-        <span className="absolute right-full mr-4 top-1/2 -translate-y-1/2 px-3 py-1.5 rounded-lg bg-[#3E3636] text-sm text-white font-bold opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none shadow-md">
+        <span className="absolute right-full mr-4 top-1/2 -translate-y-1/2 px-3 py-1.5 rounded-lg bg-[#1F150C] text-sm text-white font-bold opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none shadow-md">
           Kana Chart
         </span>
       </button>
@@ -91,19 +92,19 @@ export default function FloatingKanaSheet() {
       {/* Modal Overlay */}
       {isOpen && (
         <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 sm:p-8">
-          <div className="bg-[#F5EDED] w-full max-w-4xl h-full max-h-[90vh] rounded-3xl shadow-2xl flex flex-col overflow-hidden">
+          <div className="bg-[#E1DCC9] w-full max-w-4xl h-full max-h-[90vh] rounded-3xl shadow-2xl flex flex-col overflow-hidden">
             
             {/* Header */}
             <div className="flex-none p-6 border-b border-black/5 flex items-center justify-between">
               <div className="flex gap-4 items-center">
-                <h2 className="text-2xl font-extrabold text-[#3E3636]">Kana Chart</h2>
-                <div className="flex bg-[#3E3636]/10 p-1 rounded-xl">
+                <h2 className="text-2xl font-extrabold text-[#1F150C]">Kana Chart</h2>
+                <div className="flex bg-[#1F150C]/10 p-1 rounded-xl">
                   <button
                     onClick={() => setActiveTab('hiragana')}
                     className={`px-4 py-2 rounded-lg font-bold text-sm transition-all ${
                       activeTab === 'hiragana' 
-                        ? 'bg-white text-[#D72323] shadow-sm' 
-                        : 'text-[#3E3636]/60 hover:text-[#3E3636]'
+                        ? 'bg-white text-[#412D15] shadow-sm' 
+                        : 'text-[#1F150C]/60 hover:text-[#1F150C]'
                     }`}
                   >
                     あ Hiragana
@@ -112,8 +113,8 @@ export default function FloatingKanaSheet() {
                     onClick={() => setActiveTab('katakana')}
                     className={`px-4 py-2 rounded-lg font-bold text-sm transition-all ${
                       activeTab === 'katakana' 
-                        ? 'bg-white text-[#D72323] shadow-sm' 
-                        : 'text-[#3E3636]/60 hover:text-[#3E3636]'
+                        ? 'bg-white text-[#412D15] shadow-sm' 
+                        : 'text-[#1F150C]/60 hover:text-[#1F150C]'
                     }`}
                   >
                     ア Katakana
@@ -122,12 +123,12 @@ export default function FloatingKanaSheet() {
               </div>
               
               <div className="flex items-center gap-4">
-                <div className="hidden sm:flex text-xs font-bold text-[#3E3636]/40 bg-[#3E3636]/5 px-3 py-1.5 rounded-full">
+                <div className="hidden sm:flex text-xs font-bold text-[#1F150C]/40 bg-[#1F150C]/5 px-3 py-1.5 rounded-full">
                   Ctrl + K
                 </div>
                 <button
                   onClick={toggleModal}
-                  className="p-2 rounded-full bg-white hover:bg-black/5 transition-colors text-[#3E3636]"
+                  className="p-2 rounded-full bg-white hover:bg-black/5 transition-colors text-[#1F150C]"
                 >
                   <X className="w-6 h-6" />
                 </button>
@@ -139,7 +140,7 @@ export default function FloatingKanaSheet() {
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                 {currentData.map((row, idx) => (
                   <div key={idx} className="bg-white p-4 rounded-2xl shadow-sm border border-black/5">
-                    <div className="text-xs font-bold text-[#3E3636]/40 uppercase mb-3 px-1 border-b border-black/5 pb-2">
+                    <div className="text-xs font-bold text-[#1F150C]/40 uppercase mb-3 px-1 border-b border-black/5 pb-2">
                       {row.char_row === 'basic' ? 'Vowels' : 
                        row.char_row.startsWith('yoon') ? 'Combinations' : 
                        row.char_row + '-row'}
@@ -152,12 +153,12 @@ export default function FloatingKanaSheet() {
                             {!isEmpty ? (
                               <button
                                 onClick={() => speak(char.kana)}
-                                className="w-full h-full flex flex-col items-center justify-center rounded-xl hover:bg-[#D72323]/10 hover:text-[#D72323] transition-colors group relative"
+                                className="w-full h-full flex flex-col items-center justify-center rounded-xl hover:bg-[#412D15]/10 hover:text-[#412D15] transition-colors group relative"
                               >
-                                <span className="text-2xl font-bold text-[#3E3636] group-hover:text-[#D72323] transition-colors">
+                                <span className="text-2xl font-bold text-[#1F150C] group-hover:text-[#412D15] transition-colors">
                                   {char.kana}
                                 </span>
-                                <span className="text-[10px] uppercase font-bold text-[#3E3636]/50 mt-1">
+                                <span className="text-[10px] uppercase font-bold text-[#1F150C]/50 mt-1">
                                   {char.romaji}
                                 </span>
                                 

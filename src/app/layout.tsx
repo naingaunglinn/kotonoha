@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import AppHeader from "@/app/components/layout/Header";
 import FloatingKanaSheet from "@/app/components/layout/FloatingKanaSheet";
+import BottomNav from "@/app/components/layout/BottomNav";
+import SideNav from "@/app/components/layout/SideNav";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,12 +31,14 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="min-h-screen bg-[#F5EDED] text-[#3E3636] font-sans antialiased">
+        <div className="min-h-screen bg-[#E1DCC9] text-[#1F150C] font-sans antialiased">
           <AppHeader />
-          <main>
+          <SideNav />
+          <main className="sm:pl-16 pb-20 sm:pb-0">
             {children}
           </main>
           <FloatingKanaSheet />
+          <BottomNav />
         </div>
       </body>
     </html>

@@ -1,11 +1,13 @@
 'use client';
 import { GrammarProps } from "@/types";
-import { Volume2, AlertTriangle, GraduationCap, Table } from "lucide-react";
+import { Volume2, AlertTriangle, GraduationCap, Table, Check } from "lucide-react";
 import { useState } from "react";
 
 interface GrammarPointCardProps {
-  key: number | null;
   item: GrammarProps;
+  label?: number;
+  isCompleted?: boolean;
+  onToggleComplete?: (title: string) => void;
 }
 
 // --- SPEECH UTILITY ---
@@ -18,20 +20,66 @@ const speak = (text: string, lang = 'ja-JP') => {
   window.speechSynthesis.speak(utterance);
 };
 
-const GrammarPointCard = ({ item }: GrammarPointCardProps) => {
+const GrammarPointCard = ({ item, label, isCompleted = false, onToggleComplete }: GrammarPointCardProps) => {
   const [showConjugation, setShowConjugation] = useState(false);
 
   return (
-    <div className="col-span-2 bg-white/80 p-6 rounded-2xl border border-black/5">
+    <div className={`col-span-2 p-6 pl-7 rounded-2xl border-2 relative overflow-hidden transition-all duration-300 ${
+      isCompleted
+        ? 'bg-emerald-50/80 border-emerald-400/50'
+        : 'bg-white/80 border-black/5'
+    }`}>
+      {/* Sentence-diagram left ribbon */}
+      <div
+        className={`absolute top-0 left-0 bottom-0 w-1.5 transition-colors ${
+          isCompleted ? 'bg-emerald-500/60' : 'bg-[#412D15]/70'
+        }`}
+        aria-hidden
+      />
+      {/* Faint diagonal hatch behind title — evokes sentence-diagram lines */}
+      <div
+        className="absolute top-0 right-0 w-40 h-24 pointer-events-none opacity-30"
+        style={{
+          backgroundImage: `repeating-linear-gradient(135deg, rgba(65,45,21,0.08) 0 1px, transparent 1px 8px)`,
+        }}
+        aria-hidden
+      />
+      {label !== undefined && (
+        <span className={`absolute -top-2.5 -left-2.5 w-8 h-8 rounded-full text-white text-xs font-bold flex items-center justify-center shadow-md transition-colors ${
+          isCompleted ? 'bg-emerald-500' : 'bg-[#1F150C]'
+        }`}>
+          {isCompleted ? <Check className="w-4 h-4" /> : label}
+        </span>
+      )}
+
+      {onToggleComplete && (
+        <button
+          onClick={() => onToggleComplete(item.title || '')}
+          className={`absolute top-3 right-3 w-11 h-11 sm:w-9 sm:h-9 rounded-xl border-2 flex items-center justify-center transition-all duration-200 z-10 ${
+            isCompleted
+              ? 'bg-emerald-500 border-emerald-500 text-white scale-105 shadow-md'
+              : 'bg-white border-[#1F150C]/25 text-[#1F150C]/35 hover:border-emerald-400 hover:text-emerald-500 hover:bg-emerald-50'
+          }`}
+          aria-pressed={isCompleted}
+          title={isCompleted ? "Mark as not studied" : "Mark as studied"}
+        >
+          <Check className="w-5 h-5 sm:w-4 sm:h-4" />
+        </button>
+      )}
+
       {/* Title Section */}
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between pr-14 sm:pr-12">
         <div>
-          <h3 className="text-2xl font-bold text-[#3E3636]">{item.title}</h3>
-          <p className="text-md text-[#3E3636]/70">{item.title_mm}</p>
+          <h3 className={`text-2xl font-bold transition-colors ${
+            isCompleted ? 'text-emerald-700' : 'text-[#1F150C]'
+          }`}>{item.title}</h3>
+          <p className="text-md text-[#1F150C]/70">{item.title_mm}</p>
         </div>
         <button
           onClick={() => speak(item.title || '')}
-          className="p-3 rounded-full bg-[#F5EDED] hover:bg-[#D72323] text-[#3E3636] hover:text-white transition-all duration-300 flex-shrink-0"
+          className={`p-3 rounded-full hover:bg-[#412D15] hover:text-white transition-all duration-300 flex-shrink-0 ${
+            isCompleted ? 'bg-emerald-100 text-emerald-700' : 'bg-[#E1DCC9] text-[#1F150C]'
+          }`}
         >
           <Volume2 className="h-5 w-5" />
         </button>
@@ -39,13 +87,13 @@ const GrammarPointCard = ({ item }: GrammarPointCardProps) => {
 
       {/* Explanations */}
       <div className="mt-4 space-y-3 border-t border-black/10 pt-4">
-        <div className="mb-4 border-l-4 border-[#D72323] pl-4">
-          <span className="block text-xs font-bold text-[#3E3636]/50">ENGLISH</span>
-          <p className="text-[#3E3636]/80 text-sm leading-relaxed">{item.explanation_en}</p>
+        <div className="mb-4 border-l-4 border-[#412D15] pl-4">
+          <span className="block text-xs font-bold text-[#1F150C]/50">ENGLISH</span>
+          <p className="text-[#1F150C]/80 text-sm leading-relaxed">{item.explanation_en}</p>
         </div>
-        <div className="mb-4 border-l-4 border-[#D72323] pl-4">
-          <span className="block text-xs font-bold text-[#3E3636]/50">MYANMAR</span>
-          <p className="text-[#3E3636]/80 text-sm leading-relaxed">{item.explanation_mm}</p>
+        <div className="mb-4 border-l-4 border-[#412D15] pl-4">
+          <span className="block text-xs font-bold text-[#1F150C]/50">MYANMAR</span>
+          <p className="text-[#1F150C]/80 text-sm leading-relaxed">{item.explanation_mm}</p>
         </div>
       </div>
 
@@ -54,36 +102,36 @@ const GrammarPointCard = ({ item }: GrammarPointCardProps) => {
         <div className="mt-2 border-t border-black/10 pt-4">
           <button
             onClick={() => setShowConjugation(prev => !prev)}
-            className="flex items-center gap-2 text-sm font-bold text-[#3E3636]/70 hover:text-[#D72323] transition-colors"
+            className="flex items-center gap-2 text-sm font-bold text-[#1F150C]/70 hover:text-[#412D15] transition-colors"
           >
             <Table className="h-4 w-4" />
             Conjugation / Pattern Forms
-            <span className="text-[#3E3636]/30 text-xs">{showConjugation ? '▲' : '▼'}</span>
+            <span className="text-[#1F150C]/30 text-xs">{showConjugation ? '▲' : '▼'}</span>
           </button>
 
           {showConjugation && (
             <div className="mt-3 overflow-x-auto">
               <table className="w-full text-sm border-collapse">
                 <thead>
-                  <tr className="bg-[#3E3636]/5">
-                    <th className="text-left px-3 py-2 text-xs font-bold text-[#3E3636]/50 border border-black/8 w-1/4">Form</th>
-                    <th className="text-left px-3 py-2 text-xs font-bold text-[#3E3636]/50 border border-black/8 w-1/3">Pattern</th>
-                    <th className="text-left px-3 py-2 text-xs font-bold text-[#3E3636]/50 border border-black/8">Example</th>
+                  <tr className="bg-[#1F150C]/5">
+                    <th className="text-left px-3 py-2 text-xs font-bold text-[#1F150C]/50 border border-black/8 w-1/4">Form</th>
+                    <th className="text-left px-3 py-2 text-xs font-bold text-[#1F150C]/50 border border-black/8 w-1/3">Pattern</th>
+                    <th className="text-left px-3 py-2 text-xs font-bold text-[#1F150C]/50 border border-black/8">Example</th>
                   </tr>
                 </thead>
                 <tbody>
                   {item.conjugation_table.map((row, i) => (
-                    <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-[#F5EDED]/40'}>
-                      <td className="px-3 py-2 text-xs font-bold text-[#3E3636]/70 border border-black/8">{row.form}</td>
-                      <td className="px-3 py-2 font-bold text-[#D72323] border border-black/8">{row.japanese}</td>
-                      <td className="px-3 py-2 text-[#3E3636]/70 border border-black/8 flex items-center gap-2">
+                    <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-[#E1DCC9]/40'}>
+                      <td className="px-3 py-2 text-xs font-bold text-[#1F150C]/70 border border-black/8">{row.form}</td>
+                      <td className="px-3 py-2 font-bold text-[#412D15] border border-black/8">{row.japanese}</td>
+                      <td className="px-3 py-2 text-[#1F150C]/70 border border-black/8 flex items-center gap-2">
                         <span>{row.example ?? '—'}</span>
                         {row.example && (
                           <button
                             onClick={() => speak(row.example!)}
-                            className="p-1 rounded-full hover:bg-[#D72323]/10 transition-colors"
+                            className="p-1 rounded-full hover:bg-[#412D15]/10 transition-colors"
                           >
-                            <Volume2 className="h-3 w-3 text-[#3E3636]/40" />
+                            <Volume2 className="h-3 w-3 text-[#1F150C]/40" />
                           </button>
                         )}
                       </td>
@@ -98,22 +146,22 @@ const GrammarPointCard = ({ item }: GrammarPointCardProps) => {
 
       {/* Examples Section */}
       <div className="mt-4 space-y-4 border-t border-black/10 pt-4">
-        <h4 className="font-bold text-[#3E3636]">Examples</h4>
+        <h4 className="font-bold text-[#1F150C]">Examples</h4>
         {item.examples.map((ex, index) => (
-          <div key={index} className="bg-[#F5EDED]/80 p-4 rounded-lg">
+          <div key={index} className="bg-[#E1DCC9]/80 p-4 rounded-lg">
             <div className="flex items-center">
-              <p className="font-bold text-lg text-[#3E3636] flex-grow">{ex.japanese}</p>
+              <p className="font-bold text-lg text-[#1F150C] flex-grow">{ex.japanese}</p>
               <button
                 onClick={() => speak(ex.japanese || '')}
-                className="p-2 rounded-full hover:bg-[#D72323]/20 transition-colors"
+                className="p-2 rounded-full hover:bg-[#412D15]/20 transition-colors"
               >
-                <Volume2 className="h-5 w-5 text-[#3E3636]" />
+                <Volume2 className="h-5 w-5 text-[#1F150C]" />
               </button>
             </div>
-            <p className="text-xs text-[#3E3636]/70 mt-1">
+            <p className="text-xs text-[#1F150C]/70 mt-1">
               <span className="font-bold">ENG:</span> {ex.english}
             </p>
-            <p className="text-xs text-[#3E3636]/70">
+            <p className="text-xs text-[#1F150C]/70">
               <span className="font-bold">MM:</span> {ex.myanmar}
             </p>
           </div>
