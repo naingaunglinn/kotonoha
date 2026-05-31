@@ -1,29 +1,43 @@
-import {ChevronRight, PenSquare} from "lucide-react";
-import {BasicModuleProps} from "@/types";
+import { ArrowRight } from "lucide-react";
+import { BasicModuleProps } from "@/types";
 import Link from "next/link";
 
 interface FoundationsCardProps {
-  module : BasicModuleProps;
+  module: BasicModuleProps;
 }
 
-const FoundationsCard = ({ module } : FoundationsCardProps ) => {
+// A representative glyph per script — sits as a tactile watermark on the flashcard.
+const GLYPH: Record<string, string> = {
+  hiragana: 'あ',
+  katakana: 'ア',
+};
+
+const FoundationsCard = ({ module }: FoundationsCardProps) => {
+  const glyph = GLYPH[(module.title ?? '').toLowerCase()] ?? 'あ';
+
   return (
     <Link
       href={`/module/${module.title}`}
-      className="bg-white/80 backdrop-blur-sm p-5 rounded-2xl border border-black/5 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 group flex flex-col cursor-pointer"
+      className="hover-lift group relative flex items-center gap-5 overflow-hidden rounded-card border border-line bg-surface p-6 shadow-card"
     >
-      <div className="flex-grow">
-        <div className="p-2.5 rounded-xl bg-[#E1DCC9] w-min mb-4">
-          <PenSquare className="h-5 w-5 text-[#1F150C]" />
-        </div>
-        <h3 className="text-lg font-bold text-[#1F150C]">{module.title}</h3>
-        <p className="mt-1 text-sm text-[#1F150C]/70 leading-relaxed line-clamp-2">{module.description}</p>
+      {/* Paper flashcard glyph tile */}
+      <div className="relative grid h-20 w-20 flex-shrink-0 place-items-center rounded-card border border-line bg-surface-alt">
+        <span aria-hidden className="absolute right-1.5 top-1.5 h-1.5 w-1.5 rounded-full bg-accent/40" />
+        <span className="jp text-4xl text-ink">{glyph}</span>
       </div>
-      <div className="mt-5 flex items-center justify-end text-[#1F150C] font-bold text-sm transition-all duration-300 transform group-hover:text-[#412D15]">
-        Start <ChevronRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform duration-300" />
+
+      <div className="min-w-0 flex-1">
+        <h3 className="font-[family-name:var(--font-display)] text-xl capitalize tracking-tight text-ink">
+          {module.title}
+        </h3>
+        <p className="mt-1 line-clamp-2 text-sm leading-relaxed text-ink-muted">{module.description}</p>
+        <span className="mt-3 inline-flex items-center text-sm font-bold text-ink transition-colors group-hover:text-accent">
+          Practice
+          <ArrowRight className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+        </span>
       </div>
     </Link>
-  )
-}
+  );
+};
 
 export default FoundationsCard;

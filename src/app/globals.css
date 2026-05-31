@@ -1,26 +1,197 @@
 @import "tailwindcss";
 
+/* ============================================================
+   KOTONOHA — Japanese Stationery × Modern SaaS
+   Design tokens. Light-dominant, deep-ink accent, vermilion punctuation.
+   ============================================================ */
+
+@theme {
+  /* Surfaces */
+  --color-bg: #f7f5f0;          /* warm off-white paper */
+  --color-surface: #ffffff;
+  --color-surface-alt: #f0ede6; /* slightly warmer surface */
+
+  /* Ink */
+  --color-ink: #1a1a2e;         /* deep navy-indigo, primary text */
+  --color-ink-muted: #6b6560;
+
+  /* Accents */
+  --color-accent: #bf4b3c;      /* vermilion — CTAs, highlights */
+  --color-accent-warm: #e8a87c; /* amber — warnings, memory tricks */
+  --color-accent-cool: #4a7c9e; /* slate blue — JLPT tips, secondary info */
+  --color-success: #4a7c5e;
+  --color-burmese: #2d7a6b;     /* teal — differentiates Burmese text */
+
+  /* Lines */
+  --color-line: #e0dbd3;
+  --color-line-strong: #c5bfb5;
+
+  /* Ink-wash level bands */
+  --color-n5: #c8a978;          /* warm sand */
+  --color-n4: #7d8c5c;          /* moss */
+  --color-n3: #5f6b75;          /* slate */
+  --color-n2: #3a4a6b;          /* indigo */
+  --color-n1: #232333;          /* near-black */
+
+  /* Typography */
+  --font-display: var(--font-dm-serif), Georgia, serif;
+  --font-ui: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-jp: "Shippori Mincho", "Noto Serif JP", var(--font-dm-serif), serif;
+
+  /* Radii */
+  --radius-chip: 6px;
+  --radius-card: 12px;
+  --radius-xl2: 20px;
+
+  /* Shadows */
+  --shadow-card: 0 2px 8px rgba(26, 26, 46, 0.08);
+  --shadow-card-hover: 0 8px 24px rgba(26, 26, 46, 0.14);
+  --shadow-float: 0 12px 36px rgba(26, 26, 46, 0.18);
+
+  /* Motion */
+  --ease-out-soft: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: var(--color-bg);
+  --foreground: var(--color-ink);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-ui);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
+
+/* ------------------------------------------------------------
+   Paper grain — fixed, faint, sits above the bg below content.
+   ------------------------------------------------------------ */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.5;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+}
+
+/* Keep app chrome and content above the grain */
+body > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ------------------------------------------------------------
+   Reusable atmosphere utilities
+   ------------------------------------------------------------ */
+
+/* Washi gradient wash for hero / headers */
+.washi {
+  background:
+    radial-gradient(120% 140% at 0% 0%, rgba(255, 255, 255, 0.10), transparent 55%),
+    radial-gradient(100% 120% at 100% 0%, rgba(191, 75, 60, 0.16), transparent 50%),
+    linear-gradient(135deg, #20203a 0%, #1a1a2e 55%, #14141f 100%);
+}
+
+/* Thin hairline rule between card zones */
+.zone-rule {
+  border-top: 1px solid var(--color-line);
+}
+
+/* Japanese serif text helper */
+.jp {
+  font-family: var(--font-jp);
+  font-feature-settings: "palt" 1;
+}
+
+/* Burmese text differentiation */
+.mm {
+  color: var(--color-burmese);
+}
+
+/* ------------------------------------------------------------
+   Keyframes (CSS-only motion)
+   ------------------------------------------------------------ */
+@keyframes rise {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes nudge-x {
+  0%, 100% { transform: translateX(0); }
+  50%      { transform: translateX(4px); }
+}
+
+@keyframes flame-flicker {
+  0%, 100% { transform: scale(1) rotate(-2deg); opacity: 1; }
+  50%      { transform: scale(1.08) rotate(2deg); opacity: 0.9; }
+}
+
+@keyframes wave {
+  0%, 100% { transform: scaleY(0.35); }
+  50%      { transform: scaleY(1); }
+}
+
+@keyframes pop-check {
+  0%   { transform: scale(0.4); opacity: 0; }
+  60%  { transform: scale(1.15); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes spin-ring {
+  to { transform: rotate(360deg); }
+}
+
+.animate-rise {
+  animation: rise 0.55s var(--ease-out-soft) both;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.4s ease both;
+}
+
+.animate-flame {
+  animation: flame-flicker 1.6s ease-in-out infinite;
+}
+
+.animate-pop-check {
+  animation: pop-check 0.35s var(--ease-out-soft) both;
+}
+
+.hover-lift {
+  transition: transform 0.35s var(--ease-out-soft), box-shadow 0.35s var(--ease-out-soft);
+}
+.hover-lift:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* Custom scrollbars — subtle, paper-like */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-line-strong) transparent;
+}
+*::-webkit-scrollbar { width: 8px; height: 8px; }
+*::-webkit-scrollbar-thumb {
+  background: var(--color-line-strong);
+  border-radius: 999px;
+}
+*::-webkit-scrollbar-track { background: transparent; }

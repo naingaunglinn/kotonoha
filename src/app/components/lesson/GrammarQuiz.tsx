@@ -249,40 +249,40 @@ const GrammarQuiz = ({ grammar, pageGrammar, completedGrammar, onClose }: Gramma
 
   return (
     <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
-      <div className="bg-[#E1DCC9] w-full max-w-2xl max-h-[90vh] rounded-3xl shadow-2xl overflow-y-auto">
+      <div className="bg-[#f0ede6] w-full max-w-2xl max-h-[90vh] rounded-3xl shadow-2xl overflow-y-auto">
         <div className="flex items-center justify-between p-5 border-b border-black/5">
-          <h2 className="text-xl font-extrabold text-[#1F150C] tracking-tight">
+          <h2 className="text-xl font-extrabold text-[#1a1a2e] tracking-tight">
             {phase === 'setup' && '📚 Grammar Quiz Setup'}
             {phase === 'playing' && '📚 Grammar Quiz'}
             {phase === 'review' && '🏆 Results'}
           </h2>
-          <button onClick={onClose} className="p-2 rounded-full hover:bg-[#1F150C]/10 transition-colors">
-            <X className="w-5 h-5 text-[#1F150C]" />
+          <button onClick={onClose} className="p-2 rounded-full hover:bg-[#1a1a2e]/10 transition-colors">
+            <X className="w-5 h-5 text-[#1a1a2e]" />
           </button>
         </div>
 
         {phase === 'setup' && (
           <div className="p-6 space-y-6">
             <div>
-              <label className="block text-sm font-bold text-[#1F150C]/60 mb-2 uppercase tracking-wider">Quiz Mode</label>
+              <label className="block text-sm font-bold text-[#1a1a2e]/60 mb-2 uppercase tracking-wider">Quiz Mode</label>
               <div className="grid grid-cols-2 gap-3">
                 {(Object.keys(MODE_LABELS) as GrammarQuizMode[]).map((m) => (
                   <button
                     key={m}
                     onClick={() => setMode(m)}
                     className={`p-4 rounded-xl text-left border-2 transition-all ${
-                      mode === m ? 'border-[#412D15] bg-white shadow-md' : 'border-transparent bg-white/60 hover:bg-white/80'
+                      mode === m ? 'border-[#bf4b3c] bg-white shadow-md' : 'border-transparent bg-white/60 hover:bg-white/80'
                     }`}
                   >
-                    <div className="font-bold text-[#1F150C]">{MODE_LABELS[m].title}</div>
-                    <div className="text-xs text-[#1F150C]/50 mt-0.5">{MODE_LABELS[m].desc}</div>
+                    <div className="font-bold text-[#1a1a2e]">{MODE_LABELS[m].title}</div>
+                    <div className="text-xs text-[#1a1a2e]/50 mt-0.5">{MODE_LABELS[m].desc}</div>
                   </button>
                 ))}
               </div>
             </div>
 
             <div>
-              <label className="block text-sm font-bold text-[#1F150C]/60 mb-2 uppercase tracking-wider">Grammar Source</label>
+              <label className="block text-sm font-bold text-[#1a1a2e]/60 mb-2 uppercase tracking-wider">Grammar Source</label>
               <div className="flex gap-2 flex-wrap">
                 {[
                   { key: 'page' as const, label: `This Page (${pageGrammar.length})` },
@@ -294,7 +294,7 @@ const GrammarQuiz = ({ grammar, pageGrammar, completedGrammar, onClose }: Gramma
                     key={key}
                     onClick={() => setSourceFilter(key)}
                     className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
-                      sourceFilter === key ? 'bg-[#1F150C] text-white' : 'bg-white text-[#1F150C] border border-[#1F150C]/15 hover:border-[#1F150C]/40'
+                      sourceFilter === key ? 'bg-[#1a1a2e] text-white' : 'bg-white text-[#1a1a2e] border border-[#1a1a2e]/15 hover:border-[#1a1a2e]/40'
                     }`}
                   >
                     {label}
@@ -302,14 +302,14 @@ const GrammarQuiz = ({ grammar, pageGrammar, completedGrammar, onClose }: Gramma
                 ))}
               </div>
               {mode === 'fill-blank' && usableSourceCount < sourceGrammar.length && (
-                <p className="text-xs text-[#1F150C]/50 mt-2 italic">
+                <p className="text-xs text-[#1a1a2e]/50 mt-2 italic">
                   Fill-the-blank uses {usableSourceCount} of {sourceGrammar.length} points (skips items where the pattern can&apos;t be located in an example).
                 </p>
               )}
             </div>
 
             <div>
-              <label className="block text-sm font-bold text-[#1F150C]/60 mb-2 uppercase tracking-wider">Number of Questions</label>
+              <label className="block text-sm font-bold text-[#1a1a2e]/60 mb-2 uppercase tracking-wider">Number of Questions</label>
               <div className="flex gap-2 flex-wrap">
                 {QUESTION_COUNTS.map((c) => (
                   <button
@@ -317,7 +317,7 @@ const GrammarQuiz = ({ grammar, pageGrammar, completedGrammar, onClose }: Gramma
                     onClick={() => setQuestionCount(c)}
                     disabled={c > usableSourceCount}
                     className={`px-5 py-2 rounded-full text-sm font-bold transition-all ${
-                      questionCount === c ? 'bg-[#412D15] text-white shadow-md' : 'bg-white text-[#1F150C] border border-[#1F150C]/15 hover:border-[#412D15]/40'
+                      questionCount === c ? 'bg-[#bf4b3c] text-white shadow-md' : 'bg-white text-[#1a1a2e] border border-[#1a1a2e]/15 hover:border-[#bf4b3c]/40'
                     } disabled:opacity-30 disabled:cursor-not-allowed`}
                   >
                     {c}
@@ -328,8 +328,8 @@ const GrammarQuiz = ({ grammar, pageGrammar, completedGrammar, onClose }: Gramma
                   disabled={usableSourceCount < 4}
                   className={`px-5 py-2 rounded-full text-sm font-bold transition-all ${
                     questionCount === usableSourceCount && !QUESTION_COUNTS.includes(usableSourceCount)
-                      ? 'bg-[#412D15] text-white shadow-md'
-                      : 'bg-white text-[#1F150C] border border-[#1F150C]/15 hover:border-[#412D15]/40'
+                      ? 'bg-[#bf4b3c] text-white shadow-md'
+                      : 'bg-white text-[#1a1a2e] border border-[#1a1a2e]/15 hover:border-[#bf4b3c]/40'
                   } disabled:opacity-30 disabled:cursor-not-allowed`}
                 >
                   All ({usableSourceCount})
@@ -340,7 +340,7 @@ const GrammarQuiz = ({ grammar, pageGrammar, completedGrammar, onClose }: Gramma
             <button
               onClick={handleStart}
               disabled={usableSourceCount < 4}
-              className="w-full py-4 bg-[#412D15] text-white font-extrabold text-lg rounded-2xl hover:bg-[#000000] transition-all active:scale-[0.98] shadow-lg shadow-[#412D15]/30 disabled:opacity-40 disabled:cursor-not-allowed"
+              className="w-full py-4 bg-[#bf4b3c] text-white font-extrabold text-lg rounded-2xl hover:bg-[#1a1a2e] transition-all active:scale-[0.98] shadow-lg shadow-[#bf4b3c]/30 disabled:opacity-40 disabled:cursor-not-allowed"
             >
               {usableSourceCount < 4 ? 'Need at least 4 grammar points' : 'Start Quiz →'}
             </button>
@@ -353,11 +353,11 @@ const GrammarQuiz = ({ grammar, pageGrammar, completedGrammar, onClose }: Gramma
           return (
             <div className="p-6 space-y-5">
               <div className="flex items-center justify-between text-sm">
-                <span className="font-bold text-[#1F150C]/60">
+                <span className="font-bold text-[#1a1a2e]/60">
                   Question {currentIndex + 1} / {questions.length}
                 </span>
                 <div className="flex items-center gap-2">
-                  <span className="hidden md:inline text-[10px] text-[#1F150C]/40 font-medium">
+                  <span className="hidden md:inline text-[10px] text-[#1a1a2e]/40 font-medium">
                     Tip: press 1–4 · Enter to advance
                   </span>
                   {streak > 1 && (
@@ -371,17 +371,17 @@ const GrammarQuiz = ({ grammar, pageGrammar, completedGrammar, onClose }: Gramma
               <div className="bg-white rounded-2xl p-6 text-center shadow-sm">
                 {q.mode === 'pattern-meaning' ? (
                   <>
-                    <h3 className="text-4xl font-bold text-[#1F150C] mb-3">{q.prompt}</h3>
-                    <p className="text-xs text-[#1F150C]/50 uppercase tracking-wider">What does this pattern mean?</p>
+                    <h3 className="text-4xl font-bold text-[#1a1a2e] mb-3">{q.prompt}</h3>
+                    <p className="text-xs text-[#1a1a2e]/50 uppercase tracking-wider">What does this pattern mean?</p>
                   </>
                 ) : (
                   <>
-                    <div className="text-xs font-bold text-[#1F150C]/50 uppercase tracking-wider mb-3">Fill in the blank</div>
-                    <h3 className="text-2xl font-bold text-[#1F150C] leading-relaxed">{q.prompt}</h3>
+                    <div className="text-xs font-bold text-[#1a1a2e]/50 uppercase tracking-wider mb-3">Fill in the blank</div>
+                    <h3 className="text-2xl font-bold text-[#1a1a2e] leading-relaxed">{q.prompt}</h3>
                     {q.promptAudio && (
                       <button
                         onClick={() => speak(q.promptAudio!)}
-                        className="mt-3 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#E1DCC9] hover:bg-[#412D15] hover:text-white text-[#1F150C] text-sm font-medium transition-all"
+                        className="mt-3 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#f0ede6] hover:bg-[#bf4b3c] hover:text-white text-[#1a1a2e] text-sm font-medium transition-all"
                       >
                         <Volume2 className="w-4 h-4" /> Hear sentence
                       </button>
@@ -394,11 +394,11 @@ const GrammarQuiz = ({ grammar, pageGrammar, completedGrammar, onClose }: Gramma
                 {q.options.map((opt) => {
                   const isCorrect = opt === q.correctAnswer;
                   const isSelected = opt === selectedAnswer;
-                  let cls = 'bg-white border-[#1F150C]/10 hover:border-[#412D15]/40 text-[#1F150C]';
+                  let cls = 'bg-white border-[#1a1a2e]/10 hover:border-[#bf4b3c]/40 text-[#1a1a2e]';
                   if (isAnswered) {
                     if (isCorrect) cls = 'bg-emerald-50 border-emerald-400 text-emerald-700';
                     else if (isSelected) cls = 'bg-red-50 border-red-400 text-red-700';
-                    else cls = 'bg-white border-[#1F150C]/10 text-[#1F150C]/40';
+                    else cls = 'bg-white border-[#1a1a2e]/10 text-[#1a1a2e]/40';
                   }
                   return (
                     <button
@@ -418,7 +418,7 @@ const GrammarQuiz = ({ grammar, pageGrammar, completedGrammar, onClose }: Gramma
               {isAnswered && (
                 <button
                   onClick={handleNext}
-                  className="w-full py-3 bg-[#1F150C] text-white font-bold rounded-2xl hover:bg-[#1F150C]/80 transition-all active:scale-[0.98] flex items-center justify-center gap-2"
+                  className="w-full py-3 bg-[#1a1a2e] text-white font-bold rounded-2xl hover:bg-[#1a1a2e]/80 transition-all active:scale-[0.98] flex items-center justify-center gap-2"
                 >
                   {currentIndex + 1 >= questions.length ? 'See Results' : 'Next'}
                   <ChevronRight className="w-4 h-4" />
@@ -431,12 +431,12 @@ const GrammarQuiz = ({ grammar, pageGrammar, completedGrammar, onClose }: Gramma
         {phase === 'review' && (
           <div className="p-6 space-y-5">
             <div className="text-center bg-white rounded-2xl p-6 shadow-sm">
-              <div className="text-5xl font-extrabold text-[#412D15]">{scorePercent}%</div>
-              <p className="text-sm text-[#1F150C]/60 mt-1">
+              <div className="text-5xl font-extrabold text-[#bf4b3c]">{scorePercent}%</div>
+              <p className="text-sm text-[#1a1a2e]/60 mt-1">
                 {correctCount} of {results.length} correct
                 {bestStreak > 1 && <> · 🔥 best streak {bestStreak}</>}
               </p>
-              <p className="mt-3 text-sm text-[#1F150C]/80 font-medium">
+              <p className="mt-3 text-sm text-[#1a1a2e]/80 font-medium">
                 {scorePercent >= 90 && '⭐ Excellent grasp of the patterns!'}
                 {scorePercent >= 70 && scorePercent < 90 && '👍 Solid — a couple more reviews and you\'re set.'}
                 {scorePercent >= 50 && scorePercent < 70 && '💪 Getting there. Re-read the tricky ones.'}
@@ -445,7 +445,7 @@ const GrammarQuiz = ({ grammar, pageGrammar, completedGrammar, onClose }: Gramma
             </div>
 
             <div className="space-y-2">
-              <div className="text-xs font-bold text-[#1F150C]/50 uppercase tracking-wider">Review</div>
+              <div className="text-xs font-bold text-[#1a1a2e]/50 uppercase tracking-wider">Review</div>
               {results.map((r, idx) => {
                 const expanded = expandedReview.has(idx);
                 return (
@@ -465,28 +465,28 @@ const GrammarQuiz = ({ grammar, pageGrammar, completedGrammar, onClose }: Gramma
                         }`}>
                           {r.isCorrect ? <Check className="w-3.5 h-3.5" /> : <X className="w-3.5 h-3.5" />}
                         </span>
-                        <span className="text-lg font-bold text-[#1F150C] truncate">{r.question.point.title}</span>
+                        <span className="text-lg font-bold text-[#1a1a2e] truncate">{r.question.point.title}</span>
                       </div>
-                      {expanded ? <ChevronUp className="w-4 h-4 text-[#1F150C]/40" /> : <ChevronDown className="w-4 h-4 text-[#1F150C]/40" />}
+                      {expanded ? <ChevronUp className="w-4 h-4 text-[#1a1a2e]/40" /> : <ChevronDown className="w-4 h-4 text-[#1a1a2e]/40" />}
                     </button>
                     {expanded && (
-                      <div className="px-3 pb-3 space-y-1.5 text-xs text-[#1F150C]/80 border-t border-black/5 pt-2">
+                      <div className="px-3 pb-3 space-y-1.5 text-xs text-[#1a1a2e]/80 border-t border-black/5 pt-2">
                         {!r.isCorrect && (
                           <p><span className="font-bold text-red-600">Your answer:</span> {r.selectedAnswer}</p>
                         )}
                         <p><span className="font-bold text-emerald-700">Correct:</span> {r.question.correctAnswer}</p>
                         {r.question.sentenceFull && (
                           <div className="flex items-start gap-2">
-                            <p className="flex-1"><span className="font-bold text-[#412D15]">Sentence:</span> {r.question.sentenceFull}</p>
+                            <p className="flex-1"><span className="font-bold text-[#bf4b3c]">Sentence:</span> {r.question.sentenceFull}</p>
                             <button
                               onClick={() => speak(r.question.sentenceFull!)}
-                              className="p-1 rounded-full bg-white border border-black/5 hover:bg-[#412D15] hover:text-white transition-colors flex-shrink-0"
+                              className="p-1 rounded-full bg-white border border-black/5 hover:bg-[#bf4b3c] hover:text-white transition-colors flex-shrink-0"
                             >
                               <Volume2 className="w-3 h-3" />
                             </button>
                           </div>
                         )}
-                        <p className="text-[#1F150C]/70 italic">{r.question.point.explanation_en}</p>
+                        <p className="text-[#1a1a2e]/70 italic">{r.question.point.explanation_en}</p>
                       </div>
                     )}
                   </div>
@@ -497,13 +497,13 @@ const GrammarQuiz = ({ grammar, pageGrammar, completedGrammar, onClose }: Gramma
             <div className="flex gap-2">
               <button
                 onClick={handleRestart}
-                className="flex-1 py-3 bg-white border-2 border-[#1F150C]/15 text-[#1F150C] font-bold rounded-2xl hover:border-[#412D15] transition-all flex items-center justify-center gap-2"
+                className="flex-1 py-3 bg-white border-2 border-[#1a1a2e]/15 text-[#1a1a2e] font-bold rounded-2xl hover:border-[#bf4b3c] transition-all flex items-center justify-center gap-2"
               >
                 <RotateCcw className="w-4 h-4" /> Try Again
               </button>
               <button
                 onClick={onClose}
-                className="flex-1 py-3 bg-[#412D15] text-white font-bold rounded-2xl hover:bg-[#000000] transition-all"
+                className="flex-1 py-3 bg-[#bf4b3c] text-white font-bold rounded-2xl hover:bg-[#1a1a2e] transition-all"
               >
                 Done
               </button>

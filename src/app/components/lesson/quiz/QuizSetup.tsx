@@ -27,26 +27,26 @@ export default function QuizSetup({
   return (
     <div className="p-6 space-y-6">
       <div>
-        <label className="block text-sm font-bold text-[#1F150C]/60 mb-2 uppercase tracking-wider">Quiz Mode</label>
+        <label className="block text-sm font-bold text-[#1a1a2e]/60 mb-2 uppercase tracking-wider">Quiz Mode</label>
         <div className="grid grid-cols-2 gap-3">
           {(Object.keys(MODE_LABELS) as QuizMode[]).map((mode) => (
             <button
               key={mode}
               onClick={() => setConfig((c) => ({ ...c, mode }))}
               className={`p-4 rounded-xl text-left border-2 transition-all ${config.mode === mode
-                ? 'border-[#412D15] bg-white shadow-md'
+                ? 'border-[#bf4b3c] bg-white shadow-md'
                 : 'border-transparent bg-white/60 hover:bg-white/80'
                 }`}
             >
-              <div className="font-bold text-[#1F150C]">{MODE_LABELS[mode].title}</div>
-              <div className="text-xs text-[#1F150C]/50 mt-0.5">{MODE_LABELS[mode].desc}</div>
+              <div className="font-bold text-[#1a1a2e]">{MODE_LABELS[mode].title}</div>
+              <div className="text-xs text-[#1a1a2e]/50 mt-0.5">{MODE_LABELS[mode].desc}</div>
             </button>
           ))}
         </div>
       </div>
 
       <div>
-        <label className="block text-sm font-bold text-[#1F150C]/60 mb-2 uppercase tracking-wider">Word Source</label>
+        <label className="block text-sm font-bold text-[#1a1a2e]/60 mb-2 uppercase tracking-wider">Word Source</label>
         <div className="flex gap-2 flex-wrap">
           {[
             { key: 'page' as const, label: `This Page (${pageVocab.length})` },
@@ -58,8 +58,8 @@ export default function QuizSetup({
               key={key}
               onClick={() => setConfig((c) => ({ ...c, sourceFilter: key }))}
               className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${config.sourceFilter === key
-                ? 'bg-[#1F150C] text-white'
-                : 'bg-white text-[#1F150C] border border-[#1F150C]/15 hover:border-[#1F150C]/40'
+                ? 'bg-[#1a1a2e] text-white'
+                : 'bg-white text-[#1a1a2e] border border-[#1a1a2e]/15 hover:border-[#1a1a2e]/40'
                 }`}
             >
               {label}
@@ -69,7 +69,7 @@ export default function QuizSetup({
       </div>
 
       <div>
-        <label className="block text-sm font-bold text-[#1F150C]/60 mb-2 uppercase tracking-wider">Number of Questions</label>
+        <label className="block text-sm font-bold text-[#1a1a2e]/60 mb-2 uppercase tracking-wider">Number of Questions</label>
         <div className="flex gap-2 flex-wrap">
           {QUESTION_COUNTS.map((count) => (
             <button
@@ -77,8 +77,8 @@ export default function QuizSetup({
               onClick={() => setConfig((c) => ({ ...c, questionCount: count }))}
               disabled={count > availableCount}
               className={`px-5 py-2 rounded-full text-sm font-bold transition-all ${config.questionCount === count
-                ? 'bg-[#412D15] text-white shadow-md'
-                : 'bg-white text-[#1F150C] border border-[#1F150C]/15 hover:border-[#412D15]/40'
+                ? 'bg-[#bf4b3c] text-white shadow-md'
+                : 'bg-white text-[#1a1a2e] border border-[#1a1a2e]/15 hover:border-[#bf4b3c]/40'
                 } disabled:opacity-30 disabled:cursor-not-allowed`}
             >
               {count}
@@ -88,8 +88,8 @@ export default function QuizSetup({
             onClick={() => setConfig((c) => ({ ...c, questionCount: availableCount }))}
             disabled={availableCount < 4}
             className={`px-5 py-2 rounded-full text-sm font-bold transition-all ${config.questionCount === availableCount && !QUESTION_COUNTS.includes(availableCount)
-              ? 'bg-[#412D15] text-white shadow-md'
-              : 'bg-white text-[#1F150C] border border-[#1F150C]/15 hover:border-[#412D15]/40'
+              ? 'bg-[#bf4b3c] text-white shadow-md'
+              : 'bg-white text-[#1a1a2e] border border-[#1a1a2e]/15 hover:border-[#bf4b3c]/40'
               } disabled:opacity-30 disabled:cursor-not-allowed`}
           >
             All ({availableCount})
@@ -100,7 +100,7 @@ export default function QuizSetup({
       <button
         onClick={onStart}
         disabled={availableCount < 4}
-        className="w-full py-4 bg-[#412D15] text-white font-extrabold text-lg rounded-2xl hover:bg-[#000000] transition-all active:scale-[0.98] shadow-lg shadow-[#412D15]/30 disabled:opacity-40 disabled:cursor-not-allowed"
+        className="w-full py-4 bg-[#bf4b3c] text-white font-extrabold text-lg rounded-2xl hover:bg-[#1a1a2e] transition-all active:scale-[0.98] shadow-lg shadow-[#bf4b3c]/30 disabled:opacity-40 disabled:cursor-not-allowed"
       >
         {availableCount < 4 ? 'Need at least 4 words' : 'Start Quiz →'}
       </button>

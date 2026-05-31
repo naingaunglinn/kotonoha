@@ -1,6 +1,6 @@
 'use client'
 import React, {useState, useEffect} from 'react';
-import {BookA, X, Volume2} from 'lucide-react';
+import {BookA, X} from 'lucide-react';
 import { getDataUrl } from '@/utils/dataUrl';
 
 // Character data structure matching the JSON
@@ -80,95 +80,84 @@ export default function FloatingKanaSheet() {
       {/* Floating Action Button */}
       <button
         onClick={toggleModal}
-        className="fixed bottom-20 sm:bottom-6 right-4 sm:right-6 z-40 p-4 rounded-full shadow-lg bg-[#1F150C] text-white hover:bg-[#412D15] transition-all hover:scale-105 active:scale-95 group"
+        className="group fixed bottom-20 right-4 z-40 grid h-14 w-14 place-items-center rounded-full bg-ink text-bg shadow-float transition-all hover:scale-105 hover:bg-accent active:scale-95 sm:bottom-6 sm:right-6"
         title="Kana Reference Sheet (Ctrl+K)"
       >
-        <BookA className="w-6 h-6" />
-        <span className="absolute right-full mr-4 top-1/2 -translate-y-1/2 px-3 py-1.5 rounded-lg bg-[#1F150C] text-sm text-white font-bold opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none shadow-md">
-          Kana Chart
+        <BookA className="h-6 w-6" />
+        <span className="pointer-events-none absolute right-full top-1/2 mr-4 -translate-y-1/2 whitespace-nowrap rounded-chip bg-ink px-3 py-1.5 text-sm font-bold text-bg opacity-0 shadow-float transition-opacity group-hover:opacity-100">
+          Kana chart
         </span>
       </button>
 
       {/* Modal Overlay */}
       {isOpen && (
-        <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 sm:p-8">
-          <div className="bg-[#E1DCC9] w-full max-w-4xl h-full max-h-[90vh] rounded-3xl shadow-2xl flex flex-col overflow-hidden">
-            
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-ink/40 p-4 backdrop-blur-sm sm:p-8">
+          <div className="animate-rise flex h-full max-h-[90vh] w-full max-w-4xl flex-col overflow-hidden rounded-[20px] border border-line bg-bg shadow-float">
             {/* Header */}
-            <div className="flex-none p-6 border-b border-black/5 flex items-center justify-between">
-              <div className="flex gap-4 items-center">
-                <h2 className="text-2xl font-extrabold text-[#1F150C]">Kana Chart</h2>
-                <div className="flex bg-[#1F150C]/10 p-1 rounded-xl">
+            <div className="flex flex-none items-center justify-between border-b border-line p-5">
+              <div className="flex items-center gap-4">
+                <h2 className="font-[family-name:var(--font-display)] text-xl text-ink">Kana chart</h2>
+                <div className="flex rounded-full bg-surface-alt p-1">
                   <button
                     onClick={() => setActiveTab('hiragana')}
-                    className={`px-4 py-2 rounded-lg font-bold text-sm transition-all ${
-                      activeTab === 'hiragana' 
-                        ? 'bg-white text-[#412D15] shadow-sm' 
-                        : 'text-[#1F150C]/60 hover:text-[#1F150C]'
+                    className={`rounded-full px-4 py-1.5 text-sm font-bold transition-all ${
+                      activeTab === 'hiragana' ? 'bg-ink text-bg shadow-sm' : 'text-ink-muted hover:text-ink'
                     }`}
                   >
-                    あ Hiragana
+                    <span className="jp">あ</span> Hiragana
                   </button>
                   <button
                     onClick={() => setActiveTab('katakana')}
-                    className={`px-4 py-2 rounded-lg font-bold text-sm transition-all ${
-                      activeTab === 'katakana' 
-                        ? 'bg-white text-[#412D15] shadow-sm' 
-                        : 'text-[#1F150C]/60 hover:text-[#1F150C]'
+                    className={`rounded-full px-4 py-1.5 text-sm font-bold transition-all ${
+                      activeTab === 'katakana' ? 'bg-ink text-bg shadow-sm' : 'text-ink-muted hover:text-ink'
                     }`}
                   >
-                    ア Katakana
+                    <span className="jp">ア</span> Katakana
                   </button>
                 </div>
               </div>
-              
-              <div className="flex items-center gap-4">
-                <div className="hidden sm:flex text-xs font-bold text-[#1F150C]/40 bg-[#1F150C]/5 px-3 py-1.5 rounded-full">
+
+              <div className="flex items-center gap-3">
+                <div className="hidden rounded-full bg-surface-alt px-3 py-1.5 text-xs font-bold text-ink-muted sm:flex">
                   Ctrl + K
                 </div>
                 <button
                   onClick={toggleModal}
-                  className="p-2 rounded-full bg-white hover:bg-black/5 transition-colors text-[#1F150C]"
+                  className="grid h-9 w-9 place-items-center rounded-full text-ink-muted transition-colors hover:bg-ink/5"
+                  aria-label="Close"
                 >
-                  <X className="w-6 h-6" />
+                  <X className="h-5 w-5" />
                 </button>
               </div>
             </div>
 
             {/* Scrollable Content */}
-            <div className="flex-1 overflow-y-auto p-6 relative">
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            <div className="relative flex-1 overflow-y-auto p-5">
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
                 {currentData.map((row, idx) => (
-                  <div key={idx} className="bg-white p-4 rounded-2xl shadow-sm border border-black/5">
-                    <div className="text-xs font-bold text-[#1F150C]/40 uppercase mb-3 px-1 border-b border-black/5 pb-2">
-                      {row.char_row === 'basic' ? 'Vowels' : 
-                       row.char_row.startsWith('yoon') ? 'Combinations' : 
+                  <div key={idx} className="rounded-card border border-line bg-surface p-4 shadow-card">
+                    <div className="mb-3 border-b border-line pb-2 text-[10px] font-bold uppercase tracking-[0.12em] text-ink-muted">
+                      {row.char_row === 'basic' ? 'Vowels' :
+                       row.char_row.startsWith('yoon') ? 'Combinations' :
                        row.char_row + '-row'}
                     </div>
-                    <div className="grid grid-cols-5 gap-2">
+                    <div className="grid grid-cols-5 gap-1.5">
                       {row.characters.map((char, charIdx) => {
                         const isEmpty = !char.kana || char.kana.trim() === '';
                         return (
-                          <div key={charIdx} className="aspect-square flex-1">
+                          <div key={charIdx} className="aspect-square">
                             {!isEmpty ? (
                               <button
                                 onClick={() => speak(char.kana)}
-                                className="w-full h-full flex flex-col items-center justify-center rounded-xl hover:bg-[#412D15]/10 hover:text-[#412D15] transition-colors group relative"
+                                className="group flex h-full w-full flex-col items-center justify-center rounded-chip transition-colors hover:bg-surface-alt"
                               >
-                                <span className="text-2xl font-bold text-[#1F150C] group-hover:text-[#412D15] transition-colors">
+                                <span className="jp text-2xl text-ink transition-colors group-hover:text-accent">
                                   {char.kana}
                                 </span>
-                                <span className="text-[10px] uppercase font-bold text-[#1F150C]/50 mt-1">
-                                  {char.romaji}
-                                </span>
-                                
-                                {/* Hover Speaker Icon */}
-                                <div className="absolute inset-0 bg-transparent flex items-center justify-center opacity-0 group-hover:opacity-10 pointer-events-none">
-                                  <Volume2 className="w-8 h-8" />
-                                </div>
+                                <span className="text-[10px] font-bold uppercase text-ink-muted">{char.romaji}</span>
                               </button>
                             ) : (
-                              <div className="w-full h-full rounded-xl bg-black/5" />
+                              <div className="h-full w-full rounded-chip bg-surface-alt/50" />
                             )}
                           </div>
                         );
@@ -178,7 +167,6 @@ export default function FloatingKanaSheet() {
                 ))}
               </div>
             </div>
-            
           </div>
         </div>
       )}

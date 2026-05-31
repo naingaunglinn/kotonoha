@@ -118,19 +118,19 @@ const VocabularyQuiz = ({ vocab, pageVocab, completedWords, onClose }: Vocabular
 
   return (
     <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
-      <div className="bg-[#E1DCC9] w-full max-w-2xl max-h-[90vh] rounded-3xl shadow-2xl overflow-y-auto">
+      <div className="bg-[#f0ede6] w-full max-w-2xl max-h-[90vh] rounded-3xl shadow-2xl overflow-y-auto">
 
         <div className="flex items-center justify-between p-5 border-b border-black/5">
-          <h2 className="text-xl font-extrabold text-[#1F150C] tracking-tight">
+          <h2 className="text-xl font-extrabold text-[#1a1a2e] tracking-tight">
             {phase === 'setup' && '📝 Quiz Setup'}
             {phase === 'playing' && '📝 Vocabulary Quiz'}
             {phase === 'review' && '🏆 Results'}
           </h2>
           <button
             onClick={onClose}
-            className="p-2 rounded-full hover:bg-[#1F150C]/10 transition-colors"
+            className="p-2 rounded-full hover:bg-[#1a1a2e]/10 transition-colors"
           >
-            <X className="w-5 h-5 text-[#1F150C]" />
+            <X className="w-5 h-5 text-[#1a1a2e]" />
           </button>
         </div>
 

@@ -46,96 +46,83 @@ const Char = () => {
     fetchCharacter(char);
   }, [char, fetchCharacter]);
 
+  const TABS = [
+    { key: 'order' as const, label: 'Stroke order', icon: BookOpen },
+    { key: 'practice' as const, label: 'Practice', icon: PenLine },
+    { key: 'quiz' as const, label: 'Quiz', icon: ClipboardCheck },
+  ];
+
   return (
-    <div className="max-w-5xl mx-auto pt-16 pb-24 px-4 sm:px-6 lg:px-8">
-      <div className="relative text-center mb-16 max-w-3xl mx-auto">
-        <Link href={`/module/${kana}`} className="absolute left-0 top-1/2 -translate-y-1/2 p-3 rounded-full hover:bg-[#1F150C]/10 transition-colors duration-300">
-          <ChevronLeft className="h-6 w-6 text-[#1F150C]" />
-        </Link>
-      </div>
-      <div className="bg-[#E1DCC9] rounded-3xl shadow-2xl w-full max-w-4xl p-8 grid grid-cols-1 md:grid-cols-2 gap-8 relative animate-fade-in">
+    <div className="mx-auto max-w-5xl px-4 pb-24 pt-8 sm:px-6 lg:px-8">
+      <Link
+        href={`/module/${kana}`}
+        className="mb-6 inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-sm font-bold text-ink-muted transition-colors hover:text-ink"
+      >
+        <ChevronLeft className="h-4 w-4" />
+        <span className="capitalize">{kana}</span>
+      </Link>
+
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
         {/* Character Info */}
-        <div className="flex flex-col items-center justify-center bg-white/50 rounded-2xl p-6 border border-black/5">
-          <h1 className="text-9xl font-bold text-[#1F150C]">{character?.kana}</h1>
-        </div>
-
-        {/* Stroke-order / Practice / Quiz */}
-        <div className="flex flex-col">
-          {/* Mode tabs */}
-          <div className="inline-flex p-1 bg-[#1F150C]/10 rounded-xl mb-4 self-center">
-            <button
-              onClick={() => setMode('order')}
-              className={`inline-flex items-center gap-1.5 px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-bold transition-all ${
-                mode === 'order'
-                  ? 'bg-white text-[#412D15] shadow-sm'
-                  : 'text-[#1F150C]/60 hover:text-[#1F150C]'
-              }`}
-              aria-pressed={mode === 'order'}
-            >
-              <BookOpen className="w-4 h-4" />
-              <span className="hidden sm:inline">Stroke </span>order
-            </button>
-            <button
-              onClick={() => setMode('practice')}
-              className={`inline-flex items-center gap-1.5 px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-bold transition-all ${
-                mode === 'practice'
-                  ? 'bg-white text-[#412D15] shadow-sm'
-                  : 'text-[#1F150C]/60 hover:text-[#1F150C]'
-              }`}
-              aria-pressed={mode === 'practice'}
-            >
-              <PenLine className="w-4 h-4" />
-              Practice
-            </button>
-            <button
-              onClick={() => setMode('quiz')}
-              className={`inline-flex items-center gap-1.5 px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-bold transition-all ${
-                mode === 'quiz'
-                  ? 'bg-white text-[#412D15] shadow-sm'
-                  : 'text-[#1F150C]/60 hover:text-[#1F150C]'
-              }`}
-              aria-pressed={mode === 'quiz'}
-            >
-              <ClipboardCheck className="w-4 h-4" />
-              Quiz
-            </button>
-          </div>
-
-          <div className="relative w-[400px] h-[400px] max-w-full bg-white rounded-2xl border-2 border-dashed border-[#1F150C]/20 overflow-hidden mx-auto">
-            {mode === 'order' && character?.kana && (
-              <KanaWriter char={character.kana} autoplay />
+        <div className="relative grid place-items-center overflow-hidden rounded-[20px] border border-line bg-surface p-6 shadow-card">
+          <div
+            className="pointer-events-none absolute inset-0 opacity-50"
+            style={{
+              backgroundImage: `linear-gradient(to right, rgba(26,26,46,0.04) 1px, transparent 1px),
+                                linear-gradient(to bottom, rgba(26,26,46,0.04) 1px, transparent 1px)`,
+              backgroundSize: '40px 40px',
+            }}
+            aria-hidden
+          />
+          <div className="relative flex flex-col items-center gap-4">
+            <h1 className="jp text-[10rem] leading-none text-ink">{character?.kana}</h1>
+            {character?.romaji && (
+              <span className="rounded-full bg-surface-alt px-4 py-1 text-sm font-bold uppercase tracking-[0.2em] text-accent">
+                {character.romaji}
+              </span>
             )}
-            {mode === 'practice' && character?.kana && (
-              <KanaTrace char={character.kana} />
-            )}
-            {mode === 'quiz' && character?.kana && (
-              <KanaQuiz char={character.kana} />
-            )}
-          </div>
-
-          <p className="mt-2 text-[10px] text-center text-[#1F150C]/40">
-            Stroke data from{' '}
-            <a
-              href="https://kanjivg.tagaini.net/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline"
-            >
-              KanjiVG
-            </a>{' '}
-            (CC&nbsp;BY-SA&nbsp;3.0).
-          </p>
-
-          <div className="flex gap-2 flex-wrap">
             <button
               onClick={() => speak(character?.kana)}
               disabled={!character?.kana}
               title={character?.kana ? `Pronounce ${character.kana}` : ''}
-              className="mt-4 p-3 rounded-full bg-white hover:bg-[#412D15] text-[#1F150C] hover:text-white transition-all duration-300 self-start disabled:opacity-40 disabled:cursor-not-allowed"
+              className="grid h-12 w-12 place-items-center rounded-full bg-ink text-bg transition-all hover:bg-accent active:scale-95 disabled:opacity-40"
             >
-              <Volume2 className="h-8 w-8" />
+              <Volume2 className="h-5 w-5" />
             </button>
           </div>
+        </div>
+
+        {/* Stroke-order / Practice / Quiz */}
+        <div className="flex flex-col rounded-[20px] border border-line bg-surface p-5 shadow-card">
+          <div className="mb-4 inline-flex self-center rounded-full bg-surface-alt p-1">
+            {TABS.map(({ key, label, icon: Icon }) => (
+              <button
+                key={key}
+                onClick={() => setMode(key)}
+                className={`inline-flex items-center gap-1.5 rounded-full px-3 py-2 text-xs font-bold transition-all sm:px-4 sm:text-sm ${
+                  mode === key ? 'bg-ink text-bg shadow-sm' : 'text-ink-muted hover:text-ink'
+                }`}
+                aria-pressed={mode === key}
+              >
+                <Icon className="h-4 w-4" />
+                {label}
+              </button>
+            ))}
+          </div>
+
+          <div className="relative mx-auto h-[360px] w-[360px] max-w-full overflow-hidden rounded-card border-2 border-dashed border-line-strong bg-bg">
+            {mode === 'order' && character?.kana && <KanaWriter char={character.kana} autoplay />}
+            {mode === 'practice' && character?.kana && <KanaTrace char={character.kana} />}
+            {mode === 'quiz' && character?.kana && <KanaQuiz char={character.kana} />}
+          </div>
+
+          <p className="mt-3 text-center text-[10px] text-ink-muted">
+            Stroke data from{' '}
+            <a href="https://kanjivg.tagaini.net/" target="_blank" rel="noopener noreferrer" className="underline">
+              KanjiVG
+            </a>{' '}
+            (CC&nbsp;BY-SA&nbsp;3.0).
+          </p>
         </div>
       </div>
     </div>

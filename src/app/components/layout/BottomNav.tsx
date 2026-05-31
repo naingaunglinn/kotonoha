@@ -34,22 +34,25 @@ export default function BottomNav() {
 
   return (
     <nav
-      className="sm:hidden fixed bottom-0 inset-x-0 z-30 bg-[#E1DCC9]/95 backdrop-blur-md border-t border-[#1F150C]/10 pb-[env(safe-area-inset-bottom)]"
+      className="fixed inset-x-0 bottom-0 z-30 border-t border-line bg-bg/90 pb-[env(safe-area-inset-bottom)] backdrop-blur-md sm:hidden"
       aria-label="Primary"
     >
-      <ul className="flex items-stretch justify-around h-16">
+      <ul className="flex h-16 items-stretch justify-around">
         {items.map(({ href, label, icon: Icon, match }) => {
           const active = match(pathname);
           return (
             <li key={label} className="flex-1">
               <Link
                 href={href}
-                className={`h-full flex flex-col items-center justify-center gap-0.5 transition-colors ${
-                  active ? 'text-[#412D15]' : 'text-[#1F150C]/55 hover:text-[#1F150C]'
+                className={`relative flex h-full flex-col items-center justify-center gap-1 transition-colors ${
+                  active ? 'text-accent' : 'text-ink-muted hover:text-ink'
                 }`}
                 aria-current={active ? 'page' : undefined}
               >
-                <Icon className={`w-5 h-5 ${active ? '' : 'opacity-80'}`} />
+                {active && (
+                  <span className="absolute top-0 h-0.5 w-8 rounded-full bg-accent" />
+                )}
+                <Icon className="h-5 w-5" />
                 <span className={`text-[10px] tracking-wide ${active ? 'font-bold' : 'font-medium'}`}>
                   {label}
                 </span>

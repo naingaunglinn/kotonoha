@@ -28,10 +28,10 @@ export default function QuizResults({
   return (
     <div className="p-6 space-y-6">
       <div className="bg-white rounded-2xl p-8 text-center border border-black/5 shadow-sm">
-        <Trophy className={`w-16 h-16 mx-auto mb-4 ${scorePercent >= 80 ? 'text-yellow-500' : scorePercent >= 50 ? 'text-[#1F150C]/40' : 'text-red-400'
+        <Trophy className={`w-16 h-16 mx-auto mb-4 ${scorePercent >= 80 ? 'text-yellow-500' : scorePercent >= 50 ? 'text-[#1a1a2e]/40' : 'text-red-400'
           }`} />
-        <div className="text-6xl font-extrabold text-[#1F150C] mb-1">{scorePercent}%</div>
-        <div className="text-lg text-[#1F150C]/60">
+        <div className="text-6xl font-extrabold text-[#1a1a2e] mb-1">{scorePercent}%</div>
+        <div className="text-lg text-[#1a1a2e]/60">
           {correctCount} of {results.length} correct
         </div>
         {bestStreak > 1 && (
@@ -40,7 +40,7 @@ export default function QuizResults({
             Best streak: {bestStreak}
           </div>
         )}
-        <div className="mt-4 text-sm text-[#1F150C]/50">
+        <div className="mt-4 text-sm text-[#1a1a2e]/50">
           {scorePercent === 100 && '🎉 Perfect score! You\'re amazing!'}
           {scorePercent >= 80 && scorePercent < 100 && '🌟 Great job! Almost perfect!'}
           {scorePercent >= 50 && scorePercent < 80 && '💪 Good effort! Keep practicing!'}
@@ -50,7 +50,7 @@ export default function QuizResults({
 
       {wrongResults.length > 0 && (
         <div>
-          <h3 className="text-sm font-bold text-[#1F150C]/60 uppercase tracking-wider mb-3 font-outfit">
+          <h3 className="text-sm font-bold text-[#1a1a2e]/60 uppercase tracking-wider mb-3 font-outfit">
             Review incorrect ({wrongResults.length})
           </h3>
           <div className="space-y-4">
@@ -59,8 +59,8 @@ export default function QuizResults({
               return (
                 <div key={idx} className="bg-white rounded-2xl p-5 border border-red-100 flex items-center justify-between gap-4 shadow-sm hover:shadow-md transition-shadow">
                   <div className="flex-1 min-w-0">
-                    <p className="text-2xl font-bold text-[#1F150C] mb-1">{r.question.word.word}</p>
-                    <p className="text-[11px] text-[#1F150C]/40 font-bold uppercase tracking-widest mb-3">{r.question.word.spelling}</p>
+                    <p className="text-2xl font-bold text-[#1a1a2e] mb-1">{r.question.word.word}</p>
+                    <p className="text-[11px] text-[#1a1a2e]/40 font-bold uppercase tracking-widest mb-3">{r.question.word.spelling}</p>
                     <div className="flex flex-wrap gap-2">
                       <span className="text-[11px] px-2.5 py-1.5 bg-blue-50 text-blue-600 rounded-xl font-extrabold border border-blue-100 shadow-sm">
                         {r.question.word.meaning}
@@ -88,7 +88,7 @@ export default function QuizResults({
 
                   <button
                     onClick={() => speak(r.question.word.word || '')}
-                    className="p-3 rounded-full bg-[#E1DCC9] hover:bg-[#412D15]/10 text-gray-400 hover:text-[#412D15] transition-all flex-shrink-0"
+                    className="p-3 rounded-full bg-[#f0ede6] hover:bg-[#bf4b3c]/10 text-gray-400 hover:text-[#bf4b3c] transition-all flex-shrink-0"
                   >
                     <Volume2 className="w-5 h-5" />
                   </button>
@@ -102,14 +102,14 @@ export default function QuizResults({
       <div className="flex gap-3">
         <button
           onClick={onRestart}
-          className="flex-1 flex items-center justify-center gap-2 py-3 bg-white border-2 border-[#1F150C]/15 text-[#1F150C] rounded-xl font-bold hover:border-[#1F150C]/30 transition-all active:scale-[0.98]"
+          className="flex-1 flex items-center justify-center gap-2 py-3 bg-white border-2 border-[#1a1a2e]/15 text-[#1a1a2e] rounded-xl font-bold hover:border-[#1a1a2e]/30 transition-all active:scale-[0.98]"
         >
           <RotateCcw className="w-4 h-4" />
           New Quiz
         </button>
         <button
           onClick={onClose}
-          className="flex-1 py-3 bg-[#1F150C] text-white rounded-xl font-bold hover:bg-[#1F150C]/80 transition-all active:scale-[0.98]"
+          className="flex-1 py-3 bg-[#1a1a2e] text-white rounded-xl font-bold hover:bg-[#1a1a2e]/80 transition-all active:scale-[0.98]"
         >
           Done
         </button>

@@ -187,7 +187,7 @@ export default function KanaQuiz({ char, size = 280 }: KanaQuizProps) {
     el.style.transition = 'none';
     el.style.strokeDasharray = String(length);
     el.style.strokeDashoffset = String(length);
-    el.style.stroke = '#412D15';
+    el.style.stroke = '#bf4b3c';
     el.style.opacity = '0.5';
     void el.getBoundingClientRect();
     el.style.transition = `stroke-dashoffset ${HINT_REVEAL_MS}ms linear`;
@@ -224,7 +224,7 @@ export default function KanaQuiz({ char, size = 280 }: KanaQuizProps) {
   if (error) {
     return (
       <div className="absolute inset-0 flex items-center justify-center p-4 text-center">
-        <p className="text-xs text-[#1F150C]/50">Quiz unavailable for this character.</p>
+        <p className="text-xs text-[#1a1a2e]/50">Quiz unavailable for this character.</p>
       </div>
     );
   }
@@ -263,7 +263,7 @@ export default function KanaQuiz({ char, size = 280 }: KanaQuizProps) {
               key={`done-${i}`}
               d={d}
               fill="none"
-              stroke="#1F150C"
+              stroke="#1a1a2e"
               strokeWidth="3"
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -291,7 +291,7 @@ export default function KanaQuiz({ char, size = 280 }: KanaQuizProps) {
           <path
             d={drawnPath}
             fill="none"
-            stroke={phase === 'feedback-wrong' ? '#dc2626' : '#412D15'}
+            stroke={phase === 'feedback-wrong' ? '#dc2626' : '#bf4b3c'}
             strokeWidth="3.5"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -302,8 +302,8 @@ export default function KanaQuiz({ char, size = 280 }: KanaQuizProps) {
         {/* Start-point indicator for the current stroke */}
         {!isDone && phase === 'idle' && startPoint && (
           <g style={{ pointerEvents: 'none' }}>
-            <circle cx={startPoint.x} cy={startPoint.y} r="4" fill="#412D15" />
-            <circle cx={startPoint.x} cy={startPoint.y} r="7" fill="none" stroke="#412D15" strokeWidth="1" opacity="0.4">
+            <circle cx={startPoint.x} cy={startPoint.y} r="4" fill="#bf4b3c" />
+            <circle cx={startPoint.x} cy={startPoint.y} r="7" fill="none" stroke="#bf4b3c" strokeWidth="1" opacity="0.4">
               <animate attributeName="r" values="6;10;6" dur="1.4s" repeatCount="indefinite" />
               <animate attributeName="opacity" values="0.5;0;0.5" dur="1.4s" repeatCount="indefinite" />
             </circle>
@@ -332,21 +332,21 @@ export default function KanaQuiz({ char, size = 280 }: KanaQuizProps) {
 
       {/* Completion banner */}
       {isDone && (
-        <div className="absolute inset-0 flex items-center justify-center bg-[#E1DCC9]/85 backdrop-blur-sm">
+        <div className="absolute inset-0 flex items-center justify-center bg-[#f0ede6]/85 backdrop-blur-sm">
           <div className="bg-white rounded-2xl p-6 text-center shadow-lg max-w-[260px]">
             <div className="w-14 h-14 rounded-full bg-emerald-500 text-white flex items-center justify-center mx-auto mb-3">
               <Award className="w-8 h-8" strokeWidth={2.5} />
             </div>
-            <p className="text-lg font-extrabold text-[#1F150C] mb-1">
+            <p className="text-lg font-extrabold text-[#1a1a2e] mb-1">
               {mistakes === 0 ? 'Perfect!' : 'Done!'}
             </p>
-            <p className="text-xs text-[#1F150C]/70 mb-4">
+            <p className="text-xs text-[#1a1a2e]/70 mb-4">
               {firstTryCorrect}/{paths.length} first try
               {mistakes > 0 && ` · ${mistakes} ${mistakes === 1 ? 'miss' : 'misses'}`}
             </p>
             <button
               onClick={restart}
-              className="inline-flex items-center gap-1.5 px-4 py-2 bg-[#412D15] text-white text-sm font-bold rounded-full hover:bg-[#000000] transition-colors"
+              className="inline-flex items-center gap-1.5 px-4 py-2 bg-[#bf4b3c] text-white text-sm font-bold rounded-full hover:bg-[#1a1a2e] transition-colors"
             >
               <RotateCcw className="w-4 h-4" />
               Try again
@@ -358,14 +358,14 @@ export default function KanaQuiz({ char, size = 280 }: KanaQuizProps) {
       {/* Status bar */}
       {!isDone && paths.length > 0 && (
         <>
-          <div className="absolute top-1 right-1 px-2 py-0.5 rounded-full bg-[#1F150C]/85 text-white text-[10px] font-bold tabular-nums">
+          <div className="absolute top-1 right-1 px-2 py-0.5 rounded-full bg-[#1a1a2e]/85 text-white text-[10px] font-bold tabular-nums">
             {Math.min(strokeIndex + 1, paths.length)} / {paths.length}
           </div>
           <div className="absolute bottom-1 left-1/2 -translate-x-1/2 flex items-center gap-1 bg-white/90 backdrop-blur-sm rounded-full p-1 shadow-sm border border-black/5">
             <button
               onClick={showHintNow}
               disabled={phase !== 'idle'}
-              className="inline-flex items-center gap-1 px-3 h-8 rounded-full text-[#1F150C]/70 hover:bg-[#1F150C]/10 text-xs font-bold transition-colors disabled:opacity-40"
+              className="inline-flex items-center gap-1 px-3 h-8 rounded-full text-[#1a1a2e]/70 hover:bg-[#1a1a2e]/10 text-xs font-bold transition-colors disabled:opacity-40"
               title="Show me this stroke"
             >
               <Eye className="w-3.5 h-3.5" />
@@ -373,7 +373,7 @@ export default function KanaQuiz({ char, size = 280 }: KanaQuizProps) {
             </button>
             <button
               onClick={restart}
-              className="w-8 h-8 rounded-full text-[#1F150C]/60 hover:bg-[#1F150C]/10 transition-colors flex items-center justify-center"
+              className="w-8 h-8 rounded-full text-[#1a1a2e]/60 hover:bg-[#1a1a2e]/10 transition-colors flex items-center justify-center"
               title="Restart"
               aria-label="Restart"
             >

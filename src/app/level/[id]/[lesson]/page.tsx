@@ -329,6 +329,7 @@ const LessonContentPage = () => {
     ));
   }
   if (lesson == 'grammar' && grammar && grammar.length > 0) {
+    gridLayout = "grid-cols-1 max-w-[760px] mx-auto gap-5";
     content = paginatedGrammar.map((item, index) => (
       <GrammarPointCard
         key={index}
@@ -399,41 +400,39 @@ const LessonContentPage = () => {
   const hasTools = isTrackedCategory(lesson) && content;
 
   return (
-    <div className="max-w-8xl mx-auto pb-24">
-      {/* SLIM TOOLBAR — replaces the old centered hero. Sticks under site header (h-20). */}
+    <div className="mx-auto max-w-7xl pb-24">
+      {/* SLIM TOOLBAR — sticks under site header. */}
       {isTrackedCategory(lesson) && (
-        <div className="sticky top-20 z-30 bg-[#E1DCC9]/90 backdrop-blur-md border-b border-[#1F150C]/10">
-          <div className="max-w-8xl mx-auto px-3 sm:px-6 lg:px-8 py-2 flex items-center gap-2 sm:gap-3">
+        <div className="sticky top-16 z-30 border-b border-line bg-bg/85 backdrop-blur-md sm:top-20">
+          <div className="mx-auto flex max-w-7xl items-center gap-2 px-3 py-2.5 sm:gap-3 sm:px-6 lg:px-8">
             {/* Back */}
             <Link
               href={`/level/${id}`}
-              className="p-1.5 rounded-full hover:bg-[#1F150C]/10 transition-colors flex-shrink-0"
+              className="grid h-8 w-8 flex-shrink-0 place-items-center rounded-full text-ink transition-colors hover:bg-ink/5"
               title="Back to lessons"
             >
-              <ChevronLeft className="h-5 w-5 text-[#1F150C]" />
+              <ChevronLeft className="h-5 w-5" />
             </Link>
 
             {/* Level chip with dropdown */}
             <div className="relative flex-shrink-0" ref={levelMenuRef}>
               <button
                 onClick={() => setShowLevelMenu(v => !v)}
-                className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-[#412D15]/10 text-[#412D15] text-[11px] font-bold tracking-wider hover:bg-[#412D15]/15 transition-colors"
+                className="inline-flex items-center gap-1 rounded-chip bg-ink px-2.5 py-1 text-[11px] font-bold tracking-wider text-bg transition-colors hover:bg-ink/90"
                 title="Switch level"
               >
                 {levelLabel}
-                <ChevronDown className="w-3 h-3" />
+                <ChevronDown className="h-3 w-3" />
               </button>
               {showLevelMenu && (
-                <div className="absolute top-full left-0 mt-1 bg-white rounded-xl shadow-lg border border-black/5 p-1 z-40 min-w-[80px]">
+                <div className="absolute left-0 top-full z-40 mt-1 min-w-[80px] rounded-card border border-line bg-surface p-1 shadow-float">
                   {LEVELS.map(lvId => (
                     <Link
                       key={lvId}
                       href={`/level/${lvId}/${lesson}`}
                       onClick={() => setShowLevelMenu(false)}
-                      className={`block px-3 py-1.5 rounded-lg text-xs font-bold text-center transition-colors ${
-                        lvId === id
-                          ? 'bg-[#412D15] text-white'
-                          : 'text-[#1F150C] hover:bg-[#E1DCC9]'
+                      className={`block rounded-chip px-3 py-1.5 text-center text-xs font-bold transition-colors ${
+                        lvId === id ? 'bg-ink text-bg' : 'text-ink hover:bg-surface-alt'
                       }`}
                     >
                       {LEVEL_LABELS[lvId]}
@@ -444,28 +443,27 @@ const LessonContentPage = () => {
             </div>
 
             {/* Category + set */}
-            <div className="flex items-center gap-1.5 min-w-0">
-              <span className="text-xs font-bold text-[#1F150C] truncate">{lessonLabel}</span>
-              <span className="hidden sm:inline text-xs text-[#1F150C]/40">·</span>
-              <span className="hidden sm:inline text-xs font-medium text-[#1F150C]/60 whitespace-nowrap">
+            <div className="flex min-w-0 items-center gap-1.5">
+              <span className="truncate text-xs font-bold text-ink">{lessonLabel}</span>
+              <span className="hidden text-xs text-ink-muted/50 sm:inline">·</span>
+              <span className="hidden whitespace-nowrap text-xs font-medium text-ink-muted sm:inline">
                 Set {currentPage}/{totalPages}
               </span>
             </div>
 
             {/* Progress bar — flex-fills */}
-            <div className="flex-1 min-w-0 flex items-center gap-2">
-              <div className="flex-1 h-1.5 bg-[#1F150C]/10 rounded-full overflow-hidden">
+            <div className="flex min-w-0 flex-1 items-center gap-2">
+              <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-surface-alt">
                 <div
-                  className="h-full rounded-full transition-all duration-500"
+                  className="h-full rounded-full"
                   style={{
                     width: `${pagePct}%`,
-                    background: pagePct === 100
-                      ? 'linear-gradient(90deg, #10b981, #059669)'
-                      : 'linear-gradient(90deg, #412D15, #ef4444)',
+                    background: pagePct === 100 ? 'var(--color-success)' : 'var(--color-accent)',
+                    transition: 'width 0.6s var(--ease-out-soft)',
                   }}
                 />
               </div>
-              <span className="text-[11px] font-bold text-[#1F150C]/70 whitespace-nowrap tabular-nums">
+              <span className="whitespace-nowrap text-[11px] font-bold tabular-nums text-ink-muted">
                 {doneOnPage}/{totalOnPage}
               </span>
             </div>
@@ -473,10 +471,10 @@ const LessonContentPage = () => {
             {/* Streak — desktop only, compact */}
             {streakCount > 0 && (
               <span
-                className="hidden sm:inline-flex items-center gap-1 px-2 py-1 rounded-full bg-orange-100 text-orange-700 text-[11px] font-bold flex-shrink-0"
+                className="hidden flex-shrink-0 items-center gap-1 rounded-full bg-accent/10 px-2 py-1 text-[11px] font-bold text-accent sm:inline-flex"
                 title={`${streakCount}-day study streak`}
               >
-                <Flame className="w-3 h-3" />
+                <Flame className="h-3 w-3" />
                 {streakCount}
               </span>
             )}
@@ -485,10 +483,10 @@ const LessonContentPage = () => {
             {hasQuiz && (
               <button
                 onClick={() => setShowFocus(true)}
-                className="flex items-center gap-1 px-2.5 sm:px-3 py-1.5 bg-white border border-[#1F150C]/15 text-[#1F150C] text-xs font-bold rounded-full hover:border-[#412D15]/40 hover:text-[#412D15] transition-all active:scale-95 shadow-sm flex-shrink-0"
+                className="flex flex-shrink-0 items-center gap-1 rounded-full border border-line bg-surface px-2.5 py-1.5 text-xs font-bold text-ink transition-all hover:border-line-strong hover:text-accent active:scale-95 sm:px-3"
                 title="Focus mode — one card at a time"
               >
-                <Focus className="w-3.5 h-3.5" />
+                <Focus className="h-3.5 w-3.5" />
                 <span className="hidden sm:inline">Focus</span>
               </button>
             )}
@@ -497,33 +495,33 @@ const LessonContentPage = () => {
             {hasQuiz && (
               <button
                 onClick={() => setShowQuiz(true)}
-                className="flex items-center gap-1 px-2.5 sm:px-3 py-1.5 bg-[#412D15] text-white text-xs font-bold rounded-full hover:bg-[#000000] transition-all active:scale-95 shadow-sm flex-shrink-0"
+                className="flex flex-shrink-0 items-center gap-1 rounded-full bg-accent px-2.5 py-1.5 text-xs font-bold text-white transition-all hover:bg-[#a83d30] active:scale-95 sm:px-3"
                 title="Open quiz"
               >
-                <BrainCircuit className="w-3.5 h-3.5" />
+                <BrainCircuit className="h-3.5 w-3.5" />
                 <span className="hidden sm:inline">Quiz</span>
               </button>
             )}
 
-            {/* Tools toggle (mobile-first) */}
+            {/* Tools toggle */}
             {hasTools && (
               <button
                 onClick={() => setShowTools(v => !v)}
-                className={`p-1.5 rounded-full transition-colors flex-shrink-0 ${
-                  showTools ? 'bg-[#1F150C] text-white' : 'text-[#1F150C] hover:bg-[#1F150C]/10'
+                className={`grid h-8 w-8 flex-shrink-0 place-items-center rounded-full transition-colors ${
+                  showTools ? 'bg-ink text-bg' : 'text-ink hover:bg-ink/5'
                 }`}
                 title="Toggle study tools"
                 aria-pressed={showTools}
               >
-                <ChevronDown className={`w-4 h-4 transition-transform ${showTools ? 'rotate-180' : ''}`} />
+                <ChevronDown className={`h-4 w-4 transition-transform ${showTools ? 'rotate-180' : ''}`} />
               </button>
             )}
           </div>
 
           {/* COLLAPSIBLE TOOLS STRIP */}
           {showTools && (
-            <div className="border-t border-[#1F150C]/10 px-3 sm:px-6 lg:px-8 py-3 flex flex-wrap items-center gap-2 text-xs">
-              <span className="text-[10px] font-bold text-[#1F150C]/40 uppercase tracking-wider mr-1">
+            <div className="flex flex-wrap items-center gap-2 border-t border-line px-3 py-3 text-xs sm:px-6 lg:px-8">
+              <span className="mr-1 text-[10px] font-bold uppercase tracking-[0.12em] text-ink-muted">
                 {rangeLabel} of {totalUnits} {unitLabel}
               </span>
 
@@ -531,48 +529,37 @@ const LessonContentPage = () => {
                 <>
                   <button
                     onClick={handleRandomizeVocab}
-                    className="inline-flex items-center gap-1 px-3 py-1.5 bg-white border border-[#1F150C]/15 rounded-full hover:border-[#412D15]/40 transition-all active:scale-95"
+                    className="inline-flex items-center gap-1 rounded-full border border-line bg-surface px-3 py-1.5 transition-all hover:border-line-strong active:scale-95"
                   >
-                    <Shuffle className="w-3.5 h-3.5" />
+                    <Shuffle className="h-3.5 w-3.5" />
                     Shuffle
                   </button>
-                  <button
-                    onClick={() => updateVisibility({ romaji: !globalShowRomaji })}
-                    className={`inline-flex items-center gap-1 px-3 py-1.5 rounded-full transition-all active:scale-95 ${
-                      globalShowRomaji ? 'bg-[#412D15] text-white' : 'bg-white text-[#1F150C] border border-[#1F150C]/15'
-                    }`}
-                  >
-                    {globalShowRomaji ? <Eye className="w-3.5 h-3.5" /> : <EyeOff className="w-3.5 h-3.5" />}
-                    Romaji
-                  </button>
-                  <button
-                    onClick={() => updateVisibility({ english: !globalShowEnglish })}
-                    className={`inline-flex items-center gap-1 px-3 py-1.5 rounded-full transition-all active:scale-95 ${
-                      globalShowEnglish ? 'bg-[#412D15] text-white' : 'bg-white text-[#1F150C] border border-[#1F150C]/15'
-                    }`}
-                  >
-                    {globalShowEnglish ? <Eye className="w-3.5 h-3.5" /> : <EyeOff className="w-3.5 h-3.5" />}
-                    English
-                  </button>
-                  <button
-                    onClick={() => updateVisibility({ myanmar: !globalShowMyanmar })}
-                    className={`inline-flex items-center gap-1 px-3 py-1.5 rounded-full transition-all active:scale-95 ${
-                      globalShowMyanmar ? 'bg-[#412D15] text-white' : 'bg-white text-[#1F150C] border border-[#1F150C]/15'
-                    }`}
-                  >
-                    {globalShowMyanmar ? <Eye className="w-3.5 h-3.5" /> : <EyeOff className="w-3.5 h-3.5" />}
-                    Myanmar
-                  </button>
+                  {([
+                    ['romaji', globalShowRomaji, () => updateVisibility({ romaji: !globalShowRomaji }), 'Romaji'],
+                    ['english', globalShowEnglish, () => updateVisibility({ english: !globalShowEnglish }), 'English'],
+                    ['myanmar', globalShowMyanmar, () => updateVisibility({ myanmar: !globalShowMyanmar }), 'Myanmar'],
+                  ] as const).map(([key, on, fn, lbl]) => (
+                    <button
+                      key={key}
+                      onClick={fn}
+                      className={`inline-flex items-center gap-1 rounded-full px-3 py-1.5 transition-all active:scale-95 ${
+                        on ? 'bg-ink text-bg' : 'border border-line bg-surface text-ink'
+                      }`}
+                    >
+                      {on ? <Eye className="h-3.5 w-3.5" /> : <EyeOff className="h-3.5 w-3.5" />}
+                      {lbl}
+                    </button>
+                  ))}
 
-                  <div className="w-px h-5 bg-[#1F150C]/10 mx-1" />
+                  <div className="mx-1 h-5 w-px bg-line" />
                   {POS_FILTERS.map(({ label, value }) => (
                     <button
                       key={value}
                       onClick={() => setPosFilter(value)}
-                      className={`px-2.5 py-1 rounded-full text-[11px] font-bold transition-all active:scale-95 ${
+                      className={`rounded-full px-2.5 py-1 text-[11px] font-bold transition-all active:scale-95 ${
                         posFilter === value
-                          ? 'bg-[#1F150C] text-white'
-                          : 'bg-white text-[#1F150C] border border-[#1F150C]/15 hover:border-[#412D15]/40'
+                          ? 'bg-ink text-bg'
+                          : 'border border-line bg-surface text-ink hover:border-line-strong'
                       }`}
                     >
                       {label}
@@ -584,9 +571,9 @@ const LessonContentPage = () => {
               {completedTotal > 0 && (
                 <button
                   onClick={handleResetCompletions}
-                  className="ml-auto inline-flex items-center gap-1 px-3 py-1.5 bg-white text-[#1F150C] border border-[#1F150C]/20 rounded-full hover:border-red-400 hover:text-red-500 transition-all active:scale-95"
+                  className="ml-auto inline-flex items-center gap-1 rounded-full border border-line bg-surface px-3 py-1.5 text-ink transition-all hover:border-accent hover:text-accent active:scale-95"
                 >
-                  <RotateCcw className="w-3.5 h-3.5" />
+                  <RotateCcw className="h-3.5 w-3.5" />
                   Reset
                 </button>
               )}
@@ -596,15 +583,15 @@ const LessonContentPage = () => {
       )}
 
       {/* Content */}
-      <div className="px-4 sm:px-6 lg:px-8 pt-6">
+      <div className="px-4 pt-6 sm:px-6 lg:px-8">
         {posFilter !== 'All' && lesson === 'vocab' && (
-          <p className="text-xs text-center text-[#1F150C]/50 mb-4">
-            Showing <span className="font-bold text-[#412D15]">{displayVocab.length}</span> {posFilter}s on this page
+          <p className="mb-4 text-center text-xs text-ink-muted">
+            Showing <span className="font-bold text-accent">{displayVocab.length}</span> {posFilter}s on this page
           </p>
         )}
 
         {(lesson === 'reading' || lesson === 'listening') && content && (
-          <p className="text-xs text-center text-[#1F150C]/50 italic mb-4">
+          <p className="mb-4 text-center text-xs italic text-ink-muted">
             Submit a {lesson === 'reading' ? 'passage' : 'exercise'}&apos;s comprehension answers to mark it as studied.
           </p>
         )}
@@ -617,7 +604,7 @@ const LessonContentPage = () => {
 
             {totalPages > 1 && (
               <div className="mt-12 space-y-3">
-                <div className="text-center text-sm text-[#1F150C]/60 font-medium">
+                <div className="text-center text-sm font-medium text-ink-muted">
                   {rangeLabel} of {totalUnits} {unitLabel}
                 </div>
                 <PaginationControls
@@ -629,8 +616,8 @@ const LessonContentPage = () => {
             )}
           </>
         ) : (
-          <div className="text-center p-10 bg-white/50 rounded-2xl max-w-2xl mx-auto">
-            <p className="text-[#1F150C]/80">Content coming soon!</p>
+          <div className="mx-auto max-w-2xl rounded-card border border-line bg-surface p-10 text-center shadow-card">
+            <p className="text-ink-muted">Content coming soon!</p>
           </div>
         )}
       </div>
