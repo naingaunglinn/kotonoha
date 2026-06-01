@@ -77,7 +77,7 @@ export default function KanaTrace({ char, size = 280 }: KanaTraceProps) {
   if (error) {
     return (
       <div className="absolute inset-0 flex items-center justify-center p-4 text-center">
-        <p className="text-xs text-[#1F150C]/50">Practice unavailable for this character.</p>
+        <p className="text-xs text-[#1a1a2e]/50">Practice unavailable for this character.</p>
       </div>
     );
   }
@@ -121,7 +121,7 @@ export default function KanaTrace({ char, size = 280 }: KanaTraceProps) {
             key={`stroke-${i}`}
             d={pointsToPath(s)}
             fill="none"
-            stroke="#1F150C"
+            stroke="#1a1a2e"
             strokeWidth="3.5"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -134,7 +134,7 @@ export default function KanaTrace({ char, size = 280 }: KanaTraceProps) {
           <path
             d={pointsToPath(current)}
             fill="none"
-            stroke="#412D15"
+            stroke="#bf4b3c"
             strokeWidth="3.5"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -147,7 +147,7 @@ export default function KanaTrace({ char, size = 280 }: KanaTraceProps) {
       <div className="absolute bottom-1 left-1/2 -translate-x-1/2 flex items-center gap-1 bg-white/90 backdrop-blur-sm rounded-full p-1 shadow-sm border border-black/5">
         <button
           onClick={() => setShowGuide(v => !v)}
-          className="inline-flex items-center gap-1 px-3 h-8 rounded-full text-[#1F150C]/70 hover:bg-[#1F150C]/10 text-xs font-bold transition-colors"
+          className="inline-flex items-center gap-1 px-3 h-8 rounded-full text-[#1a1a2e]/70 hover:bg-[#1a1a2e]/10 text-xs font-bold transition-colors"
           aria-pressed={showGuide}
           title={showGuide ? 'Hide guide' : 'Show guide'}
         >
@@ -157,7 +157,7 @@ export default function KanaTrace({ char, size = 280 }: KanaTraceProps) {
         <button
           onClick={clearStrokes}
           disabled={strokes.length === 0 && current.length === 0}
-          className="inline-flex items-center gap-1 px-3 h-8 rounded-full text-[#1F150C]/70 hover:bg-[#1F150C]/10 text-xs font-bold transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+          className="inline-flex items-center gap-1 px-3 h-8 rounded-full text-[#1a1a2e]/70 hover:bg-[#1a1a2e]/10 text-xs font-bold transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
           title="Clear"
         >
           <Eraser className="w-3.5 h-3.5" />

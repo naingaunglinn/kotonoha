@@ -22,43 +22,40 @@ export default function ProgressBar({
   const totalPercent = totalWords > 0 ? (completedTotal / totalWords) * 100 : 0;
 
   return (
-    <div className="bg-white/90 backdrop-blur-sm rounded-2xl border border-black/5 p-4 shadow-sm">
-      <div className="flex items-center justify-between mb-2">
+    <div className="rounded-card border border-line bg-surface p-4 shadow-card">
+      <div className="mb-2 flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <CheckCircle2 className="w-4 h-4 text-emerald-500" />
-          <span className="text-sm font-bold text-[#1F150C]">{label}</span>
+          <CheckCircle2 className="h-4 w-4 text-success" />
+          <span className="text-sm font-bold text-ink">{label}</span>
         </div>
-        <span className="text-sm font-bold text-emerald-600">
+        <span className="text-sm font-bold text-success">
           {completedOnPage}/{totalOnPage}
         </span>
       </div>
-      <div className="w-full h-3 bg-[#E1DCC9] rounded-full overflow-hidden">
+      <div className="h-3 w-full overflow-hidden rounded-full bg-surface-alt">
         <div
-          className="h-full rounded-full transition-all duration-500 ease-out"
+          className="h-full rounded-full"
           style={{
             width: `${pagePercent}%`,
-            background: pagePercent === 100
-              ? 'linear-gradient(90deg, #10b981, #059669)'
-              : 'linear-gradient(90deg, #412D15, #ef4444)',
+            background: pagePercent === 100 ? 'var(--color-success)' : 'var(--color-accent)',
+            transition: 'width 0.5s var(--ease-out-soft)',
           }}
         />
       </div>
       {pagePercent === 100 && (
-        <p className="text-xs text-emerald-600 font-bold mt-1.5 text-center animate-pulse">
-          {doneMessage}
-        </p>
+        <p className="mt-1.5 text-center text-xs font-bold text-success">{doneMessage}</p>
       )}
 
-      <div className="flex items-center justify-between mt-3 mb-1.5">
-        <span className="text-xs text-[#1F150C]/50 font-medium">Overall</span>
-        <span className="text-xs text-[#1F150C]/60 font-bold">
+      <div className="mb-1.5 mt-3 flex items-center justify-between">
+        <span className="text-xs font-medium text-ink-muted">Overall</span>
+        <span className="text-xs font-bold text-ink-muted">
           {completedTotal}/{totalWords} ({Math.round(totalPercent)}%)
         </span>
       </div>
-      <div className="w-full h-1.5 bg-[#E1DCC9] rounded-full overflow-hidden">
+      <div className="h-1.5 w-full overflow-hidden rounded-full bg-surface-alt">
         <div
-          className="h-full bg-[#1F150C]/30 rounded-full transition-all duration-500 ease-out"
-          style={{ width: `${totalPercent}%` }}
+          className="h-full rounded-full bg-ink/30"
+          style={{ width: `${totalPercent}%`, transition: 'width 0.5s var(--ease-out-soft)' }}
         />
       </div>
     </div>

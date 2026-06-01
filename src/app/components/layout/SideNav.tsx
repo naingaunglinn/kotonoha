@@ -6,11 +6,11 @@ import { Home, BookOpen, Sparkles, Library } from 'lucide-react';
 import { getMostRecent } from '@/utils/recentActivity';
 
 const LEVELS = [
-  { id: '5', label: 'N5' },
-  { id: '4', label: 'N4' },
-  { id: '3', label: 'N3' },
-  { id: '2', label: 'N2' },
-  { id: '1', label: 'N1' },
+  { id: '5', label: 'N5', color: 'var(--color-n5)' },
+  { id: '4', label: 'N4', color: 'var(--color-n4)' },
+  { id: '3', label: 'N3', color: 'var(--color-n3)' },
+  { id: '2', label: 'N2', color: 'var(--color-n2)' },
+  { id: '1', label: 'N1', color: 'var(--color-n1)' },
 ];
 
 interface RailItemProps {
@@ -26,14 +26,14 @@ const RailIcon = ({ href, label, icon: Icon, active }: RailItemProps) => (
     title={label}
     aria-label={label}
     aria-current={active ? 'page' : undefined}
-    className={`group relative w-11 h-11 flex items-center justify-center rounded-xl transition-all ${
+    className={`group relative flex h-11 w-11 items-center justify-center rounded-card transition-all duration-300 ${
       active
-        ? 'bg-[#1F150C] text-white shadow-md'
-        : 'text-[#1F150C]/60 hover:text-[#1F150C] hover:bg-[#1F150C]/5'
+        ? 'bg-ink text-bg shadow-card'
+        : 'text-ink-muted hover:bg-surface hover:text-ink'
     }`}
   >
-    <Icon className="w-5 h-5" />
-    <span className="absolute left-full ml-3 px-2.5 py-1 rounded-lg bg-[#1F150C] text-white text-xs font-bold whitespace-nowrap opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity shadow-lg z-10">
+    <Icon className="h-5 w-5" />
+    <span className="pointer-events-none absolute left-full z-20 ml-3 whitespace-nowrap rounded-chip bg-ink px-2.5 py-1 text-xs font-semibold text-bg opacity-0 shadow-float transition-opacity duration-200 group-hover:opacity-100">
       {label}
     </span>
   </Link>
@@ -42,23 +42,33 @@ const RailIcon = ({ href, label, icon: Icon, active }: RailItemProps) => (
 interface RailLevelProps {
   id: string;
   label: string;
+  color: string;
   active: boolean;
 }
 
-const RailLevel = ({ id, label, active }: RailLevelProps) => (
+const RailLevel = ({ id, label, color, active }: RailLevelProps) => (
   <Link
     href={`/level/${id}`}
     title={`JLPT ${label}`}
     aria-label={`JLPT ${label}`}
     aria-current={active ? 'page' : undefined}
-    className={`group relative w-11 h-11 flex items-center justify-center rounded-xl text-xs font-extrabold transition-all ${
+    className="group relative flex h-11 w-11 items-center justify-center rounded-card text-xs font-bold transition-all duration-300"
+    style={
       active
-        ? 'bg-[#412D15] text-white shadow-md'
-        : 'text-[#1F150C]/55 hover:text-[#412D15] hover:bg-[#412D15]/10 border border-transparent hover:border-[#412D15]/20'
-    }`}
+        ? { background: color, color: '#fff', boxShadow: 'var(--shadow-card)' }
+        : undefined
+    }
   >
-    {label}
-    <span className="absolute left-full ml-3 px-2.5 py-1 rounded-lg bg-[#1F150C] text-white text-xs font-bold whitespace-nowrap opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity shadow-lg z-10">
+    {!active && (
+      <span
+        className="absolute left-1.5 h-5 w-1 rounded-full opacity-70"
+        style={{ background: color }}
+      />
+    )}
+    <span className={active ? '' : 'text-ink-muted transition-colors group-hover:text-ink'}>
+      {label}
+    </span>
+    <span className="pointer-events-none absolute left-full z-20 ml-3 whitespace-nowrap rounded-chip bg-ink px-2.5 py-1 text-xs font-semibold text-bg opacity-0 shadow-float transition-opacity duration-200 group-hover:opacity-100">
       JLPT {label}
     </span>
   </Link>
@@ -78,7 +88,7 @@ export default function SideNav() {
 
   return (
     <aside
-      className="hidden sm:flex fixed left-0 top-20 bottom-0 w-16 z-20 bg-[#E1DCC9]/85 backdrop-blur-md border-r border-[#1F150C]/10 flex-col items-center py-4 gap-1.5 overflow-y-auto"
+      className="fixed bottom-0 left-0 top-16 z-20 hidden w-[4.5rem] flex-col items-center gap-1.5 overflow-y-auto border-r border-line bg-surface-alt/70 py-5 backdrop-blur-md sm:top-20 sm:flex"
       aria-label="Primary"
     >
       <RailIcon href="/" label="Home" icon={Home} active={pathname === '/'} />
@@ -101,10 +111,10 @@ export default function SideNav() {
         active={pathname.startsWith('/module/katakana')}
       />
 
-      <div className="w-8 my-1 border-t border-[#1F150C]/10" />
+      <div className="my-1.5 h-px w-8 bg-line" />
 
-      {LEVELS.map(({ id, label }) => (
-        <RailLevel key={id} id={id} label={label} active={activeLevel === id} />
+      {LEVELS.map(({ id, label, color }) => (
+        <RailLevel key={id} id={id} label={label} color={color} active={activeLevel === id} />
       ))}
     </aside>
   );

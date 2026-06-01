@@ -5,39 +5,29 @@ import {
   Headphones,
   Play,
   Pause,
-  Eye,
-  EyeOff,
   CheckCircle,
   XCircle,
   ChevronDown,
-  ChevronUp,
   RotateCcw,
   Mic,
+  Clock,
+  Loader2,
 } from "lucide-react";
 
-// Speed options: label + rate + button label
 const SPEED_OPTIONS = [
-  { label: 'Slow',   rate: 0.6 },
+  { label: 'Slow', rate: 0.6 },
   { label: 'Normal', rate: 0.8 },
-  { label: 'Fast',   rate: 1.0 },
-  { label: '1.2×',   rate: 1.2 },
+  { label: 'Fast', rate: 1.0 },
+  { label: '1.2×', rate: 1.2 },
 ];
 
-// Split raw transcript into clean sentence segments
-const splitTranscript = (transcript: string): string[] => {
-  return transcript
+const splitTranscript = (transcript: string): string[] =>
+  transcript
     .split('\n')
-    .map(line => line.replace(/^[A-Za-z]:\s*/, '').trim())
-    .filter(line => line.length > 0);
-};
+    .map((line) => line.replace(/^[A-Za-z]:\s*/, '').trim())
+    .filter((line) => line.length > 0);
 
-// Speak a single string using Web Speech API
-const speakText = (
-  text: string,
-  rate: number,
-  onStart: () => void,
-  onEnd: () => void,
-): void => {
+const speakText = (text: string, rate: number, onStart: () => void, onEnd: () => void): void => {
   if (typeof window === 'undefined' || !window.speechSynthesis) return;
   window.speechSynthesis.cancel();
   const utterance = new SpeechSynthesisUtterance(text);
@@ -45,13 +35,20 @@ const speakText = (
   utterance.rate = rate;
   utterance.pitch = 1.0;
   const voices = window.speechSynthesis.getVoices();
-  const japaneseVoice = voices.find(v => v.lang === 'ja-JP' || v.lang.startsWith('ja'));
+  const japaneseVoice = voices.find((v) => v.lang === 'ja-JP' || v.lang.startsWith('ja'));
   if (japaneseVoice) utterance.voice = japaneseVoice;
   utterance.onstart = onStart;
   utterance.onend = onEnd;
   utterance.onerror = onEnd;
   window.speechSynthesis.speak(utterance);
 };
+
+type TabKey = 'transcript' | 'en' | 'mm';
+const TABS: Array<{ key: TabKey; label: string }> = [
+  { key: 'transcript', label: 'Transcript' },
+  { key: 'en', label: 'English' },
+  { key: 'mm', label: 'မြန်မာ' },
+];
 
 interface ListeningExerciseProps {
   data: ListeningProps;
@@ -62,33 +59,31 @@ interface ListeningExerciseProps {
 }
 
 const ListeningExercise = ({ data, label, isCompleted = false, defaultExpanded = false, onComplete }: ListeningExerciseProps) => {
-  const [isPlaying, setIsPlaying]           = useState(false);
-  const [showTranscript, setShowTranscript] = useState(false);
-  const [showTranslationEn, setShowTranslationEn] = useState(false);
-  const [showTranslationMm, setShowTranslationMm] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
   const [selectedAnswers, setSelectedAnswers] = useState<Record<number, string>>({});
-  const [showResults, setShowResults]       = useState(false);
-  const [expanded, setExpanded]             = useState(defaultExpanded);
-  const [speed, setSpeed]                   = useState(0.8);
+  const [showResults, setShowResults] = useState(false);
+  const [isChecking, setIsChecking] = useState(false);
+  const [expanded, setExpanded] = useState(defaultExpanded);
+  const [speed, setSpeed] = useState(0.8);
+  const [activeTab, setActiveTab] = useState<TabKey | null>(null);
 
-  // Listen-first mode: hide transcript & translations until all questions answered
   const [listenFirstMode, setListenFirstMode] = useState(false);
   const listenFirstLocked = listenFirstMode && !showResults;
 
-  // Shadowing mode: per-sentence highlight + 0.6× playback
-  const [shadowingMode, setShadowingMode]   = useState(false);
+  const [shadowingMode, setShadowingMode] = useState(false);
   const [activeSentence, setActiveSentence] = useState<number | null>(null);
+  const [playedSentences, setPlayedSentences] = useState<Set<number>>(new Set());
   const shadowingSpeed = 0.6;
 
-  // Build sentence list: prefer data.sentences[], fallback to splitting transcript
-  const sentences: string[] = data.sentences && data.sentences.length > 0
-    ? data.sentences.map(s => s.text)
-    : splitTranscript(data.transcript);
+  const sentences: string[] =
+    data.sentences && data.sentences.length > 0
+      ? data.sentences.map((s) => s.text)
+      : splitTranscript(data.transcript);
+
+  const estMin = Math.max(1, Math.round((sentences.length * 8 + data.questions.length * 15) / 60));
 
   const playFull = useCallback(() => {
-    const cleanText = data.transcript
-      .replace(/[A-Za-z]:\s*/g, '')
-      .replace(/\n/g, '。');
+    const cleanText = data.transcript.replace(/[A-Za-z]:\s*/g, '').replace(/\n/g, '。');
     speakText(
       cleanText,
       shadowingMode ? shadowingSpeed : speed,
@@ -105,9 +100,9 @@ const ListeningExercise = ({ data, label, isCompleted = false, defaultExpanded =
     }
   }, []);
 
-  // Play a single sentence (per-sentence replay + shadowing highlight)
   const playSentence = useCallback((text: string, index: number) => {
     setActiveSentence(index);
+    setPlayedSentences((prev) => new Set(prev).add(index));
     speakText(
       text,
       shadowingMode ? shadowingSpeed : speed,
@@ -116,20 +111,22 @@ const ListeningExercise = ({ data, label, isCompleted = false, defaultExpanded =
     );
   }, [speed, shadowingMode]);
 
-  // Cancel speech when component unmounts or `expanded` changes
-  // (cleanup runs on dep change and unmount, which covers both cases)
   useEffect(() => {
     return () => stopSpeaking();
   }, [expanded, stopSpeaking]);
 
   const handleAnswer = (qIndex: number, option: string) => {
     if (showResults) return;
-    setSelectedAnswers(prev => ({ ...prev, [qIndex]: option }));
+    setSelectedAnswers((prev) => ({ ...prev, [qIndex]: option }));
   };
 
   const handleCheck = () => {
-    setShowResults(true);
-    if (!isCompleted) onComplete?.(data.title);
+    setIsChecking(true);
+    setTimeout(() => {
+      setIsChecking(false);
+      setShowResults(true);
+      if (!isCompleted) onComplete?.(data.title);
+    }, 450);
   };
 
   const handleReset = () => {
@@ -138,102 +135,80 @@ const ListeningExercise = ({ data, label, isCompleted = false, defaultExpanded =
     stopSpeaking();
   };
 
-  const correctCount = data.questions.filter(
-    (q, i) => selectedAnswers[i] === q.answer
-  ).length;
+  const correctCount = data.questions.filter((q, i) => selectedAnswers[i] === q.answer).length;
+  const tabContent: Record<TabKey, string> = {
+    transcript: data.transcript,
+    en: data.translation_en,
+    mm: data.translation_mm,
+  };
 
   return (
-    <div className={`relative rounded-2xl border-2 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 ${
-      isCompleted
-        ? 'bg-emerald-50/40 border-emerald-400/50'
-        : 'bg-white border-[#1F150C]/10'
-    }`}>
-      {/* Waveform strip along the top — visual cue this is audio */}
-      <svg
-        className="absolute top-0 inset-x-0 w-full h-2.5 pointer-events-none"
-        viewBox="0 0 200 10"
-        preserveAspectRatio="none"
-        aria-hidden
-      >
-        {Array.from({ length: 40 }).map((_, i) => {
-          const heights = [3, 5, 2, 7, 4, 6, 3, 8, 5, 2, 4, 7, 3, 5, 6, 2, 8, 4, 3, 5];
-          const h = heights[i % heights.length];
-          return (
-            <rect
-              key={i}
-              x={i * 5 + 1}
-              y={5 - h / 2}
-              width={2.5}
-              height={h}
-              rx={0.6}
-              fill={isCompleted ? 'rgba(16,185,129,0.35)' : 'rgba(65,45,21,0.3)'}
-            />
-          );
-        })}
-      </svg>
+    <div className="relative">
       {label !== undefined && (
-        <span className={`absolute -top-2.5 -left-2.5 w-8 h-8 rounded-full text-white text-xs font-bold flex items-center justify-center shadow-md z-10 transition-colors ${
-          isCompleted ? 'bg-emerald-500' : 'bg-[#1F150C]'
-        }`}>
-          {isCompleted ? <CheckCircle className="w-4 h-4" /> : label}
+        <span
+          className={`absolute -left-2.5 -top-2.5 z-30 grid h-7 w-7 place-items-center rounded-full text-[11px] font-bold text-white shadow-card ${
+            isCompleted ? 'bg-success' : 'bg-ink'
+          }`}
+        >
+          {isCompleted ? <CheckCircle className="h-3.5 w-3.5" /> : label}
         </span>
       )}
-
-      {/* Header */}
       <div
-        className="flex items-center justify-between p-5 cursor-pointer hover:bg-[#E1DCC9]/50 transition-colors"
+        className={`relative overflow-hidden rounded-card border bg-surface shadow-card transition-colors ${
+          isCompleted ? 'border-success/40' : 'border-line'
+        }`}
+      >
+
+      {/* ===== HEADER (collapsed shows icon + title + difficulty/meta + time) ===== */}
+      <button
+        className="flex w-full items-center gap-3 p-5 text-left transition-colors hover:bg-surface-alt/50"
         onClick={() => setExpanded(!expanded)}
       >
-        <div className="flex items-center gap-3">
-          <div className={`w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 ${
-            isCompleted
-              ? 'bg-gradient-to-br from-emerald-500 to-emerald-600'
-              : 'bg-gradient-to-br from-violet-400 to-purple-500'
-          }`}>
-            <Headphones className="h-5 w-5 text-white" />
+        <div
+          className={`grid h-11 w-11 flex-shrink-0 place-items-center rounded-card ${
+            isCompleted ? 'bg-success text-white' : 'bg-accent-cool/15 text-accent-cool'
+          }`}
+        >
+          <Headphones className="h-5 w-5" />
+        </div>
+        <div className="min-w-0 flex-1">
+          <div className="flex flex-wrap items-center gap-2">
+            <h3 className={`font-[family-name:var(--font-display)] text-lg leading-tight ${isCompleted ? 'text-success' : 'text-ink'}`}>
+              {data.title}
+            </h3>
+            {isCompleted && (
+              <span className="rounded-full bg-success/12 px-2 py-0.5 text-[10px] font-bold text-success">✓ Studied</span>
+            )}
           </div>
-          <div>
-            <div className="flex items-center gap-2 flex-wrap">
-              <h3 className={`text-lg font-bold transition-colors ${
-                isCompleted ? 'text-emerald-700' : 'text-[#1F150C]'
-              }`}>{data.title}</h3>
-              {isCompleted && (
-                <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-700 border border-emerald-200">
-                  ✓ Studied
-                </span>
-              )}
-            </div>
-            <p className="text-sm text-[#1F150C]/60">{data.title_en} · {data.title_mm}</p>
+          <div className="mt-0.5 flex items-center gap-2 text-xs text-ink-muted">
+            <span className="truncate">{data.title_en}</span>
+            <span className="inline-flex items-center gap-1 whitespace-nowrap">
+              <Clock className="h-3 w-3" /> ~{estMin} min
+            </span>
+            <span className="hidden whitespace-nowrap sm:inline">· {data.questions.length} Q</span>
           </div>
         </div>
-        {expanded
-          ? <ChevronUp className="h-5 w-5 text-[#1F150C]/40 flex-shrink-0" />
-          : <ChevronDown className="h-5 w-5 text-[#1F150C]/40 flex-shrink-0" />
-        }
-      </div>
+        <ChevronDown className={`h-5 w-5 flex-shrink-0 text-ink-muted transition-transform ${expanded ? 'rotate-180' : ''}`} />
+      </button>
 
       {expanded && (
-        <div className="px-5 pb-5 space-y-4">
-          {/* Mode Toggles */}
+        <div className="animate-fade-in space-y-4 px-5 pb-5">
+          {/* Mode toggles */}
           <div className="flex flex-wrap gap-2">
             <button
-              onClick={() => setListenFirstMode(prev => !prev)}
-              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
-                listenFirstMode
-                  ? 'bg-violet-500 text-white'
-                  : 'bg-violet-50 text-violet-600 hover:bg-violet-100'
+              onClick={() => setListenFirstMode((p) => !p)}
+              className={`inline-flex items-center gap-1.5 rounded-chip px-3 py-1.5 text-xs font-bold transition-all ${
+                listenFirstMode ? 'bg-accent-cool text-white' : 'bg-accent-cool/10 text-accent-cool hover:bg-accent-cool/20'
               }`}
               title="Hide transcript and translations until you submit answers"
             >
               <Headphones className="h-3.5 w-3.5" />
-              Listen-First
+              Listen-first
             </button>
             <button
-              onClick={() => setShadowingMode(prev => !prev)}
-              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
-                shadowingMode
-                  ? 'bg-[#412D15] text-white'
-                  : 'bg-red-50 text-[#412D15] hover:bg-red-100'
+              onClick={() => setShadowingMode((p) => !p)}
+              className={`inline-flex items-center gap-1.5 rounded-chip px-3 py-1.5 text-xs font-bold transition-all ${
+                shadowingMode ? 'bg-accent text-white' : 'bg-accent/10 text-accent hover:bg-accent/20'
               }`}
               title="Shadowing mode: plays slowly with each sentence highlighted"
             >
@@ -242,178 +217,169 @@ const ListeningExercise = ({ data, label, isCompleted = false, defaultExpanded =
             </button>
           </div>
 
-          {/* Audio Controls */}
-          <div className="bg-gradient-to-br from-violet-50 to-purple-50 rounded-xl p-5 space-y-4">
-            {/* Play / Pause */}
-            <div className="flex items-center justify-center gap-4">
+          {/* ===== AUDIO PLAYER ===== */}
+          <div className="rounded-card bg-ink p-5 text-bg">
+            {/* Waveform */}
+            <div className="mb-4 flex h-12 items-center justify-center gap-[3px]" aria-hidden>
+              {Array.from({ length: 48 }).map((_, i) => {
+                const base = [40, 70, 30, 90, 55, 75, 35, 100, 60, 45, 80, 50][i % 12];
+                return (
+                  <span
+                    key={i}
+                    className="w-[3px] rounded-full"
+                    style={{
+                      height: `${base}%`,
+                      background: isPlaying ? 'var(--color-accent-warm)' : 'rgba(255,255,255,0.22)',
+                      transformOrigin: 'center',
+                      animation: isPlaying ? `wave 0.9s ease-in-out ${i * 0.04}s infinite` : 'none',
+                    }}
+                  />
+                );
+              })}
+            </div>
+
+            <div className="flex items-center justify-center">
               <button
                 onClick={isPlaying ? stopSpeaking : playFull}
-                className="w-14 h-14 rounded-full bg-gradient-to-r from-violet-500 to-purple-600 flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105 active:scale-95"
+                className="grid h-14 w-14 place-items-center rounded-full bg-accent text-white shadow-float transition-all duration-200 hover:scale-105 hover:bg-[#a83d30] active:scale-95"
+                aria-label={isPlaying ? 'Pause' : 'Play'}
               >
-                {isPlaying
-                  ? <Pause className="h-6 w-6 text-white" />
-                  : <Play className="h-6 w-6 text-white ml-0.5" />
-                }
+                {isPlaying ? <Pause className="h-6 w-6" /> : <Play className="ml-0.5 h-6 w-6" />}
               </button>
             </div>
 
-            {/* Speed Controls */}
-            <div className="flex items-center justify-center gap-2 flex-wrap">
-              <span className="text-xs text-[#1F150C]/50 font-medium">Speed:</span>
-              {SPEED_OPTIONS.map(opt => (
-                <button
-                  key={opt.rate}
-                  onClick={() => { setSpeed(opt.rate); if (shadowingMode) setShadowingMode(false); }}
-                  className={`px-3 py-1 rounded-lg text-xs font-medium transition-all duration-200 ${
-                    speed === opt.rate && !shadowingMode
-                      ? 'bg-violet-500 text-white shadow-sm'
-                      : 'bg-white text-[#1F150C]/60 hover:bg-violet-100'
-                  }`}
-                >
-                  {opt.label}
-                </button>
-              ))}
+            {/* Segmented speed control */}
+            <div className="mt-4 flex items-center justify-center gap-2">
+              <span className="text-[11px] font-medium text-white/45">Speed</span>
+              <div className="inline-flex rounded-full bg-white/10 p-0.5">
+                {SPEED_OPTIONS.map((opt) => {
+                  const active = speed === opt.rate && !shadowingMode;
+                  return (
+                    <button
+                      key={opt.rate}
+                      onClick={() => { setSpeed(opt.rate); if (shadowingMode) setShadowingMode(false); }}
+                      className={`rounded-full px-3 py-1 text-[11px] font-bold transition-all ${
+                        active ? 'bg-bg text-ink shadow-sm' : 'text-white/65 hover:text-white'
+                      }`}
+                    >
+                      {opt.label}
+                    </button>
+                  );
+                })}
+              </div>
             </div>
-
-            {shadowingMode && (
-              <p className="text-center text-xs font-bold text-[#412D15]">
-                🎤 Shadowing mode active — playing at 0.6×, tap each sentence to repeat it
-              </p>
-            )}
-            {!shadowingMode && (
-              <p className="text-center text-xs text-[#1F150C]/40">
-                🎧 Listen carefully, then answer the questions below
-              </p>
-            )}
           </div>
 
-          {/* Per-sentence replay / shadowing panel */}
+          {/* ===== SENTENCE REPLAY ===== */}
           {sentences.length > 0 && (
             <div className="space-y-1.5">
-              <p className="text-[11px] font-bold text-[#1F150C]/40 uppercase tracking-wider">
+              <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-ink-muted">
                 {shadowingMode ? 'Tap to shadow each line' : 'Replay a sentence'}
               </p>
-              <div className="space-y-1">
-                {sentences.map((sent, i) => (
-                  <button
-                    key={i}
-                    onClick={() => playSentence(sent, i)}
-                    className={`w-full text-left flex items-start gap-2 px-3 py-2 rounded-lg text-sm transition-all duration-200 ${
-                      activeSentence === i
-                        ? shadowingMode
-                          ? 'bg-[#412D15]/10 border border-[#412D15]/30 text-[#412D15] font-bold'
-                          : 'bg-violet-100 border border-violet-300 text-violet-800 font-bold'
-                        : 'bg-[#E1DCC9]/60 hover:bg-violet-50 text-[#1F150C]'
-                    }`}
-                  >
-                    <Play className="h-3.5 w-3.5 mt-0.5 flex-shrink-0 opacity-50" />
-                    <span className="leading-snug">{sent}</span>
-                  </button>
-                ))}
+              <div className="space-y-1.5">
+                {sentences.map((sent, i) => {
+                  const isActive = activeSentence === i;
+                  const isPlayed = playedSentences.has(i);
+                  return (
+                    <button
+                      key={i}
+                      onClick={() => playSentence(sent, i)}
+                      className={`flex w-full items-start gap-2.5 rounded-chip border px-3 py-2.5 text-left text-sm transition-all duration-200 ${
+                        isActive
+                          ? 'border-accent bg-accent/8 font-semibold text-ink'
+                          : isPlayed
+                            ? 'border-success/30 bg-success/[0.06] text-ink'
+                            : 'border-line bg-surface-alt/50 text-ink hover:border-line-strong'
+                      }`}
+                    >
+                      <span
+                        className={`grid h-6 w-6 flex-shrink-0 place-items-center rounded-full text-[10px] font-bold ${
+                          isActive ? 'bg-accent text-white' : isPlayed ? 'bg-success text-white' : 'bg-surface text-ink-muted'
+                        }`}
+                      >
+                        {isPlayed && !isActive ? <CheckCircle className="h-3.5 w-3.5" /> : i + 1}
+                      </span>
+                      <span className="jp pt-0.5 leading-snug">{sent}</span>
+                    </button>
+                  );
+                })}
               </div>
             </div>
           )}
 
-          {/* Toggle Buttons — locked in listen-first mode */}
-          <div className="flex gap-2 flex-wrap">
-            <button
-              onClick={() => !listenFirstLocked && setShowTranscript(!showTranscript)}
-              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium transition-colors ${
-                listenFirstLocked
-                  ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
-                  : 'bg-violet-50 text-violet-600 hover:bg-violet-100'
-              }`}
-              title={listenFirstLocked ? 'Submit answers first to reveal transcript' : ''}
-            >
-              {showTranscript ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
-              Transcript {listenFirstLocked && '🔒'}
-            </button>
-            <button
-              onClick={() => !listenFirstLocked && setShowTranslationEn(!showTranslationEn)}
-              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium transition-colors ${
-                listenFirstLocked
-                  ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
-                  : 'bg-blue-50 text-blue-600 hover:bg-blue-100'
-              }`}
-            >
-              {showTranslationEn ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
-              English {listenFirstLocked && '🔒'}
-            </button>
-            <button
-              onClick={() => !listenFirstLocked && setShowTranslationMm(!showTranslationMm)}
-              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium transition-colors ${
-                listenFirstLocked
-                  ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
-                  : 'bg-amber-50 text-amber-600 hover:bg-amber-100'
-              }`}
-            >
-              {showTranslationMm ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
-              မြန်မာဘာသာ {listenFirstLocked && '🔒'}
-            </button>
+          {/* ===== NOTEBOOK TABS: transcript / EN / MM ===== */}
+          <div>
+            <div className="flex gap-1 border-b border-line">
+              {TABS.map((t) => {
+                const isActive = activeTab === t.key;
+                return (
+                  <button
+                    key={t.key}
+                    disabled={listenFirstLocked}
+                    onClick={() => setActiveTab(isActive ? null : t.key)}
+                    className={`relative -mb-px px-3.5 py-2 text-xs font-bold transition-colors disabled:cursor-not-allowed disabled:opacity-40 ${
+                      isActive ? 'text-accent' : 'text-ink-muted hover:text-ink'
+                    }`}
+                    title={listenFirstLocked ? 'Submit answers first to reveal' : ''}
+                  >
+                    {t.label} {listenFirstLocked && '🔒'}
+                    {isActive && <span className="absolute inset-x-0 -bottom-px h-0.5 rounded-full bg-accent" />}
+                  </button>
+                );
+              })}
+            </div>
+            {listenFirstLocked && (
+              <p className="mt-2 text-xs italic text-ink-muted">Answer all questions to unlock transcript and translations.</p>
+            )}
+            {activeTab && !listenFirstLocked && (
+              <div
+                key={activeTab}
+                className={`animate-fade-in mt-3 rounded-chip border border-line p-4 ${activeTab === 'transcript' ? 'jp' : ''}`}
+              >
+                <p className={`whitespace-pre-line text-sm leading-relaxed ${activeTab === 'mm' ? 'mm' : 'text-ink'}`}>
+                  {tabContent[activeTab]}
+                </p>
+              </div>
+            )}
           </div>
 
-          {listenFirstLocked && (
-            <p className="text-xs text-[#1F150C]/50 italic">
-              Answer all questions below to unlock transcript and translations.
-            </p>
-          )}
-
-          {showTranscript && !listenFirstLocked && (
-            <div className="bg-violet-50/60 rounded-xl p-4 border border-violet-100">
-              <p className="text-sm text-violet-800 leading-relaxed whitespace-pre-line font-medium">
-                {data.transcript}
-              </p>
-            </div>
-          )}
-          {showTranslationEn && !listenFirstLocked && (
-            <div className="bg-blue-50/60 rounded-xl p-4 border border-blue-100">
-              <p className="text-sm text-blue-800 leading-relaxed whitespace-pre-line">{data.translation_en}</p>
-            </div>
-          )}
-          {showTranslationMm && !listenFirstLocked && (
-            <div className="bg-amber-50/60 rounded-xl p-4 border border-amber-100">
-              <p className="text-sm text-amber-800 leading-relaxed whitespace-pre-line">{data.translation_mm}</p>
-            </div>
-          )}
-
-          {/* Questions */}
-          <div className="space-y-4 pt-2">
-            <h4 className="text-sm font-bold text-[#1F150C]/60 uppercase tracking-wider">
-              Comprehension Questions
-            </h4>
+          {/* ===== QUESTIONS ===== */}
+          <div className="space-y-4 pt-1">
+            <h4 className="text-[10px] font-bold uppercase tracking-[0.14em] text-ink-muted">Comprehension questions</h4>
 
             {data.questions.map((q, qIndex) => (
-              <div key={qIndex} className="bg-[#E1DCC9]/40 rounded-xl p-4 space-y-3">
-                <p className="font-semibold text-[#1F150C]">{qIndex + 1}. {q.question}</p>
-                <p className="text-sm text-[#1F150C]/50">{q.question_mm}</p>
+              <div key={qIndex} className="rounded-card border border-line bg-surface-alt/40 p-4">
+                <p className="font-semibold text-ink">{qIndex + 1}. <span className="jp">{q.question}</span></p>
+                {q.question_mm && <p className="mt-0.5 text-sm mm">{q.question_mm}</p>}
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                <div className="mt-3 grid grid-cols-1 gap-2">
                   {q.options.map((option, oIndex) => {
                     const isSelected = selectedAnswers[qIndex] === option;
                     const isCorrect = option === q.answer;
-                    let optionStyle = "bg-white border-[#1F150C]/10 hover:border-violet-400 text-[#1F150C]";
-
+                    let cls = 'border-line bg-surface text-ink hover:border-accent/50';
                     if (showResults) {
-                      if (isCorrect) {
-                        optionStyle = "bg-emerald-50 border-emerald-400 text-emerald-700";
-                      } else if (isSelected && !isCorrect) {
-                        optionStyle = "bg-red-50 border-red-400 text-red-700";
-                      } else {
-                        optionStyle = "bg-white border-[#1F150C]/10 text-[#1F150C]/40";
-                      }
+                      if (isCorrect) cls = 'border-success bg-success/8 text-success';
+                      else if (isSelected) cls = 'border-accent bg-accent/8 text-accent';
+                      else cls = 'border-line bg-surface text-ink-muted/60';
                     } else if (isSelected) {
-                      optionStyle = "bg-violet-100 border-violet-500 text-violet-700";
+                      cls = 'border-accent bg-accent/8 text-ink font-semibold';
                     }
-
                     return (
                       <button
                         key={oIndex}
                         onClick={() => handleAnswer(qIndex, option)}
-                        className={`flex items-center gap-2 p-3 rounded-lg border text-sm font-medium transition-all duration-200 ${optionStyle}`}
+                        className={`flex items-center gap-2.5 rounded-chip border-2 p-3 text-left text-sm transition-all duration-200 ${cls}`}
                       >
-                        {showResults && isCorrect && <CheckCircle className="h-4 w-4 text-emerald-500 shrink-0" />}
-                        {showResults && isSelected && !isCorrect && <XCircle className="h-4 w-4 text-red-500 shrink-0" />}
-                        <span>{option}</span>
+                        <span
+                          className={`grid h-5 w-5 flex-shrink-0 place-items-center rounded-full border-2 ${
+                            isSelected || (showResults && isCorrect) ? 'border-current' : 'border-line-strong'
+                          }`}
+                        >
+                          {showResults && isCorrect && <CheckCircle className="h-4 w-4" />}
+                          {showResults && isSelected && !isCorrect && <XCircle className="h-4 w-4" />}
+                          {!showResults && isSelected && <span className="h-2 w-2 rounded-full bg-current" />}
+                        </span>
+                        <span className="jp">{option}</span>
                       </button>
                     );
                   })}
@@ -421,28 +387,27 @@ const ListeningExercise = ({ data, label, isCompleted = false, defaultExpanded =
               </div>
             ))}
 
-            {/* Submit / Reset */}
-            <div className="flex items-center gap-3 flex-wrap">
+            <div className="flex flex-wrap items-center gap-3">
               {!showResults ? (
                 <button
                   onClick={handleCheck}
-                  disabled={Object.keys(selectedAnswers).length < data.questions.length}
-                  className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-violet-500 to-purple-600 text-white font-medium text-sm hover:opacity-90 transition-opacity disabled:opacity-40 disabled:cursor-not-allowed"
+                  disabled={isChecking || Object.keys(selectedAnswers).length < data.questions.length}
+                  className="flex w-full items-center justify-center gap-2 rounded-card bg-accent px-5 py-3 text-sm font-bold text-white shadow-card transition-all hover:bg-[#a83d30] active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-40"
                 >
-                  Check Answers
+                  {isChecking ? <><Loader2 className="h-4 w-4 animate-spin" /> Checking…</> : 'Check answers'}
                 </button>
               ) : (
                 <>
-                  <div className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-emerald-50 text-emerald-700 font-medium text-sm">
+                  <div className="inline-flex items-center gap-2 rounded-card bg-success/10 px-4 py-2.5 text-sm font-bold text-success">
                     <CheckCircle className="h-4 w-4" />
                     {correctCount} / {data.questions.length} correct
                   </div>
                   <button
                     onClick={handleReset}
-                    className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#1F150C]/10 text-[#1F150C] font-medium text-sm hover:bg-[#1F150C]/20 transition-colors"
+                    className="inline-flex items-center gap-2 rounded-card border border-line bg-surface px-5 py-2.5 text-sm font-bold text-ink transition-colors hover:border-line-strong"
                   >
                     <RotateCcw className="h-4 w-4" />
-                    Try Again
+                    Try again
                   </button>
                 </>
               )}
@@ -450,6 +415,7 @@ const ListeningExercise = ({ data, label, isCompleted = false, defaultExpanded =
           </div>
         </div>
       )}
+      </div>
     </div>
   );
 };

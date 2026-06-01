@@ -56,45 +56,42 @@ const LessonItem = ({lesson}: LessonContentPageProps) => {
   return (
     <Link
       href={`${lesson.level_id}/${lesson.route}`}
-      className="bg-white/80 backdrop-blur-sm p-6 rounded-2xl border border-black/5 shadow-sm hover:shadow-xl hover:border-[#412D15]/50 transition-all duration-300 group flex items-center space-x-6 cursor-pointer"
+      className="hover-lift group flex cursor-pointer items-center gap-5 rounded-card border border-line bg-surface p-5 shadow-card"
     >
-      <div className={`p-4 rounded-lg flex-shrink-0 ${isDone ? 'bg-emerald-50' : 'bg-[#E1DCC9]'}`}>
-        <Icon className={`h-6 w-6 ${isDone ? 'text-emerald-600' : 'text-[#1F150C]'}`} />
+      <div className={`grid h-12 w-12 flex-shrink-0 place-items-center rounded-card ${isDone ? 'bg-success/14 text-success' : 'bg-surface-alt text-ink'}`}>
+        <Icon className="h-6 w-6" />
       </div>
-      <div className="flex-grow min-w-0">
-        <div className="flex items-center gap-2 flex-wrap">
-          <h4 className="text-lg font-bold text-[#1F150C]">{lesson.title}</h4>
+      <div className="min-w-0 flex-grow">
+        <div className="flex flex-wrap items-center gap-2">
+          <h4 className="font-[family-name:var(--font-display)] text-lg text-ink">{lesson.title}</h4>
           {hasProgress && (
-            <span className={`inline-flex items-center gap-1 text-[10px] font-bold px-2 py-0.5 rounded-full ${
+            <span className={`inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-bold ${
               isDone
-                ? 'bg-emerald-100 text-emerald-700'
+                ? 'bg-success/12 text-success'
                 : completed > 0
-                  ? 'bg-[#412D15]/10 text-[#412D15]'
-                  : 'bg-[#1F150C]/5 text-[#1F150C]/60'
+                  ? 'bg-accent/10 text-accent'
+                  : 'bg-surface-alt text-ink-muted'
             }`}>
-              {isDone && <CheckCircle2 className="w-3 h-3" />}
+              {isDone && <CheckCircle2 className="h-3 w-3" />}
               {completed}/{total} · {pct}%
             </span>
           )}
         </div>
-        <p className="text-sm text-[#1F150C]/70 mt-0.5">{lesson.description}</p>
+        <p className="mt-0.5 text-sm text-ink-muted">{lesson.description}</p>
         {hasProgress && completed > 0 && (
-          <div className="mt-2 h-1 w-full bg-[#1F150C]/5 rounded-full overflow-hidden">
+          <div className="mt-2 h-1.5 w-full overflow-hidden rounded-full bg-surface-alt">
             <div
-              className="h-full rounded-full transition-all duration-500"
+              className="h-full rounded-full"
               style={{
                 width: `${pct}%`,
-                background: isDone
-                  ? 'linear-gradient(90deg, #10b981, #059669)'
-                  : 'linear-gradient(90deg, #412D15, #ef4444)',
+                background: isDone ? 'var(--color-success)' : 'var(--color-accent)',
+                transition: 'width 0.6s var(--ease-out-soft)',
               }}
             />
           </div>
         )}
       </div>
-      <div className="text-[#1F150C]/50 group-hover:text-[#412D15] transition-colors flex-shrink-0">
-        <ChevronRight className="h-6 w-6 transform group-hover:translate-x-1 transition-transform" />
-      </div>
+      <ChevronRight className="h-6 w-6 flex-shrink-0 text-ink-muted transition-all group-hover:translate-x-1 group-hover:text-accent" />
     </Link>
   );
 };

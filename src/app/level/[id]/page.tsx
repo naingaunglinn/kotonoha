@@ -50,8 +50,8 @@ const Lessons = () => {
 
   if (!level) {
     return (
-      <div className="text-center p-10 bg-white/50 rounded-2xl">
-        <p className="text-[#1F150C]/80">Level not found.</p>
+      <div className="mx-auto mt-10 max-w-2xl rounded-card border border-line bg-surface p-10 text-center shadow-card">
+        <p className="text-ink-muted">Level not found.</p>
       </div>
     );
   }
@@ -60,38 +60,45 @@ const Lessons = () => {
   const levelTag = LEVEL_TAGS[levelId] || "";
 
   return (
-    <div className="max-w-4xl mx-auto pt-16 pb-24 px-4 sm:px-6 lg:px-8">
-      <div className="relative text-center">
-        <Link href={`/`} className="absolute left-0 top-1/2 -translate-y-1/2 p-3 rounded-full hover:bg-[#1F150C]/10 transition-colors duration-300"><ChevronLeft className="h-6 w-6 text-[#1F150C]" /></Link>
-        <div className="inline-flex items-center gap-2 mb-3">
-          <span className="px-3 py-1 rounded-full bg-[#412D15]/10 text-[#412D15] text-xs font-bold tracking-wider">
-            {levelTag}
-          </span>
-          <span className="px-3 py-1 rounded-full bg-[#1F150C]/5 text-[#1F150C]/60 text-xs font-medium">
-            {level.lessons.length} Lessons
+    <div className="mx-auto max-w-4xl px-4 pb-24 pt-8 sm:px-6 lg:px-8">
+      <Link
+        href="/"
+        className="mb-6 inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-sm font-bold text-ink-muted transition-colors hover:text-ink"
+      >
+        <ChevronLeft className="h-4 w-4" />
+        Home
+      </Link>
+
+      <div>
+        <div className="mb-3 inline-flex items-center gap-2">
+          <span className="rounded-full bg-ink px-3 py-1 text-xs font-bold tracking-wider text-bg">{levelTag}</span>
+          <span className="rounded-full bg-surface-alt px-3 py-1 text-xs font-medium text-ink-muted">
+            {level.lessons.length} lessons
           </span>
         </div>
-        <h2 className="text-4xl md:text-5xl font-extrabold tracking-tighter">{level?.title} Lessons</h2>
-        <p className="mt-4 text-lg text-[#1F150C]/80">{level?.description}</p>
+        <h2 className="font-[family-name:var(--font-display)] text-4xl tracking-tight text-ink md:text-5xl">
+          {level?.title}
+        </h2>
+        <p className="mt-3 max-w-2xl text-base leading-relaxed text-ink-muted">{level?.description}</p>
       </div>
 
       {/* Study Tips */}
       {studyTip && (
-        <div className="mt-10 bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-6 border border-amber-200/50">
+        <div className="mt-8 rounded-card border-l-4 border-accent-warm bg-accent-warm/12 p-6">
           <div className="flex items-start gap-3">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-400 to-orange-400 flex items-center justify-center shrink-0">
-              <Lightbulb className="h-5 w-5 text-white" />
+            <div className="grid h-10 w-10 flex-shrink-0 place-items-center rounded-card bg-accent-warm/30 text-[#9a6b43]">
+              <Lightbulb className="h-5 w-5" />
             </div>
             <div>
-              <h3 className="font-bold text-[#1F150C] mb-2 flex items-center gap-2">
-                <GraduationCap className="h-4 w-4 text-amber-600" />
-                Study Guide
+              <h3 className="mb-2 flex items-center gap-2 font-bold text-ink">
+                <GraduationCap className="h-4 w-4 text-[#9a6b43]" />
+                Study guide
               </h3>
-              <p className="text-sm text-[#1F150C]/70 mb-3">{studyTip.tip}</p>
+              <p className="mb-3 text-sm text-ink-muted">{studyTip.tip}</p>
               <ol className="space-y-1.5">
                 {studyTip.steps.map((step, i) => (
-                  <li key={i} className="flex items-start gap-2 text-sm text-[#1F150C]/80">
-                    <span className="w-5 h-5 rounded-full bg-amber-200 text-amber-700 text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">
+                  <li key={i} className="flex items-start gap-2 text-sm text-ink">
+                    <span className="mt-0.5 grid h-5 w-5 flex-shrink-0 place-items-center rounded-full bg-accent-warm/40 text-xs font-bold text-[#9a6b43]">
                       {i + 1}
                     </span>
                     {step}
@@ -103,13 +110,14 @@ const Lessons = () => {
         </div>
       )}
 
-      <div className="mt-10 space-y-4">
-        {level.lessons.length > 0 ?
-          (level?.lessons?.map((lesson: LessonProps) =>
-            <LessonItem key={lesson.id} lesson={lesson} />))
-          : (
-            <div className="text-center p-10 bg-white/50 rounded-2xl"><p className="text-[#1F150C]/80">Lessons for {level.title} are being prepared.</p></div>
-          )}
+      <div className="mt-8 space-y-3">
+        {level.lessons.length > 0 ? (
+          level?.lessons?.map((lesson: LessonProps) => <LessonItem key={lesson.id} lesson={lesson} />)
+        ) : (
+          <div className="rounded-card border border-line bg-surface p-10 text-center shadow-card">
+            <p className="text-ink-muted">Lessons for {level.title} are being prepared.</p>
+          </div>
+        )}
       </div>
     </div>
   );

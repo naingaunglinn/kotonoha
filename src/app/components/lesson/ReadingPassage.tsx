@@ -8,108 +8,83 @@ import {
   CheckCircle,
   XCircle,
   ChevronDown,
-  ChevronUp,
   Timer,
   RotateCcw,
+  X,
 } from "lucide-react";
 
-// --- Difficulty badge ---
+// --- Difficulty pill ---
 const DIFFICULTY_STYLES: Record<string, string> = {
-  Easy:   'bg-emerald-100 text-emerald-700 border-emerald-200',
-  Medium: 'bg-amber-100   text-amber-700   border-amber-200',
-  Hard:   'bg-red-100     text-[#412D15]   border-red-200',
+  Easy:   'bg-success/12 text-success',
+  Medium: 'bg-accent-warm/25 text-[#9a6b43]',
+  Hard:   'bg-accent/12 text-accent',
 };
 
 // --- Highlight key vocab inside passage text ---
-const HighlightedPassage = ({
-  passage,
-  keyVocab,
-}: {
-  passage: string;
-  keyVocab: ReadingKeyVocabProps[];
-}) => {
+const HighlightedPassage = ({ passage, keyVocab }: { passage: string; keyVocab: ReadingKeyVocabProps[] }) => {
   const [activeTooltip, setActiveTooltip] = useState<number | null>(null);
 
   if (!keyVocab || keyVocab.length === 0) {
-    return (
-      <p className="text-[#1F150C] text-lg leading-relaxed whitespace-pre-line font-medium">
-        {passage}
-      </p>
-    );
+    return <p className="jp whitespace-pre-line text-lg leading-[1.95] text-ink">{passage}</p>;
   }
 
-  // Build a list of {start, end, vocab} matches
   type Match = { start: number; end: number; vocab: ReadingKeyVocabProps };
   const matches: Match[] = [];
-
-  keyVocab.forEach(vocab => {
+  keyVocab.forEach((vocab) => {
     const word = vocab.word;
     let idx = 0;
     while (idx < passage.length) {
       const pos = passage.indexOf(word, idx);
       if (pos === -1) break;
-      // Avoid overlapping matches
-      if (!matches.some(m => pos < m.end && pos + word.length > m.start)) {
+      if (!matches.some((m) => pos < m.end && pos + word.length > m.start)) {
         matches.push({ start: pos, end: pos + word.length, vocab });
       }
       idx = pos + 1;
     }
   });
-
   matches.sort((a, b) => a.start - b.start);
 
-  // Render passage with inline highlights
   const segments: React.ReactNode[] = [];
   let cursor = 0;
   matches.forEach((m, i) => {
-    if (cursor < m.start) {
-      segments.push(
-        <span key={`text-${i}`}>{passage.slice(cursor, m.start)}</span>
-      );
-    }
+    if (cursor < m.start) segments.push(<span key={`text-${i}`}>{passage.slice(cursor, m.start)}</span>);
     segments.push(
       <span key={`vocab-${i}`} className="relative inline-block">
         <button
           onClick={() => setActiveTooltip(activeTooltip === i ? null : i)}
-          className="text-[#412D15] font-bold underline underline-offset-2 decoration-dotted hover:text-[#000000] transition-colors"
+          className="font-medium text-ink underline decoration-accent-warm decoration-2 underline-offset-[5px] transition-colors hover:text-accent"
         >
           {passage.slice(m.start, m.end)}
         </button>
         {activeTooltip === i && (
-          <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 z-10 w-44 bg-[#1F150C] text-white text-xs rounded-lg px-3 py-2 shadow-lg leading-relaxed">
-            <span className="block font-bold text-[#E1DCC9]">{m.vocab.reading}</span>
-            <span className="block text-white/80">{m.vocab.meaning_en}</span>
-            <span className="block text-white/70 text-[10px]">{m.vocab.meaning_mm}</span>
-            {/* Arrow */}
-            <span className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-[#1F150C]" />
+          <span className="absolute bottom-full left-1/2 z-20 mb-2 w-48 -translate-x-1/2 rounded-card border border-line bg-surface px-3 py-2 text-left shadow-float">
+            <span className="jp block text-sm font-bold text-ink">{m.vocab.reading}</span>
+            <span className="block text-xs text-ink-muted">{m.vocab.meaning_en}</span>
+            <span className="mt-0.5 block text-[11px] mm">{m.vocab.meaning_mm}</span>
+            <span className="absolute left-1/2 top-full h-0 w-0 -translate-x-1/2 border-4 border-transparent border-t-surface" />
           </span>
         )}
-      </span>
+      </span>,
     );
     cursor = m.end;
   });
-  if (cursor < passage.length) {
-    segments.push(<span key="tail">{passage.slice(cursor)}</span>);
-  }
+  if (cursor < passage.length) segments.push(<span key="tail">{passage.slice(cursor)}</span>);
 
-  return (
-    <p className="text-[#1F150C] text-lg leading-relaxed font-medium">
-      {segments}
-    </p>
-  );
+  return <p className="jp text-lg leading-[1.95] text-ink">{segments}</p>;
 };
 
-// --- Exam Timer ---
+// --- Floating timer with countdown ring ---
 const TIMER_OPTIONS = [
-  { label: '3 min', seconds: 180 },
-  { label: '5 min', seconds: 300 },
-  { label: '10 min', seconds: 600 },
+  { label: '3', seconds: 180 },
+  { label: '5', seconds: 300 },
+  { label: '10', seconds: 600 },
 ];
 
 const ExamTimer = ({ onExpire }: { onExpire: () => void }) => {
   const [selected, setSelected] = useState<number | null>(null);
   const [remaining, setRemaining] = useState(0);
   const [running, setRunning] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const start = useCallback((seconds: number) => {
@@ -117,8 +92,9 @@ const ExamTimer = ({ onExpire }: { onExpire: () => void }) => {
     setSelected(seconds);
     setRemaining(seconds);
     setRunning(true);
+    setMenuOpen(false);
     intervalRef.current = setInterval(() => {
-      setRemaining(prev => {
+      setRemaining((prev) => {
         if (prev <= 1) {
           clearInterval(intervalRef.current!);
           setRunning(false);
@@ -130,52 +106,77 @@ const ExamTimer = ({ onExpire }: { onExpire: () => void }) => {
     }, 1000);
   }, [onExpire]);
 
-  const reset = useCallback(() => {
+  const stop = useCallback(() => {
     if (intervalRef.current) clearInterval(intervalRef.current);
     setRunning(false);
-    setRemaining(selected ?? 0);
-  }, [selected]);
+    setSelected(null);
+    setRemaining(0);
+  }, []);
 
   useEffect(() => () => { if (intervalRef.current) clearInterval(intervalRef.current); }, []);
 
   const minutes = Math.floor(remaining / 60);
   const seconds = remaining % 60;
   const isLow = remaining > 0 && remaining <= 30;
+  const R = 13;
+  const C = 2 * Math.PI * R;
+  const frac = selected ? remaining / selected : 0;
+
+  if (selected !== null) {
+    return (
+      <div
+        className={`flex items-center gap-2 rounded-full border bg-surface/90 px-2 py-1 shadow-card backdrop-blur-sm ${
+          isLow ? 'border-accent' : 'border-line'
+        }`}
+      >
+        <span className="relative grid h-7 w-7 place-items-center">
+          <svg viewBox="0 0 32 32" className="h-7 w-7 -rotate-90">
+            <circle cx="16" cy="16" r={R} fill="none" stroke="var(--color-line)" strokeWidth="3" />
+            <circle
+              cx="16" cy="16" r={R} fill="none"
+              stroke={isLow ? 'var(--color-accent)' : 'var(--color-accent-cool)'}
+              strokeWidth="3" strokeLinecap="round"
+              strokeDasharray={C} strokeDashoffset={C * (1 - frac)}
+              style={{ transition: 'stroke-dashoffset 1s linear' }}
+            />
+          </svg>
+        </span>
+        <span className={`font-mono text-xs font-bold tabular-nums ${isLow ? 'text-accent' : 'text-ink'}`}>
+          {String(minutes).padStart(2, '0')}:{String(seconds).padStart(2, '0')}
+        </span>
+        <button onClick={stop} className="grid h-5 w-5 place-items-center rounded-full text-ink-muted hover:bg-ink/5" aria-label="Stop timer">
+          <X className="h-3.5 w-3.5" />
+        </button>
+      </div>
+    );
+  }
 
   return (
-    <div className="flex flex-wrap items-center gap-2">
-      <Timer className="h-4 w-4 text-[#1F150C]/50" />
-      <span className="text-xs font-bold text-[#1F150C]/50">Timer:</span>
-      {TIMER_OPTIONS.map(opt => (
-        <button
-          key={opt.seconds}
-          onClick={() => start(opt.seconds)}
-          className={`px-3 py-1 rounded-lg text-xs font-medium transition-all ${
-            selected === opt.seconds && running
-              ? 'bg-[#412D15] text-white'
-              : 'bg-[#E1DCC9] text-[#1F150C]/70 hover:bg-[#1F150C]/10'
-          }`}
-        >
-          {opt.label}
-        </button>
-      ))}
-      {selected !== null && (
-        <>
-          <span className={`font-mono text-sm font-bold tabular-nums ${
-            isLow ? 'text-[#412D15] animate-pulse' : 'text-[#1F150C]'
-          }`}>
-            {String(minutes).padStart(2, '0')}:{String(seconds).padStart(2, '0')}
-          </span>
-          <button onClick={reset} className="p-1 rounded hover:bg-[#1F150C]/10 transition-colors">
-            <RotateCcw className="h-3.5 w-3.5 text-[#1F150C]/50" />
-          </button>
-        </>
+    <div className="relative">
+      <button
+        onClick={() => setMenuOpen((v) => !v)}
+        className="flex items-center gap-1.5 rounded-full border border-line bg-surface/90 px-3 py-1.5 text-xs font-bold text-ink-muted shadow-card backdrop-blur-sm transition-colors hover:text-ink"
+      >
+        <Timer className="h-3.5 w-3.5" />
+        Timer
+      </button>
+      {menuOpen && (
+        <div className="absolute right-0 top-full z-30 mt-1 flex gap-1 rounded-card border border-line bg-surface p-1 shadow-float">
+          {TIMER_OPTIONS.map((opt) => (
+            <button
+              key={opt.seconds}
+              onClick={() => start(opt.seconds)}
+              className="rounded-chip px-2.5 py-1.5 text-xs font-bold text-ink transition-colors hover:bg-surface-alt"
+            >
+              {opt.label}m
+            </button>
+          ))}
+        </div>
       )}
     </div>
   );
 };
 
-// --- Main component ---
 interface ReadingPassageProps {
   data: ReadingProps;
   label?: number;
@@ -195,7 +196,7 @@ const ReadingPassage = ({ data, label, isCompleted = false, defaultExpanded = fa
 
   const handleAnswer = (qIndex: number, option: string) => {
     if (showResults) return;
-    setSelectedAnswers(prev => ({ ...prev, [qIndex]: option }));
+    setSelectedAnswers((prev) => ({ ...prev, [qIndex]: option }));
   };
 
   const handleCheck = () => {
@@ -210,203 +211,186 @@ const ReadingPassage = ({ data, label, isCompleted = false, defaultExpanded = fa
     setTimerExpired(false);
   };
 
-  const correctCount = data.questions.filter(
-    (q, i) => selectedAnswers[i] === q.answer
-  ).length;
+  const correctCount = data.questions.filter((q, i) => selectedAnswers[i] === q.answer).length;
 
   return (
-    <div className={`relative rounded-2xl border-2 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 ${
-      isCompleted
-        ? 'bg-emerald-50/40 border-emerald-400/50'
-        : 'bg-white border-[#1F150C]/10'
-    }`}>
-      {/* Book-fold corner — top-right page-turn motif */}
-      <svg
-        className="absolute top-0 right-0 w-10 h-10 pointer-events-none"
-        viewBox="0 0 40 40"
-        aria-hidden
-      >
-        <path d="M0,0 L40,0 L40,40 Z" fill="rgba(65,45,21,0.06)" />
-        <path d="M40,0 L40,18 L22,0 Z" fill="rgba(225,220,201,0.95)" stroke="rgba(31,21,12,0.12)" strokeWidth="0.5" />
-      </svg>
+    <div className="relative">
       {label !== undefined && (
-        <span className={`absolute -top-2.5 -left-2.5 w-8 h-8 rounded-full text-white text-xs font-bold flex items-center justify-center shadow-md z-10 transition-colors ${
-          isCompleted ? 'bg-emerald-500' : 'bg-[#1F150C]'
-        }`}>
-          {isCompleted ? <CheckCircle className="w-4 h-4" /> : label}
+        <span
+          className={`absolute -left-2.5 -top-2.5 z-30 grid h-7 w-7 place-items-center rounded-full text-[11px] font-bold text-white shadow-card ${
+            isCompleted ? 'bg-success' : 'bg-ink'
+          }`}
+        >
+          {isCompleted ? <CheckCircle className="h-3.5 w-3.5" /> : label}
         </span>
       )}
-
-      {/* Header */}
       <div
-        className="flex items-center justify-between p-5 cursor-pointer hover:bg-[#E1DCC9]/50 transition-colors"
+        className={`relative overflow-hidden rounded-card border bg-surface shadow-card transition-colors ${
+          isCompleted ? 'border-success/40' : 'border-line'
+        }`}
+      >
+
+      {/* ===== HEADER ===== */}
+      <button
+        className="flex w-full items-center gap-3 p-5 text-left transition-colors hover:bg-surface-alt/50"
         onClick={() => setExpanded(!expanded)}
       >
-        <div className="flex items-center gap-3">
-          <div className={`w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 ${
-            isCompleted
-              ? 'bg-gradient-to-br from-emerald-500 to-emerald-600'
-              : 'bg-gradient-to-br from-emerald-400 to-teal-500'
-          }`}>
-            <BookOpen className="h-5 w-5 text-white" />
-          </div>
-          <div>
-            <div className="flex items-center gap-2 flex-wrap">
-              <h3 className={`text-lg font-bold transition-colors ${
-                isCompleted ? 'text-emerald-700' : 'text-[#1F150C]'
-              }`}>{data.title}</h3>
-              {data.difficulty && (
-                <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full border ${DIFFICULTY_STYLES[data.difficulty]}`}>
-                  {data.difficulty}
-                </span>
-              )}
-              {isCompleted && (
-                <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-700 border border-emerald-200">
-                  ✓ Studied
-                </span>
-              )}
-            </div>
-            <p className="text-sm text-[#1F150C]/60">{data.title_en} · {data.title_mm}</p>
-          </div>
+        <div
+          className={`grid h-11 w-11 flex-shrink-0 place-items-center rounded-card ${
+            isCompleted ? 'bg-success text-white' : 'bg-success/14 text-success'
+          }`}
+        >
+          <BookOpen className="h-5 w-5" />
         </div>
-        {expanded
-          ? <ChevronUp className="h-5 w-5 text-[#1F150C]/40 flex-shrink-0" />
-          : <ChevronDown className="h-5 w-5 text-[#1F150C]/40 flex-shrink-0" />
-        }
-      </div>
+        <div className="min-w-0 flex-1">
+          <div className="flex flex-wrap items-center gap-2">
+            <h3 className={`font-[family-name:var(--font-display)] text-lg leading-tight ${isCompleted ? 'text-success' : 'text-ink'}`}>
+              {data.title}
+            </h3>
+            {data.difficulty && (
+              <span className={`rounded-full px-2 py-0.5 text-[10px] font-bold ${DIFFICULTY_STYLES[data.difficulty]}`}>
+                {data.difficulty}
+              </span>
+            )}
+            {isCompleted && (
+              <span className="rounded-full bg-success/12 px-2 py-0.5 text-[10px] font-bold text-success">✓ Studied</span>
+            )}
+          </div>
+          <p className="mt-0.5 truncate text-xs text-ink-muted">{data.title_en} · {data.title_mm}</p>
+        </div>
+        <ChevronDown className={`h-5 w-5 flex-shrink-0 text-ink-muted transition-transform ${expanded ? 'rotate-180' : ''}`} />
+      </button>
 
       {expanded && (
-        <div className="px-5 pb-5 space-y-4">
-          {/* Timer */}
-          <ExamTimer onExpire={() => setTimerExpired(true)} />
+        <div className="animate-fade-in space-y-4 px-5 pb-5">
           {timerExpired && (
-            <div className="text-xs font-bold text-[#412D15] bg-red-50 rounded-lg px-3 py-2 border border-red-200">
+            <div className="rounded-chip border-l-4 border-accent bg-accent/8 px-3 py-2 text-xs font-bold text-accent">
               ⏰ Time&apos;s up! Check your answers below.
             </div>
           )}
 
-          {/* Vocab hint (key_vocab legend) */}
-          {data.key_vocab && data.key_vocab.length > 0 && !reReadMode && (
-            <p className="text-xs text-[#1F150C]/50 italic">
-              💡 Tap underlined <span className="text-[#412D15] font-bold underline decoration-dotted">red words</span> in the passage to see their meaning.
+          {data.key_vocab && data.key_vocab.length > 0 && (
+            <p className="text-xs italic text-ink-muted">
+              Tap the <span className="font-medium text-ink underline decoration-accent-warm decoration-2 underline-offset-2">underlined words</span> in the passage to see their meaning.
             </p>
           )}
 
-          {/* Passage */}
-          <div className="bg-gradient-to-br from-[#E1DCC9] to-[#E1DCC9]/60 rounded-xl p-5">
-            <HighlightedPassage
-              passage={data.passage}
-              keyVocab={data.key_vocab ?? []}
-            />
+          {/* ===== PASSAGE CARD (with floating timer) ===== */}
+          <div className="relative rounded-card border border-line bg-surface-alt/50 p-6 pt-12 sm:p-7 sm:pt-12">
+            <div className="absolute right-3 top-3 z-10">
+              <ExamTimer onExpire={() => setTimerExpired(true)} />
+            </div>
+            <HighlightedPassage passage={data.passage} keyVocab={data.key_vocab ?? []} />
           </div>
 
-          {/* Translation Toggles */}
-          <div className="flex gap-2 flex-wrap">
+          {/* ===== KEY VOCAB — index-card chips ===== */}
+          {data.key_vocab && data.key_vocab.length > 0 && (
+            <div>
+              <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.14em] text-ink-muted">Key vocabulary</p>
+              <div className="-mx-1 flex gap-2 overflow-x-auto px-1 pb-1">
+                {data.key_vocab.map((v, i) => (
+                  <div
+                    key={i}
+                    className="min-w-[8.5rem] flex-shrink-0 rounded-chip border border-line bg-surface p-2.5 shadow-card"
+                  >
+                    <p className="jp text-base leading-tight text-ink">{v.word}</p>
+                    <p className="jp text-[11px] text-accent">{v.reading}</p>
+                    <p className="mt-0.5 text-[11px] text-ink-muted">{v.meaning_en}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* ===== TRANSLATION TOGGLES ===== */}
+          <div className="flex flex-wrap gap-2">
             <button
               onClick={() => setShowTranslationEn(!showTranslationEn)}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium bg-blue-50 text-blue-600 hover:bg-blue-100 transition-colors"
+              className={`inline-flex items-center gap-1.5 rounded-chip px-3 py-1.5 text-xs font-bold transition-colors ${
+                showTranslationEn ? 'bg-accent-cool text-white' : 'bg-accent-cool/10 text-accent-cool hover:bg-accent-cool/20'
+              }`}
             >
-              {showTranslationEn ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
-              English Translation
+              {showTranslationEn ? <EyeOff className="h-3.5 w-3.5" /> : <Eye className="h-3.5 w-3.5" />}
+              English
             </button>
             <button
               onClick={() => setShowTranslationMm(!showTranslationMm)}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium bg-amber-50 text-amber-600 hover:bg-amber-100 transition-colors"
+              className={`inline-flex items-center gap-1.5 rounded-chip px-3 py-1.5 text-xs font-bold transition-colors ${
+                showTranslationMm ? 'bg-burmese text-white' : 'bg-burmese/10 text-burmese hover:bg-burmese/20'
+              }`}
             >
-              {showTranslationMm ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
-              မြန်မာဘာသာ
+              {showTranslationMm ? <EyeOff className="h-3.5 w-3.5" /> : <Eye className="h-3.5 w-3.5" />}
+              မြန်မာ
             </button>
           </div>
 
           {showTranslationEn && (
-            <div className="bg-blue-50/60 rounded-xl p-4 border border-blue-100">
-              <p className="text-sm text-blue-800 leading-relaxed whitespace-pre-line">{data.translation_en}</p>
+            <div className="animate-fade-in rounded-chip border border-line p-4">
+              <p className="whitespace-pre-line text-sm leading-relaxed text-ink">{data.translation_en}</p>
             </div>
           )}
           {showTranslationMm && (
-            <div className="bg-amber-50/60 rounded-xl p-4 border border-amber-100">
-              <p className="text-sm text-amber-800 leading-relaxed whitespace-pre-line">{data.translation_mm}</p>
+            <div className="animate-fade-in rounded-chip border border-line p-4">
+              <p className="whitespace-pre-line text-sm leading-relaxed mm">{data.translation_mm}</p>
             </div>
           )}
 
-          {/* Key vocab legend */}
-          {data.key_vocab && data.key_vocab.length > 0 && (
-            <div className="bg-[#E1DCC9]/60 rounded-xl p-4 border border-black/5">
-              <p className="text-[11px] font-bold text-[#1F150C]/40 uppercase mb-2">Key Vocabulary</p>
-              <div className="flex flex-wrap gap-2">
-                {data.key_vocab.map((v, i) => (
-                  <div key={i} className="bg-white rounded-lg px-3 py-1.5 border border-black/8 text-xs">
-                    <span className="font-bold text-[#412D15]">{v.word}</span>
-                    <span className="text-[#1F150C]/50 mx-1">·</span>
-                    <span className="text-[#1F150C]/70">{v.reading}</span>
-                    <span className="block text-[#1F150C]/60 text-[10px] mt-0.5">{v.meaning_en}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {/* Re-read mode: annotated passage after answers submitted */}
+          {/* ===== RE-READ ANNOTATIONS ===== */}
           {reReadMode && showResults && (
-            <div className="bg-blue-50/60 rounded-xl p-5 border border-blue-100 space-y-3">
-              <p className="text-xs font-bold text-blue-700 uppercase tracking-wider">Re-read with Answer Annotations</p>
-              <p className="text-[#1F150C] text-base leading-relaxed whitespace-pre-line font-medium">
-                {data.passage}
-              </p>
-              <div className="space-y-2 pt-2 border-t border-blue-100">
+            <div className="animate-fade-in space-y-3 rounded-card border border-accent-cool/30 bg-accent-cool/[0.06] p-5">
+              <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-accent-cool">Re-read with answer annotations</p>
+              <p className="jp whitespace-pre-line text-base leading-[1.9] text-ink">{data.passage}</p>
+              <div className="space-y-2 border-t border-line pt-3">
                 {data.questions.map((q, i) => (
-                  <div key={i} className="text-xs space-y-0.5">
-                    <p className="font-bold text-blue-800">{i + 1}. {q.question}</p>
-                    <p className={`font-medium ${selectedAnswers[i] === q.answer ? 'text-emerald-600' : 'text-[#412D15]'}`}>
+                  <div key={i} className="space-y-0.5 text-xs">
+                    <p className="font-bold text-ink">{i + 1}. {q.question}</p>
+                    <p className={`font-medium ${selectedAnswers[i] === q.answer ? 'text-success' : 'text-accent'}`}>
                       Your answer: {selectedAnswers[i] ?? '—'}
                     </p>
-                    {selectedAnswers[i] !== q.answer && (
-                      <p className="text-emerald-700 font-medium">Correct: {q.answer}</p>
-                    )}
+                    {selectedAnswers[i] !== q.answer && <p className="font-medium text-success">Correct: {q.answer}</p>}
                   </div>
                 ))}
               </div>
             </div>
           )}
 
-          {/* Questions */}
-          <div className="space-y-4 pt-2">
-            <h4 className="text-sm font-bold text-[#1F150C]/60 uppercase tracking-wider">
-              Comprehension Questions
-            </h4>
+          {/* ===== QUESTIONS ===== */}
+          <div className="space-y-4 pt-1">
+            <h4 className="text-[10px] font-bold uppercase tracking-[0.14em] text-ink-muted">Comprehension questions</h4>
 
             {data.questions.map((q, qIndex) => (
-              <div key={qIndex} className="bg-[#E1DCC9]/40 rounded-xl p-4 space-y-3">
-                <p className="font-semibold text-[#1F150C]">{qIndex + 1}. {q.question}</p>
-                <p className="text-sm text-[#1F150C]/50">{q.question_mm}</p>
+              <div key={qIndex} className="rounded-card border border-line bg-surface-alt/40 p-4">
+                <p className="font-semibold text-ink">{qIndex + 1}. <span className="jp">{q.question}</span></p>
+                {q.question_mm && <p className="mt-0.5 text-sm mm">{q.question_mm}</p>}
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                <div className="mt-3 grid grid-cols-1 gap-2 sm:grid-cols-2">
                   {q.options.map((option, oIndex) => {
                     const isSelected = selectedAnswers[qIndex] === option;
                     const isCorrect = option === q.answer;
-                    let optionStyle = "bg-white border-[#1F150C]/10 hover:border-[#412D15]/40 text-[#1F150C]";
-
+                    let cls = 'border-line bg-surface text-ink hover:border-accent/50';
                     if (showResults) {
-                      if (isCorrect) {
-                        optionStyle = "bg-emerald-50 border-emerald-400 text-emerald-700";
-                      } else if (isSelected && !isCorrect) {
-                        optionStyle = "bg-red-50 border-red-400 text-red-700";
-                      } else {
-                        optionStyle = "bg-white border-[#1F150C]/10 text-[#1F150C]/40";
-                      }
+                      if (isCorrect) cls = 'border-success bg-success/8 text-success';
+                      else if (isSelected) cls = 'border-accent bg-accent/8 text-accent';
+                      else cls = 'border-line bg-surface text-ink-muted/60';
                     } else if (isSelected) {
-                      optionStyle = "bg-[#412D15]/10 border-[#412D15] text-[#412D15]";
+                      cls = 'border-accent bg-accent/8 text-ink font-semibold';
                     }
-
                     return (
                       <button
                         key={oIndex}
                         onClick={() => handleAnswer(qIndex, option)}
-                        className={`flex items-center gap-2 p-3 rounded-lg border text-sm font-medium transition-all duration-200 ${optionStyle}`}
+                        className={`flex items-center gap-2.5 rounded-chip border-2 p-3 text-left text-sm transition-all duration-200 ${cls}`}
                       >
-                        {showResults && isCorrect && <CheckCircle className="h-4 w-4 text-emerald-500 shrink-0" />}
-                        {showResults && isSelected && !isCorrect && <XCircle className="h-4 w-4 text-red-500 shrink-0" />}
-                        <span>{option}</span>
+                        <span
+                          className={`grid h-5 w-5 flex-shrink-0 place-items-center rounded-full border-2 ${
+                            isSelected || (showResults && isCorrect) ? 'border-current' : 'border-line-strong'
+                          }`}
+                        >
+                          {showResults && isCorrect && <CheckCircle className="h-4 w-4" />}
+                          {showResults && isSelected && !isCorrect && <XCircle className="h-4 w-4" />}
+                          {!showResults && isSelected && <span className="h-2 w-2 rounded-full bg-current" />}
+                        </span>
+                        <span className="jp">{option}</span>
                       </button>
                     );
                   })}
@@ -414,33 +398,33 @@ const ReadingPassage = ({ data, label, isCompleted = false, defaultExpanded = fa
               </div>
             ))}
 
-            {/* Submit / Results */}
             <div className="flex flex-wrap items-center gap-3">
               {!showResults ? (
                 <button
                   onClick={handleCheck}
                   disabled={Object.keys(selectedAnswers).length < data.questions.length}
-                  className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-[#412D15] to-[#B71C1C] text-white font-medium text-sm hover:opacity-90 transition-opacity disabled:opacity-40 disabled:cursor-not-allowed"
+                  className="flex w-full items-center justify-center gap-2 rounded-card bg-accent px-5 py-3 text-sm font-bold text-white shadow-card transition-all hover:bg-[#a83d30] active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-40"
                 >
-                  Check Answers
+                  Check answers
                 </button>
               ) : (
                 <>
-                  <div className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-emerald-50 text-emerald-700 font-medium text-sm">
+                  <div className="inline-flex items-center gap-2 rounded-card bg-success/10 px-4 py-2.5 text-sm font-bold text-success">
                     <CheckCircle className="h-4 w-4" />
                     {correctCount} / {data.questions.length} correct
                   </div>
                   <button
-                    onClick={() => setReReadMode(prev => !prev)}
-                    className="px-4 py-2.5 rounded-xl bg-blue-50 text-blue-600 font-medium text-sm hover:bg-blue-100 transition-colors"
+                    onClick={() => setReReadMode((p) => !p)}
+                    className="inline-flex items-center gap-2 rounded-card border border-line bg-surface px-4 py-2.5 text-sm font-bold text-accent-cool transition-colors hover:border-line-strong"
                   >
-                    {reReadMode ? 'Hide' : 'Re-read'} with annotations
+                    {reReadMode ? 'Hide' : 'Re-read'} annotations
                   </button>
                   <button
                     onClick={handleReset}
-                    className="px-5 py-2.5 rounded-xl bg-[#1F150C]/10 text-[#1F150C] font-medium text-sm hover:bg-[#1F150C]/20 transition-colors"
+                    className="inline-flex items-center gap-2 rounded-card border border-line bg-surface px-5 py-2.5 text-sm font-bold text-ink transition-colors hover:border-line-strong"
                   >
-                    Try Again
+                    <RotateCcw className="h-4 w-4" />
+                    Try again
                   </button>
                 </>
               )}
@@ -448,6 +432,7 @@ const ReadingPassage = ({ data, label, isCompleted = false, defaultExpanded = fa
           </div>
         </div>
       )}
+      </div>
     </div>
   );
 };

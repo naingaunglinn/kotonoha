@@ -116,7 +116,7 @@ export default function KanaWriter({ char, size = 280, className = '', autoplay 
     <div className={`relative w-full h-full ${className}`}>
       {error && (
         <div className="absolute inset-0 flex items-center justify-center p-4 text-center">
-          <p className="text-xs text-[#1F150C]/50">
+          <p className="text-xs text-[#1a1a2e]/50">
             Stroke order unavailable for this character.
           </p>
         </div>
@@ -144,7 +144,7 @@ export default function KanaWriter({ char, size = 280, className = '', autoplay 
                 ref={el => { pathRefs.current[i] = el; }}
                 d={d}
                 fill="none"
-                stroke={isActive || isCompleted ? '#1F150C' : 'rgba(31,21,12,0.12)'}
+                stroke={isActive || isCompleted ? '#1a1a2e' : 'rgba(31,21,12,0.12)'}
                 strokeWidth="3"
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -156,14 +156,14 @@ export default function KanaWriter({ char, size = 280, className = '', autoplay 
 
       {!error && paths.length > 0 && (
         <>
-          <div className="absolute top-1 right-1 px-2 py-0.5 rounded-full bg-[#1F150C]/85 text-white text-[10px] font-bold tabular-nums">
+          <div className="absolute top-1 right-1 px-2 py-0.5 rounded-full bg-[#1a1a2e]/85 text-white text-[10px] font-bold tabular-nums">
             {Math.min(completedCount, paths.length)} / {paths.length}
           </div>
 
           <div className="absolute bottom-1 left-1/2 -translate-x-1/2 flex items-center gap-1 bg-white/90 backdrop-blur-sm rounded-full p-1 shadow-sm border border-black/5">
             <button
               onClick={isPlaying ? stop : play}
-              className="w-8 h-8 rounded-full bg-[#412D15] text-white flex items-center justify-center hover:bg-[#000000] transition-colors"
+              className="w-8 h-8 rounded-full bg-[#bf4b3c] text-white flex items-center justify-center hover:bg-[#1a1a2e] transition-colors"
               title={isPlaying ? 'Pause animation' : 'Play stroke order'}
               aria-label={isPlaying ? 'Pause' : 'Play'}
             >
@@ -171,7 +171,7 @@ export default function KanaWriter({ char, size = 280, className = '', autoplay 
             </button>
             <button
               onClick={reset}
-              className="w-8 h-8 rounded-full text-[#1F150C]/60 hover:bg-[#1F150C]/10 transition-colors flex items-center justify-center"
+              className="w-8 h-8 rounded-full text-[#1a1a2e]/60 hover:bg-[#1a1a2e]/10 transition-colors flex items-center justify-center"
               title="Reset"
               aria-label="Reset animation"
             >

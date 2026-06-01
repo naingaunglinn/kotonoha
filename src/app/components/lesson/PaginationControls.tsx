@@ -15,34 +15,41 @@ export default function PaginationControls({
   if (totalPages <= 1) return null;
 
   return (
-    <div className="flex flex-wrap items-center justify-center gap-2">
+    <div className="flex flex-wrap items-center justify-center gap-1.5">
       <button
         onClick={() => onPageChange(currentPage - 1)}
         disabled={currentPage === 1}
-        className="p-2 rounded-lg border border-[#1F150C]/15 hover:bg-[#1F150C]/10 disabled:opacity-30 disabled:cursor-not-allowed transition-all"
+        className="grid h-10 w-10 place-items-center rounded-chip border border-line bg-surface text-ink transition-all hover:border-line-strong disabled:cursor-not-allowed disabled:opacity-30"
+        aria-label="Previous page"
       >
-        <ChevronLeft className="w-4 h-4" />
+        <ChevronLeft className="h-4 w-4" />
       </button>
 
-      {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-        <button
-          key={page}
-          onClick={() => onPageChange(page)}
-          className={`w-10 h-10 rounded-lg text-sm font-bold transition-all ${page === currentPage
-            ? 'bg-[#412D15] text-white shadow-lg shadow-[#412D15]/30 scale-110'
-            : 'bg-white border border-[#1F150C]/15 text-[#1F150C] hover:bg-[#1F150C]/10'
+      {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => {
+        const isActive = page === currentPage;
+        return (
+          <button
+            key={page}
+            onClick={() => onPageChange(page)}
+            aria-current={isActive ? 'page' : undefined}
+            className={`h-10 w-10 rounded-chip text-sm font-bold transition-all ${
+              isActive
+                ? 'bg-ink text-bg shadow-card'
+                : 'border border-line bg-surface text-ink-muted hover:border-line-strong hover:text-ink'
             }`}
-        >
-          {page}
-        </button>
-      ))}
+          >
+            {page}
+          </button>
+        );
+      })}
 
       <button
         onClick={() => onPageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
-        className="p-2 rounded-lg border border-[#1F150C]/15 hover:bg-[#1F150C]/10 disabled:opacity-30 disabled:cursor-not-allowed transition-all"
+        className="grid h-10 w-10 place-items-center rounded-chip border border-line bg-surface text-ink transition-all hover:border-line-strong disabled:cursor-not-allowed disabled:opacity-30"
+        aria-label="Next page"
       >
-        <ChevronRight className="w-4 h-4" />
+        <ChevronRight className="h-4 w-4" />
       </button>
     </div>
   );

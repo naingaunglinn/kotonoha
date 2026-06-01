@@ -90,12 +90,12 @@ export default function FocusMode<T>({
 
   if (items.length === 0 || !current) {
     return (
-      <div className="fixed inset-0 z-50 bg-[#E1DCC9] flex items-center justify-center p-6">
+      <div className="fixed inset-0 z-50 flex items-center justify-center bg-bg p-6">
         <div className="text-center">
-          <p className="text-[#1F150C]/70">Nothing to focus on.</p>
+          <p className="text-ink-muted">Nothing to focus on.</p>
           <button
             onClick={onClose}
-            className="mt-4 px-6 py-2 bg-[#1F150C] text-white rounded-full font-bold"
+            className="mt-4 rounded-full bg-ink px-6 py-2 font-bold text-bg"
           >
             Close
           </button>
@@ -108,57 +108,56 @@ export default function FocusMode<T>({
   const positionPct = ((index + 1) / items.length) * 100;
 
   return (
-    <div className="fixed inset-0 z-50 bg-[#E1DCC9] flex flex-col">
+    <div className="fixed inset-0 z-50 flex flex-col bg-bg">
       {/* Top bar */}
-      <div className="flex-none px-4 sm:px-8 pt-4 pb-3 flex items-center gap-3 border-b border-[#1F150C]/10">
+      <div className="flex flex-none items-center gap-3 border-b border-line px-4 pb-3 pt-4 sm:px-8">
         <button
           onClick={onClose}
-          className="p-2 rounded-full hover:bg-[#1F150C]/10 transition-colors flex-shrink-0"
+          className="grid h-9 w-9 flex-shrink-0 place-items-center rounded-full text-ink transition-colors hover:bg-ink/5"
           aria-label="Exit focus mode"
         >
-          <X className="w-5 h-5 text-[#1F150C]" />
+          <X className="h-5 w-5" />
         </button>
 
-        <div className="flex items-center gap-2 min-w-0">
-          <span className="text-xs font-bold text-[#1F150C]">Focus · {categoryLabel}</span>
+        <div className="flex min-w-0 items-center gap-2">
+          <span className="text-xs font-bold text-ink">Focus · {categoryLabel}</span>
           {pageLabel && (
             <>
-              <span className="text-xs text-[#1F150C]/40">·</span>
-              <span className="text-xs font-medium text-[#1F150C]/60 truncate">{pageLabel}</span>
+              <span className="text-xs text-ink-muted/50">·</span>
+              <span className="truncate text-xs font-medium text-ink-muted">{pageLabel}</span>
             </>
           )}
         </div>
 
         <div className="ml-auto flex items-center gap-3">
-          <span className="text-[11px] font-bold tabular-nums text-[#1F150C]/70 hidden sm:inline">
+          <span className="hidden text-[11px] font-bold tabular-nums text-ink-muted sm:inline">
             {completedCount}/{items.length} studied
           </span>
           <button
             onClick={() => setShowHints(v => !v)}
-            className={`p-2 rounded-full transition-colors ${
-              showHints ? 'bg-[#1F150C] text-white' : 'text-[#1F150C]/60 hover:bg-[#1F150C]/10'
+            className={`grid h-9 w-9 place-items-center rounded-full transition-colors ${
+              showHints ? 'bg-ink text-bg' : 'text-ink-muted hover:bg-ink/5'
             }`}
             aria-pressed={showHints}
             title="Show keyboard shortcuts"
           >
-            <Keyboard className="w-4 h-4" />
+            <Keyboard className="h-4 w-4" />
           </button>
         </div>
       </div>
 
       {/* Progress strip */}
-      <div className="flex-none h-1 bg-[#1F150C]/5 relative">
+      <div className="relative h-1 flex-none bg-surface-alt">
         <div
-          className="absolute inset-y-0 left-0 transition-all duration-500"
+          className="absolute inset-y-0 left-0"
           style={{
             width: `${progressPct}%`,
-            background: progressPct === 100
-              ? 'linear-gradient(90deg, #10b981, #059669)'
-              : 'linear-gradient(90deg, #412D15, #ef4444)',
+            background: progressPct === 100 ? 'var(--color-success)' : 'var(--color-accent)',
+            transition: 'width 0.5s var(--ease-out-soft)',
           }}
         />
         <div
-          className="absolute top-0 w-0.5 h-full bg-[#1F150C]/40 transition-all"
+          className="absolute top-0 h-full w-0.5 bg-ink/40 transition-all"
           style={{ left: `${positionPct}%`, transform: 'translateX(-50%)' }}
           title={`Card ${index + 1} of ${items.length}`}
         />
@@ -166,12 +165,12 @@ export default function FocusMode<T>({
 
       {/* Card area */}
       <div
-        className="flex-1 overflow-y-auto px-4 py-8 sm:py-12 flex items-start sm:items-center justify-center"
+        className="flex flex-1 items-start justify-center overflow-y-auto px-4 py-8 sm:items-center sm:py-12"
         onTouchStart={onTouchStart}
         onTouchEnd={onTouchEnd}
       >
-        <div className="w-full max-w-md mx-auto">
-          <div className="text-center mb-4 text-[11px] font-bold text-[#1F150C]/50 tabular-nums">
+        <div className="mx-auto w-full max-w-md">
+          <div className="mb-4 text-center text-[11px] font-bold tabular-nums text-ink-muted">
             Card {index + 1} of {items.length}
           </div>
           {renderCard(current, isCurrentDone)}
@@ -180,59 +179,50 @@ export default function FocusMode<T>({
 
       {/* Keyboard hints overlay */}
       {showHints && (
-        <div className="absolute top-16 right-4 z-10 bg-white rounded-2xl shadow-xl border border-black/5 p-4 text-xs space-y-2 max-w-[240px]">
-          <div className="font-bold text-[#1F150C] mb-1">Keyboard</div>
-          <div className="flex justify-between gap-3"><span>← / →</span><span className="text-[#1F150C]/60">Prev / next</span></div>
-          <div className="flex justify-between gap-3"><span>Space / Enter</span><span className="text-[#1F150C]/60">Mark + next</span></div>
-          <div className="flex justify-between gap-3"><span>X</span><span className="text-[#1F150C]/60">Toggle studied</span></div>
-          <div className="flex justify-between gap-3"><span>Esc</span><span className="text-[#1F150C]/60">Exit</span></div>
-          <div className="pt-2 mt-2 border-t border-black/5 text-[10px] text-[#1F150C]/50">
+        <div className="absolute right-4 top-16 z-10 max-w-[240px] space-y-2 rounded-card border border-line bg-surface p-4 text-xs shadow-float">
+          <div className="mb-1 font-bold text-ink">Keyboard</div>
+          <div className="flex justify-between gap-3"><span>← / →</span><span className="text-ink-muted">Prev / next</span></div>
+          <div className="flex justify-between gap-3"><span>Space / Enter</span><span className="text-ink-muted">Mark + next</span></div>
+          <div className="flex justify-between gap-3"><span>X</span><span className="text-ink-muted">Toggle studied</span></div>
+          <div className="flex justify-between gap-3"><span>Esc</span><span className="text-ink-muted">Exit</span></div>
+          <div className="mt-2 border-t border-line pt-2 text-[10px] text-ink-muted">
             Mobile: swipe ← to mark, swipe → to skip, swipe ↓ to exit.
           </div>
         </div>
       )}
 
       {/* Bottom action bar */}
-      <div className="flex-none border-t border-[#1F150C]/10 bg-[#E1DCC9]/95 backdrop-blur-md px-4 py-3 pb-[max(env(safe-area-inset-bottom),0.75rem)]">
-        <div className="max-w-md mx-auto flex items-center gap-2">
+      <div className="flex-none border-t border-line bg-bg/95 px-4 py-3 pb-[max(env(safe-area-inset-bottom),0.75rem)] backdrop-blur-md">
+        <div className="mx-auto flex max-w-md items-center gap-2">
           <button
             onClick={goPrev}
             disabled={index === 0}
-            className="p-3 rounded-2xl bg-white border border-[#1F150C]/15 disabled:opacity-30 disabled:cursor-not-allowed hover:border-[#412D15]/40 transition-all active:scale-95 flex-shrink-0"
+            className="grid flex-shrink-0 place-items-center rounded-card border border-line bg-surface p-3 transition-all hover:border-line-strong active:scale-95 disabled:cursor-not-allowed disabled:opacity-30"
             aria-label="Previous"
           >
-            <ChevronLeft className="w-5 h-5" />
+            <ChevronLeft className="h-5 w-5" />
           </button>
 
           <button
             onClick={markAndNext}
-            className={`flex-1 px-4 py-3 rounded-2xl font-bold text-sm transition-all active:scale-[0.98] shadow-md ${
-              isCurrentDone
-                ? 'bg-emerald-500 text-white'
-                : 'bg-[#412D15] text-white hover:bg-[#000000]'
+            className={`flex-1 rounded-card px-4 py-3 text-sm font-bold text-white shadow-card transition-all active:scale-[0.98] ${
+              isCurrentDone ? 'bg-success' : 'bg-accent hover:bg-[#a83d30]'
             }`}
           >
-            {isCurrentDone ? (
-              <span className="inline-flex items-center justify-center gap-1.5">
-                <Check className="w-4 h-4" />
-                Next
-              </span>
-            ) : (
-              <span className="inline-flex items-center justify-center gap-1.5">
-                <Check className="w-4 h-4" />
-                Mark studied
-              </span>
-            )}
+            <span className="inline-flex items-center justify-center gap-1.5">
+              <Check className="h-4 w-4" />
+              {isCurrentDone ? 'Next' : 'Mark studied'}
+            </span>
           </button>
 
           <button
             onClick={goNext}
             disabled={index === items.length - 1}
-            className="px-3 py-3 rounded-2xl bg-white border border-[#1F150C]/15 disabled:opacity-30 disabled:cursor-not-allowed hover:border-[#412D15]/40 transition-all active:scale-95 flex-shrink-0 inline-flex items-center gap-1 text-xs font-bold"
+            className="inline-flex flex-shrink-0 items-center gap-1 rounded-card border border-line bg-surface px-3 py-3 text-xs font-bold transition-all hover:border-line-strong active:scale-95 disabled:cursor-not-allowed disabled:opacity-30"
             aria-label="Skip"
             title="Skip without marking"
           >
-            <SkipForward className="w-4 h-4" />
+            <SkipForward className="h-4 w-4" />
             <span className="hidden sm:inline">Skip</span>
           </button>
         </div>
