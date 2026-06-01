@@ -45,7 +45,7 @@ export default function RootLayout({
         />
       </head>
       <body className={`${dmSans.variable} ${dmSerif.variable} antialiased`}>
-        <div className="min-h-screen bg-bg text-ink font-[family-name:var(--font-ui)]">
+        <div className="min-h-screen text-ink font-[family-name:var(--font-ui)]">
           <AppHeader />
           <SideNav />
           <main className="sm:pl-[4.5rem] pb-24 sm:pb-10">{children}</main>

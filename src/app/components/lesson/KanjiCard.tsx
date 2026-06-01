@@ -2,6 +2,7 @@
 import { KanjiProps } from "@/types";
 import { Volume2, Lightbulb, Layers, PenLine, ChevronDown, Check } from "lucide-react";
 import { useState } from "react";
+import KanjiWriteModal from "./KanjiWriteModal";
 
 interface KanjiCardProps {
   item: KanjiProps;
@@ -23,27 +24,29 @@ const KanjiCard = ({ item, label, isCompleted = false, onToggleComplete }: Kanji
   const [showMnemonic, setShowMnemonic] = useState(false);
   const [showNote, setShowNote] = useState(false);
   const [showAllExamples, setShowAllExamples] = useState(false);
+  const [showWrite, setShowWrite] = useState(false);
 
   const examples = item.examples ?? [];
   const visibleExamples = showAllExamples ? examples : examples.slice(0, 1);
 
   return (
-    <div
-      className={`hover-lift relative flex flex-col overflow-hidden rounded-card border bg-surface shadow-card transition-colors ${
-        isCompleted ? 'border-success/40' : 'border-line'
-      }`}
-    >
-      {isCompleted && <span className="absolute inset-y-0 left-0 z-10 w-1 bg-success" />}
-
+    <>
+    <div className="hover-lift relative">
       {label !== undefined && (
         <span
-          className={`absolute -left-2.5 -top-2.5 z-20 grid h-7 w-7 place-items-center rounded-full text-[11px] font-bold text-white shadow-card ${
+          className={`absolute -left-2.5 -top-2.5 z-30 grid h-7 w-7 place-items-center rounded-full text-[11px] font-bold text-white shadow-card ${
             isCompleted ? 'bg-success' : 'bg-ink'
           }`}
         >
           {isCompleted ? <Check className="h-3.5 w-3.5 animate-pop-check" /> : label}
         </span>
       )}
+      <div
+        className={`relative flex flex-col overflow-hidden rounded-card border bg-surface shadow-card transition-colors ${
+          isCompleted ? 'border-success/40' : 'border-line'
+        }`}
+      >
+        {isCompleted && <span className="absolute inset-y-0 left-0 z-10 w-1 bg-success" />}
 
       {/* ===== TOP BAND: kanji + stroke pill + audio ===== */}
       <div className="relative flex items-start gap-3 p-5 pb-4">
@@ -85,6 +88,14 @@ const KanjiCard = ({ item, label, isCompleted = false, onToggleComplete }: Kanji
             title="Pronounce"
           >
             <Volume2 className="h-4 w-4" />
+          </button>
+          <button
+            onClick={() => setShowWrite(true)}
+            className="inline-flex items-center gap-1 rounded-chip bg-accent/10 px-2.5 py-1.5 text-[11px] font-bold text-accent transition-colors hover:bg-accent hover:text-white"
+            title="Practice writing strokes"
+          >
+            <PenLine className="h-3.5 w-3.5" />
+            Write
           </button>
         </div>
       </div>
@@ -193,7 +204,19 @@ const KanjiCard = ({ item, label, isCompleted = false, onToggleComplete }: Kanji
           )}
         </div>
       )}
+      </div>
     </div>
+    {showWrite && (
+      <KanjiWriteModal
+        char={item.word || ''}
+        meaning={item.meaning ?? undefined}
+        onyomi={item.onyomi ?? undefined}
+        kunyomi={item.kunyomi ?? undefined}
+        strokes={item.strokes ?? undefined}
+        onClose={() => setShowWrite(false)}
+      />
+    )}
+    </>
   );
 };
 

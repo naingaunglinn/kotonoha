@@ -301,7 +301,7 @@ const LessonContentPage = () => {
   const listeningEnd = Math.min(currentPage * LISTENING_PER_PAGE, listening?.length || 0);
 
   let content;
-  let gridLayout = "grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6";
+  let gridLayout = "grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6";
 
   if (lesson == 'vocab' && vocab && vocab.length > 0) {
     content = displayVocab.map((item, index) => (
@@ -341,7 +341,7 @@ const LessonContentPage = () => {
     ));
   }
   if (lesson == 'reading') {
-    gridLayout = "grid-cols-1 gap-4";
+    gridLayout = "grid-cols-1 gap-5 max-w-[880px] mx-auto";
     if (reading && reading.length > 0) {
       content = paginatedReading.map((item, index) => (
         <ReadingPassage
@@ -356,7 +356,7 @@ const LessonContentPage = () => {
     }
   }
   if (lesson == 'listening') {
-    gridLayout = "grid-cols-1 gap-4";
+    gridLayout = "grid-cols-1 gap-5 max-w-[880px] mx-auto";
     if (listening && listening.length > 0) {
       content = paginatedListening.map((item, index) => (
         <ListeningExercise

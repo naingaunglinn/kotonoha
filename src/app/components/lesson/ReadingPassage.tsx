@@ -214,20 +214,21 @@ const ReadingPassage = ({ data, label, isCompleted = false, defaultExpanded = fa
   const correctCount = data.questions.filter((q, i) => selectedAnswers[i] === q.answer).length;
 
   return (
-    <div
-      className={`relative overflow-hidden rounded-card border bg-surface shadow-card transition-colors ${
-        isCompleted ? 'border-success/40' : 'border-line'
-      }`}
-    >
+    <div className="relative">
       {label !== undefined && (
         <span
-          className={`absolute -left-2.5 -top-2.5 z-10 grid h-7 w-7 place-items-center rounded-full text-[11px] font-bold text-white shadow-card ${
+          className={`absolute -left-2.5 -top-2.5 z-30 grid h-7 w-7 place-items-center rounded-full text-[11px] font-bold text-white shadow-card ${
             isCompleted ? 'bg-success' : 'bg-ink'
           }`}
         >
           {isCompleted ? <CheckCircle className="h-3.5 w-3.5" /> : label}
         </span>
       )}
+      <div
+        className={`relative overflow-hidden rounded-card border bg-surface shadow-card transition-colors ${
+          isCompleted ? 'border-success/40' : 'border-line'
+        }`}
+      >
 
       {/* ===== HEADER ===== */}
       <button
@@ -431,6 +432,7 @@ const ReadingPassage = ({ data, label, isCompleted = false, defaultExpanded = fa
           </div>
         </div>
       )}
+      </div>
     </div>
   );
 };
